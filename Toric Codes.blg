@@ -3,56 +3,56 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Toric Codes.aux
 The style file: alpha.bst
 Database file #1: ref.bib
-Repeated entry---line 217 of file ref.bib
+Repeated entry---line 225 of file ref.bib
  : @article{freedman2002simulation
  :                                ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 227 of file ref.bib
+Repeated entry---line 235 of file ref.bib
  : @article{kitaev2003fault
  :                         ,
 I'm skipping whatever remains of this entry
 Warning--there's a number but no series in kauffman1994temperley
 Warning--there's a number but no series in kitaev2002classical
 Warning--there's a number but no series in wang2010topological
-You've used 31 entries,
+You've used 32 entries,
             2543 wiz_defined-function locations,
-            752 strings with 9385 characters,
-and the built_in function-call counts, 12567 in all, are:
-= -- 1223
-> -- 651
-< -- 20
-+ -- 227
-- -- 225
-* -- 953
-:= -- 2109
-add.period$ -- 96
-call.type$ -- 31
-change.case$ -- 200
-chr.to.int$ -- 31
-cite$ -- 34
-duplicate$ -- 481
-empty$ -- 879
-format.name$ -- 264
-if$ -- 2511
+            758 strings with 9502 characters,
+and the built_in function-call counts, 12906 in all, are:
+= -- 1253
+> -- 670
+< -- 21
++ -- 234
+- -- 231
+* -- 975
+:= -- 2167
+add.period$ -- 99
+call.type$ -- 32
+change.case$ -- 205
+chr.to.int$ -- 32
+cite$ -- 35
+duplicate$ -- 496
+empty$ -- 904
+format.name$ -- 271
+if$ -- 2579
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 40
-newline$ -- 158
-num.names$ -- 93
-pop$ -- 199
+missing$ -- 42
+newline$ -- 163
+num.names$ -- 96
+pop$ -- 207
 preamble$ -- 1
-purify$ -- 241
+purify$ -- 248
 quote$ -- 0
-skip$ -- 381
+skip$ -- 394
 stack$ -- 0
-substring$ -- 664
-swap$ -- 61
-text.length$ -- 20
+substring$ -- 672
+swap$ -- 63
+text.length$ -- 21
 text.prefix$ -- 13
 top$ -- 0
-type$ -- 208
+type$ -- 212
 warning$ -- 3
-while$ -- 118
-width$ -- 33
-write$ -- 398
+while$ -- 121
+width$ -- 34
+write$ -- 411
 (There were 2 error messages)

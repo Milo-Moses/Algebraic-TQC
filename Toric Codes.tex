@@ -55,6 +55,7 @@
 \newcommand{\Hom}{\mathrm{Hom}}
 \newcommand{\Frac}{\mathrm{Frac}}
 \newcommand{\res}{\mathrm{res}}
+\newcommand{\Vecc}{\mathrm{Vec}}
 \newcommand{\0}{\left|0\right>}
 \newcommand{\1}{\left|1\right>}
 \newcommand{\nullclass}{\left|\bold{0}\right>}
@@ -84,21 +85,26 @@ To remain as accessible as possible, we restrict ourselves to the simplest examp
 
 This manuscript is based on lecture notes from a course on TQC taught by Zhenghan Wang, in the winter of 2023 at UC Santa Barbara. The author expresses his sincerest gratitude to Zhenghan Wang and the other students of the class, without whom this manuscript would not have been possible.
 
-The main reference for the first description of the toric code as a quantum system on the torus is the seminal work of Kitaev \cite{kitaev2003fault}. It was here that the idea of computation by braiding anyons was first described, and much of that paper focuses specifically on the example of the toric code as well.
+The main reference for the description of the toric code as a quantum system on the torus is the seminal work of Kitaev \cite{kitaev2003fault}. It was here that the idea of computation by braiding anyons was first described, and much of that paper focuses specifically on the example of the toric code.
 
-Many of the propositions and descriptions offered are nowhere to be found in literature. This is not due to their being particularly novel, but rather their being seen as too obvious to be stated explicitly and written off as folklore. A secondary goal of this manuscript is to present a formal treatment of these implicit ideas.
+Many of the propositions and descriptions offered here are nowhere to be found in literature. This is not due to their being particularly novel, but rather their being seen as too obvious to be stated explicitly and written off as folklore. A secondary goal of this manuscript is to present a formal treatment of these implicit ideas.
 
-Finally, we end with a terminological clarification. The term ``toric code" refers to an example of TQC, but also to an error correcting code in universal quantum computation. Moreover, it is from this use as an error correcting code that it gets the name ``toric code". A readable reference to the surface codes (a generalization of the toric code) as error correction can be found in J. Roffe's article \cite{roffe2019quantum}. The takeaway is that TQC is so intrinsically error resistant, that its mathematical descriptions immediately give associated error correction algorithms. The widespread use and study of the toric code (the simplest non-trivial model!) outside of TQC can be seen as a testament to the power of the theory.
+Finally, we end with a terminological clarification. The term ``toric code" refers to an example of TQC, but also to an error correcting code in universal quantum computation. Moreover, it is from this use as an error correcting code that it gets the name ``toric code". A readable reference to the surface codes (a generalization of the toric code) as error correction can be found in J. Roffe's article \cite{roffe2019quantum}. The takeaway is that TQC is so intrinsically error resistant, that its mathematical descriptions immediately give associated error correction algorithms. The widespread use and study of the toric code outside of TQC is a testament to the power of the theory.
 
 
 The structure of the manuscript is as follows:
 
 \begin{itemize}
-\item In Section \ref{Introduction}, we give an introduction to TQC. While great effort is taken to make the treatment as accessible as possible, one is still required to have at least an elementary understanding of mathematics and physics. A passing familiarity with quantum mechanics and quantum computation would be extremely useful.
+\item Section \ref{Introduction} gives an introduction to TQC. While great effort is taken to make the treatment as accessible as possible, one is still required to have at least an elementary understanding of mathematics and physics. A passing familiarity with quantum mechanics and quantum computation would be extremely useful.
 
-\item in Section \ref{The Toric Code}, we give a mathematical description of the toric code in terms of undergraduate-level linear algebra. While not strictly necessary, having taken a first course in Algebraic Topology would be preferable. For those unfamiliar with the subject, an introduction is given in Appendix \ref{Homology}.
+\item Section \ref{The Toric Code} gives a mathematical description of the toric code in terms of undergraduate-level linear algebra. While not strictly necessary, having taken a first course in Algebraic Topology would be preferable. For those unfamiliar with the subject, an introduction is given in Appendix \ref{Homology}. Those unfamiliar with the mathematical formalism of quantum mechanics are advised to reference Appendix \ref{Quantum mechanics}, though the section is entirely readable without this background.
 
-\item In Section \ref{TQFTs}...
+\item Section \ref{TQFTs} gives an introduction to Topological Quantum Field Theories (TQFTs), the formal mathematical abstractions of topological quantum phases of matter. Subsection \ref{The general picture} gives an overview of the subject. Subsection \ref{DW TQFT} defines the $\ZZ_2$ Dijkgraaf-Witten TQFT, which is the TQFT associated with the toric code. Subsection \ref{Dehn twists} explains how TQC is performed in this framework, and compares the results using TQFTs to those obtained in Section \ref{The Toric Code}.
+
+\item Section \ref{Modular Tensor Categories} gives an introduction to Modular Tensor Categories (MTCs), the compressed mathematical abstraction of anyon models. Subsection \ref{Anyon model} gives an overview of the subject, and the equivilance between MTCs and TQFTs. Subsection \ref{Category viewpoint} gives the more elegant interpretation of MTCs in the language of categories. For those unfamiliar with the subject of Category Theory, a brief introduction is contained in Appendix \ref{Categories}. Subsection \ref{VecZ2 MTC} defines the $\mathcal{Z}(\Vecc_{\ZZ_2})$ MTC, which is the MTC associated with the toric code.
+
+\item Section \ref{The Big Picture} gives a big-picture summary of TQC, using the mathematics developed in the previous sections.
+
 \end{itemize}
 
 
@@ -111,9 +117,9 @@ Of the many approaches to quantum computation, Topological Quantum Computation (
 To describe a theory of Quantum Computation, one must specify the following:
 
 \begin{enumerate}
-\item How quantum information is stored (i.e, what physical model of qubits one is using)
-\item How quantum information is acted on (i.e, what physical actions one can perform on the qubits)
-\item How quantum information is measured (i.e, what observables can be physically measured in the system)
+\item How quantum information is stored (i.e. what physical model of qubits one is using)
+\item How quantum information is acted on (i.e. what physical actions one can perform on the qubits)
+\item How quantum information is measured (i.e. what observables can be physically measured in the system)
 \end{enumerate}
 
 A \textit{universal} model of quantum computation is one which can simulate all others. Generally, this will mean that the space of possible physical actions specified by the quantum computation model is dense in the space of all possible transformations on the space of qubits (i.e, can be used to approximate every transformation arbitrarily well).
@@ -196,7 +202,7 @@ The possibilities for topological quantum materials and TQC are extremely exciti
 \section{The Toric Code}
 \label{The Toric Code}
 
-Consider a torus. We will be imagining the torus as a whole as being a quantum system, corresponding physically to the quantum system one would observe when the torus is in the $\ZZ_2$ spin liquid topological quantum phase of matter. The \textit{code space} of the torus is the space of states on which we will be building our quantum computer, i.e, those states we will be using to store quantum information. In general Topological Quantum Computing (TQC) fashion, the code space of the toric code will be its ground states.
+Consider a torus. We will be imagining the torus as a whole as being a quantum system, corresponding physically to the quantum system one would observe when the torus is in the $\ZZ_2$ spin liquid topological quantum phase of matter. The \textit{code space} of the torus is the space of states on which we will be building our quantum computer, i.e., those states we will be using to store quantum information. In general Topological Quantum Computing (TQC) fashion, the code space of the toric code will be its ground states.
 
 Our mathematical priorities are thus as follows: To define the quantum system, and to define a Hamiltonian operator on it. A Hamiltonian is an operator corresponding to the total energy of a quantum system. Namely, the eigenvalue of an eigenstate of the Hamiltonian corresponds to the total energy of that state. The code space will thus be the lowest eigenspace of the Hamiltonian.
 
@@ -213,7 +219,7 @@ Working with a continuous torus and the corresponding infinite dimensional vecto
 $$\Ncal=\bigotimes_{\substack{\text{edges of}\\\text{torus}}}\CC^2,$$
 
 obtained by ``putting a qubit
-\footnote{A qubit is the quantum-computing term for ``two dimensional quantum system", i.e, $\CC^2$.}
+\footnote{A qubit is the quantum-computing term for ``two dimensional quantum system", i.e,, $\CC^2$.}
 on every edge". Here and throughout, \textit{vertices}, \textit{edges}, and \textit{faces}, when used as indexing sets, will refer to the set of \textit{vertices}, \textit{edges}, and \textit{faces} of our celluated torus. We will choose a canonical basis $\left\{\0,\1\right\}$ for $\CC^2$, reflecting our information theoretic intentions. To more forward with defining the Hamiltonian, we introduce the Pauli matrices
 
 $$
@@ -317,7 +323,7 @@ $$\Ncal_{\bold{v},\bold{p}}=\{\left.\ppsi\right| \left(A_v\ppsi=-1\iff v\in \bol
 
 is $D$ dimensional. We proceed by induction on $|\bold{v}+\bold{p}|$. If $|\bold{v}+\bold{p}|=0$, then this is the definition of $D$. Without loss of generality, suppose $|\bold{v}|\geq 2$. If $|\bold{p}|\geq 2$, we apply the same arguement with verticies replaced by faces. Choose two verticies $v_0,v_1\in \bold{v}$. Choose a path $\gamma$ along the edges of the torus that connect $v_0$ and $v_1$. We show that $\bigotimes_{\text{edges in }\gamma}\sigma_X$ gives an isomorphism between $\Ncal_{\bold{v},\bold{p}}$ and $\Ncal_{\bold{v}-\{v_0,v_1\},\{p\}}$. Namely it is clear from $\sigma_X^2=\sigma_X$, so this map is its own inverse, so it is sufficient to show that the image is in the desired space. To prove this, we observe that $\bigotimes_{\text{edges in }\gamma}\sigma_X$ commutes with all the $B_p$s, and commutes with all of the $A_v$s at verticies that $\gamma$ passes through an even number of times. The only verticies that $\gamma$ passes through an odd number of times are its endpoints (by definition), and hence $A_v$ has exactly the effect of flipping the eigenvalues at $A_{v_0}$ and $A_{v_1}$. Thus, the image of a point in $\Ncal_{\bold{v},\bold{p}}$ is in $\Ncal_{\bold{v}-\{v_0,v_1\},\bold{p}}$, as desired.
 
-Combining, we find that the $-2n^2+2q'$ eigenstate can be decomposed as direct sums of $\Ncal_{\bold{v},\bold{p}}$, where $\bold{v}$ and $\bold{p}$ range over even sized sets with $|\bold{v}+\bold{p}|=q'$. In particular, $q'=2q$ must be even. The dimension of this space is equal to $D$ times the number of way of choosing the sets $\bold{v}$ and $\bold{q}$, i.e,
+Combining, we find that the $-2n^2+2q'$ eigenstate can be decomposed as direct sums of $\Ncal_{\bold{v},\bold{p}}$, where $\bold{v}$ and $\bold{p}$ range over even sized sets with $|\bold{v}+\bold{p}|=q'$. In particular, $q'=2q$ must be even. The dimension of this space is equal to $D$ times the number of way of choosing the sets $\bold{v}$ and $\bold{q}$, i.e.,
 
 $$D\sum_{k=0}^{q}{n^2 \choose 2k}{n^2 \choose 2(q-k)}.$$
 
@@ -359,12 +365,12 @@ are all normalized eigenstates of that Hamiltonian $H$, and serve as a canonical
 
 For $B_p$s, we observe that applying $B_p$ to a pure state $\left|\gamma\right>$ has the effect of flipping all of the qubits around the face $p$. By definition of being $\ZZ_2$ homologous, $B_p$ maps the space of all cycles homologous to $\left|\omega\right>$ back into the space of all cycles homologous to $\left|\omega\right>$. In particular, $\left|\omega\right>$ is in the $+1$ eigenspace of $B_p$ for every $p$.
 
-To show that $\left|\omega\right>$ is normalized, we observe that there are exactly that there are exactly $2^{n^2-1}$ cycles homologous to $\omega$. This is proved as follows. Starting with a fixed representative $\omega_0$ of $\omega$, cycles homologous to $\omega$ correspond to flipping qubits around the edges, i.e, applying $B_p$s at faces. Since there are $n^2$ faces, this gives $2^{n^2}$ cycles. This overcounts the space of cycles homologous to $\omega$ by a factor of $2$, since $\prod_{\text{faces }p}B_p=I$ by Proposition \ref{AvBp} (iv). The fact that the codespace is 4 dimensional says that this is the \textit{only} relation between the $B_p$s. Hence, there are $2^{n^2-1}$ cycles.
+To show that $\left|\omega\right>$ is normalized, we observe that there are exactly that there are exactly $2^{n^2-1}$ cycles homologous to $\omega$. This is proved as follows. Starting with a fixed representative $\omega_0$ of $\omega$, cycles homologous to $\omega$ correspond to flipping qubits around the edges, i.e., applying $B_p$s at faces. Since there are $n^2$ faces, this gives $2^{n^2}$ cycles. This overcounts the space of cycles homologous to $\omega$ by a factor of $2$, since $\prod_{\text{faces }p}B_p=I$ by Proposition \ref{AvBp} (iv). The fact that the codespace is 4 dimensional says that this is the \textit{only} relation between the $B_p$s. Hence, there are $2^{n^2-1}$ cycles.
 
 To show that these states are mutually orthogonal, we observe simply that no cycle can be homologous to two of the $\{\bold{0},\alpha,\beta,\alpha\beta\}$, hence $\left\{\nullclass,\alphaclass,\betaclass,\alphabetaclass\right\}$ have disjoint support, hence they are orthogonal.
 \end{proof}
 
-Letting $T$ denote the torus, the above shows that we can view the codespace of the toric code as a physical realization of the vector space $\CC[H_1(T;\ZZ_2)]=H_1(T,\CC)$. Here, $\CC[A]$ for some set $A$ denotes the vector space generated by $A$, i.e, the unique complex vector space which has a basis given by $A$. Quantum physics gives the physical analogue of the abstract mathematical notation of an equivalence class, namely, an equivalence class is realized as the superposition over all possible representatives. This can be compared with the path integral formulation of quantum mechanics, where one integrates over all possible paths between two points.
+Letting $T$ denote the torus, the above shows that we can view the codespace of the toric code as a physical realization of the vector space $\CC[H_1(T;\ZZ_2)]=H_1(T,\CC)$. Here, $\CC[A]$ for some set $A$ denotes the vector space generated by $A$, i.e., the unique complex vector space which has a basis given by $A$. Quantum physics gives the physical analogue of the abstract mathematical notation of an equivalence class, namely, an equivalence class is realized as the superposition over all possible representatives. This can be compared with the path integral formulation of quantum mechanics, where one integrates over all possible paths between two points.
 
 We now give \textit{quasiparticle} interpretation of the toric code. A quasiparticle is an excitation in the toric code. Namely, given an eigenstate $\ppsi$, we say that there is a quasiparticle at a vertex $v$ if $A_v\ppsi=-\ppsi$, and get a face $p$ we say that there is a quasiparticle at $p$ if $B_p\ppsi=-\ppsi$.
 
@@ -374,7 +380,7 @@ $$A_{v_0}\left| \psi'\right> = A_{v_0}\left(\bigotimes_{\text{edge }e}\sigma_X\r
 
 $$A_{v_1}\left| \psi'\right> = A_{v_1}\left(\bigotimes_{\text{edge }e}\sigma_X\right)\ppsi=-A_{v_1}\ppsi=-\ppsi,$$
 
-where we keely used the fact that $\sigma_X\sigma_Z=-\sigma_Z\sigma_X$. Additionally, $A_{v}\left|\psi'\right>=A_{v}\ppsi$ for $v\neq v_0,v_1$, since applying $\sigma_X$ to $e$ only affects the verticies $v_0$ and $v_1$. We can interpret this computation as saying the following: Applying $\sigma_X$ has the effect of \textit{moving the quasiparticle along e}, from $v_0$ to $v_1$. Applying longer chains of $\sigma_X$s, we see in general that applying $\sigma_X$ corresponds to moving quasiparticles at verticies along the edges. If neither $v_0$ nor $v_1$ had quasiparticles, then again tensoring with $\sigma_X$ at $e$ would have the effect of flipping the eigenvalues at $v_0$ and $v_1$, i.e, the effect of \textit{creating quasiparticles at the endpoints of e}, at $v_0$ and $v_1$. If both $v_1$ and $v_1$ has quasiparticles, then tensoring with $\sigma_X$ at $e$ would have the effect of \textit{anhilating quasiparticles at the endpoints of e}.
+where we keely used the fact that $\sigma_X\sigma_Z=-\sigma_Z\sigma_X$. Additionally, $A_{v}\left|\psi'\right>=A_{v}\ppsi$ for $v\neq v_0,v_1$, since applying $\sigma_X$ to $e$ only affects the verticies $v_0$ and $v_1$. We can interpret this computation as saying the following: Applying $\sigma_X$ has the effect of \textit{moving the quasiparticle along e}, from $v_0$ to $v_1$. Applying longer chains of $\sigma_X$s, we see in general that applying $\sigma_X$ corresponds to moving quasiparticles at verticies along the edges. If neither $v_0$ nor $v_1$ had quasiparticles, then again tensoring with $\sigma_X$ at $e$ would have the effect of flipping the eigenvalues at $v_0$ and $v_1$, i.e., the effect of \textit{creating quasiparticles at the endpoints of e}, at $v_0$ and $v_1$. If both $v_1$ and $v_1$ has quasiparticles, then tensoring with $\sigma_X$ at $e$ would have the effect of \textit{anhilating quasiparticles at the endpoints of e}.
 
 In summary, the quasiparticles at edges are their own antiparticle. Creating particle/antiparticle pairs, moving the quasiparticles, and annihilating particle/antiparticle pairs all are mathematically realized by the simple operation of tensoring edges with $\sigma_X$.
 
@@ -383,7 +389,7 @@ Similarly, we can describe the quasiparticles sitting at faces, corresponding to
 Summarizing, we find that the toric code naturally have two types of quasiparticles, an $X$-type that lives on vertices which moves by tensoring by $\sigma_X$, and a $Z$-type that lives in faces and moves by tensoring with $\sigma_Z$. This allows us to mathematically implement a topological quantum computer. Namely:
 
 \begin{enumerate}
-\item Quantum information is stored in the ground state of the toric code, i.e, the lowest eigenvalue eigenspace of the Hamiltonian.
+\item Quantum information is stored in the ground state of the toric code, i.e., the lowest eigenvalue eigenspace of the Hamiltonian.
 \item Ground states are acted on by generating and manipulating quasiparticles, moving them around the torus, and annihilating them. Mathematically, this is realized by repeatedly tensoring with $\sigma_X$ and $\sigma_Z$ along edges, until one returns to a ground state.
 \item Quantum information is measured by observing the ground state with respect to the canonical orthonormal basis of the codespace, given in Proposition \ref{basis}
 \end{enumerate}
@@ -408,7 +414,7 @@ A diagram visualizing the process described in the following proposition is show
 
 \begin{proposition} The following computation has the effect of performing the $\text{NOT}_{\alpha}$ gate. First, generate a particle/antiparticle pair of $X$-type particles. Then, move one of the particles around the torus via a path homologous to $\alpha$. Finally, fuse your two adjacent $X$-type particles together.
 \end{proposition}
-\begin{proof} Let $v_0$ and $v_1$ be adjacent vertices. Let $\alpha_0$ be a cycle homologous to $\alpha$ going from $v_1$ to itself. The process described in the statement of the proposition can be reworded as saying the following. First, we create a particle pair at $v_0$ and $v_1$, i.e, we tensor with $\sigma_X$ at the edge connecting $v_0$ and $v_1$. Then we move $v_1$ along $\alpha_0$, i.e, we tensor with $\sigma_X$ along the edges in $\alpha_0$. Then, we fuse the $X$-type quasiparticles at $v_0$ and $v_1$ back together, i.e, we tensor along the edge connecting $v_0$ and $v_1$ again. Since $\sigma_X^2=1$, this whole process can be described mathematically as
+\begin{proof} Let $v_0$ and $v_1$ be adjacent vertices. Let $\alpha_0$ be a cycle homologous to $\alpha$ going from $v_1$ to itself. The process described in the statement of the proposition can be reworded as saying the following. First, we create a particle pair at $v_0$ and $v_1$, i.e., we tensor with $\sigma_X$ at the edge connecting $v_0$ and $v_1$. Then we move $v_1$ along $\alpha_0$, i.e., we tensor with $\sigma_X$ along the edges in $\alpha_0$. Then, we fuse the $X$-type quasiparticles at $v_0$ and $v_1$ back together, i.e., we tensor along the edge connecting $v_0$ and $v_1$ again. Since $\sigma_X^2=1$, this whole process can be described mathematically as
 
 $$\bigotimes_{\text{edges in }\alpha_0}\sigma_X.$$
 
@@ -449,13 +455,13 @@ In particular, $\bold{0}$ doesn't intersect $\beta$, $\beta$ doesn't intersect $
 
 Sadly for the toric codes, these are essentially the only gates that can be implemented. No matter how one moves around particles, there is not enough complexity in the system to generate interesting gates. We formalize this by writing out the \textit{group of gates} of the toric codes. We can think of quantum gates on a system as forming a group, where the group law is given by the composition of gates, and every element has an inverse since unitary matrices are invertible. For the toric codes, we have the following:
 
-\begin{proposition}\label{Yparticle} There are exactly 8 possible computations in the toric codes. The group of gates is (non canonically) isomorphic to the Pauli group, i.e, the group whose objects are
+\begin{proposition}\label{Yparticle} There are exactly 8 possible computations in the toric codes. The group of gates is (non canonically) isomorphic to the Pauli group, i.e., the group whose objects are
 
 $$\{\pm I, \pm iI, \pm \sigma_X, \pm i \sigma_X, \pm \sigma_Y, \pm i\sigma_Y, \pm \sigma_Z, \pm i \sigma_Z\}$$
 
 and whose group operation is given by matrix multiplication. A minimal generating set is given by $\{\text{NOT}_{\alpha},\text{NOT}_{\beta},(-1)_{\alpha}\}$.
 \end{proposition}
-\begin{proof} To begin, we define $\text{NOT}_{\beta},\text{NOT}_{\alpha\beta},(-1)_{\beta},$ and $(-1)_{\alpha\beta}$ in complete analogy to how we define $\text{NOT}_{\alpha}$ and $(-1)_{\alpha}$. Namely, $\text{NOT}_{\beta}$ flips whether or not a state has a `$\beta$' in it, and $\text{NOT}_{\alpha\beta}$ flips whether or not a state has an `$\alpha\beta$' in it, i.e,
+\begin{proof} To begin, we define $\text{NOT}_{\beta},\text{NOT}_{\alpha\beta},(-1)_{\beta},$ and $(-1)_{\alpha\beta}$ in complete analogy to how we define $\text{NOT}_{\alpha}$ and $(-1)_{\alpha}$. Namely, $\text{NOT}_{\beta}$ flips whether or not a state has a `$\beta$' in it, and $\text{NOT}_{\alpha\beta}$ flips whether or not a state has an `$\alpha\beta$' in it, i.e.,
 
 \begin{align*}
 &\nullclass \mapsto \alphabetaclass,\,\,  \betaclass \mapsto \alphaclass \\
@@ -478,11 +484,11 @@ reduce the generating set to $\{\text{NOT}_{\alpha},\text{NOT}_{\beta},(-1)_{\al
 \end{proof}
 
 
-Before moving on to the next section, we make a few final remarks about the behavior of quasiparticles on the toric codes. Namely, we observe the following. Consider the full vector space $\Ncal$, and adjacent two adjacent $X$-type and $Z$-type quasiparticles. Consider the simple braiding of these particles around each other, as in Figure \ref{fig:braiding}. A line going under another corresponds to the particle having passed through that space first, before the other particle. This braiding can be obtained by first performing a twist halfway around the circle by $X$, then a twist all the way around the circle by $Z$, then finally moving the second half of the circle by $X$. This process corresponds to a transformation $\Ncal\to \Ncal$ (i.e, tensoring with the appropriate $\sigma_X$s and $\sigma_Z$s). The observation is that this transformation is \textit{not} the identity on the codespace. Namely, since $\sigma_Z\sigma_X=-\sigma_X\sigma_Z$, this operation corresponds to a global phase shift of $-1$ on the system.
+Before moving on to the next section, we make a few final remarks about the behavior of quasiparticles on the toric codes. Namely, we observe the following. Consider the full vector space $\Ncal$, and adjacent two adjacent $X$-type and $Z$-type quasiparticles. Consider the simple braiding of these particles around each other, as in Figure \ref{fig:braiding}. A line going under another corresponds to the particle having passed through that space first, before the other particle. This braiding can be obtained by first performing a twist halfway around the circle by $X$, then a twist all the way around the circle by $Z$, then finally moving the second half of the circle by $X$. This process corresponds to a transformation $\Ncal\to \Ncal$ (i.e. tensoring with the appropriate $\sigma_X$s and $\sigma_Z$s). The observation is that this transformation is \textit{not} the identity on the codespace. Namely, since $\sigma_Z\sigma_X=-\sigma_X\sigma_Z$, this operation corresponds to a global phase shift of $-1$ on the system.
 
 Thus, the braiding of $X$ type and $Z$ type particles corresponds to a phase shift of $-1$. This is in contrast to braiding two identical $X$ type or $Z$ type particles, which corresponds to the identity since $\sigma_X$ and $\sigma_Z$ commute with themselves. All particles in the standard model of physics are \textit{fermions}, which give a phase shift of $-1$ when you braid them with themselves, or \textit{bosons}, which act by the identity when you braid them with themselves. Seeing as $X$ type and $Z$ type particles in the toric code braid by the identity with themselves, one would expect them to be bosons. However, bosons always braid by the identity with each other and hence the $-1$ phase shift from braiding $X$ and $Z$ type particles should be impossible. The conclusion is that these really are \textit{quasi}particles, which behave much differently than particles in the standard model. Quasiparticles with simultaneously non-bosonic and non-fermionic braiding rules are known as \textit{anyons}. All interesting particles in topological quantum phases of matter will be anyons.
 
-In the case of the toric code, the braiding will always be trivial or give a global phase shift (i.e, -1). We call anyons \textit{non-abelian} if they can braid in such a way to create transformations that are not phase shifts. To  create interesting quantum gates, these sort of non-phase shift braidings are what we need. The search for a topological quantum computer is essentially the search for experimentally-sound easy-to-braid non-abelian anyons.
+In the case of the toric code, the braiding will always be trivial or give a global phase shift (i.e. -1). We call anyons \textit{non-abelian} if they can braid in such a way to create transformations that are not phase shifts. To  create interesting quantum gates, these sort of non-phase shift braidings are what we need. The search for a topological quantum computer is essentially the search for experimentally-sound easy-to-braid non-abelian anyons.
 
 $\newline\newline$
 
@@ -528,6 +534,7 @@ and define $\tilde{H}_{\infty}$ to be the operator on $\Ncal_{\infty}$ which act
 \label{TQFTs}
 
 \subsection{The general picture}
+\label{The general picture}
 
 Topological Quantum Computation (TQC) is physically based on topological quantum phases of matter. Topological Quantum Field Theories are the mathematical formalism of topological quantum phases of matter. Namely, every topological quantum phase of matter (physical object) has an associated Topolgoical Quantum Field Theory (mathematical object) to describe it. To make this clearer, we recall classical phases of matter in a more mathematically rigorous way. Namely, a phase of matter is an assignment
 
@@ -555,7 +562,7 @@ $$
 \end{pmatrix}.
 $$
 
-Topological quantum phases of matter arrise from the understanding that the topology of a shape (i.e, the physical invariants of the shape invariant up to deformation) will effect the quantum system arrising from inducing that shape with a given phase of matter. For example, we consider the ``$\ZZ_2$ spin liquid" topological quantum phase of matter, described in the introduction. When this phase of matter is induced a torus, the resulting quantum system will always be four dimensional (Proposition \ref{eigenspaces}). If the $\ZZ_2$ spin liquid is induced on the torus with two holes (see Figure \ref{fig:genus-two}), the ground space will instead be sixteen dimensional. Thus, a topological quantum phase of matter is an assignment
+Topological quantum phases of matter arrise from the understanding that the topology of a shape (i.e. the physical invariants of the shape invariant up to deformation) will effect the quantum system arrising from inducing that shape with a given phase of matter. For example, we consider the ``$\ZZ_2$ spin liquid" topological quantum phase of matter, described in the introduction. When this phase of matter is induced a torus, the resulting quantum system will always be four dimensional (Proposition \ref{eigenspaces}). If the $\ZZ_2$ spin liquid is induced on the torus with two holes (see Figure \ref{fig:genus-two}), the ground space will instead be sixteen dimensional. Thus, a topological quantum phase of matter is an assignment
 
 \begin{figure}
 \begin{center}
@@ -576,7 +583,7 @@ $$
 \end{pmatrix}.
 $$
 
-All of the interesting quantum systems are on two dimensional spaces. This can be seen as follows. TQC is performed by braiding quasiparticles through spacetime. When space is two dimensional, spacetime is three dimensional. When space is three dimensional, spacetime is four dimensional. It is a theorem that there are no knots in four dimensions: The extra dimension gives the knot room to move around and untangle. Thus, to have nontrivial knots, space must be two dimensional. A two dimensional space is called a \textit{surface}. The surfaces we are interested in are those two dimensional spaces which can be embedded into three dimensional space, i.e, those surfaces which can be realized physically in our three dimensional world. Note that there are some weird surfaces which can not be embedded into three dimensional space, such as the Klein bottle (shown in Figure  \ref{fig:klein-bottle}). While the `true' surface does not intersect itself, any way of placing it in three dimensions will self intersect. One needs an extra dimension to avoid this intersection.
+All of the interesting quantum systems are on two dimensional spaces. This can be seen as follows. TQC is performed by braiding quasiparticles through spacetime. When space is two dimensional, spacetime is three dimensional. When space is three dimensional, spacetime is four dimensional. It is a theorem that there are no knots in four dimensions: The extra dimension gives the knot room to move around and untangle. Thus, to have nontrivial knots, space must be two dimensional. A two dimensional space is called a \textit{surface}. The surfaces we are interested in are those two dimensional spaces which can be embedded into three dimensional space, i.e., those surfaces which can be realized physically in our three dimensional world. Note that there are some weird surfaces which can not be embedded into three dimensional space, such as the Klein bottle (shown in Figure  \ref{fig:klein-bottle}). While the `true' surface does not intersect itself, any way of placing it in three dimensions will self intersect. One needs an extra dimension to avoid this intersection.
 
 \begin{figure}
 \begin{center}
@@ -622,14 +629,14 @@ Not every assignment of surfaces to vector spaces will be a TQFT. Namely, many w
 
 $$V\left(S_0\sqcup S_1\right)=S_0\otimes S_1.$$
 
-Here, $\sqcup$ denotes the disjoint union. The disjoint union is the same as a union, but it specifies that the union should be taken in a way such that $S_0$ and $S_1$ do not intersect (i.e, that they are disjoint). The disjoint union can be intuitively read as simply putting two spaces next to each other.
+Here, $\sqcup$ denotes the disjoint union. The disjoint union is the same as a union, but it specifies that the union should be taken in a way such that $S_0$ and $S_1$ do not intersect (i.e. that they are disjoint). The disjoint union can be intuitively read as simply putting two spaces next to each other.
 
 Additionally, by the axioms of quantum mechanics, transformations of a surface through spacetime should correspond to linear (unitary!) maps on quantum systems. We think mathematically about what a trajectory through spacetime looks like. In the one dimensional case, suppose we have two particles $a$ and $b$. A trajectory through spacetime from $a$ to $b$ is a path $e$ connecting $a$ and $b$. Thinking deeply, one observes that the condition of ``connecting" $a$ and $b$ can be mathematically stated as $\partial e= a \sqcup b$, where $\partial e$ denotes the boundary of $e$. This is shown in Figure \ref{fig:bordism}.
 
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.40]{cobordism}
-\caption{First box - A path in spacetime from $a$ to $b$ by $e$, i.e, a path $e$ with $\partial e= a \sqcup b$. Second box - The fusion of two particles in spacetime. Third box - the fusion of two circles in spacetime, known informally as a ``Pair of Pants".}
+\caption{First box - A path in spacetime from $a$ to $b$ by $e$, i.e., a path $e$ with $\partial e= a \sqcup b$. Second box - The fusion of two particles in spacetime. Third box - the fusion of two circles in spacetime, known informally as a ``Pair of Pants".}
 \label{fig:bordism}
 \end{center}
 \end{figure}
@@ -663,6 +670,7 @@ Additionally, a $(2+1)$-TQFT is required to satisfy the following compatibility 
 We offer a few remarks. The term ``$(2+1)$" refers to the fact that there are two spaces dimensions, plus one time dimension. More generally, an  $(n+1)$-TQFT is an assignment of $n$-manifolds to vector spaces, and of $(n+1)$-manifolds to linear transformations. We also remark on the structure of the definition. We first define a few assignments of objects of one type to objects of another type, and then we define a laundry list of properties that those assignments should satisfy. This is extremely standard practice in higher mathematics. The abstraction of this practice is known as Category Theory. The assignments of one type of object to another type of object are known as functors, and the properties to satisfy are known as axioms. The category theory definition of a TQFT is ``A symmetric monoidal functor from the category of bordisms to the category of vector spaces". For those unfamiliar with category theory, a short introduction is found in Appendix \ref{Categories}. While we will not be using any category theory in this section, a familiarity of the subject is required for the following section on Modular Tensor Categories.
 
 \subsection{The $\ZZ_2$ Dijkgraaf-Witten TQFT}
+\label{DW TQFT}
 
 We now define the Topological Quantum Field Theory (TQFT) assoicated with the toric code, and describe how TQC can be performed in this framework. We could also call this the ``$\ZZ_2$ spin liquid TQFT", since that is the topologcial quantum phase of matter which physically realizes the $\ZZ_2$ spin liquid topological quantum phase of matter.
 
@@ -670,7 +678,7 @@ As with the definition of the toric codes in Section \ref{The Toric Code}, the d
 
 $$\tilde{V}(S,\Delta_S)=\CC\left[C^{1}(\Delta_S;\ZZ_2)\right].$$
 
-Here, $C^1(\Delta_S;\ZZ_2)$ denotes the group $\ZZ_2$ cocycles on the celluation $\Delta_S$, and $\CC[-]$ is notation for ``complex vector space generated by", i.e, $\tilde{V}(S)$ is the unique complex vector space having $C^1(\Delta_S;\ZZ_2)$ as a basis. A $\ZZ_2$ cocycle is an assignment of $0$s and $1$s to every edge, such that every face touches and even number of $1$-labeled edges.
+Here, $C^1(\Delta_S;\ZZ_2)$ denotes the group $\ZZ_2$ cocycles on the celluation $\Delta_S$, and $\CC[-]$ is notation for ``complex vector space generated by", i.e,, $\tilde{V}(S)$ is the unique complex vector space having $C^1(\Delta_S;\ZZ_2)$ as a basis. A $\ZZ_2$ cocycle is an assignment of $0$s and $1$s to every edge, such that every face touches and even number of $1$-labeled edges.
 
 Notice that a $\ZZ_2$ cocycle is the same thing as a $\ZZ_2$ cycle in the dual celluation, as discussed in the proof of Proposition \ref{Xparticle}. That is, every $\ZZ_2$ cocycle on $S$ specifies a cycle on $S$, by drawing lines between the centers of two faces whenever the edge connecting them is labeled by a $1$. This process of identifying cocycles on $\Delta_S$ and cycle in the dual celluation is known as Poincaré Duality. It is important to note that in higher dimensions the process breaks down, because generically loops will fail to intersect in three dimensions (they can just be shifted past each other). Thus, when discussing 3-manifold bordisms there is a real distinction between cycles and cocycles.
 
@@ -726,7 +734,7 @@ $$Z(X_1\cup X_0)=Z(X_1)\circ Z(X_0)$$
 
 holds.
 \end{proposition}
-\begin{proof} Consider a celluation $\Delta_{X_1\cup X_0}$ on $X_1\cup X_0$, which is simultaneously compatible with $\Delta_{S_0}$, $\Delta_{S_1}$, and $\Delta_{S_2}$. [WORK: Should I add a reference to the fact that you can always choose these liftings?]. [WORK: The fact that entries are nonzero in the right places is trivial. The hard part is showing that the scaling factors are chosen appropriately so that the entries line up. Hopefully this will have a beautiful linear algebra proof. This is also a good place to put the fact that if there is an extension of two cocycles, then the number of extensions is a constant among all amicable pairs. Additionally, this is a good place to show that the number of different cocycles extending a given cocycle is a constant, i.e, $N_X$ really does give a good normalizing factor.]
+\begin{proof} Consider a celluation $\Delta_{X_1\cup X_0}$ on $X_1\cup X_0$, which is simultaneously compatible with $\Delta_{S_0}$, $\Delta_{S_1}$, and $\Delta_{S_2}$. [WORK: Should I add a reference to the fact that you can always choose these liftings?]. [WORK: The fact that entries are nonzero in the right places is trivial. The hard part is showing that the scaling factors are chosen appropriately so that the entries line up. Hopefully this will have a beautiful linear algebra proof. This is also a good place to put the fact that if there is an extension of two cocycles, then the number of extensions is a constant among all amicable pairs. Additionally, this is a good place to show that the number of different cocycles extending a given cocycle is a constant, i.e., $N_X$ really does give a good normalizing factor.]
 \end{proof}
 
 The next proposition has a strong physical meaning, and can be seen as motivation for the fact that $V(S)$ is a ground state space. Namely, let $(S,\Delta_S)$ be a surface with celluation and let $S\times [0,1]$ be the product of $S$ with the real interval of numbers between $0$ and $1$. That is, elements of $S\times [0,1]$ are pairs $(s,t)$ where $s\in S$ and $t\in [0,1]$. This is a $3$-manifold, and gives a bordism from $S$ to itself. Namely, $\partial (S\times [0,1])$ is built of the two components $S\times \{0\}$ and $S\times \{1\}$. The orientation on $S\times [0,1]$ is induced by the orienation on $[0,1]$. This can viewed as the identity bordism: $S$ is doing nothing as time increases from $0$ to $1$. The boundary components correspond to the placement of $S$ at time $0$ and $S$ at time $1$. When time passes on a system, we expect it to ambiently decrease in energy. Thus,  physically $Z(S\times [0,1])$ should act by the identity on ground states, and send higher energy states down to the ground state. This is exactly the statement that $Z(S\times [0,1])$ should be a projection from the full state space to the ground state space. The following proposition in this lens thus says that $V(S)$ are exactly the ground space:
@@ -755,21 +763,52 @@ The main result of our section is as follows:
 \end{proof}
 
 \subsection{TQC with Dehn twists}
+\label{Dehn twists}
 .
 
-[WORK: Show that the mapping class group representations give the same computing as in the previous section.]
+[WORK: Show that the mapping class group representations give the same computing as in the previous section. It seems like braiding is out of the picture tho, since the TQFT isn't extended. I think that the action ends up being that the Dehn twist $T_{\omega}$ sends to the computation $\text{NOT}_{\omega}$. Why is the $X$-type particle chosen? Can I get $Z$-type particles? I think this comes from the fact that we incode our preference of particle in our use of cocycles, and so we favor particles that move along the dual celluation. Main reference is \cite{farb2011primer}, obviously.]
 
-[WORK: Give 2nd motivation for topological quantum computing. Namely, that this might be a good avenue for proving that QC can solve NP complete problems, or close to NP problems! Bring up how this is clearly a good theory for computing knot invaraints (add reference to example of knot invariants that were proved to be easy to calculate using this method). Then, mention that computing the Jones polynomial is known to be NP hard! This is in the introduction of Wang and Rowell's ``Mathematics of Topological Quantum Computation".]
+[WORK: Give 2nd motivation for topological quantum computing. Namely, that this might be a good avenue for proving that QC can solve NP complete problems, or close to NP problems! Bring up how this is clearly a good theory for computing knot invaraints (add reference to example of knot invariants that were proved to be easy to calculate using this method). Then, mention that computing the Jones polynomial is known to be NP hard! This is in the introduction of Wang and Rowell's ``Mathematics of Topological Quantum Computation". This could be a motivation for hybrid computing like
+
+\begin{enumerate}
+\item Use classical computer to reduce hard problem to the issue of finding the knot invariant of a given knot.
+\item Create that knot by braiding the anyons through spacetime.
+\item TQC will naturally compute the relevant knot invariant!
+\end{enumerate}
+]
 
 
 \section{Modular Tensor Categories}
-[WORK: Make section]
+\label{Modular Tensor Categories}
+
+[WORK: Make section.]
+\subsection{The data of an anyon model}
+\label{Anyon model}
+
+[WORK: Give the MTC description by label sets, fusion rules, and braiding relations. This should just be a big collection of numbers and some axioms they have to follow. Explain the physical concept that each set of numbers/relation coressponds to]
+
+\subsection{The category-theoretic viewpoint}
+\label{Category viewpoint}
+
+[WORK: Give a bottom of definition of Modular Tensor Category. State exactly how things correspond to the data of an anyon model. Main theorem: There could be multiple liftings to a category, maybe zero! Motivate category theory via commutative diagrams.]
+
+\subsection{The MTC $\mathcal{Z}(\Vecc_{\ZZ_2})$}
+\label{VecZ2 MTC}
+
+[WORK: Define the MTC $\mathcal{Z}(\Vecc_{\ZZ_2})$ explicitely via data. Give a brief explination of how this corresponds to the $\ZZ_2$ Dijkgraaf-Witten theory.Then, define $\Vecc_{\ZZ_2}$. State that the MTC defined is the Drinfeld center, to further motivate category theory. Is there an elementary way of describing the Drinfled center, other than ``make it abelian"? Analogy with groups (abelianization)?]
 
 \section{The Big Picture}
-[WORK: Make section]
+\label{The Big Picture}
+
+[WORK: The big thing is to draw the picture betweeen topological quantum phases of matter, TQFTs, MTCs, and TQC. Show exactly what this looks like in the case of the toric code, i.e., what the topological quantum phase of matter is, the TQFT, the MTC, and the resulting TQC. Add all the connections and insights that I've come up with along this journey, and things I would feel remiss not including. Really, this should be a version of an introduction-to-TQC-for-experts section. Should definitely mension that TQFTs are generally $1$-extended with punctures, to visualize anyons. Should mention that literally making torus bigger will make error rate smaller, since it's harder for things to accidentally interact with each other (exponential decrease). Maybe another thing to add is how the 1st priority is to minimize energy, and the 2nd order is to maximize entanglement.]
 
 
 \appendix
+
+\section{Quantum mechanics and quantum computation}
+\label{Quantum mechanics}
+
+[WORK: Introduce quantum mechanics for mathematicians. Really, this just means Von-Neumann axioms, a bit of quantum computing, and spectral theory.]
 
 \section{$\ZZ_2$ Homology Theory}
 \label{Homology}
@@ -778,7 +817,7 @@ In this appendix we introduce the basic notations of homology theory with $\ZZ_2
 
 The goal of homology theory is to describe cycles on a geometric object, up to deformations. If one cycle can be continuously deformed into another, then they should be considered equivalent. On the sphere, for example, all loops can be contracted away into nothing. On the torus there are four distinct cycles, namely, the zero cycle, the cycle that goes around the torus horizontally, the cycle that goes around the torus vertically, and the cycle that twists around the torus, as in Figure \ref{fig:homology} These non-trivial cycles correspond exactly to the continuous vector fields described in the introduction \cite{frankel1957homology}.
 
-Loosely, we will call two cycles homologically equivalent if they can be continuously deformed one to another. Given any face, the cycle consisting of $1$s along the edges touching that face should be `homologically trivial", i.e, homologically equivalent to the $0$ cycle, since it can be contracted away into nothingness. In a strong sense, this is the only condition one needs to impose. WIth $X$ as our simplicial complex, we let $C_1(X;\ZZ_2)$ be the group of chains. We let $Z_1(X;\ZZ_2)$ be the subgroup generated by the cycles consisting of $1$s  the boundaries of faces. This is the subgroup of homologically trivial cycles. This lets us define the quotient
+Loosely, we will call two cycles homologically equivalent if they can be continuously deformed one to another. Given any face, the cycle consisting of $1$s along the edges touching that face should be `homologically trivial", i.e., homologically equivalent to the $0$ cycle, since it can be contracted away into nothingness. In a strong sense, this is the only condition one needs to impose. WIth $X$ as our simplicial complex, we let $C_1(X;\ZZ_2)$ be the group of chains. We let $Z_1(X;\ZZ_2)$ be the subgroup generated by the cycles consisting of $1$s  the boundaries of faces. This is the subgroup of homologically trivial cycles. This lets us define the quotient
 
 $$H_1(X;\ZZ_2)=C_1(X;\ZZ_2)/Z_1(X;\ZZ_2),$$
 
@@ -795,13 +834,14 @@ The observant reader might find the above discussion frustrating. In particular,
 \item Cycles that can be obtained from one another by flipping edges along the boundary of faces.
 \end{enumerate}
 
-The worry regarding the distinction between these two notions is justified. In general, the group obtained by imposing the equivalence relation of continuous deformations will not be equal to the homology group $H_1(X)$. The group resulting from imposing the continuous deformation restriction is called the \textit{fundamental group} of $X$, and is denoted $\pi_1(X)$. In general $\pi_1(X)$ can be quite a bit larger than $H_1(X)$, i.e, the equivalence relation can be weaker. The groups are always related by the fact that $H_1(X)$ is canonically isomorphic to the abelianization of $\pi_1(X)$, i.e, the maximal abelian quotient of $H_1(X)$. In the case that $\pi_1(X)$ is abelian (for example, when $X$ is a torus), this means that there is no distinction between these spaces, and one should not make any worry about the discrepancies in intuition.
+The worry regarding the distinction between these two notions is justified. In general, the group obtained by imposing the equivalence relation of continuous deformations will not be equal to the homology group $H_1(X)$. The group resulting from imposing the continuous deformation restriction is called the \textit{fundamental group} of $X$, and is denoted $\pi_1(X)$. In general $\pi_1(X)$ can be quite a bit larger than $H_1(X)$, i.e., the equivalence relation can be weaker. The groups are always related by the fact that $H_1(X)$ is canonically isomorphic to the abelianization of $\pi_1(X)$, i.e., the maximal abelian quotient of $H_1(X)$. In the case that $\pi_1(X)$ is abelian (for example, when $X$ is a torus), this means that there is no distinction between these spaces, and one should not make any worry about the discrepancies in intuition.
 
 The canonical reference for this subject (known as \textit{Algebraic Topology}) is Alan Hatcher's textbook \cite{hatcher2005algebraic}.
 
 \section{Category Theory}
 \label{Categories}
 [WORK: Make appendix. This to mension for sure; canonical isomorphism between double dual, non canonical isomorphism between first duals. Not only is this super relevant to rigidity, but Zhenghan said that this was one of Eilenberg-MacLane's key motivations. Find a reference to this fact.]
+
 
 \bibliographystyle{alpha}
 \bibliography{ref}
