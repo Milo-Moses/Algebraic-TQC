@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Toric Codes.aux
+The style file: alpha.bst
+Database file #1: ref.bib
+Repeated entry---line 194 of file ref.bib
+ : @article{kitaev2003fault
+ :                         ,
+I'm skipping whatever remains of this entry
+Warning--there's a number but no series in kauffman1994temperley
+Warning--there's a number but no series in kitaev2002classical
+Warning--there's a number but no series in wang2010topological
+You've used 29 entries,
+            2543 wiz_defined-function locations,
+            738 strings with 8821 characters,
+and the built_in function-call counts, 11397 in all, are:
+= -- 1113
+> -- 561
+< -- 20
++ -- 193
+- -- 191
+* -- 839
+:= -- 1905
+add.period$ -- 90
+call.type$ -- 29
+change.case$ -- 178
+chr.to.int$ -- 29
+cite$ -- 32
+duplicate$ -- 453
+empty$ -- 817
+format.name$ -- 230
+if$ -- 2291
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 38
+newline$ -- 148
+num.names$ -- 87
+pop$ -- 183
+preamble$ -- 1
+purify$ -- 217
+quote$ -- 0
+skip$ -- 359
+stack$ -- 0
+substring$ -- 594
+swap$ -- 59
+text.length$ -- 20
+text.prefix$ -- 13
+top$ -- 0
+type$ -- 192
+warning$ -- 3
+while$ -- 108
+width$ -- 31
+write$ -- 372
+(There was 1 error message)

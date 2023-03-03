@@ -1,0 +1,162 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{OKMH22}
+
+\bibitem[AA81]{ascher1981code}
+Marcia Ascher and Robert Ascher.
+\newblock Code of the quipu.
+\newblock {\em Ann Arbor: University of Michigan Press}, pages 56--74, 1981.
+
+\bibitem[AAB{\etalchar{+}}19]{arute2019quantum}
+Frank Arute, Kunal Arya, Ryan Babbush, Dave Bacon, Joseph~C Bardin, Rami
+  Barends, Rupak Biswas, Sergio Boixo, Fernando~GSL Brandao, David~A Buell,
+  et~al.
+\newblock Quantum supremacy using a programmable superconducting processor.
+\newblock {\em Nature}, 574(7779):505--510, 2019.
+
+\bibitem[AS10]{altland2010condensed}
+Alexander Altland and Ben~D Simons.
+\newblock {\em Condensed matter field theory}.
+\newblock Cambridge university press, 2010.
+
+\bibitem[BK01]{bakalov2001lectures}
+Bojko Bakalov and Alexander~A Kirillov.
+\newblock {\em Lectures on tensor categories and modular functors}, volume~21.
+\newblock American Mathematical Soc., 2001.
+
+\bibitem[Day21]{day2021quipus}
+Cyrus~Lawence Day.
+\newblock {\em Quipus and Witches' Knots: The Role of the Knot in Primitive and
+  Ancient Culture, with a Translation and Analysis of" Oribasius de Laqueis"}.
+\newblock University Press of Kansas, 2021.
+
+\bibitem[DLF{\etalchar{+}}16]{debnath2016demonstration}
+Shantanu Debnath, Norbert~M Linke, Caroline Figgatt, Kevin~A Landsman, Kevin
+  Wright, and Christopher Monroe.
+\newblock Demonstration of a small programmable quantum computer with atomic
+  qubits.
+\newblock {\em Nature}, 536(7614):63--66, 2016.
+
+\bibitem[FKLW03]{freedman2003topological}
+Michael Freedman, Alexei Kitaev, Michael Larsen, and Zhenghan Wang.
+\newblock Topological quantum computation.
+\newblock {\em Bulletin of the American Mathematical Society}, 40(1):31--38,
+  2003.
+
+\bibitem[FKW02]{freedman2002simulation}
+Michael~H Freedman, Alexei Kitaev, and Zhenghan Wang.
+\newblock Simulation of topological field theories by quantum computers.
+\newblock {\em Communications in Mathematical Physics}, 227:587--603, 2002.
+
+\bibitem[FLW02]{freedman2002modular}
+Michael~H Freedman, Michael Larsen, and Zhenghan Wang.
+\newblock A modular functor which is universal for quantum computation.
+\newblock {\em Communications in Mathematical Physics}, 227:605--622, 2002.
+
+\bibitem[FMS12]{francesco2012conformal}
+Philippe Francesco, Pierre Mathieu, and David S{\'e}n{\'e}chal.
+\newblock {\em Conformal field theory}.
+\newblock Springer Science \& Business Media, 2012.
+
+\bibitem[Fra57]{frankel1957homology}
+Theodore Frankel.
+\newblock Homology and flows on manifolds.
+\newblock {\em Annals of Mathematics}, pages 331--339, 1957.
+
+\bibitem[Got98]{gottesman1998theory}
+Daniel Gottesman.
+\newblock Theory of fault-tolerant quantum computation.
+\newblock {\em Physical Review A}, 57(1):127, 1998.
+
+\bibitem[Hat05]{hatcher2005algebraic}
+Allen Hatcher.
+\newblock {\em Algebraic topology}.
+\newblock Tsinghua University Press, 2005.
+
+\bibitem[Kan98]{kane1998silicon}
+Bruce~E Kane.
+\newblock A silicon-based nuclear spin quantum computer.
+\newblock {\em nature}, 393(6681):133--137, 1998.
+
+\bibitem[Kit03]{kitaev2003fault}
+A~Yu Kitaev.
+\newblock Fault-tolerant quantum computation by anyons.
+\newblock {\em Annals of physics}, 303(1):2--30, 2003.
+
+\bibitem[KLL94]{kauffman1994temperley}
+Louis~H Kauffman, S{\'o}stenes~L Lins, and S{\'o}stenes Lins.
+\newblock {\em Temperley-Lieb recoupling theory and invariants of 3-manifolds}.
+\newblock Number 134. Princeton University Press, 1994.
+
+\bibitem[KSVV02]{kitaev2002classical}
+Alexei~Yu Kitaev, Alexander Shen, Mikhail~N Vyalyi, and Mikhail~N Vyalyi.
+\newblock {\em Classical and quantum computation}.
+\newblock Number~47. American Mathematical Soc., 2002.
+
+\bibitem[Lic99]{lickorish1999simplicial}
+William Bernard~Raymond Lickorish.
+\newblock Simplicial moves on complexes and manifolds.
+\newblock {\em Geometry and Topology Monographs}, 2(299-320):314, 1999.
+
+\bibitem[NC02]{nielsen2002quantum}
+Michael~A Nielsen and Isaac Chuang.
+\newblock Quantum computation and quantum information, 2002.
+
+\bibitem[OKMH22]{oh2022rank}
+Yun-Tak Oh, Jintae Kim, Eun-Gook Moon, and Jung~Hoon Han.
+\newblock Rank-2 toric code in two dimensions.
+\newblock {\em Physical Review B}, 105(4):045128, 2022.
+
+\bibitem[Rof19]{roffe2019quantum}
+Joschka Roffe.
+\newblock Quantum error correction: an introductory guide.
+\newblock {\em Contemporary Physics}, 60(3):226--245, 2019.
+
+\bibitem[RW18]{rowell2018mathematics}
+Eric Rowell and Zhenghan Wang.
+\newblock Mathematics of topological quantum computing.
+\newblock {\em Bulletin of the American Mathematical Society}, 55(2):183--238,
+  2018.
+
+\bibitem[Sho94]{shor1994algorithms}
+Peter~W Shor.
+\newblock Algorithms for quantum computation: discrete logarithms and
+  factoring.
+\newblock In {\em Proceedings 35th annual symposium on foundations of computer
+  science}, pages 124--134. Ieee, 1994.
+
+\bibitem[Spi18]{spivak2018calculus}
+Michael Spivak.
+\newblock {\em Calculus on manifolds: a modern approach to classical theorems
+  of advanced calculus}.
+\newblock CRC press, 2018.
+
+\bibitem[TV92]{turaev1992state}
+Vladimir~G Turaev and Oleg~Ya Viro.
+\newblock State sum invariants of 3-manifolds and quantum 6j-symbols.
+\newblock {\em Topology}, 31(4):865--902, 1992.
+
+\bibitem[Wan10]{wang2010topological}
+Zhenghan Wang.
+\newblock {\em Topological quantum computation}.
+\newblock Number 112. American Mathematical Soc., 2010.
+
+\bibitem[Wen04]{wen2004quantum}
+Xiao-Gang Wen.
+\newblock {\em Quantum field theory of many-body systems: from the origin of
+  sound to an origin of light and electrons}.
+\newblock OUP Oxford, 2004.
+
+\bibitem[Wen17]{wendin2017quantum}
+G{\"o}ran Wendin.
+\newblock Quantum information processing with superconducting circuits: a
+  review.
+\newblock {\em Reports on Progress in Physics}, 80(10):106001, 2017.
+
+\bibitem[YZB{\etalchar{+}}21]{yang2021experimental}
+Fangyuan Yang, Alexander~A Zibrov, Ruiheng Bai, Takashi Taniguchi, Kenji
+  Watanabe, Michael~P Zaletel, and Andrea~F Young.
+\newblock Experimental determination of the energy per particle in partially
+  filled landau levels.
+\newblock {\em Physical review letters}, 126(15):156802, 2021.
+
+\end{thebibliography}
