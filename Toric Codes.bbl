@@ -13,6 +13,12 @@ Frank Arute, Kunal Arya, Ryan Babbush, Dave Bacon, Joseph~C Bardin, Rami
 \newblock Quantum supremacy using a programmable superconducting processor.
 \newblock {\em Nature}, 574(7779):505--510, 2019.
 
+\bibitem[AHM{\etalchar{+}}16]{albrecht2016exponential}
+Sven~Marian Albrecht, Andrew~P Higginbotham, Morten Madsen, Ferdinand Kuemmeth,
+  Thomas~Sand Jespersen, Jesper Nyg{\aa}rd, Peter Krogstrup, and CM~Marcus.
+\newblock Exponential protection of zero modes in majorana islands.
+\newblock {\em Nature}, 531(7593):206--209, 2016.
+
 \bibitem[AS10]{altland2010condensed}
 Alexander Altland and Ben~D Simons.
 \newblock {\em Condensed matter field theory}.
@@ -96,6 +102,13 @@ Alexei~Yu Kitaev, Alexander Shen, Mikhail~N Vyalyi, and Mikhail~N Vyalyi.
 William Bernard~Raymond Lickorish.
 \newblock Simplicial moves on complexes and manifolds.
 \newblock {\em Geometry and Topology Monographs}, 2(299-320):314, 1999.
+
+\bibitem[MZF{\etalchar{+}}12]{mourik2012signatures}
+Vincent Mourik, Kun Zuo, Sergey~M Frolov, SR~Plissard, Erik~PAM Bakkers, and
+  Leo~P Kouwenhoven.
+\newblock Signatures of majorana fermions in hybrid
+  superconductor-semiconductor nanowire devices.
+\newblock {\em Science}, 336(6084):1003--1007, 2012.
 
 \bibitem[NC02]{nielsen2002quantum}
 Michael~A Nielsen and Isaac Chuang.
