@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  2 MAR 2023 18:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  2 MAR 2023 20:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -633,14 +633,10 @@ LaTeX Font Info:    Try loading font information for U+stmry on input line 42.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [1
 
-{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Reference `freedman2002simulation' on page 2 undefined on input 
-line 81.
-
-[2]
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 97.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
@@ -651,33 +647,33 @@ Overfull \hbox (4.41742pt too wide) in paragraph at lines 121--122
 t-ers [[]],
  []
 
-<./images/rope-deformations.png, id=25, 1146.2825pt x 469.25313pt>
+<./images/rope-deformations.png, id=23, 1146.2825pt x 469.25313pt>
 File: ./images/rope-deformations.png Graphic file (type png)
 <use ./images/rope-deformations.png>
 Package pdftex.def Info: ./images/rope-deformations.png  used on input line 133
 .
 (pdftex.def)             Requested size: 286.56992pt x 117.31299pt.
 [4]
-<./images/quipu.jpg, id=31, 115.8729pt x 121.1727pt>
+<./images/quipu.jpg, id=30, 115.8729pt x 121.1727pt>
 File: ./images/quipu.jpg Graphic file (type jpg)
 <use ./images/quipu.jpg>
 Package pdftex.def Info: ./images/quipu.jpg  used on input line 145.
 (pdftex.def)             Requested size: 98.49242pt x 102.99727pt.
-<./images/braiding.png, id=32, 455.7025pt x 506.39188pt>
+<./images/braiding.png, id=31, 455.7025pt x 506.39188pt>
 File: ./images/braiding.png Graphic file (type png)
 <use ./images/braiding.png>
 Package pdftex.def Info: ./images/braiding.png  used on input line 156.
 (pdftex.def)             Requested size: 113.92534pt x 126.59766pt.
  [5 <./images/rope-deformations.png> <./images/quipu.jpg>] [6 <./images/braidin
 g.png>]
-<./images/Hairy-Ball-Diagram.png, id=43, 855.195pt x 436.12938pt>
+<./images/Hairy-Ball-Diagram.png, id=42, 855.195pt x 436.12938pt>
 File: ./images/Hairy-Ball-Diagram.png Graphic file (type png)
 <use ./images/Hairy-Ball-Diagram.png>
 Package pdftex.def Info: ./images/Hairy-Ball-Diagram.png  used on input line 17
 5.
 (pdftex.def)             Requested size: 171.03596pt x 87.22432pt.
  [7 <./images/Hairy-Ball-Diagram.png>]
-<./images/torus.png, id=49, 382.42876pt x 382.42876pt>
+<./images/torus.png, id=48, 382.42876pt x 382.42876pt>
 File: ./images/torus.png Graphic file (type png)
 <use ./images/torus.png>
 Package pdftex.def Info: ./images/torus.png  used on input line 205.
@@ -775,17 +771,14 @@ Underfull \hbox (badness 1360) in paragraph at lines 156--161
 
 ) [33] (./Toric Codes.aux)
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14738 strings out of 492649
- 297171 string characters out of 6129622
+ 14737 strings out of 492649
+ 297147 string characters out of 6129622
  339626 words of memory out of 5000000
- 18287 multiletter control sequences out of 15000+600000
+ 18286 multiletter control sequences out of 15000+600000
  19526 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,17n,84p,1306b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -820,7 +813,7 @@ e1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
 /public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2018/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/texmf-dist/fon
 ts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on "Toric Codes.pdf" (33 pages, 1966862 bytes).
+Output written on "Toric Codes.pdf" (33 pages, 1966775 bytes).
 PDF statistics:
  260 PDF objects out of 1000 (max. 8388607)
  171 compressed objects within 2 object streams

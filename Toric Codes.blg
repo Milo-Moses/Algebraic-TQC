@@ -3,7 +3,11 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Toric Codes.aux
 The style file: alpha.bst
 Database file #1: ref.bib
-Repeated entry---line 194 of file ref.bib
+Repeated entry---line 195 of file ref.bib
+ : @article{freedman2002simulation
+ :                                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 205 of file ref.bib
  : @article{kitaev2003fault
  :                         ,
 I'm skipping whatever remains of this entry
@@ -51,4 +55,4 @@ warning$ -- 3
 while$ -- 108
 width$ -- 31
 write$ -- 372
-(There was 1 error message)
+(There were 2 error messages)
