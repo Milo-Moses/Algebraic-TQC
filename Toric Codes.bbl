@@ -19,10 +19,10 @@ Sven~Marian Albrecht, Andrew~P Higginbotham, Morten Madsen, Ferdinand Kuemmeth,
 \newblock Exponential protection of zero modes in majorana islands.
 \newblock {\em Nature}, 531(7593):206--209, 2016.
 
-\bibitem[AS10]{altland2010condensed}
-Alexander Altland and Ben~D Simons.
-\newblock {\em Condensed matter field theory}.
-\newblock Cambridge university press, 2010.
+\bibitem[Aub19]{aubert2019categories}
+Cl{\'e}ment Aubert.
+\newblock Categories for me, and you?
+\newblock {\em arXiv preprint arXiv:1910.05172}, 2019.
 
 \bibitem[BK01]{bakalov2001lectures}
 Bojko Bakalov and Alexander~A Kirillov.
@@ -42,6 +42,11 @@ Shantanu Debnath, Norbert~M Linke, Caroline Figgatt, Kevin~A Landsman, Kevin
   qubits.
 \newblock {\em Nature}, 536(7614):63--66, 2016.
 
+\bibitem[DW90]{dijkgraaf1990topological}
+Robbert Dijkgraaf and Edward Witten.
+\newblock Topological gauge theories and group cohomology.
+\newblock {\em Communications in Mathematical Physics}, 129:393--429, 1990.
+
 \bibitem[FKLW03]{freedman2003topological}
 Michael Freedman, Alexei Kitaev, Michael Larsen, and Zhenghan Wang.
 \newblock Topological quantum computation.
@@ -57,16 +62,6 @@ Michael~H Freedman, Alexei Kitaev, and Zhenghan Wang.
 Michael~H Freedman, Michael Larsen, and Zhenghan Wang.
 \newblock A modular functor which is universal for quantum computation.
 \newblock {\em Communications in Mathematical Physics}, 227:605--622, 2002.
-
-\bibitem[FM11]{farb2011primer}
-Benson Farb and Dan Margalit.
-\newblock {\em A primer on mapping class groups (pms-49)}, volume~41.
-\newblock Princeton university press, 2011.
-
-\bibitem[FMS12]{francesco2012conformal}
-Philippe Francesco, Pierre Mathieu, and David S{\'e}n{\'e}chal.
-\newblock {\em Conformal field theory}.
-\newblock Springer Science \& Business Media, 2012.
 
 \bibitem[Fra57]{frankel1957homology}
 Theodore Frankel.
@@ -88,20 +83,16 @@ Bruce~E Kane.
 \newblock A silicon-based nuclear spin quantum computer.
 \newblock {\em nature}, 393(6681):133--137, 1998.
 
+\bibitem[Kit97]{kitaev1997quantum}
+A~Yu Kitaev.
+\newblock Quantum error correction with imperfect gates.
+\newblock {\em Quantum communication, computing, and measurement}, pages
+  181--188, 1997.
+
 \bibitem[Kit03]{kitaev2003fault}
 A~Yu Kitaev.
 \newblock Fault-tolerant quantum computation by anyons.
 \newblock {\em Annals of physics}, 303(1):2--30, 2003.
-
-\bibitem[KLL94]{kauffman1994temperley}
-Louis~H Kauffman, S{\'o}stenes~L Lins, and S{\'o}stenes Lins.
-\newblock {\em Temperley-Lieb recoupling theory and invariants of 3-manifolds}.
-\newblock Number 134. Princeton University Press, 1994.
-
-\bibitem[KSVV02]{kitaev2002classical}
-Alexei~Yu Kitaev, Alexander Shen, Mikhail~N Vyalyi, and Mikhail~N Vyalyi.
-\newblock {\em Classical and quantum computation}.
-\newblock Number~47. American Mathematical Soc., 2002.
 
 \bibitem[Lic99]{lickorish1999simplicial}
 William Bernard~Raymond Lickorish.
@@ -115,14 +106,27 @@ Vincent Mourik, Kun Zuo, Sergey~M Frolov, SR~Plissard, Erik~PAM Bakkers, and
   superconductor-semiconductor nanowire devices.
 \newblock {\em Science}, 336(6084):1003--1007, 2012.
 
-\bibitem[NC02]{nielsen2002quantum}
-Michael~A Nielsen and Isaac Chuang.
-\newblock Quantum computation and quantum information, 2002.
+\bibitem[NSS{\etalchar{+}}08]{nayak2008non}
+Chetan Nayak, Steven~H Simon, Ady Stern, Michael Freedman, and Sankar~Das
+  Sarma.
+\newblock Non-abelian anyons and topological quantum computation.
+\newblock {\em Reviews of Modern Physics}, 80(3):1083, 2008.
 
 \bibitem[OKMH22]{oh2022rank}
 Yun-Tak Oh, Jintae Kim, Eun-Gook Moon, and Jung~Hoon Han.
 \newblock Rank-2 toric code in two dimensions.
 \newblock {\em Physical Review B}, 105(4):045128, 2022.
+
+\bibitem[Pre99]{preskill1999lecture}
+John Preskill.
+\newblock Lecture notes for physics 219: Quantum computation.
+\newblock {\em Caltech Lecture Notes}, page~7, 1999.
+
+\bibitem[QW21]{qiu2021representations}
+Yang Qiu and Zhenghan Wang.
+\newblock Representations of motion groups of links via dimension reduction of
+  tqfts.
+\newblock {\em Communications in Mathematical Physics}, 382:2071--2100, 2021.
 
 \bibitem[Rof19]{roffe2019quantum}
 Joschka Roffe.
@@ -148,21 +152,10 @@ Michael Spivak.
   of advanced calculus}.
 \newblock CRC press, 2018.
 
-\bibitem[TV92]{turaev1992state}
-Vladimir~G Turaev and Oleg~Ya Viro.
-\newblock State sum invariants of 3-manifolds and quantum 6j-symbols.
-\newblock {\em Topology}, 31(4):865--902, 1992.
-
 \bibitem[Wan10]{wang2010topological}
 Zhenghan Wang.
 \newblock {\em Topological quantum computation}.
 \newblock Number 112. American Mathematical Soc., 2010.
-
-\bibitem[Wen04]{wen2004quantum}
-Xiao-Gang Wen.
-\newblock {\em Quantum field theory of many-body systems: from the origin of
-  sound to an origin of light and electrons}.
-\newblock OUP Oxford, 2004.
 
 \bibitem[Wen17]{wendin2017quantum}
 G{\"o}ran Wendin.
