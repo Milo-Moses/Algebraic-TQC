@@ -99,6 +99,11 @@ William Bernard~Raymond Lickorish.
 \newblock Simplicial moves on complexes and manifolds.
 \newblock {\em Geometry and Topology Monographs}, 2(299-320):314, 1999.
 
+\bibitem[LW05]{levin2005string}
+Michael~A Levin and Xiao-Gang Wen.
+\newblock String-net condensation: A physical mechanism for topological phases.
+\newblock {\em Physical Review B}, 71(4):045110, 2005.
+
 \bibitem[MZF{\etalchar{+}}12]{mourik2012signatures}
 Vincent Mourik, Kun Zuo, Sergey~M Frolov, SR~Plissard, Erik~PAM Bakkers, and
   Leo~P Kouwenhoven.
@@ -116,6 +121,11 @@ Chetan Nayak, Steven~H Simon, Ady Stern, Michael Freedman, and Sankar~Das
 Yun-Tak Oh, Jintae Kim, Eun-Gook Moon, and Jung~Hoon Han.
 \newblock Rank-2 toric code in two dimensions.
 \newblock {\em Physical Review B}, 105(4):045128, 2022.
+
+\bibitem[Pac91]{pachner1991pl}
+Udo Pachner.
+\newblock Pl homeomorphic manifolds are equivalent by elementary shellings.
+\newblock {\em European journal of Combinatorics}, 12(2):129--145, 1991.
 
 \bibitem[Pre99]{preskill1999lecture}
 John Preskill.

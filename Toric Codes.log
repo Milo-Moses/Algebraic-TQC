@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  7 MAR 2023 09:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  10 MAR 2023 16:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -738,15 +738,21 @@ File: ./images/klein-bottle.png Graphic file (type png)
 <use ./images/klein-bottle.png>
 Package pdftex.def Info: ./images/klein-bottle.png  used on input line 590.
 (pdftex.def)             Requested size: 87.8279pt x 65.74545pt.
- [22 <./images/genus-two.jpeg> <./images/klein-bottle.png>] [23]
-<./images/cobordism.png, id=125, 588.1975pt x 273.02pt>
+ [22 <./images/genus-two.jpeg> <./images/klein-bottle.png>]
+<./images/cobordism.png, id=122, 588.1975pt x 273.02pt>
 File: ./images/cobordism.png Graphic file (type png)
 <use ./images/cobordism.png>
 Package pdftex.def Info: ./images/cobordism.png  used on input line 638.
 (pdftex.def)             Requested size: 235.27483pt x 109.20605pt.
-
-[24 <./images/cobordism.png>] [25] [26]
-Overfull \hbox (5.54213pt too wide) in paragraph at lines 708--709
+ [23]
+[24 <./images/cobordism.png>] [25]
+<./images/all-moves.png, id=134, 1209.51875pt x 750.805pt>
+File: ./images/all-moves.png Graphic file (type png)
+<use ./images/all-moves.png>
+Package pdftex.def Info: ./images/all-moves.png  used on input line 682.
+(pdftex.def)             Requested size: 241.89946pt x 150.15834pt.
+ [26] [27 <./images/all-moves.png>]
+Overfull \hbox (5.54213pt too wide) in paragraph at lines 721--722
 \OT1/cmr/m/n/10 spond-ing vec-tor in $\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 (\OML/c
 mm/m/it/10 S\OT1/cmr/m/n/10 )$, $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 Z[]\OT1/cmr
 /m/n/10 (\OML/cmm/m/it/10 S\OT1/cmr/m/n/10 ; \U/msb/m/n/10 Z[]\OT1/cmr/m/n/10 )
@@ -755,35 +761,44 @@ mm/m/it/10 S\OT1/cmr/m/n/10 )$, $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 Z[]\OT1/cmr
 /10 Z[]\OT1/cmr/m/n/10 )$,
  []
 
-[27]
-<./images/moves.png, id=141, 1033.8625pt x 474.77374pt>
-File: ./images/moves.png Graphic file (type png)
-<use ./images/moves.png>
-Package pdftex.def Info: ./images/moves.png  used on input line 731.
-(pdftex.def)             Requested size: 155.07268pt x 71.21298pt.
- [28] [29 <./images/moves.png>] [30] [31]
-Underfull \hbox (badness 10000) in paragraph at lines 813--814
+[28] [29] [30]
+<./images/cohomologous.png, id=152, 832.10875pt x 300.12125pt>
+File: ./images/cohomologous.png Graphic file (type png)
+<use ./images/cohomologous.png>
+Package pdftex.def Info: ./images/cohomologous.png  used on input line 789.
+(pdftex.def)             Requested size: 249.63455pt x 90.03706pt.
+ [31 <./images/cohomologous.png>]
+Overfull \hbox (13.9935pt too wide) in paragraph at lines 835--836
+[]\OT1/cmr/m/n/10 The bor-dism $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 has the ef-
+fect of swap-ping $\OML/cmm/m/it/10 S[]$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 
+S[]$\OT1/cmr/m/n/10 , hence sends $\OML/cmm/m/it/10 H[]\OT1/cmr/m/n/10 (\OML/cm
+m/m/it/10 S[]\OT1/cmr/m/n/10 ; \U/msb/m/n/10 Z[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n
+/10 ^^B
+ []
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 845--846
 
  []
 
-[32] [33] [34] (./Toric Codes.bbl [35] [36]
-Underfull \hbox (badness 1360) in paragraph at lines 167--172
+[33] [34] [35] [36] (./Toric Codes.bbl [37] [38]
+Underfull \hbox (badness 1360) in paragraph at lines 177--182
 []\OT1/cmr/m/n/10 Fangyuan Yang, Alexan-der A Zi-brov, Rui-heng Bai, Takashi
  []
 
-[37]) [38] (./Toric Codes.aux)
+) [39] (./Toric Codes.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14754 strings out of 492649
- 297466 string characters out of 6129622
- 341795 words of memory out of 5000000
- 18303 multiletter control sequences out of 15000+600000
+ 14768 strings out of 492649
+ 297797 string characters out of 6129622
+ 340865 words of memory out of 5000000
+ 18316 multiletter control sequences out of 15000+600000
  19526 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,17n,84p,1306b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,17n,84p,1328b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></
@@ -814,10 +829,10 @@ ype1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2018/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/texmf-dist/f
 onts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on "Toric Codes.pdf" (38 pages, 1981999 bytes).
+Output written on "Toric Codes.pdf" (39 pages, 2439410 bytes).
 PDF statistics:
- 274 PDF objects out of 1000 (max. 8388607)
- 181 compressed objects within 2 object streams
+ 279 PDF objects out of 1000 (max. 8388607)
+ 183 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 78 words of extra memory for PDF output out of 10000 (max. 10000000)
 

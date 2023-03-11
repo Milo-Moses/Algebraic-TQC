@@ -1,7 +1,7 @@
 \documentclass{article}
 
 \usepackage[utf8]{inputenc}
-\usepackage{enumerate} 
+\usepackage{enumerate}
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -12,7 +12,7 @@
 \usepackage{mathtools}
 \usepackage{stmaryrd}
 \usepackage{tikz-cd}
- \usepackage{relsize}
+\usepackage{relsize}
 
 
 \newtheorem{theorem}{Theorem}[section]
@@ -78,14 +78,14 @@ One of the most promising forms of quantum computation proposed today is Topolog
 
 Quantum computing has seen massive advances over the last 30 years — prompted in large part by Peter Shor's discovery of an efficient quantum factoring algorithm \cite{shor1994algorithms} — and gained notoriety as an emerging technology and area of insight. However, as of yet, nobody has made a usable quantum computer. Precisely controlling this microscopic world has proved quite challenging in large part due to thermal fluctuations of the outside world which cause quantum states to degenerate and scramble. Thus, the current state of quantum computing has been dubbed the ``NISQ era:" The noisy intermediate-scale quantum era.
 
-Moving past this era will require some major insights and discoveries, and perhaps an entirely new model of quantum computation. One of the moew recent such models is Topological Quantum Computation (TQC), proposed in a 2008 paper of Freedman-Kitaev-Larsen-Wang. The foremost team working on TQC is Microsoft Station Q, based in Santa Barbara, California. While this team has not been able to reliably perform computations with even a single qubit, they have made significant progress on the underlying theoretic physics since 2008.
+Moving past this era will require some major insights and discoveries, and perhaps an entirely new model of quantum computation. One of the moew recent such models is Topological Quantum Computation (TQC), proposed in a 2008 paper of Freedman-Kitaev-Larsen-Wang. The foremost team working on TQC is Microsoft Station Q, based in Santa Barbara, California. While this team has not been able to reliably perform computations with even a single qubit, they have made significant progress on the underlying theoretical physics since 2008.
 
 There are already a few good surveys of TQC. The relevant mathematics is described in \cite{bakalov2001lectures} and  \cite{rowell2018mathematics}. Physics oriented people will more out of \cite{preskill1999lecture} and \cite{nayak2008non}. Z. Wang's book \cite{wang2010topological} gives a relatively complete picture of the subject. The research article by M. Freedman et al. \cite{freedman2002simulation} gives a good introduction as well. While certainly important references, they all expect the reader to have advanced knowledge of Quantum Mechanics, Algebraic Geometry, and Category Theory. This text serves as a much more elementary entry point into this vast and intricate field.
 
 To remain as accessible as possible, we restrict ourselves to the simplest example of TQC: The toric code. This special case is used as motivation for the general theory. Key concepts for the general picture are left undefined, for even simply stating the main results of general TQC would be too cumbersome, and lead us too far astray. In the words of Alexei Kitaev, the inventor of the Toric Code:
 
 \begin{quote}
-``Throughout my career I have been sucessful inventing toy models, some simple models that capture important features of a more complex problem." - Alexei Kitaev
+``Throughout my career I have been successful inventing toy models, some simple models that capture important features of a more complex problem." - Alexei Kitaev
 \end{quote}
 
 This manuscript is based on lecture notes from a course on TQC taught by Zhenghan Wang, in the winter of 2023 at UC Santa Barbara. The author expresses his sincerest gratitude to Zhenghan Wang and the other students of the class, without whom this manuscript would not have been possible.
@@ -106,7 +106,7 @@ The structure of the manuscript is as follows:
 
 \item Section \ref{TQFTs} gives an introduction to Topological Quantum Field Theories (TQFTs), the formal mathematical abstractions of topological quantum phases of matter. Subsection \ref{The general picture} gives an overview of the subject. Subsection \ref{DW TQFT} defines the $\ZZ_2$ Dijkgraaf-Witten theory, the TQFT associated with the toric code.
 
-\item Section \ref{Modular Tensor Categories} gives an introduction to Modular Tensor Categories (MTCs), the compressed mathematical abstraction of topological quantum phases of matter. Subsection \ref{Anyon model} gives an overview of the subject, and the equivilance between MTCs and TQFTs. Subsection \ref{Category viewpoint} gives the more elegant interpretation of MTCs in the language of categories. For those unfamiliar with the subject of Category Theory, a brief introduction is contained in Appendix \ref{Categories}. Subsection \ref{VecZ2 MTC} defines the $\mathcal{Z}(\Vecc_{\ZZ_2})$ MTC, which is the MTC associated with the toric code.
+\item Section \ref{Modular Tensor Categories} gives an introduction to Modular Tensor Categories (MTCs), the compressed mathematical abstraction of topological quantum phases of matter. Subsection \ref{Anyon model} gives an overview of the subject, and the equivalence between MTCs and TQFTs. Subsection \ref{Category viewpoint} gives the more elegant interpretation of MTCs in the language of categories. For those unfamiliar with the subject of Category Theory, a brief introduction is contained in Appendix \ref{Categories}. Subsection \ref{VecZ2 MTC} defines the $\mathcal{Z}(\Vecc_{\ZZ_2})$ MTC, which is the MTC associated with the toric code.
 
 \item Section \ref{The Big Picture} gives a big-picture summary of TQC, using the mathematics developed in the previous sections.
 
@@ -135,7 +135,7 @@ In a a sequence of seminal works by Freedman, Kitaev, Larsen, and Wang, it was s
 
 If all forms of quantum computation are roughly equivalent it is reasonable to ask why one would consider TQC to be more promising than other models. This is an especially relevant question seeing as Google's superconducting quantum computer can harness 53 qubits and has demonstrated quantum superiority, while Microsoft's TQC has not been able to reliably harness a single qubit \cite{arute2019quantum}.
 
-The intuition is as follows. The $\#$1 challenge in quantum computation is error correction. While fault tolerant quantum computers (quantum computers that fix errors faster than they arise) can probably exist, the error rate must be un-realistically low \cite{gottesman1998theory}. \textit{Topology} is the mathematical study of those properties of geometric objects that are invariant under small perturbations. The key insight of TQC is that instead of storing quantum information in the states of individual particles, the information can be stored in topological invariants of geometric objects. As such, even when physical errors happen (e.g. the geometric object is perturbed) the information stored in the qubits remains the same. More than being error correcting, TQC is naturally error resistant!
+The intuition is as follows. The $\#$1 challenge in quantum computation is error correction. While fault tolerant quantum computers (quantum computers that fix errors faster than they arise) can probably exist, the error rate must be unrealistically low \cite{gottesman1998theory}. \textit{Topology} is the mathematical study of those properties of geometric objects that are invariant under small perturbations. The key insight of TQC is that instead of storing quantum information in the states of individual particles, the information can be stored in topological invariants of geometric objects. As such, even when physical errors happen (e.g. the geometric object is perturbed) the information stored in the qubits remains the same. More than being error correcting, TQC is naturally error resistant!
 
 As a thought experiment to reinforce this idea, suppose that Alice and Bob are placed across the country, and are given only a string to communicate. By ``string" we really mean string: This is some physical piece of twine or rope. They can ship this string via train, and through this process there will undoubtedly be errors (e.g. the string will get pushed around during the voyage). How can Alice and Bob effectively communicate, while being relatively confident there are no errors?
 
@@ -199,7 +199,7 @@ Before moving on to an in-depth treatment of the toric code, we offer a general 
 
 Here, \textit{ground state} refers to a state in the system with lowest possible energy. Note that in the previous description of spin liquids, all electrons having the same spin is a result of them being in the lowest energy state. An ``excited" electron with deviant spin will raise the energy of the system. In this way, quasiparticles can be interpreted as excitations of the topological quantum material. This motivates the fact that (topological) quantum computers must be exceptionally cold to function: Any extra energy will correspond to extra excitations, causing the computer to malfunction, since information is only stored in ground states.
 
-The possibilities for topological quantum materials and TQC are extremely exciting, and we are eager to see where the field will go in the coming years. [WORK: Maybe add something about the number of Nobel prizes associated with the area? Jones also got his fields medal for this stuff, and maybe others. Witten?]
+The possibilities for topological quantum materials and TQC are extremely exciting, and we are eager to see where the field will go in the coming years.
 
 \section{The Toric Code}
 \label{The Toric Code}
@@ -513,7 +513,7 @@ $$\sigma_X=M\sigma_ZM^{-1},\,\, \sigma_{Z}=M\sigma_X M^{-1},$$
 show that $H$ and $H'$ are similar, in the sense that $H'=MHM^{-1}$. Use this to conclude that all basis independent properties of the toric code are formally symmetric by replacing $X$ with $Z$. In particular, the codespace (lowest eigenspace) of $H'$ is 4 dimensional, and the gate group of $H'$.
 
 
-\item Show that eigenvectors of the Hamiltonian are equally likely to give $0$ or $1$ when measured at every qubit. This implies that the eigenvectors of the Hamiltonian are \textit{maximally entangled}, which is a more general phenominon in TQC. (HINT: Prove this for ground states first, then lift to general eigenstates using an induction argument along the lines of the proof of Proposition \ref{eigenspaces})
+\item Show that eigenvectors of the Hamiltonian are equally likely to give $0$ or $1$ when measured at every qubit. This implies that the eigenvectors of the Hamiltonian are \textit{maximally entangled}, which is a more general phenomenon in TQC. (HINT: Prove this for ground states first, then lift to general eigenstates using an induction argument along the lines of the proof of Proposition \ref{eigenspaces})
 
 \item Let $\Ncal_{n}$ denote the vector space associated to the $n$ by $n$ grid on the torus. Let
 
@@ -536,7 +536,7 @@ and define $\tilde{H}_{\infty}$ to be the operator on $\Ncal_{\infty}$ which act
 \subsection{The general picture}
 \label{The general picture}
 
-Topological Quantum Computation (TQC) is physically based on topological quantum phases of matter. Topological Quantum Field Theories are the mathematical formalism of topological quantum phases of matter. Namely, every topological quantum phase of matter (physical object) has an associated Topolgoical Quantum Field Theory (mathematical object) to describe it. To make this clearer, we recall classical phases of matter in a more mathematically rigorous way. Namely, a phase of matter is an assignment
+Topological Quantum Computation (TQC) is physically based on topological quantum phases of matter. Topological Quantum Field Theories are the mathematical formalism of topological quantum phases of matter. Namely, every topological quantum phase of matter (physical object) has an associated Topological Quantum Field Theory (mathematical object) to describe it. To make this clearer, we recall classical phases of matter in a more mathematical way. Namely, a phase of matter is an assignment
 
 $$
 \begin{pmatrix}
@@ -549,7 +549,7 @@ $$
 \end{pmatrix},
 $$
 
-taking a set of particles to the way it would behave under the phase of matter. The ``gas" phase of matter will take a collection of particles and make the physical system of having them all bounce around each other really fast. The ``solid" phase of matter will take that same collection of particles and have them move less freely, and form a more cystalline structure. A quantum phase of matter should do the exact same thing, but now your physical system is a quantum system. Namely, a quantum phase of matter is an assignment
+taking a set of particles to the way it would behave under the phase of matter. The ``gas" phase of matter will take a collection of particles and make the physical system of having them all bounce around each other really fast. The ``solid" phase of matter will take that same collection of particles and have them move less freely, forming a more crystalline structure. A quantum phase of matter should do the exact same thing, but now your physical system is replaced by a quantum system. Namely, a quantum phase of matter is an assignment
 
 $$
 \begin{pmatrix}
@@ -562,7 +562,7 @@ $$
 \end{pmatrix}.
 $$
 
-Topological quantum phases of matter arrise from the understanding that the topology of a shape (i.e. the physical invariants of the shape invariant up to deformation) will effect the quantum system arrising from inducing that shape with a given phase of matter. For example, we consider the ``$\ZZ_2$ spin liquid" topological quantum phase of matter, described in the introduction. When this phase of matter is induced a torus, the resulting quantum system will always be four dimensional (Proposition \ref{eigenspaces}). If the $\ZZ_2$ spin liquid is induced on the torus with two holes (see Figure \ref{fig:genus-two}), the ground space will instead be sixteen dimensional. Thus, a topological quantum phase of matter is an assignment
+Topological quantum phases of matter arise from the understanding that the topology of a shape (i.e. the physical invariants of the shape invariant under deformation) will affect the quantum system arising from inducing that shape with a given phase of matter. For example, consider the ``$\ZZ_2$ spin liquid" topological quantum phase of matter described in the introduction. When this phase of matter is induced by a torus, the resulting quantum system will be the four dimensional codespace of the toric code (Proposition \ref{eigenspaces}). If the $\ZZ_2$ spin liquid is induced on the torus with two holes (see Figure \ref{fig:genus-two}), the ground space will instead be sixteen dimensional. Thus, a topological quantum phase of matter is an assignment
 
 \begin{figure}
 \begin{center}
@@ -583,7 +583,7 @@ $$
 \end{pmatrix}.
 $$
 
-All of the interesting quantum systems are on two dimensional spaces. This can be seen as follows. TQC is performed by braiding quasiparticles through spacetime. When space is two dimensional, spacetime is three dimensional. When space is three dimensional, spacetime is four dimensional. It is a theorem that there are no knots in four dimensions: The extra dimension gives the knot room to move around and untangle. Thus, to have nontrivial knots, space must be two dimensional. A two dimensional space is called a \textit{surface}. The surfaces we are interested in are those two dimensional spaces which can be embedded into three dimensional space, i.e., those surfaces which can be realized physically in our three dimensional world. Note that there are some weird surfaces which can not be embedded into three dimensional space, such as the Klein bottle (shown in Figure  \ref{fig:klein-bottle}). While the `true' surface does not intersect itself, any way of placing it in three dimensions will self intersect. One needs an extra dimension to avoid this intersection.
+All of the interesting quantum systems are in two dimensional spaces. This can be seen as follows. TQC is performed by braiding quasiparticles through spacetime. When space is two dimensional, spacetime is three dimensional. When space is three dimensional, spacetime is four dimensional. It is a theorem that there are no knots in four dimensions: The extra dimension gives the knot room to move around and untangle. Thus, to have nontrivial knots, space must be two dimensional. A two dimensional space is called a \textit{surface}. The surfaces we are interested in are those two dimensional spaces which can be embedded into three dimensional space, i.e., those surfaces which can be realized physically in our three dimensional world. Note that there are some weird surfaces which can not be embedded into three dimensional space, such as the Klein bottle (shown in Figure  \ref{fig:klein-bottle}). While the `true' surface does not intersect itself, any way of placing it in three dimensions will self intersect. One needs an extra dimension to avoid this intersection.
 
 \begin{figure}
 \begin{center}
@@ -600,7 +600,7 @@ This condition on embeddability into three dimensional space makes our study of 
 \begin{enumerate}
 \item Is finite in area (for example, an infinitely stretched flat plane would not count)
 \item Has no boundary (for example, a unit disk would not count, since its boundary is the circle)
-\item  Can be embedded intro three dimensional space.
+\item  Can be embedded into three dimensional space.
 \end{enumerate}
 
 Then, this surface must be a collection of $g$-holed torii, for some integers $g\geq 0$.
@@ -619,19 +619,19 @@ $$
 \end{pmatrix}.
 $$
 
-Concretely, we refer to the $g$-holed torus as $T_g$. Mathematically, a quantum system is complex vector space. Hence, a topological quantum phase of matter is an assignment
+Mathematically, a quantum system is a complex vector space. Hence, a topological quantum phase of matter is an assignment
 
-$$S \,\mathlarger{\leadsto}\,V(S)$$
+$$S \,\mathlarger{\leadsto}\,V(S),$$
 
-for each surface $S$, where $V(S)$ is a finite dimensional vector space over the complex numbers. This mathematical formalism is known as Topological Quantum Field Theory. Namely, the assignment $S \,\mathlarger{\leadsto}\,V(S)$, \textit{is} a Topological Quantum Field Theory. To ease terminology, we will from now on use the abbreviation TQFT.
+where $S$ is a surface and $V(S)$ is a finite dimensional vector space over the complex numbers. This mathematical formalism is known as Topological Quantum Field Theory. Namely, the assignment $S \,\mathlarger{\leadsto}\,V(S)$ \textit{is} a Topological Quantum Field Theory. To ease terminology, we will from now on use the acronym TQFT.
 
-Not every assignment of surfaces to vector spaces will be a TQFT. Namely, many will be `un physical', meaning that they never could have come from topological phases of matter. For example, the axioms of quantum mechanics say that putting two quantum systems together should correspond to the tensor product of those two systems. Formally, we should have
+Not every assignment of surfaces to vector spaces will be a TQFT. Namely, many will be `un physical', meaning that they never could have come from topological phases of matter. For example, the axioms of quantum mechanics say that putting two quantum systems together should correspond to the tensor product of those systems. Formally, we should have
 
-$$V\left(S_0\sqcup S_1\right)=S_0\otimes S_1.$$
+$$V\left(S_0\sqcup S_1\right)=V(S_0)\otimes V(S_1).$$
 
 Here, $\sqcup$ denotes the disjoint union. The disjoint union is the same as a union, but it specifies that the union should be taken in a way such that $S_0$ and $S_1$ do not intersect (i.e. that they are disjoint). The disjoint union can be intuitively read as simply putting two spaces next to each other.
 
-Additionally, by the axioms of quantum mechanics, transformations of a surface through spacetime should correspond to linear (unitary!) maps on quantum systems. We think mathematically about what a trajectory through spacetime looks like. In the one dimensional case, suppose we have two particles $a$ and $b$. A trajectory through spacetime from $a$ to $b$ is a path $e$ connecting $a$ and $b$. Thinking deeply, one observes that the condition of ``connecting" $a$ and $b$ can be mathematically stated as $\partial e= a \sqcup b$, where $\partial e$ denotes the boundary of $e$. This is shown in Figure \ref{fig:bordism}.
+Additionally, by the axioms of quantum mechanics, transformations of a surface through spacetime should correspond to linear maps on quantum systems. We think mathematically about what a trajectory through spacetime looks like. In the one dimensional case, suppose we have two particles $a$ and $b$. A trajectory through spacetime from $a$ to $b$ is a path $e$ connecting $a$ and $b$. Thinking deeply, one observes that the condition of ``connecting" $a$ and $b$ can be mathematically stated as $\partial e= a \sqcup b$, where $\partial e$ denotes the boundary of $e$. This is shown in Figure \ref{fig:bordism}.
 
 \begin{figure}
 \begin{center}
@@ -641,50 +641,63 @@ Additionally, by the axioms of quantum mechanics, transformations of a surface t
 \end{center}
 \end{figure}
 
-We observe however an ambiguity: Time has direction, but our edge does not. Hence, it is impossible to distinguish a path from $a$ to $b$ and a path from $b$ to $a$. For this reason we have to introduce the concept of \textit{orientation}. An oriented path is a path with a choice of direction. This can be visualized by putting a consistent set of arrows on the path. The points that the edge is going away from correspond to the particles at the beginning of some process, and the points at the end correspond to the particles at the end of that process. Note that the paths can join and split, as seen in the second box of Figure  \ref{fig:bordism}. This corresponds to the fusion and anihilation of particles. Given two circles,
+We observe however an ambiguity: Time has direction, but our edge a-priori does not. Hence, it is impossible to distinguish a path from $a$ to $b$ and a path from $b$ to $a$. For this reason we have to introduce the concept of \textit{orientation}. An oriented path is a path with a choice of direction. This can be visualized by putting a consistent set of arrows on the path. The points at the back end of the arrow correspond to the particles at the start of the process, and the points at the front end of the arrow correspond to the particles at the end of the process. Note that the paths can join and split, as seen in the second box of Figure  \ref{fig:bordism}. This corresponds to the fusion and annihilation of particles.
 
-We now try to generalize this picture to the case of surfaces. Remember, our goal is to mathematically describe a trajectory of surfaces through spacetime, which will be key to our theory since these will correspond to linear transofrmations on the quantum system. The key insight is as follows. Given two sets of $A$ and $B$ (still representing particles), we saw a trajectory through spacetime was a path $E$ such that $\partial E=A\sqcup B$. Let $A$ and $B$ be two circles, or unions of circles, a trajectory through spacetime is a surface (with boundary, namely, not neccecary a torus) $E$ such that $\partial E = A\sqcup B$, just as in the third box of \ref{fig:bordism}. Given two surfaces $S_0$ and $S_1$ (with no boundary, as usual), a trajectory through spacetime should be a three dimensional object $X$ whose boundary is $\partial X= S_0\sqcup S_1$.
+Working one dimension higher, we can imagine the trajectory of circles of particles - loops - through spacetime. The merging of two circles will look exactly like it did before, except that now instead of tracing a path through spacetime it will trace a surface with boundary. The boundary components correspond exactly to the particles at the start and end of the process, as seen in the third box of Figure \ref{fig:bordism}.
 
-Defining what we mean exactly by three dimensional object is very technical. Namely, these objects should be $3$-manifolds, in the same way that a surface is a $2$-manifold, a path is a $1$-manifold, and a set of points is a $0$-manifold. An introduction to the theory of manifolds can be found in Spivak's textbook \cite{spivak2018calculus}. We leave the notion vague. One can think of three manifolds as being filled in shapes. For instance, the torus is a surface ($2$-manifold), but the filled in solid torus is a $3$-manifold. Let $X$ be the solid torus with a smaller torus removed from inside it. Then the boundary $\partial X$ will be equal to the disjoint union of the outside torus and the smaller inside torus. We can see that $X$ forms a trajectory through spacetime, as the bigger torus contracts onto the smaller one. Again, though there is an ambiguity. How do we know that $X$ is a contraction big to small? Instead, it could have been an expansion small to big. To fix this issue, we will again have to speak of oriented $3$-manifolds. This gives every region on the $3$-manifold a direction: Imagine a series of areas inside of $X$ all pointing outside from the direction of the small inside torus toward the direction of the larger outside torus.
+We now try to generalize this picture to the case of surfaces. Remember, our goal is to mathematically describe a trajectory of surfaces through spacetime, which will be key to our theory since these will correspond to linear transformations on quantum systems. The key insight is as follows. Given two sets of $A$ and $B$ (still representing particles), we saw a trajectory through spacetime was a path $E$ such that $\partial E=A\sqcup B$. Given two collections of circles $A$ and $B$, we saw a trajectory through spacetime was a surface $E$ such that $\partial E=A\sqcup B$. Given two surfaces $S_0$ and $S_1$ (with no boundary, as usual), a trajectory through spacetime should be a three dimensional object $X$ whose boundary is $\partial X= S_0\sqcup S_1$.
 
-We introduce a piece of notation. When $\partial X = S_0 \sqcup S_1$ is the disjoint union of two surfaces, one of those surfaces (say, $S_0$) will always be the stuff going in, and one of those surfaces (say, $S_1$) will always be the stuff going on. We put this in the notation as $\partial X = (-S_0)\sqcup S_1$, to make inputs/outputs clearer. This mathematical formalism of a trajectory through spacetime is called a \textit{bordism}\footnote{Sometimes called a cobordism; the difference is immaterial.}. Namely, a bordism from a surface $S_0$ to a surface $S_1$ is a $3$-manifold $X$ such that $\partial X = (-S_0)\sqcup S_1$. With this out of the way, we can formally define a TQFT:
+Defining what we mean exactly by three dimensional object is very technical. Namely, these objects should be $3$-manifolds, in the same way that a surface is a $2$-manifold, a path is a $1$-manifold, and a set of points is a $0$-manifold. An introduction to the theory of manifolds can be found in Spivak's textbook \cite{spivak2018calculus}. We leave the notion vague. One can think of 3-manifolds as being filled in surfaces. For instance, the torus is a surface ($2$-manifold), but the filled in solid torus is a $3$-manifold. Let $X$ be the solid torus with a smaller solid torus removed from inside it. Then the boundary $\partial X$ will be equal to the disjoint union of the outside torus and the smaller inside torus. We can see that $X$ forms a trajectory through spacetime, as the bigger torus contracts onto the smaller one. There is still one ambiguity. How do we know that $X$ is a contraction big to small? Instead, it could have been an expansion small to big. To fix this issue we will again have to speak of oriented $3$-manifolds. Oriented manifolds are (loosely) manifolds with a coherent system of arrows giving direction at every point. For example, a series of arrows in $X$ all pointing from the big outside torus toward the smaller inside torus is an orientation.
+
+We introduce a piece of notation. When $\partial X = S_0 \sqcup S_1$ is the disjoint union of two surfaces, one of those surfaces (say, $S_0$) will always be the stuff going in, and one of those surfaces (say, $S_1$) will always be the stuff going out. We call this a \textit{bordism}\footnote{Sometimes called a cobordism; the difference is immaterial.} from $S_0$ to $S_1$. Namely, a bordism from a surface $S_0$ to a surface $S_1$ is an oriented $3$-manifold $X$ such that $\partial X = S_0\sqcup S_1$, where all of the arrows in the orientation of $X$ are pointing away from $S_0$ and towards $S_1$ . With this out of the way, we can formally define a TQFT:
 
 \begin{definition}[$(2+1)$-TQFT] A $(2+1)$ Topological Quantum Field Theory (TQFT) is the following data.
 \begin{enumerate}
 \item A choice of finite dimensional complex vector space $V(S)$ for every surface $S$.
 \item A choice of linear transformation $Z(X): S_0\xrightarrow{} S_1$ for every bordism $X$ from $S_0$ to $S_1$.
 \end{enumerate}
-Additionally, a $(2+1)$-TQFT is required to satisfy the following compatibility properties:
+Additionally, a $(2+1)$-TQFT is required to satisfy the following properties:
 \begin{enumerate}
 
 \item (Union = tensor product). $V(S_0\sqcup S_1)=V(S_0)\otimes V(S_1)$. Here, $S_0$ and $S_1$ are any two surfaces.
 
-\item (Do nothing = identity) $Z(S\times [0,1])=\text{id}_{V(S)}$. Here, $S\times [0,1]$ is the Cartesian product of $S$ with the interval, treated as a bordism from $S$ to itself.
+\item (Do nothing = identity) $Z(S\times [0,1])=\text{id}_{V(S)}$. Here, $S\times [0,1]$ is the Cartesian product of $S$ with the interval, treated as a bordism from $S$ to itself. Concretely $\partial (S\times [0,1])=S\times\{0\}\sqcup S\times\{1\}$, and we identify $S\times \{0\}$ and $S\times\{1\}$ both with $S$.
 
-\item (Composing bordisms = composing maps). $Z(X_1\cup X_0)=Z(X_1)\circ Z(X_0)$. Here, $X_0$ is a bordism from two surfaces $S_0$ and $S_1$, and $X_1$ is a bordism from surfaces $S_1$ to $S_2$. One easily verifies that their union is a bordism between $S_0$ and $S_2$, whose induced map we can compare with the composition of the induced maps of $X_0$ and $X_1$.
-
+\item (Composing bordisms = composing maps). $Z(X_1\cup X_0)=Z(X_1)\circ Z(X_0)$. Here, $X_0$ is a bordism from two surfaces $S_0$ and $S_1$ and $X_1$ is a bordism from surfaces $S_1$ to $S_2$. One easily verifies that their union $X_1\cup X_0$ is a bordism between $S_0$ and $S_2$, whose induced map we can compare with the composition of the induced maps of $X_0$ and $X_1$.
 
 \item (Swap spaces = swap tensor factors) $Z(X)(v_0\otimes v_1)=v_1\otimes v_0$ for all $v_0\in V(S_0)$, $v_1\in V(S_1)$. Here, $X$ is the bordism from $S_0\sqcup S_1$ to $S_1\sqcup S_0$ defined by taking $S_0,S_1$ and moving them around each other.
 \end{enumerate}
 
 \end{definition}
 
-[WORK: I got rid of unit axiom, which now includes the degenerate possibility that $V(S)=\emptyset$ for all $S$. Is that okay?]
+We offer a few remarks. The term ``$(2+1)$" refers to the fact that there are two space dimensions, plus one time dimension. More generally, an  $(n+1)$-TQFT is an assignment of $n$-manifolds to vector spaces, and of $(n+1)$-manifolds to linear transformations. We also remark on the structure of the definition. We first defined a few assignments of objects of one type to objects of another type, and then we defined a laundry list of properties that those assignments should satisfy. This is extremely standard practice in higher mathematics. The abstraction of this practice is known as Category Theory. The assignments of one type of object to another type of object are known as functors, and the properties to satisfy are known as axioms. The category theory definition of a TQFT is ``a symmetric monoidal functor from the category of bordisms to the category of vector spaces"\footnote{symmetric=axiom 4, monoidal=axiom 1, functor=axiom 3, bordsism category=axiom 2}. For those unfamiliar with category theory, a short introduction is found in Appendix \ref{Categories}. While we will not be using any categories in this section, a familiarity of the subject is required for the following section on Modular Tensor Categories.
 
-We offer a few remarks. The term ``$(2+1)$" refers to the fact that there are two spaces dimensions, plus one time dimension. More generally, an  $(n+1)$-TQFT is an assignment of $n$-manifolds to vector spaces, and of $(n+1)$-manifolds to linear transformations. We also remark on the structure of the definition. We first defined a few assignments of objects of one type to objects of another type, and then we defined a laundry list of properties that those assignments should satisfy. This is extremely standard practice in higher mathematics. The abstraction of this practice is known as Category Theory. The assignments of one type of object to another type of object are known as functors, and the properties to satisfy are known as axioms. The category theory definition of a TQFT is ``A symmetric monoidal functor from the category of bordisms to the category of vector spaces"\footnote{symmetric=axiom 4, monoidal=axiom 1, functor=axiom 3, bordsism category=axiom 2}. For those unfamiliar with category theory, a short introduction is found in Appendix \ref{Categories}. While we will not be using any category theory in this section, a familiarity of the subject is required for the following section on Modular Tensor Categories.
+Often, TQFTs will be defined in terms of celluations. A celluation is a way of splitting up a space into vertices, edges, and faces. The utility of celluations is that they turn continuous objects into discrete ones, which allows for simple computations - this was the entire point of modeling the torus as an $n$ by $n$ grid in Section \ref{The Toric Code}. The difficult part is often showing that the object you defined is independent of the choice of celluation. For the toric code, this was Exercise \ref{The Toric Code}.3. In general, one resorts to the following theorem:
+
+\begin{theorem}[Pachner, \cite{pachner1991pl}, \cite{lickorish1999simplicial}]\label{Pachner} Let $(X,\Delta_X)$ and $(X,\Delta'_X)$ be two manifolds with triangulations (i.e. celluations in which every face has three edges). There exists a finite sequence of so-called Pachner moves relating $\Delta_X$ to $\Delta'_X$. In two dimensions (i.e. when $X$ is a surface) and three dimensions, the full list of Pachner moves is given in Figure \ref{fig:all-moves}. The naming convention is that the ``$a$-$b$" move is the move that takes $a$ cells to $b$ cells.
+\end{theorem}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.2]{all-moves}
+\caption{The Pachner moves.}
+\label{fig:all-moves}
+\end{center}
+\end{figure}
 
 
+This massively facilitates the verification of whether or not a definition is independent of celluation. Namely, first you show that the definition is invariant under adding/removing edges (allowing you to turn the celluation into a triangulation), and then you check that the definition is invariant under applying the Pachner moves. Typically, this verification is entirely elementary and does not require any great show of cleverness. As such, our standard practice for  Subsection \ref{DW TQFT} will be to state theorems, reduce the problem to the verification of invariance under Pachner moves, and assign the rest as an exercise to the reader.
 
 \subsection{The $\ZZ_2$ Dijkgraaf-Witten TQFT}
 \label{DW TQFT}
 
-We now define the Topological Quantum Field Theory (TQFT) assoicated with the toric code, and describe how TQC can be performed in this framework. We could also call it the ``$\ZZ_2$ spin liquid TQFT", since it is the mathematical realization of the $\ZZ_2$ spin liquid topological quantum phase of matter. The original reference for this subject is \cite{dijkgraaf1990topological}, but our presentation follows more closely \cite{qiu2021representations}.
+We now define the Topological Quantum Field Theory (TQFT) associated with the toric code, and describe how TQC can be performed in this framework. We could also call it the ``$\ZZ_2$ spin liquid TQFT", since it is the mathematical realization of the $\ZZ_2$ spin liquid topological quantum phase of matter. The original reference for this subject is \cite{dijkgraaf1990topological}, but our presentation follows more closely \cite{qiu2021representations}.
 
-As with the definition of the toric codes in Section \ref{The Toric Code}, the definition of the $\ZZ_2$ Dijkgraaf-Witten TQFT is in the language of $\ZZ_2$ homology. Seeing as our definition of homology requires a celluation we first define $\tilde{V}(S,\Delta)$, where $S$ is a surface and $\Delta_S$ is a celluation of $S$. That is, $\Delta_S$ is a representation of $S$ as a collection of verticies, edges, and faces, with some edges and verticies identitied. For example, $S=T$ could be the torus, and $\Delta$ could be the $n$ by $n$ lattice on the torus. For every surface $S$ and celluation $\Delta_S$, we define
+As with the definition of the toric codes in Section \ref{The Toric Code}, the definition of the $\ZZ_2$ Dijkgraaf-Witten TQFT is in the language of $\ZZ_2$ homology. Seeing as our definition of homology requires a celluation we first define $\tilde{V}(S,\Delta)$, where $S$ is a surface and $\Delta_S$ is a celluation of $S$. That is, $\Delta_S$ is a representation of $S$ as a collection of vertices, edges, and faces, with some edges and vertices identified. For example, $S=T$ could be the torus, and $\Delta$ could be the $n$ by $n$ lattice with opposite edges identified. For every surface $S$ and celluation $\Delta_S$, we define
 
 $$\tilde{V}(S,\Delta_S)=\CC\left[C^{1}(\Delta_S;\ZZ_2)\right].$$
 
-Here, $C^1(\Delta_S;\ZZ_2)$ denotes the group $\ZZ_2$ cocycles on the celluation $\Delta_S$, and $\CC[-]$ is notation for ``complex vector space generated by", i.e., $\tilde{V}(S)$ is the unique complex vector space having $C^1(\Delta_S;\ZZ_2)$ as a basis. A $\ZZ_2$ cocycle is an assignment of $0$s and $1$s to every edge, such that every face touches and even number of $1$-labeled edges.
+Here $C^1(\Delta_S;\ZZ_2)$ denotes the group $\ZZ_2$ cocycles on the celluation $\Delta_S$, and $\CC[-]$ is notation for ``complex vector space generated by", i.e., $\tilde{V}(S)$ is the unique complex vector space having $C^1(\Delta_S;\ZZ_2)$ as a basis. A $\ZZ_2$ cocycle is an assignment of $0$s and $1$s to every edge, such that every face touches an even number of $1$-labeled edges.
 
 Notice that a $\ZZ_2$ cocycle is the same thing as a $\ZZ_2$ cycle in the dual celluation, as discussed in the proof of Proposition \ref{Xparticle}. That is, every $\ZZ_2$ cocycle on $S$ specifies a cycle on $S$, by drawing lines between the centers of two faces whenever the edge connecting them is labeled by a $1$. This process of identifying cocycles on $\Delta_S$ and cycle in the dual celluation is known as Poincaré Duality. It is important to note that in higher dimensions the process breaks down, because generically loops will fail to intersect in three dimensions (they can just be shifted past each other). Thus, when discussing 3-manifold bordisms there is a real distinction between cycles and cocycles.
 
@@ -696,7 +709,7 @@ where $H^1(S;\ZZ_2)$ is the cohomology of $S$. Cohomology is defined by
 
 $$H^1(S;\ZZ_2)=C^1(S;\ZZ_2)/Z^1(S;\ZZ_2),$$
 
-where $Z^1(S;\ZZ_2)$ is the subgroup of of $C^1(S;\ZZ_2)$ generated by the cocycles consisting of $1$s at every edge touching a vertex. Assigning $1$s and $0$s this way really does give a cocycle: Every face has either $0$ or $2$ edges in its boundary that touch a given vertex, and both $0$ and $2$ are even numbers. It is a standard fact that the cohomology of a space does not depend on the choice of celluation.
+where $Z^1(S;\ZZ_2)$ is the subgroup of $C^1(S;\ZZ_2)$ generated by the cocycles consisting of $1$s at every edge touching a vertex. Assigning $1$s and $0$s this way really does give a cocycle: Every face has either $0$ or $2$ edges in its boundary that touch a given vertex, and both $0$ and $2$ are even numbers. It is a standard fact that the cohomology of a space does not depend on the choice of celluation.
 
 To view $V(S)$ and a subspace of $\tilde{V}(S,\Delta_S)$, we define a linear injection
 
@@ -705,7 +718,7 @@ V(S)&\hookrightarrow \tilde{V}(S,\Delta_S).\\
 \left|\alpha\right>&\mapsto \frac{1}{\sqrt{|Z^1(S;\ZZ_2)|}}\sum_{\gamma\sim \alpha}\left|\gamma\right>
 \end{align*}
 
-Here, $\alpha$ is a cohomology class (an element of $H^1(S;\ZZ_2)$), $\left|\alpha\right>$ is the corresponding vector in $V(S)$, $|Z^1(S;\ZZ_2)|$ denotes the number of elements in $Z^1(S;\ZZ_2)$, and $\sim$ denotes the equivilance relation of being cohomologous. That is, two cocycles are cohomologous if they give the same element in $H^1(S;\ZZ_2)$. This map can be summarized by saying that a cohomology class sends to the equal superposition of all of its representatives. The normalizing factor $|Z^1(S;\ZZ_2)|^{-1}$ is introduced to make sure that the norm is preserved.
+Here, $\alpha$ is a cohomology class (an element of $H^1(S;\ZZ_2)$), $\left|\alpha\right>$ is the corresponding vector in $V(S)$, $|Z^1(S;\ZZ_2)|$ denotes the number of elements in $Z^1(S;\ZZ_2)$, and $\sim$ denotes the equivalence relation of being cohomologous. That is, two cocycles are cohomologous if they give the same element in $H^1(S;\ZZ_2)$. This map can be summarized by saying that a cohomology class sends to the equal superposition of all of its representatives. The normalizing factor $|Z^1(S;\ZZ_2)|^{-1/2}$ is introduced to make sure that the norm is preserved.
 
 We now define the action of bordisms. Let $(S_0,\Delta_{S_0})$ and $(S_1,\Delta_{S_1})$ be two surfaces with celluations. Let $X$ be a bordism from $S_0$ to $S_1$. Let $\Delta_X$ be a celluation on $X$ compatible with the celluations on $S_0$ and $S_1$. By compatible we mean that if we restrict $\Delta_X$ to $\partial X$ then we will recover the celluations $\Delta_{S_0}$ and $\Delta_{S_1}$. This restriction process can be described visually as dropping all verticies, edges, and faces, from $\Delta_X$ that aren't part of $\partial X=S_0\sqcup S_1$. We call a pair of cocycles $(\omega_{S_0},\omega_{S_1})$ extendable if there is a cocycle in $\omega_X\in C^1(X,\Delta_X)$ which gives $\omega_{S_0}$ when restricted to $S_0$ and $\omega_{S_1}$ when restricted to $S_1$. Let $N_X$ be the number of cocycles in $C^1(S_1;\ZZ_2)$ with which the $0$ cocycle on $S_0$ can be extended. We define
 
@@ -714,25 +727,17 @@ $1$\text{ if }(\omega_{S_0},\omega_{S_1})\text{ extendable}\\
 $0$\text{ otherwise }
 \end{pmatrix}_{\substack{\omega_{S_0}\in C^1(S_0;\ZZ_2) \\ \omega_{S_1}\in C^1(S_1;\ZZ_2)}}.$$
 
-We now elaborate on the meaning of this expression. Linear algebra tells us that to specify a linear transformation between two spaces, all we need to do is specify the entries of a matrix. The entries of a matrix are labeled by basis vectors. Namely, the matrix entries of a map $\CC[C^1(S_0;\ZZ_2)]$ to $\CC[C^1(S_1;\ZZ_2)]$ are labeled by ordered pairs of basis vectors $(\left|\omega_{S_0}\right>,\left|\omega_{S_1}\right>)$, where $\omega_{S_0}\in C^1(S_0;\ZZ_2)$ and $\omega_{S_1}\in C^1(S_1;\ZZ_2)$. The $(\left|\omega_{S_0}\right>,\left|\omega_{S_1}\right>)$ entry in $\tilde{Z}(X;\Delta_X)$ is equal to $1$ if $(\omega_{S_0},\omega_{S_1})$ is extendable, and $0$ otherwise.
+We now elaborate on the meaning of this expression. Linear algebra tells us that to specify a linear transformation between two spaces, all we need to do is specify the entries of a matrix. The entries of a matrix are labeled by basis vectors. Namely, the matrix entries of a map from $\CC[C^1(S_0;\ZZ_2)]$ to $\CC[C^1(S_1;\ZZ_2)]$ are labeled by ordered pairs of basis vectors $(\left|\omega_{S_0}\right>,\left|\omega_{S_1}\right>)$, where $\omega_{S_0}\in C^1(S_0;\ZZ_2)$ and $\omega_{S_1}\in C^1(S_1;\ZZ_2)$. The $(\left|\omega_{S_0}\right>,\left|\omega_{S_1}\right>)$ entry in $\tilde{Z}(X;\Delta_X)$ is equal to $1$ if $(\omega_{S_0},\omega_{S_1})$ is extendable, and $0$ otherwise.
 
-The intuitition for $\tilde{Z}(X,\Delta_X)$ comes from the path integral formulation of quantum mechanics. When not being observed, a system will transform along a superposition of all possible trajectories. There is a spacetime trajectory from a state  (cocycle) $\left|\omega_{S_0}\right>$ to a state (cocycle) $\left|\omega_{S_1}\right>$ exactly when $(\omega_{S_0},\omega_{S_1})$ can be extended. The map $\tilde{Z}(X,\Delta_X)$ can be described as the transformation that takes a state to the equal superposition of all possible states it could go to.
+The intuition for $\tilde{Z}(X,\Delta_X)$ comes from the path integral formulation of quantum mechanics. When not being observed, a system will transform along an equal superposition of all possible trajectories. There is a spacetime trajectory sending a state (cocycle) $\left|\omega_{S_0}\right>$ to a state (cocycle) $\left|\omega_{S_1}\right>$ exactly when $(\omega_{S_0},\omega_{S_1})$ can be extended. The map $\tilde{Z}(X,\Delta_X)$ can be described as the transformation that takes a state to the equal superposition of all possible states it could go to.
 
 Our goal is to show that $\tilde{Z}(X,\Delta_{X})$ restricts to a map $V(S_0)\xrightarrow{}V(S_1)$, and that this restriction is independent of our choice of $\Delta_{S_0}, \Delta_{S_1}$ and $\Delta_{X}$. Once this has been done we can define $Z(X)$ to be this common restriction. All that will be left to do then is to show that our assignments $V(S)$ and $Z(X)$ satisfy the axioms of a $(2+1)$-TQFT. We work on this overarching plan over the course of a few propositions.
 
 \begin{proposition}\label{Celluation independent}
 Let $(S_0,\Delta_{S_0})$ and $\left(S_1,\Delta_{S_1}\right)$ be surfaces with celluations, $X$ a bordism from $S_0$ to $S_1$, and $\Delta_X$ a celluation of $X$ compatible with the celluations on $S_0$ and $S_1$. Then, the map $\tilde{Z}(X,\Delta_X): \tilde{V}(S_0,\Delta_{S_0})\xrightarrow{}\tilde{V}(S_1,\Delta_{S_1})$ is independent of the choice of celluation $\Delta_X$. Hence, we can properly omit $\Delta_X$ from our notation, and speak of a well defined map $\tilde{Z}(X)$.
 \end{proposition}
-\begin{proof} We need to show that if $\Delta_X$ and $\Delta'_X$ are two different choices of celluations on $X$ compatible with $\Delta_{S_0}$ and $\Delta_{S_1}$, then then $\tilde{Z}(X,\Delta_X)=\tilde{Z}(X,\Delta'_X)$. That is, $(\omega_{S_0},\omega_{S_1})$ are extendable in $\Delta_X$ if and if they are extendable in $\Delta_X'$. It is a well known fact from Algebraic Topology that performing the rules in Figure \ref{fig:moves} allow us to go from any triangulation to any other triangulation \cite{lickorish1999simplicial}. Hence, all we have to do is show that the property of $(\omega_{S_0},\omega_{S_1})$ being extendable is invariant first under the operation of adding edges (to turn the celluation into a triangulation), and secondly under the process of applying these transformations. Drawing out the diagrams, these are straightforward computations. We leave the verification of the proof as an exercise to the reader (Exercise \ref{TQFTs}.1).
+\begin{proof} We need to show that if $\Delta_X$ and $\Delta'_X$ are two different choices of celluations on $X$ compatible with $\Delta_{S_0}$ and $\Delta_{S_1}$, then then $\tilde{Z}(X,\Delta_X)=\tilde{Z}(X,\Delta'_X)$. That is, $(\omega_{S_0},\omega_{S_1})$ are extendable in $\Delta_X$ if and if they are extendable in $\Delta_X'$. By Theorem \ref{Pachner}, all we have to do is show that the property of $(\omega_{S_0},\omega_{S_1})$ being extendable is invariant first under the operation of adding/removing edges (to turn the celluation into a triangulation), and secondly invaraint under the process of applying Pachner moves. Drawing out the diagrams, these are straightforward computations. We leave the verification of the proof as an exercise to the reader (Exercise \ref{TQFTs}.1).
 \end{proof}
-
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.15]{moves}
-\caption{Full set of moves for going from any simplicial complex to any other simplicial complex}
-\label{fig:moves}
-\end{center}
-\end{figure}
 
 \begin{lemma}\label{independence} Let $(S_0,\Delta_{S_0})$, $(S_1,\Delta_{S_1})$, $(S_1,\Delta_{S_2})$ be surfaces with celluations, let $X_0$ be a bordism from $S_0$ to $S_1$, and let $X_1$ be a bordism from $S_1$ to $S_2$.
 
@@ -741,10 +746,10 @@ Let $(S_0,\Delta_{S_0})$ and $\left(S_1,\Delta_{S_1}\right)$ be surfaces with ce
 \item $|\left\{\omega_{S_1}\in C^1(\Delta_{S_1};\ZZ_2)\st (\omega_{S_0},\omega_{S_1})\,\, \& \,\,(\omega_{S_1},\omega_{S_2})\text{ extendable}\right\}|$ is independent of choice of $\omega_{S_0}$, $\omega_{S_2}$, so long as $(\omega_{S_0},\omega_{S_2})$ is extendable
 \end{enumerate}
 \end{lemma}
-\begin{proof} We prove $(i)$, and leave $(ii)$ as an exercise (Exercise $\thesection.2$) since the proof is identical. Let $\omega_{S_1}$ and $\omega_{S_1}$ be such that $(\omega_{S_0},\omega_{S_1})$ and $(\omega_{S_0},\omega'_{S_1})$ are extendable. Then, adding extensions of these pairs edge wise we get that $(\omega_{S_0}+\omega_{S_0},\omega_{S_1}+\omega'_{S_1})$ is extendable. Since $\omega_{S_0}+\omega_{S_0}=0$, we find that there is a $1$-to-$1$ bijection between $\omega_{S_1}$ such that $(0,\omega_{S_1})$ is extendable and $\omega_{S_1}$ such that $(\omega_{S_0},\omega_{S_1})$ is extendable. Thus, these sets have the same cardinality, and we conclude $(i)$.
+\begin{proof} We prove $(i)$, and leave $(ii)$ as an exercise (Exercise $\thesection.2$) since the proof is identical. Let $\omega_{S_1}$ and $\omega_{S_1}$ be such that $(\omega_{S_0},\omega_{S_1})$ and $(\omega_{S_0},\omega'_{S_1})$ are extendable. Then, adding extensions of these pairs together edgewise we get that $(\omega_{S_0}+\omega_{S_0},\omega_{S_1}+\omega'_{S_1})$ is extendable. Since $\omega_{S_0}+\omega_{S_0}=0$, we find that there is a $1$-to-$1$ bijection between $\omega_{S_1}$ such that $(0,\omega_{S_1})$ is extendable and $\omega_{S_1}$ such that $(\omega_{S_0},\omega_{S_1})$ is extendable, sending $\omega_{S_1}$ to $\omega_{S_0}+\omega_{S_1}$ Thus, these sets have the same cardinality, and we conclude $(i)$.
 \end{proof}
 
-\begin{proposition} Letting $X_0,X_1$ be as in Lemma \ref{independence}, the composition law
+\begin{proposition}\label{composition} Letting $X_0,X_1$ be as in Lemma \ref{independence}, the composition law
 
 $$Z(X_1\cup X_0)=Z(X_1)\circ Z(X_0)$$
 
@@ -762,53 +767,80 @@ $1$\text{ if }(\omega_{S_1},\omega_{S_2})\text{ extendable}\\
 $0$\text{ otherwise }
 \end{pmatrix}.$$
 
-The coefficient of $(\omega_{S_0},\omega_{S_2})$ is $N^{-1}_{X_0\cup X_1}$ if $(\omega_{S_0},\omega_{S_2})$ extendable, and $0$ otherwise. Multiplying through, we find the equality we are trying to prove is
+The coefficient of $(\omega_{S_0},\omega_{S_2})$ in $Z(X_1\cup X_0)$ is $N^{-1}_{X_1\cup X_0}$ if $(\omega_{S_0},\omega_{S_2})$ extendable, and $0$ otherwise. Multiplying through, we find the equality we are trying to prove is
 
 $$N_{X_0\cup X_1} |\left\{\omega_{S_1}\st (\omega_{S_0},\omega_{S_1})\,\, \& \,\,(\omega_{S_1},\omega_{S_2})\text{ extendable}\right\}|=N_{X_0} N_{X_1}.$$
 
-Fix $\omega_{S_0}$. We claim that both sides of the above expression are equal to the number of $\omega_{S_1},\omega_{S_2}$ such that $(\omega_{S_0},\omega_{S_1})$ and $(\omega_{S_1},\omega_{S_2})$ are simultaneously extendable. The left hand side computes this value by first counting the number of ways of choosing $\omega_{S_2}$ (i.e. $N_{X_0\cup X_1}$), and the by counting the number of ways of filling in $\omega_{S_1}$. The right hand side computes this value by first counting the number of ways of choosing $\omega_{S_1}$ (i.e. $N_{X_0}$) and then counting the number of ways of choosing $\omega_{S_2}$ (i.e. $N_{X_1}$). Note the implicit use of Lemma \ref{independence}, saying that all of these values are equal. This completes the proof.
+Fix $\omega_{S_0}$. We claim that both sides of the above expression are equal to the number of pairs $(\omega_{S_1},\omega_{S_2})$ such that $(\omega_{S_0},\omega_{S_1})$ and $(\omega_{S_1},\omega_{S_2})$ are simultaneously extendable. The left hand side computes this value by first counting the number of ways of choosing $\omega_{S_2}$ (i.e. $N_{X_0\cup X_1}$), and the by counting the number of ways of filling in $\omega_{S_1}$. The right hand side computes this value by first counting the number of ways of choosing $\omega_{S_1}$ (i.e. $N_{X_0}$) and then counting the number of ways of choosing $\omega_{S_2}$ (i.e. $N_{X_1}$). Note the implicit use of Lemma \ref{independence}, saying that all of these values are equal. This completes the proof.
 
 \end{proof}
 
-The next proposition has a strong physical meaning, and can be seen as motivation for the fact that $V(S)$ is a ground state space. Namely, let $(S,\Delta_S)$ be a surface with celluation and let $S\times [0,1]$ be the product of $S$ with the real interval of numbers between $0$ and $1$. That is, elements of $S\times [0,1]$ are pairs $(s,t)$ where $s\in S$ and $t\in [0,1]$. This is a $3$-manifold, and gives a bordism from $S$ to itself. Namely, $\partial (S\times [0,1])$ is built of the two components $S\times \{0\}$ and $S\times \{1\}$. The orientation on $S\times [0,1]$ is induced by the orienation on $[0,1]$. This can viewed as the identity bordism: $S$ is doing nothing as time increases from $0$ to $1$. The boundary components correspond to the placement of $S$ at time $0$ and $S$ at time $1$. When time passes on a system, we expect it to ambiently decrease in energy. Thus,  physically $Z(S\times [0,1])$ should act by the identity on ground states, and send higher energy states down to the ground state. This is exactly the statement that $Z(S\times [0,1])$ should be a projection from the full state space to the ground state space. The following proposition in this lens thus says that $V(S)$ are exactly the ground space:
+The next proposition has a strong physical meaning, and can be seen as motivation for the fact that $V(S)$ is a ground state space. Namely, let $(S,\Delta_S)$ be a surface with celluation and let $S\times [0,1]$ be the product of $S$ with the real interval of numbers between $0$ and $1$. That is, elements of $S\times [0,1]$ are pairs $(s,t)$ where $s\in S$ and $t\in [0,1]$. This is a $3$-manifold, and gives a bordism from $S$ to itself. Namely, $\partial (S\times [0,1])$ is built of the two components $S\times \{0\}$ and $S\times \{1\}$. The orientation on $S\times [0,1]$ is induced by the orienation on $[0,1]$. This can viewed as the identity bordism: $S$ is doing nothing as time increases from $0$ to $1$. The boundary components correspond to the placement of $S$ at time $0$ and $S$ at time $1$. When time passes on a system, we expect it to ambiently decrease in energy. Thus,  physically $Z(S\times [0,1])$ should act by the identity on ground states, and send higher energy states down to the ground state. This is exactly the statement that $Z(S\times [0,1])$ should be a projection from the full state space to the ground state space. The following proposition in this lens thus says that $V(S)$ are exactly the ground space: [WORK: move some of this up to the previous section.]
 
-\begin{proposition}\label{Z formula} Let $(S,\Delta_S)$ be a surface with celluation. Viewing $S\times [0,1]$ as a bordism from $S$ to itself, we have that $\tilde{Z}(S\times [0,1])$ is a projection from $\tilde{V}(S,\Delta_S)$ to $V(S)$. Namely, the image of $\tilde{Z}(S\times [0,1])$ is $V(S)$, and $\tilde{Z}(S\times [0,1])$ acts by the identity on $V(S)$. Explicitely, $\tilde{Z}(S\times [0,1])$ is given by the map
+\begin{proposition}\label{Z formula} Let $(S,\Delta_S)$ be a surface with celluation. Viewing $S\times [0,1]$ as a bordism from $S$ to itself, we have that $\tilde{Z}(S\times [0,1])$ is a projection from $\tilde{V}(S,\Delta_S)$ to $V(S)$. Namely, the image of $\tilde{Z}(S\times [0,1])$ is $V(S)$, and $\tilde{Z}(S\times [0,1])$ acts by the identity on $V(S)$. Explicitly, $\tilde{Z}(S\times [0,1])$ is given by the map
 
 $$\left| \omega\right>\mapsto \frac{1}{|Z^1(\Delta_{S};\ZZ_2)|}\sum_{\gamma \sim \omega}\left|\gamma\right>.$$
 
 \end{proposition}
-\begin{proof} Let $\omega_{S}$, $\omega'_{S}$ be two cocycles on $\Delta_{S}$. We show that $(\omega_{S},\omega_{S}')$ is extendable if and only if $\omega_{S}$ and $\omega_{S}'$ are cohomologous. Consider the celluation $\Delta_{S\times [0,1]}$ obtained by adding an edge connecting each vertex in $S\times\{0\}$ to the corresponding vertex in $S\times \{1\}$, as in Figure [WORK: make diagram].
+\begin{proof} Let $\omega_{S}$, $\omega'_{S}$ be two cocycles on $\Delta_{S}$. We show that $(\omega_{S},\omega_{S}')$ is extendable if and only if $\omega_{S}$ and $\omega_{S}'$ are cohomologous. Consider the celluation $\Delta_{S\times [0,1]}$ obtained by adding an edge connecting each vertex in $S\times\{0\}$ to the corresponding vertex in $S\times \{1\}$.
 
-We proceed by induction on the number of central edges in $S\times [0,1]$ (i.e. edges of $S\times [0,1]$ not in the boundary) which are assigned the value $1$ in the extension $\omega_X$ of $(\omega_{S},\omega_{S}')$. If there are no such edges, then clearly we must have $\omega_{S}=\omega_{S}'$, and so our proof is complete. Suppose there is a nonzero amount of such edges. Choose a central edge $e$ assigned $1$ in $\omega_X$. Let $\omega'_X$ the the cocycle obtained by flipping $e$ to as $0$, as well as flipping all of the edges touching $e$ in $S\times\{1\}$. $\omega'_X$ satisfies the cocycle condition since faces in the center touching $e$ will also touch exatly one of the edges flipped in $S\times \{1\}$, and hence the sum $1$s around the edges of those faces will change an even amount. By our inductive hypothesis, $\omega_{S}'$ with the edges touching $e$ flipped is cohomologous to $\omega_S$. Seeing as flipping edges touching $e$ maintains the property of being cohomologous, we conclude that $\omega_{S}'$ and $\omega_{S}$ are cohomologous.
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.3]{cohomologous}
+\caption{Removing the 1s from the central edges in $S\times [0,1]$}
+\label{fig:cohomologous}
+\end{center}
+\end{figure}
 
-The number of ways $N_{S\times [0,1]}$ of extending the $0$ cocycle is thus equal to the number of cocycles cohomologous to $0$, which is by definition $Z^1(\Delta_S;\ZZ_2)$. Thus, the proof is complete.
+We proceed by induction on the number of central edges in $S\times [0,1]$ (i.e. edges of $S\times [0,1]$ not in the boundary) which are assigned the value $1$ in the extension $\omega_X$ of $(\omega_{S},\omega_{S}')$. If there are no such edges, then clearly we must have $\omega_{S}=\omega_{S}'$, and so our proof is complete. Suppose there is a nonzero amount of such edges. Choose a central edge $e$ assigned $1$ in $\omega_X$. Let $\omega'_X$ the the cocycle obtained by flipping $e$ to as $0$, as well as flipping all of the edges touching $e$ in $S\times\{1\}$. $\omega'_X$ satisfies the cocycle condition since faces in the center touching $e$ will also touch exatly one of the edges flipped in $S\times \{1\}$, and hence the sum $1$s around the edges of those faces will change an even amount. By our inductive hypothesis, we conclude that $\omega_{S}'$ and $\omega_{S}$ are cohomologous. This process is demonstrated in Figure \ref{fig:cohomologous}.
+
+The number of ways $N_{S\times [0,1]}$ of extending the $0$ cocycle is thus equal to the number of cocycles cohomologous to $0$, which is by definition $|Z^1(\Delta_S;\ZZ_2)|$. Thus, the stated formula is correct. It is straightforward to see that the rest of the proposition follows immediately from this formula.
 \end{proof}
 
-This allows us to prove the full idependence of our theory from arbitrary choices of celluations:
+This allows us to prove the full independence of our theory from choice of celluation:
 
-\begin{proposition}\label{S0S1 independence} Let $(S_0,\Delta_{S_0})$ and $\left(S_1,\Delta_{S_1}\right)$ be surfaces with celluations, and $X$ a bordism from $S_0$ to $S_1$. The image of $\tilde{Z}(X)$ is contained in $V(S_1)$. In particular, $\tilde{Z}$ restricts to a map $V(S_0)\xrightarrow{}V(S_1)$. This map is independent of our choice of $\Delta_{S_0}$ and $\Delta_{S_1}$. We define $Z(X): V(S_0)\xrightarrow{}V(S_1)$ to be this common restriction.
+\begin{proposition}\label{S0S1 independence} Let $(S_0,\Delta_{S_0})$ and $\left(S_1,\Delta_{S_1}\right)$ be surfaces with celluations, and let $X$ be a bordism from $S_0$ to $S_1$. The image of $\tilde{Z}(X)$ is contained in $V(S_1)$. In particular, $\tilde{Z}$ restricts to a map $V(S_0)\xrightarrow{}V(S_1)$. This map is independent of our choice of $\Delta_{S_0}$ and $\Delta_{S_1}$. We define $Z(X): V(S_0)\xrightarrow{}V(S_1)$ to be this common restriction.
 \end{proposition}
 \begin{proof} To begin, we observe that if $(\omega_{S_0},\omega_{S_1})$ is extendable, then so is $(\omega'_{S_0},\omega_{S_1})$ for any $\omega'_{S_0}$ homologous to $\omega_{S_0}$. This follows by precomposing $X$ with $S_0\times [0,1]$, which does not change $X$, first extending $(\omega'_{S_0},\omega_{S_0})$ by Proposition \ref{Z formula}, and then extending $(\omega_{S_0},\omega_{S_1})$.
 
-Thus, the equal superposition $\left|\omega_{S_0}\right>$ of every cocycle homologous to $\omega_{S_0}$ will map  under $\tilde{Z}(X,\Delta_X)$ to a sum of equal superpositions of cohomologous classes in $H^1(S_1;\ZZ_2)$, i.e., an element of $V(S_1)$. What is left to check is that whether or not a cohomology class in $S_0$ can be lifted to a cohomology class in $S_1$ is independent of the choices of celluations.
+Thus, the equal superposition $\left|\omega_{S_0}\right>$ of every cocycle homologous to $\omega_{S_0}$ will map  under $\tilde{Z}(X,\Delta_X)$ to a sum of equal superpositions of cohomologous classes in $H^1(S_1;\ZZ_2)$, i.e., an element of $V(S_1)$. What is left to check is whether or not a cohomology class in $S_0$ can be lifted to a cohomology class in $S_1$ is independent of the choices of celluations.
 
-To prove this, we let $(\Delta_{S},\Delta'_{S})$ be two celluations on a surface $S$, and we consider the identity bordism $S\times [0,1]$. We show that a cocycle in $C^1(\Delta_{S};\ZZ_2)$ can be lifted to a class in $C^1(\Delta'_{S};\ZZ_2)$ if and only if they are homologous. Applying this with $S=S_0$ and precomposing with $S_0\times [0,1]$ gives the desired independence of choice of celluation on $S_0$, and applying this with $S=S_1$ and postcomposing with $S_1\times [0,1]$ gives the desired independence of choice of celluation on $S_1$.
+To prove this, we consider the identity bordism $S\times [0,1]$ with $S\times \{0\}$ given a celluation $\Delta_{S}$ and $S\times \{1\}$ given a celluation $\Delta'_S$. We show that a cocycle in $C^1(\Delta_{S};\ZZ_2)$ can be lifted to a class in $C^1(\Delta'_{S};\ZZ_2)$ if and only if they are homologous. Applying this with $S=S_0$ and precomposing with $S_0\times [0,1]$ gives the desired independence of choice of celluation on $S_0$, and applying this with $S=S_1$ and postcomposing with $S_1\times [0,1]$ gives the desired independence of choice of celluation on $S_1$.
 
-The above claim again follows from applying induction with respect to the moves in Figure \ref{fig:moves}, and thus is left as an exercise (Exercise $\thesection.3$).
+The above claim again follows from applying induction with respect to the moves in Theorem \ref{Pachner}, and thus is left as an exercise (Exercise $\thesection.3$).
 \end{proof}
 
 The main result of our section is as follows:
 
 \begin{theorem} The assignments $S\mapsto V(S)$ and $X\mapsto Z(X)$ give a Topological Quantum Field Theory, called the $\ZZ_2$ Dijkgraaf-Witten TQFT.
 \end{theorem}
-\begin{proof}. [WORK: Hopefully trivial.]
+\begin{proof} We check that our choices of $V(S)$ and $Z(X)$ satisfy the four axioms.
+
+\begin{enumerate}
+\item Specifying a cohomology class on $S_0\sqcup S_1$ amounts to specifying a cohomology class on $S_0$, and a cohomology class on $S_1$. In other words, we have a natural equality
+
+$$H^1(S_0\sqcup S_1;\ZZ_2)=H^1(S_0;\ZZ_2)\times H^1(S_1;\ZZ_2).$$
+
+Additionally, for any sets $A$ and $B$ we have $\CC[A\times B]=\CC[A]\otimes \CC[B]$, where we identity $[(a,b)]$ with $[a]\otimes [b]$, $a\in A$, $b\in B$. Thus,
+
+\begin{align*}
+V(S_0\sqcup S_1)&=\CC\left[H^1(S_0\sqcup S_1;\ZZ_2)\right]\\
+&=\CC\left[H^1(S_0;\ZZ_2)\times H^1(S_1;\ZZ_2)\right]\\
+&=\CC\left[H^1(S_1;\ZZ_2)\right]\otimes \CC\left[ H^1(S_1;\ZZ_2)\right]\\
+&=V(S_0)\otimes V(S_1).
+\end{align*}
+
+\item This follows immediately from Proposition \ref{Z formula}.
+\item This follows immediately from Proposition \ref{composition}.
+\item The bordism $X$ has the effect of swapping $S_0$ and $S_1$, hence sends $H^1(S_0;\ZZ_2)\times H^1(S_1;\ZZ_2)$ to $H^1(S_1;\ZZ_2)\times H^1(S_0;\ZZ_2)$, sending $(\omega_{S_0},\omega_{S_1})$ to $(\omega_{S_1},\omega_{S_0})$. Tracing through the series of equalities in part 1, we get the desired result.
+\end{enumerate}
 \end{proof}
 
-Seeing that the $\ZZ_2$ Dijkgraaf-Witten TQFT applied to the torus yields to toric code as defined in Section \ref{The Toric Code} is simple. The only ambiguity comes from the fact that as defined, the toric code is generated by homology classes andthe $\ZZ_2$ Dijkgraaf-Witten TQFT applies to the torus is generated by cohomology classes. However, as mensioned before, there is a duality between homology classes and cohomology classes which arises from considering the dual celluation, and so this discrepency is really not an issue. We decided to work with homology in Section \ref{The Toric Code} for pedagogical reasons, so that motion of anyons (quasiparticles) around the torus would be more clear.
+Seeing that the $\ZZ_2$ Dijkgraaf-Witten TQFT applied to the torus yields the toric code as defined in Section \ref{The Toric Code} is simple. The only difficulty comes from the fact that as defined, the toric code is generated by homology classes and the $\ZZ_2$ Dijkgraaf-Witten TQFT is generated by cohomology classes. However, as mentioned before, there is a duality between homology classes and cohomology classes which arises from considering the dual celluation, and so this discrepancy is really not an issue. We decided to work with homology in Section \ref{The Toric Code} for pedagogical reasons: homology is more intuitive than cohomology. However, for 3-manifolds there is a discrepancy between homology and cohomology, which is why the $\ZZ_2$ Dijkgraaf-Witten TQFT has to use the less intuitive concept.
 
-There is no Hamiltonian in TQFTs. The lowest energy states are those which will naturally occur after time passes, namely, those in the image of the ``do nothing" bordism $\tilde{Z}(X)$. It is for this reason that even though ground states are complicated maximally entangled objects (Exercise \ref{The Toric Code}.2) they are easy to make in the lab. All one has to do is make a cold enough system and allow it to relax. As time passes, it will naturally go into a ground state. In some quantum systems, these relaxed states are already interesting enough that it would take a long time to simulate the process on a classical computer. This gives a sort of quantum computer, known as an Adiabatic quantum computation. It is interesting to note that the original definition of the toric code did not include a Hamiltonian, and this was only introduced later to facilitate the study \cite{kitaev1997quantum}.
+In general, there is no Hamiltonian in TQFTs. The lowest energy states are those which will naturally occur after time passes, namely, those in the image of the ``do nothing" bordism $\tilde{Z}(X)$. It is for this reason that even though ground states are complicated maximally entangled objects (Exercise \ref{The Toric Code}.2) they are easy to make in the lab. All one has to do is make a cold enough system and allow it to relax. As time passes, it will naturally go into a ground state. In some quantum systems, these relaxed states are already interesting enough that it would take a long time to simulate the process on a classical computer. This gives a sort of quantum computer, known as an Adiabatic quantum computation. It is interesting to note that the original definition of the toric code did not include a Hamiltonian, and this was only introduced later to facilitate the study \cite{kitaev1997quantum}. A more general study of TQFTs with Hamiltonians was conducted by Levin-Wen \cite{levin2005string}, but is still not the norm.
 
-In this language it is hard to see what are anyons, and what are quantum computaions. How do I do braiding in a TQFT? How do I see how many particle types there are? The intriguing fact is that this information is present, but hidden. Namely, one has to pass to a \textit{1-extended TQFT}. This extension allows us to define $V(S)$ whenever $S$ is a surface with punctures. These punctures correspond to anyons, and moving the punctures around each other corresponds to braiding. Not every TQFT can be 1-extended, but those that can (like the $\ZZ_2$ Dijkgraaf-Witten theory) keep that anyon information in their structure. A more complete introduction to TQC would have defined $1$-extensions, but we ommited the topic for clarity. All of this is in marked contrast to Modular Tensor Categories, where anyons are placed front and center of the theory.
+In the TQFT language it is hard to see what anyons and quantum computations correspond to. How do I do braiding in a TQFT? How do I see how many particle types there are? The intriguing fact is that this information is present, but hidden. Namely, one has to pass to a \textit{1-extended TQFT} to engage with anyons explicitly. This extension allows us to define $V(S)$ whenever $S$ is a surface with punctures. These punctures correspond to anyons, and moving the punctures around each other corresponds to braiding. Not every TQFT can be 1-extended, but those that can (like the $\ZZ_2$ Dijkgraaf-Witten theory) keep that anyon information in their structure. A more complete introduction to TQC would have defined $1$-extensions, but we omitted the topic for clarity. All of this is in marked contrast to Modular Tensor Categories, where anyons are placed front and center of the theory.
 
 $\newline\newline$
 
@@ -829,27 +861,27 @@ $\newline\newline$
 \subsection{The data of an anyon model}
 \label{Anyon model}
 
-[WORK: Give the MTC description by label sets, fusion rules, and braiding relations. This should just be a big collection of numbers and some axioms they have to follow. Explain the physical concept that each set of numbers/relation coressponds to]
+[WORK: Give the MTC description by label sets, fusion rules, and braiding relations. This should just be a big collection of numbers and some axioms they have to follow. Explain the physical concept that each set of numbers/relation corresponds to]
 
 \subsection{The category-theoretic viewpoint}
 \label{Category viewpoint}
 
-[WORK: Give a bottom of definition of Modular Tensor Category. State exactly how things correspond to the data of an anyon model. Main theorem: There could be multiple liftings to a category, maybe zero! Motivate category theory via commutative diagrams.]
+[WORK: Give a bottom definition of Modular Tensor Category. State exactly how things correspond to the data of an anyon model. Main theorem: There could be multiple liftings to a category, maybe zero! Motivate category theory via commutative diagrams.]
 
 \subsection{The MTC $\mathcal{Z}(\Vecc_{\ZZ_2})$}
 \label{VecZ2 MTC}
 
-[WORK: Define the MTC $\mathcal{Z}(\Vecc_{\ZZ_2})$ explicitely via data. Give a brief explination of how this corresponds to the $\ZZ_2$ Dijkgraaf-Witten theory.Then, define $\Vecc_{\ZZ_2}$. State that the MTC defined is the Drinfeld center, to further motivate category theory. Analogy for Drinfeld center: (non-degenerate) abelianization. ]
+[WORK: Define the MTC $\mathcal{Z}(\Vecc_{\ZZ_2})$ explicitly via data. Give a brief explanation of how this corresponds to the $\ZZ_2$ Dijkgraaf-Witten theory.Then, define $\Vecc_{\ZZ_2}$. State that the MTC defined is the Drinfeld center, to further motivate category theory. Analogy for Drinfeld center: (non-degenerate) abelianization. ]
 
 \section{The Big Picture}
 \label{The Big Picture}
 
-[WORK: The big thing is to draw the picture betweeen topological quantum phases of matter, TQFTs, MTCs, and TQC. Show exactly what this looks like in the case of the toric code, i.e., what the topological quantum phase of matter is, the TQFT, the MTC, and the resulting TQC. Add all the connections and insights that I've come up with along this journey, and things I would feel remiss not including. Really, this should be a version of an introduction-to-TQC-for-experts section. Should definitely mension that TQFTs are generally $1$-extended with punctures, to visualize anyons. Should mention that literally making torus bigger will make error rate smaller, since it's harder for things to accidentally interact with each other (exponential decrease). Maybe another thing to add is how the 1st priority is to minimize energy, and the 2nd order is to maximize entanglement.]
+[WORK: The big thing is to draw the picture between topological quantum phases of matter, TQFTs, MTCs, and TQC. Show exactly what this looks like in the case of the toric code, i.e., what the topological quantum phase of matter is, the TQFT, the MTC, and the resulting TQC. Add all the connections and insights that I've come up with along this journey, and things I would feel remiss not including. Really, this should be a version of an introduction-to-TQC-for-experts section. Should definitely mention that TQFTs are generally $1$-extended with punctures, to visualize anyons. Should mention that literally making torus bigger will make error rate smaller, since it's harder for things to accidentally interact with each other (exponential decrease). Maybe another thing to add is how the 1st priority is to minimize energy, and the 2nd order is to maximize entanglement.]
 
-[WORK: Give 2nd motivation for topological quantum computing. Namely, that this might be a good avenue for proving that QC can solve NP complete problems, or close to NP problems! Bring up how this is clearly a good theory for computing knot invaraints (add reference to example of knot invariants that were proved to be easy to calculate using this method). Then, mention that computing the Jones polynomial is known to be NP hard! This is in the introduction of Wang and Rowell's ``Mathematics of Topological Quantum Computation". This could be a motivation for hybrid computing like
+[WORK: Give 2nd motivation for topological quantum computing. Namely, that this might be a good avenue for proving that QC can solve NP complete problems, or close to NP problems! Bring up how this is clearly a good theory for computing knot invariants (add reference to examples of knot invariants that were proved to be easy to calculate using this method). Then, mention that computing the Jones polynomial is known to be NP hard! This is in the introduction of Wang and Rowell's ``Mathematics of Topological Quantum Computation". This could be a motivation for hybrid computing like
 
 \begin{enumerate}
-\item Use classical computer to reduce hard problem to the issue of finding the knot invariant of a given knot.
+\item Use classical computers to reduce hard problems to the issue of finding the knot invariant of a given knot.
 \item Create that knot by braiding the anyons through spacetime.
 \item TQC will naturally compute the relevant knot invariant!
 \end{enumerate}
@@ -859,7 +891,13 @@ $\newline\newline$
 ``Folklore, [...] is a technical term for a method of publication in category theory. It means that someone sketched it on the back of an envelope, mimeographed it (whatever that means) and showed it to three people in a seminar in Chicago in 1973, except that the only evidence that we have of these events is a comment that was overheard in another seminar at Columbia in 1976. Nevertheless, if some younger person is so presumptuous as to write out a proper proof and attempt to publish it, they will get shot down in flames." - Paul Taylor \cite{aubert2019categories}
 \end{quote}
 
+[WORK: Here are some misc things for the rest of the manuscript.
 
+In the introduction, maybe add something about the number of Nobel prizes associated with the area? Jones also got his fields medal for this stuff, and maybe others. Witten? Right at the end?
+
+I got rid of the unit TQFT axiom, which now includes the degenerate possibility that $V(S)=\emptyset$ for all $S$. Is that okay?
+
+Why can I always lift celluations? Zhenghan mentioned this in class, but didn't cite a reference.]
 \appendix
 
 \section{Quantum mechanics and quantum computation}
@@ -882,7 +920,7 @@ called the ($1$st) homology group of $X$. Two elements are called homologically 
 
 It is a well known fact that the first homology group of the torus has four elements, corresponding to the zero class, the horizontal cycle around the torus, the vertical cycle around the torus, and the diagonal cycle.
 
-The importance of $H_1(X;\ZZ_2)$ is that it is \textit{independent of choice of celluation}. Namely, if we start with the same space and chop it up into verticies, edges, and faces, two different ways, $H_1(X;\ZZ_2)$ will always be the same. This is in stark contrast to $C_1(X;\ZZ_2)$ and $Z_1(X;\ZZ_2)$, which will both change wildly depending on the choice of celluation.
+The importance of $H_1(X;\ZZ_2)$ is that it is \textit{independent of choice of celluation}. Namely, if we start with the same space and chop it up into vertices, edges, and faces, two different ways, $H_1(X;\ZZ_2)$ will always be the same. This is in stark contrast to $C_1(X;\ZZ_2)$ and $Z_1(X;\ZZ_2)$, which will both change wildly depending on the choice of celluation.
 
 The observant reader might find the above discussion frustrating. In particular, we seem to be using the following intuitions interchangeably:
 
@@ -897,7 +935,7 @@ The canonical reference for this subject (known as \textit{Algebraic Topology}) 
 
 \section{Category Theory}
 \label{Categories}
-[WORK: Make appendix. This to mension for sure; canonical isomorphism between double dual, non canonical isomorphism between first duals. Not only is this super relevant to rigidity, but Zhenghan said that this was one of Eilenberg-MacLane's key motivations. Find a reference to this fact.]
+[WORK: Make appendix. This is to mension for sure; canonical isomorphism between double duals, non canonical isomorphism between first duals. Not only is this super relevant to rigidity, but Zhenghan said that this was one of Eilenberg-MacLane's key motivations. Find a reference to this fact.]
 
 
 \bibliographystyle{alpha}
@@ -905,7 +943,6 @@ The canonical reference for this subject (known as \textit{Algebraic Topology}) 
 
 
 \end{document}
-
 
 
 
