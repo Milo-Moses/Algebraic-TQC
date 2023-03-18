@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {1}Preface}{3}
+\contentsline {section}{\numberline {2}Introduction}{5}
+\contentsline {section}{\numberline {3}The Toric Code}{10}
+\contentsline {section}{\numberline {4}Topological Quantum Field Theories}{22}
+\contentsline {subsection}{\numberline {4.1}The general picture}{22}
+\contentsline {subsection}{\numberline {4.2}The $\mathbb {Z}_2$ Dijkgraaf-Witten TQFT}{28}
+\contentsline {section}{\numberline {5}Modular Tensor Categories}{35}
+\contentsline {subsection}{\numberline {5.1}Anyon models}{35}
+\contentsline {subsection}{\numberline {5.2}The category-theoretic viewpoint}{42}
+\contentsline {subsection}{\numberline {5.3}The MTC $\mathcal {Z}(\mathrm {Rep}_{\mathbb {Z}_2})$}{46}
+\contentsline {section}{\numberline {6}The Big Picture}{47}
+\contentsline {section}{\numberline {A}Quantum mechanics and quantum computation}{48}
+\contentsline {section}{\numberline {B}$\mathbb {Z}_2$ Homology Theory}{48}
+\contentsline {section}{\numberline {C}Category Theory}{50}

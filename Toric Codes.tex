@@ -13,6 +13,8 @@
 \usepackage{stmaryrd}
 \usepackage{tikz-cd}
 \usepackage{relsize}
+\usepackage{mathrsfs}
+
 
 
 \newtheorem{theorem}{Theorem}[section]
@@ -49,13 +51,18 @@
 \newcommand{\FF}{\mathbb{F}}
 \newcommand{\ZZ}{\mathbb{Z}}
 \newcommand{\Ncal}{\mathcal{N}}
+\newcommand{\LL}{\mathscr{L}}
 \newcommand{\TT}{\mathcal{T}}
+\newcommand{\Ccat}{\mathscr{C}}
+\newcommand{\Dcat}{\mathscr{D}}
 \newcommand{\st}{\,\,\mathrm{s.t}\,\,}
 \newcommand{\mm}{\mathfrak{m}}
 \newcommand{\pp}{\mathfrak{p}}
 \newcommand{\Hom}{\mathrm{Hom}}
 \newcommand{\Frac}{\mathrm{Frac}}
 \newcommand{\res}{\mathrm{res}}
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\Rep}{\mathrm{Rep}}
 \newcommand{\Vecc}{\mathrm{Vec}}
 \newcommand{\0}{\left|0\right>}
 \newcommand{\1}{\left|1\right>}
@@ -67,9 +74,14 @@
 \newcommand{\bigleadsto}{\mathlarger{\mathlarger{\mathlarger{\leadsto}}}}
 
 
+
 \begin{abstract}
 One of the most promising forms of quantum computation proposed today is Topological Quantum Computation. In this manuscript, we describe the simplest non-trivial example of Topological Quantum Computation: The toric code. We give explanations in terms of elementary mathematics and physics, as well as the high-power languages of Topological Quantum Field Theory and Modular Tensor Categories.
 \end{abstract}
+
+\newpage
+
+\tableofcontents
 
 \newpage
 
@@ -85,7 +97,7 @@ There are already a few good surveys of TQC. The relevant mathematics is describ
 To remain as accessible as possible, we restrict ourselves to the simplest example of TQC: The toric code. This special case is used as motivation for the general theory. Key concepts for the general picture are left undefined, for even simply stating the main results of general TQC would be too cumbersome, and lead us too far astray. In the words of Alexei Kitaev, the inventor of the Toric Code:
 
 \begin{quote}
-``Throughout my career I have been successful inventing toy models, some simple models that capture important features of a more complex problem." - Alexei Kitaev
+``Throughout my career I have been successful inventing toy models, some simple models that capture important features of a more complex problem." - Alexei Kitaev\footnote{[WORK: find video]}
 \end{quote}
 
 This manuscript is based on lecture notes from a course on TQC taught by Zhenghan Wang, in the winter of 2023 at UC Santa Barbara. The author expresses his sincerest gratitude to Zhenghan Wang and the other students of the class, without whom this manuscript would not have been possible.
@@ -106,7 +118,7 @@ The structure of the manuscript is as follows:
 
 \item Section \ref{TQFTs} gives an introduction to Topological Quantum Field Theories (TQFTs), the formal mathematical abstractions of topological quantum phases of matter. Subsection \ref{The general picture} gives an overview of the subject. Subsection \ref{DW TQFT} defines the $\ZZ_2$ Dijkgraaf-Witten theory, the TQFT associated with the toric code.
 
-\item Section \ref{Modular Tensor Categories} gives an introduction to Modular Tensor Categories (MTCs), the compressed mathematical abstraction of topological quantum phases of matter. Subsection \ref{Anyon model} gives an overview of the subject, and the equivalence between MTCs and TQFTs. Subsection \ref{Category viewpoint} gives the more elegant interpretation of MTCs in the language of categories. For those unfamiliar with the subject of Category Theory, a brief introduction is contained in Appendix \ref{Categories}. Subsection \ref{VecZ2 MTC} defines the $\mathcal{Z}(\Vecc_{\ZZ_2})$ MTC, which is the MTC associated with the toric code.
+\item Section \ref{Modular Tensor Categories} gives an introduction to Modular Tensor Categories (MTCs), the compressed mathematical abstraction of topological quantum phases of matter. Subsection \ref{Anyon model} gives an overview of the subject, and the equivalence between MTCs and TQFTs. Subsection \ref{Category viewpoint} gives the more elegant interpretation of MTCs in the language of categories. For those unfamiliar with the subject of Category Theory, a brief introduction is contained in Appendix \ref{Categories}. Subsection \ref{VecZ2 MTC} defines the $\mathcal{Z}(\Rep_{\ZZ_2})$ MTC, which is the MTC associated with the toric code.
 
 \item Section \ref{The Big Picture} gives a big-picture summary of TQC, using the mathematics developed in the previous sections.
 
@@ -205,7 +217,7 @@ Before moving on to an in-depth treatment of the toric code, we offer a general 
 \item Measurements are performed by observing the topological properties of the resulting ground state.
 \end{enumerate}
 
-Here, \textit{ground state} refers to a state in the system with lowest possible energy. Note that in the previous description of spin liquids, all electrons having the same spin is a result of them being in the lowest energy state. An ``excited" electron with deviant spin will raise the energy of the system. In this way, quasiparticles can be interpreted as excitations of the topological quantum material. This motivates the fact that (topological) quantum computers must be exceptionally cold to function: Any extra energy will correspond to extra excitations, causing the computer to malfunction, since information is only stored in ground states.
+Here, \textit{ground state} refers to a state in the system with lowest possible energy. Note that in the previous description of spin liquids, all electrons having the same spin is a result of them being in the lowest energy state. An ``excited" electron with deviant spin will raise the energy of the system. In this way, quasiparticles can be interpreted as excitations of the topological quantum material. [WORK: This needs more explination.]This motivates the fact that (topological) quantum computers must be exceptionally cold to function: Any extra energy will correspond to extra excitations, causing the computer to malfunction, since information is only stored in ground states.
 
 The possibilities for topological quantum materials and TQC are extremely exciting, and we are eager to see where the field will go in the coming years.
 
@@ -596,7 +608,7 @@ All of the interesting quantum systems are in two dimensional spaces. This can b
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.25]{klein-bottle}
-\caption{The Klein bottle, attempting to be embedded in 3d space}
+\caption{A Klein bottle, attempting to be embedded in 3d space}
 \label{fig:klein-bottle}
 \end{center}
 \end{figure}
@@ -673,8 +685,10 @@ Additionally, a $(2+1)$-TQFT is required to satisfy the following properties:
 
 \item (Composing bordisms = composing maps). $Z(X_1\cup X_0)=Z(X_1)\circ Z(X_0)$. Here, $X_0$ is a bordism from two surfaces $S_0$ and $S_1$ and $X_1$ is a bordism from surfaces $S_1$ to $S_2$. One easily verifies that their union $X_1\cup X_0$ is a bordism between $S_0$ and $S_2$, whose induced map we can compare with the composition of the induced maps of $X_0$ and $X_1$.
 
-\item (Swap spaces = swap tensor factors) $Z(X)(v_0\otimes v_1)=v_1\otimes v_0$ for all $v_0\in V(S_0)$, $v_1\in V(S_1)$. Here, $X$ is the bordism from $S_0\sqcup S_1$ to $S_1\sqcup S_0$ defined by taking $S_0,S_1$ and moving them around each other.
+\item (Swap spaces = swap tensor factors) $Z(X)(v_0\otimes v_1)=v_1\otimes v_0$ for all $v_0\in V(S_0)$, $v_1\in V(S_1)$. Here, $X$ is the bordism from $S_0\sqcup S_1$ to $S_1\sqcup S_0$ defined by taking $S_0,S_1$ and moving them around each other. 
 \end{enumerate}
+
+\raggedleft\qedsymbol{}
 
 \end{definition}
 
@@ -865,21 +879,363 @@ $\newline\newline$
 \section{Modular Tensor Categories}
 \label{Modular Tensor Categories}
 
-[WORK: Make section.]
-\subsection{The data of an anyon model}
+\subsection{Anyon models}
 \label{Anyon model}
 
-[WORK: Give the MTC description by label sets, fusion rules, and braiding relations. This should just be a big collection of numbers and some axioms they have to follow. Explain the physical concept that each set of numbers/relation corresponds to]
+
+To describe Topological Quantum Computation (TQC), one has to describe topological quantum phases of matter. Topological Quantum Field Theories (TQFTs) are the most immediate way of doing this, as described in Section [WORK: ref]. However, there are a few problems with this method:
+
+\begin{enumerate}
+\item There is a large amount of data that needs to be specified to define a TQFT. Namely, one needs to keep track of what vector spaces are assigned to every surface, and what morphisms are assigned to every bordism. As was seen in subsection [WORK: ref], this can make defining TQFTs very difficult, and can lead to the verification of even basic axioms being difficult.
+\item It is hard to deal directly with anyons (quasiparticles), which can make describing TQC (the braiding of anyons) very difficult. This is resolved in part by the consideration of \textit{extended} TQFTs, where we allow punctures in surfaces to represent anyons, but this results in even more data to carry around.
+\end{enumerate}
+
+To summaraize, what we want is a mathematical desciption of topological quantum phases of matter that puts anyons and their motions/behaviors front and center. This is what Modular Tensor Categories give us. The objects and morphisms of a Modular Tensor Category (MTC) are thought of abstractly as
+
+$$
+\begin{pmatrix}
+\bold{objects:}\text{ finite collections of anyons} \\
+\bold{morphisms:}\text{ motions/behaviors of anyons}
+\end{pmatrix}.
+$$
+
+For those needing a refresher on Category Theory, Appendix [WORK: ref] contains the neccecary prerequisites. For this subsection, however, no knowledge of categories will be needed. This is becasue MTCs also have an elementary description as a finite collection of numbers representing physical properties of anyons.
+
+It should not be seen as too surprising that topological quantum phases of matter can be described with a finite set of numbers. At the end of the day, when measuring physical phenomina all one will get is a number - wavelength, spin, energy etc... Thus, any practical physical theory should be able to be boiled down to a collection of numbers.
+
+The most fundamental operation on anyons is \textit{fusion}, which we have up to now seldom discussed. The reason for this is that the elementary description of the toric code given in Section [WORK: ref] works perfectly well without introducting fusion, so the notion was ommited for clarity. We now revisit the picture of Section [WORK: ref], with our eyes towards fusion.
+
+Fusion is the process in which two elementary particles collide, and output other types of particles. [WORK: give relatable examples of fusion].
+
+In the context of the toric code, we have discussed two types of quasiparticles: $X$-type and $Z$-type. When they fuse together, we get a third $Y$-type particle. Seeing as $X$-type particles move along edges and $Z$-type particles move along faces, we observe that the intersection of the trajectory of an $X$-type particle and a $Z$-type particle must occur at the center of an edge. Moving the $X$-type particle along that edge corresponds to tensoring that edge with $\sigma_{X}$, and moving the $Z$-type particle corresponds to tensoring with $\sigma_{Z}$. Hence, creating two pairs of $X$ and $Z$ type particles and fusing them together corresponds to tensoring with $\sigma_X\sigma_Z$. Seeing as $\sigma_X\sigma_Z=i\sigma_Y$, we call these new particles $Y$-type particles.
+
+Visualizing $Y$-type particles is cumbersome - hence the desire to stick with simply writing $X$ and $Z$ particles and to ignore the fact that they can fuse into a $Y$. One practice could be to place the $Y$ type particle halfway betwen the $X$ and $Z$ type particles that fused to make it. Tensoring with $i\sigma_Y$ will move the particle in a stange fashion, keeping it halfway between faces and edges, as seein in Figure [WORK: make diagram].
+
+To write out the full set of fusion rules for the toric code, we need one last particle type. Namely, the ``do-nothing" particle that one gets when fusing a particle with its own antiparticle. While physically trivial, this particle is neccecary to make our mathematical descriptions. Seeing as the do-nothing particle moves by doing nothing, we call it the $I$-type particle since it moves by tensoring with $I$. We denote $a\otimes b$ for the fusion of two particles $a$ and $b$. It will become clear in the category theoretic notation why the tensor product symbol is used. The table of fusion rules is given in Figure [WORK: make table]. We make a few observations. The fact that $X$ fused with $Z$ is $Y$ is by definition. The fact that $Z$ and $X$ fuse to $-Y$ comes from the fact that fusing the opposite direction means applying $\sigma_Z\sigma_X$ to the edge instead of $\sigma_X\sigma_Z$. Seeing as $\sigma_X$ and $\sigma_Z$ anticommute, this gives a $-1$ sign. All of the other boxes in the table can be checked similarly. For example, $Z\otimes Y=-X$ becasue $\sigma_Z(i\sigma_Y)=-\sigma_X$. We observe that fusion essentially gives a group law on the space of anyon types. However, this is not exactly the case: Sometimes the output is positive, and sometimes the output is negative.
+
+In general, fusion will have the following structure. We let $\LL$ be a finite set, which we think of as being the possible anyon types. For any $a,b\in \LL$, we will have the formal equality
+
+$$a\otimes b=\sum_{c\in \LL}N_{c}^{a,b}c.$$
+
+This formula intuitively says that when $a$ and $b$ are fused this will result in a collection of particles, constisting of $N_c^{a,b}$ copies of $c$ for each $c\in \LL$. [WORK: We should have that all coefficients are positive. Should we worry about sign now? What to say?] This can be thought of as the generalization of a finite group, where now the group law is allowed to output formal linear combinations of elements in the group. These generalizations of groups are called \textit{fusion systems}. Those fusion systems which satisfy a generalization of commutivity are called \textit{braided fusion systems}, and correspond to braided fusion categories. Modular Tensor Categories are braided fusion categories which satisfy a certain non-degeneracy condition In this way, one can think of MTCs as being vast ``non-degenerate" generalizations of finite abelian groups. We now formally state the definition of fusion system:
+
+
+\begin{definition}[Fusion system] A fusion system is the following data.
+
+\begin{enumerate}
+\item (Anyon types) A finite set $\LL$.
+\item (Fusion coefficients) Natural numbers $N_{c}^{a,b}$ for all $a,b,c\in \LL$.
+\end{enumerate}
+
+Additionally, a fusion system is required to satisfy the following properties:
+
+\begin{enumerate}
+\item (Identity/Do-nothing) There is a unique element $1\in \LL$ such that
+
+$$1\otimes a=a\otimes 1=a$$
+
+for all $a\in \LL$. In other words,
+
+$$N^{a,1}_{b}=N^{1,a}_{b}=\begin{cases}1 & a=b \\ 0 & \text{otherwise}\end{cases}$$
+
+for all $a,b\in \LL$.
+
+\item (Inverse/anti-particle) There is a unique element $a^*\in \LL$ such that
+
+$$a\otimes a^*=1\oplus [\text{other terms}],$$
+
+for all $a\in \LL$. For all  $b\neq a^*$, $a\otimes b$ has no $1$ term. In other words,
+
+$$N^{a,b}_{1}=N^{b,a}_{1}=\begin{cases} 1 & b=a^* \\ 0 & \text{otherwise}\end{cases}$$
+
+for all $a, b\in \LL$.
+
+\item (Associativity) We have
+
+$$(a\otimes b)\otimes c=a\otimes (b\otimes c)$$
+
+for all $a,b,c\in \LL$. In other words, for all $a,b,c,d\in \LL$ we have that
+
+$$\sum_{e\in \LL}N_e^{a,b}N_{d}^{e,c}=\sum_{e\in \LL}N_{e}^{b,c}N_d^{a,e}.$$
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+The next piece of the puzzle is based on one of the key ideas from category theory: Equal versus isomorphic. Given quasiparticles $a,b,c$ fusing via $(a\otimes b)\otimes c$ or $a\otimes (b\otimes c)$ will result in the same particles. However, just because the particles present are the same does not mean that the quantum systems are the same. A huge in Section [WORK: ref] is that changing order in processes like braiding might result in the same particles, but different states. Namely, different states in the same eigenspace. The processes $(a\otimes b)\otimes c$ and $a\otimes(b\otimes c)$ need only be equal up to an invertable linear transformation, i.e., isomorphism. We will define a $6j$ fusion system to be a fusion system in which we have chosen isomorphisms between all $(a\otimes b)\otimes c$ and $a\otimes (b\otimes c)$.
+
+The visualization of this is best suited to a graphical language. As we will see next section, it is really best suited to a category-theoretic graphical language. The idea behind the graphical language is to make rigorous the sorts of diagrams that one will obviously draw when explaining the subject, as to clarify often messy conditions one will impose on objects. The general policy for these diagrams is as follows.
+
+\begin{enumerate}
+\item The diagrams are to be read from top to bottom.
+\item Strands correspond to anyons.
+\item Operations on strands correspond to operations on anyons.
+\end{enumerate}
+
+Our current main examples can be found in Figure [WORK: make figure]. We comment additionally on the last box, representing fusion. We observe that $a\otimes b$ could be the sum of many factors, not only $c$. What this singles out is a \textit{choice} of funcion $a\otimes b\to c$, i.e., a chocie of how to fuse $a\otimes b$ together and get a $c$. In general there will be multiple ways, and the choice is mostly arbitrary. This informal notion of funcion will be put in firmer footing in subsection [WORK: ref] when we use category theory.
+
+Consider a function $(a\otimes b)\otimes c \to d$. This can be decomposed as taking a function $a\otimes b\to n$, then $n\otimes c\to d$,
+
+$$(a\otimes b)\otimes c\to n\otimes c\to d.$$
+
+Given a function $a\otimes (b\otimes c)\to d$, one can decompose by taking functions $b\otimes c\to m$ and $a\otimes m\to d$. Writing out the decomposition, we get
+
+$$a\otimes (b\otimes c)\to a\otimes m \to d.$$
+
+These two processes can be represented in terms of each other by a linear combination. In the graphical language, this is expressed by
+
+[WORK: make graph!!]
+
+These values $F^{a,b,c}_{d;n,m}\in \CC$ are known as $6j$ symbols. They clearly depend on the choice of functions ($a\otimes b\to n$ and such). Understanding the real intuition behind these $6j$ symbols without any handwaiving will have to wait until next section. However, for our purposes, this is really not neccecary: These can be treated simply as complex numbers, with as much or as little intuition behind them as one desires. All that is required is that they satisfy some axioms, as in the following definition:
+
+\begin{definition}[$6j$ Fusion system] A $6j$ fusion system is the following data.
+
+\begin{enumerate}
+\item A fusion system $(\LL, N_{\--}^{\--,\--})$
+\item Complex numbers $F^{a,b,c}_{d;n,m}$ for all $a,b,c,d,n,m\in \LL$.
+\end{enumerate}
+
+Additionally, a $6j$ fusion system is required to satisfy the following properties:
+
+\begin{enumerate}
+
+\item (Admissibility) We call a triple $(a,b,c)\in \LL^3$ admissible if $N^{a,b}_c\neq 0$. We call a sextuple $(a,b,c,d,n,m)\in \LL^6$ admissible if $(a,b,m)$, $(m,c,d)$, and $(b,c,n)$ are all admissible. We write $F^{a,b,c}_{d}$ to be the matrix whose coefficients are $F^{a,b,c}_{d;n,m}$, where $n,m$ run over pairs making $(a,b,c,d,n,m)$ admissible. We have that
+\begin{itemize}
+\item $F^{a,b,c}_{d;n,m}=0$ if $(a,b,c,d,n,m)$ is not admissible
+\item $F^{a,b,c}_{d}$ is invertible
+\end{itemize}
+
+for all $a,b,c,d,n,m$.
+
+\item (Associativity trivial on two inputs) $F^{a,b,c}_{d}$ is the identity matrix, whenever one of $a$, $b$, or $c$ is $1$.
+
+\item (Pentagon) For all $a,b,c,d,e,f,p,q,m\in\LL$,
+
+$$\sum_{n\in \LL}F^{b,c,d}_{q;p,n}F^{a,n,d}_{f;q,e}F^{a,b,c}_{e;n,m}=F^{a,b,p}_{f; q,m}F^{m,c,d}_{f;p,e}.$$
+
+\item (Time reversal symmetry) $\left[\left(F^{a^*,a,a^*}_{a^*}\right)^{-1}\right]_{1,1}=\left[F^{a,a^*,a}_{a}\right]_{1,1}$, where $\left[\cdot\right]_{n,m}$ denotes the $[n,m]$th entry of a matrix.
+\end{enumerate}
+\raggedleft\qedsymbol{}
+\end{definition}
+
+Seeing as these axioms are more complicated, we explain them all in detail. Admissibility of the triple $(a,b,c)$ says that when $N^{a,b}_{c}\neq 0$, which is equivilant to saying that when $a$ and $b$ fuse, a $c$ particle is created. In the language of functions, this is saying that there is a nonzero map $a\otimes b\to c$, i.e., a nonzero physical process taking as input $a\otimes b$ and outputting $c$.  Thus, when we think about decomposing $a\otimes b\otimes c$ as maps $a\otimes b\to n$, $m\otimes c\to d$, and $b\otimes c\to n$, it makes sense that if any of these pairs is not admissible then $F^{a,b,c}_{d;n,m}=0$. One of those tripes being nonadmissible would mean that one of the functions in one of the compositions $a\otimes b\otimes c\to d$ is $0$, and hence the function itself is zero, and hence will contribute nothing to the change of basis. Similarly, the matrix $F^{a,b,c}_{d}$ should give an equivilance between functions $(a\otimes b)\otimes c \to d$ and functions $a\otimes (b\otimes c)\to d$. Equvilance means isomorphism, which means that $F^{a,b,c}_{d}$ should be invertible.
+
+If one of $a,b,c$ is $1$, then $F^{a,b,c}_{d}$ should surely be the identity. Imagine, for instance, $c=1$. Then, we will be relating $(a\otimes b)\otimes 1$ and $a \otimes (b\otimes 1)$. Tensoring with $1$ should not only leave you isomorphic with where you started, but it should really leave you equal. That is, we should be able to suppress $\otimes 1$ from notation and things should still work. Upon removing the $\otimes 1$, we find that we are relating $a\otimes b$ and $a\otimes b$, two equal objects, and hence the transformation $F^{a,b,c}_{d}$ should be the identity.
+
+The pentagon identity is exactly the sort of identity for which graphical language is useful. As stated, it is quite non-obvious to decipher meaning from the expression. It becomes the statement that applying associativity in two diffent ways is identical. In graphical language, it becomes the fact that going either way around the following 5-term diagram gives the same answer (hence the name pentagon):
+
+[WORK: Make pentagon.]
+
+[WORK: Explain time reversal symmetry]
+
+A natural question about the definition of $6j$ symbols could be as follows: The goal was to define an isomorphism $a\otimes (b\otimes c)$ to $(a\otimes b)\otimes c$. Instead, one defined how morphisms $a\otimes (b\otimes c)\to d$
+ and $(a\otimes b)\otimes c\to d$ relate for every $d$. While this does indeed give some connection between $a\otimes (b\otimes c)$ and $(a\otimes b)\otimes c$, it is not immediately clear that tells us the two objects are isomorphic or, if so, what that isomorphism would be. While seemingly counterintuitive, this switch from studying objects to studying the functions between objects is extremely fruitful. This forms the heart of the Yoneda lemma, the most important result in category theory: Objects should be understood by their relationship with each other. According to Ravi Vakil:
+
+\begin{quote}
+You work at a particle accelerator. You want to understand some particle. All you can do are throw other particles at it and see what happens. If you understand how your mystery particle responds to all possible test particles at all possible test energies, then you know everything there is to know about your mystery particle - Ravi Vakil\footnote{This quote is folklore, relayed by a MathOverflow post of Theo Johnson-Freyd}.
+\end{quote}
+
+In this context, Vakil's quote is very literal - we are studying particles by looking at their fusion rules. Fusion, as a process, generally happens when things hit each other very fast in a particle accelerator. By knowing that $a\otimes (b\otimes c)$ and $(a\otimes b)\otimes c$ can go to $d$ in all the same ways (with the relationship being those ways being specified by the matrix $F^{a,b,c}_d$), we can conclude an isomorphism between $a\otimes (b\otimes c)$ and $(a\otimes b)\otimes c$. A formal treatment of the Yoneda lemma insofar as it relates to our study is given in the next section.
+
+We now define braided $6j$ fusion systems. A braiding should give the relashionship between $a\otimes b$ and $b\otimes a$. These objects will be isomorphic, but not equal. For example, the fact that $X$ and $Z$ anticommute in the toric code is exactly the statement that isomorphism $X\otimes Z\to Z\otimes X$ should be $-1$ times the identity. Keeping with our Yoneda perspective, instead of giving an isomorphism $a\otimes b$ and $b\otimes a$ we give isomorphism between the spaces $a\otimes b\to c$ and $b\otimes a\to c$ for every $c$. Graphically, this can be seen in Figure [WORK: make figure]. The formal definition is as follows:
+
+\begin{definition}[Braided $6j$ Fusion system] A braided $6j$ fusion system is the following data.
+
+\begin{enumerate}
+\item A $6j$ fusion system $(\LL, N_{\--}^{\--,\--},F^{\--,\--,\--}_{\--;\--,\--})$.
+\item Complex numbers $R^{a,b}_{c}$ for all $a,b,c\in \LL$.
+\end{enumerate}
+
+Additionally, a braided $6j$ fusion system is required to satisfy the following properties:
+
+\begin{enumerate}
+
+\item (Admissibility) $R^{a,b}_{c}\neq 0$ if $(a,b,c)\in \LL^3$ is admissible
+
+\item (Hexagon) For all $a,b,c,d,e,m\in\LL$,
+
+$$\left(R^{a,c}_{e}\right)^{\pm 1}F^{b,a,c}_{d;e,m}\left(R^{a,b}_{m}\right)^{\pm 1}=\sum_{n\in \LL} F^{b,c,a}_{d;e,n}\left(R^{a,n}_{d}\right)^{\pm 1}F^{a,b,c}_{d;n,m}.$$
+\end{enumerate}
+\raggedleft\qedsymbol{}
+\end{definition}
+
+Again, the hexagon is a mess of symbols when written out explicitely. In graphical language, it becomes the fact that going either way around the following 6-term diagram gives the same answer (hence the name hexagon):
+
+[WORK: Make hexagon]
+
+With all this, we can finally define an MTC:
+
+\begin{definition}[Modular tensor fusion system] A modular tensor fusion system is a braided $6j$ fusion system satsifying the following conditions
+
+\begin{enumerate}
+
+\item (Spherical) $F^{a,b,c}_{1;a^*,c}F^{b,c^*,a}_{1;a^*a,a}F^{c^*,a,b}_{1;b^*,b}=1$ for all $a,b,c\in \LL$.
+
+\item (Non-degenerate) For $a\in \LL$, if $B_c^{a,b}=B_c^{b,a}$ for all $b,c\in \LL$, then $a=1$.
+\end{enumerate}
+\raggedleft\qedsymbol{}
+\end{definition}
+
+The spherical condition is the statement that [WORK: make spherical clear].
+
+The non-degeneracy condition says that every non-trival particle should braid non-trivially with at least one other particle. Graphically, this is shown in [WORK: make diagram].
+
+It is important to remember that even though the definition is long and complicated, at the end of the day these are still just finite collections of numbers satisfying a finite number of polynomial equations. In the case of the toric code, all of the relevant pieces of data are summarized in Figure [WORK: Make table].
 
 \subsection{The category-theoretic viewpoint}
 \label{Category viewpoint}
 
-[WORK: Give a bottom definition of Modular Tensor Category. State exactly how things correspond to the data of an anyon model. Main theorem: There could be multiple liftings to a category, maybe zero! Motivate category theory via commutative diagrams.]
+In this subsection, we give the category theoretic perspective on Modular Tensor Categories (MTCs). As with subsection [WORK: ref], we will build up to the definition of a MTC slowly. Thinking of MTCs as corresponding to ``non-degenerate" finite abelian groups, we will start with the category-theory versions of monoids\footnote{A monoid is a set equipped with an associative binary operation and an identity element}, groups, finite groups, finite abelian groups, and then end with non-degenerate finite abelian group.  A table giving algebraic notions and their category theoretic analogues is found in Figure [WORK: make table]. We begin with the generalization of monoid:
 
-\subsection{The MTC $\mathcal{Z}(\Vecc_{\ZZ_2})$}
+\begin{definition}[Monoidal category] A monoidal category is the following data:
+
+\begin{enumerate}
+\item A category $\Ccat$.
+\item A functor $\otimes: \Ccat \times \Ccat \to \Ccat$.
+\item (Identity) A distinguished element $1\in \Ccat.$
+\item (Associativity) A natural equivilance $\alpha: \--\otimes (\-- \otimes \--) \to (\--\otimes \--)\otimes \--$, where $\-- \otimes (\--\otimes \--)$ denotes the functor $\Ccat\times \Ccat\times \Ccat\to\Ccat$ sending $(A,B,C)$ to $A\otimes (B\otimes C)$, and similarly for $(\-- \otimes \-- )\otimes\--$.
+\item (Left unit) A  natural equivilance $\lambda: 1\otimes \-- \to \--$, where $1\otimes \--$ denotes the functor $\Ccat\to \Ccat$ sending $A$ to $1\otimes A$, and $\--$ denotes the identity.
+\item (Right unit) A natural equivilance $\rho: \--\otimes 1 \to \--$, where $\--\otimes 1$ is the functor $\Ccat\to \Ccat$ sending $A$ to $A\otimes 1$.
+\end{enumerate}
+
+Additionally, a monoidal category is required to satisfy the following properties:
+
+\begin{enumerate}
+\item (Triangle identity) For all $x,y\in \Ccat$, we have the commutative diagram [WORK: make commutative diagram]
+
+\item (Pentagon identity) For all $x,y,z,w\in \Ccat$, we have the commutative diagram [WORK: make commutative diagram]
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+Observe the parallels between the propreties of monoidal categories and the prerties of $6j$ fusion systems. The triangle identity can be seen as analagous to the fact that associativity being trivial on two inputs, and the pentagon is analagous to the pentagon. We will make this explicit when we show how to make fusion systems from categories.
+
+In the definition of fusion systems, the identity, associativity, and inverse are properties instead of structures. They are unique if they exist. While the identity will be unique up to isomorphism, one still must make a choice of object. There are possibly multiple different choices of natural equivilances for the unit. In category theory, the difference between equal and isomorphic is very pronounced, and one needs to choose an isomorphism. The following theorem answers in what sense we really do get mileage out of considering categories in which we make strange choices of $\alpha,\lambda,\rho$, and in what sense we really do get mileage out of considering categories with multiple objects in the same equivilance class. The notion of monoidal equivilance is used in the theorem; we postpone the definition until after the statement.
+
+\begin{theorem} Let $\Ccat$ be a monoidal category. Then
+
+\begin{enumerate}
+\item (MacLane) The category $(\Ccat,\otimes_{\Ccat})$ is monoidally equivilant to a category $\Dcat$ in which $A\otimes (B\otimes C)=(A\otimes B)\otimes C$, $1\otimes A=A\otimes 1=1$, and $\alpha,\lambda,\rho$ are all the identity functors, for all $A,B,C\in \Dcat$. 
+\item The category $\Ccat$ is monoidally equivilant to a category in $\Dcat$ in which all objects which are isomorphic are equal.
+\end{enumerate}
+
+However, $\Ccat$ is \textbf{not} in general equivilant to a category which is both at the same time. [WORK: Add reference. nLab has good stuff. T Hagge's thesis.]
+\end{theorem}
+
+This theorem really says that you cannot have your cake and eat it too. You can forget about non-trivial maps or you can forget about non-equal isomorphic obects, but you can't do both at once. Authors will often assume either one condition or the other (known as \textit{strict} and \textit{skeletal} respectively), and this will sometimes lead to confusion across the literature. A monoidal equivilance is a monoidal functor which has an inverse.
+
+\begin{definition}[Monoidal functor] [WORK: Give definition.]
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+We now define fusion categories. One key difficulty is deciding what category-theorertical object should correspond to the label set $\LL$ of a fusion system. The answer is as follows. We want general elements of $\Ccat$ to be uniquely representable as direct sums of the elements in the label set. The elements of $\Ccat$ which cannot be broken down further as direct sums of smaller objects are known as indecomposable objects.
+
+There are a few difficulties in trying to formalize this idea. For one, you might be in the strange case that there are indecomposable objects that still have smaller subjects. For example, consider the category of abelian groups. The group $\ZZ_4$ has the subject $\ZZ_2$. However, $\ZZ_2\oplus\ZZ_2\neq \ZZ_4$. Formally, this example is saying that the exact sequence
+
+$$0\to \ZZ_2\to \ZZ_4\to\ZZ_2\to 0$$
+
+does not split. An introduction to exact sequences is found in Appendix [WORK: ref]. What we really want is that every object should be the direct sum of objects which themselves have no subjects. Objects with no subobjects are called irriducible objects. This discrepency between irriducible and indecomposable forms one of the key themes of representation theory, and leads to a great deal of subtledy. Irrididucible objects are also called simple objects. Categories in which there is no discrepency between irrididuble and indecomposable are called semisimple, i.e., semisimple categories are those categories in which every object is the direct sum of simple objects.
+
+This discussion above strongly uses the notion of \textit{subobject}. However, it is not clear in general what subobject should mean. The classic intuation is that $A$ is a subobject of $B$ if there is an injective map $f:A\hookrightarrow{}B$. Being injective is the statement that the kernel of $f$ is  $0$, but in arbitarary categories there is no good notion of kernel. Thus, we restrict our attention to \textit{abelian} categories. Being abelian comes with a large amount of desirable properties, and most categories people consider are abelian. In abelian categories, we require that all hom sets are given the structure of abelian groups. This is done for various reasons [WORK: what are those reasons?]. Seeing as our eyes are towards quantum physics, all hom sets will be $\CC$ vector spaces. Linear combinations of morphisms will correspond to superpositions. To preserve space, we combine ``abelian" and ``$\CC$-linear" into one definition:
+
+\begin{definition}[$\CC$-linear abelian category]  A $\CC$-linear abelian category is the following data:
+
+\begin{enumerate}
+\item A category $\Ccat$.
+\item The structure of a $\CC$ vector space on $\Hom(A,B)$ for all $A,B\in \Ccat$.
+\end{enumerate}
+
+Additionally, a semisimple linear category is required to satisfy the following properties:
+
+\begin{enumerate}
+\item (Linearity) The composition map $\Hom(A,B)\times \Hom(B,C)\to \Hom(A,C)$ is bilinear for all $A,B,C\in \Ccat$.
+\item (Has a zero object) There is an object $0\in \Ccat$ such that for every $A\in \Ccat$ there is a unique morphism $0\to A$.
+\item (Has binary biproducts) For all $A,B\in \Ccat$ the biproduct of $A$ and $B$ exists. This biproduct is denoted $A\oplus B$, and refered to as the direct sum. Recall that a biproduct is an object [WORK: fill out definition].
+\item (Has kernels and cokernels). [WORK: fill out definition]
+\item (All monomorphisms and epimorphisms are normal). [WORK: fill out definition]
+\end{enumerate}
+\raggedleft\qedsymbol{}
+\end{definition}
+
+
+
+Will these definitions out of the way, we can now define fusion categories.
+
+\begin{definition}[Fusion category]  A fusion category is the following data:
+
+\begin{enumerate}
+\item A $\CC$-linear abelian category $\Ccat$.
+\item (Duals) Choices of objects $A^*$ for every object $A\in \Ccat$.
+\item (Unit/co-unit)Choices of morphisms $\eta_A: 1\to A^*\otimes A$ and $\epsilon_A: A\otimes A^*\to 1$ for all $A\in \Ccat$
+\end{enumerate}
+
+Additionally, a fusion category is required to satisfy the following properties:
+
+\begin{enumerate}
+\item (Rigidity) [WORK: Add triangle identitites]
+\item (Semisimpicity) Every object is the direct sum of finitely many simple objects. We call an object simple if it has no proper nontrivial subobjects.
+\item All hom spaces are finite dimensional.
+\item There are only finitely many isomorphism classes of simple objects
+\item The tensor unit $1$ is simple.
+\end{enumerate}
+\raggedleft\qedsymbol{}
+\end{definition}
+
+We now contrast fusion categories and fusion systems. The first claim is as follows:
+
+\begin{proposition} Let $\Ccat$ be a fusion category. Let $\LL$ be the set of isomorphism classes of simple objects in $\Ccat$. For any $a,b,c\in \LL$, define
+
+$$N^{a,b}_c=\dim_{\CC}\left(\Hom(c,a\otimes b)\right).$$
+
+The pair $(\LL,N^{a,b}_{c})$ is a fusion system.
+\end{proposition}
+\begin{proof}. [WORK: Prove this!]
+\end{proof}
+
+The interesting fact is that one can \textit{not} go the other direction. Namely, we have the following:
+
+\begin{theorem}[Ocneanu rigidity]. [WORK: find citation] Let $\LL$ be fusion system. There are finitely many (possibly $0$!) fusion categories, up to [WORK: what is the correct notion here?], which give a system [WORK: what is the correct notion here?] to $\LL$ under the process described in proposition [WORK: ref].
+\end{theorem}
+
+The correct correspondence is in fact between fusion categories and $6j$ fusion systems.
+
+\begin{proposition}. [WORK: fusion cat to  6j system]
+\end{proposition}
+
+\begin{proposition}.[WORK: find citation]Let $\LL$ be a $6j$ fusion system. There is a unique fusion category which gives $\LL$ under the process described in proposition [WORK: ref].
+\end{proposition}
+
+[WORK: Add Yondea lemma discussion.]
+
+We now define our analogues of abelian groups, braided fusion categories:
+
+\begin{definition}[Braided fusion category]. [WORK: Give definition]
+\end{definition}
+
+[WORK: Show that this gives a braided $6j$ fusion system]
+
+\begin{definition}[Modular Tensor Category]. [WORK: Give definition]
+\end{definition}
+
+[WORK: Show that this gives you a modular tensor fusion system]
+
+
+\subsection{The MTC $\mathcal{Z}(\Rep_{\ZZ_2})$}
 \label{VecZ2 MTC}
 
-[WORK: Define the MTC $\mathcal{Z}(\Vecc_{\ZZ_2})$ explicitly via data. Give a brief explanation of how this corresponds to the $\ZZ_2$ Dijkgraaf-Witten theory.Then, define $\Vecc_{\ZZ_2}$. State that the MTC defined is the Drinfeld center, to further motivate category theory. Analogy for Drinfeld center: (non-degenerate) abelianization. ]
+[WORK: Define the MTC $\mathcal{Z}(\Rep_{\ZZ_2})$ explicitly via data. Give a brief explanation of how this corresponds to the $\ZZ_2$ Dijkgraaf-Witten theory.Then, define $\Rep_{\ZZ_2}$. State that the MTC defined is the Drinfeld center, to further motivate category theory. Analogy for Drinfeld center: (non-degenerate) abelianization. ]
+
+$\newline\newline$
+
+\large \textbf{Exercises}:\normalsize
+
+\begin{enumerate}[\thesection .1.]
+\item Define a $(n+1)$-TQFT as a symmetric monoidal functor $\text{Bord}(n+1)\to \Vecc$. Show that this agree with our definition in the $(2+1)$-TQFT case. [WORK: Flesh this out.]
+\item The original list of axioms for a monoidal category was longer. It was later found by Max Kelly that the smaller set we gave implies the rest. [WORK: State the other axioms, give an outline of the proof, i.e., the diagrams one should show are commutative and have the reader conclude. nLab includes these.]
+\end{enumerate}
+
 
 \section{The Big Picture}
 \label{The Big Picture}
@@ -896,7 +1252,7 @@ $\newline\newline$
 ]
 
 \begin{quote}
-``Folklore, [...] is a technical term for a method of publication in category theory. It means that someone sketched it on the back of an envelope, mimeographed it (whatever that means) and showed it to three people in a seminar in Chicago in 1973, except that the only evidence that we have of these events is a comment that was overheard in another seminar at Columbia in 1976. Nevertheless, if some younger person is so presumptuous as to write out a proper proof and attempt to publish it, they will get shot down in flames." - Paul Taylor \cite{aubert2019categories}
+``Folklore, [...] is a technical term for a method of publication in category theory. It means that someone sketched it on the back of an envelope, mimeographed it (whatever that means) and showed it to three people in a seminar in Chicago in 1973, except that the only evidence that we have of these events is a comment that was overheard in another seminar at Columbia in 1976. Nevertheless, if some younger person is so presumptuous as to write out a proper proof and attempt to publish it, they will get shot down in flames." - Paul Taylor\footnote{[WORK: make description]\cite{aubert2019categories}}
 \end{quote}
 
 [WORK: Here are some misc things for the rest of the manuscript.
