@@ -1,0 +1,38 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-5, 5) {};
+		\node [style=none] (1) at (-3, 3) {};
+		\node [style=none] (3) at (-3, 5) {};
+		\node [style=none] (4) at (-1, 5) {};
+		\node [style=none] (5) at (-3, 1) {};
+		\node [style=none] (6) at (-5, 5.5) {$a$};
+		\node [style=none] (7) at (-3, 5.5) {$b$};
+		\node [style=none] (8) at (-1, 5.5) {$c$};
+		\node [style=none] (10) at (-3, 0.5) {$d$};
+		\node [style=none] (11) at (-2, 4) {};
+		\node [style=none] (12) at (-2.75, 3.75) {$m$};
+		\node [style=none] (15) at (-8, 5) {};
+		\node [style=none] (16) at (-10, 3) {};
+		\node [style=none] (17) at (-12, 5) {};
+		\node [style=none] (18) at (-10, 1) {};
+		\node [style=none] (19) at (-11, 4) {};
+		\node [style=none] (20) at (-10, 5) {};
+		\node [style=none] (21) at (-10, 0.5) {$d$};
+		\node [style=none] (22) at (-8, 5.5) {$c$};
+		\node [style=none] (23) at (-10, 5.5) {$b$};
+		\node [style=none] (24) at (-12, 5.5) {$a$};
+		\node [style=none] (25) at (-10.25, 3.75) {$n$};
+		\node [style=none] (26) at (-7.5, 2.5) {$=$};
+		\node [style=none] (29) at (-6, 2.25) {$\displaystyle{\sum_{m\in\LL}}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0.center) to (1.center);
+		\draw (1.center) to (4.center);
+		\draw (1.center) to (5.center);
+		\draw (3.center) to (11.center);
+		\draw (17.center) to (16.center);
+		\draw (16.center) to (15.center);
+		\draw (19.center) to (20.center);
+		\draw (16.center) to (18.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

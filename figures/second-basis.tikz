@@ -1,0 +1,40 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-6, 5) {};
+		\node [style=none] (1) at (-4, 3) {};
+		\node [style=none] (2) at (-2, 5) {};
+		\node [style=none] (3) at (-8, 1) {};
+		\node [style=none] (6) at (-6, 5.5) {$B$};
+		\node [style=none] (7) at (-2, 5.5) {$C$};
+		\node [style=none] (8) at (-4, 1) {};
+		\node [style=none] (9) at (-6, -1) {};
+		\node [style=none] (10) at (-6, -3) {};
+		\node [style=none] (13) at (-6, -3.5) {$D$};
+		\node [style=none] (15) at (-1, 4) {};
+		\node [style=none] (16) at (2, 1) {};
+		\node [style=none] (17) at (5, 4) {};
+		\node [style=none] (18) at (3.5, 2.5) {};
+		\node [style=none] (19) at (2, 4) {};
+		\node [style=none] (20) at (2, -2) {};
+		\node [style=none] (21) at (-1, 4.5) {$A$};
+		\node [style=none] (22) at (2, 4.5) {$B$};
+		\node [style=none] (23) at (5, 4.5) {$C$};
+		\node [style=none] (24) at (2, -2.5) {$D$};
+		\node [style=none] (25) at (-1.5, 1) {$:=$};
+		\node [style=none] (26) at (2.5, 2) {$N$};
+		\node [style=none] (27) at (-4.5, 1.25) {$N$};
+		\node [style=none] (28) at (-8, 1.5) {$A$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0.center) to (1.center);
+		\draw (1.center) to (2.center);
+		\draw (3.center) to (9.center);
+		\draw (9.center) to (8.center);
+		\draw (9.center) to (10.center);
+		\draw (15.center) to (16.center);
+		\draw (16.center) to (17.center);
+		\draw (18.center) to (19.center);
+		\draw (16.center) to (20.center);
+		\draw (1.center) to (8.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

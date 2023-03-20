@@ -104,6 +104,11 @@ Michael~A Levin and Xiao-Gang Wen.
 \newblock String-net condensation: A physical mechanism for topological phases.
 \newblock {\em Physical Review B}, 71(4):045110, 2005.
 
+\bibitem[MS21]{mignard2021modular}
+Micha{\"e}l Mignard and Peter Schauenburg.
+\newblock Modular categories are not determined by their modular data.
+\newblock {\em Letters in Mathematical Physics}, 111(3):60, 2021.
+
 \bibitem[MZF{\etalchar{+}}12]{mourik2012signatures}
 Vincent Mourik, Kun Zuo, Sergey~M Frolov, SR~Plissard, Erik~PAM Bakkers, and
   Leo~P Kouwenhoven.
@@ -172,6 +177,12 @@ G{\"o}ran Wendin.
 \newblock Quantum information processing with superconducting circuits: a
   review.
 \newblock {\em Reports on Progress in Physics}, 80(10):106001, 2017.
+
+\bibitem[Yam02]{yamagami2002polygonal}
+Shigeru Yamagami.
+\newblock Polygonal presentations of semisimple tensor categories.
+\newblock {\em Journal of the Mathematical Society of Japan}, 54(1):61--88,
+  2002.
 
 \bibitem[YZB{\etalchar{+}}21]{yang2021experimental}
 Fangyuan Yang, Alexander~A Zibrov, Ruiheng Bai, Takashi Taniguchi, Kenji

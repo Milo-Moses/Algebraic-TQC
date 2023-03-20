@@ -6,9 +6,9 @@
 \contentsline {subsection}{\numberline {4.2}The $\mathbb {Z}_2$ Dijkgraaf-Witten TQFT}{28}
 \contentsline {section}{\numberline {5}Modular Tensor Categories}{35}
 \contentsline {subsection}{\numberline {5.1}Anyon models}{35}
-\contentsline {subsection}{\numberline {5.2}The category-theoretic viewpoint}{42}
-\contentsline {subsection}{\numberline {5.3}The MTC $\mathcal {Z}(\mathrm {Rep}_{\mathbb {Z}_2})$}{46}
-\contentsline {section}{\numberline {6}The Big Picture}{47}
-\contentsline {section}{\numberline {A}Quantum mechanics and quantum computation}{48}
-\contentsline {section}{\numberline {B}$\mathbb {Z}_2$ Homology Theory}{48}
-\contentsline {section}{\numberline {C}Category Theory}{50}
+\contentsline {subsection}{\numberline {5.2}The category-theoretic viewpoint}{45}
+\contentsline {subsection}{\numberline {5.3}The MTC $\mathcal {Z}(\mathbf {Rep}_{\mathbb {Z}_2})$}{57}
+\contentsline {section}{\numberline {6}The Big Picture}{57}
+\contentsline {section}{\numberline {A}Quantum mechanics and quantum computation}{58}
+\contentsline {section}{\numberline {B}$\mathbb {Z}_2$ Homology Theory}{58}
+\contentsline {section}{\numberline {C}Category Theory}{60}
