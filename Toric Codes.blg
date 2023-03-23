@@ -3,57 +3,54 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Toric Codes.aux
 The style file: alpha.bst
 Database file #1: ref.bib
-Repeated entry---line 346 of file ref.bib
+Repeated entry---line 393 of file ref.bib
  : @article{freedman2002simulation
  :                                ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 356 of file ref.bib
+Repeated entry---line 403 of file ref.bib
  : @article{kitaev2003fault
  :                         ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "hagge2007some"
-Warning--I didn't find a database entry for "gainutdinov2019davydov"
-Warning--I didn't find a database entry for "bruillard2016rank"
 Warning--there's a number but no series in wang2010topological
-You've used 34 entries,
+You've used 41 entries,
             2543 wiz_defined-function locations,
-            777 strings with 9826 characters,
-and the built_in function-call counts, 13833 in all, are:
-= -- 1376
-> -- 656
-< -- 24
-+ -- 224
-- -- 222
-* -- 1052
-:= -- 2298
-add.period$ -- 104
-call.type$ -- 34
-change.case$ -- 218
-chr.to.int$ -- 34
-cite$ -- 35
-duplicate$ -- 537
-empty$ -- 977
-format.name$ -- 267
-if$ -- 2775
+            816 strings with 10793 characters,
+and the built_in function-call counts, 16518 in all, are:
+= -- 1644
+> -- 791
+< -- 26
++ -- 271
+- -- 268
+* -- 1256
+:= -- 2754
+add.period$ -- 125
+call.type$ -- 41
+change.case$ -- 261
+chr.to.int$ -- 41
+cite$ -- 42
+duplicate$ -- 637
+empty$ -- 1166
+format.name$ -- 321
+if$ -- 3306
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 39
-newline$ -- 174
-num.names$ -- 102
-pop$ -- 181
+missing$ -- 47
+newline$ -- 209
+num.names$ -- 123
+pop$ -- 213
 preamble$ -- 1
-purify$ -- 257
+purify$ -- 308
 quote$ -- 0
-skip$ -- 433
+skip$ -- 517
 stack$ -- 0
-substring$ -- 830
-swap$ -- 74
-text.length$ -- 24
-text.prefix$ -- 17
+substring$ -- 982
+swap$ -- 81
+text.length$ -- 26
+text.prefix$ -- 18
 top$ -- 0
-type$ -- 252
+type$ -- 304
 warning$ -- 1
-while$ -- 136
-width$ -- 36
-write$ -- 442
+while$ -- 163
+width$ -- 43
+write$ -- 531
 (There were 2 error messages)

@@ -15,6 +15,7 @@
 \usepackage{relsize}
 \usepackage{mathrsfs}
 \usepackage{tikzit}
+\usepackage[normalem]{ulem}
 
 
 
@@ -28,13 +29,15 @@
 \newtheorem*{definition}{Definition}
 \newtheorem{remark}{Remark}[section]
 \newtheorem{experiment}{Experiment}[section]
+\newtheorem{proposition-definition}{Proposition-Definition}[section]
+
 
 \graphicspath{ {./images/} }
 \numberwithin{figure}{section}
 
 
 
-\title{An Introduction to the Toric Code as \\ Topological Quantum Computing}
+\title{Topological Quantum Computing\\ via \\ The Toric Code}
 \author{by Milo Moses}
 
 \date{\textit{University of California, Santa Barbara} \\ [2ex] \today}
@@ -52,6 +55,7 @@
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\FF}{\mathbb{F}}
 \newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\Zcal}{\mathcal{Z}}
 \newcommand{\Ncal}{\mathcal{N}}
 \newcommand{\LL}{\mathscr{L}}
 \newcommand{\TT}{\mathcal{T}}
@@ -70,7 +74,7 @@
 \newcommand{\End}{\mathrm{End}}
 \newcommand{\Rep}{\bold{Rep}}
 \newcommand{\Set}{\bold{Set}}
-\newcommand{\Vecc}{\mathrm{Vec}}
+\newcommand{\Vecc}{\bold{Vec}}
 \newcommand{\0}{\left|0\right>}
 \newcommand{\1}{\left|1\right>}
 \newcommand{\nullclass}{\left|\bold{0}\right>}
@@ -79,7 +83,7 @@
 \newcommand{\alphabetaclass}{\left|\alpha\beta\right>}
 \newcommand{\ppsi}{\left|\psi\right>}
 \newcommand{\bigleadsto}{\mathlarger{\mathlarger{\mathlarger{\leadsto}}}}
-
+\newcommand{\vin}{\rotatebox[origin=c]{-90}{$\in$}}
 
 
 \begin{abstract}
@@ -125,9 +129,9 @@ The structure of the manuscript is as follows:
 
 \item Section \ref{TQFTs} gives an introduction to Topological Quantum Field Theories (TQFTs), the formal mathematical abstractions of topological quantum phases of matter. Subsection \ref{The general picture} gives an overview of the subject. Subsection \ref{DW TQFT} defines the $\ZZ_2$ Dijkgraaf-Witten theory, the TQFT associated with the toric code.
 
-\item Section \ref{Modular Tensor Categories} gives an introduction to Modular Tensor Categories (MTCs), the compressed mathematical abstraction of topological quantum phases of matter. Subsection \ref{Anyon model} gives an overview of the subject, and the equivalence between MTCs and TQFTs. Subsection \ref{Category viewpoint} gives the more elegant interpretation of MTCs in the language of categories. For those unfamiliar with the subject of Category Theory, a brief introduction is contained in Appendix \ref{Categories}. Subsection \ref{VecZ2 MTC} defines the $\mathcal{Z}(\Rep_{\ZZ_2})$ MTC, which is the MTC associated with the toric code.
+\item Section \ref{Modular Tensor Categories} gives an introduction to Modular Tensor Categories (MTCs), the compressed mathematical abstraction of topological quantum phases of matter. Subsection \ref{Anyon model} gives an overview of the subject, and the equivalence between MTCs and TQFTs. Subsection \ref{Category viewpoint} gives the more elegant interpretation of MTCs in the language of categories. For those unfamiliar with the subject of Category Theory, a brief introduction is contained in Appendix \ref{Categories}. Subsection \ref{VecZ2 MTC} defines the $\Zcal(\Rep_{\ZZ_2})$ MTC, which is the MTC associated with the toric code.
 
-\item Section \ref{The Big Picture} gives a big-picture summary of TQC, using the mathematics developed in the previous sections.
+\item Section \ref{Topological Quantum Computing} gives an introduction to the general TQC methodology, using all of the tools developped in the previous sections. Subsection \ref{The TQC framework} gives a detailed overview of TQC, including measurement-based algorithms. Subsection \ref{Revisiting toric code TQC} carries this out explicitely for the toric code. Subsection \ref{Universal TQC with the Fibbonacci anyon} introduces the Fibonacci anyon model, and shows that it gives universal quantum computation via braiding alone.
 
 \end{itemize}
 
@@ -183,7 +187,7 @@ In TQC, information is still stored in knots. The main difference is that the st
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.25]{braiding}
-\caption{Braiding of quasiparticles in spacetime}
+\caption{Braiding of quasiparticles in spacetime [WORK: do this in tikz]}
 \label{fig:braiding}
 \end{center}
 \end{figure}
@@ -514,7 +518,7 @@ reduce the generating set to $\{\text{NOT}_{\alpha},\text{NOT}_{\beta},(-1)_{\al
 
 Before moving on to the next section, we make a few final remarks about the behavior of quasiparticles on the toric codes. Namely, we observe the following. Consider the full vector space $\Ncal$, and adjacent two adjacent $X$-type and $Z$-type quasiparticles. Consider the simple braiding of these particles around each other, as in Figure \ref{fig:braiding}. A line going under another corresponds to the particle having passed through that space first, before the other particle. This braiding can be obtained by first performing a twist halfway around the circle by $X$, then a twist all the way around the circle by $Z$, then finally moving the second half of the circle by $X$. This process corresponds to a transformation $\Ncal\to \Ncal$ (i.e. tensoring with the appropriate $\sigma_X$s and $\sigma_Z$s). The observation is that this transformation is \textit{not} the identity on the codespace. Namely, since $\sigma_Z\sigma_X=-\sigma_X\sigma_Z$, this operation corresponds to a global phase shift of $-1$ on the system.
 
-Thus, the braiding of $X$ type and $Z$ type particles corresponds to a phase shift of $-1$. This is in contrast to braiding two identical $X$ type or $Z$ type particles, which corresponds to the identity since $\sigma_X$ and $\sigma_Z$ commute with themselves. All particles in the standard model of physics are \textit{fermions}, which give a phase shift of $-1$ when you braid them with themselves, or \textit{bosons}, which act by the identity when you braid them with themselves. Seeing as $X$ type and $Z$ type particles in the toric code braid by the identity with themselves, one would expect them to be bosons. However, bosons always braid by the identity with each other and hence the $-1$ phase shift from braiding $X$ and $Z$ type particles should be impossible. The conclusion is that these really are \textit{quasi}particles, which behave much differently than particles in the standard model. Quasiparticles with simultaneously non-bosonic and non-fermionic braiding rules are known as \textit{anyons}. All interesting particles in topological quantum phases of matter will be anyons.
+Thus, the braiding of $X$ type and $Z$ type particles corresponds to a phase shift of $-1$. This is in contrast to braiding two identical $X$ type or $Z$ type particles, which corresponds to the identity since $\sigma_X$ and $\sigma_Z$ commute with themselves. All particles in the standard model of physics are \textit{fermions}, which give a phase shift of $-1$ when you braid them with themselves, or \textit{bosons}, which act by the identity when you braid them with themselves. Seeing as $X$ type and $Z$ type particles in the toric code braid by the identity with themselves, one would expect them to be bosons. However, bosons always braid by the identity with each other and hence the $-1$ phase shift from braiding $X$ and $Z$ type particles should be impossible. The conclusion is that these really are \textit{quasi}particles, which behave much differently than particles in the standard model. Quasiparticles with simultaneously non-bosonic and non-fermionic braiding rules are known as \textit{anyons}. The name comes from the fact that they can have ``any " braiding rules, hence ``any"-on.  All interesting particles in topological quantum phases of matter will be anyons.
 
 In the case of the toric code, the braiding will always be trivial or give a global phase shift (i.e. -1). We call anyons \textit{non-abelian} if they can braid in such a way to create transformations that are not phase shifts. To  create interesting quantum gates, these sort of non-phase shift braidings are what we need. The search for a topological quantum computer is essentially the search for experimentally-sound easy-to-braid non-abelian anyons.
 
@@ -1191,12 +1195,12 @@ This gives a full definition of the toric code as modular tensor fusion system. 
 \subsection{The category-theoretic viewpoint}
 \label{Category viewpoint}
 
-In this subsection, we give the category theoretic perspective on Modular Tensor Categories (MTCs). As with subsection \ref{Anyon model}, we will build up to the definition of a MTC slowly. Thinking of MTCs as corresponding to ``symmetric non-degenerate" finite abelian groups, we will start with the category-theory analogues of monoids\footnote{A monoid is a set equipped with an associative binary operation and an identity element}, groups, finite groups, finite abelian groups, and then end with non-degenerate finite abelian group. The category theory analogues are as below:
+In this subsection, we give the category theoretic perspective on Modular Tensor Categories (MTCs). As with subsection \ref{Anyon model}, we will build up to the definition of a MTC slowly. Thinking of MTCs as corresponding to ``non-degenerate" finite abelian groups, we will start with the category-theory analogues of monoids\footnote{A monoid is a set equipped with an associative binary operation and an identity element}, groups, finite groups, finite abelian groups, and then end with non-degenerate finite abelian group. The category theory analogues are as below:
 
 \begin{center}
 \begin{tabular}{c ||c } 
   
-Algebraic structure & Category analogue \\
+Algebraic structure & Categorification \\
 \hline
 \hline
 Set & Category \\ 
@@ -1207,7 +1211,7 @@ Finite group &  Fusion category\\
  \hline
 Finite abelian group & Braided fusion category \\
 \hline
-``symmetric non-degenerate" finite abelian group & Modular Tensor Category  
+``non-degenerate" finite abelian group & Modular Tensor Category  
 \end{tabular}
 \end{center}
 . We begin with the generalization of monoid:
@@ -1219,8 +1223,8 @@ Finite abelian group & Braided fusion category \\
 \item A functor $\otimes: \Ccat \times \Ccat \to \Ccat$.
 \item (Identity) A distinguished element $1\in \Ccat.$
 \item (Associativity) A natural equivilance $\alpha: \--\otimes (\-- \otimes \--) \to (\--\otimes \--)\otimes \--$, where $\-- \otimes (\--\otimes \--)$ denotes the functor $\Ccat\times \Ccat\times \Ccat\to\Ccat$ sending $(A,B,C)$ to $A\otimes (B\otimes C)$, and similarly for $(\-- \otimes \-- )\otimes\--$.
-\item (Left unit) A  natural equivilance $\lambda: 1\otimes \-- \to \--$, where $1\otimes \--$ denotes the functor $\Ccat\to \Ccat$ sending $A$ to $1\otimes A$, and $\--$ denotes the identity.
-\item (Right unit) A natural equivilance $\rho: \--\otimes 1 \to \--$, where $\--\otimes 1$ is the functor $\Ccat\to \Ccat$ sending $A$ to $A\otimes 1$.
+\item (Left unitor) A  natural equivilance $\lambda: 1\otimes \-- \to \--$, where $1\otimes \--$ denotes the functor $\Ccat\to \Ccat$ sending $A$ to $1\otimes A$, and $\--$ denotes the identity.
+\item (Right unitor) A natural equivilance $\rho: \--\otimes 1 \to \--$, where $\--\otimes 1$ is the functor $\Ccat\to \Ccat$ sending $A$ to $A\otimes 1$.
 \end{enumerate}
 
 Additionally, a monoidal category is required to satisfy the following properties:
@@ -1262,7 +1266,7 @@ Observe the parallels between the propreties of monoidal categories and the prer
 
 In the definition of fusion systems, the identity, associativity, and inverse are properties instead of structures. They are unique if they exist. While the identity will be unique up to isomorphism, one still must make a choice of object. There are possibly multiple different choices of natural equivilances for the unit. In category theory, the difference between equal and isomorphic is very pronounced, and one needs to choose an isomorphism. The following theorem answers in what sense we really do get mileage out of considering categories in which we make strange choices of $\alpha,\lambda,\rho$, and in what sense we really do get mileage out of considering categories with multiple objects in the same equivilance class. The notion of monoidal equivilance is used in the theorem; we postpone the definition until after the statement.
 
-\begin{theorem}[\cite{hagge2007some}] Let $(\Ccat,\otimes_{\Ccat},\alpha_{\Ccat},\lambda_{\Ccat},\rho_{\Ccat})$ be a monoidal category. Then
+\begin{theorem}[\cite{hagge2009some}] Let $(\Ccat,\otimes_{\Ccat},\alpha_{\Ccat},\lambda_{\Ccat},\rho_{\Ccat})$ be a monoidal category. Then
 
 \begin{enumerate}
 \item (MacLane)  $\Ccat$ is monoidally equivilant to a category $(\Dcat,\otimes_{\Dcat},\alpha_{\Dcat},\lambda_{\Dcat},\rho_{\Dcat})$ in which $A\otimes_{\Dcat} (B\otimes_{\Dcat} C)=(A\otimes_{\Dcat} B)\otimes_{\Dcat} C$, $1\otimes_{\Dcat} A=A\otimes_{\Dcat} 1=1$, and $\alpha_{\Dcat},\lambda_{\Dcat},\rho_{\Dcat}$ are identity functors, for all $A,B,C\in \Dcat$. 
@@ -1418,7 +1422,7 @@ Will these definitions out of the way, we can now define fusion categories.
 Additionally, a fusion category is required to satisfy the following properties:
 
 \begin{enumerate}
-\item The tensor product, associativity, left unit, and right unit of $\Ccat$ are all $\CC$-linear functors.
+\item The tensor product, associativity, left unitor, and right unitor of $\Ccat$ are all $\CC$-linear functors.
 \item (Rigidity) The diagrams
 
 \[\begin{tikzcd}
@@ -1466,7 +1470,7 @@ The pair $(\LL,N^{a,b}_{c})$ is a fusion system.
 
 The interesting fact is that one can \textit{not} uniquely go the other direction. Namely, we have the following:
 
-\begin{theorem}[Ocneanu rigidity,\cite{gainutdinov2019davydov}] Let $\LL$ be a fusion system. There are finitely many (possibly $0$) fusion categories, up to monoidal equivilance, which give systems equivilant to $\LL$ under the process described in Proposition \ref{Make fusion system}.
+\begin{theorem}[Ocneanu rigidity,\cite{gainutdinov2023davydov}] Let $\LL$ be a fusion system. There are finitely many (possibly $0$) fusion categories, up to monoidal equivilance, which give systems equivilant to $\LL$ under the process described in Proposition \ref{Make fusion system}.
 \end{theorem}
 
 The correct correspondence, in fact, is between fusion categories and $6j$ fusion systems:
@@ -1606,6 +1610,8 @@ then $A\cong 1$. The trace of a morphism $f:A\to A$ is defined as
 $$\tr(f): 1\xrightarrow{\eta_A} A^*\otimes A\xrightarrow{\text{id}_{A^*}\otimes (\theta_X\circ f)} A^*\otimes A \xrightarrow{\beta_{A^*,A}}A\otimes A^*\xrightarrow{\epsilon_A}1.$$
 
 The space $\End(1)$ is one dimensional, with a canonical generator $\text{id}_1$. Hence, we can canonically identify $\tr(f)$ with a complex number. Graphically, we represent trace as the closed loop [WORK: make diagram].
+
+[WORK: Do I have to do trace? Can I just set these to be equal and have a good day (c.f. \cite{davydov2013structure})]
 \end{enumerate}
 \raggedleft\qedsymbol{}
 \end{definition}
@@ -1650,15 +1656,157 @@ These $S$-matricies and $T$-matricies are very important invariants of MTCs. The
 
 \begin{itemize}
 \item Suppose $\Ccat$ is a category satisfying all of the conditions of a MTC, except for non-degeneracy ( this is called a pre-modular category). Then, $\Ccat$ is modular if and only if the $S$-matrix is invertible.
-\item (\cite{bruillard2016rank}) The rank of a MTC is defined as the number of isomorphism classes of simple objects. There are finitely many MTCs, up to braided monoidal equivilance, of a given rank.
+\item (\cite{bruillard2016rank}) There are finitely many MTCs, up to braided monoidal equivilance, of a given rank.
 \item .[WORK: think of what other things should go here.]
 \end{itemize}
 \end{theorem}
 
-\subsection{The MTC $\mathcal{Z}(\Rep_{\ZZ_2})$}
+\subsection{The MTC $\Zcal(\Rep_{\ZZ_2})$}
 \label{VecZ2 MTC}
 
-[WORK: Define the MTC $\mathcal{Z}(\Rep_{\ZZ_2})$ explicitly via data. Give a brief explanation of how this corresponds to the $\ZZ_2$ Dijkgraaf-Witten theory.Then, define $\Rep_{\ZZ_2}$. State that the MTC defined is the Drinfeld center, to further motivate category theory. Analogy for Drinfeld center: (non-degenerate) abelianization. ]
+In this section we introduce the MTC which corresponds to the toric code, $\Zcal(\Rep_{\ZZ_2})$. Intuitively, this can be seen as follows. If fusion categories are generalized groups, then groups should certainly give fusion categories. Namely, a finite group $G$ is assigned its \textit{category of representations} $\Rep_G$. We saw in subsection \ref{Anyon model} that the modular tensor fusion system associated with the toric code was essentially the group $\ZZ_2\oplus \ZZ_2$, except with a non-trivial braiding between the two copies of $\ZZ_2$. Seeing as the group $\ZZ_2$ corresponds to the fusion category $\Rep_{\ZZ_2}$, putting two copies of $\ZZ_2$ together with a twist corresponds to the category $\Zcal(\Rep_{\ZZ_2})$, where $\Rep^*_{\ZZ_2}$ is the [WORK: what?] category of $\Rep_{\ZZ_2}$, and $\boxtimes$ is Deligne's tensor product of abelian categories. This section is devoted to a proper treatment of all terms used above, starting with representation theory. [WORK: new definition, new intuition]
+
+One of the only truly ``solved" fields of mathematics is linear algebra. Represenation theory can be seen as study of more complicated algebraic objects (groups, rings, algebras) in terms of vector spaces. Namely, instead of looking at an algebraic object we look at all of the ways that it can act on vector spaces. Formally, we define the category of representations of a group $G$ as follows:
+
+$$\Rep_{G}=
+\begin{pmatrix}
+\bold{objects:  }(V,\rho),\,\, V/\CC\text{ a vector space and }\rho:G\to \Aut(V)\text{ a homomorphism}\\
+\bold{morphisms:} \text{ linear maps of vector spaces which respect the }G\text{-action}
+\end{pmatrix}.
+$$
+
+As usual, $\Aut(V)$ denotes the group of automorphisms of $V$. Given two representations $(V_0,\rho_0)$ and $(V_0,\rho_1)$, a linear map $f:V_0\to V_1$ is said to respect the $G$-action if the diagram
+
+\[\begin{tikzcd}
+	{V_0} & {V_1} \\
+	{V_0} & {V_1}
+	\arrow["f", from=1-1, to=1-2]
+	\arrow["f", from=2-1, to=2-2]
+	\arrow["{\rho_0(g)}"{description}, from=1-1, to=2-1]
+	\arrow["{\rho_1(g)}"{description}, from=1-2, to=2-2]
+\end{tikzcd}\]
+
+commutes for all $g\in G$. A map which respects the $G$-action is also called $G$-linear. Observe that representation can be seen as part of the Yoneda perspective: It is better to study an object indirectly by its relation with other objects than it is to study that object in itself. The first big property about the category of representations is that it is abelian:
+
+\begin{proposition}\label{abelian represenations} Given representations $(V_0,\rho_0)$ and $(V_1,\rho_1)$, the space of $G$-linear morphisms $f:V_0\to V_1$ is a subset of the vector space of all linear morphisms, $\Hom_{\Vecc}(V_0,V_1)$. Thus, $\Hom_{\Rep_{G}}((V_0,\rho_0),(V_1,\rho_1))$ can be canonically given the structure of a vector space. This gives $\Rep_{G}$ the structure of a $\CC$-linear abelian category.
+\end{proposition}
+\begin{proof}. [WORK: Do the proof.]
+\end{proof}
+
+One can use Proposition \ref{abelian represenations} to get some intuition. One can define a representation of an associative $\CC$-algebra\footnote{A $\CC$-algebra is a vector space $R$, with multiplication $R\otimes R\to R$ and a unit map $\CC\to R$} $R$ to be a ring homomorphism $R\to \End(V)$, sending $R$ into the algebra of endomorphisms of a vector space $V$. As such, we can construct of a category $\Rep_R$ for every algebra. These categories are abelian as well. Moreover these are in some sense the only abelian categories, as shown in the following theorem:
+
+\begin{theorem}[Mitchell's Embedding Theorem] Let $\mathscr{C}$ be an abelian category. There is some associative algebra $R$ for which there exists a fully faithful exact functor
+
+$$F: \mathscr{C}\hookrightarrow{}\Rep_R.$$
+
+Here, we define an exact functor is one which sends short exact sequences
+
+$$0\to A\xrightarrow{i}B\xrightarrow{q}C\to 0$$
+
+to short exact sequences
+
+$$0\to F(A)\xrightarrow{F(i)}F(B)\xrightarrow{F(q)}F(C)\to 0.$$
+\end{theorem}
+
+We now introduce a few more structures on $\Rep_G$.
+
+\begin{proposition} Given representations $(V_0,\rho_0)$ and $(V_1,\rho_1)$, define their tensor product to be the representation whose underlying vector space is $V_0\otimes V_1$, and whose $G$-action $\rho_0\otimes \rho_1$ is defined by the formula
+
+$$(\rho_0\otimes \rho_1)(g)(v_0\otimes v_1)=\rho_0(g)(v_0)\otimes \rho_1(g)(v_1).$$
+
+This naturally induces a functor $\otimes: \Rep_G\times \Rep_G\to \Rep_G$. Define the following structures on $\Rep_G$:
+
+\begin{itemize}
+\item The unit element $\CC$, whose $G$-action is given by the $0$ map in $G\to \Aut(\CC)$.
+\item The associator $\alpha: V_0\otimes (V_1\otimes V_2)\to (V_0\otimes V_1)\otimes V_2$ sending $v_0\otimes (v_1\otimes v_2)$ to $(v_0\otimes v_1)\otimes v_2$.
+\item The left unitor $\lambda:\CC\otimes V\to V$ sending $x\otimes v$ to $x\cdot v$.
+\item The right unitor $\rho: V\otimes \CC\to V$ sending $v\otimes x$ to $x\cdot v$.
+\end{itemize}
+
+all of these maps extend to functors, and endow $\Rep_G$ with the structure of a monoidal category.
+\end{proposition}
+\begin{proof}. [WORK: make proof]
+\end{proof}
+
+When $G$ is finite, the situation is very nice. In particuar, we have the following theorem:
+
+\begin{theorem}[Maschke's theorem] Let $G$ be a finite group. [WORK: define duals, unit, counit]. This endows $\Rep_G$ with the structure of a fusion category.
+\end{theorem}
+\begin{proof}. [WORK: make proof]
+\end{proof}
+
+We have now introduced enough machinery to answer the following basic question: Does the category of representations of a group (up to the correct notion of equivilance) determine the starting group (up to isomorphism)? The Yoneda perspective gives us an answer in the affermative - studying an object via its interactions with other objects should give you all the information you need to know. It turns out that there is an explicit way of constructing $G$ from $\Rep_G$, though it is more complicated to treat in full generality than Yoneda's lemma. After one definition, we will be able to state this construction and prove its validity in full detail.
+
+\begin{definition}[Monoidal natural transformation] .[WORK: make definition]
+\end{definition}
+
+\begin{theorem}[Tannaka duality for finite groups] Let $G$ be a finite group. Let $F:\Rep_G\to \Vecc$ be the forgetful functor, sending a representation $(V,\rho)$ to the underlying vector space $V$. Let $\Aut^\otimes(F)$ denote the group of monoidal natural transformation from $F$ to itself, under composition. There is a natural map
+
+$$G\to \Aut^{\otimes}(F)$$
+
+sending an element $g\in G$ to the automorphism of $F$ acting on $(V,\rho)$ by $\rho(g)$. This is a well defined map, and it induces an isomorphism of groups.
+\end{theorem}
+\begin{proof}. [WORK: make proof]
+\end{proof}
+
+In the analogy between algebraic structures and their categorifications, finite abelian groups correspond to braided fusion categories. This can be turned into a very percise claim, which we now state:
+
+\begin{proposition} Let $G$ be a finite group. The fusion category $\Rep_G$ admits a braiding if and only if $G$ is abelian. If $G$ is abelian, then this braiding is defined explicitely by [WORK: make braiding].
+\end{proposition}
+\begin{proof}. [WORK: make proof]
+\end{proof}
+
+We thus observe the following: $\Rep_G$ never has the structure of an MTC. When $G$ is non-abelian then $\Rep_G$ is not braided, but when $G$ is abelian $\Rep_G$ is symmetric, in the sense that $\beta_{A,B}\cdot \beta_{B,A}=\mathrm{id}_A$ for all $A,B$, so it is degenerate. We are thus in need of a ``non-degenerate abelianization", which takes in a good fusion category and spits out a non-degenerate braided fusion category, i.e., an MTC. There is a canonical such construction, known as the Drinfeld center.
+
+Loosely speaking, the Drinfeld center takes in a fusion category $\Ccat$, and looks at all possible ways that objects in $\Ccat$ can braid with other objects. As to avoid making a choice of any specific braiding, objects in $\Ccat$ become pairs $(A,\Phi)$, where $A$ is an object and $\Phi$ is a possible way $A$ could braid with other elements. This naturally allows one to be a global braiding on $\Zcal(\Ccat)$. The statement that $\Zcal(\Ccat)$ is non-degenerate is now the statement that choosing the right half-braidings we can make every object briad non-trivially with at least one other object. Formally, we can define the Drinfled center as follows:
+
+\begin{proposition-definition}[Drinfeld center] The Drinfeld center of a monoidal category $\Ccat$ is a braided monoidal category defined as follows:
+
+\begin{itemize}
+\item \textbf{objects:} Pairs $(A,\Phi)$, where $A\in \Ccat$, and $\Phi$ is a natural isomorphism of monoidal natural isomorphism between the two functors $A\otimes \--$ and $\--\otimes A$ from $\Ccat$ to $\Ccat$, satisfying the additional condition that
+
+$$\Phi_{B\otimes C}=\left(\text{id}_{B}\otimes \Phi_{C}\right)\circ \left(\Phi_{B}\otimes \text{id}_C\right).$$
+
+\item \textbf{morphisms:} Given $(A,\Phi), (B,\Psi)\in \Zcal(\Ccat)$, $\Hom_{\Zcal(\Ccat)}((A,\Phi),(B,\Psi))$ is the subspace of morphisms $f\in \Hom_{\Ccat}(A,B)$ such that for all $C\in \Ccat$,
+
+$$\left(\text{id}_{C}\otimes f\right)\circ \Phi_{C}=\Psi_{C}\circ (f\otimes \text{id}_C).$$
+
+\item \textbf{tensor product:} Given $(A,\Phi), (B,\Psi)\in \Zcal(\Ccat)$, we define
+
+$$(A,\Phi)\otimes (B,\Psi)=\left(A\otimes B, (\Phi\otimes \text{id}_{\Ccat})\circ (\text{id}_{\Ccat}\otimes \Psi) \right).$$
+
+\item \textbf{unit: } The element $(1,\rho\circ \lambda)$
+
+\item \textbf{braiding: } [WORK: write out braiding correctly]
+\end{itemize}
+
+Along with natural choices of associativity and unitors, this gives $\Zcal(\Ccat)$ the structure of a braided monoidal category.
+\end{proposition-definition}
+\begin{proof}. [WORK: do the proof]
+\end{proof}
+
+When we input a fusion category to this construction, we get a fusion category out. Moreover, the following condition is neccecary and sufficient to obtain a modular tensor category from this construction:
+
+\begin{definition}[Spherical fusion category]. [WORK: fill out definition]
+\end{definition}
+
+\begin{proposition} If $\Ccat$ is a spherical fusion category, then $\Zcal(\Ccat)$ naturally has the structure of a modular tensor category. [WORK: are some of the structures non-trivial? Should I define them?]
+\end{proposition}
+\begin{proof}. [WORK: make proof. Call on some outside references if neccecary]
+\end{proof}
+
+Thus, we have arrived at the MTC associated with the toric code: $\Zcal(\Rep_{\ZZ_2})$: The Drinfeld center of of the category of representations of $\ZZ_2$. This is in some sense the simplest MTC. Namely, the simplest MTCs are those which come from spherical fusion categories,  as $\Zcal(\Ccat)$ for some $\Ccat$. The simplest fusion categories are those which come from groups, as $\Rep_G$ for some $G$. The simplest non-trivial group is $\ZZ_2$.
+
+Another intuition for $\Zcal(\Ccat)$ is that it is a sort of ``quantum double" [WORK: what is the intuition for quantum doubles? There should be good insight in the following thesis: \cite{felice2017hopf}]
+
+We now verify that our two definitions of the MTC associated with the toric code are equivilant:
+
+\begin{proposition} .[WORK: show that doing the make-it-a-modular-tensor-fusion-system construction on $\Zcal(\Ccat)$ recovers the previously described data]
+\end{proposition}
+
+[WORK: closing thoughts on MTCs. Maybe mention something about how most of them can be defined relatively easily using a few constructions. In particular, many models are ``weakly-group theoretical". Perhaps talk about Morita equivilance, since we have Drinfeld centers already defiened?]
+
+
 
 $\newline\newline$
 
@@ -1671,11 +1819,11 @@ $\newline\newline$
 \item .[WORK: Verlinde formula exercise]
 \end{enumerate}
 
+\section{Topological Quantum Computing}
+\label{Topological Quantum Computing}
 
-\section{The Big Picture}
-\label{The Big Picture}
-
-.[WORK: explain why they're called anyons.]
+\subsection{The TQC framework}
+\label{The TQC framework}
 
 [WORK: The big thing is to draw the picture between topological quantum phases of matter, TQFTs, MTCs, and TQC. Show exactly what this looks like in the case of the toric code, i.e., what the topological quantum phase of matter is, the TQFT, the MTC, and the resulting TQC. Add all the connections and insights that I've come up with along this journey, and things I would feel remiss not including. Really, this should be a version of an introduction-to-TQC-for-experts section. Should definitely mention that TQFTs are generally $1$-extended with punctures, to visualize anyons. Should mention that literally making torus bigger will make error rate smaller, since it's harder for things to accidentally interact with each other (exponential decrease). Maybe another thing to add is how the 1st priority is to minimize energy, and the 2nd order is to maximize entanglement.]
 
@@ -1688,9 +1836,34 @@ $\newline\newline$
 \end{enumerate}
 ]
 
+[WORK: highlight the fact that we can do more TQC when we allow things other than just pure braiding, i.e., measurement based TQC. Let them know that even abelian anyons can be universal, when we're allowed to do this!]
+
+[WORK: define braid group representations + neccecary objects]
+
+[WORK: shoehorn in the quote
+
 \begin{quote}
 ``Folklore, [...] is a technical term for a method of publication in category theory. It means that someone sketched it on the back of an envelope, mimeographed it (whatever that means) and showed it to three people in a seminar in Chicago in 1973, except that the only evidence that we have of these events is a comment that was overheard in another seminar at Columbia in 1976. Nevertheless, if some younger person is so presumptuous as to write out a proper proof and attempt to publish it, they will get shot down in flames." - Paul Taylor\footnote{[WORK: make description]\cite{aubert2019categories}}
 \end{quote}
+
+]
+
+[WORK: Look at \cite{lahtinen2017short}, an intro-level physics discussion. Is there something to learn from it?]
+
+
+
+\subsection{Revisiting toric code TQC}
+\label{Revisiting toric code TQC}
+
+.[WORK: compute what everything looks like for the toric code using category theory. Give the big picture triangle correspondance for the toric code.]
+
+
+\subsection{Universal TQC with the Fibbonacci anyon}
+\label{Universal TQC with the Fibbonacci anyon}
+
+.[WORK: introduce the Fibonacci anyon. Prove that it is universal with braiding alone. Really what I want to do is show that any form of TQC is universal, but I just think Fibonnacci will be simplest.]
+
+
 
 
 [WORK: Here are some misc things for the rest of the manuscript.
@@ -1702,10 +1875,107 @@ I got rid of the unit TQFT axiom, which now includes the degenerate possibility 
 Why can I always lift celluations? Zhenghan mentioned this in class, but didn't cite a reference.]
 \appendix
 
-\section{Quantum mechanics and quantum computation}
+\section{Quantum foundations}
 \label{Quantum mechanics}
 
-[WORK: Introduce quantum mechanics for mathematicians. Really, this just means Von-Neumann axioms, a bit of quantum computing, and spectral theory.]
+\subsection{Quantum mechanics}
+
+In this appendix we introduce quantum mechanics and quantum computation, from a mathematical perspective. Namely, we state the axioms of quantum mechanics, the relevant definitions and theorems from linear algebra, and a short discussion of information theory. The goal of quantum mechanics is to describe the microscopic world, where physical phenomina are wholy different than in the macroscopic world. Probabilities don't work in the usual sense (leading to phenomina like \textit{interference}), and objects are modeled simultaneously as particles and waves (leading to phenomina like \textit{superposition} and \textit{entanglement}). This endows quantum information theory with a number of number of counterintuitive phenomina, like \textit{no-cloning theorems} and \textit{quantum teleportation}.
+
+Throughout this appendix, we will strongly use analogy with the classical theory of probability, which we recall in a mathematically rigorous way now. Let $S$ be a finite set of states. For example, when modelling the flipping of a coin, we might let $S=\{\text{heads},\,\text{tails}\}$. When modeling the positions of pieces on a chessboard, $S$ could be the $64$ element set of chessboard squares. A probability distribution on $S$ is an assignment of positive real numbers (probabilities) $p_x$ for each $x\in S$, such that that the total probability $\sum_{x\in S}p_x$ is $1$. For example, if we have two states $S=\{\text{accept},\,\text{deny}\}$ and there is a $90\%$ chance we will accept, then $p_{\text{accept}}=.9$ and $p_{\text{deny}}=.1$.
+
+It is now clear why linear algebra is the correct field of study to analyse probabilities. Assigning a real number to every element in a set $S$ is exactly the same as choosing a vector in the vector space $\RR[S]$, the real vector space defined to have $S$ as a basis. That is, every vector in vector space is uniquely defined as a linear combination of basis elements. If we have probabilities $p_x$ assigned to every $x\in S$, then this corresponds to the vector $\sum_{x\in S}p_x\left |x\right>\in \RR[S]$. For example, the previous example of accepting and denying can be conciesely summarized as the equation
+
+$$.9\left|\text{accept}\right>+.1\left|\text{deny}\right>\in \RR[S]=\RR[\{\text{accept},\,\text{deny}\}].$$
+
+We make a comment about our notation. We use the bars/angle-brackets $\left| \cdot \right>$ to formally seperate elements of our set $S$ from the numbers used when taking linear combinations. This is neccecarily, for if $S$ the elements of $S$ were numbers there would be immediate confusion otherwise. For instance, if $S=\{0,1\}$, then the distribution with probability $\frac{2}{3}$ given to $0$ and  probability $\frac{1}{3}$ given to $1$ would be notated $\frac{2}{3}0+\frac{1}{3}1$. Upon seperating with bars/angle-brackets, we arrive at the much more sensible $\frac{2}{3}\left|0\right>+\frac{1}{3}\left|1\right>$. The symbol $\left|\cdot \right>$ us known as a \textit{ket}. This notation is ubiquitous acros quantum mechanics for representing states.
+
+
+
+Now, suppose we want to model the following process using this language of vector spaces. We start by flipping a coin. Then, we take a second coin. If the result of the first coin was heads, then we set the second coin to heads. If the result of the first coin was tails, then we flip the second coin randomly. Symbolically, writing $h$ for heads and $t$ for tails, this is seen as
+
+\[\begin{tikzcd}
+	{\left|\text{start}\right>} & {\frac{1}{2}\left|\text{h}\right>+\frac{1}{2}\left|\text{t}\right>} & {\frac{1}{2}\left(\left|\text{hh}\right>\right)+\frac{1}{2}\left(\frac{1}{2}\left|\text{th}\right>+\frac{1}{2}\left|\text{tt}\right>\right)}. \\
+	{\mathbb{R}[\{\text{start}\}]} & {\mathbb{R}[\{\text{h},\text{t}\}]} & {\mathbb{R}[\{\text{hh,\, ht,\, th,\, tt}\}]}
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow["\vin"{description}, draw=none, from=1-1, to=2-1]
+	\arrow["\vin"{description}, draw=none, from=1-2, to=2-2]
+	\arrow["\vin"{description}, draw=none, from=1-3, to=2-3]
+\end{tikzcd}\]
+
+We introduce the following terminology, for ease of dicsussion. A \textit{pure state} is an element of $S$, and a \textit{mixed state} is a general element of $\RR[S]$. General probability distributions are mixed states. When the probabilistic system is measured, a mixed state $\sum_{x\in S}p_x\left| x\right>$ will ``collapse" onto a pure state, going to each $x$ with probability $p_x$. In light of this terminology, it makes sense to refer to $\RR[S]$ as a state space. Not all mixed states are realistic. That is, $-\frac{1}{2}\left|\text{heads}\right>+\frac{1}{2}\left|\text{tails}\right>$ can never occur because one cannot have negative probabilities. A \textit{normalized vector} (or, \textit{normalized state}) in $\RR[S]$ is a vector which can be written as $\sum_{x\in S}p_x \left |x \right>$, where $p_x\geq 0$ and $\sum_{x\in S}p_x=1$.
+
+General probabilistic processes can be described very simply now. A process that goes from probability distribution on a finite set $S$ to a  probability distribution on a finite set $S'$ can be described as a linear map $\RR[S]\to \RR[S']$, sending normalized vectors to normalized vectors. The fact that map is linear is a direct consequence of the basic rules of probability. In our above example, linearity is the fact one gets the correct answer from using the maniputation
+
+
+$$\frac{1}{2}\left(\left|\text{hh}\right>\right)+\frac{1}{2}\left(\frac{1}{2}\left|\text{th}\right>+\frac{1}{2}\left|\text{tt}\right>\right)=\frac{1}{2}\left|\text{hh}\right>+\frac{1}{4}\left|\text{th}\right>+\frac{1}{4}\left|\text{tt}\right>.$$
+
+We now discuss what happens when one joins two systems together. That is, let $S$ and $S'$ be two finite sets. We wish to speak of joint proability distributions over $S$ and $S'$. That is, distributions where one samples over elements of $S$ and $S'$. This corresponds to choosing probabilities $p_{(s,s')}$ for each pair of elements $(s,s')\in S\times S'$, living in the Cartesian product of $S$ and $S'$. While physically trivial, this observation has important mathematical consequences. We can now state our axioms in a complete way:
+
+
+\begin{definition}[Axioms of probability theory] $\,$
+
+\begin{enumerate}
+\item (Systems) A probabilistic system is a real vector space of the form $\RR[S]$, where $S$ is a finite set. The normalized vectors in $\RR[S]$ correspond to probability distributions on $S$.
+\item (Processes) A probabilistic process going from a system $S$ to a system $S'$ is a linear map $\RR[S]\to \RR[S']$, which sends normalized vectors to normalized vectors.
+\item (Joining systems) If $S$ and $S'$ are two probabilistic systems, the system obtained by joining $S$ and $S'$ is equal to the system $S\times S'$.
+\item (Measuring systems) Given a normalized vector $\sum_{x\in S}p_x \left |x\right>\in \RR[S]$, measurement corresponds to collapsing into a pure state, where we observe each $x\in S$ with probability $p_x$.
+\end{enumerate}
+
+[WORK: add end box]
+\end{definition}
+
+We can state quantum mechanics in exactly the same way:
+
+\begin{definition}[Axioms of quantum mechanics, basis dependent version] $\,$
+
+\begin{enumerate}
+\item (Systems) A quantum system is a complex vector space of the form $\CC[S]$, where $S$ is a finite set. The normalized vectors in $\CC[S]$ correspond to complex states on $S$. A \textit{normalized} vector $v=\sum_{x\in S}c_x\left|x\right>$ is one for which $\sum_{x\in S}|c_x|^2=1$, where $|c_x|^2$ denotes the norm square.
+\item (Processes) A quantum process going from a system $S$ to a system $S'$ is a linear map $\CC[S]\to \CC[S']$, which sends normalized vectors to normalized vectors.
+\item (Joining systems) If $S$ and $S'$ are two quantum systems, the system obtained by joining $S$ and $S'$ is equal to the system $S\times S'$.
+\item (Measuring systems) Given a normalized vector $\sum_{x\in S}c_x \left |x\right>\in \CC[S]$, measurement corresponds to collapsing into a pure state, where we observe each $x\in S$ with probability $|c_x|^2$.
+\end{enumerate}
+
+[WORK: add end box]
+\end{definition}
+
+
+The quantity $\sum_{x\in S}|c_x|$ is called the $1$-norm, and $\sqrt{\sum_{x\in S}|c_x|^2}$ is called the $2$-norm. The following quote summarizes the above definition:
+
+\begin{quote}
+``What happens if you try to come up with a theory that's \textit{like} probability theory, but based on the $2$-norm instead of the $1$-norm?... Quantum mechanics is what inevitably results." - Scott Aaronson\footnote{Page 112 of Aaronson's ``Quantum Computing since Democritus" \cite{aaronson2013quantum}}
+\end{quote}
+
+While fully mathematically rigorous, we now add some physical interpretation to the axioms of quantum mechanics. Let $\left|\psi\right>=\sum_{x\in S}c_x\left|x\right>\in \CC[S]$ be a normalized vector in a quantum system. We call $\left|\psi\right>$ a quantum state. Wave-particle duality can be understood as follows:
+
+\begin{itemize}
+\item Particle = Single position; definite = pure state = $\left|x\right>$, $x\in S$
+\item Wave = Multiple positions; spread-out = mixed state = $\left|\psi\right>\in \CC[S]$.
+\end{itemize}
+
+We can thus say that quantum states are waves, but when they are measured they collapse into a particle. A mixed state is said to be in a \textit{superposition} of the pure states it is a linear combination of. We call the expression $\sum_{x\in S}c_x \left|x\right>$ the wave function of $\left|\psi\right>$, with $c_x$ being the amplitudes.
+
+We now demonstrate interference. Consider the quantum system with pure states $S=\{0,1\}$. This is called a qubit. More generally, a qubit is the term used for any two-dimensional quantum system. Define the transformation $H: \CC[S]\to \CC[S]$ by
+
+$$H(\0)=\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1,$$
+
+$$H(\1)=\frac{1}{\sqrt{2}}\0-\frac{1}{\sqrt{2}}\1.$$
+
+Applying $H$ to $\0$ and measuring gives $0$ and $1$ with equal probability, and same with applying $H$ to $\1$. When we apply $H$ to the equal superposition of $0$ and $1$, however, results in
+
+$$H\left(\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1\right)=\frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1\right)+\frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}\0-\frac{1}{\sqrt{2}}\1\right)=\0.$$
+
+We can summarize this as saying that there was \textit{constructive interference} in the $\0$s, and \textit{destructive interference} in the $\1$s. The amplitudes had the same signs in the $\0$s causing the proabability of measuring $0$ to add, and the amplitudes had opposite signs in the $\1$s,  causing the probabilities of measuring  $1$ to cancel and give $0$. This linear map $H$ defined is called the Hadamard gate, and it is a very important process in quantum information theory. It is not immediately clear that $H$ sends all normalized vectors to normalized vectors. For instance, if we had defined $H(\1)=\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1$ then applying $H$ to the equal superpositoin of $0$ and $1$ would not give a normalized value. The following proposition clarifies exactly what transformations are allowed in quantum mechancis:
+
+\begin{proposition} [WORK: definite unitary matricies two ways, state they're equivilant]
+\end{proposition}
+\begin{proof}. [WORK: do proof]
+\end{proof}
+
+We now comment on measurement. 
+
+\subsection{Quantum computing}
 
 \section{$\ZZ_2$ Homology Theory}
 \label{Homology}

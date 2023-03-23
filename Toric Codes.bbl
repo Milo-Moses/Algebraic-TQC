@@ -13,6 +13,11 @@ Frank Arute, Kunal Arya, Ryan Babbush, Dave Bacon, Joseph~C Bardin, Rami
 \newblock Quantum supremacy using a programmable superconducting processor.
 \newblock {\em Nature}, 574(7779):505--510, 2019.
 
+\bibitem[Aar13]{aaronson2013quantum}
+Scott Aaronson.
+\newblock {\em Quantum computing since Democritus}.
+\newblock Cambridge University Press, 2013.
+
 \bibitem[AHM{\etalchar{+}}16]{albrecht2016exponential}
 Sven~Marian Albrecht, Andrew~P Higginbotham, Morten Madsen, Ferdinand Kuemmeth,
   Thomas~Sand Jespersen, Jesper Nyg{\aa}rd, Peter Krogstrup, and CM~Marcus.
@@ -29,11 +34,22 @@ Bojko Bakalov and Alexander~A Kirillov.
 \newblock {\em Lectures on tensor categories and modular functors}, volume~21.
 \newblock American Mathematical Soc., 2001.
 
+\bibitem[BNRW16]{bruillard2016rank}
+Paul Bruillard, Siu-Hung Ng, Eric Rowell, and Zhenghan Wang.
+\newblock Rank-finiteness for modular categories.
+\newblock {\em Journal of the American Mathematical Society}, 29(3):857--881,
+  2016.
+
 \bibitem[Day21]{day2021quipus}
 Cyrus~Lawence Day.
 \newblock {\em Quipus and Witches' Knots: The Role of the Knot in Primitive and
   Ancient Culture, with a Translation and Analysis of" Oribasius de Laqueis"}.
 \newblock University Press of Kansas, 2021.
+
+\bibitem[dF17]{felice2017hopf}
+Giovanni de~Felice.
+\newblock Hopf algebras in quantum computation.
+\newblock {\em Unpublished doctoral dissertation}, 2017.
 
 \bibitem[DLF{\etalchar{+}}16]{debnath2016demonstration}
 Shantanu Debnath, Norbert~M Linke, Caroline Figgatt, Kevin~A Landsman, Kevin
@@ -41,6 +57,11 @@ Shantanu Debnath, Norbert~M Linke, Caroline Figgatt, Kevin~A Landsman, Kevin
 \newblock Demonstration of a small programmable quantum computer with atomic
   qubits.
 \newblock {\em Nature}, 536(7614):63--66, 2016.
+
+\bibitem[DNO13]{davydov2013structure}
+Alexei Davydov, Dmitri Nikshych, and Victor Ostrik.
+\newblock On the structure of the witt group of braided fusion categories.
+\newblock {\em Selecta Mathematica}, 19(1):237--269, 2013.
 
 \bibitem[DW90]{dijkgraaf1990topological}
 Robbert Dijkgraaf and Edward Witten.
@@ -68,6 +89,11 @@ Theodore Frankel.
 \newblock Homology and flows on manifolds.
 \newblock {\em Annals of Mathematics}, pages 331--339, 1957.
 
+\bibitem[GHS23]{gainutdinov2023davydov}
+Azat~M Gainutdinov, Jonas Haferkamp, and Christoph Schweigert.
+\newblock Davydov-yetter cohomology, comonads and ocneanu rigidity.
+\newblock {\em Advances in Mathematics}, 414:108853, 2023.
+
 \bibitem[Got98]{gottesman1998theory}
 Daniel Gottesman.
 \newblock Theory of fault-tolerant quantum computation.
@@ -77,6 +103,12 @@ Daniel Gottesman.
 Allen Hatcher.
 \newblock {\em Algebraic topology}.
 \newblock Tsinghua University Press, 2005.
+
+\bibitem[HH09]{hagge2009some}
+Tobias~J Hagge and Seung-Moon Hong.
+\newblock Some non-braided fusion categories of rank three.
+\newblock {\em Communications in Contemporary Mathematics}, 11(04):615--637,
+  2009.
 
 \bibitem[Kan98]{kane1998silicon}
 Bruce~E Kane.
@@ -98,6 +130,11 @@ A~Yu Kitaev.
 William Bernard~Raymond Lickorish.
 \newblock Simplicial moves on complexes and manifolds.
 \newblock {\em Geometry and Topology Monographs}, 2(299-320):314, 1999.
+
+\bibitem[LP17]{lahtinen2017short}
+Ville Lahtinen and Jiannis Pachos.
+\newblock A short introduction to topological quantum computation.
+\newblock {\em SciPost Physics}, 3(3):021, 2017.
 
 \bibitem[LW05]{levin2005string}
 Michael~A Levin and Xiao-Gang Wen.
