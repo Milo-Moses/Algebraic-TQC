@@ -99,6 +99,11 @@ Daniel Gottesman.
 \newblock Theory of fault-tolerant quantum computation.
 \newblock {\em Physical Review A}, 57(1):127, 1998.
 
+\bibitem[Hal13]{hall2013quantum}
+Brian~C Hall.
+\newblock {\em Quantum theory for mathematicians}.
+\newblock Springer, 2013.
+
 \bibitem[Hat05]{hatcher2005algebraic}
 Allen Hatcher.
 \newblock {\em Algebraic topology}.
@@ -203,6 +208,11 @@ Michael Spivak.
 \newblock {\em Calculus on manifolds: a modern approach to classical theorems
   of advanced calculus}.
 \newblock CRC press, 2018.
+
+\bibitem[TTWL08]{trebst2008short}
+Simon Trebst, Matthias Troyer, Zhenghan Wang, and Andreas~WW Ludwig.
+\newblock A short introduction to fibonacci anyon models.
+\newblock {\em Progress of Theoretical Physics Supplement}, 176:384--407, 2008.
 
 \bibitem[Wan10]{wang2010topological}
 Zhenghan Wang.

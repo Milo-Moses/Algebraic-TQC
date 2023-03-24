@@ -99,7 +99,7 @@ One of the most promising forms of quantum computation proposed today is Topolog
 \section{Preface}
 \label{Preface}
 
-Quantum computing has seen massive advances over the last 30 years — prompted in large part by Peter Shor's discovery of an efficient quantum factoring algorithm \cite{shor1994algorithms} — and gained notoriety as an emerging technology and area of insight. However, as of yet, nobody has made a usable quantum computer. Precisely controlling this microscopic world has proved quite challenging in large part due to thermal fluctuations of the outside world which cause quantum states to degenerate and scramble. Thus, the current state of quantum computing has been dubbed the ``NISQ era:" The noisy intermediate-scale quantum era.
+Quantum computing has seen massive advances over the last 30 years — prompted in large part by Peter Shor's discovery of an efficient quantum factoring algorithm \cite{shor1994algorithms} — and gained notoriety as an emerging technology and area of insight. However, as of yet, nobody has made a usable quantum computer. Precisely controlling this microscopic world has proved quite challenging in large part due to thermal fluctuations of the outside world which cause quantum states to degenerate and scramble. Thus, the current state of quantum computing has been dubbed the ``NISQ" era: The noisy intermediate-scale quantum era.
 
 Moving past this era will require some major insights and discoveries, and perhaps an entirely new model of quantum computation. One of the moew recent such models is Topological Quantum Computation (TQC), proposed in a 2008 paper of Freedman-Kitaev-Larsen-Wang. The foremost team working on TQC is Microsoft Station Q, based in Santa Barbara, California. While this team has not been able to reliably perform computations with even a single qubit, they have made significant progress on the underlying theoretical physics since 2008.
 
@@ -125,7 +125,10 @@ The structure of the manuscript is as follows:
 \begin{itemize}
 \item Section \ref{Introduction} gives an introduction to TQC. While great effort is taken to make the treatment as accessible as possible, one is still required to have at least an elementary understanding of mathematics and physics. A passing familiarity with quantum mechanics and quantum computation would be extremely useful.
 
-\item Section \ref{The Toric Code} gives a mathematical description of the toric code in terms of undergraduate-level linear algebra. While not strictly necessary, having taken a first course in Algebraic Topology would be preferable. For those unfamiliar with the subject, an introduction is given in Appendix \ref{Homology}. Those unfamiliar with the mathematical formalism of quantum mechanics are advised to reference Appendix \ref{Quantum mechanics}, though the section is entirely readable without this background.
+\item Section \ref{Quantum mechanics} gives a treatment of the basics of quantum mechanics and quantum computation. In Subsection \ref{Quantum computing} the axioms of quantum mechanics are stated from a mathematical perspective, as well as ample motiation. Subsection \ref{Quantum computing} formally defines and describes quantum computation, with an emphasis on the information-theoretic language of computational complexity.
+
+\item Section \ref{The Toric Code} gives a mathematical description of the toric code in terms of undergraduate-level linear algebra. While not strictly necessary, having taken a first course in Algebraic Topology would be preferable. For those unfamiliar with the subject, an introduction is given in Appendix \ref{Homology}. Those unfamiliar with the mathematical formalism of quantum mechanics are ad
+vised to reference Appendix \ref{Quantum mechanics}, though the section is entirely readable without this background.
 
 \item Section \ref{TQFTs} gives an introduction to Topological Quantum Field Theories (TQFTs), the formal mathematical abstractions of topological quantum phases of matter. Subsection \ref{The general picture} gives an overview of the subject. Subsection \ref{DW TQFT} defines the $\ZZ_2$ Dijkgraaf-Witten theory, the TQFT associated with the toric code.
 
@@ -136,7 +139,6 @@ The structure of the manuscript is as follows:
 \end{itemize}
 
 
-
 \section{Introduction}
 \label{Introduction}
 
@@ -145,7 +147,7 @@ Of the many approaches to quantum computation, Topological Quantum Computation (
 To describe a theory of Quantum Computation, one must specify the following:
 
 \begin{enumerate}
-\item How quantum information is stored (i.e. what physical model of qubits one is using)
+\item How quantum information is stored (i.e. what physical model of qubits\footnote{Qubit (or, ``quantum bit") is the abstract unit of quantum information} one is using)
 \item How quantum information is acted on (i.e. what physical actions one can perform on the qubits)
 \item How quantum information is measured (i.e. what observables can be physically measured in the system)
 \end{enumerate}
@@ -232,6 +234,344 @@ Here, \textit{ground state} refers to a state in the system with lowest possible
 
 The possibilities for topological quantum materials and TQC are extremely exciting, and we are eager to see where the field will go in the coming years.
 
+\section{Quantum foundations}
+\label{Quantum foundations}
+
+In this appendix we introduce quantum mechanics and quantum computation, from a mathematical perspective. Namely, we state the axioms of quantum mechanics, the relevant definitions and theorems from linear algebra, and a short discussion of information theory. The goal of quantum mechanics is to describe the microscopic world, where physical phenomina are wholy different than in the macroscopic world. Probabilities don't work in the usual sense (leading to phenomina like \textit{interference}), and objects are modeled simultaneously as particles and waves (leading to phenomina like \textit{superposition} and \textit{entanglement}). This endows quantum information theory with a number of number of counterintuitive phenomina, like \textit{no-cloning theorems} and \textit{quantum teleportation}.
+
+Throughout this appendix, we will strongly use analogy with the classical theory of probability, which we recall in a mathematically rigorous way now. Let $S$ be a finite set of states. For example, when modelling the flipping of a coin, we might let $S=\{\text{heads},\,\text{tails}\}$. When modeling the positions of pieces on a chessboard, $S$ could be the $64$ element set of chessboard squares. A probability distribution on $S$ is an assignment of positive real numbers (probabilities) $p_x$ for each $x\in S$, such that that the total probability $\sum_{x\in S}p_x$ is $1$. For example, if we have two states $S=\{\text{accept},\,\text{deny}\}$ and there is a $90\%$ chance we will accept, then $p_{\text{accept}}=.9$ and $p_{\text{deny}}=.1$.
+
+It is now clear why linear algebra is the correct field of study to analyse probabilities. Assigning a real number to every element in a set $S$ is exactly the same as choosing a vector in the vector space $\RR[S]$, the real vector space defined to have $S$ as a basis. That is, every vector in vector space is uniquely defined as a linear combination of basis elements. If we have probabilities $p_x$ assigned to every $x\in S$, then this corresponds to the vector $\sum_{x\in S}p_x\left |x\right>\in \RR[S]$. For example, the previous example of accepting and denying can be conciesely summarized as the equation
+
+$$.9\left|\text{accept}\right>+.1\left|\text{deny}\right>\in \RR[S]=\RR[\{\text{accept},\,\text{deny}\}].$$
+
+We make a comment about our notation. We use the bars/angle-brackets $\left| \cdot \right>$ to formally seperate elements of our set $S$ from the numbers used when taking linear combinations. This is neccecarily, for if $S$ the elements of $S$ were numbers there would be immediate confusion otherwise. For instance, if $S=\{0,1\}$, then the distribution with probability $\frac{2}{3}$ given to $0$ and  probability $\frac{1}{3}$ given to $1$ would be notated $\frac{2}{3}0+\frac{1}{3}1$. Upon seperating with bars/angle-brackets, we arrive at the much more sensible $\frac{2}{3}\left|0\right>+\frac{1}{3}\left|1\right>$. The symbol $\left|\cdot \right>$ us known as a \textit{ket}. This notation is ubiquitous across quantum mechanics for representing states.
+
+Now, suppose we want to model the following process using this language of vector spaces. We start by flipping a coin. Then, we take a second coin. If the result of the first coin was heads, then we set the second coin to heads. If the result of the first coin was tails, then we flip the second coin randomly. Symbolically, writing $h$ for heads and $t$ for tails, this is seen as
+
+\[\begin{tikzcd}
+	{\left|\text{start}\right>} & {\frac{1}{2}\left|\text{h}\right>+\frac{1}{2}\left|\text{t}\right>} & {\frac{1}{2}\left(\left|\text{hh}\right>\right)+\frac{1}{2}\left(\frac{1}{2}\left|\text{th}\right>+\frac{1}{2}\left|\text{tt}\right>\right)}. \\
+	{\mathbb{R}[\{\text{start}\}]} & {\mathbb{R}[\{\text{h},\text{t}\}]} & {\mathbb{R}[\{\text{hh,\, ht,\, th,\, tt}\}]}
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow["\vin"{description}, draw=none, from=1-1, to=2-1]
+	\arrow["\vin"{description}, draw=none, from=1-2, to=2-2]
+	\arrow["\vin"{description}, draw=none, from=1-3, to=2-3]
+\end{tikzcd}\]
+
+We introduce the following terminology, for ease of dicsussion. A \textit{pure state} is an element of $S$, and a \textit{mixed state} is a general element of $\RR[S]$. General probability distributions are mixed states. When the probabilistic system is measured, a mixed state $\sum_{x\in S}p_x\left| x\right>$ will ``collapse" onto a pure state, going to each $x$ with probability $p_x$. In light of this terminology, it makes sense to refer to $\RR[S]$ as a state space. Not all mixed states are realistic. That is, $-\frac{1}{2}\left|\text{heads}\right>+\frac{1}{2}\left|\text{tails}\right>$ can never occur because one cannot have negative probabilities. A \textit{normalized vector} (or, \textit{normalized state}) in $\RR[S]$ is a vector which can be written as $\sum_{x\in S}p_x \left |x \right>$, where $p_x\geq 0$ and $\sum_{x\in S}p_x=1$.
+
+General probabilistic processes can be described very simply now. A process that goes from probability distribution on a finite set $S$ to a  probability distribution on a finite set $S'$ can be described as a linear map $\RR[S]\to \RR[S']$, sending normalized vectors to normalized vectors. The fact that map is linear is a direct consequence of the basic rules of probability. In our above example, linearity is the fact one gets the correct answer from using the maniputation
+
+
+$$\frac{1}{2}\left(\left|\text{hh}\right>\right)+\frac{1}{2}\left(\frac{1}{2}\left|\text{th}\right>+\frac{1}{2}\left|\text{tt}\right>\right)=\frac{1}{2}\left|\text{hh}\right>+\frac{1}{4}\left|\text{th}\right>+\frac{1}{4}\left|\text{tt}\right>.$$
+
+We now discuss what happens when one joins two systems together. That is, let $S$ and $S'$ be two finite sets. We wish to speak of joint proability distributions over $S$ and $S'$. That is, distributions where one samples over elements of $S$ and $S'$. This corresponds to choosing probabilities $p_{(s,s')}$ for each pair of elements $(s,s')\in S\times S'$, living in the Cartesian product of $S$ and $S'$. While physically trivial, this observation has important mathematical consequences. We can now state our axioms in a complete way:
+
+
+\begin{definition}[Axioms of probability theory] $\,$
+
+\begin{enumerate}
+\item (Systems) A probabilistic system is a real vector space of the form $\RR[S]$, where $S$ is a finite set. The normalized vectors in $\RR[S]$ correspond to probability distributions on $S$.
+\item (Processes) A probabilistic process going from a system $S$ to a system $S'$ is a linear map $\RR[S]\to \RR[S']$, which sends normalized vectors to normalized vectors.
+\item (Joining systems) If $S$ and $S'$ are two probabilistic systems, the system obtained by joining $S$ and $S'$ is equal to the system $S\times S'$.
+\item (Measuring systems) Given a normalized vector $\sum_{x\in S}p_x \left |x\right>\in \RR[S]$, measurement corresponds to collapsing into a pure state, where we observe each $x\in S$ with probability $p_x$.
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+We can state quantum mechanics in exactly the same way:
+
+\begin{definition}[Axioms of quantum mechanics, basis dependent version] $\,$
+
+\begin{enumerate}
+\item (Systems) A quantum system is a complex vector space of the form $\CC[S]$, where $S$ is a finite set. The normalized vectors in $\CC[S]$ correspond to complex states on $S$. A \textit{normalized} vector $v=\sum_{x\in S}c_x\left|x\right>$ is one for which $\sum_{x\in S}|c_x|^2=1$, where $|c_x|^2$ denotes the norm square.
+\item (Processes) A quantum process going from a system $S$ to a system $S'$ is a linear map $\CC[S]\to \CC[S']$, which sends normalized vectors to normalized vectors.
+\item (Joining systems) If $S$ and $S'$ are two quantum systems, the system obtained by joining $S$ and $S'$ is equal to the system $S\times S'$.
+\item (Measuring systems) Given a normalized vector $\sum_{x\in S}c_x \left |x\right>\in \CC[S]$, measurement corresponds to collapsing into a pure state, where we observe each $x\in S$ with probability $|c_x|^2$.
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+
+The quantity $\sum_{x\in S}|c_x|$ is called the $1$-norm, and $\sqrt{\sum_{x\in S}|c_x|^2}$ is called the $2$-norm. The following quote summarizes the above definition:
+
+\begin{quote}
+``What happens if you try to come up with a theory that's \textit{like} probability theory, but based on the $2$-norm instead of the $1$-norm?... Quantum mechanics is what inevitably results." - Scott Aaronson\footnote{Page 112 of Aaronson's ``Quantum Computing since Democritus" \cite{aaronson2013quantum}}
+\end{quote}
+
+While fully mathematically rigorous, we now add some physical interpretation to the axioms of quantum mechanics. Let $\left|\psi\right>=\sum_{x\in S}c_x\left|x\right>\in \CC[S]$ be a normalized vector in a quantum system. We call $\left|\psi\right>$ a quantum state. Wave-particle duality can be understood as follows:
+
+\begin{itemize}
+\item Particle = Single position; definite = pure state = $\left|x\right>$, $x\in S$
+\item Wave = Multiple positions; spread-out = mixed state = $\left|\psi\right>\in \CC[S]$.
+\end{itemize}
+
+We can thus say that quantum states are waves, but when they are measured they collapse into a particle. A mixed state is said to be in a \textit{superposition} of the pure states it is a linear combination of. We call the expression $\sum_{x\in S}c_x \left|x\right>$ the wave function of $\left|\psi\right>$, with $c_x$ being the amplitudes.
+
+We now demonstrate interference. Consider the quantum system with pure states $S=\{0,1\}$. This is called a qubit. More generally, a qubit is the term used for any two-dimensional quantum system. Define the transformation $H: \CC[S]\to \CC[S]$ by
+
+$$H(\0)=\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1,$$
+
+$$H(\1)=\frac{1}{\sqrt{2}}\0-\frac{1}{\sqrt{2}}\1.$$
+
+Applying $H$ to $\0$ and measuring gives $0$ and $1$ with equal probability, and same with applying $H$ to $\1$. When we apply $H$ to the equal superposition of $0$ and $1$, however, results in
+
+$$H\left(\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1\right)=\frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1\right)+\frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}\0-\frac{1}{\sqrt{2}}\1\right)=\0.$$
+
+We can summarize this as saying that there was \textit{constructive interference} in the $\0$s, and \textit{destructive interference} in the $\1$s. The amplitudes had the same signs in the $\0$s causing the proabability of measuring $0$ to add, and the amplitudes had opposite signs in the $\1$s,  causing the probabilities of measuring  $1$ to cancel and give $0$. This linear map $H$ defined is called the Hadamard gate, and it is a very important process in quantum information theory. It is not immediately clear that $H$ sends all normalized vectors to normalized vectors. For instance, if we had defined $H(\1)=\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1$ then applying $H$ to the equal superpositoin of $0$ and $1$ would not give a normalized value. The following proposition clarifies exactly what transformations are allowed in quantum mechancis:
+
+\begin{proposition}\label{unitary equivilance} Let $S$ be a finite set, and let $U: \CC[S]\to \CC[S]$ a linear transformation. The following are equivilant:
+
+\begin{enumerate}
+\item $U$ sends normalized vectors to normalized vectors.
+\item $U^{\dagger}=U^{-1}$, where $\dagger$ denotes the conjugate transpose.
+\end{enumerate}
+
+If either of the two equivilant conditions are met, we call $U$ a unitary matrix.
+\end{proposition}
+\begin{proof} Given $\left|\phi\right>=\sum_{x\in S}c_x\left|x\right>$ and, $\left|\psi\right>=\sum_{x\in S}d_x\in \CC[S]$, define
+
+$$\left<\phi|\psi\right>=\sum_{x\in S}c_x\overline{d_x},$$
+
+where $\overline{\cdot}$ denotes the complex conjugate, We find that
+
+$$\left<\psi|\psi\right>=\sum_{x\in S}|c_x|^2$$
+
+is equal to the norm square of $\left|\psi\right>$. The statement that $U$ preserves norm is exactly the statement
+
+$$\left<U\psi|U\psi\right>=\left<\psi|\psi\right>.$$
+
+For complex numbers $a,b\in \CC$, expanding linearly the definition it is clear that
+
+$$\left<a\phi_0+b\phi_1|\psi\right>=a\left<\phi_0|\psi\right>+b\left<\phi_1|\psi\right>$$
+
+and
+
+$$\left<\phi|a\psi_0+b\psi_1\right>=\overline{a}\left<\phi|\psi_0\right>+\overline{b}\left<\phi_1|\psi_1\right>.$$
+
+Extending with this formula, we find that $U$ preserving norm implies $\left<U\phi|U\psi\right>=\left<\phi|\psi\right>$ for all $\left|\psi\right>,\left|\phi\right>$. Let $U U^{\dagger}$ be the product of $U$ with its conjugate transpose. This can be represented as a matrix whose rows and collumns are labeled by elements of $S$. Given $(x,y)\in S$, then $(x,y)$ entry is
+
+$$\sum_{z\in S}u_{x,z}\overline{u_{y,z}}=\left<U x| U y\right>,$$
+
+where $u_{x,z}$ is the $(x,z)$ entry of $U$. We thus follow through the equivilance
+
+\begin{align*}
+&\left(UU^{\dagger}=I\right)\\
+\iff&\left(\left<Ux|Uy\right>=
+\begin{cases}
+1 & x=y\\
+0 & \text{otherwise}
+\end{cases}\,\, \forall x,y\in S\right)\\
+\iff & \left(\left<Ux|Uy\right>=\left<x,y\right>,\,\, \forall x,y\in S\right)\\
+\iff & \left(U\text{ preserves norms}\right)
+\end{align*}
+
+which gives us the desired conclusion.
+\end{proof}
+
+We now comment on measurement. A big component glossed over in the previous discussion is \textit{observables}. When a quantum system is measured, one typically will have an associated observable. For example, let $S$ be the set of possible energy levels of a hydrogen atom. Typically, states $\left|\psi\right>$ will be in superpositions of possible energies. Measuring energy results in collapsing the wavefunction onto a given energy level. The observed quantity is a number - the energy of the level that was collapsed to. Thus, a realistic model of measurement should correspond to not only collapsing onto a pure state, but also choosing a real number to be observed.
+
+In the most general form of measurement, one might want to measure in a basis other than the canonical basis. Thus, the process can be described as starting with a state $\ppsi \in \CC[S]$, applying a change of basis matrix $U^{-1}: \CC[S]\to \CC[S]$, choosing real numbers (ovservables) to correspond to each state, collapsing onto a pure state, observing the observable, then reversing the change of basis with a matrix $U: \CC[S]\to \CC[S]$. In terms of linear algebra, this can be concisely written as follows. Let $D$ be the diagonal matrix, whose entires on the diagonal correspond to the real numbers chosen as observables for each pute state. Let
+
+$$H=UDU^{-1}$$
+
+be a matrix. The pure states in the $U$-basis are now the eigenvectors of $H$, and the observables are the eigenvalues. The following proposition clarifies exactly what measurements are allowed in quantum mechanics:
+
+\begin{proposition} Let $S$ be a finite set, and let $H: \CC[S]\to \CC[S]$ be a linear transformation. The following are equivilant:
+
+\begin{enumerate}
+\item $H$ can be written in the form $UDU^{-1}$ for a unitary matrix $U$ and a diagonal matrix $D$.
+\item $H=H^{\dagger}$.
+\end{enumerate}
+
+If either of the two equivilant conditions are met, we call $H$ a Hermitian matrix.
+\end{proposition}
+\begin{proof} We begin by showing the first direction. Suppose $H=UDU^{-1}$. Since $U^{-1}=U^{\dagger}$, we may write $H=UDU^{\dagger}$. Expanding $H^{\dagger}$, we find
+
+\begin{align*}
+H^{\dagger}&=(UDU^{\dagger})^{\dagger}\\
+&=U^{\dagger\dagger}D^{\dagger}U^{\dagger}\\
+&=UDU^{\dagger}\\
+&=H.
+\end{align*}
+
+Here, we used that $D^{\dagger}=D$ since it is real symmetric, hence fixed under both taking transpose and complex conjugate. We also used that $U^{\dagger\dagger}=U$, which comes from the fact that taking two complex conjugates and two transposes takes a matrix back to itself.
+
+The converse is much more difficult. This is the so called \textit{spectral theorem} of linear algebra, and its proof would take us too far away. A good reference for this sort of linear algebra, with a special emphasis on spectral theorems, is Hall's book \cite{hall2013quantum}.
+\end{proof}
+ 
+The conditions on untitary and Hermitian matricies we have obtained are independent of unitary change of basis, in the sense that unitary (resp. Hermitian) matricies will stay unitary (resp. Hermitian) under a unitary change of basis. Additionally, unitary matricies are defined to send normalized vectors to normalized vectors, and hence normalized vectors are a unitary basis-independent notion as well. This almost allows us to state the axioms of quantum mechanics in a basis independent way. The trouble is that the notations of unitary, Hermitian, and normalized are not invariant under arbitarary change of basis. The solution to this problem is to introduce \textit{Hilbert spaces}. Roughly, Hilbert spaces are vector spaces paired with a notion of normalization, which allows one to define unitary and Hermitian matricies. Abstractly, in the same way that there is a canonical identification
+
+$$
+\left(\text{Vector spaces with basis}\right)/\left(\text{change of basis}\right)\cong
+\left(\text{Vector spaces}\right),
+$$
+
+there is an identification
+
+$$
+\left(\text{Vector spaces with basis}\right)/\left(\text{orthogonal change of basis}\right)\cong
+\left(\text{Hilbert spaces}\right).
+$$
+
+Formally, we have the following:
+
+\begin{definition}[Hilbert space] A Hilbert space is the following data:
+
+\begin{enumerate}
+\item A vector space $V$
+\item (Inner product) A map $\left<\cdot |\cdot \right>:V\times V\to V$
+\end{enumerate}
+
+Additionally, a Hilbert space is required to satisfy the following properties:
+
+\begin{enumerate}
+\item (Conjugate symmetric) $\left<\phi |\psi \right>=\overline{\left<\psi| \phi\right>}$, for all $\left|\psi\right>,\left|\phi\right>\in V$, where $\overline{\cdot}$ denotes the complex conjugate.
+\item (Linearity in first component) $\left<a\phi_0+b\phi_1|\psi\right>=a\left<\phi_0|\psi\right>+b\left<\phi_1|\psi\right>$, for all $a,b\in \CC$, and $\left|\phi_0\right>,\left|\phi_1\right>,\left|\psi\right>\in V$.
+\item (Positive definite) The real number $\left<\psi|\psi\right>$, $\left|\psi\right>\in V$,  is always non-negative, and is $0$ if and only if $\psi=0$.
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+It follows from these axioms that $\left<\cdot | \cdot \right>$ is conjugate linear in the second component:
+
+$$\left<\phi|a\psi_0+b\psi_1\right>=\overline{a}\left<\phi|\psi_0\right>+\overline{b}\left<\phi|\psi_1\right>.$$
+
+The point of this definition is that we can define the norm of $\left|\psi\right>\in V$ to be $\sqrt{\left<\psi|\psi\right>}$, and thus by forcing $\left<\psi |\psi\right>=1$ we have a well-defined notion of normalized vector. We now show that Hilbert spaces have the desired property of characterizing vector spaces up to orthogonal change of basis:
+
+\begin{proposition}\label{Hilbert properties} Let $V$ be a an $n$ dimensional vector space. The following statements are true:
+
+\begin{enumerate}
+\item If $\left<\cdot|\cdot\right>$ is an inner product on $V$, there exists an orthonormal basis with respect to $\left<\cdot|\cdot\right>$. That is, a basis $\left|x_k\right>$, $k\in \{0...n-1\}$ such that
+
+$$\left<x_k|x_j\right>=
+\begin{cases}
+1 & k=j\\
+0 & \text{otherwise}.
+\end{cases}$$
+
+\item Suppose $\left|x_k\right>$, $k\in \{0...n-1\}$  is a basis for $V$. Define the map $\left<\cdot|\cdot\right>:V\times V\to V$ as follows. Given $\left|\phi\right>=\sum_{k=0}^{n-1}c_k \left|x_k\right>$ and $\left|\psi\right>=\sum_{k=0}^{n-1}d_k\left|x_k\right>$,
+
+$$\left<\phi|\psi\right>=\sum_{k=0}^{n-1}c_k\overline{d}_k.$$
+
+This is an inner product, and gives $V$ the structure of a Hilbert space. $(\left|x_k\right>)_{k=0}^{n-1}$ is an orthonormal basis with respect to this inner product.
+
+\item Two bases induce the same Hilbert space structure on $V$ if and only if they can be related to each other by a unitary matrix.
+\end{enumerate}
+
+In this sense, one can canonically identitify equivilance classes of based vector spaces up to orthogonal change of basis with Hilbert spaces.
+\end{proposition}
+\begin{proof}$\,$
+
+\begin{enumerate}
+\item We proceed by induction on $n$. When $n=1$, let $\left|\tilde{x}_0\right>$ be any non-zero vector.  By positive definiteness, $\left<\tilde{x}_0|\tilde{x}_0\right>\neq 0$. Letting
+
+$$\left|x_0\right>=\left<\tilde{x}_0|\tilde{x}_0\right>^{-1/2}\cdot \left|\tilde{x}_0\right>$$
+
+we get a normalized basis vector for $V$. For the inductive step, suppose that every $n-1$ dimensional Hilbert space has an orthonormal basis. Choose an $n-1$ dimensional subspace $V'$ of $V$. The inner product on $V$ restricts to an inner product on $V'$. Hence, by the inductive step there is an orthonormal basis $\left(\left|x_k\right>\right)_{k=0}^{n-2}$ of $V'$. Choose any vector $\left|\psi\right>\not\in V'$. Set
+
+$$\left|\tilde{x}_{n-1}\right>=\left|\psi\right>-\sum_{k=0}^{n-1}\left<\psi|x_k\right>\cdot \left|x_k\right>.$$
+
+We compute for any $j\leq k-2$
+
+\begin{align*}
+\left<\tilde{x}_{n-1}| x_j\right>&=\left<\psi | x_j\right>-\sum_{k=0}^{n-1}\left<\psi | x_k\right>\cdot \left< x_{k} | x_j\right>\\
+&=\left<\psi | x_j\right>-\left<\psi | x_j\right>=0.
+\end{align*}
+
+The vector $\left|x_{n-1}\right>=\left<\tilde{x}_{n-1},\tilde{x}_{n-}\right>^{-1/2}\cdot \left|\tilde{x}_{n-1}\right>$ thus completes the construction of an orthonormal basis for $\left<\cdot | \cdot\right>$.
+
+\item Verifying thee axioms is immediate, and is left as an exercise to the reader (Exercise \thesection.3)
+
+\item Suppose two bases are related by a unitary transformation. Since the unitary transformation preserves the inner product, the inner product induced by the two bases are the same. Conversely, suppose that two bases induce the same inner product. This means that the change of basis matrix preserves the inner product, hence is unitary, and hence the two bases are related by a unitary change of basis. 
+\end{enumerate}
+
+\end{proof}
+
+We can now state everything in a basis independent fashion. A normalized vector is one in which the norm square $\left<\psi|\psi\right>$ equals one. A unitary matrix is a matrix which preserves the norm. That is, $\left<U\psi|U\phi\right>=\left<\psi|\phi\right>$ for all $\left|\phi\right>,\left|\psi\right>$. A Hermitian matrix is one which is a diagonal matrix with real entries in some orthonormal basis. In terms of the inner product, this can be characterized as saying that $\left<\psi, H\phi\right>=\left<H\psi, \phi \right>$ (see Exercise \thesection.1).
+
+Our last task for a basis independent statement of quantum mechanics is joining systems. Here, we use the following observation. For finite sets $S$ and $S'$, there is a canonical isomorphism
+
+\begin{align*}
+\CC[S]\otimes \CC[S']&\xrightarrow{\sim}\CC[S\times S'].\\
+\left|x\right>\otimes \left|x'\right>&\mapsto \left|(x,x')\right>
+\end{align*}
+
+The basis-independent version of taking the Cartesian products of underlying sets is hence taking the tensor product. Given Hilbert spaces $(V,\left<\cdot|\cdot\right>_V)$ and $(W,\left<\cdot|\cdot\right>_W)$, we define a  space structure on $V\otimes W$ by
+
+$$\left<x_0\otimes x_1| y_0\otimes y_1\right>=\left<x_0|x_1\right>_{V}\otimes \left<y_0|y_1\right>_W,$$
+
+where $x_0,x_1\in V$, $y_0,y_1\in W$. We verify in Exercise \thesection.2 that this is indeed an inner product. Thus, we can state the axioms of quantum mechanics as follows:
+
+\begin{definition}[Axioms of quantum mechanics, basis independent version] $\,$
+
+\begin{enumerate}
+\item (Systems) A quantum system is a complex Hilbert space $V$
+\item (Processes) A quantum process going from a system $V$ to a system $W$ is an orthogonal transformation from $V$ to $W$
+\item (Joining systems) If $V$ and $W$ are two quantum systems, the system obtained by joining $V$ and $W$ is equal to the system $V\otimes W$.
+\item (Measuring systems) Given a normalized vector in $\left|\psi\right>\in V$, measurement corresponds to Hermitian matricies $H$. Namely, writting $\left|\psi\right>=\sum_{k=0}^{n-1}c_k\left|x_k\right>$ where $\left(\left|x_k\right>\right)_{k=0}^{n-1}$ is an orthonomal basis of eigenvectors of $H$, measurement will collapse $\left|\psi\right>$ onto one of the pure states, going to the state $\left|x_k\right>$ with probability $|c_k|^2$. One additionally will physically observe the number corresponding to the eigenvalue of $H$ at $\left|x_k\right>$.
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+While Hilbert spaces are more technically accurate, we will often be thinking of quantum systems as simple vector spaces. This is done for two reasons.
+
+\begin{enumerate}
+\item In simple situations we will often be extremely explicit with choosing bases, and hence we will not need the basis independent language of Hilbert spaces
+
+\item In complex situations keeping track of inner products is too complicated, and hence we work in the simpler situation of vector spaces. When this becomes an issue we will add conditions to simulate Hilbert space structure (for example, adding a unitarity condition to Modular Tensor Categories), though this is often unnececary.
+\end{enumerate}
+
+We now conclude with a more percise treatment of quantum computation. The goal of computer science is to perform computations on information. A computation is a way of taking in information, transforming it, and returning information. Information is a very broad term, but one of the greatest successes of information theory is the universal language of \textit{bits}. That is, we represent general information as finite collections of $1$s and $0s$. Abstractly, a classical computation is a function
+
+$$f:\ZZ_2^{n}\to \ZZ_2^m,$$
+
+where $\ZZ_2=\{0,1\}$, and $\ZZ_2^n$ is the $n$-fold cartesian product, consisting of length-$n$ bit strings. All classical processes can be modeles as first writing your information as an element of $\ZZ_2^n$ for large enough $n$, writing a function form $\ZZ_2^n$ to $\ZZ_2^m$ which performs the desired task, and reading out elements of $\ZZ_2^m$ in the correct way. A randomized algorithm is thus exactly the same thing, except with random processes instead of deterministic ones. Namely, a randomized computation is a probabilistic process
+
+$$f:\RR[\ZZ_2^n]\to \RR[\ZZ_2^m].$$
+
+A quantum computation is a quantum process
+
+$$f:\CC[\ZZ_2^n]\to \CC[\ZZ_2^m].$$
+
+This can be seen as taking superpositions of length-$n$ bit strings to superpositions of length-$m$ bit strings. It is often more pleasant to consider quantum computations in a basis-independent language. Namely, we have a canonical isomorphism $\CC[\ZZ_2^n]\cong \CC[\ZZ_2]^{\otimes n}$, where $\otimes n$ dentoes the $n$-fold tensor product of a space with itself. We can now identify $\CC[\ZZ_2]$ with $\CC^2$, where $\CC^2$ is given the Hilbert space structure inherited by the prefered basis $\{\0,\1\}$. Thus, a basis-independent quantum computation is a unitary transformation
+
+$$f:\left(\CC^2\right)^{\otimes n}\to \left(\CC^2\right)^{\otimes m}.$$
+
+The two dimensional quantum system $\CC^{2}$ is called a qubit. It is now clear that specifying a theory of quantum computation requires specifying
+
+\begin{enumerate}
+\item How quantum information is stored. That is, what physically object will have associated quantum state-space which we identity with $\left(\CC^2\right)^{\otimes n}$.
+\item How quantum informatoin is acted on. That is, what physical actions one will do to perform the function $f$.
+\item How quantum information is measured. That is, how one can observables one can measure to reliably read information about quantum states from $\left(\CC^2\right)^{\otimes m}$.
+\end{enumerate}
+
+This concludes our introduction of quantum mechancis.
+
+$\newline\newline$
+
+\large \textbf{Exercises}:\normalsize
+
+\begin{enumerate}[\thesection .1.]
+\item Let $(V,\left<\cdot|\cdot\right>)$ be a Hilbert space. Let $H:V\to V$ be a linear transformation. Verify that $H$ is Hermitian if and only if
+
+$$\left<\psi| H\phi\right>=\left<H\psi | \phi\right>$$
+
+for all $\left| \psi\right>,\left|\phi\right>\in V$.
+\item Given Hilbert spaces $(V,\left<\cdot|\cdot\right>_V)$ and $(W,\left<\cdot|\cdot\right>_W)$, we define a  space structure on $V\otimes W$ by
+
+$$\left<x_0\otimes x_1| y_0\otimes y_1\right>=\left<x_0|x_1\right>_{V}\otimes \left<y_0|y_1\right>_W,$$
+
+where $x_0,x_1\in V$, $y_0,y_1\in W$. Show that $\left<\cdot| \cdot\right>$ is an inner product.
+
+\item Verify Proposition \ref{Hilbert properties} part (2).
+\end{enumerate}
+
 \section{The Toric Code}
 \label{The Toric Code}
 
@@ -242,7 +582,7 @@ Our mathematical priorities are thus as follows: To define the quantum system, a
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.3]{torus}
-\caption{Celluation of the torus, obtained by gluing opposite sides together.}
+\caption{Celluation of the torus, obtained by gluing opposite sides together [WORK: add ``=donut" visual].}
 \label{fig:torus}
 \end{center}
 \end{figure}
@@ -1861,7 +2201,7 @@ $\newline\newline$
 \subsection{Universal TQC with the Fibbonacci anyon}
 \label{Universal TQC with the Fibbonacci anyon}
 
-.[WORK: introduce the Fibonacci anyon. Prove that it is universal with braiding alone. Really what I want to do is show that any form of TQC is universal, but I just think Fibonnacci will be simplest.]
+.[WORK: introduce the Fibonacci anyon. Prove that it is universal with braiding alone. Really what I want to do is show that any form of TQC is universal, but I just think Fibonnacci will be simplest. If anyone has a definition it should be here: \cite{trebst2008short}]
 
 
 
@@ -1874,108 +2214,6 @@ I got rid of the unit TQFT axiom, which now includes the degenerate possibility 
 
 Why can I always lift celluations? Zhenghan mentioned this in class, but didn't cite a reference.]
 \appendix
-
-\section{Quantum foundations}
-\label{Quantum mechanics}
-
-\subsection{Quantum mechanics}
-
-In this appendix we introduce quantum mechanics and quantum computation, from a mathematical perspective. Namely, we state the axioms of quantum mechanics, the relevant definitions and theorems from linear algebra, and a short discussion of information theory. The goal of quantum mechanics is to describe the microscopic world, where physical phenomina are wholy different than in the macroscopic world. Probabilities don't work in the usual sense (leading to phenomina like \textit{interference}), and objects are modeled simultaneously as particles and waves (leading to phenomina like \textit{superposition} and \textit{entanglement}). This endows quantum information theory with a number of number of counterintuitive phenomina, like \textit{no-cloning theorems} and \textit{quantum teleportation}.
-
-Throughout this appendix, we will strongly use analogy with the classical theory of probability, which we recall in a mathematically rigorous way now. Let $S$ be a finite set of states. For example, when modelling the flipping of a coin, we might let $S=\{\text{heads},\,\text{tails}\}$. When modeling the positions of pieces on a chessboard, $S$ could be the $64$ element set of chessboard squares. A probability distribution on $S$ is an assignment of positive real numbers (probabilities) $p_x$ for each $x\in S$, such that that the total probability $\sum_{x\in S}p_x$ is $1$. For example, if we have two states $S=\{\text{accept},\,\text{deny}\}$ and there is a $90\%$ chance we will accept, then $p_{\text{accept}}=.9$ and $p_{\text{deny}}=.1$.
-
-It is now clear why linear algebra is the correct field of study to analyse probabilities. Assigning a real number to every element in a set $S$ is exactly the same as choosing a vector in the vector space $\RR[S]$, the real vector space defined to have $S$ as a basis. That is, every vector in vector space is uniquely defined as a linear combination of basis elements. If we have probabilities $p_x$ assigned to every $x\in S$, then this corresponds to the vector $\sum_{x\in S}p_x\left |x\right>\in \RR[S]$. For example, the previous example of accepting and denying can be conciesely summarized as the equation
-
-$$.9\left|\text{accept}\right>+.1\left|\text{deny}\right>\in \RR[S]=\RR[\{\text{accept},\,\text{deny}\}].$$
-
-We make a comment about our notation. We use the bars/angle-brackets $\left| \cdot \right>$ to formally seperate elements of our set $S$ from the numbers used when taking linear combinations. This is neccecarily, for if $S$ the elements of $S$ were numbers there would be immediate confusion otherwise. For instance, if $S=\{0,1\}$, then the distribution with probability $\frac{2}{3}$ given to $0$ and  probability $\frac{1}{3}$ given to $1$ would be notated $\frac{2}{3}0+\frac{1}{3}1$. Upon seperating with bars/angle-brackets, we arrive at the much more sensible $\frac{2}{3}\left|0\right>+\frac{1}{3}\left|1\right>$. The symbol $\left|\cdot \right>$ us known as a \textit{ket}. This notation is ubiquitous acros quantum mechanics for representing states.
-
-
-
-Now, suppose we want to model the following process using this language of vector spaces. We start by flipping a coin. Then, we take a second coin. If the result of the first coin was heads, then we set the second coin to heads. If the result of the first coin was tails, then we flip the second coin randomly. Symbolically, writing $h$ for heads and $t$ for tails, this is seen as
-
-\[\begin{tikzcd}
-	{\left|\text{start}\right>} & {\frac{1}{2}\left|\text{h}\right>+\frac{1}{2}\left|\text{t}\right>} & {\frac{1}{2}\left(\left|\text{hh}\right>\right)+\frac{1}{2}\left(\frac{1}{2}\left|\text{th}\right>+\frac{1}{2}\left|\text{tt}\right>\right)}. \\
-	{\mathbb{R}[\{\text{start}\}]} & {\mathbb{R}[\{\text{h},\text{t}\}]} & {\mathbb{R}[\{\text{hh,\, ht,\, th,\, tt}\}]}
-	\arrow[from=1-1, to=1-2]
-	\arrow[from=1-2, to=1-3]
-	\arrow["\vin"{description}, draw=none, from=1-1, to=2-1]
-	\arrow["\vin"{description}, draw=none, from=1-2, to=2-2]
-	\arrow["\vin"{description}, draw=none, from=1-3, to=2-3]
-\end{tikzcd}\]
-
-We introduce the following terminology, for ease of dicsussion. A \textit{pure state} is an element of $S$, and a \textit{mixed state} is a general element of $\RR[S]$. General probability distributions are mixed states. When the probabilistic system is measured, a mixed state $\sum_{x\in S}p_x\left| x\right>$ will ``collapse" onto a pure state, going to each $x$ with probability $p_x$. In light of this terminology, it makes sense to refer to $\RR[S]$ as a state space. Not all mixed states are realistic. That is, $-\frac{1}{2}\left|\text{heads}\right>+\frac{1}{2}\left|\text{tails}\right>$ can never occur because one cannot have negative probabilities. A \textit{normalized vector} (or, \textit{normalized state}) in $\RR[S]$ is a vector which can be written as $\sum_{x\in S}p_x \left |x \right>$, where $p_x\geq 0$ and $\sum_{x\in S}p_x=1$.
-
-General probabilistic processes can be described very simply now. A process that goes from probability distribution on a finite set $S$ to a  probability distribution on a finite set $S'$ can be described as a linear map $\RR[S]\to \RR[S']$, sending normalized vectors to normalized vectors. The fact that map is linear is a direct consequence of the basic rules of probability. In our above example, linearity is the fact one gets the correct answer from using the maniputation
-
-
-$$\frac{1}{2}\left(\left|\text{hh}\right>\right)+\frac{1}{2}\left(\frac{1}{2}\left|\text{th}\right>+\frac{1}{2}\left|\text{tt}\right>\right)=\frac{1}{2}\left|\text{hh}\right>+\frac{1}{4}\left|\text{th}\right>+\frac{1}{4}\left|\text{tt}\right>.$$
-
-We now discuss what happens when one joins two systems together. That is, let $S$ and $S'$ be two finite sets. We wish to speak of joint proability distributions over $S$ and $S'$. That is, distributions where one samples over elements of $S$ and $S'$. This corresponds to choosing probabilities $p_{(s,s')}$ for each pair of elements $(s,s')\in S\times S'$, living in the Cartesian product of $S$ and $S'$. While physically trivial, this observation has important mathematical consequences. We can now state our axioms in a complete way:
-
-
-\begin{definition}[Axioms of probability theory] $\,$
-
-\begin{enumerate}
-\item (Systems) A probabilistic system is a real vector space of the form $\RR[S]$, where $S$ is a finite set. The normalized vectors in $\RR[S]$ correspond to probability distributions on $S$.
-\item (Processes) A probabilistic process going from a system $S$ to a system $S'$ is a linear map $\RR[S]\to \RR[S']$, which sends normalized vectors to normalized vectors.
-\item (Joining systems) If $S$ and $S'$ are two probabilistic systems, the system obtained by joining $S$ and $S'$ is equal to the system $S\times S'$.
-\item (Measuring systems) Given a normalized vector $\sum_{x\in S}p_x \left |x\right>\in \RR[S]$, measurement corresponds to collapsing into a pure state, where we observe each $x\in S$ with probability $p_x$.
-\end{enumerate}
-
-[WORK: add end box]
-\end{definition}
-
-We can state quantum mechanics in exactly the same way:
-
-\begin{definition}[Axioms of quantum mechanics, basis dependent version] $\,$
-
-\begin{enumerate}
-\item (Systems) A quantum system is a complex vector space of the form $\CC[S]$, where $S$ is a finite set. The normalized vectors in $\CC[S]$ correspond to complex states on $S$. A \textit{normalized} vector $v=\sum_{x\in S}c_x\left|x\right>$ is one for which $\sum_{x\in S}|c_x|^2=1$, where $|c_x|^2$ denotes the norm square.
-\item (Processes) A quantum process going from a system $S$ to a system $S'$ is a linear map $\CC[S]\to \CC[S']$, which sends normalized vectors to normalized vectors.
-\item (Joining systems) If $S$ and $S'$ are two quantum systems, the system obtained by joining $S$ and $S'$ is equal to the system $S\times S'$.
-\item (Measuring systems) Given a normalized vector $\sum_{x\in S}c_x \left |x\right>\in \CC[S]$, measurement corresponds to collapsing into a pure state, where we observe each $x\in S$ with probability $|c_x|^2$.
-\end{enumerate}
-
-[WORK: add end box]
-\end{definition}
-
-
-The quantity $\sum_{x\in S}|c_x|$ is called the $1$-norm, and $\sqrt{\sum_{x\in S}|c_x|^2}$ is called the $2$-norm. The following quote summarizes the above definition:
-
-\begin{quote}
-``What happens if you try to come up with a theory that's \textit{like} probability theory, but based on the $2$-norm instead of the $1$-norm?... Quantum mechanics is what inevitably results." - Scott Aaronson\footnote{Page 112 of Aaronson's ``Quantum Computing since Democritus" \cite{aaronson2013quantum}}
-\end{quote}
-
-While fully mathematically rigorous, we now add some physical interpretation to the axioms of quantum mechanics. Let $\left|\psi\right>=\sum_{x\in S}c_x\left|x\right>\in \CC[S]$ be a normalized vector in a quantum system. We call $\left|\psi\right>$ a quantum state. Wave-particle duality can be understood as follows:
-
-\begin{itemize}
-\item Particle = Single position; definite = pure state = $\left|x\right>$, $x\in S$
-\item Wave = Multiple positions; spread-out = mixed state = $\left|\psi\right>\in \CC[S]$.
-\end{itemize}
-
-We can thus say that quantum states are waves, but when they are measured they collapse into a particle. A mixed state is said to be in a \textit{superposition} of the pure states it is a linear combination of. We call the expression $\sum_{x\in S}c_x \left|x\right>$ the wave function of $\left|\psi\right>$, with $c_x$ being the amplitudes.
-
-We now demonstrate interference. Consider the quantum system with pure states $S=\{0,1\}$. This is called a qubit. More generally, a qubit is the term used for any two-dimensional quantum system. Define the transformation $H: \CC[S]\to \CC[S]$ by
-
-$$H(\0)=\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1,$$
-
-$$H(\1)=\frac{1}{\sqrt{2}}\0-\frac{1}{\sqrt{2}}\1.$$
-
-Applying $H$ to $\0$ and measuring gives $0$ and $1$ with equal probability, and same with applying $H$ to $\1$. When we apply $H$ to the equal superposition of $0$ and $1$, however, results in
-
-$$H\left(\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1\right)=\frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1\right)+\frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}\0-\frac{1}{\sqrt{2}}\1\right)=\0.$$
-
-We can summarize this as saying that there was \textit{constructive interference} in the $\0$s, and \textit{destructive interference} in the $\1$s. The amplitudes had the same signs in the $\0$s causing the proabability of measuring $0$ to add, and the amplitudes had opposite signs in the $\1$s,  causing the probabilities of measuring  $1$ to cancel and give $0$. This linear map $H$ defined is called the Hadamard gate, and it is a very important process in quantum information theory. It is not immediately clear that $H$ sends all normalized vectors to normalized vectors. For instance, if we had defined $H(\1)=\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1$ then applying $H$ to the equal superpositoin of $0$ and $1$ would not give a normalized value. The following proposition clarifies exactly what transformations are allowed in quantum mechancis:
-
-\begin{proposition} [WORK: definite unitary matricies two ways, state they're equivilant]
-\end{proposition}
-\begin{proof}. [WORK: do proof]
-\end{proof}
-
-We now comment on measurement. 
-
-\subsection{Quantum computing}
 
 \section{$\ZZ_2$ Homology Theory}
 \label{Homology}
