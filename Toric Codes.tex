@@ -69,6 +69,7 @@
 \newcommand{\Frac}{\mathrm{Frac}}
 \newcommand{\tr}{\mathrm{tr}}
 \newcommand{\res}{\mathrm{res}}
+\newcommand{\im}{\mathrm{im}}
 \newcommand{\coker}{\mathrm{coker}}
 \newcommand{\SL}{\mathrm{SL}}
 \newcommand{\End}{\mathrm{End}}
@@ -125,10 +126,9 @@ The structure of the manuscript is as follows:
 \begin{itemize}
 \item Section \ref{Introduction} gives an introduction to TQC. While great effort is taken to make the treatment as accessible as possible, one is still required to have at least an elementary understanding of mathematics and physics. A passing familiarity with quantum mechanics and quantum computation would be extremely useful.
 
-\item Section \ref{Quantum mechanics} gives a treatment of the basics of quantum mechanics and quantum computation. In Subsection \ref{Quantum computing} the axioms of quantum mechanics are stated from a mathematical perspective, as well as ample motiation. Subsection \ref{Quantum computing} formally defines and describes quantum computation, with an emphasis on the information-theoretic language of computational complexity.
+\item Section \ref{Quantum foundations} gives a treatment of the basics of quantum mechanics and quantum computation. The axioms of quantum mechanics are stated from a mathematical perspective, and are given ample motiation.
 
-\item Section \ref{The Toric Code} gives a mathematical description of the toric code in terms of undergraduate-level linear algebra. While not strictly necessary, having taken a first course in Algebraic Topology would be preferable. For those unfamiliar with the subject, an introduction is given in Appendix \ref{Homology}. Those unfamiliar with the mathematical formalism of quantum mechanics are ad
-vised to reference Appendix \ref{Quantum mechanics}, though the section is entirely readable without this background.
+\item Section \ref{The Toric Code} gives a mathematical description of the toric code in terms of undergraduate-level linear algebra. While not strictly necessary, having taken a first course in Algebraic Topology would be preferable. For those unfamiliar with the subject, an introduction is given in Appendix \ref{Homology}. 
 
 \item Section \ref{TQFTs} gives an introduction to Topological Quantum Field Theories (TQFTs), the formal mathematical abstractions of topological quantum phases of matter. Subsection \ref{The general picture} gives an overview of the subject. Subsection \ref{DW TQFT} defines the $\ZZ_2$ Dijkgraaf-Witten theory, the TQFT associated with the toric code.
 
@@ -311,17 +311,17 @@ While fully mathematically rigorous, we now add some physical interpretation to 
 
 We can thus say that quantum states are waves, but when they are measured they collapse into a particle. A mixed state is said to be in a \textit{superposition} of the pure states it is a linear combination of. We call the expression $\sum_{x\in S}c_x \left|x\right>$ the wave function of $\left|\psi\right>$, with $c_x$ being the amplitudes.
 
-We now demonstrate interference. Consider the quantum system with pure states $S=\{0,1\}$. This is called a qubit. More generally, a qubit is the term used for any two-dimensional quantum system. Define the transformation $H: \CC[S]\to \CC[S]$ by
+We now demonstrate interference. Consider the quantum system with pure states $S=\{0,1\}$. This is called a qubit. More generally, a qubit is the term used for any two-dimensional quantum system. Define the transformation $M: \CC[S]\to \CC[S]$ by
 
-$$H(\0)=\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1,$$
+$$M(\0)=\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1,$$
 
-$$H(\1)=\frac{1}{\sqrt{2}}\0-\frac{1}{\sqrt{2}}\1.$$
+$$M(\1)=\frac{1}{\sqrt{2}}\0-\frac{1}{\sqrt{2}}\1.$$
 
-Applying $H$ to $\0$ and measuring gives $0$ and $1$ with equal probability, and same with applying $H$ to $\1$. When we apply $H$ to the equal superposition of $0$ and $1$, however, results in
+Applying $M$ to $\0$ and measuring gives $0$ and $1$ with equal probability, and same with applying $M$ to $\1$. When we apply $M$ to the equal superposition of $0$ and $1$, however, results in
 
 $$H\left(\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1\right)=\frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1\right)+\frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}\0-\frac{1}{\sqrt{2}}\1\right)=\0.$$
 
-We can summarize this as saying that there was \textit{constructive interference} in the $\0$s, and \textit{destructive interference} in the $\1$s. The amplitudes had the same signs in the $\0$s causing the proabability of measuring $0$ to add, and the amplitudes had opposite signs in the $\1$s,  causing the probabilities of measuring  $1$ to cancel and give $0$. This linear map $H$ defined is called the Hadamard gate, and it is a very important process in quantum information theory. It is not immediately clear that $H$ sends all normalized vectors to normalized vectors. For instance, if we had defined $H(\1)=\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1$ then applying $H$ to the equal superpositoin of $0$ and $1$ would not give a normalized value. The following proposition clarifies exactly what transformations are allowed in quantum mechancis:
+We can summarize this as saying that there was \textit{constructive interference} in the $\0$s, and \textit{destructive interference} in the $\1$s. The amplitudes had the same signs in the $\0$s causing the proabability of measuring $0$ to add, and the amplitudes had opposite signs in the $\1$s,  causing the probabilities of measuring  $1$ to cancel and give $0$. This linear map $M$ defined is called the Hadamard gate, and it is a very important process in quantum information theory. It is not immediately clear that $H$ sends all normalized vectors to normalized vectors. For instance, if we had defined $M(\1)=\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1$ then applying $M$ to the equal superpositoin of $0$ and $1$ would not give a normalized value. The following proposition clarifies exactly what transformations are allowed in quantum mechancis:
 
 \begin{proposition}\label{unitary equivilance} Let $S$ be a finite set, and let $U: \CC[S]\to \CC[S]$ a linear transformation. The following are equivilant:
 
@@ -581,8 +581,8 @@ Our mathematical priorities are thus as follows: To define the quantum system, a
 
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.3]{torus}
-\caption{Celluation of the torus, obtained by gluing opposite sides together [WORK: add ``=donut" visual].}
+\includegraphics[scale=0.25]{torus}
+\caption{Celluation of the torus, obtained by gluing opposite sides together.}
 \label{fig:torus}
 \end{center}
 \end{figure}
@@ -1215,6 +1215,11 @@ In general, there is no Hamiltonian in TQFTs. The lowest energy states are those
 
 In the TQFT language it is hard to see what anyons and quantum computations correspond to. How do I do braiding in a TQFT? How do I see how many particle types there are? The intriguing fact is that this information is present, but hidden. Namely, one has to pass to a \textit{1-extended TQFT} to engage with anyons explicitly. This extension allows us to define $V(S)$ whenever $S$ is a surface with punctures. These punctures correspond to anyons, and moving the punctures around each other corresponds to braiding. Not every TQFT can be 1-extended, but those that can (like the $\ZZ_2$ Dijkgraaf-Witten theory) keep that anyon information in their structure. A more complete introduction to TQC would have defined $1$-extensions, but we omitted the topic for clarity. All of this is in marked contrast to Modular Tensor Categories, where anyons are placed front and center of the theory.
 
+\subsection{1-extended TQFTs}
+
+.[WORK: add section $1$-extension]
+
+
 $\newline\newline$
 
 \large \textbf{Exercises}:\normalsize
@@ -1349,7 +1354,7 @@ The visualization of this is best suited to a graphical language. As we will see
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.2]{graphical-language}
-\caption{Examples of the quantum algebraic graphical language}
+\caption{Examples of the quantum-algebraic graphical language}
 \label{fig:graphical-language}
 \end{center}
 \end{figure}
@@ -1370,14 +1375,14 @@ Similarly, functions $a\otimes (b\otimes c)\to d$ can decomposed by taking funct
   \tikzfig{6j-tree}
 \end{equation*}
 
-These values $F^{a,b,c}_{d;n,m}\in \CC$ are known as $6j$ symbols. They clearly depend on the choice of functions ($a\otimes b\to n$ and such). Understanding the real intuition behind these $6j$ symbols without any handwaiving will have to wait until next section. However, for our purposes, this is really not neccecary: These can be treated simply as complex numbers, with as much or as little intuition behind them as one desires. All that is required is that they satisfy some axioms, as in the following definition:
+These values $F^{a,b,c}_{d;n,m}\in \CC$ are known as $6j$ symbols. They clearly depend on the choice of distinguished functions. Understanding the real intuition behind these $6j$ symbols without any handwaiving will have to wait until next section. However, for our purposes, this is not strictly neccecary: These can be treated simply as complex numbers, with as much or as little intuition behind them as one desires. All that is required is that they satisfy some axioms, as in the following definition:
 
 \begin{definition}[$6j$ Fusion system] A $6j$ fusion system is the following data.
 
 \begin{enumerate}
 \item A fusion system $(\LL, N_{\--}^{\--,\--})$
 \item Complex numbers $F^{a,b,c}_{d;n,m}$ for all $a,b,c,d,n,m\in \LL$.
-\end{enumerate}
+\end{enumerate} 
 
 Additionally, a $6j$ fusion system is required to satisfy the following properties:
 
@@ -1425,7 +1430,7 @@ A natural question about the definition of $6j$ symbols could be as follows: The
  and $(a\otimes b)\otimes c\to d$ relate for every $d$. While this does indeed give some connection between $a\otimes (b\otimes c)$ and $(a\otimes b)\otimes c$, it is not immediately clear that tells us the two objects are isomorphic or, if so, what that isomorphism would be. While seemingly counterintuitive, this switch from studying objects to studying the functions between objects is extremely fruitful. This forms the heart of the Yoneda lemma, the most important result in category theory: Objects should be understood by their relationship with each other. According to Ravi Vakil:
 
 \begin{quote}
-You work at a particle accelerator. You want to understand some particle. All you can do are throw other particles at it and see what happens. If you understand how your mystery particle responds to all possible test particles at all possible test energies, then you know everything there is to know about your mystery particle - Ravi Vakil\footnote{This quote is folklore, relayed by a MathOverflow post of Theo Johnson-Freyd}.
+``You work at a particle accelerator. You want to understand some particle. All you can do are throw other particles at it and see what happens. If you understand how your mystery particle responds to all possible test particles at all possible test energies, then you know everything there is to know about your mystery particle" - Ravi Vakil\footnote{This quote is folklore, relayed by a MathOverflow post of Theo Johnson-Freyd}.
 \end{quote}
 
 In this context, Vakil's quote is very literal - we are studying particles by looking at their fusion rules. Fusion, as a process, generally happens when things hit each other very fast in a particle accelerator. By knowing that $a\otimes (b\otimes c)$ and $(a\otimes b)\otimes c$ can go to $d$ in all the same ways (with the relationship being those ways being specified by the matrix $F^{a,b,c}_d$), we can conclude an isomorphism between $a\otimes (b\otimes c)$ and $(a\otimes b)\otimes c$. A formal treatment of the Yoneda lemma insofar as it relates to our study is given in the next section.
@@ -1501,14 +1506,18 @@ In the case of the toric code we summarize the relevant data. The label set is $
 
 \begin{center}
 \begin{tabular}{c |c |c |c |c} 
-  & $I$ & $X$ & $Y$ & $Z$ \\ [0.5ex] 
+  & $I$ & $X$ & $Y$ & $Z$ \\ [0.3ex] 
  \hline
- $I$ & $N^{I,I}_{I}=1$ & $N^{I,X}_{X}=1$ & $N^{I,Y}_{Y}=1$ & $N^{I,Z}_{Z}=1$ \\ 
+\noalign{\vskip 0.25ex}   
+ $I$ & $N^{I,I}_{I}=1$ & $N^{I,X}_{X}=1$ & $N^{I,Y}_{Y}=1$ & $N^{I,Z}_{Z}=1$ \\ [0.2ex] 
  \hline
- $X$ & $N^{X,I}_{X}=1$ & $N^{X,X}_{I}=1$ & $N^{X,Y}_{Z}=1$ & $N^{X,Z}_{Y}=1$ \\
+\noalign{\vskip 0.25ex}   
+ $X$ & $N^{X,I}_{X}=1$ & $N^{X,X}_{I}=1$ & $N^{X,Y}_{Z}=1$ & $N^{X,Z}_{Y}=1$ \\ [0.2ex] 
  \hline
- $Y$ & $N^{Y,I}_{Y}=1$ & $N^{Y,X}_{Z}=1$ & $N^{Y,Y}_{I}=1$ & $N^{Y,Z}_{X}=1$ \\
+\noalign{\vskip 0.25ex}   
+ $Y$ & $N^{Y,I}_{Y}=1$ & $N^{Y,X}_{Z}=1$ & $N^{Y,Y}_{I}=1$ & $N^{Y,Z}_{X}=1$ \\ [0.2ex] 
  \hline
+\noalign{\vskip 0.25ex}   
  $Z$ & $N^{Z,I}_{Z}=1$ & $N^{Z,X}_{Y}=1$ & $N^{Z,Y}_X=1$ & $N^{Z,Z}_I=1$
 \end{tabular}
 \end{center}
@@ -1517,14 +1526,17 @@ All of the $F$ matricies are the identity. The non-unit non-zero braiding coeffi
 
 \begin{center}
 \begin{tabular}{c |c |c |c |c} 
-  & $I$ & $X$ & $Y$ & $Z$ \\ [0.5ex] 
+  & $I$ & $X$ & $Y$ & $Z$ \\ [0.3ex] 
  \hline
  $I$ & & &  &  \\ 
  \hline
- $X$ & &  & $R^{X,Y}_{Z}=-1$ & $R^{X,Z}_{Y}=-1$ \\
+\noalign{\vskip 0.25ex}   
+ $X$ & &  & $R^{X,Y}_{Z}=-1$ & $R^{X,Z}_{Y}=-1$ \\ [0.2ex] 
  \hline
- $Y$ &  & $R^{Y,X}_{Z}=-1$ & & $R^{Y,Z}_{X}=-1$ \\
+\noalign{\vskip 0.25ex}   
+ $Y$ &  & $R^{Y,X}_{Z}=-1$ & & $R^{Y,Z}_{X}=-1$ \\ [0.2ex] 
  \hline
+\noalign{\vskip 0.25ex}   
  $Z$ &  & $R^{Z,X}_{Y}=-1$ & $R^{Z,Y}_X=-1$ & 
 \end{tabular}
 \end{center}
@@ -1622,7 +1634,7 @@ This theorem really says that you cannot have your cake and eat it too. You can 
 
 \begin{enumerate}
 \item A functor $F: \Ccat\to \Dcat$.
-\item A morphism $\epsilon:1_{\Dcat}\to F(1_{\Ccat})$.
+\item A morphism $\iota:1_{\Dcat}\to F(1_{\Ccat})$.
 \item A natural transformation $\mu$ between the functors $F(\--)\otimes_{\Dcat}F(\--)$ and $F(\--\otimes_{\Ccat}\--)$.
 \end{enumerate}
 
@@ -1652,7 +1664,7 @@ commutes.
 	\arrow["{\lambda_{\Ccat;F(A)}}", from=1-1, to=2-1]
 	\arrow["{F(\lambda_{\Ccat;A})}"', from=2-3, to=2-1]
 	\arrow["{\mu_{1_{\Ccat},A}}"', from=1-3, to=2-3]
-	\arrow["{\epsilon\otimes \text{id}_{F(A)}}"', from=1-1, to=1-3]
+	\arrow["{\iota\otimes \text{id}_{F(A)}}"', from=1-1, to=1-3]
 \end{tikzcd}\]
 
 and
@@ -1663,7 +1675,7 @@ and
 	\arrow["{\rho_{\Ccat;F(A)}}", from=1-1, to=2-1]
 	\arrow["{F(\rho_{\Ccat;A})}"', from=2-3, to=2-1]
 	\arrow["{\mu_{A,1_{\Ccat}}}"', from=1-3, to=2-3]
-	\arrow["{\text{id}_{F(A)}\otimes\epsilon}"', from=1-1, to=1-3]
+	\arrow["{\text{id}_{F(A)}\otimes\iota}"', from=1-1, to=1-3]
 \end{tikzcd}\]
 
 commute for all $A\in \Ccat$.
@@ -1744,7 +1756,10 @@ commutes
 \raggedleft\qedsymbol{}
 \end{definition}
 
-A general $\CC$-linear category is a $\CC$-linear abelian category which only needs to satisfy the linearity condition. As always, when defining an object one must define the appropriate morphisms:
+We now can define exact sequence, as desired. Namely, given a morphism $f:A\to B$, we have a cokernel $B\to \coker f$. We define the image $\im f$ of $f$ to be the kernel of the cokernel. An exact sequence is defined to be a sequence of morphisms, in which the image of the incoming map at each object is equal to the kernel of the outgoing map. Alternatively, the image of $f$ could be defined as the cokernel of the kernel. The fact taht these two definitions of image coincide is \textit{equivilant} to the fact that all monomorphisms and epimorphisms are normal. This is Exercise \thesection.5
+
+
+A non-abelian $\CC$-linear category is a category whose hom spaces are $\CC$ vector spaces, and whose composition maps are linear, with no other restrictions. As always, when defining an object one must define the appropriate morphisms:
 
 \begin{definition}[$\CC$-linear functor] A $\CC$-linear is a functor between $\CC$-linear categories $\Ccat,\Dcat$ is a functor $F:\Ccat\to\Dcat$ such that $F:\Hom(A,B)\to \Hom(F(A),F(B))$ is a linear map of vector spaces for all $A,B\in \Ccat$.
 \end{definition}
@@ -1813,7 +1828,32 @@ The interesting fact is that one can \textit{not} uniquely go the other directio
 \begin{theorem}[Ocneanu rigidity,\cite{gainutdinov2023davydov}] Let $\LL$ be a fusion system. There are finitely many (possibly $0$) fusion categories, up to monoidal equivilance, which give systems equivilant to $\LL$ under the process described in Proposition \ref{Make fusion system}.
 \end{theorem}
 
-The correct correspondence, in fact, is between fusion categories and $6j$ fusion systems:
+The correct correspondence, in fact, is between fusion categories and $6j$ fusion systems. Before stating this correspondance, we need an important alternate characterization of simple objects.
+
+\begin{theorem}[Schur's Lemma]\label{Schurs Lemma} Let $\Ccat$ be a $\CC$-linear abelian category. An object $A\in \Ccat$ is simple, then $\End(A)$ is one dimensional. If $A$ and $B$ are non-isomorphic simple objects, $\Hom(A,B)=0$. If $\Ccat$ is semisimple, then $\End(A)$ is one-dimensional if and only if $A$ is simple.
+\end{theorem}
+\begin{proof} Recall that $A,B$ are defined to be simple if it has no proper nontrivial subobjects. Suppose $A$ and $B$ are simple. Let $f:A\to B$ be a morphism. We have an exact sequence
+
+$$0\to \ker f \to A\xrightarrow{f} B\to \coker f\to 0,$$
+
+where by exact we mean that the image of each map in the sequence is equal to the kernel of the following map. [WORK: need to define exact above, and more rigorously]. Seeing as $\ker f$ is a subobject of $A$, we have either that $\ker f= 0$ or $\ker f = A$. If $\ker f = A$, then $f$ must be the zero map, so we are done. If $\ker f =0$, then we have an exact sequence
+
+$$0\to A\to B\to \coker f\to 0.$$
+
+Hence, $A$ is a suboject of $B$, and so $A\cong B$. Thus, we have recovered that $\Hom(A,B)=0$ when $A\not\cong B$.
+
+The above argument also shows that every map in $\End(A)$ must be an isomorphism. Choosing any nonzero $f\in \End(A)$, we find there is a map $\End(A)\to \End(A)$ induced by precomposition with $f$. This is clearly a $\CC$-linear map, and seeing as $f$ is an isomorphism on $V$ it must be an isomorphism on $\End(A)$. Linear algebra tells us that this map $\End(A)\to \End(A)$ must have an eigenvector, since $\CC$ is algebraically closed. Thus, there exists a nonzero $g\in \End(A)$ such that $g\circ f=\lambda \cdot g$ for some scalar $\lambda\in \CC$. Since every nonzero map $A\to A$ is an isomorphism, $g$ is an isomorphism. Postcomposing with $g^{-1}$, we find that $f=\lambda \cdot\text{id}_A$. Thus, every map in $\End(A)$ is a scalar multiple of the identity, hence $\End(A)$ is one dimensional.
+
+Finally, suppose $\Ccat$ is semisimple. Let $A$ be an object such that $\End(A)$ is one dimensional. By assumption, there is a finite set $S$ of simple objects such that $A=\bigoplus_{B\in S}B$. We compute as follows:
+
+\begin{align*}
+\dim \End(A)&=\dim \Hom\left(\bigoplus_{B\in S}B,\bigoplus_{B\in S} B\right)\\
+&=\dim \bigoplus_{B_0 \in S}\bigoplus_{B_1\in S}\Hom(B_0,B_1)\\
+&=\bigoplus_{\substack{B_0,B_1\in S \\ B_0\cong B_1}}1.
+\end{align*}
+
+The first step follows from the definition of biproduct, which implies that the direct sum can be pulled out of $\Hom$ in both the first and second argument. The second step follows from the fact that $\Hom(B_0,B_1)$ is one dimensional when $B_0\cong B_1$, and $0$ dimensional otherwise. If $|S|\geq 2$, then we thus get that $\dim \End(A)\geq 2$, which is a contradiction. Hence, $A$ is a simple object as desired.
+\end{proof}
 
 \begin{proposition}\label{Make 6j system} Let $\Ccat$ be a fusion category, with associated fusion system $(\LL,N^{\--,\--}_{\--})$. Assume further that $\Ccat$ is multiplicity free, in the sense that all $N^{\--,\--}_{\--}\in\{0,1\}$. For all triples $a,b,c\in \LL$, choose representatives $A,B,C\in \Ccat$. Additionally, seeing as each hom space $\Hom(A\otimes B, C)$ is at most one dimensional, we can choose generators
 
@@ -1914,7 +1954,22 @@ commute.
 \raggedleft\qedsymbol{}
 \end{definition}
 
-[WORK: define braided monoidal functor]
+\begin{definition}[Braided monoidal functor] A braided monoidal functor between braided fusion categories $(\Ccat,\otimes_{\Ccat},\beta_{\Ccat})$, $(\Dcat,\otimes_{\Dcat},\beta_{\Dcat})$ is a monoidal functor $(F,\mu):\Ccat\to \Dcat$ such that the diagram
+
+\[\begin{tikzcd}
+	{F(A)\otimes_{\Dcat}F(B)} && {F(B)\otimes_{\Dcat}F(A)} \\
+	\\
+	{F(A\otimes_{\Ccat}B)} && {F(B\otimes_{\Ccat}A)}
+	\arrow["{\mu_{A,B}}", from=1-1, to=3-1]
+	\arrow["{\beta_{\Dcat;F(A),F(B)}}"', from=1-1, to=1-3]
+	\arrow["{\mu_{B,A}}"', from=1-3, to=3-3]
+	\arrow["{F(\beta_{\Ccat;F(A),F(B)})}", from=3-1, to=3-3]
+\end{tikzcd}\]
+
+commutes for all $A,B\in \Ccat$.
+
+\raggedleft\qedsymbol{}
+\end{definition}
 
 We now show that braided fusion categories are indeed equivilant to braided $6j$ fusion systems:
 
@@ -1943,33 +1998,85 @@ Additionally, a Modular Tensor Category is required to satisfy the following pro
 \item $\theta_{A^*}=\left(\theta_A\right)^*$ for all $A\in \Ccat$.
 \item (Non-degeneracy) If $A\in \Ccat$ is a simple object such that for all other simple objects $B\in \Ccat$
 
-$$\tr(\beta_{A,B}\circ \beta_{B,A})=\tr(\mathrm{id}_{A\otimes B}),$$
+$$\beta_{A,B}\circ \beta_{B,A}=\mathrm{id}_{A\otimes B},$$
 
-then $A\cong 1$. The trace of a morphism $f:A\to A$ is defined as
-
-$$\tr(f): 1\xrightarrow{\eta_A} A^*\otimes A\xrightarrow{\text{id}_{A^*}\otimes (\theta_X\circ f)} A^*\otimes A \xrightarrow{\beta_{A^*,A}}A\otimes A^*\xrightarrow{\epsilon_A}1.$$
-
-The space $\End(1)$ is one dimensional, with a canonical generator $\text{id}_1$. Hence, we can canonically identify $\tr(f)$ with a complex number. Graphically, we represent trace as the closed loop [WORK: make diagram].
-
-[WORK: Do I have to do trace? Can I just set these to be equal and have a good day (c.f. \cite{davydov2013structure})]
+then $A\cong 1$.
 \end{enumerate}
 \raggedleft\qedsymbol{}
 \end{definition}
 
-The intuition for the twist is [WORK: what is the intuition?]. The non-degeneracy condition states that only the identity should braid trivially with the other simple objects. [WORK: What is modular equivilance?]
+\begin{definition}[Braided tensor functor]  A braided tensor functor between two MTCs $(\Ccat,\theta_\Ccat)$, $(\Dcat,\theta_{\Dcat})$ is a braided monoidal functor $F:\Ccat\to \Dcat$ such that $F(\theta_{\Ccat;A})=\theta_{\Dcat;A}$ for all $A\in \Ccat$.
+
+\raggedleft\qedsymbol{}
+\end{definition}
 
 This allows us to state our final equivilance:
 
 \begin{proposition} The process in Proposition \ref{Make braided system} gives a one-to-one correspondance between Modular Tensor Categories up to modular equivilance and modular tensor fusion systems up to gauge equivilance.
 \end{proposition}
 
-MTCs are called modular because they naturally induce representations of the group of $2$ by $2$ matricies with unit determinant, $\SL_2(\ZZ)$. The group $\SL_2(\ZZ)$ is known as the modular group, due to its connections with moduli spaces of elliptic curves. We define the modular representation as follows:
+The intuition for the twist of a MTC is that it helps deal with the non-triviality of the braiding. In particular, it allows one to define the \textit{trace} of a morphism $f:A \to A$. The trace is a powerful operation, since it allows you to describe maps in terms of numbers, can be used both for linearization and invariants. The formal definition and basic properties of trace are as follows:
 
-\begin{proposition} Let $\Ccat$ be an MTC, whose set $\LL$ of isomorphism classes of simple objects has $n$ elements. We define the $S$-matrix of an MTC to be the $n$ by $n$ matrix whose $[a,b]$th coefficient is
+\begin{proposition} Let $(\Ccat,\otimes, \beta, \theta, \eta,\epsilon)$ be a modular tensor category. For any $A\in \Ccat$ and $f\in \End(A)$, we define
+
+$$\tr(f): 1\xrightarrow{\eta_A} A^*\otimes A\xrightarrow{\text{id}_{A^*}\otimes (\theta_X\circ f)} A^*\otimes A \xrightarrow{\beta_{A^*,A}}A\otimes A^*\xrightarrow{\epsilon_A}1.$$
+
+The space $\End(1)$ is one dimensional by Schur's Lemma (Theorem \ref{Schurs Lemma}), with a canonical generator $\text{id}_1$. Hence, we can canonically identify $\tr(f)$ with a complex number. Graphically, we represent trace as the closed loop [WORK: make diagram].
+
+For all $A,B\in \Ccat$, the following claims are all true:
+
+\begin{enumerate}
+\item $\tr(f\otimes g)=\tr(f)\cdot \tr(g)$ for all $f\in \End(A)$, $g\in \End(B)$
+\item $\tr(f\oplus g)=\tr(f)+\tr(g)$ for all $f\in \End(A)$, $g\in \End(B)$
+\item $\tr(f\circ g)=\tr(g\circ f)$ for all $f,g\in \End(A)$
+\item Trace is independent of choice of duals. That is, let $(\tilde{A}^*,\tilde{\eta}_{A}, \tilde{\epsilon}_A)$ be a different choice of dual, unit, and co-unit for $A$, satisfying the triangle axioms of rigidity, as in the definition of fusion category. Defining $\tilde{\tr}(f)$ exactly like $\tr(f)$ except with this new unit, we find that $\tilde{\tr}(f)=\tr(f)$.
+\item Trace is preserved by functors. That is, let $\Ccat,\Dcat$ be MTCs with traces $\tr_{\Ccat},\tr_{\Ccat}$ respectively. Let $F:\Ccat\to \Dcat$ be a braided tensor functor. We have that $\tr_{\Ccat}(f)=\tr_{\Dcat}(F(f))$.
+\item .[WORK: something about quantum dimensions? What else?]
+\end{enumerate}
+\end{proposition}
+\begin{proof}. [WORK: do proof]
+\end{proof}
+
+The trace allows us to naturally define many very powerful, physically observable, and mathematically interesting invariants. For example, let $A\in \Ccat$ be an object in an MTC. Then, $\tr(\text{id}_A)$ measures in some sense the size of $A$. For a vector space, the trace of the identity gives the dimension of the vector space. Thus, we define $d_A=\tr(\text{id}_A)$ to be the \textit{quantum dimension} of $A$. The following peroperties give a taste of the deep mathematics present in this situation:
+
+\begin{theorem} Let $A\in \Ccat$ be a simple object in an MTC. The following claims about the quantum dimension are all true:
+
+\begin{enumerate}
+
+\item ([WORK: get reference]) If $1\leq d_A\leq 2$, then $d_A=2\cos(\pi /m)$ for some integer $m\geq 3$. Otherwise, $d_A\geq 4$.
+
+\item ([WORK: get reference]) $d_A=1$ if and only if $A$ is an abelian anyon. That is, [WORK: what exactly should the correct statement be?]
+
+\item ([WORK: get reference]) The fusion matrix $N_A$ has a unique eigenvalue of largest absolute value. This eigenvalue is real, and is equal to $d_A$.
+\end{enumerate}
+\end{theorem}
+
+If $d_A$ measures the size of each individual anyon-type, then their sum should give a measure of the total size of the MTC. Thus, we define
+
+$$\dim \Ccat = \sum_{A\in \LL} d_A^2,$$
+
+where as usual $\LL$ is the set of isomorphism of classes of simple objects. The trace is well defined on isomorphism classes, and hence this quantity is well defined. The twisting of $\Ccat$ allows for a twisting of the definition of $\dim \Ccat$. This results in the following very interesting Gauss sums:
+
+\begin{theorem}[\cite{vafa1988toward}] Let $\Ccat$ be an MTC, and let $\LL$ be the set of isomorphism classes of simple objects. For each simple object $A\in \Ccat$, $\theta_A\in \End(A)$ lives in a one dimensional space with generator $\text{id}_A$. Hence, we can canonically identify $\theta_A$ with a complex number, and this complex number is independent of isomorphism class. Define
+
+$$p^{\pm}_{\Ccat}=\sum_{A\in \LL}\theta_A^{\pm 1}d_A^2.$$
+
+The quantities $\theta_A$ for all $A$, as well as $p^{+}_{\Ccat}/p^{-}_{\Ccat}$, are all roots of unity. Additionally,
+
+$$p^{+}_{\Ccat}p^{-}_{\Ccat}=\dim \Ccat.$$
+\end{theorem}
+
+
+[WORK: what invariant was entropy related to? This should uniquely charactarize non-abelian-ness. Since we're trying to measure non-abelain-ness, this should make for a short little narrative.]
+
+
+We are now ready to define the most important invariants of MTCs, representations of the group of $2$ by $2$ matricies with unit determinant, $\SL_2(\ZZ)$. The group $\SL_2(\ZZ)$ is known as the modular group, due to its connections with moduli spaces of elliptic curves. It is because of these representations that Modular Tensor Categories are called modular. We define the modular representation as follows:
+
+\begin{theorem} Let $\Ccat$ be an MTC, whose set $\LL$ of isomorphism classes of simple objects has $n$ elements. We define the $S$-matrix of an MTC to be the $n$ by $n$ matrix whose $[a,b]$th coefficient is
 
 $$S_{a,b}=\tr\left(\beta_{A,B}\cdot \beta_{B,A}\right)=[WORK: make \,\, graphical \,\, formula]$$
 
-where $a,b$ are isomorphism classes of simple objects with representatives $A,B$. Similarly, we define the $T$-matrix of an MTC to be the $n$ by $n$ diagonal matrix whose $[a,a]$th coefficient is $\theta_A$. Since $A$ is simple, $\End(A)$ is one dimensional, and has a canonical generator given by $\text{id}_A$. Hence, we can identity $\theta_A$ with a complex number. The map
+where $a,b$ are isomorphism classes of simple objects with representatives $A,B$. Similarly, we define the $T$-matrix of an MTC to be the $n$ by $n$ diagonal matrix whose $[a,a]$th coefficient is $\theta_A$. The map
 
 \begin{align*}
 \rho_{\Ccat}: \SL_2(\ZZ)&\xrightarrow{} \Aut(\CC[\LL])\\
@@ -1977,18 +2084,17 @@ where $a,b$ are isomorphism classes of simple objects with representatives $A,B$
 0 & -1\\
 1 & 0
 \end{pmatrix}
-&\mapsto S,\,\, 
+&\mapsto \frac{1}{\sqrt{\dim \Ccat }}\cdot S, \\
 \begin{pmatrix}
 1 & 1\\
 0 & 1
 \end{pmatrix}
-\mapsto T
+&\mapsto \frac{\sqrt[3]{p^+_{\Ccat}}}{\sqrt[6]{\dim \Ccat }}\cdot T.
 \end{align*}
 
-is a representation of the modular group.
-\end{proposition}
+is a representation of the modular group. That is, extending $\rho_{\Ccat}$ through matrix multiplication gives a well-defined group homomorphism.
+\end{theorem}
 
-.[WORK: Normalize $S$ and $T$ matricies properly]
 
 These $S$-matricies and $T$-matricies are very important invariants of MTCs. They do not, however, uniquely determine the MTC \cite{mignard2021modular}. We summarize some important facts about MTCs:
 
@@ -1997,14 +2103,18 @@ These $S$-matricies and $T$-matricies are very important invariants of MTCs. The
 \begin{itemize}
 \item Suppose $\Ccat$ is a category satisfying all of the conditions of a MTC, except for non-degeneracy ( this is called a pre-modular category). Then, $\Ccat$ is modular if and only if the $S$-matrix is invertible.
 \item (\cite{bruillard2016rank}) There are finitely many MTCs, up to braided monoidal equivilance, of a given rank.
-\item .[WORK: think of what other things should go here.]
+\item (\cite{ng2010congruence}) The modular representations of MTCs have finite image.
 \end{itemize}
 \end{theorem}
+\begin{proof}. [WORK: prove the first part]
+\end{proof}
 
 \subsection{The MTC $\Zcal(\Rep_{\ZZ_2})$}
 \label{VecZ2 MTC}
 
-In this section we introduce the MTC which corresponds to the toric code, $\Zcal(\Rep_{\ZZ_2})$. Intuitively, this can be seen as follows. If fusion categories are generalized groups, then groups should certainly give fusion categories. Namely, a finite group $G$ is assigned its \textit{category of representations} $\Rep_G$. We saw in subsection \ref{Anyon model} that the modular tensor fusion system associated with the toric code was essentially the group $\ZZ_2\oplus \ZZ_2$, except with a non-trivial braiding between the two copies of $\ZZ_2$. Seeing as the group $\ZZ_2$ corresponds to the fusion category $\Rep_{\ZZ_2}$, putting two copies of $\ZZ_2$ together with a twist corresponds to the category $\Zcal(\Rep_{\ZZ_2})$, where $\Rep^*_{\ZZ_2}$ is the [WORK: what?] category of $\Rep_{\ZZ_2}$, and $\boxtimes$ is Deligne's tensor product of abelian categories. This section is devoted to a proper treatment of all terms used above, starting with representation theory. [WORK: new definition, new intuition]
+.[WORK: Re-do whole section in terms of $\Vecc$ instead of $\Rep$. Look at vector spaces graded over a set. Show that making the set a monoid/finite-group/finite-abelian-group makes it a monoidal/fusion/braided-fusion category. Quantifiy degeneration, and fix with Drinfeld center.]
+
+In this section we introduce the MTC which corresponds to the toric code, $\Zcal(\Rep_{\ZZ_2})$. Intuitively, we describe the situation as follows. If fusion categories are generalized groups, then groups should certainly give fusion categories. This is done by assigning a finite group $G$ its \textit{category of representations} $\Rep_G$. We now recall what the modular tensor fusion system for the toric code looked like. It consisted of four elements $1,\alpha,\beta,\alpha\beta$, with a fusion rule much like $\ZZ_2\times \ZZ_2$, where the first copy of $\ZZ_2$ is generated by $\alpha$ and the second copy of $\ZZ_2$ is generated by $\beta$. The only non-group like behavior was the braiding, which was non-trivial between the two copies of $\ZZ_2$. In this way, the modular tensor fusion system of the toric code looks like ``gluing two copies of $\ZZ_2$ with a twist". The category-theoretic construction which realizes this ``glue two copies of $\Ccat$ with a twist" procedure is the Drinfeld center, $\Zcal(\Ccat)$. Hence, the MTC attached to the toric code is $\Zcal(\Rep_{\ZZ_2})$. To build up to this definition, we now give a formal category-theoretic treatment of representations.
 
 One of the only truly ``solved" fields of mathematics is linear algebra. Represenation theory can be seen as study of more complicated algebraic objects (groups, rings, algebras) in terms of vector spaces. Namely, instead of looking at an algebraic object we look at all of the ways that it can act on vector spaces. Formally, we define the category of representations of a group $G$ as follows:
 
@@ -2077,7 +2187,35 @@ When $G$ is finite, the situation is very nice. In particuar, we have the follow
 
 We have now introduced enough machinery to answer the following basic question: Does the category of representations of a group (up to the correct notion of equivilance) determine the starting group (up to isomorphism)? The Yoneda perspective gives us an answer in the affermative - studying an object via its interactions with other objects should give you all the information you need to know. It turns out that there is an explicit way of constructing $G$ from $\Rep_G$, though it is more complicated to treat in full generality than Yoneda's lemma. After one definition, we will be able to state this construction and prove its validity in full detail.
 
-\begin{definition}[Monoidal natural transformation] .[WORK: make definition]
+\begin{definition}[Monoidal natural transformation] A monoidal natural transformation between two monoidal functors $(F_0,\mu_0,\iota_0), (F_1,\mu_1,\iota_0): (\Ccat,\otimes_{\Ccat},1_{\Ccat})\to(\Dcat,\otimes_{\Dcat},1_{\Dcat})$ is a natural transformation $f:F_0\to F_1$, satisfying the following conditions:
+
+\begin{enumerate}
+\item The diagram
+
+\[\begin{tikzcd}
+	{F_0(A)\otimes F_0(B)} && {F_1(A)\otimes F_1(B)} \\
+	\\
+	{F_0(A\otimes B)} && {F_1(A\otimes B)}
+	\arrow["{f_A\otimes f_B}", from=1-1, to=1-3]
+	\arrow["{f_{A\otimes B}}", from=3-1, to=3-3]
+	\arrow["{\mu_{0;A,B}}"{description}, from=1-1, to=3-1]
+	\arrow["{\mu_{1;A,B}}"{description}, from=1-3, to=3-3]
+\end{tikzcd}\]
+
+commutes for all $A,B\in \Ccat$.
+
+\item The diagram
+
+\[\begin{tikzcd}
+	{1_{\Dcat}} \\
+	{F_0(1_{\Ccat})} & {F_1(1_{\Ccat})}
+	\arrow["{\iota_0}", from=1-1, to=2-1]
+	\arrow["{\iota_1}", from=1-1, to=2-2]
+	\arrow["{f(1)}", from=2-1, to=2-2]
+\end{tikzcd}\]
+
+commutes.
+\end{enumerate}
 \end{definition}
 
 \begin{theorem}[Tannaka duality for finite groups] Let $G$ be a finite group. Let $F:\Rep_G\to \Vecc$ be the forgetful functor, sending a representation $(V,\rho)$ to the underlying vector space $V$. Let $\Aut^\otimes(F)$ denote the group of monoidal natural transformation from $F$ to itself, under composition. There is a natural map
@@ -2089,7 +2227,7 @@ sending an element $g\in G$ to the automorphism of $F$ acting on $(V,\rho)$ by $
 \begin{proof}. [WORK: make proof]
 \end{proof}
 
-In the analogy between algebraic structures and their categorifications, finite abelian groups correspond to braided fusion categories. This can be turned into a very percise claim, which we now state:
+In the analogy between algebraic structures and their categorifications, finite abelian groups correspond to braided fusion categories. This can be turned into a very percise claim, which we now state [WORK: Is this true??!?!?!??]:
 
 \begin{proposition} Let $G$ be a finite group. The fusion category $\Rep_G$ admits a braiding if and only if $G$ is abelian. If $G$ is abelian, then this braiding is defined explicitely by [WORK: make braiding].
 \end{proposition}
@@ -2098,7 +2236,7 @@ In the analogy between algebraic structures and their categorifications, finite 
 
 We thus observe the following: $\Rep_G$ never has the structure of an MTC. When $G$ is non-abelian then $\Rep_G$ is not braided, but when $G$ is abelian $\Rep_G$ is symmetric, in the sense that $\beta_{A,B}\cdot \beta_{B,A}=\mathrm{id}_A$ for all $A,B$, so it is degenerate. We are thus in need of a ``non-degenerate abelianization", which takes in a good fusion category and spits out a non-degenerate braided fusion category, i.e., an MTC. There is a canonical such construction, known as the Drinfeld center.
 
-Loosely speaking, the Drinfeld center takes in a fusion category $\Ccat$, and looks at all possible ways that objects in $\Ccat$ can braid with other objects. As to avoid making a choice of any specific braiding, objects in $\Ccat$ become pairs $(A,\Phi)$, where $A$ is an object and $\Phi$ is a possible way $A$ could braid with other elements. This naturally allows one to be a global braiding on $\Zcal(\Ccat)$. The statement that $\Zcal(\Ccat)$ is non-degenerate is now the statement that choosing the right half-braidings we can make every object briad non-trivially with at least one other object. Formally, we can define the Drinfled center as follows:
+Loosely speaking, the Drinfeld center takes in a fusion category $\Ccat$ and looks at all possible ways that objects in $\Ccat$ can braid with other objects. As to avoid making a choice of any specific braiding, objects in $\Ccat$ become pairs $(A,\Phi)$, where $A$ is an object and $\Phi$ is a possible way $A$ could braid with other elements. This naturally allows one to be a global braiding on $\Zcal(\Ccat)$. The statement that $\Zcal(\Ccat)$ is non-degenerate is now the statement that choosing the right half-braidings we can make every object briad non-trivially with at least one other object. Formally, we can define the Drinfled center as follows: [WORK: connect this back to the quantum-double stuff mentioned in the first paragraph]
 
 \begin{proposition-definition}[Drinfeld center] The Drinfeld center of a monoidal category $\Ccat$ is a braided monoidal category defined as follows:
 
@@ -2157,6 +2295,7 @@ $\newline\newline$
 \item The original list of axioms for a monoidal category was longer. It was later found by Max Kelly that the smaller set we gave implies the rest. [WORK: State the other axioms, give an outline of the proof, i.e., the diagrams one should show are commutative and have the reader conclude. nLab includes these.]
 \item Show that the data associated to the toric code forms a modular tensor fusion system.
 \item .[WORK: Verlinde formula exercise]
+\item .[WORK: kernel(cokernel)=cokernel(kernel) if and only if ``all monomorphisms and epimorphisms normal" exercise]
 \end{enumerate}
 
 \section{Topological Quantum Computing}

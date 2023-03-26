@@ -58,11 +58,6 @@ Shantanu Debnath, Norbert~M Linke, Caroline Figgatt, Kevin~A Landsman, Kevin
   qubits.
 \newblock {\em Nature}, 536(7614):63--66, 2016.
 
-\bibitem[DNO13]{davydov2013structure}
-Alexei Davydov, Dmitri Nikshych, and Victor Ostrik.
-\newblock On the structure of the witt group of braided fusion categories.
-\newblock {\em Selecta Mathematica}, 19(1):237--269, 2013.
-
 \bibitem[DW90]{dijkgraaf1990topological}
 Robbert Dijkgraaf and Edward Witten.
 \newblock Topological gauge theories and group cohomology.
@@ -158,6 +153,11 @@ Vincent Mourik, Kun Zuo, Sergey~M Frolov, SR~Plissard, Erik~PAM Bakkers, and
   superconductor-semiconductor nanowire devices.
 \newblock {\em Science}, 336(6084):1003--1007, 2012.
 
+\bibitem[NS10]{ng2010congruence}
+Siu-Hung Ng and Peter Schauenburg.
+\newblock Congruence subgroups and generalized frobenius-schur indicators.
+\newblock {\em Communications in Mathematical Physics}, 300(1):1--46, 2010.
+
 \bibitem[NSS{\etalchar{+}}08]{nayak2008non}
 Chetan Nayak, Steven~H Simon, Ady Stern, Michael Freedman, and Sankar~Das
   Sarma.
@@ -213,6 +213,11 @@ Michael Spivak.
 Simon Trebst, Matthias Troyer, Zhenghan Wang, and Andreas~WW Ludwig.
 \newblock A short introduction to fibonacci anyon models.
 \newblock {\em Progress of Theoretical Physics Supplement}, 176:384--407, 2008.
+
+\bibitem[Vaf88]{vafa1988toward}
+Cumrun Vafa.
+\newblock Toward classification of conformal theories.
+\newblock {\em Physics Letters B}, 206(3):421--426, 1988.
 
 \bibitem[Wan10]{wang2010topological}
 Zhenghan Wang.

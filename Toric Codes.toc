@@ -1,17 +1,18 @@
 \contentsline {section}{\numberline {1}Preface}{3}
 \contentsline {section}{\numberline {2}Introduction}{5}
 \contentsline {section}{\numberline {3}Quantum foundations}{10}
-\contentsline {section}{\numberline {4}The Toric Code}{21}
+\contentsline {section}{\numberline {4}The Toric Code}{20}
 \contentsline {section}{\numberline {5}Topological Quantum Field Theories}{33}
 \contentsline {subsection}{\numberline {5.1}The general picture}{33}
 \contentsline {subsection}{\numberline {5.2}The $\mathbb {Z}_2$ Dijkgraaf-Witten TQFT}{39}
+\contentsline {subsection}{\numberline {5.3}1-extended TQFTs}{46}
 \contentsline {section}{\numberline {6}Modular Tensor Categories}{46}
 \contentsline {subsection}{\numberline {6.1}Anyon models}{46}
 \contentsline {subsection}{\numberline {6.2}The category-theoretic viewpoint}{56}
-\contentsline {subsection}{\numberline {6.3}The MTC $\mathcal {Z}(\mathbf {Rep}_{\mathbb {Z}_2})$}{68}
-\contentsline {section}{\numberline {7}Topological Quantum Computing}{72}
-\contentsline {subsection}{\numberline {7.1}The TQC framework}{72}
-\contentsline {subsection}{\numberline {7.2}Revisiting toric code TQC}{73}
-\contentsline {subsection}{\numberline {7.3}Universal TQC with the Fibbonacci anyon}{74}
-\contentsline {section}{\numberline {A}$\mathbb {Z}_2$ Homology Theory}{74}
-\contentsline {section}{\numberline {B}Category Theory}{75}
+\contentsline {subsection}{\numberline {6.3}The MTC $\mathcal {Z}(\mathbf {Rep}_{\mathbb {Z}_2})$}{70}
+\contentsline {section}{\numberline {7}Topological Quantum Computing}{76}
+\contentsline {subsection}{\numberline {7.1}The TQC framework}{76}
+\contentsline {subsection}{\numberline {7.2}Revisiting toric code TQC}{77}
+\contentsline {subsection}{\numberline {7.3}Universal TQC with the Fibbonacci anyon}{77}
+\contentsline {section}{\numberline {A}$\mathbb {Z}_2$ Homology Theory}{77}
+\contentsline {section}{\numberline {B}Category Theory}{79}
