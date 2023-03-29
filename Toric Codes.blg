@@ -3,54 +3,54 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Toric Codes.aux
 The style file: alpha.bst
 Database file #1: ref.bib
-Repeated entry---line 394 of file ref.bib
+Repeated entry---line 416 of file ref.bib
  : @article{freedman2002simulation
  :                                ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 403 of file ref.bib
+Repeated entry---line 425 of file ref.bib
  : @article{kitaev2003fault
  :                         ,
 I'm skipping whatever remains of this entry
 Warning--there's a number but no series in wang2010topological
-You've used 45 entries,
+You've used 47 entries,
             2543 wiz_defined-function locations,
-            836 strings with 11214 characters,
-and the built_in function-call counts, 18113 in all, are:
-= -- 1808
-> -- 857
-< -- 29
-+ -- 294
-- -- 290
-* -- 1364
-:= -- 3012
-add.period$ -- 137
-call.type$ -- 45
-change.case$ -- 284
-chr.to.int$ -- 45
-cite$ -- 46
-duplicate$ -- 705
-empty$ -- 1282
-format.name$ -- 349
-if$ -- 3633
+            848 strings with 11467 characters,
+and the built_in function-call counts, 18861 in all, are:
+= -- 1885
+> -- 884
+< -- 30
++ -- 302
+- -- 298
+* -- 1422
+:= -- 3134
+add.period$ -- 143
+call.type$ -- 47
+change.case$ -- 295
+chr.to.int$ -- 47
+cite$ -- 48
+duplicate$ -- 734
+empty$ -- 1341
+format.name$ -- 360
+if$ -- 3784
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 52
-newline$ -- 229
-num.names$ -- 135
-pop$ -- 235
+missing$ -- 54
+newline$ -- 239
+num.names$ -- 141
+pop$ -- 241
 preamble$ -- 1
-purify$ -- 336
+purify$ -- 349
 quote$ -- 0
-skip$ -- 574
+skip$ -- 598
 stack$ -- 0
-substring$ -- 1084
-swap$ -- 94
-text.length$ -- 29
-text.prefix$ -- 20
+substring$ -- 1141
+swap$ -- 96
+text.length$ -- 30
+text.prefix$ -- 21
 top$ -- 0
-type$ -- 332
+type$ -- 348
 warning$ -- 1
-while$ -- 180
-width$ -- 48
-write$ -- 582
+while$ -- 188
+width$ -- 50
+write$ -- 608
 (There were 2 error messages)

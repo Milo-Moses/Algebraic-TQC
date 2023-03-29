@@ -120,6 +120,12 @@ Bruce~E Kane.
 \newblock A silicon-based nuclear spin quantum computer.
 \newblock {\em nature}, 393(6681):133--137, 1998.
 
+\bibitem[Kel64]{kelly1964maclane}
+Gregory~Maxwell Kelly.
+\newblock On maclane's conditions for coherence of natural associativities,
+  commutativities, etc.
+\newblock {\em Journal of Algebra}, 1(4):397--402, 1964.
+
 \bibitem[Kit97]{kitaev1997quantum}
 A~Yu Kitaev.
 \newblock Quantum error correction with imperfect gates.
@@ -130,6 +136,11 @@ A~Yu Kitaev.
 A~Yu Kitaev.
 \newblock Fault-tolerant quantum computation by anyons.
 \newblock {\em Annals of physics}, 303(1):2--30, 2003.
+
+\bibitem[KP06]{kitaev2006topological}
+Alexei Kitaev and John Preskill.
+\newblock Topological entanglement entropy.
+\newblock {\em Physical review letters}, 96(11):110404, 2006.
 
 \bibitem[Lic99]{lickorish1999simplicial}
 William Bernard~Raymond Lickorish.

@@ -1428,7 +1428,11 @@ The pentagon identity is exactly the sort of identity for which graphical langua
 \end{figure}
 
 
-[WORK: Explain time reversal symmetry]
+Time reversal symmetry can be explained as follows. Taking an inverse corresponds to doing a process in reverse. That is, instead of fusing particles the matrix $F^{-1}$ will correspond to the creation of particles. The time reversal symmetry says associvity on creating particles will be the same associativity on fusing particles. Diagramatically, this means
+
+\begin{equation*}
+  \tikzfig{time-symmetry}
+\end{equation*}
 
 A natural question about the definition of $6j$ symbols could be as follows: The goal was to define an isomorphism $a\otimes (b\otimes c)$ to $(a\otimes b)\otimes c$. Instead, one defined how morphisms $a\otimes (b\otimes c)\to d$
  and $(a\otimes b)\otimes c\to d$ relate for every $d$. While this does indeed give some connection between $a\otimes (b\otimes c)$ and $(a\otimes b)\otimes c$, it is not immediately clear that tells us the two objects are isomorphic or, if so, what that isomorphism would be. While seemingly counterintuitive, this switch from studying objects to studying the functions between objects is extremely fruitful. This forms the heart of the Yoneda lemma, the most important result in category theory: Objects should be understood by their relationship with each other. According to Ravi Vakil:
@@ -1696,7 +1700,7 @@ $$0\to \ZZ_2\to \ZZ_4\to\ZZ_2\to 0$$
 
 does not split. An introduction to exact sequences is found in Appendix \ref{Categories}. What we really want is that every object should be the direct sum of objects which themselves have no subjects. Objects with no subobjects are called irriducible objects. This discrepency between irriducible and indecomposable forms one of the key themes of representation theory, and leads to a great deal of subtledy. Irrididucible objects are also called simple objects. Categories in which there is no discrepency between irrididuble and indecomposable are called semisimple, i.e., semisimple categories are those categories in which every object is the direct sum of simple objects.
 
-This discussion above strongly uses the notion of \textit{subobject}. However, it is not clear in general what subobject should mean. The classic intuation is that $A$ is a subobject of $B$ if there is an injective map $f:A\hookrightarrow{}B$. Being injective is the statement that the kernel of $f$ is  $0$, but in arbitarary categories there is no good notion of kernel. Thus, we restrict our attention to \textit{abelian} categories. Being abelian comes with a large amount of desirable properties, and most categories people consider are abelian. In abelian categories, we require that all hom sets are given the structure of abelian groups. This is done for various reasons [WORK: what are those reasons?]. Seeing as our eyes are towards quantum physics, all hom sets will be $\CC$ vector spaces. Linear combinations of morphisms will correspond to superpositions. To preserve space, we combine ``abelian" and ``$\CC$-linear" into one definition:
+This discussion above strongly uses the notion of \textit{subobject}. However, it is not clear in general what subobject should mean. The classic intuation is that $A$ is a subobject of $B$ if there is an injective map $f:A\hookrightarrow{}B$. Being injective is the statement that the kernel of $f$ is  $0$, but in arbitarary categories there is no good notion of kernel. Thus, we restrict our attention to \textit{abelian} categories. Being abelian comes with a large amount of desirable properties, and most categories people consider are abelian. In abelian categories, we require that all hom sets are given the structure of abelian groups. Seeing as our eyes are towards quantum physics, all hom sets will moreover be $\CC$ vector spaces. Linear combinations of morphisms will correspond to superpositions. To preserve space, we combine ``abelian" and ``$\CC$-linear" into one definition:
 
 \begin{definition}[$\CC$-linear abelian category]  A $\CC$-linear abelian category is the following data:
 
@@ -1840,7 +1844,7 @@ The correct correspondence, in fact, is between fusion categories and $6j$ fusio
 
 $$0\to \ker f \to A\xrightarrow{f} B\to \coker f\to 0,$$
 
-where by exact we mean that the image of each map in the sequence is equal to the kernel of the following map. [WORK: need to define exact above, and more rigorously]. Seeing as $\ker f$ is a subobject of $A$, we have either that $\ker f= 0$ or $\ker f = A$. If $\ker f = A$, then $f$ must be the zero map, so we are done. If $\ker f =0$, then we have an exact sequence
+where by exact we mean that the image of each map in the sequence is equal to the kernel of the following map. Seeing as $\ker f$ is a subobject of $A$, we have either that $\ker f= 0$ or $\ker f = A$. If $\ker f = A$, then $f$ must be the zero map, so we are done. If $\ker f =0$, then we have an exact sequence
 
 $$0\to A\to B\to \coker f\to 0.$$
 
@@ -2035,7 +2039,6 @@ For all $A,B\in \Ccat$, the following claims are all true:
 \item $\tr(f\circ g)=\tr(g\circ f)$ for all $f,g\in \End(A)$
 \item Trace is independent of choice of duals. That is, let $(\tilde{A}^*,\tilde{\coev}_{A}, \tilde{\ev}_A)$ be a different choice of dual, unit, and co-unit for $A$, satisfying the triangle axioms of rigidity, as in the definition of fusion category. Defining $\tilde{\tr}(f)$ exactly like $\tr(f)$ except with this new unit, we find that $\tilde{\tr}(f)=\tr(f)$.
 \item Trace is preserved by functors. That is, let $\Ccat,\Dcat$ be MTCs with traces $\tr_{\Ccat},\tr_{\Ccat}$ respectively. Let $F:\Ccat\to \Dcat$ be a braided tensor functor. We have that $\tr_{\Ccat}(f)=\tr_{\Dcat}(F(f))$.
-\item .[WORK: something about quantum dimensions? What else?]
 \end{enumerate}
 \end{proposition}
 \begin{proof}. [WORK: do proof]
@@ -2055,6 +2058,8 @@ The trace allows us to naturally define many very powerful, physically observabl
 \end{enumerate}
 \end{theorem}
 
+This theorem is quite useful experimentally. It is the goal of many physicists to discover non-abelian anyons. The state of current laboratories are such that creating the appropriate conditions, braiding anyons, and recording non-abelian statistics is out of reach. Thus, one observes non-abelian anyons indirectly by measuring physical quantities which are associated with non-abelian properties. For example, the quantum dimension can be related to the \textit{entropy} of a physical system \cite{kitaev2006topological}. Abelian MTCs have $d_A=1$, whereas non-abelian MTCs will have measurely larger quantum dimensions. Namely, the first part of the theorem says that $d_A\geq 2\cos(\pi/4)=\sqrt{2}$. This distinctly different entropy can be readily physically measured. Namely, the thermodynamic Maxwell's equation relates entropy to chemical potential, which in turn can be measured by simple changes in voltage [WORK: ref. The paper might not exist yet!].
+
 If $d_A$ measures the size of each individual anyon-type, then their sum should give a measure of the total size of the MTC. Thus, we define
 
 $$\dim \Ccat = \sum_{A\in \LL} d_A^2,$$
@@ -2069,10 +2074,6 @@ The quantities $\theta_A$ for all $A$, as well as $p^{+}_{\Ccat}/p^{-}_{\Ccat}$,
 
 $$p^{+}_{\Ccat}p^{-}_{\Ccat}=\dim \Ccat.$$
 \end{theorem}
-
-
-[WORK: what invariant was entropy related to? This should uniquely charactarize non-abelian-ness. Since we're trying to measure non-abelain-ness, this should make for a short little narrative.]
-
 
 We are now ready to define the most important invariants of MTCs, representations of the group of $2$ by $2$ matricies with unit determinant, $\SL_2(\ZZ)$. The group $\SL_2(\ZZ)$ is known as the modular group, due to its connections with moduli spaces of elliptic curves. It is because of these representations that Modular Tensor Categories are called modular. We define the modular representation as follows:
 
@@ -2292,7 +2293,12 @@ We now show that these Drinfeld centers are MTCs. In general, not every fusion c
 
 $$V\xrightarrow{\coev_{V^*}} V\otimes V^*\otimes V^{**}\xrightarrow{\upbeta_{V,V^*}} V^*\otimes V \otimes V^{**}\xrightarrow{\ev_{V}} V^{**}\to V.$$
 
-The last arrow $V^{**}\to V$ is the double dual map of linear algebra.
+The last arrow $V^{**}\to V$ is the double dual map of linear algebra,
+
+\begin{align*}
+V&\xrightarrow{\sim} V^{**}\\
+v&\mapsto (\varphi \mapsto \varphi(v))
+\end{align*}
 \end{enumerate}
 
 This gives $\Zcal(\Vecc_G)$ the structure of an MTC.
@@ -2314,7 +2320,21 @@ While these questions are of much interest to the general community, they are no
 
 Thus, we have arrived at the MTC associated with the toric code: $\Zcal(\Vecc_{\ZZ_2})$, The Drinfeld center of of the category of $\ZZ_2$-graded vector spaces. This is in some sense the simplest MTC. Namely, the simplest MTCs are those which come from spherical fusion categories,  as $\Zcal(\Ccat)$ for some $\Ccat$. The simplest fusion categories are those which come from groups, as $\Rep_G$ for some $G$. The simplest non-trivial group is $\ZZ_2$.
 
-Another intuition for $\Zcal(\Ccat)$, alluded to in the introduction of this section, is that it is a sort of ``quantum double" [WORK: what is the intuition for quantum doubles? There should be good insight in the following thesis: \cite{felice2017hopf}]
+Another intuition for $\Zcal(\Ccat)$, alluded to in the introduction of this section, is that it is a sort of ``quantum double" \cite{felice2017hopf}. The intuition for why $\Zcal$ can be viewed as gluing two copies of $\Ccat$ with a twist is seen as follows. Suppose $(\Ccat,\beta)$ is a braided monoidal category. Then, there is a canonical braided monoidal functor
+
+\begin{align*}
+\Ccat &\to \Zcal(\Ccat).\\
+A &\mapsto (A,\beta_{A,\--})
+\end{align*}
+
+Let $\Ccat^{\text{rev}}$ denote the braided monoidal category whose underlying monoidal category is $\Ccat$, but the braiding between $A,B$ is given by $\beta_{B,A}^{-1}$ instead of $\beta_{A,B}$. That is, the same category but with the braiding reversed. There is a canonical braided monoidal functor
+
+\begin{align*}
+\Ccat^{\text{rev}} &\to \Zcal(\Ccat).\\
+A &\mapsto (A,\beta^{-1}_{\--,A})
+\end{align*}
+
+These two functors in some sense generate $\Zcal(\Ccat)$, and thus $\Zcal(\Ccat)$ can be seen as $\Ccat$ and $\Ccat^{\text{rev}}$ glued together in a non-degenerate fashion.
 
 We now verify that our two definitions of the MTC associated with the toric code are equivilant:
 
@@ -2323,21 +2343,116 @@ We now verify that our two definitions of the MTC associated with the toric code
 \begin{proof}. [WORK: do proof]
 \end{proof}
 
-[WORK: closing thoughts on MTCs. Maybe mention something about how most of them can be defined relatively easily using a few constructions. In particular, many models are ``weakly-group theoretical". Perhaps talk about Morita equivilance, since we have Drinfeld centers already defiened?]
-
-
-
 $\newline\newline$
 
 \large \textbf{Exercises}:\normalsize
 
 \begin{enumerate}[\thesection .1.]
-\item Define a $(n+1)$-TQFT as a symmetric monoidal functor $\text{Bord}(n+1)\to \Vecc$. Show that this agree with our definition in the $(2+1)$-TQFT case. [WORK: Flesh this out.]
-\item The original list of axioms for a monoidal category was longer. It was later found by Max Kelly that the smaller set we gave implies the rest. [WORK: State the other axioms, give an outline of the proof, i.e., the diagrams one should show are commutative and have the reader conclude. nLab includes these.]
-\item Show that the data associated to the toric code forms a modular tensor fusion system.
-\item .[WORK: Verlinde formula exercise]
-\item .[WORK: kernel(cokernel)=cokernel(kernel) if and only if ``all monomorphisms and epimorphisms normal" exercise]
-\item .[WORK: Show that natural map $\Vecc\mapsto \Zcal(\Vecc)$ is a monoidal equivilance of categories.]
+\item The standard definition of Topological Quantum Field Theory is in terms of functors, which we present here.
+
+\begin{enumerate}[(a)]
+\item Define the following structures for a braided monoidal category:
+
+\begin{enumerate}
+\item  (Objects) Closed orientied $n$-manifolds.
+
+\item (Morphisms) A morphism between closed oriented $n$-manifolds $Y_0,Y_1$ is an oriented $(n+1)$-manifolds $X$ such that
+
+$$\partial X = Y_0\sqcup Y_1,$$
+
+where $Y_1$ has the correct induced orientation from $X$ and $Y_0$ has opposite induced orientation. 
+
+\item (Tensor product) $Y_0\otimes Y_1 = Y_0\sqcup Y_1$.
+
+\item (Unit) $\emptyset$
+\end{enumerate}
+
+Along with natural choies of associativity, left/right unit, and braiding, show that this forms a braided monoidal category, $\bold{Bord}(n+1)$.
+
+\item Define an $(n+1)$-TQFT to be a braided monoidal functor $\bold{Bord}(n+1)\to \Vecc$. Show that this definition is equivilant to the definition given in Section \ref{TQFTs} when $n=2$.
+\end{enumerate}
+
+\item The original list of axioms for a monoidal category was longer. It was later found by Max Kelly \cite{kelly1964maclane} that the smaller set we gave implies the rest. This exercise asks to derive his results.
+
+\begin{enumerate}[(a)]
+
+\item Show that for all monoidal categories $\Ccat$ the diagram
+
+\[\begin{tikzcd}
+	{(1\otimes A)\otimes B} \\
+	{1\otimes (A\otimes B)} & {A\otimes B}
+	\arrow["{\lambda_A\otimes\id_{B}}"{description}, from=1-1, to=2-2]
+	\arrow["{\alpha_{1,A,B}}"', from=1-1, to=2-1]
+	\arrow["{\lambda_{A\otimes B}}"', from=2-1, to=2-2]
+\end{tikzcd}\]
+
+commutes. (HINT: Suppressing identity maps and tensor products for clarity, show that the diagrams
+
+\[\begin{tikzcd}
+	& {(1(1A)B} & {1((1A)B)} \\
+	{((11)A)B} & {(11)(AB)} && {1(1(AB))} \\
+	& {(1A)B} & {1(AB)}
+	\arrow["{\rho_1}"', from=2-1, to=3-2]
+	\arrow["{\alpha_{1,1,A}}", from=2-1, to=1-2]
+	\arrow["{\alpha_{1,1A,B}}", from=1-2, to=1-3]
+	\arrow["{\alpha_{1,A,B}}", from=1-3, to=2-4]
+	\arrow["{\alpha_{1,A,B}}", from=3-2, to=3-3]
+	\arrow["{\lambda_{AB}}", from=2-4, to=3-3]
+	\arrow["{\alpha_{11,A,B}}", from=2-1, to=2-2]
+	\arrow["{\alpha_{1,1,AB}}", from=2-2, to=2-4]
+\end{tikzcd}\]
+
+and
+
+\[\begin{tikzcd}
+	{((11)A)B} & {(1(1A))B} & {1((1A)B)} & {1(1(AB))} \\
+	& {(1A)B} & {1(AB)}
+	\arrow["{\alpha_{1,1,A}}", from=1-1, to=1-2]
+	\arrow["{\alpha_{1,1A,B}}", from=1-2, to=1-3]
+	\arrow["{\alpha_{1,A,B}}", from=1-3, to=1-4]
+	\arrow["{\lambda_{AB}}", from=1-4, to=2-3]
+	\arrow["{\alpha_{1,A,B}}"', from=2-2, to=2-3]
+	\arrow["{\lambda_A}"', from=1-2, to=2-2]
+	\arrow["{\lambda_A}"{description}, from=1-3, to=2-3]
+	\arrow["{\rho_1}"', from=1-1, to=2-2]
+\end{tikzcd}\]
+
+commute)
+
+\item Using the result in part (a), show that for all monoidal categories $\Ccat$ the maps $\rho_1,\lambda_1:1\otimes 1\to 1$ are equal.
+
+\end{enumerate}
+
+\item Show that the modular tensor fusion data associated to the toric code forms a modular tensor fusion system.
+
+\item  Let $\Ccat$ be an MTC, and let $\LL$ be the set of isomorphism classes of simple objects. Then, [WORK: doing what?] the coefficinets of the $S$-matrix of $\Ccat$ can be expressed in terms of the twist, fusion coefficients, and quantum dimensions as follows:
+
+$$s_{A,B}=\frac{1}{\theta_A \theta_B}\sum_{C\in \LL}N^{A^*,B}_{C}d_{C}\theta_{C}.$$
+
+By [WORK: doing what?], one arrives the the \textit{Verlinde formula} for MTCs:
+
+$$N^{A,B}_{C}=\sum_{D\in \LL} \frac{s_{A,D} s_{B,D}s_{C^*,D}}{\dim{\Ccat}\cdot d_D}$$
+
+\item Let $\Ccat$ be a category satisfying all of the axioms of a $\CC$-linear abelian category, except that monomorphisms and epimorphims are not neccecarily normal. Let $f:A\to B$ be a morphism. [WORK: state this properly. The notion of isomorphism must be restricted.]
+
+\begin{enumerate}[(a)]
+\item A morphism $f$ is isomorphic to the kernel of some morphism if and only if $f\cong \ker(\coker f)$.
+\item A morphism $f$ is isomorphic to the kernel of some morphism if and only if $f\cong \coker(\ker f)$.
+\item There is a natural map $\coker(\ker f)\xrightarrow{\overline{f}} \ker(\coker f)$ defined by [WORK: how?], factoring $f$ as the composition
+
+$$A\to \coker(\ker f)\xrightarrow{\overline{f}}\ker(\coker f)\to B.$$
+
+Show that $\overline{f}$ is an isomorphism for all choices of $f$ if and only if all monomorphisms and epimorphisms are normal.
+\end{enumerate}
+
+\item There is a canonical braided monoidal functor
+
+\begin{align*}
+\Vecc &\to \Zcal(\Vecc),\\
+V &\mapsto (V,\beta_{V,\--})
+\end{align*}
+
+where $\beta_{\--,\--}$ is the natural braiding on the fusion category of vector spaces. Show that this is an equivilance of categories. [WORK: how do you do this?]
 \end{enumerate}
 
 \section{Topological Quantum Computing}
@@ -2345,8 +2460,6 @@ $\newline\newline$
 
 \subsection{The TQC framework}
 \label{The TQC framework}
-
-[WORK: Need to introduce finiteness condition on dimension of vector spaces, probably in definition of ``fusion category"]
 
 [WORK: The big thing is to draw the picture between topological quantum phases of matter, TQFTs, MTCs, and TQC. Show exactly what this looks like in the case of the toric code, i.e., what the topological quantum phase of matter is, the TQFT, the MTC, and the resulting TQC. Add all the connections and insights that I've come up with along this journey, and things I would feel remiss not including. Really, this should be a version of an introduction-to-TQC-for-experts section. Should definitely mention that TQFTs are generally $1$-extended with punctures, to visualize anyons. Should mention that literally making torus bigger will make error rate smaller, since it's harder for things to accidentally interact with each other (exponential decrease). Maybe another thing to add is how the 1st priority is to minimize energy, and the 2nd order is to maximize entanglement.]
 

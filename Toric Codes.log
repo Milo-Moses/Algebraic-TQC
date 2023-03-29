@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  28 MAR 2023 19:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  29 MAR 2023 11:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -944,24 +944,24 @@ File: ./images/pentagon.png Graphic file (type png)
 Package pdftex.def Info: ./images/pentagon.png  used on input line 1424.
 (pdftex.def)             Requested size: 142.21033pt x 134.05994pt.
  [52]
-[53 <./images/pentagon.png>] [54] [55] [56]
-Overfull \hbox (9.9589pt too wide) detected at line 1613
+(./figures/time-symmetry.tikz) [53 <./images/pentagon.png>] [54] [55] [56]
+Overfull \hbox (9.9589pt too wide) detected at line 1617
 []
  []
 
 [57]
-Overfull \hbox (11.37311pt too wide) detected at line 1660
+Overfull \hbox (11.37311pt too wide) detected at line 1664
 []
  []
 
 [58]
-Overfull \hbox (0.40796pt too wide) in paragraph at lines 1691--1692
+Overfull \hbox (0.40796pt too wide) in paragraph at lines 1695--1696
 []\OT1/cmr/m/n/10 We now de-fine fu-sion cat-e-gories. One key dif-fi-culty is 
 de-cid-ing what category-
  []
 
 [59] [60]
-Overfull \hbox (8.96042pt too wide) in paragraph at lines 1768--1769
+Overfull \hbox (8.96042pt too wide) in paragraph at lines 1772--1773
 \OT1/cmr/m/n/10 gories $\U/rsfs/m/n/10 C\OML/cmm/m/it/10 ; \U/rsfs/m/n/10 D$ \O
 T1/cmr/m/n/10 is a func-tor $\OML/cmm/m/it/10 F \OT1/cmr/m/n/10 : \U/rsfs/m/n/1
 0 C \OMS/cmsy/m/n/10 ! \U/rsfs/m/n/10 D$ \OT1/cmr/m/n/10 such that $\OML/cmm/m/
@@ -972,17 +972,17 @@ mr/m/n/10 ))$
  []
 
 [61] [62] [63] (./figures/cotriangle-reprise.tikz) (./figures/first-basis.tikz)
-(./figures/second-basis.tikz) [64] [65] [66] [67] [68] [69]
+[64] (./figures/second-basis.tikz) [65] [66] [67] [68] [69] [70]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2108.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2109.
 
- [70] [71]
-Overfull \hbox (13.3451pt too wide) detected at line 2162
+ [71]
+Overfull \hbox (13.3451pt too wide) detected at line 2163
 []
  []
 
 [72] [73]
-Overfull \hbox (38.02985pt too wide) in paragraph at lines 2247--2248
+Overfull \hbox (38.02985pt too wide) in paragraph at lines 2248--2249
 []\OT1/cmr/bx/it/10 morphisms: \OT1/cmr/m/it/10 Given $\OT1/cmr/m/n/10 (\OML/cm
 m/m/it/10 A; \U/eur/m/n/10 ^^L[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/
 n/10 (\OML/cmm/m/it/10 B; \U/eur/m/n/10 ^^L[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10
@@ -993,34 +993,40 @@ m/n/10 ))$
  []
 
 
-Overfull \hbox (20.32211pt too wide) in paragraph at lines 2257--2258
+Overfull \hbox (20.32211pt too wide) in paragraph at lines 2258--2259
 []\OT1/cmr/bx/it/10 braiding:  \OT1/cmr/m/it/10 We de-fine the braid-ing be-twe
 en two el-e-ments $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A; ^^L[]\OT1/cmr/m/n/10 )\
 OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; ^^L[]\OT1/cmr/m/n/10 ) \
 OMS/cmsy/m/n/10 2
  []
 
-
-Overfull \hbox (7.29327pt too wide) detected at line 2277
+[74]
+Overfull \hbox (7.29327pt too wide) detected at line 2278
 []
  []
 
-[74] [75]
-Underfull \hbox (badness 10000) in paragraph at lines 2330--2331
+[75] [76]
+Underfull \hbox (badness 10000) in paragraph at lines 2346--2347
 
  []
 
-[76] [77] [78] [79] (./Toric Codes.bbl [80] [81] [82]
-Underfull \hbox (badness 1360) in paragraph at lines 245--250
+
+Overfull \hbox (7.59065pt too wide) in paragraph at lines 2359--2360
+[]\OT1/cmr/m/n/10 (Morphisms) A mor-phism be-tween closed ori-ented $\OML/cmm/m
+/it/10 n$\OT1/cmr/m/n/10 -manifolds $\OML/cmm/m/it/10 Y[]; Y[]$
+ []
+
+[77] [78] [79] [80] [81] (./Toric Codes.bbl [82] [83] [84] [85]
+Underfull \hbox (badness 1360) in paragraph at lines 256--261
 []\OT1/cmr/m/n/10 Fangyuan Yang, Alexan-der A Zi-brov, Rui-heng Bai, Takashi
  []
 
-) [83] (./Toric Codes.aux) ) 
+) [86] (./Toric Codes.aux) ) 
 Here is how much of TeX's memory you used:
- 18499 strings out of 492649
- 395955 string characters out of 6129622
- 453476 words of memory out of 5000000
- 21948 multiletter control sequences out of 15000+600000
+ 18715 strings out of 492649
+ 400722 string characters out of 6129622
+ 462270 words of memory out of 5000000
+ 22161 multiletter control sequences out of 15000+600000
  23574 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,20n,84p,1328b,1111s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1061,10 +1067,10 @@ al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/
 local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/te
 xlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs5.pfb></usr/local/texlive/201
 8/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb>
-Output written on "Toric Codes.pdf" (83 pages, 3760498 bytes).
+Output written on "Toric Codes.pdf" (86 pages, 3769773 bytes).
 PDF statistics:
- 456 PDF objects out of 1000 (max. 8388607)
- 300 compressed objects within 3 object streams
+ 467 PDF objects out of 1000 (max. 8388607)
+ 307 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  98 words of extra memory for PDF output out of 10000 (max. 10000000)
 
