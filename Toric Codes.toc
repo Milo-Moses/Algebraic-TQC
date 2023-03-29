@@ -10,9 +10,10 @@
 \contentsline {subsection}{\numberline {6.1}Anyon models}{46}
 \contentsline {subsection}{\numberline {6.2}The category-theoretic viewpoint}{56}
 \contentsline {subsection}{\numberline {6.3}The MTC $\mathcal {Z}(\mathbf {Rep}_{\mathbb {Z}_2})$}{70}
-\contentsline {section}{\numberline {7}Topological Quantum Computing}{76}
-\contentsline {subsection}{\numberline {7.1}The TQC framework}{76}
-\contentsline {subsection}{\numberline {7.2}Revisiting toric code TQC}{77}
-\contentsline {subsection}{\numberline {7.3}Universal TQC with the Fibbonacci anyon}{77}
-\contentsline {section}{\numberline {A}$\mathbb {Z}_2$ Homology Theory}{77}
-\contentsline {section}{\numberline {B}Category Theory}{79}
+\contentsline {section}{\numberline {7}Topological Quantum Computing}{77}
+\contentsline {subsection}{\numberline {7.1}The TQC framework}{77}
+\contentsline {subsection}{\numberline {7.2}Revisiting toric code TQC}{78}
+\contentsline {subsection}{\numberline {7.3}Universal TQC with the Fibbonacci anyon}{78}
+\contentsline {section}{\numberline {A}$\mathbb {Z}_2$ Homology Theory}{78}
+\contentsline {section}{\numberline {B}Category Theory}{80}
+\contentsline {section}{\numberline {C}Unitarity}{80}

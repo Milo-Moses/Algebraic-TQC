@@ -15,6 +15,7 @@
 \usepackage{relsize}
 \usepackage{mathrsfs}
 \usepackage{tikzit}
+\usepackage{ upgreek }
 \usepackage[normalem]{ulem}
 
 
@@ -70,6 +71,9 @@
 \newcommand{\tr}{\mathrm{tr}}
 \newcommand{\res}{\mathrm{res}}
 \newcommand{\im}{\mathrm{im}}
+\newcommand{\ev}{\mathrm{ev}}
+\newcommand{\coev}{\mathrm{coev}}
+\newcommand{\id}{\mathrm{id}}
 \newcommand{\coker}{\mathrm{coker}}
 \newcommand{\SL}{\mathrm{SL}}
 \newcommand{\End}{\mathrm{End}}
@@ -1032,7 +1036,7 @@ Additionally, a $(2+1)$-TQFT is required to satisfy the following properties:
 
 \item (Union = tensor product). $V(S_0\sqcup S_1)=V(S_0)\otimes V(S_1)$. Here, $S_0$ and $S_1$ are any two surfaces.
 
-\item (Do nothing = identity) $Z(S\times [0,1])=\text{id}_{V(S)}$. Here, $S\times [0,1]$ is the Cartesian product of $S$ with the interval, treated as a bordism from $S$ to itself. Concretely $\partial (S\times [0,1])=S\times\{0\}\sqcup S\times\{1\}$, and we identify $S\times \{0\}$ and $S\times\{1\}$ both with $S$.
+\item (Do nothing = identity) $Z(S\times [0,1])=\id_{V(S)}$. Here, $S\times [0,1]$ is the Cartesian product of $S$ with the interval, treated as a bordism from $S$ to itself. Concretely $\partial (S\times [0,1])=S\times\{0\}\sqcup S\times\{1\}$, and we identify $S\times \{0\}$ and $S\times\{1\}$ both with $S$.
 
 \item (Composing bordisms = composing maps). $Z(X_1\cup X_0)=Z(X_1)\circ Z(X_0)$. Here, $X_0$ is a bordism from two surfaces $S_0$ and $S_1$ and $X_1$ is a bordism from surfaces $S_1$ to $S_2$. One easily verifies that their union $X_1\cup X_0$ is a bordism between $S_0$ and $S_2$, whose induced map we can compare with the composition of the induced maps of $X_0$ and $X_1$.
 
@@ -1589,8 +1593,8 @@ Additionally, a monoidal category is required to satisfy the following propertie
 	&& {} & {A\otimes B} \\
 	&&&& {}
 	\arrow["{\alpha_{A,1,B}}", from=1-3, to=1-5]
-	\arrow["{\rho_A\otimes \text{id}_B}"', from=1-3, to=2-4]
-	\arrow["{\text{id}_A\otimes \lambda_B}", from=1-5, to=2-4]
+	\arrow["{\rho_A\otimes \id_B}"', from=1-3, to=2-4]
+	\arrow["{\id_A\otimes \lambda_B}", from=1-5, to=2-4]
 \end{tikzcd}\]
 
 commutes.
@@ -1603,8 +1607,8 @@ commutes.
 	{(A\otimes (B\otimes C))\otimes D} && {A\otimes((B\otimes C)\otimes D)}
 	\arrow["{\alpha_{A\otimes B, C,D}}", from=2-1, to=1-2]
 	\arrow["{\alpha_{A,B,{C\otimes D}}}"', from=2-3, to=1-2]
-	\arrow["{\alpha_{A,B,C}\otimes \text{id}_D}"', from=2-1, to=3-1]
-	\arrow["{\text{id}_A\otimes_{B,C,D}}"', from=3-3, to=2-3]
+	\arrow["{\alpha_{A,B,C}\otimes \id_D}"', from=2-1, to=3-1]
+	\arrow["{\id_A\otimes_{B,C,D}}"', from=3-3, to=2-3]
 	\arrow["{\alpha_{A,B\otimes C,D}}"', from=3-1, to=3-3]
 \end{tikzcd}\]
 
@@ -1634,7 +1638,7 @@ This theorem really says that you cannot have your cake and eat it too. You can 
 
 \begin{enumerate}
 \item A functor $F: \Ccat\to \Dcat$.
-\item A morphism $\iota:1_{\Dcat}\to F(1_{\Ccat})$.
+\item A morphism $\epsilon:1_{\Dcat}\to F(1_{\Ccat})$.
 \item A natural transformation $\mu$ between the functors $F(\--)\otimes_{\Dcat}F(\--)$ and $F(\--\otimes_{\Ccat}\--)$.
 \end{enumerate}
 
@@ -1647,10 +1651,10 @@ Additionally, a monoidal functor is required to satisfy the following properties
 	{(F(A)\otimes_{\Dcat}F(B))\otimes_{\Dcat}F(C)} &&& {F(A)\otimes_{\Dcat}(F(B)\otimes_{\Dcat}F(C))} \\
 	{F(A\otimes_{\Ccat}B)\otimes_{\Dcat}F(C)} &&& {F(A)\otimes_{\Dcat}F(B\otimes_{\Ccat}C)} \\
 	{F((A\otimes_{\Ccat} B)\otimes_{\Ccat}C)} && {} & {F(A\otimes_{\Ccat}B\otimes_{\Ccat}C)}
-	\arrow["{\mu_{A,B}\otimes \text{id}_{F(C)}}", from=1-1, to=2-1]
+	\arrow["{\mu_{A,B}\otimes \id_{F(C)}}", from=1-1, to=2-1]
 	\arrow["{\mu_{A\otimes_{\Ccat}B,C}}", from=2-1, to=3-1]
 	\arrow["{\mu_{A,B\otimes_{\Ccat}C}}", from=2-4, to=3-4]
-	\arrow["{\text{id}_{F(A)}\otimes\mu_{B,C}}", from=1-4, to=2-4]
+	\arrow["{\id_{F(A)}\otimes\mu_{B,C}}", from=1-4, to=2-4]
 	\arrow["{F(\alpha_{\Ccat;A,B,C})}"{description}, from=3-1, to=3-4]
 	\arrow["{\alpha_{\Dcat;F(A),F(B),F(C)}}"{description}, from=1-1, to=1-4]
 \end{tikzcd}\]
@@ -1664,7 +1668,7 @@ commutes.
 	\arrow["{\lambda_{\Ccat;F(A)}}", from=1-1, to=2-1]
 	\arrow["{F(\lambda_{\Ccat;A})}"', from=2-3, to=2-1]
 	\arrow["{\mu_{1_{\Ccat},A}}"', from=1-3, to=2-3]
-	\arrow["{\iota\otimes \text{id}_{F(A)}}"', from=1-1, to=1-3]
+	\arrow["{\epsilon\otimes \id_{F(A)}}"', from=1-1, to=1-3]
 \end{tikzcd}\]
 
 and
@@ -1675,7 +1679,7 @@ and
 	\arrow["{\rho_{\Ccat;F(A)}}", from=1-1, to=2-1]
 	\arrow["{F(\rho_{\Ccat;A})}"', from=2-3, to=2-1]
 	\arrow["{\mu_{A,1_{\Ccat}}}"', from=1-3, to=2-3]
-	\arrow["{\text{id}_{F(A)}\otimes\iota}"', from=1-1, to=1-3]
+	\arrow["{\id_{F(A)}\otimes\epsilon}"', from=1-1, to=1-3]
 \end{tikzcd}\]
 
 commute for all $A\in \Ccat$.
@@ -1709,8 +1713,8 @@ Additionally, a semisimple linear category is required to satisfy the following 
 \item (Has binary biproducts) For all $A,B\in \Ccat$ the biproduct of $A$ and $B$ exists. This biproduct is denoted $A\oplus B$, and refered to as the direct sum. Recall that the biproduct of $A$ and $B$ is an object $A\oplus B$, paired with morphisms $p_{A},p_{B}: A\oplus B\to A,B$, and  $i_{A},i_{B}: A,B\to A\oplus B$, such that
 
 \begin{itemize}
-\item $p_{X}\circ i_{Y}$ is $\text{id}_X$ when $X=Y$, and $0$ otherwise,
-\item $i_{A}\circ p_{A}+i_{B}\circ p_{B}=\text{id}_{A\oplus B}$.
+\item $p_{X}\circ i_{Y}$ is $\id_X$ when $X=Y$, and $0$ otherwise,
+\item $i_{A}\circ p_{A}+i_{B}\circ p_{B}=\id_{A\oplus B}$.
 \end{itemize}
 \item (Has kernels and cokernels) For all $A,B\in \Ccat$ and $f:A\to B$, we have objects $\ker f, \coker f$, and morphisms $i:\ker f\to A$, $p: B\to \coker f$. We require that
 
@@ -1771,7 +1775,7 @@ Will these definitions out of the way, we can now define fusion categories.
 \begin{enumerate}
 \item A $\CC$-linear abelian monoidal category $\Ccat$.
 \item (Duals) Choices of objects $A^*$ for every object $A\in \Ccat$.
-\item (Unit/co-unit)Choices of morphisms $\eta_A: 1\to A^*\otimes A$ and $\epsilon_A: A\otimes A^*\to 1$ for all $A\in \Ccat$
+\item (Evaluation/co-evaluation) Choices of morphisms $\ev_A: A\otimes A^*\to 1$ and $\coev_A: 1\to A^*\otimes A$ for all $A\in \Ccat$
 \end{enumerate}
 
 Additionally, a fusion category is required to satisfy the following properties:
@@ -1783,8 +1787,8 @@ Additionally, a fusion category is required to satisfy the following properties:
 \[\begin{tikzcd}
 	{A\otimes (A^*\otimes A)} && {(A\otimes A^*)\otimes A} \\
 	& A
-	\arrow["{\epsilon_A\otimes \text{id}_A}", from=1-3, to=2-2]
-	\arrow["{\text{id}_A\otimes\eta_{A}}", from=2-2, to=1-1]
+	\arrow["{\ev_A\otimes \id_A}", from=1-3, to=2-2]
+	\arrow["{\id_A\otimes\coev_{A}}", from=2-2, to=1-1]
 	\arrow["{\alpha_{A,A^*,A}}", from=1-1, to=1-3]
 \end{tikzcd}\]
 
@@ -1793,8 +1797,8 @@ and
 \[\begin{tikzcd}
 	{(A^*\otimes A)\otimes A^*} && {A^*\otimes (A\otimes A^*)} \\
 	& {A^*}
-	\arrow["{\text{id}_{A^*}\otimes\epsilon_A}", from=1-3, to=2-2]
-	\arrow["{\eta_{A}\otimes \text{id}_{A^*}}", from=2-2, to=1-1]
+	\arrow["{\id_{A^*}\otimes\ev_A}", from=1-3, to=2-2]
+	\arrow["{\coev_{A}\otimes \id_{A^*}}", from=2-2, to=1-1]
 	\arrow["{\alpha^{-1}_{A^*,A,A^*}}", from=1-1, to=1-3]
 \end{tikzcd}\]
 
@@ -1808,9 +1812,9 @@ commute for all $A\in \Ccat$.
 \raggedleft\qedsymbol{}
 \end{definition}
 
-We observe that the definition of rigidity given is not exactly correct. The map $\epsilon_{A}\otimes \text{id}_A$, for example, has target $1\otimes A$, not $A$. In such scenarios, we always implicity apply the left/right unit. For a map like $\text{id}_A\otimes \eta_A$, one first applies to counit, going to $A\otimes 1$, and then one applies $\eta_A$ on the copy of $1$ created. Throughout this text and throughout literature there are many of these implicit maps, and they will generally not be awknowledged. For example, functors between linear categories are always assumed to be linear. It is up to the reader to be cognisent, and to assume what is meant exactly. Additionally, we observe that given any $f:A\to B$ in a fusion category, there is a canonical map $f^{*}:B^*\to A^*$ defined by the composition
+We observe that the definition of rigidity given is not exactly correct. The map $\ev_{A}\otimes \id_A$, for example, has target $1\otimes A$, not $A$. In such scenarios, we always implicity apply the left/right unit. For a map like $\id_A\otimes \coev_A$, one first applies to counit, going to $A\otimes 1$, and then one applies $\coev_A$ on the copy of $1$ created. Throughout this text and throughout literature there are many of these implicit maps, and they will generally not be awknowledged. For example, functors between linear categories are always assumed to be linear. It is up to the reader to be cognisent, and to assume what is meant exactly. Additionally, we observe that given any $f:A\to B$ in a fusion category, there is a canonical map $f^{*}:B^*\to A^*$ defined by the composition
 
-$$f^*:B^*\xrightarrow{\eta_A\otimes \text{id}_{B^*}} A^*\otimes A\otimes B^*\xrightarrow{\text{id}_{A^*}\otimes f\otimes \text{id}_{B^*}} A^*\otimes B\otimes B^* \xrightarrow{\text{id}_{A^*}\otimes \epsilon_A} A^*.$$
+$$f^*:B^*\xrightarrow{\coev_A\otimes \id_{B^*}} A^*\otimes A\otimes B^*\xrightarrow{\id_{A^*}\otimes f\otimes \id_{B^*}} A^*\otimes B\otimes B^* \xrightarrow{\id_{A^*}\otimes \ev_A} A^*.$$
 
 We now contrast fusion categories and fusion systems. The first claim is as follows:
 
@@ -1842,7 +1846,7 @@ $$0\to A\to B\to \coker f\to 0.$$
 
 Hence, $A$ is a suboject of $B$, and so $A\cong B$. Thus, we have recovered that $\Hom(A,B)=0$ when $A\not\cong B$.
 
-The above argument also shows that every map in $\End(A)$ must be an isomorphism. Choosing any nonzero $f\in \End(A)$, we find there is a map $\End(A)\to \End(A)$ induced by precomposition with $f$. This is clearly a $\CC$-linear map, and seeing as $f$ is an isomorphism on $V$ it must be an isomorphism on $\End(A)$. Linear algebra tells us that this map $\End(A)\to \End(A)$ must have an eigenvector, since $\CC$ is algebraically closed. Thus, there exists a nonzero $g\in \End(A)$ such that $g\circ f=\lambda \cdot g$ for some scalar $\lambda\in \CC$. Since every nonzero map $A\to A$ is an isomorphism, $g$ is an isomorphism. Postcomposing with $g^{-1}$, we find that $f=\lambda \cdot\text{id}_A$. Thus, every map in $\End(A)$ is a scalar multiple of the identity, hence $\End(A)$ is one dimensional.
+The above argument also shows that every map in $\End(A)$ must be an isomorphism. Choosing any nonzero $f\in \End(A)$, we find there is a map $\End(A)\to \End(A)$ induced by precomposition with $f$. This is clearly a $\CC$-linear map, and seeing as $f$ is an isomorphism on $V$ it must be an isomorphism on $\End(A)$. Linear algebra tells us that this map $\End(A)\to \End(A)$ must have an eigenvector, since $\CC$ is algebraically closed. Thus, there exists a nonzero $g\in \End(A)$ such that $g\circ f=\lambda \cdot g$ for some scalar $\lambda\in \CC$. Since every nonzero map $A\to A$ is an isomorphism, $g$ is an isomorphism. Postcomposing with $g^{-1}$, we find that $f=\lambda \cdot\id_A$. Thus, every map in $\End(A)$ is a scalar multiple of the identity, hence $\End(A)$ is one dimensional.
 
 Finally, suppose $\Ccat$ is semisimple. Let $A$ be an object such that $\End(A)$ is one dimensional. By assumption, there is a finite set $S$ of simple objects such that $A=\bigoplus_{B\in S}B$. We compute as follows:
 
@@ -1899,11 +1903,11 @@ We construct an inverse. Let $\Phi$ be a natural transformation. Applying $\Phi$
 
 $$\Phi_B: \Hom(B,B)\to \Hom(A,B).$$
 
-We claim $\Phi\mapsto \Phi_B(\text{id}_B)$ gives an inverse to precomposition. This amounts to observing that if $\Phi=(\phi\mapsto \phi\circ \varphi)$ then
+We claim $\Phi\mapsto \Phi_B(\id_B)$ gives an inverse to precomposition. This amounts to observing that if $\Phi=(\phi\mapsto \phi\circ \varphi)$ then
 
-$$\Phi_B(\text{id}_B)=\text{id}_{B}\circ \varphi=\varphi,$$
+$$\Phi_B(\id_B)=\id_{B}\circ \varphi=\varphi,$$
 
-and that if $\phi=\Phi_B(\text{id}_B)$ then for any $\phi: B\to C$
+and that if $\phi=\Phi_B(\id_B)$ then for any $\phi: B\to C$
 
 $$\Phi_C(\phi)=\phi\circ \varphi$$
 
@@ -1930,9 +1934,9 @@ Additionally, a braided fusion category is required to satisfy the following pro
 	\arrow["{\alpha_{A,B,C}}", from=1-1, to=1-3]
 	\arrow["{\beta_{A\otimes B,C}}", from=1-3, to=1-5]
 	\arrow["{\alpha^{}_{B,C,A}}", from=1-5, to=2-5]
-	\arrow["{\text{id}_A\otimes \beta_{B,C}}"', from=1-1, to=2-1]
+	\arrow["{\id_A\otimes \beta_{B,C}}"', from=1-1, to=2-1]
 	\arrow["{\alpha_{A,C,B}}"', from=2-1, to=2-3]
-	\arrow["{\beta_{A,C}\otimes \text{id}_B}"', from=2-3, to=2-5]
+	\arrow["{\beta_{A,C}\otimes \id_B}"', from=2-3, to=2-5]
 \end{tikzcd}\]
 
 and
@@ -1943,9 +1947,9 @@ and
 	\arrow["{\alpha^{-1}_{A,B,C}}", from=1-1, to=1-3]
 	\arrow["{\beta_{A,B\otimes C}}", from=1-3, to=1-5]
 	\arrow["{\alpha^{-1}_{B,C,A}}", from=1-5, to=2-5]
-	\arrow["{\beta_{A,B}\otimes \text{id}_C}"', from=1-1, to=2-1]
+	\arrow["{\beta_{A,B}\otimes \id_C}"', from=1-1, to=2-1]
 	\arrow["{\alpha^{-1}_{B,A,C}}"', from=2-1, to=2-3]
-	\arrow["{\text{id}_B\otimes \beta_{A,C}}"', from=2-3, to=2-5]
+	\arrow["{\id_B\otimes \beta_{A,C}}"', from=2-3, to=2-5]
 \end{tikzcd}\]
 
 commute.
@@ -1988,7 +1992,7 @@ We are now ready to give our final definition:
 
 \begin{enumerate}
 \item A braided fusion category $\Ccat$.
-\item (Twist) A natural equivilance $\theta:\Ccat \to \Ccat$.
+\item (Twist) A natural equivilance $\theta:\id_{\Ccat} \to \id_{\Ccat}$.
 \end{enumerate}
 
 Additionally, a Modular Tensor Category is required to satisfy the following properties:
@@ -2017,11 +2021,11 @@ This allows us to state our final equivilance:
 
 The intuition for the twist of a MTC is that it helps deal with the non-triviality of the braiding. In particular, it allows one to define the \textit{trace} of a morphism $f:A \to A$. The trace is a powerful operation, since it allows you to describe maps in terms of numbers, can be used both for linearization and invariants. The formal definition and basic properties of trace are as follows:
 
-\begin{proposition} Let $(\Ccat,\otimes, \beta, \theta, \eta,\epsilon)$ be a modular tensor category. For any $A\in \Ccat$ and $f\in \End(A)$, we define
+\begin{proposition}\label{trace} Let $(\Ccat,\otimes, \beta, \theta, \ev,\coev)$ be a modular tensor category. For any $A\in \Ccat$ and $f\in \End(A)$, we define
 
-$$\tr(f): 1\xrightarrow{\eta_A} A^*\otimes A\xrightarrow{\text{id}_{A^*}\otimes (\theta_X\circ f)} A^*\otimes A \xrightarrow{\beta_{A^*,A}}A\otimes A^*\xrightarrow{\epsilon_A}1.$$
+$$\tr(f): 1\xrightarrow{\coev_A} A^*\otimes A\xrightarrow{\id_{A^*}\otimes (\theta_X\circ f)} A^*\otimes A \xrightarrow{\beta_{A^*,A}}A\otimes A^*\xrightarrow{\ev_A}1.$$
 
-The space $\End(1)$ is one dimensional by Schur's Lemma (Theorem \ref{Schurs Lemma}), with a canonical generator $\text{id}_1$. Hence, we can canonically identify $\tr(f)$ with a complex number. Graphically, we represent trace as the closed loop [WORK: make diagram].
+The space $\End(1)$ is one dimensional by Schur's Lemma (Theorem \ref{Schurs Lemma}), with a canonical generator $\id_1$. Hence, we can canonically identify $\tr(f)$ with a complex number. Graphically, we represent trace as the closed loop [WORK: make diagram].
 
 For all $A,B\in \Ccat$, the following claims are all true:
 
@@ -2029,7 +2033,7 @@ For all $A,B\in \Ccat$, the following claims are all true:
 \item $\tr(f\otimes g)=\tr(f)\cdot \tr(g)$ for all $f\in \End(A)$, $g\in \End(B)$
 \item $\tr(f\oplus g)=\tr(f)+\tr(g)$ for all $f\in \End(A)$, $g\in \End(B)$
 \item $\tr(f\circ g)=\tr(g\circ f)$ for all $f,g\in \End(A)$
-\item Trace is independent of choice of duals. That is, let $(\tilde{A}^*,\tilde{\eta}_{A}, \tilde{\epsilon}_A)$ be a different choice of dual, unit, and co-unit for $A$, satisfying the triangle axioms of rigidity, as in the definition of fusion category. Defining $\tilde{\tr}(f)$ exactly like $\tr(f)$ except with this new unit, we find that $\tilde{\tr}(f)=\tr(f)$.
+\item Trace is independent of choice of duals. That is, let $(\tilde{A}^*,\tilde{\coev}_{A}, \tilde{\ev}_A)$ be a different choice of dual, unit, and co-unit for $A$, satisfying the triangle axioms of rigidity, as in the definition of fusion category. Defining $\tilde{\tr}(f)$ exactly like $\tr(f)$ except with this new unit, we find that $\tilde{\tr}(f)=\tr(f)$.
 \item Trace is preserved by functors. That is, let $\Ccat,\Dcat$ be MTCs with traces $\tr_{\Ccat},\tr_{\Ccat}$ respectively. Let $F:\Ccat\to \Dcat$ be a braided tensor functor. We have that $\tr_{\Ccat}(f)=\tr_{\Dcat}(F(f))$.
 \item .[WORK: something about quantum dimensions? What else?]
 \end{enumerate}
@@ -2037,7 +2041,7 @@ For all $A,B\in \Ccat$, the following claims are all true:
 \begin{proof}. [WORK: do proof]
 \end{proof}
 
-The trace allows us to naturally define many very powerful, physically observable, and mathematically interesting invariants. For example, let $A\in \Ccat$ be an object in an MTC. Then, $\tr(\text{id}_A)$ measures in some sense the size of $A$. For a vector space, the trace of the identity gives the dimension of the vector space. Thus, we define $d_A=\tr(\text{id}_A)$ to be the \textit{quantum dimension} of $A$. The following peroperties give a taste of the deep mathematics present in this situation:
+The trace allows us to naturally define many very powerful, physically observable, and mathematically interesting invariants. For example, let $A\in \Ccat$ be an object in an MTC. Then, $\tr(\id_A)$ measures in some sense the size of $A$. For a vector space, the trace of the identity gives the dimension of the vector space. Thus, we define $d_A=\tr(\id_A)$ to be the \textit{quantum dimension} of $A$. The following peroperties give a taste of the deep mathematics present in this situation:
 
 \begin{theorem} Let $A\in \Ccat$ be a simple object in an MTC. The following claims about the quantum dimension are all true:
 
@@ -2045,7 +2049,7 @@ The trace allows us to naturally define many very powerful, physically observabl
 
 \item ([WORK: get reference]) If $1\leq d_A\leq 2$, then $d_A=2\cos(\pi /m)$ for some integer $m\geq 3$. Otherwise, $d_A\geq 4$.
 
-\item ([WORK: get reference]) $d_A=1$ if and only if $A$ is an abelian anyon. That is, [WORK: what exactly should the correct statement be?]
+\item ([WORK: get reference]) $d_A=1$ if and only if $A$ is an abelian anyon. That is, $\beta_{B,A}\circ \beta_{A,B}$ is a scalar multiple of the identity for every other simple object $B\in \Ccat$.
 
 \item ([WORK: get reference]) The fusion matrix $N_A$ has a unique eigenvalue of largest absolute value. This eigenvalue is real, and is equal to $d_A$.
 \end{enumerate}
@@ -2057,7 +2061,7 @@ $$\dim \Ccat = \sum_{A\in \LL} d_A^2,$$
 
 where as usual $\LL$ is the set of isomorphism of classes of simple objects. The trace is well defined on isomorphism classes, and hence this quantity is well defined. The twisting of $\Ccat$ allows for a twisting of the definition of $\dim \Ccat$. This results in the following very interesting Gauss sums:
 
-\begin{theorem}[\cite{vafa1988toward}] Let $\Ccat$ be an MTC, and let $\LL$ be the set of isomorphism classes of simple objects. For each simple object $A\in \Ccat$, $\theta_A\in \End(A)$ lives in a one dimensional space with generator $\text{id}_A$. Hence, we can canonically identify $\theta_A$ with a complex number, and this complex number is independent of isomorphism class. Define
+\begin{theorem}[\cite{vafa1988toward}] Let $\Ccat$ be an MTC, and let $\LL$ be the set of isomorphism classes of simple objects. For each simple object $A\in \Ccat$, $\theta_A\in \End(A)$ lives in a one dimensional space with generator $\id_A$. Hence, we can canonically identify $\theta_A$ with a complex number, and this complex number is independent of isomorphism class. Define
 
 $$p^{\pm}_{\Ccat}=\sum_{A\in \LL}\theta_A^{\pm 1}d_A^2.$$
 
@@ -2112,175 +2116,212 @@ These $S$-matricies and $T$-matricies are very important invariants of MTCs. The
 \subsection{The MTC $\Zcal(\Rep_{\ZZ_2})$}
 \label{VecZ2 MTC}
 
-.[WORK: Re-do whole section in terms of $\Vecc$ instead of $\Rep$. Look at vector spaces graded over a set. Show that making the set a monoid/finite-group/finite-abelian-group makes it a monoidal/fusion/braided-fusion category. Quantifiy degeneration, and fix with Drinfeld center.]
+In this section we introduce the MTC which corresponds to the toric code, $\Zcal(\Vecc_{\ZZ_2})$. Intuitively, we describe the situation as follows. If fusion categories are generalized groups, then groups should certainly give fusion categories. This is done by assigning a finite group $G$ the \textit{category of $G$-graded vector spaces} $\Vecc_G$. We now recall what the modular tensor fusion system for the toric code looked like. It consisted of four elements $1,\alpha,\beta,\alpha\beta$, with a fusion rule much like $\ZZ_2\times \ZZ_2$, where the first copy of $\ZZ_2$ is generated by $\alpha$ and the second copy of $\ZZ_2$ is generated by $\beta$. The only non-group like behavior was the braiding, which was non-trivial between the two copies of $\ZZ_2$. In this way, the modular tensor fusion system of the toric code looks like ``gluing two copies of $\ZZ_2$ with a twist". The category-theoretic construction which realizes this ``glue two copies of $\Ccat$ with a twist" procedure is the Drinfeld center, $\Zcal(\Ccat)$. Hence, the MTC attached to the toric code is $\Zcal(\Vecc_{\ZZ_2})$.
 
-In this section we introduce the MTC which corresponds to the toric code, $\Zcal(\Rep_{\ZZ_2})$. Intuitively, we describe the situation as follows. If fusion categories are generalized groups, then groups should certainly give fusion categories. This is done by assigning a finite group $G$ its \textit{category of representations} $\Rep_G$. We now recall what the modular tensor fusion system for the toric code looked like. It consisted of four elements $1,\alpha,\beta,\alpha\beta$, with a fusion rule much like $\ZZ_2\times \ZZ_2$, where the first copy of $\ZZ_2$ is generated by $\alpha$ and the second copy of $\ZZ_2$ is generated by $\beta$. The only non-group like behavior was the braiding, which was non-trivial between the two copies of $\ZZ_2$. In this way, the modular tensor fusion system of the toric code looks like ``gluing two copies of $\ZZ_2$ with a twist". The category-theoretic construction which realizes this ``glue two copies of $\Ccat$ with a twist" procedure is the Drinfeld center, $\Zcal(\Ccat)$. Hence, the MTC attached to the toric code is $\Zcal(\Rep_{\ZZ_2})$. To build up to this definition, we now give a formal category-theoretic treatment of representations.
+The category $\Vecc_G$ of $G$-graded vector spaces can be defined when $G$ is any set. Endowing $G$ with more algebraic structure corresponds to endowing $\Vecc_G$ with more categorical structure. In particular, the guiding analogy of subsection \ref{Category viewpoint} now becomes very explicit. Making $G$ a monoid/finite group/finite abelian group corresponds to making $\Vecc_G$ a monoidal/fusion/braided fusion category. The category $\Vecc_G$ will never be an MTC - one needs the Drinfeld center construction to make it non-degenerate. Formally, we have the following:
 
-One of the only truly ``solved" fields of mathematics is linear algebra. Represenation theory can be seen as study of more complicated algebraic objects (groups, rings, algebras) in terms of vector spaces. Namely, instead of looking at an algebraic object we look at all of the ways that it can act on vector spaces. Formally, we define the category of representations of a group $G$ as follows:
-
-$$\Rep_{G}=
+$$\Vecc_G=
 \begin{pmatrix}
-\bold{objects:  }(V,\rho),\,\, V/\CC\text{ a vector space and }\rho:G\to \Aut(V)\text{ a homomorphism}\\
-\bold{morphisms:} \text{ linear maps of vector spaces which respect the }G\text{-action}
-\end{pmatrix}.
-$$
+\bold{objects: }\text{ collections of $\CC$ vector spaces }\{V_g\}_{g\in G}\\
+\bold{morphisms: }\text{ collections of $\CC$-linear maps}
+\end{pmatrix}.$$
 
-As usual, $\Aut(V)$ denotes the group of automorphisms of $V$. Given two representations $(V_0,\rho_0)$ and $(V_0,\rho_1)$, a linear map $f:V_0\to V_1$ is said to respect the $G$-action if the diagram
+That is, a morphism between $\{V_g\}_{g\in G}$ and $\{W_g\}_{g\in G}$ is a collection of linear maps $\{f_g:V_g\to W_g\}_{g\in G}.$ Often, we will use the notation $V$ for an element in $\Vecc_G$, and implicity let $V_g$ denote the $g$-component of $V$. This will often be compactly written as
 
-\[\begin{tikzcd}
-	{V_0} & {V_1} \\
-	{V_0} & {V_1}
-	\arrow["f", from=1-1, to=1-2]
-	\arrow["f", from=2-1, to=2-2]
-	\arrow["{\rho_0(g)}"{description}, from=1-1, to=2-1]
-	\arrow["{\rho_1(g)}"{description}, from=1-2, to=2-2]
-\end{tikzcd}\]
+$$V=\bigoplus_{g\in G}V_g.$$
 
-commutes for all $g\in G$. A map which respects the $G$-action is also called $G$-linear. Observe that representation can be seen as part of the Yoneda perspective: It is better to study an object indirectly by its relation with other objects than it is to study that object in itself. The first big property about the category of representations is that it is abelian:
+Objects in $\Vecc_G$ are in this way seen as vector spaces paired with canonical decompositions as direct sums of $g$-components for each $g\in G$. Morphisms are linear maps which ``respect the grading", by sending $g$-component to $g$-component. We now add algebraic structure to $G$, and recover categorical structure on $\Vecc_G$:
 
-\begin{proposition}\label{abelian represenations} Given representations $(V_0,\rho_0)$ and $(V_1,\rho_1)$, the space of $G$-linear morphisms $f:V_0\to V_1$ is a subset of the vector space of all linear morphisms, $\Hom_{\Vecc}(V_0,V_1)$. Thus, $\Hom_{\Rep_{G}}((V_0,\rho_0),(V_1,\rho_1))$ can be canonically given the structure of a vector space. This gives $\Rep_{G}$ the structure of a $\CC$-linear abelian category.
-\end{proposition}
-\begin{proof}. [WORK: Do the proof.]
+\begin{lemma} Let $G$ be a set. Given $V,W\in \Vecc_G$, $\Hom_{\Vecc_G}(V,W)$ is a sub vector space of $\Hom_{\Vecc}(V,W)$. Hence, we can naturally endow $\Hom_{\Vecc_G}(V,W)$ with the structure of a vector space. This turns $\Vecc_G$ into a $\CC$-linear abelian category.
+\end{lemma}
+\begin{proof}. [WORK: do proof]
 \end{proof}
 
-One can use Proposition \ref{abelian represenations} to get some intuition. One can define a representation of an associative $\CC$-algebra\footnote{A $\CC$-algebra is a vector space $R$, with multiplication $R\otimes R\to R$ and a unit map $\CC\to R$} $R$ to be a ring homomorphism $R\to \End(V)$, sending $R$ into the algebra of endomorphisms of a vector space $V$. As such, we can construct of a category $\Rep_R$ for every algebra. These categories are abelian as well. Moreover these are in some sense the only abelian categories, as shown in the following theorem:
 
-\begin{theorem}[Mitchell's Embedding Theorem] Let $\mathscr{C}$ be an abelian category. There is some associative algebra $R$ for which there exists a fully faithful exact functor
-
-$$F: \mathscr{C}\hookrightarrow{}\Rep_R.$$
-
-Here, we define an exact functor is one which sends short exact sequences
-
-$$0\to A\xrightarrow{i}B\xrightarrow{q}C\to 0$$
-
-to short exact sequences
-
-$$0\to F(A)\xrightarrow{F(i)}F(B)\xrightarrow{F(q)}F(C)\to 0.$$
-\end{theorem}
-
-We now introduce a few more structures on $\Rep_G$.
-
-\begin{proposition} Given representations $(V_0,\rho_0)$ and $(V_1,\rho_1)$, define their tensor product to be the representation whose underlying vector space is $V_0\otimes V_1$, and whose $G$-action $\rho_0\otimes \rho_1$ is defined by the formula
-
-$$(\rho_0\otimes \rho_1)(g)(v_0\otimes v_1)=\rho_0(g)(v_0)\otimes \rho_1(g)(v_1).$$
-
-This naturally induces a functor $\otimes: \Rep_G\times \Rep_G\to \Rep_G$. Define the following structures on $\Rep_G$:
-
-\begin{itemize}
-\item The unit element $\CC$, whose $G$-action is given by the $0$ map in $G\to \Aut(\CC)$.
-\item The associator $\alpha: V_0\otimes (V_1\otimes V_2)\to (V_0\otimes V_1)\otimes V_2$ sending $v_0\otimes (v_1\otimes v_2)$ to $(v_0\otimes v_1)\otimes v_2$.
-\item The left unitor $\lambda:\CC\otimes V\to V$ sending $x\otimes v$ to $x\cdot v$.
-\item The right unitor $\rho: V\otimes \CC\to V$ sending $v\otimes x$ to $x\cdot v$.
-\end{itemize}
-
-all of these maps extend to functors, and endow $\Rep_G$ with the structure of a monoidal category.
-\end{proposition}
-\begin{proof}. [WORK: make proof]
-\end{proof}
-
-When $G$ is finite, the situation is very nice. In particuar, we have the following theorem:
-
-\begin{theorem}[Maschke's theorem] Let $G$ be a finite group. [WORK: define duals, unit, counit]. This endows $\Rep_G$ with the structure of a fusion category.
-\end{theorem}
-\begin{proof}. [WORK: make proof]
-\end{proof}
-
-We have now introduced enough machinery to answer the following basic question: Does the category of representations of a group (up to the correct notion of equivilance) determine the starting group (up to isomorphism)? The Yoneda perspective gives us an answer in the affermative - studying an object via its interactions with other objects should give you all the information you need to know. It turns out that there is an explicit way of constructing $G$ from $\Rep_G$, though it is more complicated to treat in full generality than Yoneda's lemma. After one definition, we will be able to state this construction and prove its validity in full detail.
-
-\begin{definition}[Monoidal natural transformation] A monoidal natural transformation between two monoidal functors $(F_0,\mu_0,\iota_0), (F_1,\mu_1,\iota_0): (\Ccat,\otimes_{\Ccat},1_{\Ccat})\to(\Dcat,\otimes_{\Dcat},1_{\Dcat})$ is a natural transformation $f:F_0\to F_1$, satisfying the following conditions:
+\begin{proposition} Let $G$ be a monoid. Define the structures for a monoidal category as follows:
 
 \begin{enumerate}
-\item The diagram
+\item (Underlying category) $\Vecc_G$.
+
+\item (Tensor product) $\otimes: \Vecc_G\times \Vecc_G \to \Vecc_G$ sending $(V,W)$ to the object whose $g$-component is given by
+
+$$\left(V\otimes W\right)_g=\bigoplus_{hk=g}V_h\otimes W_k,$$
+
+for all $g\in G$, where $h,k$ run over elements of $G$.
+
+\item (Identity) $1=\CC_e$, where $e\in G$ is the identity element of $G$.
+
+\item (Associativity) Given $V,W,X$ we define $\alpha$ on the $g$-component by the natural map
 
 \[\begin{tikzcd}
-	{F_0(A)\otimes F_0(B)} && {F_1(A)\otimes F_1(B)} \\
-	\\
-	{F_0(A\otimes B)} && {F_1(A\otimes B)}
-	\arrow["{f_A\otimes f_B}", from=1-1, to=1-3]
-	\arrow["{f_{A\otimes B}}", from=3-1, to=3-3]
-	\arrow["{\mu_{0;A,B}}"{description}, from=1-1, to=3-1]
-	\arrow["{\mu_{1;A,B}}"{description}, from=1-3, to=3-3]
+	{\left(\left(V\otimes W\right)\otimes X\right)_g} & {\bigoplus_{(hk)l=g} (V_h\otimes W_k)\otimes X_l} \\
+	& {\bigoplus_{h(kl)=g}V_h\otimes\left(W_k\otimes X_l\right)} & {\left(V\otimes \left(W\otimes X\right)\right)_g},
+	\arrow["{=}"{description}, draw=none, from=1-1, to=1-2]
+	\arrow["", from=1-2, to=2-2]
+	\arrow["{=}"{description}, draw=none, from=2-2, to=2-3]
 \end{tikzcd}\]
 
-commutes for all $A,B\in \Ccat$.
+where $g\in G$, and $h,k,l$ run over elements of $G$. 
+\item (Unitors) Given $V$, we define $\lambda$ on the $g$-component by the obvious map
 
-\item The diagram
+$$\left(\CC_e\otimes V\right)_g = \CC_e\otimes V_g \xrightarrow{} V_g,$$
 
-\[\begin{tikzcd}
-	{1_{\Dcat}} \\
-	{F_0(1_{\Ccat})} & {F_1(1_{\Ccat})}
-	\arrow["{\iota_0}", from=1-1, to=2-1]
-	\arrow["{\iota_1}", from=1-1, to=2-2]
-	\arrow["{f(1)}", from=2-1, to=2-2]
-\end{tikzcd}\]
-
-commutes.
+where $g\in G$.  he definition of $\rho$ is completely analagous.
 \end{enumerate}
-\end{definition}
 
-\begin{theorem}[Tannaka duality for finite groups] Let $G$ be a finite group. Let $F:\Rep_G\to \Vecc$ be the forgetful functor, sending a representation $(V,\rho)$ to the underlying vector space $V$. Let $\Aut^\otimes(F)$ denote the group of monoidal natural transformation from $F$ to itself, under composition. There is a natural map
-
-$$G\to \Aut^{\otimes}(F)$$
-
-sending an element $g\in G$ to the automorphism of $F$ acting on $(V,\rho)$ by $\rho(g)$. This is a well defined map, and it induces an isomorphism of groups.
-\end{theorem}
-\begin{proof}. [WORK: make proof]
-\end{proof}
-
-In the analogy between algebraic structures and their categorifications, finite abelian groups correspond to braided fusion categories. This can be turned into a very percise claim, which we now state [WORK: Is this true??!?!?!??]:
-
-\begin{proposition} Let $G$ be a finite group. The fusion category $\Rep_G$ admits a braiding if and only if $G$ is abelian. If $G$ is abelian, then this braiding is defined explicitely by [WORK: make braiding].
+These structures give a well-defined monoidal category.
 \end{proposition}
-\begin{proof}. [WORK: make proof]
+\begin{proof}. [WORK: do proof]
 \end{proof}
 
-We thus observe the following: $\Rep_G$ never has the structure of an MTC. When $G$ is non-abelian then $\Rep_G$ is not braided, but when $G$ is abelian $\Rep_G$ is symmetric, in the sense that $\beta_{A,B}\cdot \beta_{B,A}=\mathrm{id}_A$ for all $A,B$, so it is degenerate. We are thus in need of a ``non-degenerate abelianization", which takes in a good fusion category and spits out a non-degenerate braided fusion category, i.e., an MTC. There is a canonical such construction, known as the Drinfeld center.
+\begin{proposition} Let $G$ be a finite group. Define the structures for a fusion category as follows:
 
-Loosely speaking, the Drinfeld center takes in a fusion category $\Ccat$ and looks at all possible ways that objects in $\Ccat$ can braid with other objects. As to avoid making a choice of any specific braiding, objects in $\Ccat$ become pairs $(A,\Phi)$, where $A$ is an object and $\Phi$ is a possible way $A$ could braid with other elements. This naturally allows one to be a global braiding on $\Zcal(\Ccat)$. The statement that $\Zcal(\Ccat)$ is non-degenerate is now the statement that choosing the right half-braidings we can make every object briad non-trivially with at least one other object. Formally, we can define the Drinfled center as follows: [WORK: connect this back to the quantum-double stuff mentioned in the first paragraph]
+\begin{enumerate}
+\item (Underlying $\CC$-linear abelian monoidal category) $\Vecc_G$.
+\item (Duals) Given $V\in \Ccat$, we define the dual by
 
-\begin{proposition-definition}[Drinfeld center] The Drinfeld center of a monoidal category $\Ccat$ is a braided monoidal category defined as follows:
+$$\left(V^*\right)_g= \left(V_{g^{-1}}\right)^*.$$
+
+\item (Evaluation) Given $V\in \Ccat$, we define $\ev$ as the map on the $e$-component as
+
+\begin{align*}
+\left(V\otimes V^*\right)_e=\bigoplus_{g\in G}V_g\otimes \left(V_g\right)^*&\xrightarrow{} \CC_e,\\
+\bigoplus_{g\in G}v\otimes \varphi & \mapsto \varphi(v)
+\end{align*}
+
+and zero otherwise.
+
+\item (Co-evaluation) Given $V\in \Ccat$, we define $\coev$ as the map on the $e$-component as the map
+
+\begin{align*}
+\CC_e&\xrightarrow{}\bigoplus_{g\in G}\left(V_g\right)^*\otimes V_g=\left(V^*\otimes V\right)_e,\\
+x&\xrightarrow{} \bigoplus_{g\in G}\coev_{V_g}(x)
+\end{align*}
+
+and zero otherwise. The map $\coev_{V_g}$ is defined as follows. First, choose a basis $\{v_i\}_{i\in I}$ for $V_g$. This gives a dual basis $\{\varphi_i\}_{i\in I}$ for $\left(V_g\right)^*$, defined by
+
+$$\varphi_i(v_j)=
+\begin{cases}
+1 & i=j\\
+0 & \text{otherwise.}
+\end{cases}$$
+
+We define $\coev_{V_g}(x)=x\cdot \sum_{i\in I}\varphi_i\otimes v_i$. This map is well defined and independent of choice of basis.
+\end{enumerate}
+
+These structures give a well-defiend fusion category.
+\end{proposition}
+\begin{proof}. [WORK: do proof]
+\end{proof}
+
+\begin{proposition} Let $G$ be a finite abelian group. Define the structures for a braided fusion category as follows:
+
+\begin{enumerate}
+\item (Underlying fusion category) $\Vecc_G$.
+\item (Braiding) Given $V,W\in \Vecc_G$, we define $\beta$ on the $g$-component by
+
+$$\left(V\otimes W\right)_g = \bigoplus_{hk=g}V_h\otimes W_k \xrightarrow{} \bigoplus_{kh=g}W_k\otimes V_h=\left(W\otimes V\right)_g$$
+
+where $g\in G$, and $h,k$ run over elements of $G$.
+\end{enumerate}
+
+These structures give a well-defined braided monoidal category.
+\end{proposition}
+\begin{proof}. [WORK: do proof]
+\end{proof}
+
+
+To motivate the Drinfeld center, we recall the usual center of a monoid. Namely, given a monoid $G$ then its center $\Zcal(G)$ is defined as
+
+$$\Zcal(G)=\{g\in G \st gh=hg\,\,\forall\,\, h\in G\},$$
+
+the monoid of elements that commute with all other elements. When defining the center of an MTC, we find ourself having a subtle issue. Commutivity in the context of monoids is replaced by braiding in the context of categories. While commutivity of monoids is a property - do the elements commute or not - braiding of categories is a structure. One needs to choose a choice of braiding, of which there can be many. The center $\Zcal(\Ccat)$ of an MTC $\Ccat$ thus consists of elements $A\in \Ccat$, along with choices of natural isomorphism between the functors $A\otimes \--$ and $\-- \otimes A$. That is, elements of $\Ccat$ that commute under $\otimes$ with every other element of $\Ccat$, and a functorial choice of how that commuting should be done.
+
+\begin{proposition} The Drinfeld center of a monoidal category $\Ccat$ is a braided monoidal category defined as follows:
 
 \begin{itemize}
-\item \textbf{objects:} Pairs $(A,\Phi)$, where $A\in \Ccat$, and $\Phi$ is a natural isomorphism of monoidal natural isomorphism between the two functors $A\otimes \--$ and $\--\otimes A$ from $\Ccat$ to $\Ccat$, satisfying the additional condition that
+\item \textbf{objects:} Pairs $(A,\upbeta_{A,\--})$, where $A\in \Ccat$, and $\upbeta_{A,\--}$ is a natural isomorphism of monoidal natural isomorphism between the two functors $A\otimes \--$ and $\--\otimes A$ from $\Ccat$ to $\Ccat$, satisfying the additional condition that
 
-$$\Phi_{B\otimes C}=\left(\text{id}_{B}\otimes \Phi_{C}\right)\circ \left(\Phi_{B}\otimes \text{id}_C\right).$$
+$$\upbeta_{A,B\otimes C}=\left(\id_{B}\otimes \upbeta_{A,C}\right)\circ \left(\upbeta_{A,B}\otimes \id_C\right).$$
 
-\item \textbf{morphisms:} Given $(A,\Phi), (B,\Psi)\in \Zcal(\Ccat)$, $\Hom_{\Zcal(\Ccat)}((A,\Phi),(B,\Psi))$ is the subspace of morphisms $f\in \Hom_{\Ccat}(A,B)$ such that for all $C\in \Ccat$,
+\item \textbf{morphisms:} Given $(A,\upbeta_{A,\--}), (B,\upbeta_{B,\--})\in \Zcal(\Ccat)$, $\Hom_{\Zcal(\Ccat)}((A,\upbeta_{A,\--}),(B,\upbeta_{B,\--}))$ is the subspace of morphisms $f\in \Hom_{\Ccat}(A,B)$ such that for all $C\in \Ccat$,
 
-$$\left(\text{id}_{C}\otimes f\right)\circ \Phi_{C}=\Psi_{C}\circ (f\otimes \text{id}_C).$$
+$$\left(\id_{C}\otimes f\right)\circ \upbeta_{A,C}=\upbeta_{B,C}\circ (f\otimes \id_C).$$
 
-\item \textbf{tensor product:} Given $(A,\Phi), (B,\Psi)\in \Zcal(\Ccat)$, we define
+\item \textbf{tensor product:} Given $(A,\upbeta_{A,\--}), (B,\upbeta_{B,\--})\in \Zcal(\Ccat)$, we define
 
-$$(A,\Phi)\otimes (B,\Psi)=\left(A\otimes B, (\Phi\otimes \text{id}_{\Ccat})\circ (\text{id}_{\Ccat}\otimes \Psi) \right).$$
+$$(A,\upbeta_{A,\--})\otimes (B,\upbeta_{B,\--})=\left(A\otimes B, (\upbeta_{A,\--}\otimes \id_{\Ccat})\circ (\id_{\Ccat}\otimes \upbeta_{B,\--}) \right).$$
 
 \item \textbf{unit: } The element $(1,\rho\circ \lambda)$
 
-\item \textbf{braiding: } [WORK: write out braiding correctly]
+\item \textbf{braiding: } We define the braiding between two elements $(A,\beta_{A,\--}), (B,\beta_{B,\--})\in \Zcal(\Ccat)$ to be $\beta_{A,B}=\upbeta_{A,B}$.
 \end{itemize}
 
 Along with natural choices of associativity and unitors, this gives $\Zcal(\Ccat)$ the structure of a braided monoidal category.
-\end{proposition-definition}
+\end{proposition}
 \begin{proof}. [WORK: do the proof]
 \end{proof}
 
-When we input a fusion category to this construction, we get a fusion category out. Moreover, the following condition is neccecary and sufficient to obtain a modular tensor category from this construction:
+\begin{proposition} Let $\Ccat$ be a fusion category. Define the following data for a fusion category:
 
-\begin{definition}[Spherical fusion category]. [WORK: fill out definition]
-\end{definition}
+\begin{enumerate}
+\item (Underlying $\CC$-linear abelian monoidal category) $\Zcal(\Ccat)$, with vector space structure on hom-spaces inherited from $\Ccat$.
 
-\begin{proposition} If $\Ccat$ is a spherical fusion category, then $\Zcal(\Ccat)$ naturally has the structure of a modular tensor category. [WORK: are some of the structures non-trivial? Should I define them?]
+\item (Duals) Given $(A,\beta_{A,\--})\in \Zcal(\Ccat)$, we define the dual to be $(A^*,\beta_{A^*,\--})$, where $\beta_{A^*,\--}$ is the composition
+
+\[\begin{tikzcd}
+	{A^*\otimes \--} & {A^*\otimes \-- \otimes A^*\otimes A} & {A^*\otimes A\otimes \-- \otimes A^*} & {\--\otimes A^*}.
+	\arrow["{\coev_{A}}", from=1-1, to=1-2]
+	\arrow["{\beta_{A,\--}}", from=1-2, to=1-3]
+	\arrow["{\ev_A}", from=1-3, to=1-4]
+\end{tikzcd}\]
+\end{enumerate}
+
+Along with natural evaluation and co-evaluation maps, this gives $\Zcal(\Ccat)$ the structure of a braided fusion category.
 \end{proposition}
-\begin{proof}. [WORK: make proof. Call on some outside references if neccecary]
+\begin{proof}. [WORK: do the proof]
 \end{proof}
 
-Thus, we have arrived at the MTC associated with the toric code: $\Zcal(\Rep_{\ZZ_2})$: The Drinfeld center of of the category of representations of $\ZZ_2$. This is in some sense the simplest MTC. Namely, the simplest MTCs are those which come from spherical fusion categories,  as $\Zcal(\Ccat)$ for some $\Ccat$. The simplest fusion categories are those which come from groups, as $\Rep_G$ for some $G$. The simplest non-trivial group is $\ZZ_2$.
+We now show that these Drinfeld centers are MTCs. In general, not every fusion category's center will be an MTC. The categories whose centers are naturally MTCs are known as \textit{spherical categories}. The slogan for spherical categories is that they are the minimal situation in which the categocial trace (as in Proposition \ref{trace}) is well defined and has desriable properties.
 
-Another intuition for $\Zcal(\Ccat)$ is that it is a sort of ``quantum double" [WORK: what is the intuition for quantum doubles? There should be good insight in the following thesis: \cite{felice2017hopf}]
+\begin{proposition} Let $G$ be a finite group. Define the following data for an MTC:
+
+\begin{enumerate}
+\item (Underlying braided fusion category) $\Zcal(\Vecc_G)$.
+\item (Twist) Given $(V,\upbeta_{V,\--})\in \Ccat$, we define the twist $\theta_{(V,\upbeta_{V,\--})}$ by the composition
+
+$$V\xrightarrow{\coev_{V^*}} V\otimes V^*\otimes V^{**}\xrightarrow{\upbeta_{V,V^*}} V^*\otimes V \otimes V^{**}\xrightarrow{\ev_{V}} V^{**}\to V.$$
+
+The last arrow $V^{**}\to V$ is the double dual map of linear algebra.
+\end{enumerate}
+
+This gives $\Zcal(\Vecc_G)$ the structure of an MTC.
+\end{proposition}
+\begin{proof}. [WORK: do proof]
+\end{proof}
+
+We observe the key use of the vector space double-dual map for our definition. This is no coincidence. Spherical categories - those categories whose Drinfeld centers are MTCs - are required to have natural isomorphisms between the double dual functor $(\--)^{**}$ and the identity. It is a fascinating feature of the theory that this is not always a-priori the case. What is the following:
+
+\begin{theorem}[\cite{etingof2005fusion}] Let $\Ccat$ be a fusion category. There is a natural monoidal equivilance between the identity functor on $\Ccat$ and the quadruple dual functor $(\--)^{****}$.
+\end{theorem}
+
+It is a deep conjecture that two duals should always suffice. This would lead to a larger number of spherical categories, and hence a larger number of MTCs:
+
+\begin{conjecture}[Etingof, Nikshych, and Ostrik] In every fusion category, there is a natural monoidal equivilance between the identity functor and the double dual functor $(\--)^{**}$.
+\end{conjecture}
+
+While these questions are of much interest to the general community, they are not extremely relevant to topological quantum computing. This is because all of our fusion categories will have hom-spaces coming from quantum systems, and hence will not just be vector spaces, but Hilbert spaces. This condition is called \textit{unitarity}. All unitary fusion categories naturally have isomorphisms $(\--)\to (\--)^{**}$, and thus admit spherical structures. This is discussed in detail in Appendix \ref{Unitarity}.
+
+Thus, we have arrived at the MTC associated with the toric code: $\Zcal(\Vecc_{\ZZ_2})$, The Drinfeld center of of the category of $\ZZ_2$-graded vector spaces. This is in some sense the simplest MTC. Namely, the simplest MTCs are those which come from spherical fusion categories,  as $\Zcal(\Ccat)$ for some $\Ccat$. The simplest fusion categories are those which come from groups, as $\Rep_G$ for some $G$. The simplest non-trivial group is $\ZZ_2$.
+
+Another intuition for $\Zcal(\Ccat)$, alluded to in the introduction of this section, is that it is a sort of ``quantum double" [WORK: what is the intuition for quantum doubles? There should be good insight in the following thesis: \cite{felice2017hopf}]
 
 We now verify that our two definitions of the MTC associated with the toric code are equivilant:
 
-\begin{proposition} .[WORK: show that doing the make-it-a-modular-tensor-fusion-system construction on $\Zcal(\Ccat)$ recovers the previously described data]
+\begin{proposition} Applying the process in Proposition \ref{Make braided system} to $\Zcal(\Vecc_{\ZZ_2})$ recovers the MTC data for the toric code, as detailed at the end of subsection \ref{Anyon model}
 \end{proposition}
+\begin{proof}. [WORK: do proof]
+\end{proof}
 
 [WORK: closing thoughts on MTCs. Maybe mention something about how most of them can be defined relatively easily using a few constructions. In particular, many models are ``weakly-group theoretical". Perhaps talk about Morita equivilance, since we have Drinfeld centers already defiened?]
 
@@ -2296,6 +2337,7 @@ $\newline\newline$
 \item Show that the data associated to the toric code forms a modular tensor fusion system.
 \item .[WORK: Verlinde formula exercise]
 \item .[WORK: kernel(cokernel)=cokernel(kernel) if and only if ``all monomorphisms and epimorphisms normal" exercise]
+\item .[WORK: Show that natural map $\Vecc\mapsto \Zcal(\Vecc)$ is a monoidal equivilance of categories.]
 \end{enumerate}
 
 \section{Topological Quantum Computing}
@@ -2303,6 +2345,8 @@ $\newline\newline$
 
 \subsection{The TQC framework}
 \label{The TQC framework}
+
+[WORK: Need to introduce finiteness condition on dimension of vector spaces, probably in definition of ``fusion category"]
 
 [WORK: The big thing is to draw the picture between topological quantum phases of matter, TQFTs, MTCs, and TQC. Show exactly what this looks like in the case of the toric code, i.e., what the topological quantum phase of matter is, the TQFT, the MTC, and the resulting TQC. Add all the connections and insights that I've come up with along this journey, and things I would feel remiss not including. Really, this should be a version of an introduction-to-TQC-for-experts section. Should definitely mention that TQFTs are generally $1$-extended with punctures, to visualize anyons. Should mention that literally making torus bigger will make error rate smaller, since it's harder for things to accidentally interact with each other (exponential decrease). Maybe another thing to add is how the 1st priority is to minimize energy, and the 2nd order is to maximize entanglement.]
 
@@ -2385,6 +2429,14 @@ The canonical reference for this subject (known as \textit{Algebraic Topology}) 
 \section{Category Theory}
 \label{Categories}
 [WORK: Make appendix. This is to mension for sure; canonical isomorphism between double duals, non canonical isomorphism between first duals. Not only is this super relevant to rigidity, but Zhenghan said that this was one of Eilenberg-MacLane's key motivations. Find a reference to this fact.]
+
+\section{Unitarity}
+\label{Unitarity}
+[WORK: Make appendix. Define Unitary TQFT and Unitary MTC.]
+
+[WORK: Unitary fusion categories all admit spherical structures? Read MathOverflow ``What do "pivotal" and "spherical" mean for (unitary) fusion categories on the level of the 
+F-symbols?"  and its references, closely]
+
 
 
 \bibliographystyle{alpha}

@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  28 MAR 2023 19:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  26 MAR 2023 15:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**"Toric Codes.tex"
-(./Toric Codes.tex
+**representation-theory.tex
+(./representation-theory.tex
 LaTeX2e <2018-04-01> patch level 2
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
@@ -523,156 +523,44 @@ Package: relsize 2013/03/29 ver 4.1
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup7
 )
-(./tikzit.sty
-(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarybackgrounds.code.tex
-File: tikzlibrarybackgrounds.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.3)
-\pgf@layerbox@background=\box39
-\pgf@layerboxsaved@background=\box40
-)
-(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibraryarrows.code.tex
-File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+\c@theorem=\count142
+\c@lemma=\count143
+\c@corollary=\count144
+\c@conjecture=\count145
+\c@proposition=\count146
+\c@remark=\count147
+\c@experiment=\count148
+\c@proposition-definition=\count149
 
-(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
-code.tex
-File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
-\arrowsize=\dimen173
-))
-(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibraryshapes.code.tex
-File: tikzlibraryshapes.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+(./representation-theory.aux)
+\openout1 = `representation-theory.aux'.
 
-(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibraryshapes.geometric.code.tex
-File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
-)
-
-(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
-shapes.geometric.code.tex
-File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
-
-))
-(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibraryshapes.misc.code.tex
-File: tikzlibraryshapes.misc.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
-
-(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
-shapes.misc.code.tex
-File: pgflibraryshapes.misc.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.5)
-))
-(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibraryshapes.symbols.code.tex
-File: tikzlibraryshapes.symbols.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
-
-(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
-shapes.symbols.code.tex
-File: pgflibraryshapes.symbols.code.tex 2013/09/11 v3.0.1a (rcs-revision 1.6)
-))
-(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibraryshapes.arrows.code.tex
-File: tikzlibraryshapes.arrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
-
-(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
-shapes.arrows.code.tex
-File: pgflibraryshapes.arrows.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
-))
-(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibraryshapes.callouts.code.tex
-(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
-shapes.callouts.code.tex))
-(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibraryshapes.multipart.code.tex
-File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
-)
-
-(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
-shapes.multipart.code.tex
-File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
-
-\pgfnodepartlowerbox=\box41
-\pgfnodeparttwobox=\box42
-\pgfnodepartthreebox=\box43
-\pgfnodepartfourbox=\box44
-\pgfnodeparttwentybox=\box45
-\pgfnodepartnineteenbox=\box46
-\pgfnodeparteighteenbox=\box47
-\pgfnodepartseventeenbox=\box48
-\pgfnodepartsixteenbox=\box49
-\pgfnodepartfifteenbox=\box50
-\pgfnodepartfourteenbox=\box51
-\pgfnodepartthirteenbox=\box52
-\pgfnodeparttwelvebox=\box53
-\pgfnodepartelevenbox=\box54
-\pgfnodeparttenbox=\box55
-\pgfnodepartninebox=\box56
-\pgfnodeparteightbox=\box57
-\pgfnodepartsevenbox=\box58
-\pgfnodepartsixbox=\box59
-\pgfnodepartfivebox=\box60
-)))
-\pgf@layerbox@edgelayer=\box61
-\pgf@layerboxsaved@edgelayer=\box62
-\pgf@layerbox@nodelayer=\box63
-\pgf@layerboxsaved@nodelayer=\box64
-)
-(/usr/local/texlive/2018/texmf-dist/tex/latex/was/upgreek.sty
-Package: upgreek 2003/02/12 v2.0 (WaS)
-Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
-\symugrf@m=\mathgroup8
-LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
-(Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
-)
-(/usr/local/texlive/2018/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box65
-\UL@hyphenbox=\box66
-\UL@skip=\skip55
-\UL@hook=\toks42
-\UL@height=\dimen174
-\UL@pe=\count142
-\UL@pixel=\dimen175
-\ULC@box=\box67
-Package: ulem 2012/05/18
-\ULdepth=\dimen176
-)
-\c@theorem=\count143
-\c@lemma=\count144
-\c@corollary=\count145
-\c@conjecture=\count146
-\c@proposition=\count147
-\c@remark=\count148
-\c@experiment=\count149
-\c@proposition-definition=\count150
-
-(./Toric Codes.aux)
-\openout1 = `"Toric Codes.aux"'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
 
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count151
-\scratchdimen=\dimen177
-\scratchbox=\box68
-\nofMPsegments=\count152
-\nofMParguments=\count153
-\everyMPshowfont=\toks43
-\MPscratchCnt=\count154
-\MPscratchDim=\dimen178
-\MPnumerator=\count155
-\makeMPintoPDFobject=\count156
-\everyMPtoPDFconversion=\toks44
+\scratchcounter=\count150
+\scratchdimen=\dimen173
+\scratchbox=\box39
+\nofMPsegments=\count151
+\nofMParguments=\count152
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count153
+\MPscratchDim=\dimen174
+\MPnumerator=\count154
+\makeMPintoPDFobject=\count155
+\everyMPtoPDFconversion=\toks43
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -730,341 +618,86 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 50.
+LaTeX Font Info:    Try loading font information for U+msa on input line 45.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 50.
+LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 50.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 45.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 50.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 45.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) [1
-
-{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./Tori
-c Codes.toc)
-\tf@toc=\write4
-\openout4 = `"Toric Codes.toc"'.
-
-[2]
-Overfull \hbox (6.30615pt too wide) in paragraph at lines 107--108
-\OT1/cmr/m/n/10 Quantum com-put-ing has seen mas-sive ad-vances over the last 3
-0 years | prompted
- []
-
-[3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 131.
-
- (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 131.
-
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 139.
+d on input line 87.
 
-[4]
-Overfull \hbox (4.41742pt too wide) in paragraph at lines 161--162
-\OT1/cmr/m/n/10 duct-ing quan-tum com-put-ers [[]], trapped ion quan-tum com-pu
-t-ers [[]],
+
+Overfull \hbox (43.00612pt too wide) detected at line 92
+[][] \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 :
  []
 
-[5]
-<./images/rope-deformations.png, id=38, 1146.2825pt x 469.25313pt>
-File: ./images/rope-deformations.png Graphic file (type png)
-<use ./images/rope-deformations.png>
-Package pdftex.def Info: ./images/rope-deformations.png  used on input line 173
-.
-(pdftex.def)             Requested size: 286.56992pt x 117.31299pt.
- [6 <./images/rope-deformations.png>]
-<./images/quipu.jpg, id=44, 115.8729pt x 121.1727pt>
-File: ./images/quipu.jpg Graphic file (type jpg)
-<use ./images/quipu.jpg>
-Package pdftex.def Info: ./images/quipu.jpg  used on input line 185.
-(pdftex.def)             Requested size: 98.49242pt x 102.99727pt.
-<./images/braiding.png, id=45, 455.7025pt x 506.39188pt>
-File: ./images/braiding.png Graphic file (type png)
-<use ./images/braiding.png>
-Package pdftex.def Info: ./images/braiding.png  used on input line 195.
-(pdftex.def)             Requested size: 113.92534pt x 126.59766pt.
- [7 <./images/quipu.jpg> <./images/braiding.png>]
-<./images/spin-liquid.png, id=52, 1050.92625pt x 254.9525pt>
-File: ./images/spin-liquid.png Graphic file (type png)
-<use ./images/spin-liquid.png>
-Package pdftex.def Info: ./images/spin-liquid.png  used on input line 207.
-(pdftex.def)             Requested size: 315.2803pt x 76.48633pt.
- [8 <./images/spin-liquid.png>]
-<./images/Hairy-Ball-Diagram.png, id=57, 855.195pt x 436.12938pt>
-File: ./images/Hairy-Ball-Diagram.png Graphic file (type png)
-<use ./images/Hairy-Ball-Diagram.png>
-Package pdftex.def Info: ./images/Hairy-Ball-Diagram.png  used on input line 22
-1.
-(pdftex.def)             Requested size: 171.03596pt x 87.22432pt.
- [9 <./images/Hairy-Ball-Diagram.png>] [10] [11] [12]
-Overfull \hbox (6.3804pt too wide) detected at line 326
-\OML/cmm/m/it/10 H [] \OT1/cmr/m/n/10 = [] [] + [] [] = [] \OML/cmm/m/it/10 :
- []
+[1
 
-[13]
-Overfull \hbox (13.61343pt too wide) in paragraph at lines 359--360
-[]\OT1/cmr/m/n/10 Extending with this for-mula, we find that $\OML/cmm/m/it/10 
-U$ \OT1/cmr/m/n/10 pre-serv-ing norm im-plies $[] =
- []
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 136.
 
-[14] [15] [16] [17] [18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 560--561
 
- []
-
-[20]
-<./images/torus.png, id=101, 1089.06876pt x 478.28688pt>
-File: ./images/torus.png Graphic file (type png)
-<use ./images/torus.png>
-Package pdftex.def Info: ./images/torus.png  used on input line 588.
-(pdftex.def)             Requested size: 272.26653pt x 119.57143pt.
- [21 <./images/torus.png>] [22]
-
-Package amsmath Warning: Foreign command \atopwithdelims;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 669.
-
-[23] [24]
-<./images/homology-classes.png, id=117, 752.31062pt x 323.70938pt>
-File: ./images/homology-classes.png Graphic file (type png)
-<use ./images/homology-classes.png>
-Package pdftex.def Info: ./images/homology-classes.png  used on input line 722.
-
-(pdftex.def)             Requested size: 263.31265pt x 113.29997pt.
- [25 <./images/homology-classes.png>] [26] [27]
-<./images/not-alpha-gate.png, id=129, 705.63625pt x 277.53688pt>
-File: ./images/not-alpha-gate.png Graphic file (type png)
-<use ./images/not-alpha-gate.png>
-Package pdftex.def Info: ./images/not-alpha-gate.png  used on input line 783.
-(pdftex.def)             Requested size: 317.53337pt x 124.89043pt.
- [28 <./images/not-alpha-gate.png>]
-<./images/dual-celluation.png, id=134, 379.4175pt x 381.425pt>
-File: ./images/dual-celluation.png Graphic file (type png)
-<use ./images/dual-celluation.png>
-Package pdftex.def Info: ./images/dual-celluation.png  used on input line 813.
-(pdftex.def)             Requested size: 113.82613pt x 114.42838pt.
- [29 <./images/dual-celluation.png>] [30]
-Overfull \hbox (25.00888pt too wide) in paragraph at lines 849--850
-[]\OT1/cmr/m/n/10 Hence, we now have a full set of gen-er-a-tors for our gate g
-roup: $\OMS/cmsy/m/n/10 f^^F\OML/cmm/m/it/10 I; [][]; \OT1/cmr/m/n/10 (\OMS/cms
-y/m/n/10 ^^@\OT1/cmr/m/n/10 1)[]\OMS/cmsy/m/n/10 g$\OT1/cmr/m/n/10 ,
- []
-
-[31]
-Underfull \hbox (badness 10000) in paragraph at lines 869--870
-
- []
-
-[32] [33]
-<./images/genus-two.jpeg, id=158, 215.80624pt x 235.88126pt>
-File: ./images/genus-two.jpeg Graphic file (type jpg)
-<use ./images/genus-two.jpeg>
-Package pdftex.def Info: ./images/genus-two.jpeg  used on input line 944.
-(pdftex.def)             Requested size: 53.95142pt x 58.97017pt.
-<./images/klein-bottle.png, id=159, 351.3125pt x 262.9825pt>
-File: ./images/klein-bottle.png Graphic file (type png)
-<use ./images/klein-bottle.png>
-Package pdftex.def Info: ./images/klein-bottle.png  used on input line 965.
-(pdftex.def)             Requested size: 87.8279pt x 65.74545pt.
- [34 <./images/genus-two.jpeg>] [35 <./images/klein-bottle.png>]
-<./images/cobordism.png, id=166, 588.1975pt x 273.02pt>
-File: ./images/cobordism.png Graphic file (type png)
-<use ./images/cobordism.png>
-Package pdftex.def Info: ./images/cobordism.png  used on input line 1013.
-(pdftex.def)             Requested size: 235.27483pt x 109.20605pt.
-
-[36 <./images/cobordism.png>] [37]
-<./images/all-moves.png, id=175, 1209.51875pt x 750.805pt>
-File: ./images/all-moves.png Graphic file (type png)
-<use ./images/all-moves.png>
-Package pdftex.def Info: ./images/all-moves.png  used on input line 1059.
-(pdftex.def)             Requested size: 241.89946pt x 150.15834pt.
- [38] [39 <./images/all-moves.png>]
-Overfull \hbox (5.54213pt too wide) in paragraph at lines 1098--1099
-\OT1/cmr/m/n/10 spond-ing vec-tor in $\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 (\OML/c
-mm/m/it/10 S\OT1/cmr/m/n/10 )$, $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 Z[]\OT1/cmr
-/m/n/10 (\OML/cmm/m/it/10 S\OT1/cmr/m/n/10 ; \U/msb/m/n/10 Z[]\OT1/cmr/m/n/10 )
-\OMS/cmsy/m/n/10 j$ \OT1/cmr/m/n/10 de-notes the num-ber of el-e-ments in $\OML
-/cmm/m/it/10 Z[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S\OT1/cmr/m/n/10 ; \U/msb/m/n
-/10 Z[]\OT1/cmr/m/n/10 )$,
- []
-
-[40] [41] [42]
-<./images/cohomologous.png, id=193, 832.10875pt x 300.12125pt>
-File: ./images/cohomologous.png Graphic file (type png)
-<use ./images/cohomologous.png>
-Package pdftex.def Info: ./images/cohomologous.png  used on input line 1166.
-(pdftex.def)             Requested size: 249.63455pt x 90.03706pt.
- [43 <./images/cohomologous.png>] [44]
-Overfull \hbox (13.9935pt too wide) in paragraph at lines 1212--1213
-[]\OT1/cmr/m/n/10 The bor-dism $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 has the ef-
-fect of swap-ping $\OML/cmm/m/it/10 S[]$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 
-S[]$\OT1/cmr/m/n/10 , hence sends $\OML/cmm/m/it/10 H[]\OT1/cmr/m/n/10 (\OML/cm
-m/m/it/10 S[]\OT1/cmr/m/n/10 ; \U/msb/m/n/10 Z[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n
-/10 ^^B
- []
-
-[45]
-Underfull \hbox (badness 10000) in paragraph at lines 1227--1228
-
- []
-
-[46]
-<./images/Y-type.png, id=208, 394.47375pt x 389.455pt>
-File: ./images/Y-type.png Graphic file (type png)
-<use ./images/Y-type.png>
-Package pdftex.def Info: ./images/Y-type.png  used on input line 1273.
-(pdftex.def)             Requested size: 118.34303pt x 116.83739pt.
- [47] [48 <./images/Y-type.png>] [49]
-<./images/graphical-language.png, id=222, 1130.2225pt x 760.8425pt>
-File: ./images/graphical-language.png Graphic file (type png)
-<use ./images/graphical-language.png>
-Package pdftex.def Info: ./images/graphical-language.png  used on input line 13
-60.
-(pdftex.def)             Requested size: 226.0405pt x 152.1658pt.
- (./figures/simple-cotriangle.tikz)
-[50 <./images/graphical-language.png>] (./figures/6j-tree.tikz) [51]
-<./images/pentagon.png, id=231, 507.8975pt x 478.78876pt>
-File: ./images/pentagon.png Graphic file (type png)
-<use ./images/pentagon.png>
-Package pdftex.def Info: ./images/pentagon.png  used on input line 1424.
-(pdftex.def)             Requested size: 142.21033pt x 134.05994pt.
- [52]
-[53 <./images/pentagon.png>] [54] [55] [56]
-Overfull \hbox (9.9589pt too wide) detected at line 1613
-[]
- []
-
-[57]
-Overfull \hbox (11.37311pt too wide) detected at line 1660
-[]
- []
-
-[58]
-Overfull \hbox (0.40796pt too wide) in paragraph at lines 1691--1692
-[]\OT1/cmr/m/n/10 We now de-fine fu-sion cat-e-gories. One key dif-fi-culty is 
-de-cid-ing what category-
- []
-
-[59] [60]
-Overfull \hbox (8.96042pt too wide) in paragraph at lines 1768--1769
-\OT1/cmr/m/n/10 gories $\U/rsfs/m/n/10 C\OML/cmm/m/it/10 ; \U/rsfs/m/n/10 D$ \O
-T1/cmr/m/n/10 is a func-tor $\OML/cmm/m/it/10 F \OT1/cmr/m/n/10 : \U/rsfs/m/n/1
-0 C \OMS/cmsy/m/n/10 ! \U/rsfs/m/n/10 D$ \OT1/cmr/m/n/10 such that $\OML/cmm/m/
-it/10 F \OT1/cmr/m/n/10 : [](\OML/cmm/m/it/10 A; B\OT1/cmr/m/n/10 ) \OMS/cmsy/m
-/n/10 ! []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
-A\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B\OT1/c
-mr/m/n/10 ))$
- []
-
-[61] [62] [63] (./figures/cotriangle-reprise.tikz) (./figures/first-basis.tikz)
-(./figures/second-basis.tikz) [64] [65] [66] [67] [68] [69]
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2108.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 136.
+ [2]
+No file representation-theory.bbl.
+[3] (./representation-theory.aux)
 
- [70] [71]
-Overfull \hbox (13.3451pt too wide) detected at line 2162
-[]
- []
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-[72] [73]
-Overfull \hbox (38.02985pt too wide) in paragraph at lines 2247--2248
-[]\OT1/cmr/bx/it/10 morphisms: \OT1/cmr/m/it/10 Given $\OT1/cmr/m/n/10 (\OML/cm
-m/m/it/10 A; \U/eur/m/n/10 ^^L[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/
-n/10 (\OML/cmm/m/it/10 B; \U/eur/m/n/10 ^^L[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10
- 2 Z\OT1/cmr/m/n/10 (\U/rsfs/m/n/10 C\OT1/cmr/m/n/10 )$\OT1/cmr/m/it/10 , $[][]
-\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 A; \U/eur/m/n/10 ^^L[]\OT1/cmr/m/n/10 )\OML/
-cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; \U/eur/m/n/10 ^^L[]\OT1/cmr/
-m/n/10 ))$
- []
-
-
-Overfull \hbox (20.32211pt too wide) in paragraph at lines 2257--2258
-[]\OT1/cmr/bx/it/10 braiding:  \OT1/cmr/m/it/10 We de-fine the braid-ing be-twe
-en two el-e-ments $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A; ^^L[]\OT1/cmr/m/n/10 )\
-OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; ^^L[]\OT1/cmr/m/n/10 ) \
-OMS/cmsy/m/n/10 2
- []
-
-
-Overfull \hbox (7.29327pt too wide) detected at line 2277
-[]
- []
-
-[74] [75]
-Underfull \hbox (badness 10000) in paragraph at lines 2330--2331
-
- []
-
-[76] [77] [78] [79] (./Toric Codes.bbl [80] [81] [82]
-Underfull \hbox (badness 1360) in paragraph at lines 245--250
-[]\OT1/cmr/m/n/10 Fangyuan Yang, Alexan-der A Zi-brov, Rui-heng Bai, Takashi
- []
-
-) [83] (./Toric Codes.aux) ) 
+ ) 
 Here is how much of TeX's memory you used:
- 18499 strings out of 492649
- 395955 string characters out of 6129622
- 453476 words of memory out of 5000000
- 21948 multiletter control sequences out of 15000+600000
- 23574 words of font info for 93 fonts, out of 8000000 for 9000
+ 14755 strings out of 492649
+ 297801 string characters out of 6129622
+ 338845 words of memory out of 5000000
+ 18318 multiletter control sequences out of 15000+600000
+ 14737 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,20n,84p,1328b,1111s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2018/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmbx9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmbxti10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/am
-sfonts/cmextra/cmex7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.
-pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
-></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></
-usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr
-/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
-local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/lo
-cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/loca
-l/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/
-texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/te
-xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/tex
-live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texl
-ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texliv
-e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/
-2018/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/local/texliv
-e/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/local/texli
-ve/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/t
-exlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/loc
-al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/
-local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/te
-xlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs5.pfb></usr/local/texlive/201
-8/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb>
-Output written on "Toric Codes.pdf" (83 pages, 3760498 bytes).
+ 61i,16n,84p,690b,1044s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><
+/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
+usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr
+/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/l
+ocal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
+al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
+/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/t
+exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/tex
+live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texliv
+e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2
+018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2018/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2018/texmf-dist/
+fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/texmf-d
+ist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2018/texmf-dist/font
+s/type1/public/rsfs/rsfs7.pfb>
+Output written on representation-theory.pdf (3 pages, 215069 bytes).
 PDF statistics:
- 456 PDF objects out of 1000 (max. 8388607)
- 300 compressed objects within 3 object streams
+ 109 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

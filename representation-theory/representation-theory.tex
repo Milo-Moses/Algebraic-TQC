@@ -1,0 +1,207 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{enumerate}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{blindtext}
+\usepackage{graphicx}
+\usepackage[numbers]{natbib}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{stmaryrd}
+\usepackage{tikz-cd}
+\usepackage{relsize}
+\usepackage{mathrsfs}
+
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{proposition}{Proposition}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem{remark}{Remark}[section]
+\newtheorem{experiment}{Experiment}[section]
+\newtheorem{proposition-definition}{Proposition-Definition}[section]
+
+\numberwithin{figure}{section}
+
+
+
+\title{Representation Theory}
+\author{by Milo Moses}
+
+\date{\textit{University of California, Santa Barbara} \\ [2ex] \today}
+
+
+\begin{document}
+
+
+\maketitle
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\Zcal}{\mathcal{Z}}
+\newcommand{\Ncal}{\mathcal{N}}
+\newcommand{\LL}{\mathscr{L}}
+\newcommand{\TT}{\mathcal{T}}
+\newcommand{\Ccat}{\mathscr{C}}
+\newcommand{\Dcat}{\mathscr{D}}
+\newcommand{\st}{\,\,\mathrm{s.t}\,\,}
+\newcommand{\mm}{\mathfrak{m}}
+\newcommand{\pp}{\mathfrak{p}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\Frac}{\mathrm{Frac}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\res}{\mathrm{res}}
+\newcommand{\im}{\mathrm{im}}
+\newcommand{\coker}{\mathrm{coker}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\Rep}{\bold{Rep}}
+\newcommand{\Set}{\bold{Set}}
+\newcommand{\Vecc}{\bold{Vec}}
+\newcommand{\0}{\left|0\right>}
+\newcommand{\1}{\left|1\right>}
+\newcommand{\nullclass}{\left|\bold{0}\right>}
+\newcommand{\alphaclass}{\left|\alpha\right>}
+\newcommand{\betaclass}{\left|\beta\right>}
+\newcommand{\alphabetaclass}{\left|\alpha\beta\right>}
+\newcommand{\ppsi}{\left|\psi\right>}
+\newcommand{\bigleadsto}{\mathlarger{\mathlarger{\mathlarger{\leadsto}}}}
+\newcommand{\vin}{\rotatebox[origin=c]{-90}{$\in$}}
+
+One of the only truly ``solved" fields of mathematics is linear algebra. Represenation theory can be seen as study of more complicated algebraic objects (groups, rings, algebras) in terms of vector spaces. Namely, instead of looking at an algebraic object we look at all of the ways that it can act on vector spaces. Formally, we define the category of representations of a group $G$ as follows:
+
+$$\Rep_{G}=
+\begin{pmatrix}
+\bold{objects:  }(V,\rho),\,\, V/\CC\text{ a vector space and }\rho:G\to \Aut(V)\text{ a homomorphism}\\
+\bold{morphisms:} \text{ linear maps of vector spaces which respect the }G\text{-action}
+\end{pmatrix}.
+$$
+
+As usual, $\Aut(V)$ denotes the group of automorphisms of $V$. Given two representations $(V_0,\rho_0)$ and $(V_0,\rho_1)$, a linear map $f:V_0\to V_1$ is said to respect the $G$-action if the diagram
+
+\[\begin{tikzcd}
+	{V_0} & {V_1} \\
+	{V_0} & {V_1}
+	\arrow["f", from=1-1, to=1-2]
+	\arrow["f", from=2-1, to=2-2]
+	\arrow["{\rho_0(g)}"{description}, from=1-1, to=2-1]
+	\arrow["{\rho_1(g)}"{description}, from=1-2, to=2-2]
+\end{tikzcd}\]
+
+commutes for all $g\in G$. A map which respects the $G$-action is also called $G$-linear. Observe that representation can be seen as part of the Yoneda perspective: It is better to study an object indirectly by its relation with other objects than it is to study that object in itself. The first big property about the category of representations is that it is abelian:
+
+\begin{proposition}\label{abelian represenations} Given representations $(V_0,\rho_0)$ and $(V_1,\rho_1)$, the space of $G$-linear morphisms $f:V_0\to V_1$ is a subset of the vector space of all linear morphisms, $\Hom_{\Vecc}(V_0,V_1)$. Thus, $\Hom_{\Rep_{G}}((V_0,\rho_0),(V_1,\rho_1))$ can be canonically given the structure of a vector space. This gives $\Rep_{G}$ the structure of a $\CC$-linear abelian category.
+\end{proposition}
+\begin{proof}. [WORK: Do the proof.]
+\end{proof}
+
+One can use Proposition \ref{abelian represenations} to get some intuition. One can define a representation of an associative $\CC$-algebra\footnote{A $\CC$-algebra is a vector space $R$, with multiplication $R\otimes R\to R$ and a unit map $\CC\to R$} $R$ to be a ring homomorphism $R\to \End(V)$, sending $R$ into the algebra of endomorphisms of a vector space $V$. As such, we can construct of a category $\Rep_R$ for every algebra. These categories are abelian as well. Moreover these are in some sense the only abelian categories, as shown in the following theorem:
+
+\begin{theorem}[Mitchell's Embedding Theorem] Let $\mathscr{C}$ be an abelian category. There is some associative algebra $R$ for which there exists a fully faithful exact functor
+
+$$F: \mathscr{C}\hookrightarrow{}\Rep_R.$$
+
+Here, we define an exact functor is one which sends short exact sequences
+
+$$0\to A\xrightarrow{i}B\xrightarrow{q}C\to 0$$
+
+to short exact sequences
+
+$$0\to F(A)\xrightarrow{F(i)}F(B)\xrightarrow{F(q)}F(C)\to 0.$$
+\end{theorem}
+
+We now introduce a few more structures on $\Rep_G$.
+
+\begin{proposition} Given representations $(V_0,\rho_0)$ and $(V_1,\rho_1)$, define their tensor product to be the representation whose underlying vector space is $V_0\otimes V_1$, and whose $G$-action $\rho_0\otimes \rho_1$ is defined by the formula
+
+$$(\rho_0\otimes \rho_1)(g)(v_0\otimes v_1)=\rho_0(g)(v_0)\otimes \rho_1(g)(v_1).$$
+
+This naturally induces a functor $\otimes: \Rep_G\times \Rep_G\to \Rep_G$. Define the following structures on $\Rep_G$:
+
+\begin{itemize}
+\item The unit element $\CC$, whose $G$-action is given by the $0$ map in $G\to \Aut(\CC)$.
+\item The associator $\alpha: V_0\otimes (V_1\otimes V_2)\to (V_0\otimes V_1)\otimes V_2$ sending $v_0\otimes (v_1\otimes v_2)$ to $(v_0\otimes v_1)\otimes v_2$.
+\item The left unitor $\lambda:\CC\otimes V\to V$ sending $x\otimes v$ to $x\cdot v$.
+\item The right unitor $\rho: V\otimes \CC\to V$ sending $v\otimes x$ to $x\cdot v$.
+\end{itemize}
+
+all of these maps extend to functors, and endow $\Rep_G$ with the structure of a monoidal category.
+\end{proposition}
+\begin{proof}. [WORK: make proof]
+\end{proof}
+
+When $G$ is finite, the situation is very nice. In particuar, we have the following theorem:
+
+\begin{theorem}[Maschke's theorem] Let $G$ be a finite group. [WORK: define duals, unit, counit]. This endows $\Rep_G$ with the structure of a fusion category.
+\end{theorem}
+\begin{proof}. [WORK: make proof]
+\end{proof}
+
+We have now introduced enough machinery to answer the following basic question: Does the category of representations of a group (up to the correct notion of equivilance) determine the starting group (up to isomorphism)? The Yoneda perspective gives us an answer in the affermative - studying an object via its interactions with other objects should give you all the information you need to know. It turns out that there is an explicit way of constructing $G$ from $\Rep_G$, though it is more complicated to treat in full generality than Yoneda's lemma. After one definition, we will be able to state this construction and prove its validity in full detail.
+
+\begin{definition}[Monoidal natural transformation] A monoidal natural transformation between two monoidal functors $(F_0,\mu_0,\iota_0), (F_1,\mu_1,\iota_0): (\Ccat,\otimes_{\Ccat},1_{\Ccat})\to(\Dcat,\otimes_{\Dcat},1_{\Dcat})$ is a natural transformation $f:F_0\to F_1$, satisfying the following conditions:
+
+\begin{enumerate}
+\item The diagram
+
+\[\begin{tikzcd}
+	{F_0(A)\otimes F_0(B)} && {F_1(A)\otimes F_1(B)} \\
+	\\
+	{F_0(A\otimes B)} && {F_1(A\otimes B)}
+	\arrow["{f_A\otimes f_B}", from=1-1, to=1-3]
+	\arrow["{f_{A\otimes B}}", from=3-1, to=3-3]
+	\arrow["{\mu_{0;A,B}}"{description}, from=1-1, to=3-1]
+	\arrow["{\mu_{1;A,B}}"{description}, from=1-3, to=3-3]
+\end{tikzcd}\]
+
+commutes for all $A,B\in \Ccat$.
+
+\item The diagram
+
+\[\begin{tikzcd}
+	{1_{\Dcat}} \\
+	{F_0(1_{\Ccat})} & {F_1(1_{\Ccat})}
+	\arrow["{\iota_0}", from=1-1, to=2-1]
+	\arrow["{\iota_1}", from=1-1, to=2-2]
+	\arrow["{f(1)}", from=2-1, to=2-2]
+\end{tikzcd}\]
+
+commutes.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Tannaka duality for finite groups] Let $G$ be a finite group. Let $F:\Rep_G\to \Vecc$ be the forgetful functor, sending a representation $(V,\rho)$ to the underlying vector space $V$. Let $\Aut^\otimes(F)$ denote the group of monoidal natural transformation from $F$ to itself, under composition. There is a natural map
+
+$$G\to \Aut^{\otimes}(F)$$
+
+sending an element $g\in G$ to the automorphism of $F$ acting on $(V,\rho)$ by $\rho(g)$. This is a well defined map, and it induces an isomorphism of groups.
+\end{theorem}
+\begin{proof}. [WORK: make proof]
+\end{proof}
+
+
+\bibliographystyle{alpha}
+\bibliography{ref}
+
+
+\end{document}
+
+
+
+
+
+

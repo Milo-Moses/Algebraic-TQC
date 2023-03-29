@@ -63,6 +63,11 @@ Robbert Dijkgraaf and Edward Witten.
 \newblock Topological gauge theories and group cohomology.
 \newblock {\em Communications in Mathematical Physics}, 129:393--429, 1990.
 
+\bibitem[ENO05]{etingof2005fusion}
+Pavel Etingof, Dmitri Nikshych, and Viktor Ostrik.
+\newblock On fusion categories.
+\newblock {\em Annals of Mathematics}, pages 581--642, 2005.
+
 \bibitem[FKLW03]{freedman2003topological}
 Michael Freedman, Alexei Kitaev, Michael Larsen, and Zhenghan Wang.
 \newblock Topological quantum computation.
