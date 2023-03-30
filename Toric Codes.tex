@@ -80,6 +80,8 @@
 \newcommand{\Rep}{\bold{Rep}}
 \newcommand{\Set}{\bold{Set}}
 \newcommand{\Vecc}{\bold{Vec}}
+\newcommand{\Hilb}{\bold{Hilb}}
+\newcommand{\Bord}{\bold{Bord}}
 \newcommand{\0}{\left|0\right>}
 \newcommand{\1}{\left|1\right>}
 \newcommand{\nullclass}{\left|\bold{0}\right>}
@@ -427,7 +429,7 @@ Formally, we have the following:
 
 \begin{enumerate}
 \item A vector space $V$
-\item (Inner product) A map $\left<\cdot |\cdot \right>:V\times V\to V$
+\item (Inner product) A map $\left<\cdot |\cdot \right>:V\times V\to \CC$
 \end{enumerate}
 
 Additionally, a Hilbert space is required to satisfy the following properties:
@@ -1217,11 +1219,7 @@ Seeing that the $\ZZ_2$ Dijkgraaf-Witten TQFT applied to the torus yields the to
 
 In general, there is no Hamiltonian in TQFTs. The lowest energy states are those which will naturally occur after time passes, namely, those in the image of the ``do nothing" bordism $\tilde{Z}(X)$. It is for this reason that even though ground states are complicated maximally entangled objects (Exercise \ref{The Toric Code}.2) they are easy to make in the lab. All one has to do is make a cold enough system and allow it to relax. As time passes, it will naturally go into a ground state. In some quantum systems, these relaxed states are already interesting enough that it would take a long time to simulate the process on a classical computer. This gives a sort of quantum computer, known as an Adiabatic quantum computation. It is interesting to note that the original definition of the toric code did not include a Hamiltonian, and this was only introduced later to facilitate the study \cite{kitaev1997quantum}. A more general study of TQFTs with Hamiltonians was conducted by Levin-Wen \cite{levin2005string}, but is still not the norm.
 
-In the TQFT language it is hard to see what anyons and quantum computations correspond to. How do I do braiding in a TQFT? How do I see how many particle types there are? The intriguing fact is that this information is present, but hidden. Namely, one has to pass to a \textit{1-extended TQFT} to engage with anyons explicitly. This extension allows us to define $V(S)$ whenever $S$ is a surface with punctures. These punctures correspond to anyons, and moving the punctures around each other corresponds to braiding. Not every TQFT can be 1-extended, but those that can (like the $\ZZ_2$ Dijkgraaf-Witten theory) keep that anyon information in their structure. A more complete introduction to TQC would have defined $1$-extensions, but we omitted the topic for clarity. All of this is in marked contrast to Modular Tensor Categories, where anyons are placed front and center of the theory.
-
-\subsection{1-extended TQFTs}
-
-.[WORK: add section $1$-extension]
+In the TQFT language it is hard to see what anyons and quantum computations correspond to. How do I do braiding in a TQFT? How do I see how many particle types there are? The intriguing fact is that this information is present, but hidden. Namely, one has to pass to a \textit{1-extended TQFT} to engage with anyons explicitly. This extension allows us to define $V(S)$ whenever $S$ is a surface with punctures. These punctures correspond to anyons, and moving the punctures around each other corresponds to braiding. Not every TQFT can be 1-extended, but those that can (like the $\ZZ_2$ Dijkgraaf-Witten theory) keep that anyon information in their structure. A more complete introduction to TQC would have defined $1$-extensions, but we omitted the topic for clarity. Addtionally, the ``correct" definition of $1$-extended TQFT is still debated, so a proper treatment could quickly become outdated. All of this is in marked contrast to Modular Tensor Categories, where anyons are placed front and center of the theory, and the definition is well accepted.
 
 
 $\newline\newline$
@@ -2367,9 +2365,9 @@ where $Y_1$ has the correct induced orientation from $X$ and $Y_0$ has opposite 
 \item (Unit) $\emptyset$
 \end{enumerate}
 
-Along with natural choies of associativity, left/right unit, and braiding, show that this forms a braided monoidal category, $\bold{Bord}(n+1)$.
+Along with natural choies of associativity, left/right unit, and braiding, show that this forms a braided monoidal category, $\Bord(n+1)$.
 
-\item Define an $(n+1)$-TQFT to be a braided monoidal functor $\bold{Bord}(n+1)\to \Vecc$. Show that this definition is equivilant to the definition given in Section \ref{TQFTs} when $n=2$.
+\item Define an $(n+1)$-TQFT to be a braided monoidal functor $\Bord(n+1)\to \Vecc$. Show that this definition is canonically equivilant to the definition given in Section \ref{TQFTs} when $n=2$.
 \end{enumerate}
 
 \item The original list of axioms for a monoidal category was longer. It was later found by Max Kelly \cite{kelly1964maclane} that the smaller set we gave implies the rest. This exercise asks to derive his results.
@@ -2427,11 +2425,11 @@ commute)
 
 \item  Let $\Ccat$ be an MTC, and let $\LL$ be the set of isomorphism classes of simple objects. Then, [WORK: doing what?] the coefficinets of the $S$-matrix of $\Ccat$ can be expressed in terms of the twist, fusion coefficients, and quantum dimensions as follows:
 
-$$s_{A,B}=\frac{1}{\theta_A \theta_B}\sum_{C\in \LL}N^{A^*,B}_{C}d_{C}\theta_{C}.$$
+$$s_{a,b}=\frac{1}{\theta_a \theta_b}\sum_{C\in \LL}N^{a^*,b}_{c}d_{c}\theta_{c}.$$
 
 By [WORK: doing what?], one arrives the the \textit{Verlinde formula} for MTCs:
 
-$$N^{A,B}_{C}=\sum_{D\in \LL} \frac{s_{A,D} s_{B,D}s_{C^*,D}}{\dim{\Ccat}\cdot d_D}$$
+$$N^{a,b}_{c}=\sum_{D\in \LL} \frac{s_{a,d} s_{b,d}s_{c^*,d}}{\dim{\Ccat}\cdot d_d}$$
 
 \item Let $\Ccat$ be a category satisfying all of the axioms of a $\CC$-linear abelian category, except that monomorphisms and epimorphims are not neccecarily normal. Let $f:A\to B$ be a morphism. [WORK: state this properly. The notion of isomorphism must be restricted.]
 
@@ -2460,6 +2458,8 @@ where $\beta_{\--,\--}$ is the natural braiding on the fusion category of vector
 
 \subsection{The TQC framework}
 \label{The TQC framework}
+
+[WORK: Change particle types from $A,B,C$ to $X,Y,Z$.]
 
 [WORK: The big thing is to draw the picture between topological quantum phases of matter, TQFTs, MTCs, and TQC. Show exactly what this looks like in the case of the toric code, i.e., what the topological quantum phase of matter is, the TQFT, the MTC, and the resulting TQC. Add all the connections and insights that I've come up with along this journey, and things I would feel remiss not including. Really, this should be a version of an introduction-to-TQC-for-experts section. Should definitely mention that TQFTs are generally $1$-extended with punctures, to visualize anyons. Should mention that literally making torus bigger will make error rate smaller, since it's harder for things to accidentally interact with each other (exponential decrease). Maybe another thing to add is how the 1st priority is to minimize energy, and the 2nd order is to maximize entanglement.]
 
@@ -2543,14 +2543,216 @@ The canonical reference for this subject (known as \textit{Algebraic Topology}) 
 \label{Categories}
 [WORK: Make appendix. This is to mension for sure; canonical isomorphism between double duals, non canonical isomorphism between first duals. Not only is this super relevant to rigidity, but Zhenghan said that this was one of Eilenberg-MacLane's key motivations. Find a reference to this fact.]
 
+[WORK: Move Yoneda discussion from main section to appendix.]
+
+[WORK: Need to make clear equivalence of categories vs. isomorphism of categories.]
 \section{Unitarity}
 \label{Unitarity}
-[WORK: Make appendix. Define Unitary TQFT and Unitary MTC.]
 
-[WORK: Unitary fusion categories all admit spherical structures? Read MathOverflow ``What do "pivotal" and "spherical" mean for (unitary) fusion categories on the level of the 
-F-symbols?"  and its references, closely]
+\subsection{Unitary TQFTs}
+
+Topological Quantum Field Theories (TQFTs) and Modular Tensor Categories (MTCs) were both defined in terms of vector spaces. However, quantum mechanics is based on the stronger notion Hilbert spaces. This can be rectified by imposing the condition of \textit{unitarity} on TQFTs and MTCs. This condition can be described abstractly as adding a functorial inner product, and requiring that all relevant transformations are unitary. The unitary condition for TQFTs can be stated as follows:
+
+\begin{definition}[Unitary (2+1) Topological Quantum Field Theory] A unitary (2+1) topological quantum field theory is the following data:
+
+\begin{enumerate}
+\item A (2+1)-TQFT $(V,Z)$.
+\item (Conjugation) A linear map $\dagger: \Hom(V(S_0),V(S_1))\to \Hom(V(S_1),V(S_0))$ for all surfaces $S_0,S_1$.
+\end{enumerate}
+
+Additionally, a unitary topologcial quantum field theory is required to satsify the following properties:
+
+\begin{enumerate}
+
+\item (Preserves conjugation) $Z\left(X^{\dagger}\right)=Z(X)^{\dagger}$. Here $S_0,S_1$ are surfaces, and $X$ is a bordism from $S_0$ to $S_1$. We define $X^{\dagger}$ to be the bordism which is the same underlying manifold, but with its orientation reversed. $X^{\dagger}$ is a bordism from $S_1$ to $S_0$.
+
+\item (Unitarity) The map $\left<\cdot|\cdot \right>: \Hom(V(S_0),V(S_1))\times \Hom(V(S_0),V(S_1))\to \CC$  defined by $\left<f|g\right>=\tr(f\circ g^\dagger)$ is an inner product, endowing $\Hom(V(S_0),V(S_1))$ with the structure of a Hilbert space.
+
+\item $(f^{\dagger})^{\dagger}=f$ for all $f\in \Hom(V(S_0),V(S_1))$, $S_0,S_1$ surfaces.
+
+\item $(f\circ g)^{\dagger}=g^{\dagger}\circ f^{\dagger}$ for all $f\in \Hom(V(S_1),V(S_2))$, $g\in \Hom(V(S_0),V(S_1)$, $S_0,S_1,S_2$ surfaces.
+
+\item $(f\otimes g)^{\dagger}=f^{\dagger}\otimes g^{\dagger}$ for all $f\in \Hom(V(S_2),V(S_3))$, $g\in \Hom(V(S_0),V(S_1)$, $S_0,S_1,S_2,S_3$ surfaces.
+\end{enumerate}
+\raggedleft\qedsymbol{}
+\end{definition}
+
+Really, this condition is just saying that $V(S)$ should be compatibly given the structure of Hilbert spaces. In the case of the $\ZZ_2$ Dijkgraaf-Witten theory, this is obvious to do. Namely, the vector spaces $V(S)=\CC[H_1(S;\ZZ_2)]$ comes equipped with a canonical basis, and hence inherits the structure of a Hilbert space. We define $\dagger$ by taking the conjugate transpose. That is, given $f: V(Y_0)\to V(Y_1)$ we define $f^{\dagger}$ to be the unique map such that
+
+$$\left<f(v),w\right>=\left<v,f^{\dagger}(w)\right>$$
+
+for all $v\in V(Y_0)$, $w\in V(Y_1)$. All that is left to check is that the axioms are satisfied:
+
+\begin{proposition} Equipped with its natural conjugation structure, the $\ZZ_2$ Dijkgraaf-Witten theory is a unitary (2+1)-TQFT.
+\end{proposition}
+\begin{proof}. [WORK: do proof.]
+\end{proof}
+
+This also has a functorial interpretation. We saw in Exercise [WORK: ref] that a (2+1) TQFT can be viewed as a braided monoidal functor $\Bord(2+1)\to \Vecc$. This functorial language very naturally captures our setting:
+
+\begin{proposition} Define a unitary $(n+1)$-TQFT to be a braided monoidal functor
+
+$$\Bord(n+1)\to \Hilb$$
+
+such that $Z\left(X^{\dagger}\right)=Z(X)^{\dagger}$ for all bordisms $X$. This can canonically be identified with the above definition of unitary TQFT when $n=2$.
+\end{proposition}
+\begin{proof}. [WORK: do proof]
+\end{proof}
+
+This concludes our treatment of unitary TQFTs.
+
+\subsection{Unitary MTCs}
+
+The unitarity condition on MTCs can be stated very explicitely on the level of $6j$-symbols. Unitarity is best studied first as a property first defined on $6j$ fusion systems, and then extended to modular tensor fusion systems:
+
+\begin{definition}[Unitary $6j$ fusion system] A unitary $6j$ fusion system is a $6j$ fusion system $\LL$ which is gauge equivalent to a $6j$ fusion system $\LL'$ such that $F^{a,b,c}_{d}$ is a unitary matrix for all $a,b,c,d\in \LL'$.
+
+\raggedleft\qedsymbol{}
+\end{definition}
 
 
+\begin{definition}[Unitary modular tensor fusion system] A unitary modular tensor fusion system is a modular tensor fusion system which is braided gauge equivalent to a modular tensor fusion system $\LL'$ such that $F^{a,b,c}_{d}$ is a unitary matrix for all $a,b,c,d\in\LL'$.
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+We now proceed in category-theoretic language.
+
+\begin{definition}[Unitary fusion category] A unitary fusion category is the following data:
+
+\begin{enumerate}
+\item An fusion category $\Ccat$.
+\item (Conjugation) A linear map $\dagger: \Hom(A,B)\to \Hom(B,A)$ for all $A,B\in \Ccat$.
+\end{enumerate}
+
+Additionally, a unitary fusion category is required to satisfy the following properties:
+
+\begin{enumerate}
+\item (Unitarity) Given $f:A\to A$ an endomorphism of $A\in \Ccat$, define
+
+
+$$\tr(f)=\ev_A \circ (\id_{A^*}\otimes f)\circ \left(\ev_A\right)^{\dagger}.$$
+
+The map $\left<\cdot|\cdot\right>:\Hom(A,B)\times \Hom(A,B)\to \CC$ defined by $\left<f|g\right>=\tr(f\circ g^{\dagger})$ is an inner product, endowing $\Hom(A,B)$ with the structure of a Hilbert space.
+\item $\left(f^{\dagger}\right)^{\dagger}=f$ for all $f\in \Hom(A,B)$, $A,B\in \Ccat$.
+\item $(f\circ g)^{\dagger}=g^{\dagger}\circ f^{\dagger}$ for all $f\in \Hom(B,C)$,$g\in \Hom(A,B)$, $A,B,C\in \Ccat$.
+\item $(f\otimes g)^{\dagger}=f^{\dagger}\otimes g^{\dagger}$ for all $f\in \Hom(A,B)$,$g\in \Hom(C,D)$, $A,B,C,D\in \Ccat$.
+\item $\left(\coev_A\right)^{\dagger}\circ (f \otimes \id_{A^*})\circ \coev_A=\tr(f)$ for all $A\in \Ccat$
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+The study of unitary fusion categories is much nicer than the study of fusion categories, as there is a trace. This allows for one to define quantum dimensions and all of the other invariants one would want from a trace. Normally, this requires the twist of an MTC.
+
+\begin{proposition} Let $\Ccat$ be a unitary fusion category. For all $A,B\in \Ccat$, the following claims are true:
+
+\begin{enumerate}
+\item $\tr(f\otimes g)=\tr(f)\cdot \tr(g)$ for all $f\in \End(A)$, $g\in \End(B)$
+\item $\tr(f\oplus g)=\tr(f)+\tr(g)$ for all $f\in \End(A)$, $g\in \End(B)$
+\item $\tr(f\circ g)=\tr(g\circ f)$ for all $f,g\in \End(A)$
+\end{enumerate}
+\end{proposition}
+\begin{proof}. [WORK: do proof]
+\end{proof}
+
+We can now define an MTC. The compatibility conditions for the twist defined such that the definition for trace as an MTC and the definition of trace as a unitary fusion category coincide.
+
+\begin{definition}[Unitary Modular Tensor Category] A unitary Modular Tensor Category is the following data:
+
+\begin{enumerate}
+\item An MTC $\Ccat$.
+\item (Conjugation) A linear map $\dagger: \Hom(A,B)\to \Hom(B,A)$ for all $A,B\in \Ccat$.
+\end{enumerate}
+
+Additionally, a unitary Modular Tensor Category is required to satisfy the following properties:
+
+\begin{enumerate}
+\item Forgetting the twist and braiding, $\left(\Ccat,\dagger\right)$ forms a unitary fusion category.
+\item $\left(\beta_{A,B}\right)^{\dagger}=\beta_{A,B}^{-1}$ for all $A,B\in \Ccat$.
+\item $\left(\theta_A\right)^{\dagger}=\left(\theta_A\right)^{-1}$ for all $A\in \Ccat$.
+\item $\left(\ev_{A}\right)^{\dagger}= \left(\id_{A^*}\otimes \theta_A^{-1}\right)\circ \beta_{A^*,A}^{-1}\circ \coev_A$ for all $A\in \Ccat$
+\item $\left(\coev_{A}\right)^{\dagger}= \ev_{A}\circ\beta_{A,A^*}\circ\left(\theta_A \otimes \id_{A^*}\right)$ for all $A\in \Ccat$
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+An important point to note is that even without enforcing a unitarity condition, there will naturally be unitary properties afoot:
+
+\begin{theorem}[\cite{etingof2005fusion}] Let $\Ccat$ be an MTC, and $\LL$ be the set of isomorphism classes of simple objects. The modular representation
+
+$$\rho_{\Ccat}:\SL_2(\ZZ)\to \Aut(\CC[\LL])$$
+
+is unitary, in the sense that all matricies in the image are unitary. In particular, the $S$-matrix of every MTC is unitary.
+\end{theorem}
+
+We saw in Subsection \ref{VecZ2 MTC} that the Drinfeld center of a fusion category is not neccecarily an MTC, as defining the twist requires a natural isomorphism between the double dual functor $(\--)^{**}$ and the identity. Unitary fusion categories can use their conjugation to define a double dual map, and thus we have the following:
+
+\begin{proposition}\label{unitary MTC} Let $\Ccat$ be a unitary fusion category. Define the data for a unitary MTC as follows:
+
+\begin{enumerate}
+\item (Underlying braided fusion category) $\Zcal(\Ccat)$.
+
+\item (Twist) Given $(A,\upbeta_{A,\--})\in \Ccat$, we define the twist $\theta_{(A,\upbeta_{A,\--})}$ by the composition
+
+$$A\xrightarrow{\coev_{A^*}}A\otimes A^{*}\otimes A^{**}\xrightarrow{\beta_{A,A^*}}A^*\otimes A\otimes A^{**}\xrightarrow{\ev_{A}}A^{**}\to A.$$
+
+The last arrow $A^{**}\to A$ is defined to be the inverse of
+
+$$A\xrightarrow{\coev_{A^*}}A\otimes A^*\otimes A^{**}\xrightarrow{\left(\coev_{A}\right)^{\dagger}}A^{**}.$$
+\end{enumerate}
+
+Along with the natural conjugation inherited from $\Ccat$, this endows $\Zcal(\Ccat)$ with the structure of a unitary MTC.
+\end{proposition}
+\begin{proof}. [WORK: do proof.]
+\end{proof}
+
+This allows us to state a formula which makes somewhat explicit our intuition of $\Zcal(\Ccat)$ as a ``quantum double" of $\Ccat$:
+
+\begin{proposition} Let $\Ccat$ be a unitary fusion category, and let $\LL$ be the set of isomorphism classes of simple objects of $\LL$. Given $a\in \LL$ with representative $A\in \Ccat$, we define
+
+$$d_a=\tr(\id_A).$$
+
+Additionally, define $\dim \Ccat = \sum_{a\in \LL}d_a^2$. We have that
+
+$$\dim \Zcal(\Ccat) = \left(\dim \Ccat \right)^2.$$
+\end{proposition}
+
+Of course, there is always an equivalence between the language on fusion systems and the language on categories:
+
+\begin{proposition} Let $\Ccat$ be a multiplicity-free fusion category. The construction in Proposition \ref{Make 6j system} gives a unitary $6j$ fusion system if and only if there exists a unitary structure on $\Ccat$.
+
+Similarly, let $\Ccat$ be a multiplicity-free modular tensor category. The construction in Proposition \ref{Make braided system} gives a unitary modular tensor fusion system if and only if there exists a unitary structure on $\Ccat$.
+\end{proposition}
+\begin{proof}. [WORK: do proof]
+\end{proof}
+
+We now define a unitary structure on the MTC associated with the toric code, $\Zcal(\Vecc_{\ZZ_2})$. The main point is that as fusion categories, the category $\Vecc$ of finite dimensional vector spaces and $\Hilb$ of finite dimensional Hilbert spaces are (non-canonically) equivalent. This allows one to endow $\Vecc_{G}$ (again, non-canonically) with the structure of a unitary fusion category. Taking Drinfeld centers this endows $\Zcal(\Vecc_{\ZZ_2})$ with the structure of a unitary MTC. Formally, we have the following:
+
+\begin{proposition} There is an equivalence of categories $\Vecc\xrightarrow{\sim}\Hilb$.
+\end{proposition}
+\begin{proof}. [WORK: do proof]
+\end{proof}
+
+\begin{proposition} Let $G$ be a finite group. Fix an equivalence of categories $\Hilb\xrightarrow{\sim}\Vecc$. Define the data for a unitary fusion category as follows:
+
+\begin{enumerate}
+\item (Underlying fusion category) $\Vecc_{G}$.
+\item (Conjugation) Given $f:V\to W$, define $f^{\dagger}:W\to V$ as follows. First, endow $V$ and $W$ with the structure of Hilbert spaces via the equivalence $\Hilb\xrightarrow{\sim}\Vecc$. Then, make $f^{\dagger}$ act on $W_g$ by the conjugate transpose of $f$. This is well defined, since the conjugate transpose can be specified in a Hilbert space as the unique map $f^{\dagger}$ such that for all $v\in V_g, w\in W_g$
+
+$$\left<f(v),w\right>=\left<v,f^{\dagger}(w)\right>.$$
+
+\end{enumerate}
+
+This gives $\Vecc_G$ the structure on a unitary fusion category.
+\end{proposition}
+\begin{proof}. [WORK: do proof]
+\end{proof}
+
+Thus, $\Vecc_{\ZZ_2}$ can be given the structure of a unitary fusion category. Applying Proposition \ref{unitary MTC}, this means that $\Zcal(\Vecc_{\ZZ_2})$ has the structure of a unitary MTC, as desired. If one wishes to have a canonical unitary structure, then one can use instead the category of $G$-graded Hilbert spaces, $\Hilb_G$. It is equivalent to $\Vecc_G$, but its unitary structure is canonical. Thus, it is philosophically more correct to say that the unitary MTC associated with the toric code is not $\Zcal(\Vecc_{\ZZ_2})$, but $\Zcal(\Hilb_{\ZZ_2})$.
+
+As in the non-unitary case, there is an equivalence between unitary MTCs and (1-extended) unitary TQFTs [WORK: find source]. Under this equivalence, $\Zcal(\Hilb_{\ZZ_2})$ as a unitary MTC is identified with the $\ZZ_2$ Dijkgraaf-Witten theory as a unitary TQFT. Seeing as all physically realizable systems will be unitary, practically speaking it is this correspondence which is the most important.
 
 \bibliographystyle{alpha}
 \bibliography{ref}

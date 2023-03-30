@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  29 MAR 2023 11:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  29 MAR 2023 17:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -755,26 +755,26 @@ c Codes.toc)
 \openout4 = `"Toric Codes.toc"'.
 
 [2]
-Overfull \hbox (6.30615pt too wide) in paragraph at lines 107--108
+Overfull \hbox (6.30615pt too wide) in paragraph at lines 109--110
 \OT1/cmr/m/n/10 Quantum com-put-ing has seen mas-sive ad-vances over the last 3
 0 years | prompted
  []
 
 [3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 131.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 133.
 
  (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 131.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 133.
 
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 139.
+d on input line 141.
 
 [4]
-Overfull \hbox (4.41742pt too wide) in paragraph at lines 161--162
+Overfull \hbox (4.41742pt too wide) in paragraph at lines 163--164
 \OT1/cmr/m/n/10 duct-ing quan-tum com-put-ers [[]], trapped ion quan-tum com-pu
 t-ers [[]],
  []
@@ -783,46 +783,46 @@ t-ers [[]],
 <./images/rope-deformations.png, id=38, 1146.2825pt x 469.25313pt>
 File: ./images/rope-deformations.png Graphic file (type png)
 <use ./images/rope-deformations.png>
-Package pdftex.def Info: ./images/rope-deformations.png  used on input line 173
+Package pdftex.def Info: ./images/rope-deformations.png  used on input line 175
 .
 (pdftex.def)             Requested size: 286.56992pt x 117.31299pt.
  [6 <./images/rope-deformations.png>]
 <./images/quipu.jpg, id=44, 115.8729pt x 121.1727pt>
 File: ./images/quipu.jpg Graphic file (type jpg)
 <use ./images/quipu.jpg>
-Package pdftex.def Info: ./images/quipu.jpg  used on input line 185.
+Package pdftex.def Info: ./images/quipu.jpg  used on input line 187.
 (pdftex.def)             Requested size: 98.49242pt x 102.99727pt.
 <./images/braiding.png, id=45, 455.7025pt x 506.39188pt>
 File: ./images/braiding.png Graphic file (type png)
 <use ./images/braiding.png>
-Package pdftex.def Info: ./images/braiding.png  used on input line 195.
+Package pdftex.def Info: ./images/braiding.png  used on input line 197.
 (pdftex.def)             Requested size: 113.92534pt x 126.59766pt.
  [7 <./images/quipu.jpg> <./images/braiding.png>]
 <./images/spin-liquid.png, id=52, 1050.92625pt x 254.9525pt>
 File: ./images/spin-liquid.png Graphic file (type png)
 <use ./images/spin-liquid.png>
-Package pdftex.def Info: ./images/spin-liquid.png  used on input line 207.
+Package pdftex.def Info: ./images/spin-liquid.png  used on input line 209.
 (pdftex.def)             Requested size: 315.2803pt x 76.48633pt.
  [8 <./images/spin-liquid.png>]
 <./images/Hairy-Ball-Diagram.png, id=57, 855.195pt x 436.12938pt>
 File: ./images/Hairy-Ball-Diagram.png Graphic file (type png)
 <use ./images/Hairy-Ball-Diagram.png>
 Package pdftex.def Info: ./images/Hairy-Ball-Diagram.png  used on input line 22
-1.
+3.
 (pdftex.def)             Requested size: 171.03596pt x 87.22432pt.
  [9 <./images/Hairy-Ball-Diagram.png>] [10] [11] [12]
-Overfull \hbox (6.3804pt too wide) detected at line 326
+Overfull \hbox (6.3804pt too wide) detected at line 328
 \OML/cmm/m/it/10 H [] \OT1/cmr/m/n/10 = [] [] + [] [] = [] \OML/cmm/m/it/10 :
  []
 
 [13]
-Overfull \hbox (13.61343pt too wide) in paragraph at lines 359--360
+Overfull \hbox (13.61343pt too wide) in paragraph at lines 361--362
 []\OT1/cmr/m/n/10 Extending with this for-mula, we find that $\OML/cmm/m/it/10 
 U$ \OT1/cmr/m/n/10 pre-serv-ing norm im-plies $[] =
  []
 
 [14] [15] [16] [17] [18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 560--561
+Underfull \hbox (badness 10000) in paragraph at lines 562--563
 
  []
 
@@ -830,42 +830,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 560--561
 <./images/torus.png, id=101, 1089.06876pt x 478.28688pt>
 File: ./images/torus.png Graphic file (type png)
 <use ./images/torus.png>
-Package pdftex.def Info: ./images/torus.png  used on input line 588.
+Package pdftex.def Info: ./images/torus.png  used on input line 590.
 (pdftex.def)             Requested size: 272.26653pt x 119.57143pt.
  [21 <./images/torus.png>] [22]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 669.
+(amsmath)                 on input line 671.
 
 [23] [24]
 <./images/homology-classes.png, id=117, 752.31062pt x 323.70938pt>
 File: ./images/homology-classes.png Graphic file (type png)
 <use ./images/homology-classes.png>
-Package pdftex.def Info: ./images/homology-classes.png  used on input line 722.
+Package pdftex.def Info: ./images/homology-classes.png  used on input line 724.
 
 (pdftex.def)             Requested size: 263.31265pt x 113.29997pt.
  [25 <./images/homology-classes.png>] [26] [27]
 <./images/not-alpha-gate.png, id=129, 705.63625pt x 277.53688pt>
 File: ./images/not-alpha-gate.png Graphic file (type png)
 <use ./images/not-alpha-gate.png>
-Package pdftex.def Info: ./images/not-alpha-gate.png  used on input line 783.
+Package pdftex.def Info: ./images/not-alpha-gate.png  used on input line 785.
 (pdftex.def)             Requested size: 317.53337pt x 124.89043pt.
  [28 <./images/not-alpha-gate.png>]
 <./images/dual-celluation.png, id=134, 379.4175pt x 381.425pt>
 File: ./images/dual-celluation.png Graphic file (type png)
 <use ./images/dual-celluation.png>
-Package pdftex.def Info: ./images/dual-celluation.png  used on input line 813.
+Package pdftex.def Info: ./images/dual-celluation.png  used on input line 815.
 (pdftex.def)             Requested size: 113.82613pt x 114.42838pt.
  [29 <./images/dual-celluation.png>] [30]
-Overfull \hbox (25.00888pt too wide) in paragraph at lines 849--850
+Overfull \hbox (25.00888pt too wide) in paragraph at lines 851--852
 []\OT1/cmr/m/n/10 Hence, we now have a full set of gen-er-a-tors for our gate g
 roup: $\OMS/cmsy/m/n/10 f^^F\OML/cmm/m/it/10 I; [][]; \OT1/cmr/m/n/10 (\OMS/cms
 y/m/n/10 ^^@\OT1/cmr/m/n/10 1)[]\OMS/cmsy/m/n/10 g$\OT1/cmr/m/n/10 ,
  []
 
 [31]
-Underfull \hbox (badness 10000) in paragraph at lines 869--870
+Underfull \hbox (badness 10000) in paragraph at lines 871--872
 
  []
 
@@ -873,28 +873,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 869--870
 <./images/genus-two.jpeg, id=158, 215.80624pt x 235.88126pt>
 File: ./images/genus-two.jpeg Graphic file (type jpg)
 <use ./images/genus-two.jpeg>
-Package pdftex.def Info: ./images/genus-two.jpeg  used on input line 944.
+Package pdftex.def Info: ./images/genus-two.jpeg  used on input line 946.
 (pdftex.def)             Requested size: 53.95142pt x 58.97017pt.
 <./images/klein-bottle.png, id=159, 351.3125pt x 262.9825pt>
 File: ./images/klein-bottle.png Graphic file (type png)
 <use ./images/klein-bottle.png>
-Package pdftex.def Info: ./images/klein-bottle.png  used on input line 965.
+Package pdftex.def Info: ./images/klein-bottle.png  used on input line 967.
 (pdftex.def)             Requested size: 87.8279pt x 65.74545pt.
  [34 <./images/genus-two.jpeg>] [35 <./images/klein-bottle.png>]
 <./images/cobordism.png, id=166, 588.1975pt x 273.02pt>
 File: ./images/cobordism.png Graphic file (type png)
 <use ./images/cobordism.png>
-Package pdftex.def Info: ./images/cobordism.png  used on input line 1013.
+Package pdftex.def Info: ./images/cobordism.png  used on input line 1015.
 (pdftex.def)             Requested size: 235.27483pt x 109.20605pt.
 
 [36 <./images/cobordism.png>] [37]
 <./images/all-moves.png, id=175, 1209.51875pt x 750.805pt>
 File: ./images/all-moves.png Graphic file (type png)
 <use ./images/all-moves.png>
-Package pdftex.def Info: ./images/all-moves.png  used on input line 1059.
+Package pdftex.def Info: ./images/all-moves.png  used on input line 1061.
 (pdftex.def)             Requested size: 241.89946pt x 150.15834pt.
  [38] [39 <./images/all-moves.png>]
-Overfull \hbox (5.54213pt too wide) in paragraph at lines 1098--1099
+Overfull \hbox (5.54213pt too wide) in paragraph at lines 1100--1101
 \OT1/cmr/m/n/10 spond-ing vec-tor in $\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 (\OML/c
 mm/m/it/10 S\OT1/cmr/m/n/10 )$, $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 Z[]\OT1/cmr
 /m/n/10 (\OML/cmm/m/it/10 S\OT1/cmr/m/n/10 ; \U/msb/m/n/10 Z[]\OT1/cmr/m/n/10 )
@@ -907,10 +907,10 @@ mm/m/it/10 S\OT1/cmr/m/n/10 )$, $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 Z[]\OT1/cmr
 <./images/cohomologous.png, id=193, 832.10875pt x 300.12125pt>
 File: ./images/cohomologous.png Graphic file (type png)
 <use ./images/cohomologous.png>
-Package pdftex.def Info: ./images/cohomologous.png  used on input line 1166.
+Package pdftex.def Info: ./images/cohomologous.png  used on input line 1168.
 (pdftex.def)             Requested size: 249.63455pt x 90.03706pt.
  [43 <./images/cohomologous.png>] [44]
-Overfull \hbox (13.9935pt too wide) in paragraph at lines 1212--1213
+Overfull \hbox (13.9935pt too wide) in paragraph at lines 1214--1215
 []\OT1/cmr/m/n/10 The bor-dism $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 has the ef-
 fect of swap-ping $\OML/cmm/m/it/10 S[]$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 
 S[]$\OT1/cmr/m/n/10 , hence sends $\OML/cmm/m/it/10 H[]\OT1/cmr/m/n/10 (\OML/cm
@@ -919,7 +919,7 @@ m/m/it/10 S[]\OT1/cmr/m/n/10 ; \U/msb/m/n/10 Z[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n
  []
 
 [45]
-Underfull \hbox (badness 10000) in paragraph at lines 1227--1228
+Underfull \hbox (badness 10000) in paragraph at lines 1225--1226
 
  []
 
@@ -927,41 +927,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 1227--1228
 <./images/Y-type.png, id=208, 394.47375pt x 389.455pt>
 File: ./images/Y-type.png Graphic file (type png)
 <use ./images/Y-type.png>
-Package pdftex.def Info: ./images/Y-type.png  used on input line 1273.
+Package pdftex.def Info: ./images/Y-type.png  used on input line 1271.
 (pdftex.def)             Requested size: 118.34303pt x 116.83739pt.
- [47] [48 <./images/Y-type.png>] [49]
+ [47 <./images/Y-type.png>] [48] [49]
 <./images/graphical-language.png, id=222, 1130.2225pt x 760.8425pt>
 File: ./images/graphical-language.png Graphic file (type png)
 <use ./images/graphical-language.png>
 Package pdftex.def Info: ./images/graphical-language.png  used on input line 13
-60.
+58.
 (pdftex.def)             Requested size: 226.0405pt x 152.1658pt.
  (./figures/simple-cotriangle.tikz)
 [50 <./images/graphical-language.png>] (./figures/6j-tree.tikz) [51]
 <./images/pentagon.png, id=231, 507.8975pt x 478.78876pt>
 File: ./images/pentagon.png Graphic file (type png)
 <use ./images/pentagon.png>
-Package pdftex.def Info: ./images/pentagon.png  used on input line 1424.
+Package pdftex.def Info: ./images/pentagon.png  used on input line 1422.
 (pdftex.def)             Requested size: 142.21033pt x 134.05994pt.
- [52]
-(./figures/time-symmetry.tikz) [53 <./images/pentagon.png>] [54] [55] [56]
-Overfull \hbox (9.9589pt too wide) detected at line 1617
+
+(./figures/time-symmetry.tikz) [52] [53 <./images/pentagon.png>] [54] [55]
+[56]
+Overfull \hbox (9.9589pt too wide) detected at line 1615
 []
  []
 
 [57]
-Overfull \hbox (11.37311pt too wide) detected at line 1664
+Overfull \hbox (11.37311pt too wide) detected at line 1662
 []
  []
 
 [58]
-Overfull \hbox (0.40796pt too wide) in paragraph at lines 1695--1696
+Overfull \hbox (0.40796pt too wide) in paragraph at lines 1693--1694
 []\OT1/cmr/m/n/10 We now de-fine fu-sion cat-e-gories. One key dif-fi-culty is 
 de-cid-ing what category-
  []
 
 [59] [60]
-Overfull \hbox (8.96042pt too wide) in paragraph at lines 1772--1773
+Overfull \hbox (8.96042pt too wide) in paragraph at lines 1770--1771
 \OT1/cmr/m/n/10 gories $\U/rsfs/m/n/10 C\OML/cmm/m/it/10 ; \U/rsfs/m/n/10 D$ \O
 T1/cmr/m/n/10 is a func-tor $\OML/cmm/m/it/10 F \OT1/cmr/m/n/10 : \U/rsfs/m/n/1
 0 C \OMS/cmsy/m/n/10 ! \U/rsfs/m/n/10 D$ \OT1/cmr/m/n/10 such that $\OML/cmm/m/
@@ -974,15 +975,15 @@ mr/m/n/10 ))$
 [61] [62] [63] (./figures/cotriangle-reprise.tikz) (./figures/first-basis.tikz)
 [64] (./figures/second-basis.tikz) [65] [66] [67] [68] [69] [70]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2109.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2107.
 
  [71]
-Overfull \hbox (13.3451pt too wide) detected at line 2163
+Overfull \hbox (13.3451pt too wide) detected at line 2161
 []
  []
 
 [72] [73]
-Overfull \hbox (38.02985pt too wide) in paragraph at lines 2248--2249
+Overfull \hbox (38.02985pt too wide) in paragraph at lines 2246--2247
 []\OT1/cmr/bx/it/10 morphisms: \OT1/cmr/m/it/10 Given $\OT1/cmr/m/n/10 (\OML/cm
 m/m/it/10 A; \U/eur/m/n/10 ^^L[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/
 n/10 (\OML/cmm/m/it/10 B; \U/eur/m/n/10 ^^L[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10
@@ -993,7 +994,7 @@ m/n/10 ))$
  []
 
 
-Overfull \hbox (20.32211pt too wide) in paragraph at lines 2258--2259
+Overfull \hbox (20.32211pt too wide) in paragraph at lines 2256--2257
 []\OT1/cmr/bx/it/10 braiding:  \OT1/cmr/m/it/10 We de-fine the braid-ing be-twe
 en two el-e-ments $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A; ^^L[]\OT1/cmr/m/n/10 )\
 OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; ^^L[]\OT1/cmr/m/n/10 ) \
@@ -1001,32 +1002,57 @@ OMS/cmsy/m/n/10 2
  []
 
 [74]
-Overfull \hbox (7.29327pt too wide) detected at line 2278
+Overfull \hbox (7.29327pt too wide) detected at line 2276
 []
  []
 
 [75] [76]
-Underfull \hbox (badness 10000) in paragraph at lines 2346--2347
+Underfull \hbox (badness 10000) in paragraph at lines 2344--2345
 
  []
 
 
-Overfull \hbox (7.59065pt too wide) in paragraph at lines 2359--2360
+Overfull \hbox (7.59065pt too wide) in paragraph at lines 2357--2358
 []\OT1/cmr/m/n/10 (Morphisms) A mor-phism be-tween closed ori-ented $\OML/cmm/m
 /it/10 n$\OT1/cmr/m/n/10 -manifolds $\OML/cmm/m/it/10 Y[]; Y[]$
  []
 
-[77] [78] [79] [80] [81] (./Toric Codes.bbl [82] [83] [84] [85]
+[77] [78] [79] [80] [81] [82]
+Overfull \hbox (1.3881pt too wide) in paragraph at lines 2560--2561
+[]\OT1/cmr/m/n/10 (Conjugation) A lin-ear map $\OMS/cmsy/m/n/10 y \OT1/cmr/m/n/
+10 : [](\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 
+)\OML/cmm/m/it/10 ; V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 )) \O
+MS/cmsy/m/n/10 ! []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 (\OML/cmm
+/m/it/10 S[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; V\OT1/cmr/m/n/10 (\OML/cmm/m/it
+/10 S[]\OT1/cmr/m/n/10 ))$
+ []
+
+
+Overfull \hbox (13.79912pt too wide) in paragraph at lines 2569--2570
+\OT1/cmr/m/n/10 de-fined by $[] = [](\OML/cmm/m/it/10 f \OMS/cmsy/m/n/10 ^^N \O
+ML/cmm/m/it/10 g[]\OT1/cmr/m/n/10 )$ is an in-ner prod-uct, en-dow-ing $[](\OML
+/cmm/m/it/10 V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 )\OML/cmm/m/
+it/10 ; V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 ))$
+ []
+
+
+Overfull \hbox (18.51888pt too wide) in paragraph at lines 2586--2587
+[]\OT1/cmr/bx/n/10 Proposition C.1. []\OT1/cmr/m/it/10 Equipped with its nat-u-
+ral con-ju-ga-tion struc-ture, the $\U/msb/m/n/10 Z[]$ \OT1/cmr/m/it/10 Dijkgra
+af-
+ []
+
+[83] [84] [85] [86] [87] (./Toric Codes.bbl [88] [89] [90]
 Underfull \hbox (badness 1360) in paragraph at lines 256--261
 []\OT1/cmr/m/n/10 Fangyuan Yang, Alexan-der A Zi-brov, Rui-heng Bai, Takashi
  []
 
-) [86] (./Toric Codes.aux) ) 
+) [91] (./Toric Codes.aux) ) 
 Here is how much of TeX's memory you used:
- 18715 strings out of 492649
- 400722 string characters out of 6129622
- 462270 words of memory out of 5000000
- 22161 multiletter control sequences out of 15000+600000
+ 18718 strings out of 492649
+ 400743 string characters out of 6129622
+ 462299 words of memory out of 5000000
+ 22164 multiletter control sequences out of 15000+600000
  23574 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,20n,84p,1328b,1111s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1067,10 +1093,10 @@ al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/
 local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/te
 xlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs5.pfb></usr/local/texlive/201
 8/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb>
-Output written on "Toric Codes.pdf" (86 pages, 3769773 bytes).
+Output written on "Toric Codes.pdf" (91 pages, 3786962 bytes).
 PDF statistics:
- 467 PDF objects out of 1000 (max. 8388607)
- 307 compressed objects within 4 object streams
+ 483 PDF objects out of 1000 (max. 8388607)
+ 318 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  98 words of extra memory for PDF output out of 10000 (max. 10000000)
 
