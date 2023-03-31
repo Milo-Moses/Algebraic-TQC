@@ -62,6 +62,7 @@
 \newcommand{\TT}{\mathcal{T}}
 \newcommand{\Ccat}{\mathscr{C}}
 \newcommand{\Dcat}{\mathscr{D}}
+\newcommand{\Ecat}{\mathscr{E}}
 \newcommand{\st}{\,\,\mathrm{s.t}\,\,}
 \newcommand{\mm}{\mathfrak{m}}
 \newcommand{\pp}{\mathfrak{p}}
@@ -69,6 +70,7 @@
 \newcommand{\Aut}{\mathrm{Aut}}
 \newcommand{\Frac}{\mathrm{Frac}}
 \newcommand{\tr}{\mathrm{tr}}
+\newcommand{\op}{\mathrm{op}}
 \newcommand{\res}{\mathrm{res}}
 \newcommand{\im}{\mathrm{im}}
 \newcommand{\ev}{\mathrm{ev}}
@@ -141,7 +143,7 @@ The structure of the manuscript is as follows:
 
 \item Section \ref{TQFTs} gives an introduction to Topological Quantum Field Theories (TQFTs), the formal mathematical abstractions of topological quantum phases of matter. Subsection \ref{The general picture} gives an overview of the subject. Subsection \ref{DW TQFT} defines the $\ZZ_2$ Dijkgraaf-Witten theory, the TQFT associated with the toric code.
 
-\item Section \ref{Modular Tensor Categories} gives an introduction to Modular Tensor Categories (MTCs), the compressed mathematical abstraction of topological quantum phases of matter. Subsection \ref{Anyon model} gives an overview of the subject, and the equivalence between MTCs and TQFTs. Subsection \ref{Category viewpoint} gives the more elegant interpretation of MTCs in the language of categories. For those unfamiliar with the subject of Category Theory, a brief introduction is contained in Appendix \ref{Categories}. Subsection \ref{VecZ2 MTC} defines the $\Zcal(\Rep_{\ZZ_2})$ MTC, which is the MTC associated with the toric code.
+\item Section \ref{Modular Tensor Categories} gives an introduction to Modular Tensor Categories (MTCs), the compressed mathematical abstraction of topological quantum phases of matter. Subsection \ref{Fusion systems} gives an overview of the subject, and the equivalence between MTCs and TQFTs. Subsection \ref{Category viewpoint} gives the more elegant interpretation of MTCs in the language of categories. For those unfamiliar with the subject of Category Theory, a brief introduction is contained in Appendix \ref{Categories}. Subsection \ref{VecZ2 MTC} defines the $\Zcal(\Rep_{\ZZ_2})$ MTC, which is the MTC associated with the toric code.
 
 \item Section \ref{Topological Quantum Computing} gives an introduction to the general TQC methodology, using all of the tools developped in the previous sections. Subsection \ref{The TQC framework} gives a detailed overview of TQC, including measurement-based algorithms. Subsection \ref{Revisiting toric code TQC} carries this out explicitely for the toric code. Subsection \ref{Universal TQC with the Fibbonacci anyon} introduces the Fibonacci anyon model, and shows that it gives universal quantum computation via braiding alone.
 
@@ -1243,11 +1245,309 @@ $\newline\newline$
 \item Complete the proof of Proposition \ref{S0S1 independence}.
 \end{enumerate}
 
+\section{Category Theory}
+\label{Categories}
+
+Category theory the mathematical abstraction of things, and relationships between things. It is a language that almost all other mathematical fields can be expressed in, with often very fruitful consequences. Formally, a category is defined as follows:
+
+\begin{definition}[Category] A category is the following data:
+
+\begin{enumerate}
+\item (Objects) A set $\Ccat$.
+\item (Morphisms) A set $\Hom(A,B)$ for all $A,B\in \Ccat$
+\item (Composition) Functions
+
+$$\circ: \Hom(B,C)\times \Hom(A,B)\to \Hom(A,C)$$
+
+for all $A,B,C\in \Ccat$.
+\end{enumerate}
+
+Additionally, a category is required to satisfy the following properties:
+
+\begin{enumerate}
+
+\item For all objects $A,B,C,D\in \Ccat$ and morphisms $f\in \Hom(A,B)$, $g\in \Hom(B,C)$, and $h\in\Hom(C,D)$,
+
+$$(h\circ g)\circ f = h\circ (g\circ f).$$
+
+\item (Identity) For all objects $A\in \Ccat$ there exists a morphism $\id_{A}: A\to A$ such that for all $B\in \Ccat$, $f\in \Hom(A,B)$ we have
+
+$$f\circ \id_{A}=f,$$
+
+and for all $f\in \Hom(B,A)$
+
+$$\id_{A}\circ f = f.$$
+
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+The intuition is that the set of objects $\Ccat$ includes everything that you are interested in studying. That is $\Ccat$ could be the set of sets, set of groups, set of vector spaces, set of topological spaces, etc... . The set $\Hom(A,B)$ is viewed as being the set of allowable functions from $A$ to $B$. That is, functions which respect the stuctures your are trying to study. For instance, given $G,H\in \Grp$ living in the set of groups, the space $\Hom(G,H)$ should consist of all group homomorphisms from $G$ to $H$. Given $V,W\in \Vecc$ living in the set of (finite dimensional) complex vector spaces, $\Hom(V,W)$ should consist of all linear maps from $V$ to $W$. Given $X,Y\in \Top$ living in the space of topological spaces, $\Hom(X,Y)$ should consist of all continuous maps from $X$ to $Y$. Given $A,B\in \Set$ living in the set of sets, $\Hom(A,B)$ should consist of all maps from $A$ to $B$.
+
+The composition operation $\circ$ is the fundemental operation of category theory. It is the deep idea that given two transformations, doing one after the other gives another transformation. The axiom that $(h\circ g)\circ f = h\circ (g\circ f)$ simply makes sure that composition works like we think it should. Every category that one naturally considers has identity elements. That is, the ``do-nothing" function from an object to itself should always be an allowed morphism. The do nothing map from a topological space/vector space/group is always a continuous map/linear map/homomorphism. In particular, the above descriptions give us \textit{categories} $\Set$, $\Top$, $\Vecc$, and $\Grp$.
+
+The power of category theory lies in the generality of its language. For example, one might consider the Cartesian product of sets (i.e. $A\times B=\{(a,b),\,\, a\in A,\,\, b\in B\}$). The product of vector spaces has a natural vector space space structure, giving a product $V\times W$ in $\Vecc$. The product of groups has a natural group structure, giving a product $G\times H$ in $\Grp$. The product of topologcial spaces has a natural product topology, giving a product $X\times Y$ in $\Top$. All of these examples and more can be generalized as products in a category. We work this example out in detail to give a general idea of category theory.
+
+\begin{definition}[Product] A product of two elements $A,B$ in a category $\Ccat$ is the following data:
+
+\begin{enumerate}
+\item An object $A\times B\in \Ccat$.
+\item A morphism $\pi_A\in \Hom(A\times B,A)$.
+\item A morphism $\pi_B\in \Hom(A\times B,B)$.
+\end{enumerate}
+
+Additionally, a product is required to satisfy the following property. For every $C\in \Ccat$ paired with morphisms $\tau_C: C\to A$ and $\tau_C: C\to B$, there exists a unique morphism $f: C\to A\times B$ such that $f\circ \pi_A=\tau_A$ and $f\circ \pi_B = \tau_B$.
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+This definition motivates a lot of the key concepts, benefits, and drawbacks of category theory. For instance:
+
+\begin{itemize}
+\item While the goal is often to define objects (in this case, the product $A\times B$), one realizes that the important subtlties lie in the implit morphisms. In this case, the projection maps $\pi_A,\pi_B$ turn out to be the key parts of the definition. For instance, in the case of set we have maps $\pi_A: A\times B\to A$ sending $(a,b)$ to $a$, and $\pi_B: A\times B\to B$ sending $(a,b)$ to $b$. These maps are continuous in the case of $\Top$, homomorphisms in the case of $\Grp$, and linear in the case of $\Vecc$.
+
+\item The definitions are very abstract, and get to the core of the relevant theory. In this case, product of $A$ and $B$ can be summarized as ``the most general object whitch admits morphisms to both $A$ and $B$". This condition of being the ``most general object" satisfying a condition is known as a \textit{universal property}. Universal properties are how many notions in category theory are defined. Applying the case $\Ccat=\Set,\Top,\Grp,\Vecc$, one recovers the standard definitions of product.
+
+\item Definitions can often be hard to read. It is for this reason we use diagramatic notation that elucidates ideas. Instead of writing $f\in \Hom(A,B)$, we will often write $f:A\to B$. This will make our intuition of $f$ as a function from $A$ to $B$ clear. We will package conditions like ``$f\circ \pi_A=\tau_A$ and $f\circ \pi_B=\tau_B$" as \textit{commutative diagrams}. That is, consider the series of objects and morphisms below.
+
+\[\begin{tikzcd}
+	& A \\
+	& {A\times B} & B \\
+	C
+	\arrow["{\pi_A}"', from=2-2, to=1-2]
+	\arrow["{\pi_B}", from=2-2, to=2-3]
+	\arrow["f"{description}, dashed, from=3-1, to=2-2]
+	\arrow["{\tau_A}", from=3-1, to=1-2]
+	\arrow["{\tau_B}"', from=3-1, to=2-3]
+\end{tikzcd}\]
+
+The fact that $f\circ \pi_A=\tau_A$ and $f\circ \pi_B=\tau_B$ is exactly the statement that picking any two paths between any two objects will give you the same function, when you compose all of the functions along each path. We call a diagram with this property a commutative diagram. The product condition is thus the statement is that there exists a function $f:C\to A\times B$ such that the above diagram commutes. The diagramatic language is often easier to read, and leaves room for more ease-of-use features. For instance, we make the line under $f$ dotted to reinforce that it is different than the others - we are required to show that $f$ exists, whereas $\pi_A,\tau_A,\pi_B,\tau_B$ are given.
+\end{itemize}
+
+A fundemental question in category theory is what it should mean for two things to be equivalent. For instance, one might want to show that the product $A\times B$ of two elements is unique. If we take the strictest definiition of equivalent - equal - then this is not the case. There can be multiple products. However, all of these will be \textit{isomorphic}. An isomorphism between an object $A$ and an object $B$ is a function $f:A\to B$ such that there exists $f^{-1}:B\to A$, such that $f^{-1}\circ f=\id_{A}$ and $f\circ f^{-1}=\id_B$. This recovers bijections in the case of $\Set$, group isomorphisms in case of $\Grp$, vector space isomorphisms in case of $\Vecc$, and homeomorphisms in the case of $\Top$.
+
+\begin{proposition} Let $\Ccat$ be a category, and let $A,B\in \Ccat$ be objects. Let $(A\times_0 B,\pi_A^{(0)},\pi_B^{(0)})$ and $(A\times_1 B,\pi_B^{(1)},\pi_B^{(1)})$ be products of $A$ and $B$. There is a unique isomorphism $i:A\times_0 B\to A\times_1 B$ such that
+
+\[\begin{tikzcd}
+	& A \\
+	& {A\times_0 B} & B \\
+	{A\times _1 B}
+	\arrow["{\pi_A^{(0)}}"', from=2-2, to=1-2]
+	\arrow["{\pi_B^{(0)}}", from=2-2, to=2-3]
+	\arrow["i"{description}, dashed, from=3-1, to=2-2]
+	\arrow["{\pi_A^{(1)}}", from=3-1, to=1-2]
+	\arrow["{\pi_B^{(1)}}"', from=3-1, to=2-3]
+\end{tikzcd}\]
+
+commutes.
+\end{proposition}
+\begin{proof}. [WORK: do proof.]
+\end{proof}
+
+Observe that not only do we recover an isomorphism between $A\times_0 B$ and $A\times _1 B$, but we recover an isomorphism which respects the relevant structure. Namely, the projection maps onto $A$ and $B$. With this isomorphism in hand, we can reasonably say that the product of $A$ and $B$ is unique. There are many choices, but they all have unique isomorphisms between each other which respect structure. We say in this situation that $A\times_0 B$ and $A\times_1 B$ can be \textit{canonically} identified. A structure is canonical if there is a unique natural choice of construction. In this case, the isomorphism is canonical since there is a unique choice, the one which makes the diagram commute. Generally, the canonical choice is the one which makes the most diagrams commute. It is the goal of much of category theory to formalize the notions of constructions being canonical. It is the goal of many mathematicians studying category theory to develop the most canonical possible constructions:
+
+\begin{quote}
+``I can assure you, at any rate, that [...] my results are invariant, probably canonical, perhaps even functorial." - André Weil\footnote{This quote appears in André Weil's collection \cite{weil2009oeuvres} on page 558. [WORK: verify, get details]}
+\end{quote}
+
+The term \textit{functorial} in the above quote makes reference to one of the most systematic measures of canonicality in category theory. Suppose one has two categories $\Ccat$ and $\Dcat$, and has an assignment of objects from $\Ccat$ to $\Dcat$. For instance $\Ccat=\Top$, $\Dcat=\Grp$, and the assignement sends a space $X$ to its first homology group with $\ZZ_2$ coefficients $H_1(X;\ZZ_2)$. Or perhaps $\Ccat=\Set$, $\Dcat=\bold{Vec}$, and the assignment sends a set $S$ to the vector space $\CC[S]$ which has distinguished basis $S$. These assignments are very natural, and one would want a measure of the fact that they are canonical. In this case, we can say these maps are \textit{functorial}. This means that these assignments can be extended to functors, which we define below:
+
+\begin{definition}[Functor] A functor between two categories $\Ccat$ and $\Dcat$ is the following data:
+
+\begin{enumerate}
+\item An object $F(A)\in\Dcat$ for every object $A\in \Ccat$.
+\item A morphism $F(f):F(A)\to F(B)$ for every morphism $f:A\to B$, $A,B\in \Ccat$.
+\end{enumerate}
+
+Additionally, a functor is required to satisfy the following properties:
+
+\begin{enumerate}
+\item (Preserves composition) $F(g\circ f)=F(g)\circ F(f)$, for all $f:A\to B$, $g:B\to C$, $A,B,C\in \Ccat$.
+\item (Preserves identity) $F(\id_{A})=\id_{F(A)}$ for all $A\in \Ccat$.
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+For example, we demonstrate that the assignment $A\mapsto \CC[A]$ is functorial.
+
+\begin{proposition} Define the following data for a functor $\Set \to \Grp$:
+
+\begin{enumerate}
+\item Assigning $\CC[A]$ to each set $A\in \Set$.
+\item Assigning the linear map
+
+\begin{align*}
+\CC[A]&\xrightarrow{} \CC[B]\\
+\sum_{a\in A}c_a [a]&\mapsto \sum_{a\in A}c_a[f(a)]
+\end{align*}
+
+to $f:A\to B$, for all $A,B\in \Ccat$.
+\end{enumerate}
+
+This is a functor, which we denote $\CC[\--]$.
+\end{proposition}
+\begin{proof}. [WORK: do proof].
+\end{proof}
+
+This abstracted language of functors gives the following meta-fact:
+
+\begin{proposition} Define the following data for a category:
+
+\begin{enumerate}
+\item (Objects) Categories.
+\item (Morphisms) Functors.
+\item (Composition) Given $F\in \Hom(\Ccat,\Dcat)$, $G\in \Hom(\Dcat,\Ecat)$, we define the composition $G\circ F: \Ccat \to \Ecat$ to be the functor sending an object $A\in \Ccat$ to $G(F(A))\in \Ecat$, and sending $f\in \Hom(A,B)$ to $G(F(f))\in \Hom(G(F(A)),G(F(B)))$. 
+\end{enumerate}
+
+This is well defined, and gives a category called $\Cat$.
+\end{proposition}
+\begin{proof}. [WORK: do proof].
+\end{proof}
+
+This gives a natural notion of isomorphism between two categories. Namely, two categories $\Ccat$ and $\Dcat$ are isomorphic if there is an invertible functor between them. This is where the subtelty of the ``find out what it should mean for two things to be equivalent" question of category theory shows its head. Requiring two categories to be isomorphic is often too restrictive. For instance, in Topological Quantum Computing, we find that models of quasiparticles correspond to certain categories up to a weaker notion of equivalence. Namely, letting $F:\Ccat \to \Dcat$ and $F^{-1}:\Dcat \to \Ccat$ be functors, requiring $F^{-1}\circ F=\id_{\Ccat}$ and $F\circ F^{-1}=\id_{\Dcat}$ is too restrictive. That is, we shouldn't force the functors to be equal to the identity, only \textit{isomorphic} to the identity. That is, there should be a natural transformation between $F^{-1}\circ F$ and the identity, where natural transformations are defined as follows:
+
+\begin{definition}[Natural transformation] A natural transformation between two functors $F,G: \Ccat\to \Dcat$, with $\Ccat,\Dcat\in \Cat$, is a family or morphisms $\eta_A: F(A)\to G(A)$ for all $A\in \Ccat$. Additionally, a natural transformation is required to satisfy the property that for any morphism $f:A\to B$ the diagram
+
+\[\begin{tikzcd}
+	{F(A)} & {G(A)} \\
+	{F(B)} & {G(B)}
+	\arrow["{\eta_B}", from=2-1, to=2-2]
+	\arrow["{\eta_A}", from=1-1, to=1-2]
+	\arrow["{F(f)}"{description}, from=1-1, to=2-1]
+	\arrow["{G(f)}"{description}, from=1-2, to=2-2]
+\end{tikzcd}\]
+
+commutes.
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+\begin{proposition} Let $\Ccat,\Dcat$ be categories. Define the following data for a category
+
+
+$$\bold{Hom}(\Ccat,\Dcat)=
+\begin{pmatrix}
+\bold{objects:}\mathrm{Functors }\,\,\Ccat\to \Dcat\\
+\bold{morphisms:}\mathrm{Natural} \,\,\mathrm{transformations}
+\end{pmatrix}$$
+
+Along with a canonical choice of composition rule, this forms a category.
+\end{proposition}
+\begin{proof}. [WORK: do proof]
+\end{proof}
+
+With this, we can succinctly state the notion of equivalence we will use throughout this text. Two categories $\Ccat$ and $\Dcat$ are equivalent if there is are functors $F:\Ccat\to \Dcat$ and $F^{-1}:\Dcat\to \Ccat$ such that $F\circ F^{-1}$ and $F^{-1}\circ F$ are both isomorphic (in the category $\bold{Hom}(\Ccat,\Dcat)$) to the identity. Whenever the category being assumed is unclear, we use the more precise notation $\Hom_{\Ccat}(A,B)$ for morphisms in $\Ccat$.
+
+We make a comment about the above situtation. We used as a key fact that the hom-spaces in the category $\Cat$ can themselves be realized as categories. This is not a property unique to $\Cat$. There are many sets which not only have morphisms (category structure), but morphisms of morphisms (category structure on hom-spaces). These are known as $2$-categories. Those categories with morphisms of morphisms of morphisms and so on $n$-times recursively are known as $n$-categories. While we do not explictely use the language of higher category theory in this manuscript, delving deeper into the mathematics of Topological Quantum Computing strongly uses $n$-cateogires. For instance, this is the founding philosophy of the $n$Lab, the largest repository of mathematical physics:
+
+\begin{quote}
+``It is believed that [...] higher category theory provide[s] a point of view on Mathematics, Physics and Philosophy which is a valuable unifying point of view for the understanding of the concepts involved" - $n$Lab\footnote{This is the first line of the $n$Lab's ``$n$POV" page.}
+\end{quote}
+
+We now give such a story where category theory helps unify our understanding of concepts involved. Let $V$ be a vector space, and let $V^*$ denote the dual vector space, consisting of morphisms $V\to \CC$. Both $V$ and $V^*$ have the same dimension, hence choosing bases when get an isomorphism $V\xrightarrow{\sim}V^*$. However, this is non-canonical: There is no ``correct" choice of basis. However, there \textit{is} a canonical isomorphism $V\xrightarrow{\sim}V^{**}$, given by
+
+\begin{align*}
+V&\xrightarrow{}V^{**}.\\
+v&\mapsto (\varphi\mapsto \varphi(v))
+\end{align*}
+
+This can be seen as saying that points are functions on functions. It is an important fact that this map is an isomorphism, and the proof relies keely on the fact that $V$ is finite dimensional - it could fail in general, where we only have an embedding $V\hookrightarrow{} V^{**}$. We state this formally below as a proposition, leaving out details in the statement, which we fill in during the proof. This is standard practice in category theory. Definitions are all very similar, and the exact details are left implicit. Stating everything explicitely becomes quickly untenable, so this is a neccecary measure.
+
+\begin{proposition} Define the functor $(\--)^{**}: \Vecc \to \Vecc$ sending $V$ to $V^{**}$. The double dual maps $V\to V^{**}$ defined above gives a natural isomorphism between $\id_{\Ccat}$ and $(\--)^{**}$.
+\end{proposition}
+\begin{proof}. [WORK: do proof].
+\end{proof}
+
+This fundamental duality of vector spaces is something that one desires to emulate, or more accurately, the functorial embedding $V\hookrightarrow{}V^{**}$. Switching perspectives from points to functions can be illuminating. The version of duality most similar to this in category theory is known as Yoneda's lemma, where we can switch perspectives from objects to functors.
+
+\begin{lemma} Let $\Ccat$ be a category. Define the data for a category as follows:
+
+\begin{enumerate}
+\item (Objects) $\Ccat$, but labeled with the notation $A^{\op}$ instead of $A$, to distinguish between elements of $\Ccat$ and the new category.
+\item (Morphisms) Given objects $A^{\op},B^{\op}$, $A,B\in \Ccat$, we define
+
+$$\Hom(A^{\op},B^{\op})=\Hom_{\Ccat}(B,A).$$
+\item (Composition) Given morphisms $f^{\op}:A^{\op}\to B^{\op}$, $g^{\op}:B^{\op}\to C^{\op}$, $A,B,C\in \Ccat$, we define
+
+$$g^{\op}\circ f^{\op}=(f\circ g)^{\op}.$$
+\end{enumerate}
+
+This data gives a well defined category, which we call $\Cat^{\op}$.
+\end{lemma}
+\begin{proof}. [WORK: Do the proof]
+\end{proof}
+
+\begin{theorem}[Yoneda's Lemma] Let $\Ccat$ be a category. We define a mapping
+
+\begin{align*}
+\Ccat &\xrightarrow{} \bold{Hom}(\bold{Hom}(\Ccat^{\op},\Set),\Set).\\
+A & \mapsto (F \mapsto F(A))
+\end{align*}
+
+This assignment is functorial. It is injective on the level of objects, injective on the level of morphisms (``faithful"), and surjective on the level of morphisms (``full"). This is summarized as saying that the assignment above is a fully faithful emebdding of categories.
+\end{theorem}
+\begin{proof}. [WORK: do proof]
+\end{proof}
+
+The Yoneda lemma is considered one of the most fundemental results in category theory, while seemingly abstract it can quickly become very useful. It can be loosely read as saying that if two source objects has the ``same" (i.e. naturally isomorphic) hom-sets into every other target object, then the source objects must be the same.
+
+
+The Yoneda lemma can be stated in an alternative way, in the language of pairings. There is a natural map $V\times V^*=V\times \Hom(V,\CC)\to \CC$, sending $(v,\varphi)$ to $\varphi(v)$. Vector space duality is exactly the fact that this pairing is non-degenerate, in the sense that if $\varphi(v)=0$ for all $v$ then $\varphi=0$, and if $\varphi(v)=0$ for all $\varphi$ then $v=0$. There is a pairing on the level of categories, $\Ccat \times \left[\Ccat^{\op},\Set\right]\to \Set$, and the Yoneda lemma is exactly the statement that it is non-degenerate. Observe that to make this statement formal, we will have to define the product $\times$ of categories. In some sense, we already have: $\times$ is the product in the category of categories! Proving this alternative form of Yoneda's Lemma, along with yet another, is found in Exercises \thesection.1 - \thesection.2. Explicitely, we can also describe the product as follows:
+
+\begin{proposition} Let $\Ccat,\Dcat$ be categories. We define the following data for a category:
+
+\begin{enumerate}
+\item (Objects) Pairs $(A,B)$, $A\times B\in \Ccat\times \Dcat$
+\item (Morphisms) We set
+
+$$\Hom((A_0,B_0),(A_1,B_1))=\Hom(A_0,A_1)\times \Hom(B_0,B_1),$$
+
+for all $(A_0,B_1), (A_1,B_1)\in \Ccat\times \Dcat$.
+\item (Composition) Given $(f_0,g_0)\in \Hom((A_0,B_0),(A_1,B_1))$ and $(f_1,g_1)\in \Hom((A_1,B_1),(A_2,B_2))$, we define
+
+$$(f_1,g_1)\circ (f_0,g_0)=(f_1\circ f_0, g_1\circ g_0),$$
+
+for all $(A_0,B_0),(A_1,B_1),(A_2,B_2)\in \Ccat\times \Dcat$.
+\end{enumerate}
+
+This gives a well defined category $\Ccat\times \Dcat$. This category is the product in the category of categories.
+\end{proposition}
+\begin{proof}. [WORK: do proof]
+\end{proof}
+
+This concludes our introduction to category theory. The canonical reference for category theory is Mac-Lane's foundational text \cite{mac2013categories}. As a readable way to begin learning the theory, however, there are modern sources which do a better job. For instance, Fong and Spivak's book \cite{fong2019invitation} gives a very well-motivated and grounded approach to the subject.
+
+$\newline\newline$
+
+\large \textbf{Exercises}:\normalsize
+
+\begin{enumerate}[\thesection .1.]
+\item Given a category $\Ccat$, show that the mapping
+
+\begin{align*}
+\Ccat \times \bold{Hom}(\Ccat^{\op},\Set)&\to\Set\\
+(A,F)&\mapsto F(A)
+\end{align*}
+
+is functorial. Use the Yoneda lemma to show that this pairing is non-degenerate, in the sense that if $F(A)=G(A)$ for all $A$ then $F=G$, and if $F(A)=F(B)$ for all $F$ then $A=B$.
+
+\item Given a objects $A,B$ in category $\Ccat$, use the Yoneda lemma to show that the mapping
+
+\begin{align*}
+\Hom(A,B)&\to \Hom_{\bold{Hom}(\Ccat^{\op},\Set)}(\Hom_{\Ccat}(B,\--),\Hom_{\Ccat}(A,\--))\\
+\varphi & \mapsto  \left(f\mapsto f\circ \varphi\right)
+\end{align*}
+
+is a bijection. Here,$\Hom_{\Ccat}(A,\--)$ is considered as a functor in $\bold{Hom}(\Ccat^{\op},\Set)$, sending an object $C\in \Cat$ ot the set $\Hom_{\Ccat}(A,C)$, and similarly for $\Hom_{\Ccat}(B,\--)$.
+\end{enumerate}
+
 \section{Modular Tensor Categories}
 \label{Modular Tensor Categories}
 
-\subsection{Anyon models}
-\label{Anyon model}
+\subsection{Fusion systems}
+\label{Fusion systems}
 
 To describe Topological Quantum Computation (TQC), one has to describe topological quantum phases of matter. Topological Quantum Field Theories (TQFTs) are the most immediate way of doing this, as described in Section \ref{The Toric Code}. However, there are a few problems with this method:
 
@@ -1448,7 +1748,7 @@ A natural question about the definition of $6j$ symbols could be as follows: The
 ``You work at a particle accelerator. You want to understand some particle. All you can do are throw other particles at it and see what happens. If you understand how your mystery particle responds to all possible test particles at all possible test energies, then you know everything there is to know about your mystery particle" - Ravi Vakil\footnote{This quote is folklore, relayed by a MathOverflow post of Theo Johnson-Freyd}.
 \end{quote}
 
-In this context, Vakil's quote is very literal - we are studying particles by looking at their fusion rules. Fusion, as a process, generally happens when things hit each other very fast in a particle accelerator. By knowing that $a\otimes (b\otimes c)$ and $(a\otimes b)\otimes c$ can go to $d$ in all the same ways (with the relationship being those ways being specified by the matrix $F^{a,b,c}_d$), we can conclude an isomorphism between $a\otimes (b\otimes c)$ and $(a\otimes b)\otimes c$. A formal treatment of the Yoneda lemma insofar as it relates to our study is given in Appendix [WORK: ref].
+In this context, Vakil's quote is very literal - we are studying particles by looking at their fusion rules. Fusion, as a process, generally happens when things hit each other very fast in a particle accelerator. By knowing that $a\otimes (b\otimes c)$ and $(a\otimes b)\otimes c$ can go to $d$ in all the same ways (with the relationship being those ways being specified by the matrix $F^{a,b,c}_d$), we can conclude an isomorphism between $a\otimes (b\otimes c)$ and $(a\otimes b)\otimes c$.
 
 We now define braided $6j$ fusion systems. A braiding should give the relashionship between $a\otimes b$ and $b\otimes a$. These objects will be isomorphic, but not equal. For example, the fact that $X$ and $Z$ anticommute in the toric code is exactly the statement that isomorphism $X\otimes Z\to Z\otimes X$ should be $-1$ times the identity. Keeping with our Yoneda perspective, instead of giving an isomorphism $a\otimes b$ and $b\otimes a$ we give isomorphism between the spaces $a\otimes b\to c$ and $b\otimes a\to c$ for every $c$. Graphically, this can be seen in Figure [WORK: make figure]. The formal definition is as follows:
 
@@ -1562,7 +1862,7 @@ This gives a full definition of the toric code as modular tensor fusion system. 
 \subsection{The category-theoretic viewpoint}
 \label{Category viewpoint}
 
-In this subsection, we give the category theoretic perspective on Modular Tensor Categories (MTCs). As with subsection \ref{Anyon model}, we will build up to the definition of a MTC slowly. Thinking of MTCs as corresponding to ``non-degenerate" finite abelian groups, we will start with the category-theory analogues of monoids\footnote{A monoid is a set equipped with an associative binary operation and an identity element}, groups, finite groups, finite abelian groups, and then end with non-degenerate finite abelian group. The category theory analogues are as below:
+In this subsection, we give the category theoretic perspective on Modular Tensor Categories (MTCs). As with subsection \ref{Fusion systems}, we will build up to the definition of a MTC slowly. Thinking of MTCs as corresponding to ``non-degenerate" finite abelian groups, we will start with the category-theory analogues of monoids\footnote{A monoid is a set equipped with an associative binary operation and an identity element}, groups, finite groups, finite abelian groups, and then end with non-degenerate finite abelian group. The category theory analogues are as below:
 
 \begin{center}
 \begin{tabular}{c ||c } 
@@ -1643,7 +1943,7 @@ In the definition of fusion systems, the identity, associativity, and inverse ar
 However, $\Ccat$ is \textbf{not} in general equivilant to a category which is both at the same time.
 \end{theorem}
 
-This theorem really says that you cannot have your cake and eat it too. You can forget about non-trivial maps or you can forget about non-equal isomorphic obects, but you can't do both at once. Authors will often assume either one condition or the other (known as \textit{strict} and \textit{skeletal} respectively), and this will sometimes lead to confusion across the literature. A monoidal equivilance is a monoidal functor which has an inverse.
+This theorem really says that you cannot have your cake and eat it too. You can forget about non-trivial maps or you can forget about non-equal isomorphic obects, but you can't do both at once. Authors will often assume either one condition or the other (known as \textit{strict} and \textit{skeletal} respectively), and this will sometimes lead to confusion across the literature. A monoidal equivilance between two categories is a pair of monoidal functors between them, such that both compositions are monoidally naturally equivalent to the identity.
 
 \begin{definition}[Monoidal functor] A monoidal functor between monoidal categories $(\Ccat,\otimes_{\Ccat}, \alpha_{\Ccat},\lambda_{\Ccat},\rho_{\Ccat},1_{\Ccat})$ and $(\Dcat,\otimes_{\Dcat},\alpha_{\Dcat},\lambda_{\Dcat},\rho_{\Dcat},1_{\Dcat})$ is the following data:
 
@@ -1895,7 +2195,7 @@ In both bases, $N$ ranges over representatives of isomorphism classes of simple 
 \begin{theorem}[\cite{yamagami2002polygonal}] Let $\LL$ be a $6j$ fusion system. There is a unique fusion category up to monoidal equivilance which gives $\LL$ up to gauge equivilance, under the process described in Proposition \ref{Make 6j system}.
 \end{theorem}
 
-We now give some commentary on Proposition \ref{Make 6j system}, through the Yondea perspective. Namely, we elaborate on why it is that we encode associative in terms of the induced map $\Hom((A\otimes B)\otimes C,D)\to \Hom(A\otimes (B\otimes C),D)$ for all $D$, instead of as the original map $(A\otimes B)\otimes C\to A\otimes (B\otimes C)$. One pragmatic answer is that our hom spaces are vector spaces, not our objects, and so choosing bases of hom spaces is easier. Another answer is that this keeps in line with the Yoneda perspective - it is better to look at the relationship of an object with those around it (i.e., hom spaces) than the object itself. In this case, we systimatically defined $F$ matricies to associate  $\Hom((A\otimes B)\otimes C,D)$ with $\Hom(A\otimes (B\otimes C),D)$. Since raning $D$ over simple objects generatres $\Ccat$ by semisimplicity, this means that we have associates $\Hom((A\otimes B)\otimes C,\--)$ and $\Hom(A\otimes (B\otimes C),\--)$ for all possible choices of target. Since our $F$ matricies were chosen coherently, this assignment is a natural transformation. Thus, by the Yoneda lemma, this canonically specifies an isomorphism in $\Hom((A\otimes B)\otimes C,A\otimes (B\otimes C))$, namely, the associator $\alpha_{A,B,C}$. While encoding $\alpha_{A,B,C}$ as a collection of numbers proves difficult, encoding the associated natural transformation is simpler. A treatment of the Yoneda lemma is found in Appendix [WORK: ref]. We now define our analogues of abelian groups, braided fusion categories:
+We now give some commentary on Proposition \ref{Make 6j system}, through the Yondea perspective. Namely, we elaborate on why it is that we encode associative in terms of the induced map $\Hom((A\otimes B)\otimes C,D)\to \Hom(A\otimes (B\otimes C),D)$ for all $D$, instead of as the original map $(A\otimes B)\otimes C\to A\otimes (B\otimes C)$. One pragmatic answer is that our hom spaces are vector spaces, not our objects, and so choosing bases of hom spaces is easier. Another answer is that this keeps in line with the Yoneda perspective - it is better to look at the relationship of an object with those around it (i.e., hom spaces) than the object itself. In this case, we systimatically defined $F$ matricies to associate  $\Hom((A\otimes B)\otimes C,D)$ with $\Hom(A\otimes (B\otimes C),D)$. Since raning $D$ over simple objects generatres $\Ccat$ by semisimplicity, this means that we have associates $\Hom((A\otimes B)\otimes C,\--)$ and $\Hom(A\otimes (B\otimes C),\--)$ for all possible choices of target. Since our $F$ matricies were chosen coherently, this assignment is a natural transformation. Thus, by the Yoneda lemma, this canonically specifies an isomorphism in $\Hom((A\otimes B)\otimes C,A\otimes (B\otimes C))$, namely, the associator $\alpha_{A,B,C}$. While encoding $\alpha_{A,B,C}$ as a collection of numbers proves difficult, encoding the associated natural transformation is simpler. We now define our analogues of abelian groups, braided fusion categories:
 
 \begin{definition}[Braided fusion category] A braided fusion category is the following data:
 
@@ -1967,13 +2267,13 @@ We now show that braided fusion categories are indeed equivilant to braided $6j$
 This process induces a one-to-one correspondance of braided fusion categories up to braided monoidal equivilance and braided fusion systems up to gauge equivilance.
 \end{proposition}
 
-We are now ready to give our final definition:
+As usual, a braided monoidal equivalence of two categories means a pair of braided monoidal functors, such that both compositions are monoidally equivalent to the identity. We are now ready to give our final definition:
 
 \begin{definition}[Modular Tensor Category] A Modular Tensor Category is the following data:
 
 \begin{enumerate}
 \item A braided fusion category $\Ccat$.
-\item (Twist) A natural equivilance $\theta:\id_{\Ccat} \to \id_{\Ccat}$.
+\item (Twist) A natural isomorphism $\theta:\id_{\Ccat} \to \id_{\Ccat}$.
 \end{enumerate}
 
 Additionally, a Modular Tensor Category is required to satisfy the following properties:
@@ -2035,7 +2335,7 @@ The trace allows us to naturally define many very powerful, physically observabl
 \end{enumerate}
 \end{theorem}
 
-This theorem is quite useful experimentally. It is the goal of many physicists to discover non-abelian anyons. The state of current laboratories are such that creating the appropriate conditions, braiding anyons, and recording non-abelian statistics is out of reach. Thus, one observes non-abelian anyons indirectly by measuring physical quantities which are associated with non-abelian properties. For example, the quantum dimension can be related to the \textit{entropy} of a physical system \cite{kitaev2006topological}. Abelian MTCs have $d_A=1$, whereas non-abelian MTCs will have measurely larger quantum dimensions. Namely, the first part of the theorem says that $d_A\geq 2\cos(\pi/4)=\sqrt{2}$. This distinctly different entropy can be readily physically measured. Namely, the thermodynamic Maxwell's equation relates entropy to chemical potential, which in turn can be measured by simple changes in voltage [WORK: ref. The paper might not exist yet!] [WORK: re-do this paragraph with Assouline's input].
+This theorem is quite useful experimentally. It is the goal of many physicists to discover non-abelian anyons. The state of current laboratories are such that creating the appropriate conditions, braiding anyons, and recording non-abelian statistics is out of reach with the proposed methods \cite{bonderson2006probing}. Thus, one observes non-abelian anyons indirectly by measuring physical quantities which are associated with non-abelian properties. For example, the quantum dimension can be related to the \textit{entropy} of a physical system \cite{kitaev2006topological}. Abelian MTCs have $d_A=1$, whereas non-abelian MTCs will have measurely larger quantum dimensions. Namely, the first part of the theorem says that $d_A\geq 2\cos(\pi/4)=\sqrt{2}$. This distinctly different entropy can be readily physically measured. Namely, the thermodynamic Maxwell's equation relates entropy to chemical potential, which in turn can be measured by simple changes in voltage \cite{cooper2009observable}.
 
 If $d_A$ measures the size of each individual anyon-type, then their sum should give a measure of the total size of the MTC. Thus, we define
 
@@ -2315,7 +2615,7 @@ These two functors in some sense generate $\Zcal(\Ccat)$, and thus $\Zcal(\Ccat)
 
 We now verify that our two definitions of the MTC associated with the toric code are equivilant:
 
-\begin{proposition} Applying the process in Proposition \ref{Make braided system} to $\Zcal(\Vecc_{\ZZ_2})$ recovers the MTC data for the toric code, as detailed at the end of subsection \ref{Anyon model}
+\begin{proposition} Applying the process in Proposition \ref{Make braided system} to $\Zcal(\Vecc_{\ZZ_2})$ recovers the MTC data for the toric code, as detailed at the end of subsection \ref{Fusion systems}
 \end{proposition}
 \begin{proof}. [WORK: do proof]
 \end{proof}
@@ -2518,210 +2818,6 @@ The worry regarding the distinction between these two notions is justified. In g
 
 The canonical reference for this subject (known as \textit{Algebraic Topology}) is Alan Hatcher's textbook \cite{hatcher2005algebraic}.
 
-\section{Category Theory}
-\label{Categories}
-
-Category theory the mathematical abstraction of things, and relationships between things. It is a language that almost all other mathematical fields can be expressed in, with often very fruitful consequences. Formally, a category is defined as follows:
-
-\begin{definition}[Category] A category is the following data:
-
-\begin{enumerate}
-\item (Objects) A set $\Ccat$.
-\item (Morphisms) A set $\Hom(A,B)$ for all $A,B\in \Ccat$
-\item (Composition) Functions
-
-$$\circ: \Hom(B,C)\times \Hom(A,B)\to \Hom(A,C)$$
-
-for all $A,B,C\in \Ccat$.
-\end{enumerate}
-
-Additionally, a category is required to satisfy the following properties:
-
-\begin{enumerate}
-
-\item For all objects $A,B,C,D\in \Ccat$ and morphisms $f\in \Hom(A,B)$, $g\in \Hom(B,C)$, and $h\in\Hom(C,D)$,
-
-$$(h\circ g)\circ f = h\circ (g\circ f).$$
-
-\item (Identity) For all objects $A\in \Ccat$ there exists a morphism $\id_{A}: A\to A$ such that for all $B\in \Ccat$, $f\in \Hom(A,B)$ we have
-
-$$f\circ \id_{A}=f,$$
-
-and for all $f\in \Hom(B,A)$
-
-$$\id_{A}\circ f = f.$$
-
-\end{enumerate}
-
-\raggedleft\qedsymbol{}
-\end{definition}
-
-The intuition is that the set of objects $\Ccat$ includes everything that you are interested in studying. That is $\Ccat$ could be the set of sets, set of groups, set of vector spaces, set of topological spaces, etc... . The set $\Hom(A,B)$ is viewed as being the set of allowable functions from $A$ to $B$. That is, functions which respect the stuctures your are trying to study. For instance, given $G,H\in \Grp$ living in the set of groups, the space $\Hom(G,H)$ should consist of all group homomorphisms from $G$ to $H$. Given $V,W\in \Vecc$ living in the set of (finite dimensional) complex vector spaces, $\Hom(V,W)$ should consist of all linear maps from $V$ to $W$. Given $X,Y\in \Top$ living in the space of topological spaces, $\Hom(X,Y)$ should consist of all continuous maps from $X$ to $Y$. Given $A,B\in \Set$ living in the set of sets, $\Hom(A,B)$ should consist of all maps from $A$ to $B$.
-
-The composition operation $\circ$ is the fundemental operation of category theory. It is the deep idea that given two transformations, doing one after the other gives another transformation. The axiom that $(h\circ g)\circ f = h\circ (g\circ f)$ simply makes sure that composition works like we think it should. Every category that one naturally considers has identity elements. That is, the ``do-nothing" function from an object to itself should always be an allowed morphism. The do nothing map from a topological space/vector space/group is always a continuous map/linear map/homomorphism. In particular, the above descriptions give us \textit{categories} $\Set$, $\Top$, $\Vecc$, and $\Grp$.
-
-The power of category theory lies in the generality of its language. For example, one might consider the Cartesian product of sets (i.e. $A\times B=\{(a,b),\,\, a\in A,\,\, b\in B\}$). The product of vector spaces has a natural vector space space structure, giving a product $V\times W$ in $\Vecc$. The product of groups has a natural group structure, giving a product $G\times H$ in $\Grp$. The product of topologcial spaces has a natural product topology, giving a product $X\times Y$ in $\Top$. All of these examples and more can be generalized as products in a category. We work this example out in detail to give a general idea of category theory.
-
-\begin{definition}[Product] A product of two elements $A,B$ in a category $\Ccat$ is the following data:
-
-\begin{enumerate}
-\item An object $A\times B\in \Ccat$.
-\item A morphism $\pi_A\in \Hom(A\times B,A)$.
-\item A morphism $\pi_B\in \Hom(A\times B,B)$.
-\end{enumerate}
-
-Additionally, a product is required to satisfy the following property. For every $C\in \Ccat$ paired with morphisms $\tau_C: C\to A$ and $\tau_C: C\to B$, there exists a unique morphism $f: C\to A\times B$ such that $f\circ \pi_A=\tau_A$ and $f\circ \pi_B = \tau_B$.
-
-\raggedleft\qedsymbol{}
-\end{definition}
-
-This definition motivates a lot of the key concepts, benefits, and drawbacks of category theory. For instance:
-
-\begin{itemize}
-\item While the goal is often to define objects (in this case, the product $A\times B$), one realizes that the important subtlties lie in the implit morphisms. In this case, the projection maps $\pi_A,\pi_B$ turn out to be the key parts of the definition. For instance, in the case of set we have maps $\pi_A: A\times B\to A$ sending $(a,b)$ to $a$, and $\pi_B: A\times B\to B$ sending $(a,b)$ to $b$. These maps are continuous in the case of $\Top$, homomorphisms in the case of $\Grp$, and linear in the case of $\Vecc$.
-
-\item The definitions are very abstract, and get to the core of the relevant theory. In this case, product of $A$ and $B$ can be summarized as ``the most general object whitch admits morphisms to both $A$ and $B$". This condition of being the ``most general object" satisfying a condition is known as a \textit{universal property}. Universal properties are how many notions in category theory are defined. Applying the case $\Ccat=\Set,\Top,\Grp,\Vecc$, one recovers the standard definitions of product.
-
-\item Definitions can often be hard to read. It is for this reason we use diagramatic notation that elucidates ideas. Instead of writing $f\in \Hom(A,B)$, we will often write $f:A\to B$. This will make our intuition of $f$ as a function from $A$ to $B$ clear. We will package conditions like ``$f\circ \pi_A=\tau_A$ and $f\circ \pi_B=\tau_B$" as \textit{commutative diagrams}. That is, consider the series of objects and morphisms below.
-
-\[\begin{tikzcd}
-	& A \\
-	& {A\times B} & B \\
-	C
-	\arrow["{\pi_A}"', from=2-2, to=1-2]
-	\arrow["{\pi_B}", from=2-2, to=2-3]
-	\arrow["f"{description}, dashed, from=3-1, to=2-2]
-	\arrow["{\tau_A}", from=3-1, to=1-2]
-	\arrow["{\tau_B}"', from=3-1, to=2-3]
-\end{tikzcd}\]
-
-The fact that $f\circ \pi_A=\tau_A$ and $f\circ \pi_B=\tau_B$ is exactly the statement that picking any two paths between any two objects will give you the same function, when you compose all of the functions along each path. We call a diagram with this property a commutative diagram. The product condition is thus the statement is that there exists a function $f:C\to A\times B$ such that the above diagram commutes. The diagramatic language is often easier to read, and leaves room for more ease-of-use features. For instance, we make the line under $f$ dotted to reinforce that it is different than the others - we are required to show that $f$ exists, whereas $\pi_A,\tau_A,\pi_B,\tau_B$ are given.
-\end{itemize}
-
-A fundemental question in category theory is what it should mean for two things to be equivalent. For instance, one might want to show that the product $A\times B$ of two elements is unique. If we take the strictest definiition of equivalent - equal - then this is not the case. There can be multiple products. However, all of these will be \textit{isomorphic}. An isomorphism between an object $A$ and an object $B$ is a function $f:A\to B$ such that there exists $f^{-1}:B\to A$, such that $f^{-1}\circ f=\id_{A}$ and $f\circ f^{-1}=\id_B$. This recovers bijections in the case of $\Set$, group isomorphisms in case of $\Grp$, vector space isomorphisms in case of $\Vecc$, and homeomorphisms in the case of $\Top$.
-
-\begin{proposition} Let $\Ccat$ be a category, and let $A,B\in \Ccat$ be objects. Let $(A\times_0 B,\pi_A^{(0)},\pi_B^{(0)})$ and $(A\times_1 B,\pi_B^{(1)},\pi_B^{(1)})$ be products of $A$ and $B$. There is a unique isomorphism $i:A\times_0 B\to A\times_1 B$ such that
-
-\[\begin{tikzcd}
-	& A \\
-	& {A\times_0 B} & B \\
-	{A\times _1 B}
-	\arrow["{\pi_A^{(0)}}"', from=2-2, to=1-2]
-	\arrow["{\pi_B^{(0)}}", from=2-2, to=2-3]
-	\arrow["i"{description}, dashed, from=3-1, to=2-2]
-	\arrow["{\pi_A^{(1)}}", from=3-1, to=1-2]
-	\arrow["{\pi_B^{(1)}}"', from=3-1, to=2-3]
-\end{tikzcd}\]
-
-commutes.
-\end{proposition}
-\begin{proof}. [WORK: do proof.]
-\end{proof}
-
-Observe that not only do we recover an isomorphism between $A\times_0 B$ and $A\times _1 B$, but we recover an isomorphism which respects the relevant structure. Namely, the projection maps onto $A$ and $B$. With this isomorphism in hand, we can reasonably say that the product of $A$ and $B$ is unique. There are many choices, but they all have unique isomorphisms between each other which respect structure. We say in this situation that $A\times_0 B$ and $A\times_1 B$ can be \textit{canonically} identified. A structure is canonical if there is a unique natural choice of construction. In this case, the isomorphism is canonical since there is a unique choice, the one which makes the diagram commute. Generally, the canonical choice is the one which makes the most diagrams commute. It is the goal of much of category theory to formalize the notions of constructions being canonical. It is the goal of many mathematicians studying category theory to develop the most canonical possible constructions:
-
-\begin{quote}
-``I can assure you, at any rate, that [...] my results are invariant, probably canonical, perhaps even functorial." - André Weil\footnote{This quote appears in André Weil's collection \cite{weil2009oeuvres} on page 558. [WORK: verify, get details]}
-\end{quote}
-
-The term \textit{functorial} in the above quote makes reference to one of the most systematic measures of canonicality in category theory. Suppose one has two categories $\Ccat$ and $\Dcat$, and has an assignment of objects from $\Ccat$ to $\Dcat$. For instance $\Ccat=\Top$, $\Dcat=\Grp$, and the assignement sends a space $X$ to its first homology group with $\ZZ_2$ coefficients $H_1(X;\ZZ_2)$. Or perhaps $\Ccat=\Set$, $\Dcat=\bold{Vec}$, and the assignment sends a set $S$ to the vector space $\CC[S]$ which has distinguished basis $S$. These assignments are very natural, and one would want a measure of the fact that they are canonical. In this case, we can say these maps are \textit{functorial}. This means that these assignments can be extended to functors, which we define below:
-
-\begin{definition}[Functor] A functor between two categories $\Ccat$ and $\Dcat$ is the following data:
-
-\begin{enumerate}
-\item An object $F(A)\in\Dcat$ for every object $A\in \Ccat$.
-\item A morphism $F(f):F(A)\to F(B)$ for every morphism $f:A\to B$, $A,B\in \Ccat$.
-\end{enumerate}
-
-Additionally, a functor is required to satisfy the following properties:
-
-\begin{enumerate}
-\item (Preserves composition) $F(g\circ f)=F(g)\circ F(f)$, for all $f:A\to B$, $g:B\to C$, $A,B,C\in \Ccat$.
-\item (Preserves identity) $F(\id_{A})=\id_{F(A)}$ for all $A\in \Ccat$.
-\end{enumerate}
-
-\raggedleft\qedsymbol{}
-\end{definition}
-
-For example, we demonstrate here that $\CC[S]$ is functorial.
-
-\begin{proposition} Define the functor $\CC[\--]$ [WORK: give good definition, state it is functorial].
-\end{proposition}
-\begin{proof}. [WORK: do proof].
-\end{proof}
-
-This abstraction of functors gives the following meta-fact:
-
-\begin{proposition} . [WORK: Define the category of categories]
-\end{proposition}
-\begin{proof}. [WORK: do proof].
-\end{proof}
-
-This gives a natural notion of isomorphism between two categories. Namely, two categories $\Ccat$ and $\Dcat$ are isomorphic if there is an invertible functor between them. This is where the subtelty of the ``find out what it should mean for two things to be equivalent" question of category theory shows its head. Requiring two categories to be isomorphic is often too restrictive. For instance, in Topological Quantum Computing, we find that models of quasiparticles correspond to certain categories up to a weaker notion of equivalence. Namely, letting $F:\Ccat \to \Dcat$ and $F^{-1}:\Dcat \to \Ccat$ be functors, requiring $F^{-1}\circ F=\id_{\Ccat}$ and $F\circ F^{-1}=\id_{\Dcat}$ is too restrictive. That is, we shouldn't force the functors to be equal to the identity, only \textit{isomorphic} to the identity. That is, there should be a natural transformation between $F^{-1}\circ F$ and the identity, where natural transformations are defined as follows:
-
-\begin{definition}[Natural transformation]. [WORK: define natural transformation]
-\end{definition}
-
-\begin{proposition} Let $\Ccat,\Dcat$ be categories. [WORK: define the category $\bold{Hom}(\Ccat,\Dcat)$ of functors.]
-\end{proposition}
-\begin{proof}. [WORK: do proof]
-\end{proof}
-
-With this, we can succinctly state the notion of equivalence we will use throughout this text. Two categories $\Ccat$ and $\Dcat$ are equivalent if there is are functors $F:\Ccat\to \Dcat$ and $F^{-1}:\Dcat\to \Ccat$ such that $F\circ F^{-1}$ and $F^{-1}\circ F$ are both isomorphic (i.e., there exists invertible natural transformations) to the identity.
-
-We make a comment about the above situtation. We used as a key fact that the hom-spaces in the category $\Cat$ can themselves be realized as categories. This is not a property unique to $\Cat$. There are many sets which not only have morphisms (category structure), but morphisms of morphisms (category structure on hom-spaces). These are known as $2$-categories. Those categories with morphisms of morphisms of morphisms and so on $n$-times recursively are known as $n$-categories. While we do not explictely use the language of higher category theory in this manuscript, delving deeper into the mathematics of Topological Quantum Computing strongly uses $n$-cateogires. For instance, this is the founding philosophy of the $n$Lab, the largest repository of mathematical physics:
-
-\begin{quote}
-``It is believed that [...] higher category theory provide[s] a point of view on Mathematics, Physics and Philosophy which is a valuable unifying point of view for the understanding of the concepts involved" - $n$Lab\footnote{This is the first line of the $n$Lab's ``$n$POV" page.}
-\end{quote}
-
-We now give such a story where category theory helps unify our understanding of concepts involved. Let $V$ be a vector space, and let $V^*$ denote the dual vector space, consisting of morphisms $V\to \CC$. Both $V$ and $V^*$ have the same dimension, hence choosing bases when get an isomorphism $V\xrightarrow{\sim}V^*$. However, this is non-canonical: There is no ``correct" choice of basis. However, there \textit{is} a canonical isomorphism $V\xrightarrow{\sim}V^{**}$, given by
-
-\begin{align*}
-V&\xrightarrow{}V^{**}.\\
-v&\mapsto (\varphi\mapsto \varphi(v))
-\end{align*}
-
-This can be seen as saying that points are functions on functions. It is an important fact that this map is an isomorphism, and the proof relies keely on the fact that $V$ is finite dimensional - it could fail in general, where we only have an embedding $V\hookrightarrow{} V^{**}$. Formally, we have the following:
-
-\begin{proposition}. [WORK: natural transformation between functors $\id_{\Vecc}$ and $(\--)^{**}$.]
-\end{proposition}
-\begin{proof}. [WORK: do proof].
-\end{proof}
-
-This fundamental duality of vector spaces is something that one desires to emulate. Switching perspectives from points to functions can be illuminating. The version of duality most similar to this in category theory is known as Yoneda's lemma, where we can switch perspectives from objects to functors.
-
-\begin{theorem}[Yoneda's Lemma]. [WORK: state the Yoneda lemma]
-\end{theorem}
-\begin{proof}. [WORK: do proof]
-\end{proof}
-
-The Yoneda lemma is considered one of the most fundemental results in category theory. A philosophical description of the Yoneda lemma is as follows:
-
-[WORK: Get Ravi Vakil quote back.]
-
-This loose analogy become almost exactly true in the study of Topological Quantum Computing. One considers categories in which the objects correspond to collections of quasiparticles, and morphisms correspond to physical transformations of the system. Categories that arrise in this fashion are known as Modular Tensor Categories. Modular Tensor Categories are \textit{monoidal} categories, which means that there is a tensor product $A\otimes B$ of objects. This corresponds to putting two particles together. Functions $A\otimes B\to C$ correspond fusion of $A$ and $B$ into $C$. The \textit{braiding} of two particles is an isomorphism between $A\otimes B\to B\otimes A$. Topological Quantum Computing is based on the fact that $A\otimes B$ and $B\otimes A$ are isomorphic, but non-canonically, meaning that braiding different ways can produce different results.
-
-When storing numberical data about braiding, one does not recording the braiding isomorphim $A\otimes B\to B\otimes A$ directly. Instead, one stores an isomorphism between $\Hom(A\otimes B, C)$ and $\Hom(B\otimes A, C)$ for each $C$. That is, one relates how $A\otimes B$ and $B\otimes A$ fuse relative to other particles. This is practically a much nicer thing to do. This gives a natural isomorphim between $\Hom(A\otimes B,\--)$ and $\Hom(B\otimes A, \--)$, and thus Yoneda's lemma tells us this induces an isomorphism $A\otimes B\to B\otimes A$. This is a routine practice in our study of Modular Tensor Categories, and the Yoneda-perspective is often assumed implicitely.
-
-The Yoneda lemma can be stated in a way more reminiscent of vector space duality. There is a natural map $V\times V^*=V\times \Hom(V,\CC)\to \CC$, sending $(v,\varphi)$ to $\varphi(v)$. Vector space duality is exactly the fact that this pairing is non-degenerate, in the sense that if $\varphi(v)=0$ for all $v$ then $\varphi=0$, and if $\varphi(v)=0$ for all $\varphi$ then $v=0$. There is a pairing on the level of categories,$\Ccat \times \left[\Ccat^{\text{op}},\Set\right]\to \Set$, and the Yoneda lemma is exactly the statement that it is non-degenerate. Observe that to make this statement formal, we will have to define the product $\times$ of categories. In some sense, we already have: $\times$ is the product in the category of categories! Explicitely, we can also describe the product as follows:
-
-\begin{proposition}. [WORK: give explicit description of product in category of categories.]
-\end{proposition}
-\begin{proof}. [WORK: do proof]
-\end{proof}
-
-We now give our formal restatement of Yoneda's lemma:
-
-\begin{proposition}. [WORK: give 2nd statement of Yoneda lemma]
-\end{proposition}
-\begin{proof}. [WORK: do proof]
-\end{proof}
-
-This concludes our introduction to category theory. The canonical reference for category theory is Mac-Lane's foundational text \cite{mac2013categories}. As a readable way to begin learning the theory, however, there are modern sources which do a better job. For instance, Fong and Spivak's book \cite{fong2019invitation} gives a very well-motivated and grounded approach to the subject.
-
-[WORK: Define relevant equivalence in sections, properly]
-
 \section{Unitarity}
 \label{Unitarity}
 
@@ -2764,7 +2860,7 @@ for all $v\in V(Y_0)$, $w\in V(Y_1)$. All that is left to check is that the axio
 \begin{proof}. [WORK: do proof.]
 \end{proof}
 
-This also has a functorial interpretation. We saw in Exercise [WORK: ref] that a (2+1) TQFT can be viewed as a braided monoidal functor $\Bord(2+1)\to \Vecc$. This functorial language very naturally captures our setting:
+This also has a functorial interpretation. We saw in Exercise \ref{Modular Tensor Categories}.1 that a (2+1) TQFT can be viewed as a braided monoidal functor $\Bord(2+1)\to \Vecc$. This functorial language very naturally captures our setting:
 
 \begin{proposition} Define a unitary $(n+1)$-TQFT to be a braided monoidal functor
 
@@ -2929,6 +3025,10 @@ This gives $\Vecc_G$ the structure on a unitary fusion category.
 Thus, $\Vecc_{\ZZ_2}$ can be given the structure of a unitary fusion category. Applying Proposition \ref{unitary MTC}, this means that $\Zcal(\Vecc_{\ZZ_2})$ has the structure of a unitary MTC, as desired. If one wishes to have a canonical unitary structure, then one can use instead the category of $G$-graded Hilbert spaces, $\Hilb_G$. It is equivalent to $\Vecc_G$, but its unitary structure is canonical. Thus, it is philosophically more correct to say that the unitary MTC associated with the toric code is not $\Zcal(\Vecc_{\ZZ_2})$, but $\Zcal(\Hilb_{\ZZ_2})$.
 
 As in the non-unitary case, there is an equivalence between unitary MTCs and (1-extended) unitary TQFTs [WORK: find source]. Under this equivalence, $\Zcal(\Hilb_{\ZZ_2})$ as a unitary MTC is identified with the $\ZZ_2$ Dijkgraaf-Witten theory as a unitary TQFT. Seeing as all physically realizable systems will be unitary, practically speaking it is this correspondence which is the most important.
+
+\section{Anyon data}
+
+.[WORK: Add a section detailing the data for popular anyon models/MTCs. A discussion of the fillings of the Hall states and their corresponding (conjectural) models in found in \cite{bruillard2017fermionic}. Zhenghan's monograph also has a lot. In general, if there are relevant tables/numbers then they should be included here.]
 
 \bibliographystyle{alpha}
 \bibliography{ref}

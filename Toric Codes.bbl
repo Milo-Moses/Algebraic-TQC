@@ -29,6 +29,12 @@ Cl{\'e}ment Aubert.
 \newblock Categories for me, and you?
 \newblock {\em arXiv preprint arXiv:1910.05172}, 2019.
 
+\bibitem[BGH{\etalchar{+}}17]{bruillard2017fermionic}
+Paul Bruillard, C{\'e}sar Galindo, Tobias Hagge, Siu-Hung Ng, Julia~Yael
+  Plavnik, Eric~C Rowell, and Zhenghan Wang.
+\newblock Fermionic modular categories and the 16-fold way.
+\newblock {\em Journal of Mathematical Physics}, 58(4):041704, 2017.
+
 \bibitem[BK01]{bakalov2001lectures}
 Bojko Bakalov and Alexander~A Kirillov.
 \newblock {\em Lectures on tensor categories and modular functors}, volume~21.
@@ -39,6 +45,16 @@ Paul Bruillard, Siu-Hung Ng, Eric Rowell, and Zhenghan Wang.
 \newblock Rank-finiteness for modular categories.
 \newblock {\em Journal of the American Mathematical Society}, 29(3):857--881,
   2016.
+
+\bibitem[BSS06]{bonderson2006probing}
+Parsa Bonderson, Kirill Shtengel, and Joost~K Slingerland.
+\newblock Probing non-abelian statistics with quasiparticle interferometry.
+\newblock {\em Physical review letters}, 97(1):016401, 2006.
+
+\bibitem[CS09]{cooper2009observable}
+NR~Cooper and Ady Stern.
+\newblock Observable bulk signatures of non-abelian quantum hall states.
+\newblock {\em Physical review letters}, 102(17):176807, 2009.
 
 \bibitem[Day21]{day2021quipus}
 Cyrus~Lawence Day.

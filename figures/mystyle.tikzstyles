@@ -1,5 +1,7 @@
 
 \tikzstyle{white node}=[fill=white, tikzit category=nodes, shape=circle]
 
+\tikzstyle{arrow}=[->,tikzit category=edges]
+
 \tikzstyle{dashed edge}=[<->, dashed]
 \tikzstyle{blue pointer}=[->, draw=blue]
