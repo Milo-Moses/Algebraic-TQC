@@ -89,6 +89,12 @@ Theodore Frankel.
 \newblock Homology and flows on manifolds.
 \newblock {\em Annals of Mathematics}, pages 331--339, 1957.
 
+\bibitem[FS19]{fong2019invitation}
+Brendan Fong and David~I Spivak.
+\newblock {\em An invitation to applied category theory: seven sketches in
+  compositionality}.
+\newblock Cambridge University Press, 2019.
+
 \bibitem[GHS23]{gainutdinov2023davydov}
 Azat~M Gainutdinov, Jonas Haferkamp, and Christoph Schweigert.
 \newblock Davydov-yetter cohomology, comonads and ocneanu rigidity.
@@ -156,6 +162,11 @@ Ville Lahtinen and Jiannis Pachos.
 Michael~A Levin and Xiao-Gang Wen.
 \newblock String-net condensation: A physical mechanism for topological phases.
 \newblock {\em Physical Review B}, 71(4):045110, 2005.
+
+\bibitem[ML13]{mac2013categories}
+Saunders Mac~Lane.
+\newblock {\em Categories for the working mathematician}, volume~5.
+\newblock Springer Science \& Business Media, 2013.
 
 \bibitem[MS21]{mignard2021modular}
 Micha{\"e}l Mignard and Peter Schauenburg.
@@ -239,6 +250,12 @@ Cumrun Vafa.
 Zhenghan Wang.
 \newblock {\em Topological quantum computation}.
 \newblock Number 112. American Mathematical Soc., 2010.
+
+\bibitem[Wei09]{weil2009oeuvres}
+Andr{\'e} Weil.
+\newblock {\em Oeuvres Scientifiques/Collected Papers: Volume 2 (1951-1964)},
+  volume~2.
+\newblock Springer Science \& Business Media, 2009.
 
 \bibitem[Wen17]{wendin2017quantum}
 G{\"o}ran Wendin.
