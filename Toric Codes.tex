@@ -17,6 +17,7 @@
 \usepackage{tikzit}
 \usepackage{ upgreek }
 \usepackage[normalem]{ulem}
+\usepackage{quiver} 
 
 
 
@@ -148,13 +149,6 @@ The structure of the manuscript is as follows:
 \item Section \ref{Topological Quantum Computing} gives an introduction to the general TQC methodology, using all of the tools developped in the previous sections. Subsection \ref{The TQC framework} gives a detailed overview of TQC, including measurement-based algorithms. Subsection \ref{Revisiting toric code TQC} carries this out explicitely for the toric code. Subsection \ref{Universal TQC with the Fibbonacci anyon} introduces the Fibonacci anyon model, and shows that it gives universal quantum computation via braiding alone.
 
 \end{itemize}
-
-The logical dependence of the sections is as follows:
-
-
-\begin{equation*}
-  \tikzfig{dependency-tree}
-\end{equation*}
 
 \section{Introduction}
 \label{Introduction}
@@ -541,7 +535,7 @@ While Hilbert spaces are more technically accurate, we will often be thinking of
 \begin{enumerate}
 \item In simple situations we will often be extremely explicit with choosing bases, and hence we will not need the basis independent language of Hilbert spaces
 
-\item In complex situations keeping track of inner products is too complicated, and hence we work in the simpler situation of vector spaces. When this becomes an issue we will add conditions to simulate Hilbert space structure (for example, adding a unitarity condition to Modular Tensor Categories), though this is often unnececary.
+\item In complex situations the language of Hilbert spaces adds extra confusion and subtelty, so we work instead with vector spaces. Dealing with this subtlety by imposing the structure of Hilbert spaces of Topological Quantum Field Theories/Modular Tensor Categories and forcing all maps to be unitary is done in Appendix \ref{Unitarity}.
 \end{enumerate}
 
 We now conclude with a more percise treatment of quantum computation. The goal of computer science is to perform computations on information. A computation is a way of taking in information, transforming it, and returning information. Information is a very broad term, but one of the greatest successes of information theory is the universal language of \textit{bits}. That is, we represent general information as finite collections of $1$s and $0s$. Abstractly, a classical computation is a function
@@ -1342,7 +1336,20 @@ A fundemental question in category theory is what it should mean for two things 
 
 commutes.
 \end{proposition}
-\begin{proof}. [WORK: do proof.]
+\begin{proof} By the universal property of $A\times_0 B$, there is a unique map $i: A\times_1 B\to A\times _0 B$ making the diagram commute. The only issue is showing that $i$ is an isomorphism. By the universal property of $A\times _1 B$, there exists a map $i^{-1}:A\times_0 B\to A\times_1 B$ making the same map commute. Now, we observe the commutative daigram
+
+\[\begin{tikzcd}
+	& A \\
+	& {A\times_0 B} & B \\
+	{A\times_0 B}
+	\arrow["{\pi_A^{(0)}}"', from=2-2, to=1-2]
+	\arrow["{\pi_B^{(0)}}", from=2-2, to=2-3]
+	\arrow["{\pi_A^{(0)}}", from=3-1, to=1-2]
+	\arrow["{\pi_B^{(0)}}"', from=3-1, to=2-3]
+	\arrow["{i\circ i^{-1}}"{description}, dashed, from=3-1, to=2-2]
+\end{tikzcd}\]
+
+The universal property of $A\times_0 B$ says that there is a unique choice of function $A\times_0B\to A\times_0 B$ making the diagram commute. Seeing as $\id_{A\times_0 B}$ also preserves commutivity, uniqueness thus tells us that $i\circ i^{-1}=\id_{A\times_0 B}$. Considering the diagram corresponding to $i^{-1}\circ i$, we find similarly that $i^{-1}\circ i=\id_{A\times_1 B}$. Thus, $i$ is an isomorphism.
 \end{proof}
 
 Observe that not only do we recover an isomorphism between $A\times_0 B$ and $A\times _1 B$, but we recover an isomorphism which respects the relevant structure. Namely, the projection maps onto $A$ and $B$. With this isomorphism in hand, we can reasonably say that the product of $A$ and $B$ is unique. There are many choices, but they all have unique isomorphisms between each other which respect structure. We say in this situation that $A\times_0 B$ and $A\times_1 B$ can be \textit{canonically} identified. A structure is canonical if there is a unique natural choice of construction. In this case, the isomorphism is canonical since there is a unique choice, the one which makes the diagram commute. Generally, the canonical choice is the one which makes the most diagrams commute. It is the goal of much of category theory to formalize the notions of constructions being canonical. It is the goal of many mathematicians studying category theory to develop the most canonical possible constructions:
@@ -1351,7 +1358,7 @@ Observe that not only do we recover an isomorphism between $A\times_0 B$ and $A\
 ``I can assure you, at any rate, that [...] my results are invariant, probably canonical, perhaps even functorial." - André Weil\footnote{This quote appears in André Weil's collection \cite{weil2009oeuvres} on page 558. [WORK: verify, get details]}
 \end{quote}
 
-The term \textit{functorial} in the above quote makes reference to one of the most systematic measures of canonicality in category theory. Suppose one has two categories $\Ccat$ and $\Dcat$, and has an assignment of objects from $\Ccat$ to $\Dcat$. For instance $\Ccat=\Top$, $\Dcat=\Grp$, and the assignement sends a space $X$ to its first homology group with $\ZZ_2$ coefficients $H_1(X;\ZZ_2)$. Or perhaps $\Ccat=\Set$, $\Dcat=\bold{Vec}$, and the assignment sends a set $S$ to the vector space $\CC[S]$ which has distinguished basis $S$. These assignments are very natural, and one would want a measure of the fact that they are canonical. In this case, we can say these maps are \textit{functorial}. This means that these assignments can be extended to functors, which we define below:
+The term \textit{functorial} in the above quote makes reference to one of the most systematic measures of canonicality in category theory. Suppose one has two categories $\Ccat$ and $\Dcat$, and has an assignment of objects from $\Ccat$ to $\Dcat$. For instance $\Ccat=\Top$, $\Dcat=\Grp$, and the assignement sends a space $X$ to its first homology group with $\ZZ_2$ coefficients $H_1(X;\ZZ_2)$. Or perhaps $\Ccat=\Set$, $\Dcat=\bold{Vec}$, and the assignment sends a set\footnote{To get a finite dimensional vector space, $S$ has to be finite. Thus, this is really a functor $\bold{finSet}\to \Vecc$ whose source is the category of finite sets.} $S$ to the vector space $\CC[S]$ which has distinguished basis $S$. These assignments are very natural, and one would want a measure of the fact that they are canonical. In this case, we can say these maps are \textit{functorial}. This means that these assignments can be extended to functors, which we define below:
 
 \begin{definition}[Functor] A functor between two categories $\Ccat$ and $\Dcat$ is the following data:
 
@@ -1370,40 +1377,21 @@ Additionally, a functor is required to satisfy the following properties:
 \raggedleft\qedsymbol{}
 \end{definition}
 
-For example, we demonstrate that the assignment $A\mapsto \CC[A]$ is functorial.
-
-\begin{proposition} Define the following data for a functor $\Set \to \Grp$:
-
-\begin{enumerate}
-\item Assigning $\CC[A]$ to each set $A\in \Set$.
-\item Assigning the linear map
-
-\begin{align*}
-\CC[A]&\xrightarrow{} \CC[B]\\
-\sum_{a\in A}c_a [a]&\mapsto \sum_{a\in A}c_a[f(a)]
-\end{align*}
-
-to $f:A\to B$, for all $A,B\in \Ccat$.
-\end{enumerate}
-
-This is a functor, which we denote $\CC[\--]$.
-\end{proposition}
-\begin{proof}. [WORK: do proof].
-\end{proof}
-
-This abstracted language of functors gives the following meta-fact:
+We verify that the mappings $\CC[\--]$ and $H_1(\--;\ZZ_2)$ are functorial in Exercise \thesection.3. This abstracted language of functors gives the following meta-fact:
 
 \begin{proposition} Define the following data for a category:
 
 \begin{enumerate}
 \item (Objects) Categories.
 \item (Morphisms) Functors.
-\item (Composition) Given $F\in \Hom(\Ccat,\Dcat)$, $G\in \Hom(\Dcat,\Ecat)$, we define the composition $G\circ F: \Ccat \to \Ecat$ to be the functor sending an object $A\in \Ccat$ to $G(F(A))\in \Ecat$, and sending $f\in \Hom(A,B)$ to $G(F(f))\in \Hom(G(F(A)),G(F(B)))$. 
+\item (Composition) Given $F\in \Hom(\Ccat,\Dcat)$, $G\in \Hom(\Dcat,\Ecat)$, we define the composition $G\circ F: \Ccat \to \Ecat$ to be the functor sending an object $A\in \Ccat$ to $G(F(A))\in \Ecat$, and sending $f\in \Hom(A,B)$ to the map
+
+$$G(F(f))\in \Hom(G(F(A)),G(F(B))).$$ 
 \end{enumerate}
 
 This is well defined, and gives a category called $\Cat$.
 \end{proposition}
-\begin{proof}. [WORK: do proof].
+\begin{proof} Verifying that rule given satisfies the composition axiom is trivial. The identity element of $\Ccat$ is the functor $\id_{\Ccat}:\Ccat\to \Ccat$, when sends objects and functions to themselves. It is again trivial to verify that this is a functor, and that it is an identity element.
 \end{proof}
 
 This gives a natural notion of isomorphism between two categories. Namely, two categories $\Ccat$ and $\Dcat$ are isomorphic if there is an invertible functor between them. This is where the subtelty of the ``find out what it should mean for two things to be equivalent" question of category theory shows its head. Requiring two categories to be isomorphic is often too restrictive. For instance, in Topological Quantum Computing, we find that models of quasiparticles correspond to certain categories up to a weaker notion of equivalence. Namely, letting $F:\Ccat \to \Dcat$ and $F^{-1}:\Dcat \to \Ccat$ be functors, requiring $F^{-1}\circ F=\id_{\Ccat}$ and $F\circ F^{-1}=\id_{\Dcat}$ is too restrictive. That is, we shouldn't force the functors to be equal to the identity, only \textit{isomorphic} to the identity. That is, there should be a natural transformation between $F^{-1}\circ F$ and the identity, where natural transformations are defined as follows:
@@ -1435,7 +1423,16 @@ $$\bold{Hom}(\Ccat,\Dcat)=
 
 Along with a canonical choice of composition rule, this forms a category.
 \end{proposition}
-\begin{proof}. [WORK: do proof]
+\begin{proof} Let $\eta^{(0)}: F_0\to F_1$, $\eta^{(1)}:F_1\to F_2$, $\eta^{(2)}: F_2\to F_3$ be natural tranformations, with $F_1,F_1,F_2,F_3:\Ccat\to \Dcat$ functors. We define the composition $\eta^{(1)}\circ \eta^{(0)}:F_0\to F_2$ by $\left(\eta^{(1)}\circ \eta^{(0)}\right)_A=\eta^{(1)}_A\circ \eta^{(0)}_A$. This satisfies the composition law, since
+
+\begin{align*}
+\left(\left(\eta^{(2)}\circ \eta^{(1)}\right)\circ \eta^{(0)}\right)_A&=\left(\eta^{(2)}\circ \eta^{(1)}\right)_A\circ \eta^{(0)}_A\\
+&=\eta^{(2)}_A\circ \eta^{(1)}_A\circ \eta^{(0)}_A\\
+&=\eta^{(2)}_A\circ \left(\eta^{(1)}\circ \eta^{(0)}\right)_A\\
+&=\left(\eta^{(2)}\circ \left(\eta^{(1)}\circ \eta^{(0)}\right)\right)_A
+\end{align*}
+
+for all $A\in \Ccat$. The identity map on a functor $F$ is the natural tranformation $\id_{F}:F\to F$ defined by $\left(\id_F\right)_A=\id_{F(A)}$. It is trivial to check that this is a well defined natural transformation, and that it gives an identity element in the category.
 \end{proof}
 
 With this, we can succinctly state the notion of equivalence we will use throughout this text. Two categories $\Ccat$ and $\Dcat$ are equivalent if there is are functors $F:\Ccat\to \Dcat$ and $F^{-1}:\Dcat\to \Ccat$ such that $F\circ F^{-1}$ and $F^{-1}\circ F$ are both isomorphic (in the category $\bold{Hom}(\Ccat,\Dcat)$) to the identity. Whenever the category being assumed is unclear, we use the more precise notation $\Hom_{\Ccat}(A,B)$ for morphisms in $\Ccat$.
@@ -1457,44 +1454,93 @@ This can be seen as saying that points are functions on functions. It is an impo
 
 \begin{proposition} Define the functor $(\--)^{**}: \Vecc \to \Vecc$ sending $V$ to $V^{**}$. The double dual maps $V\to V^{**}$ defined above gives a natural isomorphism between $\id_{\Ccat}$ and $(\--)^{**}$.
 \end{proposition}
-\begin{proof}. [WORK: do proof].
+\begin{proof} We first show that $(\--)^{**}$ is functorial. Given $f:V\to W$, we define $f^{*}:W^{*}\to V^{*}$ by sending $\varphi$ to $\varphi \circ f$. Applying this construction twice, this gives a well defined map $f^{**}:V^*\to W^{*}$. It is trivial to show that this respects composition, and thus gives $(\--)^{**}$ the structure of a functor. To show that the maps $V\to V^{**}$ give a natural tranformaton, we must show that for all $f:V\to W$ the square
+
+\[\begin{tikzcd}
+	V & {V^{**}} \\
+	W & {W^{**}}
+	\arrow["f"{description}, from=1-1, to=2-1]
+	\arrow["{f^{**}}"{description}, from=1-2, to=2-2]
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=2-1, to=2-2]
+\end{tikzcd}\]
+
+commutes. Choose $v\in V$. Going around the bottom of the diagram, we get $(\varphi \mapsto \varphi(f(v)))\in W^{**}$. Going around the top of the diagram, we get $f^{**}(\varphi\mapsto \varphi(v))\in W^{**}$. Unwraveling definitions we find that
+
+\begin{align*}
+f^{**}(\varphi\mapsto \varphi(v))&=\left(\varphi\mapsto f^{*}(\varphi)(v)\right)\\
+&=\left(\varphi\mapsto \varphi(f(v))\right)
+\end{align*}
+
+as desired. Now, we check that this natural transformation is invertible. Since all of the maps $V\to V^{**}$ are isomorphisms, so we can define a natural transformation $(\--)^{**}\to\id_{\Ccat}$ whose component $(\--)^{\**}_{V}$ is the inverse of the double dual $V\to V^{**}$. It is trivial to check that this is an inverse in the category $\bold{Hom}(\Vecc,\Vecc)$, so we are done.
 \end{proof}
 
-This fundamental duality of vector spaces is something that one desires to emulate, or more accurately, the functorial embedding $V\hookrightarrow{}V^{**}$. Switching perspectives from points to functions can be illuminating. The version of duality most similar to this in category theory is known as Yoneda's lemma, where we can switch perspectives from objects to functors.
+This fundamental duality of vector spaces is something that one desires to emulate, or more accurately, the functorial embedding $V\hookrightarrow{}V^{**}$. Switching perspectives from points to functions can be illuminating. While not a direct generalization, the version of duality most similar to this in category theory is known as Yoneda's lemma, where we can switch perspectives from objects to functors. We state it below, after a lemma.
 
-\begin{lemma} Let $\Ccat$ be a category. Define the data for a category as follows:
-
-\begin{enumerate}
-\item (Objects) $\Ccat$, but labeled with the notation $A^{\op}$ instead of $A$, to distinguish between elements of $\Ccat$ and the new category.
-\item (Morphisms) Given objects $A^{\op},B^{\op}$, $A,B\in \Ccat$, we define
-
-$$\Hom(A^{\op},B^{\op})=\Hom_{\Ccat}(B,A).$$
-\item (Composition) Given morphisms $f^{\op}:A^{\op}\to B^{\op}$, $g^{\op}:B^{\op}\to C^{\op}$, $A,B,C\in \Ccat$, we define
-
-$$g^{\op}\circ f^{\op}=(f\circ g)^{\op}.$$
-\end{enumerate}
-
-This data gives a well defined category, which we call $\Cat^{\op}$.
+\begin{lemma} Let $\Ccat$ be a category. Define a category $\Ccat^{\op}$ whose objects are symbols of the form $A^{\op}$, for $A\in \Ccat$, and whose morphisms in $\Hom_{\Ccat^{\op}}(A^{\op},B^{\op})$ are symbols $f^{\op}$, for $f\in \Hom_{\Ccat}(B,A)$. Along with a canonical composition law, $\Ccat^{\op}$ is a well defined category.
 \end{lemma}
-\begin{proof}. [WORK: Do the proof]
+\begin{proof} Given $f:A^{\op}\to B^{\op}$, $g:B^{\op}\to C^{\op}$, $h:C^{\op}\to D^{\op}$ with $A,B,C,D\in \Ccat$, we define $g^{\op}\circ f^{\op}=(f\circ g)^{\op}$. The composition law is verified by the composition
+
+\begin{align*}
+h^{\op}\circ (g^{\op}\circ f^{\op})&=h^{\op}\circ (f\circ g)^{\op}\\
+&=\left((f\circ g)\circ h\right)^{\op}\\
+&=\left(f\circ (g\circ h)\right)^{\op}\\
+&=\left((g\circ h)^{\op}\circ f^{\op}\right)\\
+&=(h^{\op}\circ g^{\op})\circ f^{\op}.\\
+\end{align*}
+
+It is trivial to check that $(\id_A)^{\op}$ serves as an identity element for $A^{\op}$, so we are done.
 \end{proof}
 
 \begin{theorem}[Yoneda's Lemma] Let $\Ccat$ be a category. We define a mapping
 
 \begin{align*}
-\Ccat &\xrightarrow{} \bold{Hom}(\bold{Hom}(\Ccat^{\op},\Set),\Set).\\
-A & \mapsto (F \mapsto F(A))
+\Ccat &\xrightarrow{} \bold{Hom}(\Ccat^{\op},\Set).\\
+A & \mapsto (B^{\op} \mapsto \Hom_{\Ccat}(B,A))
 \end{align*}
 
 This assignment is functorial. It is injective on the level of objects, injective on the level of morphisms (``faithful"), and surjective on the level of morphisms (``full"). This is summarized as saying that the assignment above is a fully faithful emebdding of categories.
 \end{theorem}
-\begin{proof}. [WORK: do proof]
+\begin{proof} To begin, we check that the assignment $B^{\op}\mapsto \Hom_{\Ccat}(B,A)$ is functorial. Suppose we are given a morphism $f^{\op}:B^{\op}\to C^{\op}$, coming from a morphism $f:C\to B$, $B,C\in \Ccat$. This induces a set morphism $\Hom_{\Ccat}(f,A)$by precomposition,
+
+\begin{align*}
+\Hom_{\Ccat}(B,A)&\xrightarrow{\Hom_{\Ccat}(f,A)} \Hom_{\Ccat}(C,A).\\
+\varphi &\mapsto \varphi \circ f
+\end{align*}
+
+Now, choose $g^{\op}:C^{\op}\to D^{\op}$. The statement that $\Hom_{\Ccat}(g,A)\circ \Hom_{\Ccat}(f,A)=\Hom_{\Ccat}(f\circ g, A)$ is exactly the statement that $(\varphi \circ f)\circ g =\varphi \circ (f\circ g)$, which follows from the fact that $\Ccat$ is a category. Precomposition with the identity does not affect the map on hom, hence $\Hom_{\Ccat}(\id_{B},A)=\id_{\Hom_{\Ccat}(B,A)}$ as desired.
+
+Now, we show that the assignment $A\mapsto (B^{\op}\mapsto \Hom_{\Ccat}(B,A))$ is functoral. Suppose we are given $f:A\to B$. We need to show that this induces a natural transformation $\eta^{(f)}$ between the functors $\left(C\mapsto \Hom_{\Ccat}(C,A)\right)$ and $\left(C\mapsto \Hom_{\Ccat}(C,B)\right)$. We define this transformation by postcomposition,
+
+\begin{align*}
+\Hom_{\Ccat}(C,A)&\xrightarrow{\eta^{(f)}_C}\Hom_{\Ccat}(C,B).\\
+\varphi& \mapsto f\circ \varphi
+\end{align*}
+
+It is trivial to verify that this is a natural transformation, and that the assignment is thus functorial. We now check that the functor has all the stated properties. Injectivity on the level of objects follows from the observation that if $A\neq B$, then the functors $(C^{\op}\mapsto \Hom_{\Ccat}(C,A))$ and $(C^{\op}\mapsto \Hom_{\Ccat}(C,B))$ will be literally different assignments. For instance, when $C=A$, then $\Hom(A,A)$ contains $\id_A$ but $\Hom(A,B)$ does not.
+
+We now verify injectivity on the level of morphisms. Suppose $f,g: A\to B$ are two morphisms, which induce the same natural transformations $\eta^{(f)}$ and $\eta^{(g)}$. We find that $f=g$ by simply unwravelling definitions:
+
+$$f=\eta^{(f)}_{A}(\id_A)=\eta^{(g)}_{A}(\id_A)=g.$$
+
+We now verify surjectivity on the level of morphisms. Suppose $\eta$ is a natural transformation between the functors $\left(C^{\op}\mapsto \Hom_{\Ccat}(C,A)\right)$ and $\left(C^{\op}\mapsto \Hom_{\Ccat}(C,B)\right)$. Let $f=\eta_A(\id_A)$. We need to show that $\eta=\eta^{(f)}$. That is, that $\eta_C(\varphi)=f\circ \varphi$ for all $C\in \Ccat$ and $\varphi \in \Hom(C,A)$. Since $\eta$ is a natural transformation, the square corresponding to $\varphi$ commutes:
+
+\[\begin{tikzcd}
+	{\Hom_{\Ccat}(A,A)} & {\Hom_{\Ccat}(A,B)} \\
+	{\Hom_{\Ccat}(C,A)} & {\Hom_{\Ccat}(C,B)}
+	\arrow["{\eta_{C}}", from=2-1, to=2-2]
+	\arrow["{\eta_{A}}", from=1-1, to=1-2]
+	\arrow["{\Hom_{\Ccat}(\varphi,A)}"{description}, from=1-1, to=2-1]
+	\arrow["{\Hom_{\Ccat}(\varphi,B)}"{description}, from=1-2, to=2-2]
+\end{tikzcd}\]
+
+Starting with $\id_A\in \Hom(A,A)$, going around the bottom gives $\eta_C(\varphi)$, and going around the top gives $\Hom(\varphi,B)(\eta_A(\id_A))=\Hom(\varphi,B)(f)=f\circ \varphi$. This demonstrates the desired claim, and completes the proof of the theorem.
 \end{proof}
 
 The Yoneda lemma is considered one of the most fundemental results in category theory, while seemingly abstract it can quickly become very useful. It can be loosely read as saying that if two source objects has the ``same" (i.e. naturally isomorphic) hom-sets into every other target object, then the source objects must be the same.
 
 
-The Yoneda lemma can be stated in an alternative way, in the language of pairings. There is a natural map $V\times V^*=V\times \Hom(V,\CC)\to \CC$, sending $(v,\varphi)$ to $\varphi(v)$. Vector space duality is exactly the fact that this pairing is non-degenerate, in the sense that if $\varphi(v)=0$ for all $v$ then $\varphi=0$, and if $\varphi(v)=0$ for all $\varphi$ then $v=0$. There is a pairing on the level of categories, $\Ccat \times \left[\Ccat^{\op},\Set\right]\to \Set$, and the Yoneda lemma is exactly the statement that it is non-degenerate. Observe that to make this statement formal, we will have to define the product $\times$ of categories. In some sense, we already have: $\times$ is the product in the category of categories! Proving this alternative form of Yoneda's Lemma, along with yet another, is found in Exercises \thesection.1 - \thesection.2. Explicitely, we can also describe the product as follows:
+The Yoneda lemma can be stated in an alternative way, in the language of pairings. There is a natural map $V\times V^*=V\times \Hom(V,\CC)\to \CC$, sending $(v,\varphi)$ to $\varphi(v)$. Vector space duality is exactly the fact that this pairing is non-degenerate, in the sense that if $\varphi(v)=0$ for all $v$ then $\varphi=0$, and if $\varphi(v)=0$ for all $\varphi$ then $v=0$. There is a pairing on the level of categories, $\Ccat \times \Ccat^{\op}\to \Set$, and the Yoneda lemma is exactly the statement that it is non-degenerate. Observe that to make this statement formal, we will have to define the product $\times$ of categories. In some sense, we already have: $\times$ is the product in the category of categories! Proving this alternative form of Yoneda's Lemma, along with yet another, is found in Exercises \thesection.1 - \thesection.2. Explicitely, we can also describe the product as follows:
 
 \begin{proposition} Let $\Ccat,\Dcat$ be categories. We define the following data for a category:
 
@@ -1514,7 +1560,41 @@ for all $(A_0,B_0),(A_1,B_1),(A_2,B_2)\in \Ccat\times \Dcat$.
 
 This gives a well defined category $\Ccat\times \Dcat$. This category is the product in the category of categories.
 \end{proposition}
-\begin{proof}. [WORK: do proof]
+\begin{proof} Verifying that $\Ccat\times \Dcat$ forms a category is trivial, so we ommit the details. On the level of objects, we define
+
+\begin{align*}
+\pi_{\Ccat}:\Ccat\times \Dcat&\to \Ccat\\
+(A,B)&\mapsto A
+\end{align*}
+
+and
+
+\begin{align*}
+\pi_{\Dcat}:\Ccat\times \Dcat&\to \Dcat.\\
+(A,B)&\mapsto B
+\end{align*}
+
+It is trivial to show that these assignments are functorial. We now show that the triple $(\Ccat\times\Dcat,\pi_{\Ccat},\pi_{\Dcat})$ is a product. Suppose we are given a category $\Ecat$ and functors $\tau_{\Ccat}:\Ecat\to \Ccat$, $\tau_{\Dcat}:\Ecat\to \Dcat$. We define the assignment
+
+\begin{align*}
+F: \Ecat&\to \Ccat\times \Dcat.\\
+E&\mapsto (\tau_{\Ccat}(E),\tau_{\Dcat}(E))
+\end{align*}
+
+The assignment of morphisms $F(f)=(\tau_{\Ccat}(f),\tau_{\Dcat}(f))$ turns $F$ into a functor. It is clear that the diagram
+
+\[\begin{tikzcd}
+	& \Ccat \\
+	& {\Ccat\times \Dcat} & \Dcat \\
+	\Ecat
+	\arrow["F"{description}, dashed, from=3-1, to=2-2]
+	\arrow["{\tau_{\Dcat}}"', from=3-1, to=2-3]
+	\arrow["{\tau_{\Ccat}}", from=3-1, to=1-2]
+	\arrow["{\pi_{\Dcat}}", from=2-2, to=2-3]
+	\arrow["{\pi_{\Ccat}}"', from=2-2, to=1-2]
+\end{tikzcd}\]
+
+commutes. Seeing as $F$ and $\Ecat$ were chosen arbitrarily, this completes the proof.
 \end{proof}
 
 This concludes our introduction to category theory. The canonical reference for category theory is Mac-Lane's foundational text \cite{mac2013categories}. As a readable way to begin learning the theory, however, there are modern sources which do a better job. For instance, Fong and Spivak's book \cite{fong2019invitation} gives a very well-motivated and grounded approach to the subject.
@@ -1527,7 +1607,7 @@ $\newline\newline$
 \item Given a category $\Ccat$, show that the mapping
 
 \begin{align*}
-\Ccat \times \bold{Hom}(\Ccat^{\op},\Set)&\to\Set\\
+\Ccat \times \bold{Hom}(\Ccat,\Set)&\to\Set\\
 (A,F)&\mapsto F(A)
 \end{align*}
 
@@ -1541,6 +1621,19 @@ is functorial. Use the Yoneda lemma to show that this pairing is non-degenerate,
 \end{align*}
 
 is a bijection. Here,$\Hom_{\Ccat}(A,\--)$ is considered as a functor in $\bold{Hom}(\Ccat^{\op},\Set)$, sending an object $C\in \Cat$ ot the set $\Hom_{\Ccat}(A,C)$, and similarly for $\Hom_{\Ccat}(B,\--)$.
+
+\item Show that the following are functors.
+
+\begin{enumerate}[(a)]
+\item The assignment $\CC[\--]:\bold{finSet}\to\bold{Vecc}$ going from the category of finite sets to the category of (finite dimensional) vector spaces, when assigns to each set $A$ the vector space $\CC[A]$, and assigns to each function $f:A\to B$ the linear map
+
+\begin{align*}
+\CC[A]&\xrightarrow{} \CC[B]\\
+\sum_{a\in A}c_a [a]&\mapsto \sum_{a\in A}c_a[f(a)]
+\end{align*}
+
+\item The assignment $H_1(\--;\ZZ_2):\bold{Top}\to \bold{Grp}$ which assigns to each topological space $X$ the homology group $H_1(X;\ZZ_2)$, and assigns to each continuous map $f:X\to Y$ the group homomorphism $f_*: H_1(X;\ZZ_2)\to H_1(Y;\ZZ_2)$, defined as follows. For each function $f:X\to Y$, there exists celluations $\Delta_X,\Delta_Y$ such that $f$ sends edges in $X$ to edges in $Y$; this is the simplicial approximation theory. We define $f_*:C_1(X;\ZZ_2)\to C_1(Y;\ZZ_1)$ by sending $\omega$ to the chain $f_*(\omega)$, where  an edge $e$ of $Y$ is assigned the (mod 2) sum of $\omega$'s values at the edges in $f^{-1}(e)$. Show that this is well defined, and descends to a function $f_*:H_1(X;\ZZ_2)\to H_1(Y;\ZZ_2)$, completing the definition of our assignment.
+\end{enumerate}
 \end{enumerate}
 
 \section{Modular Tensor Categories}
@@ -1999,7 +2092,7 @@ commute for all $A\in \Ccat$.
 \raggedleft\qedsymbol{}
 \end{definition}
 
-We now define fusion categories. One key difficulty is deciding what category-theorertical object should correspond to the label set $\LL$ of a fusion system. The answer is as follows. We want general elements of $\Ccat$ to be uniquely representable as direct sums of the elements in the label set. The elements of $\Ccat$ which cannot be broken down further as direct sums of smaller objects are known as indecomposable objects.
+We now define fusion categories. One key difficulty is deciding what category-theorertical object should correspond to the label set $\LL$ of a fusion system. The answer is as follows. We want general elements of $\Ccat$ to be uniquely representable as direct sums of the elements in the label set. The elements of $\Ccat$ which cannot be broken down further as direct sums of smaller objects are known as indecomposable objects. Direct sums are also known as biproducts because they can be alternatively defined as objects which simultaneously satisfy the axioms of a product, as well as the duals axioms of a``co"-product. This is explored in Exercise \thesection.7.
 
 There are a few difficulties in trying to formalize this idea. For one, you might be in the strange case that there are indecomposable objects that still have smaller subjects. For example, consider the category of abelian groups. The group $\ZZ_4$ has the subject $\ZZ_2$. However, $\ZZ_2\oplus\ZZ_2\neq \ZZ_4$. Formally, this example is saying that the exact sequence
 
@@ -2021,7 +2114,7 @@ Additionally, a semisimple linear category is required to satisfy the following 
 \begin{enumerate}
 \item (Linearity) The composition map $\Hom(A,B)\times \Hom(B,C)\to \Hom(A,C)$ is bilinear for all $A,B,C\in \Ccat$.
 \item (Has a zero object) There is an object $0\in \Ccat$ such that for every $A\in \Ccat$ there is a unique morphism $0\to A$.
-\item (Has binary biproducts) For all $A,B\in \Ccat$ the biproduct of $A$ and $B$ exists. This biproduct is denoted $A\oplus B$, and refered to as the direct sum. Recall that the biproduct of $A$ and $B$ is an object $A\oplus B$, paired with morphisms $p_{A},p_{B}: A\oplus B\to A,B$, and  $i_{A},i_{B}: A,B\to A\oplus B$, such that
+\item (Has binary biproducts) For all $A,B\in \Ccat$ the biproduct of $A$ and $B$ exists. This biproduct is denoted $A\oplus B$, and refered to as the direct sum. Here, we define the biproduct of $A$ and $B$ to be an object $A\oplus B$, paired with morphisms $p_{A},p_{B}: A\oplus B\to A,B$, and  $i_{A},i_{B}: A,B\to A\oplus B$, such that
 
 \begin{itemize}
 \item $p_{X}\circ i_{Y}$ is $\id_X$ when $X=Y$, and $0$ otherwise,
@@ -2064,14 +2157,12 @@ commutes.
 
 commutes
 \end{itemize}
-\item (All monomorphisms and epimorphisms are normal) All monomorphisms are kernels, and all epimorphisms are cokernels. A monomorphism $f:A\to B$ is a map such that for all $g_0,g_1: C\to A$, $f\circ g_0=f\circ g_1$ if and only if $g_0=g_1$. A monomorphism is said to be normal if it is the kernel of some morphism. An epimorphism $f:A\to B$ is a map such that for all $g_0,g_1:B\to C$, $g_0\circ f=g_1\circ f$ if and only if $g_0=g_1$. An epimorphism is said to be normal if it is the cokernel of some morphism.
-
-
+\item (All monomorphisms and epimorphisms are normal) A monomorphism $f:A\to B$ is a map such that for all $g_0,g_1: C\to A$, $f\circ g_0=f\circ g_1$ if and only if $g_0=g_1$. A monomorphism is said to be normal if it is the kernel of some morphism, i.e., it satisfies the universal property of $\ker f$ for some $f$. An epimorphism $f:A\to B$ is a map such that for all $g_0,g_1:B\to C$, $g_0\circ f=g_1\circ f$ if and only if $g_0=g_1$. An epimorphism is said to be normal if it is the cokernel of some morphism.
 \end{enumerate}
 \raggedleft\qedsymbol{}
 \end{definition}
 
-We now can define exact sequence, as desired. Namely, given a morphism $f:A\to B$, we have a cokernel $B\to \coker f$. We define the image $\im f$ of $f$ to be the kernel of the cokernel. An exact sequence is defined to be a sequence of morphisms, in which the image of the incoming map at each object is equal to the kernel of the outgoing map. Alternatively, the image of $f$ could be defined as the cokernel of the kernel. The fact taht these two definitions of image coincide is \textit{equivilant} to the fact that all monomorphisms and epimorphisms are normal. This is Exercise \thesection.5
+We now can define exact sequence, as desired. Namely, given a morphism $f:A\to B$, we have a cokernel $B\to \coker f$. We define the image $\im f$ of $f$ to be the kernel of the cokernel. An exact sequence is defined to be a sequence of morphisms, in which the image of the incoming map at each object is equal to the kernel of the outgoing map. Alternatively, the image of $f$ could be defined as the cokernel of the kernel. The fact taht these two definitions of image coincide is \textit{equivilant} to the fact that all monomorphisms and epimorphisms are normal. This is Exercise \thesection.5. [WORK: maybe add to this exericse the fact that ``kernel => monomorphism" and ``cokernel => epimorphism".]
 
 
 A non-abelian $\CC$-linear category is a category whose hom spaces are $\CC$ vector spaces, and whose composition maps are linear, with no other restrictions. As always, when defining an object one must define the appropriate morphisms:
@@ -2079,7 +2170,7 @@ A non-abelian $\CC$-linear category is a category whose hom spaces are $\CC$ vec
 \begin{definition}[$\CC$-linear functor] A $\CC$-linear is a functor between $\CC$-linear categories $\Ccat,\Dcat$ is a functor $F:\Ccat\to\Dcat$ such that $F:\Hom(A,B)\to \Hom(F(A),F(B))$ is a linear map of vector spaces for all $A,B\in \Ccat$.
 \end{definition}
 
-Will these definitions out of the way, we can now define fusion categories.
+We will often assume implicitely that functors between $\CC$-linear categories are abelian. With these definitions out of the way, we can now define fusion categories.
 
 \begin{definition}[Fusion category]  A fusion category is the following data:
 
@@ -2096,21 +2187,23 @@ Additionally, a fusion category is required to satisfy the following properties:
 \item (Rigidity) The diagrams
 
 \[\begin{tikzcd}
-	{A\otimes (A^*\otimes A)} && {(A\otimes A^*)\otimes A} \\
-	& A
-	\arrow["{\ev_A\otimes \id_A}", from=1-3, to=2-2]
-	\arrow["{\id_A\otimes\coev_{A}}", from=2-2, to=1-1]
-	\arrow["{\alpha_{A,A^*,A}}", from=1-1, to=1-3]
+	{A\otimes (A^*\otimes A)} & {(A\otimes A^*)\otimes A} \\
+	{A\otimes 1} & {1\otimes A}
+	\arrow["{\alpha_{A,A^*,A}}", from=1-1, to=1-2]
+	\arrow["{\ev_{A}\otimes \id_A}", from=1-2, to=2-2]
+	\arrow["{\id_{A}\otimes \coev_{A}}", from=2-1, to=1-1]
+	\arrow["{\lambda_A\circ\rho^{-1}_{A}}"', from=2-1, to=2-2]
 \end{tikzcd}\]
 
 and
 
 \[\begin{tikzcd}
-	{(A^*\otimes A)\otimes A^*} && {A^*\otimes (A\otimes A^*)} \\
-	& {A^*}
-	\arrow["{\id_{A^*}\otimes\ev_A}", from=1-3, to=2-2]
-	\arrow["{\coev_{A}\otimes \id_{A^*}}", from=2-2, to=1-1]
-	\arrow["{\alpha^{-1}_{A^*,A,A^*}}", from=1-1, to=1-3]
+	{(A^*\otimes A)\otimes A^*} & {A^*\otimes (A\otimes A^*)} \\
+	{1\otimes A^*} & {A^*\otimes 1}
+	\arrow["{\alpha^{-1}_{A^*,A,A^*}}", from=1-1, to=1-2]
+	\arrow["{\coev_{A}\otimes \id_{A^*}}", from=2-1, to=1-1]
+	\arrow["{\id_{A^*}\otimes \ev_{A}}", from=1-2, to=2-2]
+	\arrow["{\rho_A\circ\lambda^{-1}_{A^*}}"', from=2-1, to=2-2]
 \end{tikzcd}\]
 
 commute for all $A\in \Ccat$.
@@ -2123,9 +2216,48 @@ commute for all $A\in \Ccat$.
 \raggedleft\qedsymbol{}
 \end{definition}
 
-We observe that the definition of rigidity given is not exactly correct. The map $\ev_{A}\otimes \id_A$, for example, has target $1\otimes A$, not $A$. In such scenarios, we always implicity apply the left/right unit. For a map like $\id_A\otimes \coev_A$, one first applies to counit, going to $A\otimes 1$, and then one applies $\coev_A$ on the copy of $1$ created. Throughout this text and throughout literature there are many of these implicit maps, and they will generally not be awknowledged. For example, functors between linear categories are always assumed to be linear. It is up to the reader to be cognisent, and to assume what is meant exactly. Additionally, we observe that given any $f:A\to B$ in a fusion category, there is a canonical map $f^{*}:B^*\to A^*$ defined by the composition
+Rigidity is best understood in graphical language. Namely, using, the conventions established in the previous section, rigidity can be stated as the condition that
+
+\begin{equation*}
+  \tikzfig{bad-rigidity}
+\end{equation*}
+
+As is always implicit in graphical language, all associativity maps are suppressed by notation. Additionally, when we use the equality symbol we really mean ``equal after applying the appropriate unitors". Seeing as this is always what we will mean by equality, including floating tensor units is unneccecary and cumbersome, and will be ommitted. Additionally, overwhelmingly the only maps $A\otimes A^*\to 1$ and $1\to A^{*}\otimes A$ regularly being used are the evaluation/co-evaultion maps. Hence, when it does not cause confusion, we fix the notation
+
+\begin{equation*}
+  \tikzfig{eval-coeval}
+\end{equation*}
+
+This turns the rigidity graphical diagrams into the following much easier to parse form:
+
+\begin{equation*}
+  \tikzfig{rigidity}
+\end{equation*}
+
+[WORK: this is a cop out. One really needs to know this makes a functor, and $f^{**}=f$. Work it into the next proposition.]Additionally, we observe that given any $f:A\to B$ in a fusion category, there is a canonical map $f^{*}:B^*\to A^*$ defined by the composition
 
 $$f^*:B^*\xrightarrow{\coev_A\otimes \id_{B^*}} A^*\otimes A\otimes B^*\xrightarrow{\id_{A^*}\otimes f\otimes \id_{B^*}} A^*\otimes B\otimes B^* \xrightarrow{\id_{A^*}\otimes \ev_A} A^*.$$
+
+The most important fact about duals is that they are unique, in the sense that any two choices of duals will be canonically isomorphic:
+
+\begin{proposition} Let $A\in \Ccat$ be an object in a fusion category. Suppose $(\tilde{A}^{*},\tilde{\ev}_A,\tilde{\coev}_A)$ is another choice of dual for $A$, that is, the triple satisfiying the axiom of rigidity. There is a canonical isomorphism $A^{*}\xrightarrow{\sim}\tilde{A}^{*}$ making the diagrams
+
+\[\begin{tikzcd}
+	& {A^{*}\otimes A} && {A\otimes A^{*}} \\
+	1 &&&& 1 \\
+	& {A\otimes \tilde{A}^*} & {,} & {A\otimes \tilde{A}^{*}}
+	\arrow["{\coev_A}", from=2-1, to=1-2]
+	\arrow["{\tilde{\coev}_A}"', from=2-1, to=3-2]
+	\arrow["\sim", from=1-2, to=3-2]
+	\arrow["\sim", from=3-4, to=1-4]
+	\arrow["{\ev_A}", from=1-4, to=2-5]
+	\arrow["{\tilde{\ev}_A}"', from=3-4, to=2-5]
+\end{tikzcd}\]
+
+commute.
+\end{proposition}
+\begin{proof} 
+\end{proof}
 
 We now contrast fusion categories and fusion systems. The first claim is as follows:
 
@@ -2167,7 +2299,7 @@ Finally, suppose $\Ccat$ is semisimple. Let $A$ be an object such that $\End(A)$
 &=\bigoplus_{\substack{B_0,B_1\in S \\ B_0\cong B_1}}1.
 \end{align*}
 
-The first step follows from the definition of biproduct, which implies that the direct sum can be pulled out of $\Hom$ in both the first and second argument. The second step follows from the fact that $\Hom(B_0,B_1)$ is one dimensional when $B_0\cong B_1$, and $0$ dimensional otherwise. If $|S|\geq 2$, then we thus get that $\dim \End(A)\geq 2$, which is a contradiction. Hence, $A$ is a simple object as desired.
+The first step follows from the properties of the biproduct, which implies that the direct sum can be pulled out of $\Hom$ in both the first and second argument (see Exercise \thesection.7). The second step follows from the fact that $\Hom(B_0,B_1)$ is one dimensional when $B_0\cong B_1$, and $0$ dimensional otherwise. If $|S|\geq 2$, then we thus get that $\dim \End(A)\geq 2$, which is a contradiction. Hence, $A$ is a simple object as desired.
 \end{proof}
 
 \begin{proposition}\label{Make 6j system} Let $\Ccat$ be a fusion category, with associated fusion system $(\LL,N^{\--,\--}_{\--})$. Assume further that $\Ccat$ is multiplicity free, in the sense that all $N^{\--,\--}_{\--}\in\{0,1\}$. For all triples $a,b,c\in \LL$, choose representatives $A,B,C\in \Ccat$. Additionally, seeing as each hom space $\Hom(A\otimes B, C)$ is at most one dimensional, we can choose generators
@@ -2191,6 +2323,8 @@ and $\Hom(A\otimes (B\otimes C), D)$ has a basis
 
 In both bases, $N$ ranges over representatives of isomorphism classes of simple objects. Define $F^{a,b,c}_{d;n,m}$ to be $[n,m]$ coefficient of the associativity morphism $\alpha_{A,B,C}:\Hom((A\otimes B)\otimes C, D)\to \Hom(A\otimes (B\otimes C),D)$, expressed as a matrix in the bases above. $(\LL,N,F)$ is a $6j$ fusion system.
 \end{proposition}
+\begin{proof}. [WORK: Do proof]
+\end{proof}
 
 \begin{theorem}[\cite{yamagami2002polygonal}] Let $\LL$ be a $6j$ fusion system. There is a unique fusion category up to monoidal equivilance which gives $\LL$ up to gauge equivilance, under the process described in Proposition \ref{Make 6j system}.
 \end{theorem}
@@ -2266,6 +2400,8 @@ We now show that braided fusion categories are indeed equivilant to braided $6j$
 
 This process induces a one-to-one correspondance of braided fusion categories up to braided monoidal equivilance and braided fusion systems up to gauge equivilance.
 \end{proposition}
+\begin{proof}. [WORK: Do proof]
+\end{proof}
 
 As usual, a braided monoidal equivalence of two categories means a pair of braided monoidal functors, such that both compositions are monoidally equivalent to the identity. We are now ready to give our final definition:
 
@@ -2314,11 +2450,19 @@ For all $A,B\in \Ccat$, the following claims are all true:
 \item $\tr(f\otimes g)=\tr(f)\cdot \tr(g)$ for all $f\in \End(A)$, $g\in \End(B)$
 \item $\tr(f\oplus g)=\tr(f)+\tr(g)$ for all $f\in \End(A)$, $g\in \End(B)$
 \item $\tr(f\circ g)=\tr(g\circ f)$ for all $f,g\in \End(A)$
-\item Trace is independent of choice of duals. That is, let $(\tilde{A}^*,\tilde{\coev}_{A}, \tilde{\ev}_A)$ be a different choice of dual, unit, and co-unit for $A$, satisfying the triangle axioms of rigidity, as in the definition of fusion category. Defining $\tilde{\tr}(f)$ exactly like $\tr(f)$ except with this new unit, we find that $\tilde{\tr}(f)=\tr(f)$.
+\item Trace is independent of choice of duals. That is, let $(\tilde{A}^*,\tilde{\coev}_{A}, \tilde{\ev}_A)$ be a different choice of dual, unit, and co-unit for $A$ satisfying the triangle axioms of rigidity, as in the definition of fusion category. Defining $\tilde{\tr}(f)$ exactly like $\tr(f)$ except with this new unit, we find that $\tilde{\tr}(f)=\tr(f)$.
 \item Trace is preserved by functors. That is, let $\Ccat,\Dcat$ be MTCs with traces $\tr_{\Ccat},\tr_{\Ccat}$ respectively. Let $F:\Ccat\to \Dcat$ be a braided tensor functor. We have that $\tr_{\Ccat}(f)=\tr_{\Dcat}(F(f))$.
 \end{enumerate}
 \end{proposition}
-\begin{proof}. [WORK: do proof]
+\begin{proof} We demonstrate the claims one by one.
+
+\begin{enumerate}
+\item .[WORK: Prove this. It seems like you're going to have to do something about tensor products and duals commuting...]
+
+\item .[WORK: Prove this. It seems like you're going to have to do something about tensor products and direct sums commuting...]
+
+\item 
+\end{enumerate}
 \end{proof}
 
 The trace allows us to naturally define many very powerful, physically observable, and mathematically interesting invariants. For example, let $A\in \Ccat$ be an object in an MTC. Then, $\tr(\id_A)$ measures in some sense the size of $A$. For a vector space, the trace of the identity gives the dimension of the vector space. Thus, we define $d_A=\tr(\id_A)$ to be the \textit{quantum dimension} of $A$. The following peroperties give a taste of the deep mathematics present in this situation:
@@ -2327,15 +2471,17 @@ The trace allows us to naturally define many very powerful, physically observabl
 
 \begin{enumerate}
 
-\item ([WORK: get reference]) If $1\leq d_A\leq 2$, then $d_A=2\cos(\pi /m)$ for some integer $m\geq 3$. Otherwise, $d_A\geq 4$.
+\item $d_A=1$ if and only if $A$ is an abelian anyon. That is, $\beta_{B,A}\circ \beta_{A,B}$ is a scalar multiple of the identity for every other simple object $B\in \Ccat$.
 
-\item ([WORK: get reference]) $d_A=1$ if and only if $A$ is an abelian anyon. That is, $\beta_{B,A}\circ \beta_{A,B}$ is a scalar multiple of the identity for every other simple object $B\in \Ccat$.
+\item ([WORK: get reference]) If $1\leq d_A\leq 2$, then $d_A=2\cos(\pi /m)$ for some integer $m\geq 3$. Otherwise, $d_A\geq 4$.
 
 \item ([WORK: get reference]) The fusion matrix $N_A$ has a unique eigenvalue of largest absolute value. This eigenvalue is real, and is equal to $d_A$.
 \end{enumerate}
 \end{theorem}
+\begin{proof}. [WORK: prove first part]
+\end{proof}
 
-This theorem is quite useful experimentally. It is the goal of many physicists to discover non-abelian anyons. The state of current laboratories are such that creating the appropriate conditions, braiding anyons, and recording non-abelian statistics is out of reach with the proposed methods \cite{bonderson2006probing}. Thus, one observes non-abelian anyons indirectly by measuring physical quantities which are associated with non-abelian properties. For example, the quantum dimension can be related to the \textit{entropy} of a physical system \cite{kitaev2006topological}. Abelian MTCs have $d_A=1$, whereas non-abelian MTCs will have measurely larger quantum dimensions. Namely, the first part of the theorem says that $d_A\geq 2\cos(\pi/4)=\sqrt{2}$. This distinctly different entropy can be readily physically measured. Namely, the thermodynamic Maxwell's equation relates entropy to chemical potential, which in turn can be measured by simple changes in voltage \cite{cooper2009observable}.
+This theorem is quite useful experimentally. It is the goal of many physicists to discover non-abelian anyons. The state of current laboratories are such that creating the appropriate conditions, braiding anyons, and recording non-abelian statistics is out of reach with the proposed methods \cite{bonderson2006probing}. Thus, one observes non-abelian anyons indirectly by measuring physical quantities which are associated with non-abelian properties. For example, the quantum dimension can be related to the \textit{entropy} of a physical system \cite{kitaev2006topological}. Abelian MTCs have $d_A=1$, whereas non-abelian MTCs will have measurely larger quantum dimensions - the second part of the theorem implies $d_A\geq 2\cos(\pi/4)=\sqrt{2}$. This distinctly different entropy can be readily physically measured. Namely, the thermodynamic Maxwell's equation relates entropy to chemical potential, which in turn can be measured by simple changes in voltage \cite{cooper2009observable}.
 
 If $d_A$ measures the size of each individual anyon-type, then their sum should give a measure of the total size of the MTC. Thus, we define
 
@@ -2354,7 +2500,7 @@ $$p^{+}_{\Ccat}p^{-}_{\Ccat}=\dim \Ccat.$$
 
 We are now ready to define the most important invariants of MTCs, representations of the group of $2$ by $2$ matricies with unit determinant, $\SL_2(\ZZ)$. The group $\SL_2(\ZZ)$ is known as the modular group, due to its connections with moduli spaces of elliptic curves. It is because of these representations that Modular Tensor Categories are called modular. We define the modular representation as follows:
 
-\begin{theorem} Let $\Ccat$ be an MTC, whose set $\LL$ of isomorphism classes of simple objects has $n$ elements. We define the $S$-matrix of an MTC to be the $n$ by $n$ matrix whose $[a,b]$th coefficient is
+\begin{theorem}[\cite{bakalov2001lectures}] Let $\Ccat$ be an MTC, whose set $\LL$ of isomorphism classes of simple objects has $n$ elements. We define the $S$-matrix of an MTC to be the $n$ by $n$ matrix whose $[a,b]$th coefficient is
 
 $$S_{a,b}=\tr\left(\beta_{A,B}\cdot \beta_{B,A}\right)=[WORK: make \,\, graphical \,\, formula]$$
 
@@ -2374,7 +2520,7 @@ where $a,b$ are isomorphism classes of simple objects with representatives $A,B$
 &\mapsto \frac{\sqrt[3]{p^+_{\Ccat}}}{\sqrt[6]{\dim \Ccat }}\cdot T.
 \end{align*}
 
-is a representation of the modular group. That is, extending $\rho_{\Ccat}$ through matrix multiplication gives a well-defined group homomorphism.
+is a representation of the modular group. That is, extending $\rho_{\Ccat}$ by matrix multiplication gives a well-defined group homomorphism.
 \end{theorem}
 
 
@@ -2412,7 +2558,27 @@ Objects in $\Vecc_G$ are in this way seen as vector spaces paired with canonical
 
 \begin{lemma} Let $G$ be a set. Given $V,W\in \Vecc_G$, $\Hom_{\Vecc_G}(V,W)$ is a sub vector space of $\Hom_{\Vecc}(V,W)$. Hence, we can naturally endow $\Hom_{\Vecc_G}(V,W)$ with the structure of a vector space. This turns $\Vecc_G$ into a $\CC$-linear abelian category.
 \end{lemma}
-\begin{proof}. [WORK: do proof]
+\begin{proof} We check that the axioms are satisfied one-by-one.
+
+\begin{enumerate}
+\item (Linearity) This is trivial to verify.
+
+\item (Has a zero object) Define the object $0$ to be the (unique) $G$-graded vector space for which $0_g$ is $0$-dimensional for all $g\in G$. Choose $V\in \Vecc_G$. Since linear maps must send $0$ to $0$, there is a unique map $0_g\to V_g$ for all $g\in G$, and hence there is a unique map $0\to V$. Thus, $0$ is a zero object.
+
+\item (Has binary biproducts) Given $V,W\in \Vecc_G$, we define $V\oplus W$ to be the object with $(V\oplus W)=V_g\oplus W_g$, where $\oplus$ is the direct sum of vector spaces. The projection maps $p_V$ (resp. $p_W$) are defined on $g$-components by sending $(v,w)\in V_g\oplus W_g$ to $v$ (resp. $w$). The injection maps $i_A$ (resp. $i_B$) are defined on $g$-components by sending $v$ (resp. $w$) in $V_g$ (resp. $W_g$) to $(v,0)$ (resp. $(0,w)$). It is trivial to verify that these maps satisfy the required axioms.
+
+\item (Has kernels and cokernels) For all $V,W\in \Vecc_G$ and $f:V\to W$, we define $\ker f$ and $\coker g$ on $g$-components by $(\ker f)_g=\ker f_g$ and $(\coker f)_g=\coker f_g$. On the right hand side of these formulas, $\ker$ and $\coker$ are being used as the standard notions of kernel (elements in $V_g$ that get mappend to zero) and cokernel ($W_g/\im f_g$) from linear algebra. The map $i: \ker f\to V$ is the natural inclusion map from a subspace, and the map $p:B\to \coker f$ is the natural projection map onto a kernel. We show that the kernel satisfies the desired universal property, and leave the kernel as an exercise to the reader since the proof is identical.
+
+The fact that $f\circ i=0$ follows from the defnition of kernel. Suppose that $i':\ker' f\to A$ is such that $f\circ i'=0$. On the level of $g$-components, this means that for any $v\in (\ker' f)_g$ we have that $f(i'(v))=0$. Hence, $i'(v)\in \ker f$. Letting $u$ by $i'$ with codomain restriced to $\ker f$, it is tautological the desired diagram commutes. Thus, this completes the proof.
+
+\item (All monomorphisms and epimorphisms are normal) Let $f:A\to B$ be a linear map. We show that if $f$ is a monomorphism then it is injective, and that if $f$ is injective it is a kernel, from which we derive the result. Similarly one can show that if $f$ is a epimorphism it is surjective, and if $f$ is surjective it is a cokernel Seeing as the proof for cokernels is identical to the proof for kernels, we leave it as an exercise for the reader. Note that the converses to all of these statements are true - injection, kernel, and monomorphism are all synonyms in this case.
+
+\begin{itemize}
+\item (monomorphism $\implies$ injective) Suppose $f:V\to W$ is a monomorphism. Consider two maps $\ker f\to V$, one defined to be the zero map and the other defined to be the natural inclusion. Both maps are equal (i.e zero) after being postcomposed with $f$. Hence, they must be equal, hence $\ker f =0$ so $f$ is injective.
+
+\item (injective $\implies$ kernel) Suppose $f: V\to W$ is injective. Define $\tilde{f}: W\to W/V$ to be the map defined on $g$-components by being the natural projection of $W_g$ onto $W_g/V_g$ for all $g\in G$, where $V_g$ is canonically identificed with a subspace of $W_g$ by injectivity. We show that $f$ satisfies the universal property of $\ker \tilde{f}$. Suppose that $i':\ker' \tilde{f}\to W$ is a map for which $\tilde{f}\circ i'=0$. By the definition of $\tilde{f}$ this implies that the image of $i'$ lives in $V$. Hence, we can let $u: \ker' f\to V$ to be the map equal to $i'$ but with restricted codomain. It is clear that the desired diagram commutes, and hence we are done.
+\end{itemize}
+\end{enumerate}
 \end{proof}
 
 
@@ -2444,12 +2610,12 @@ where $g\in G$, and $h,k,l$ run over elements of $G$.
 
 $$\left(\CC_e\otimes V\right)_g = \CC_e\otimes V_g \xrightarrow{} V_g,$$
 
-where $g\in G$.  he definition of $\rho$ is completely analagous.
+where $g\in G$.  The definition of $\rho$ is completely analagous.
 \end{enumerate}
 
 These structures give a well-defined monoidal category.
 \end{proposition}
-\begin{proof}. [WORK: do proof]
+\begin{proof} Verifying the triangle and pentagon identities comes down to a simple unwravelling of definitions; we leave the proof as an exercise to the reader.
 \end{proof}
 
 \begin{proposition} Let $G$ be a finite group. Define the structures for a fusion category as follows:
@@ -2489,7 +2655,33 @@ We define $\coev_{V_g}(x)=x\cdot \sum_{i\in I}\varphi_i\otimes v_i$. This map is
 
 These structures give a well-defiend fusion category.
 \end{proposition}
-\begin{proof}. [WORK: do proof]
+\begin{proof} We check the axioms one by one.
+
+\begin{enumerate}
+\item Verifying that the tensor product, associativity, left unitor, and right unitors are $\CC$-linear functors is straightforward, and is left as an exercise to the reader.
+
+\item (Rigidity) To begin, we verify that $\coev_{V_g}$ is independent of choice of basis $\left(v_i\right)_{i\in I}$. Suppose $\left(\tilde{v}_i\right)_{i\in I}$ is another choice of basis. There is a chance of basis matrix $(c_{i,j})_{(i,j)\in I\times I}$ between them. It is straightforward to see that the dual bases are related by the inverse change of basis matrix $c^{-1}$. Expanding, we find that
+
+\begin{align*}
+\sum_{i}\tilde{v}_i\otimes \tilde{\varphi}_i&=\sum_{i}\left(\sum_{j}c_{i,j}\cdot v_i\right)\otimes \left(\sum_{k}(c^{-1})_{k,i}\cdot \varphi_i\right)\\
+&=\sum_{j,k} \left(\sum_{i}c_{i,j}(c^{-1})_{k,i}\right)\cdot v_i\otimes \varphi_i.\\
+\end{align*}
+
+The definition of the inverse matrix says that $\sum_{i}c_{i,j}(c^{-1})_{k,i}=\begin{cases}1 & j=k \\ 0 &\text{otherwise}\end{cases}$. Hence, we conclude that
+
+$$\sum_{i}\tilde{v}_i\otimes \tilde{\varphi}_i=\sum_{i}v_i\otimes \varphi_i$$
+
+as desired, and hence $\coev_{V_g}$ is well defined. We now show that the rigidity diagrams commute. Going around the square, we find that this is equivalent to the condition that $1\otimes w=\sum_{i}\varphi_i(w)\otimes v_i$ for all $w\in V_g$. This is clear, however, since we can choose a basis such that $v_i=w$ for some $i$. Then, $\varphi_i(w)\otimes v_i=w$ and all the other terms are zero hence the equality is obvious.
+
+\item (Semisimplicity) Let $V\in \Vecc_G$ be an object. It is clear that $V$ is the direct sum of its $g$-components $V_g$, as $g$ ranges over elements of $G$. Now, each component $V_g$ is the direct sum of $\dim V_g$ copies of the vector space $\CC_g$, which has $1$-dimensional component in component $g$ and $0$-dimensions in every other component. It is clear that $\CC_g$ is simple for all $g\in G$. Hence, going back through the argument, we find that $V$ is the direct sum of simple object.
+
+\item Since $\Vecc$ only consists of finite dimensional vector spaces, all of its hom-spaces are clearly finite dimensional. Since $G$ is finite, the hom-spaces will be finite direct sums of finite dimensional spaces, and hence will still be finite dimensional.
+
+\item We claim that there is a natural bijection between the set $G$ and the simple objects of $\Vecc_G$, sending $g\in G$ to $\CC_g\in \Vecc_G$. To prove this, we observe the following. If the total dimension of the object is more than $1$, then there will be a subobject. Hence, the only simple objects will be one-dimensional vector spaces on one component. That is, $G$-graded vector spaces isomorphic to $\CC_g$ for some $g\in G$. Since $G$ is finite, we get the desired result.
+
+\item $\CC_e$ has total dimension $1$, and is clearly simple.
+
+\end{enumerate}
 \end{proof}
 
 \begin{proposition} Let $G$ be a finite abelian group. Define the structures for a braided fusion category as follows:
@@ -2505,7 +2697,7 @@ where $g\in G$, and $h,k$ run over elements of $G$.
 
 These structures give a well-defined braided monoidal category.
 \end{proposition}
-\begin{proof}. [WORK: do proof]
+\begin{proof} Demonstrating the hexagon identities follows from simply unwraveling definitions, and is left as an exercise to the reader.
 \end{proof}
 
 
@@ -2530,14 +2722,30 @@ $$\left(\id_{C}\otimes f\right)\circ \upbeta_{A,C}=\upbeta_{B,C}\circ (f\otimes 
 
 $$(A,\upbeta_{A,\--})\otimes (B,\upbeta_{B,\--})=\left(A\otimes B, (\upbeta_{A,\--}\otimes \id_{\Ccat})\circ (\id_{\Ccat}\otimes \upbeta_{B,\--}) \right).$$
 
-\item \textbf{unit: } The element $(1,\rho\circ \lambda)$
+\item \textbf{unit: } The element $(1,\rho\circ \lambda^{-1})$
 
 \item \textbf{braiding: } We define the braiding between two elements $(A,\beta_{A,\--}), (B,\beta_{B,\--})\in \Zcal(\Ccat)$ to be $\beta_{A,B}=\upbeta_{A,B}$.
 \end{itemize}
 
 Along with natural choices of associativity and unitors, this gives $\Zcal(\Ccat)$ the structure of a braided monoidal category.
 \end{proposition}
-\begin{proof}. [WORK: do the proof]
+\begin{proof} Inheriting the definition of composition of morphisms from $\Ccat$, it is straightforward to check that $\Zcal(\Ccat)$ does indeed form a catgory. The extra $\upbeta_{\--,\--}$ doesn't change the structure of diagrams, and so inherting further the definition of unitors from $\Ccat$ we find that the triangle and pentagon axioms follow immediately from the triangle and pentagon axioms on $\Ccat$. The one thing to be checked is that all of the morphisms satisfy the compatibility condition required to a morphism in $\Zcal(\Ccat)$, but this is straightforward. Finally, we remark on the hexagon identities. The condition imposed of $\upbeta_{A,B\otimes C}$ given is technically incorrect. To make the parentheses work in the braiding one has to add associators, and impose the longer condition
+
+$$\upbeta_{A,B\otimes C}=\alpha_{C,A,B}^{-1}\circ \left(\id_{B}\otimes \upbeta_{A,C}\right)\circ \alpha_{A,C,B}\circ\left(\upbeta_{A,B}\otimes \id_C\right)\circ \alpha^{-1}_{A,B,C}.$$
+
+This condition makes the second hexagon identity tautological. Similarly, the definition of tensor product given is not strictly correct - one must add the correct associator terms. This makes the first hexagon identity tautological.
+
+The last thing one must verify is that the half-braidings defined on the tensor unit/tensor product are actually half braidings, i.e., that they satisfy the hexagon condition. The fact that the condition is satisfied for the tensor unit follows in a straightforward fashion from the triangle identity. The fact that the condition is satisfied for the tensor product follows from the following computation, where $A,B\in \Zcal(\Ccat)$, $C,D\in \Ccat$:
+
+\begin{align*}
+\beta_{A\otimes B,C\otimes D}&=(\beta_{A,C\otimes D}\otimes \id_{B})\circ (\id_{A}\otimes \beta_{B,C\otimes D})\\
+&=(\id_{C}\otimes \beta_{A,D}\otimes \id_{B})\circ (\beta_{A,C}\otimes \id_{D}\otimes \id_{B})\circ (\id_{A}\otimes \id_{C}\otimes \beta_{B,D})\circ (\id_{A}\otimes \beta_{B,C}\otimes \id_{D})\\
+&=(\id_{C}\otimes \beta_{A,D}\otimes \id_{B})\circ (\id_{A}\otimes \id_{C}\otimes \beta_{B,D})\circ (\beta_{A,C}\otimes \id_{D}\otimes \id_{B})\circ (\id_{A}\otimes \beta_{B,C}\otimes \id_{D})\\
+&=(\id_{C}\otimes \beta_{A\otimes B,D})\circ (\beta_{A\otimes B}\otimes \id_{D}).
+\end{align*}
+
+Note the key use of the fact that the central terms in the composition could be freely exchanged, since they act by non-identity on a disjoint set of tensor factors. This completes the proof.
+
 \end{proof}
 
 \begin{proposition} Let $\Ccat$ be a fusion category. Define the following data for a fusion category:
@@ -2555,9 +2763,83 @@ Along with natural choices of associativity and unitors, this gives $\Zcal(\Ccat
 \end{tikzcd}\]
 \end{enumerate}
 
-Along with natural evaluation and co-evaluation maps, this gives $\Zcal(\Ccat)$ the structure of a braided fusion category.
+Along with canonical evaluation and co-evaluation maps inherited from $\Ccat$, this gives $\Zcal(\Ccat)$ the structure of a braided fusion category.
 \end{proposition}
-\begin{proof}. [WORK: do the proof]
+\begin{proof} To begin, we need to show that $\Zcal(\Ccat)$ with this vector space structure on hom-spaces is is indeed $\CC$-linear abelian. We demonstrate the axioms one at a time.
+
+\begin{enumerate}
+\item (Linearity) This is a straightforward computation, which we leave as an exercise.
+
+\item (Has a zero object) Let $0\in \Ccat$ be the zero object. It is clear that $0\otimes A\cong 0$ for all $A\in \Ccat$, and hence the definining property of the zero object says that there is a unique map $0\times A\to A\times 0$. Thus, there is a unique half-braiding $\beta_{0,\--}$. It is straightforward to verify that $(0,\beta_{0,\--})\in \Ccat$ is a zero object.
+
+\item (Has binary biproducts) Choose $A,B\in \Zcal(\Ccat)$. We define a canonical half braiding $\beta_{A\oplus B,\--}$ on $A\oplus B$ by the following formula, for all $C\in \Ccat$:
+
+\begin{align*}
+(A\oplus B)\otimes C&\xrightarrow{\sim} (A\otimes C)\oplus (B\otimes C)\\
+&\xrightarrow{\beta_{A,C}\oplus \beta_{B,C}} (C\otimes A)\oplus (C\otimes B)\\
+&\xrightarrow{\sim} C\otimes (A\oplus B).
+\end{align*}
+
+Here, the top and bottom maps are the isomorphisms of Exercise \thesection.8 (a). It is straightforward to verify that $(A\oplus B,\beta_{A\oplus B})$ satisfies the axioms of a biproduct, completing our proof.
+
+\item (Has kernels and cokernels)  We demonstrate that $\Zcal(\Ccat)$ has kernels, and leave the construction for cokernels as an exercise. Let $f:A\to B$ be a morphism, with $A,B\in \Zcal(\Ccat)$, whose kernel we wish to show exists. By Exercise \thesection.8 (b), there is a canonical isomorphism $\ker(f\otimes \id_{C})\cong \ker f\otimes C$. The universal property of the kernel allows us to obtain a unique map $\beta_{\ker f,C}: \ker f\otimes C\to C\otimes \ker f$ making the following diagram commute:
+
+\[\begin{tikzcd}
+	{B\otimes C} & {C\otimes B} \\
+	{A\otimes C} & {C\otimes A} \\
+	{\ker A \otimes C} & {C\otimes \ker A}
+	\arrow[hook, from=3-1, to=2-1]
+	\arrow[hook', from=3-2, to=2-2]
+	\arrow["{f\otimes \id_C}"{description}, from=2-1, to=1-1]
+	\arrow["{\id_C\otimes f}"{description}, from=2-2, to=1-2]
+	\arrow["{\beta_{B,C}}", from=1-1, to=1-2]
+	\arrow["{\beta_{A,C}}", from=2-1, to=2-2]
+	\arrow["{\beta_{\ker A,C}}", dashed, from=3-1, to=3-2]
+	\arrow["0", curve={height=-24pt}, from=3-1, to=1-1]
+	\arrow["0"', curve={height=24pt}, from=3-2, to=1-2]
+\end{tikzcd}\]
+
+It is straightforward to show to show that $(\ker f,\beta_{\ker,\--})$ is a valid element of $\Zcal(\Ccat)$, and is the kernel of $f$. This completes the proof.
+
+\item (All monomorphisms and epimorphisms are normal) Endowing kernels/cokernels with their canonical half-braidings, it is immediate to show that every monomorphism and epimorphism is normal.
+\end{enumerate}
+
+We now move on to showing that $\Zcal(\Ccat)$ is really a braided fusion category, one axiom at a time.
+
+\begin{enumerate}
+\item It is straightforward to verify that the tensor product, associativity, and unitors are $\CC$-linear, so we leave this as an exercise to the reader.
+
+\item (Rigidity) Diagrams commuting in $\Ccat$ implies they commute in $\Zcal(\Ccat)$, hence rigidity is immediate. However, one does need to make sure that $\beta_{A^*,\--}$ is a valid half-braiding, as well as that $\ev$ and $\coev$ satisfy the compatibility condition required to be morphisms in $\Ccat$. Seeing as the only term in the definition of $\beta_{A^*,B\otimes C}$ that deals with $B\otimes C$ is $\beta_{A,\--}$, the fact that $\beta_{A,\--}$ is a half-braiding immediately implies that $\beta_{A^*,\--}$. The fact that $\ev_A$ and $\coev_A$ satisfy the compatibility conditions follows from a straightforward computation.
+
+\item (Semisimplicity) Suppose $A\in \Zcal(\Ccat)$. Suppose that there is a decomposition $A\cong A_0\oplus A_1$ of $A$ in $\Ccat$. We can canonically define the half braiding $\beta_{A_0,\--}$ by being the composition
+
+$$A_0\otimes B\xrightarrow{i_0\otimes B} A\otimes B \xrightarrow{\beta_{A,B}}B\otimes A \xrightarrow{\id_{B}\otimes p_{0}}B\otimes A_0,$$
+
+and similarly for $\beta_{A_1,\--}$. It is straightforward to verify that these are half-braidings, giving $A_0$ and $A_1$ the structure of elements in $\Zcal(\Ccat)$. Moreover, one can verify that the isomorphism $A\cong A_0\oplus A_1$ now is a $\Zcal(\Ccat)$. Hence, whenever one can decompose in $\Ccat$ one can also decompose in $\Zcal(\Ccat)$. If the underlying $\Ccat$-object of a $\Zcal(\Ccat)$-object is simple, then that $\Zcal(\Ccat)$-object must be simple. Hence, since every element is the $\Ccat$-direct sum of simple $\Ccat$ objects we conclude that every object is the $\Zcal(\Ccat)$-direct sum of simple $\Zcal(\Ccat)$ objects.
+
+\item All hom spaces in $\Zcal(\Ccat)$ are subspaces of hom spaces in $\Ccat$, hence they must be finite dimensional.
+
+\item From the discussion of semisplicity, we find that the simple objects in $\Zcal(\Ccat)$ are exactly those objects whose underlying $\Ccat$-object is simple. We first prove a lemma: On a given simple object $A\in \Ccat$, the half-braidings on $A$ are linearly independent as elements of the vector space $\bigoplus_{B\in \Ccat}\Hom(A\otimes B, B\otimes A)$.
+
+Suppose we had a non-trivial linear relationship of half-braidings $\beta_{A,\--}=\sum_{i\in I}\lambda_i \cdot \beta^{(i)}_{A,\--}$, for some finite indexing set $I$. The hexagon identity tells us that for any $B,C\in \Ccat$
+
+$$\left(\sum_{i\in I}\lambda_i\cdot \beta_{A,C}^{(i)}\right)\circ \left(\sum_{i\in I}\lambda_i\cdot \beta_{A,B}^{(i)}\right)=\sum_{i\in I}\lambda_i \cdot \beta_{A,C}^{(i)}\circ \beta_{A,B}^{(i)}.$$
+
+Without loss of generality, we can assume that the $\left\{\beta_{A,\--}^{(i)}\right\}$ are linearly independent; otherwise we could have chosen a smaller linear relationship. Expanding both sides of the formula and using the bilinearity of composition, we find that there must be exactly one non-zero value of $\lambda_i$, and that that value satisfies $\lambda_i^2=\lambda_i$, hence must be $1$. Thus, $\beta_{A,\--}=\beta^{(i)}_{A,\--}$ for some $i\in I$. This contradicts the fact that the linear relationship was non-trivial, concluding the proof of the lemma.
+
+If two half-braidings are equal on simple elements, then semisimplicity implies they are equal everywhere. Hence, the lemma tells us that the isomorphism classes of simple objects of $\Zcal(\Ccat)$ are a linearly independent subset of
+
+$$\bigoplus_{a,b\in \LL}\Hom(A\otimes B,B\otimes A),$$
+
+where $\LL$ is the set of isomorphism classes of simple objects of $\Ccat$, and $A$ (resp. $B$) is a representative of $a$ (resp. $b$). Thus, we find that the number of isomorphism classes of simple objects in $\Zcal(\Ccat)$ is bounded above by the finite quantity
+
+$$\sum_{a,b\in \LL}\dim \Hom(a\otimes b,b\otimes a),$$
+
+finishing the proof. Note that this equality can be tight (such as in the case of the toric code).
+
+\item The unit $1$ being simple is immediate from the above discussion.
+\end{enumerate}
+
 \end{proof}
 
 We now show that these Drinfeld centers are MTCs. In general, not every fusion category's center will be an MTC. The categories whose centers are naturally MTCs are known as \textit{spherical categories}. The slogan for spherical categories is that they are the minimal situation in which the categocial trace (as in Proposition \ref{trace}) is well defined and has desriable properties.
@@ -2580,7 +2862,33 @@ v&\mapsto (\varphi \mapsto \varphi(v))
 
 This gives $\Zcal(\Vecc_G)$ the structure of an MTC.
 \end{proposition}
-\begin{proof}. [WORK: do proof]
+\begin{proof} We verify the axioms one at a time.
+
+\begin{enumerate}
+\item We wish to show that the diagram
+
+\[\begin{tikzcd}
+	& {(VW)(VW)^*(VW)^{**}} & {(VW)^*(VW)(VW)^{**}} & {(VW)^{**}} & VW \\
+	VW &&&& WV \\
+	& {(VV^*V^{**})(WW^*W^{**})} & {(V^*VV^{**})(W^*WW^{**})} & {V^{**}W^{**}} & VW
+	\arrow["{\beta_{VW,(VW)^*}}", from=1-2, to=1-3]
+	\arrow["{\beta_{V,V^*}\beta_{W,W^*}}"', from=3-2, to=3-3]
+	\arrow["{\ev_{V}\ev_{W}}"', from=3-3, to=3-4]
+	\arrow["{\ev_{VW}}", from=1-3, to=1-4]
+	\arrow[from=1-4, to=1-5]
+	\arrow[from=3-4, to=3-5]
+	\arrow["{\beta_{V,W}}"', from=3-5, to=2-5]
+	\arrow["{\beta_{W,V}}"', from=2-5, to=1-5]
+	\arrow["{\coev_{(VW)^*}}"{description}, from=2-1, to=1-2]
+	\arrow["{\coev_{V^*}\coev_{W^*}}"{description}, from=2-1, to=3-2]
+\end{tikzcd}\]
+
+commutes. [WORK: This seems annoying.]
+
+\item .[WORK: This seems really annoying as well.]
+
+\item (Non-degeneracy) .[WORK: How do I define the right half-braiding? Hopefully there's an explicit construction...]
+\end{enumerate}
 \end{proof}
 
 We observe the key use of the vector space double-dual map for our definition. This is no coincidence. Spherical categories - those categories whose Drinfeld centers are MTCs - are required to have natural isomorphisms between the double dual functor $(\--)^{**}$ and the identity. It is a fascinating feature of the theory that this is not always a-priori the case. What is the following:
@@ -2604,7 +2912,7 @@ Another intuition for $\Zcal(\Ccat)$, alluded to in the introduction of this sec
 A &\mapsto (A,\beta_{A,\--})
 \end{align*}
 
-Let $\Ccat^{\text{rev}}$ denote the braided monoidal category whose underlying monoidal category is $\Ccat$, but the braiding between $A,B$ is given by $\beta_{B,A}^{-1}$ instead of $\beta_{A,B}$. That is, the same category but with the braiding reversed. There is a canonical braided monoidal functor
+Let $\Ccat^{\text{rev}}$ denote the braided monoidal category whose underlying monoidal category is $\Ccat$, but the braiding between $A,B$ is given by $\beta_{B,A}^{-1}$ instead of $\beta_{A,B}$.\footnote{$\Ccat^{\text{rev}}$ is \textit{not} the same thing is $\Ccat^{\op}$.} That is, the same category but with the braiding reversed. There is a canonical braided monoidal functor
 
 \begin{align*}
 \Ccat^{\text{rev}} &\to \Zcal(\Ccat).\\
@@ -2617,7 +2925,7 @@ We now verify that our two definitions of the MTC associated with the toric code
 
 \begin{proposition} Applying the process in Proposition \ref{Make braided system} to $\Zcal(\Vecc_{\ZZ_2})$ recovers the MTC data for the toric code, as detailed at the end of subsection \ref{Fusion systems}
 \end{proposition}
-\begin{proof}. [WORK: do proof]
+\begin{proof} [WORK: do proof. This should come down to explicitely giving a set of representatives of isomorphism classes of simple objects for $\Zcal(\Vecc_{\ZZ_2})$. Then, showing that they satisfy the correct conditions shouldn't be too hard.]
 \end{proof}
 
 $\newline\newline$
@@ -2730,6 +3038,38 @@ V &\mapsto (V,\beta_{V,\--})
 \end{align*}
 
 where $\beta_{\--,\--}$ is the natural braiding on the fusion category of vector spaces. Show that this is an equivilance of categories. [WORK: how do you do this?]
+
+\item Let $A,B$ be objects in a $\CC$-linear abelian category $\Ccat$.
+
+\begin{enumerate}[(a)]
+\item Show that the direct sum (biproduct) $A\oplus B$ simultaneously satisfies the category-theoretic conditions of a product, as well as the dual conditions of a co-product. That is, the triple $(A\oplus B, p_A, p_B)$ is a product in $\Ccat$, and the triple $((A\oplus B)^{\op}, (i_A)^{\op},(i_B)^{\op})$ is a product in $\Ccat^{\op}$.
+
+\item Given a morphism $f:A\to B$, show that there are canonical isomorphisms $A\cong \im f\oplus \ker f$ and $B\cong \im f\oplus \coker f$.
+\end{enumerate}
+
+\item Let $A,B,C$ be objects a fusion category $\Ccat$.
+
+\begin{enumerate}[(a)]
+
+\item For any $A,B,C\in \Ccat$, show that the natural maps
+
+\begin{align*}
+\Hom(A\oplus B,C)&\to \Hom(A,C)\oplus \Hom(B,C)\\
+f & \mapsto (f\circ i_A)\oplus (f\circ i_B)
+\end{align*}
+
+and
+
+\begin{align*}
+\Hom(C, A\oplus B)&\to \Hom(A,C)\oplus \Hom(B,C)\\
+f &\mapsto (p_A\circ f)\oplus (p_B\circ f)
+\end{align*}
+
+are isomorphisms for all $C\in \Ccat$.
+
+\item Given a morphism $f:A\to B$ that there are canonical isomorphisms $\ker (f\otimes \id_C)\cong \ker f\otimes C$ and $\coker (f\otimes \id_C)\cong \coker f$ for all $C\in \Ccat$.
+\end{enumerate}
+
 \end{enumerate}
 
 \section{Topological Quantum Computing}
@@ -2749,7 +3089,10 @@ where $\beta_{\--,\--}$ is the natural braiding on the fusion category of vector
 \item Create that knot by braiding the anyons through spacetime.
 \item TQC will naturally compute the relevant knot invariant!
 \end{enumerate}
+
+This sort of ``TQC $\implies$ QC" has an analogy to the process of ``QC $\implies$ classical", which can be seen as a big motivation for QC. Namely, quantum algorithms can be used to construct or prove things about classical algorithms in various areas, such as cryptography \cite{regev2009lattices} and machine learning \cite{tang2019quantum}.
 ]
+
 
 [WORK: highlight the fact that we can do more TQC when we allow things other than just pure braiding, i.e., measurement based TQC. Let them know that even abelian anyons can be universal, when we're allowed to do this!]
 
@@ -2797,7 +3140,7 @@ In this appendix we introduce the basic notations of homology theory with $\ZZ_2
 
 The goal of homology theory is to describe cycles on a geometric object, up to deformations. If one cycle can be continuously deformed into another, then they should be considered equivalent. On the sphere, for example, all loops can be contracted away into nothing. On the torus there are four distinct cycles, namely, the zero cycle, the cycle that goes around the torus horizontally, the cycle that goes around the torus vertically, and the cycle that twists around the torus, as in Figure \ref{fig:homology} These non-trivial cycles correspond exactly to the continuous vector fields described in the introduction \cite{frankel1957homology}.
 
-Loosely, we will call two cycles homologically equivalent if they can be continuously deformed one to another. Given any face, the cycle consisting of $1$s along the edges touching that face should be `homologically trivial", i.e., homologically equivalent to the $0$ cycle, since it can be contracted away into nothingness. In a strong sense, this is the only condition one needs to impose. WIth $X$ as our simplicial complex, we let $C_1(X;\ZZ_2)$ be the group of chains. We let $Z_1(X;\ZZ_2)$ be the subgroup generated by the cycles consisting of $1$s  the boundaries of faces. This is the subgroup of homologically trivial cycles. This lets us define the quotient
+Loosely, we will call two cycles homologically equivalent if they can be continuously deformed one to another. Given any face, the cycle consisting of $1$s along the edges touching that face should be `homologically trivial", i.e., homologically equivalent to the $0$ cycle, since it can be contracted away into nothingness. In a strong sense, this is the only condition one needs to impose. With $X$ as our simplicial complex, we let $C_1(X;\ZZ_2)$ be the group of chains. We let $Z_1(X;\ZZ_2)$ be the subgroup generated by the cycles consisting of $1$s  the boundaries of faces. This is the subgroup of homologically trivial cycles. This lets us define the quotient
 
 $$H_1(X;\ZZ_2)=C_1(X;\ZZ_2)/Z_1(X;\ZZ_2),$$
 
@@ -2989,7 +3332,11 @@ $$d_a=\tr(\id_A).$$
 Additionally, define $\dim \Ccat = \sum_{a\in \LL}d_a^2$. We have that
 
 $$\dim \Zcal(\Ccat) = \left(\dim \Ccat \right)^2.$$
+
+.[WORK: Add the fact that the gauss sums are both equal to $\dim \Ccat$]
 \end{proposition}
+\begin{proof}. [WORK: It would be AMAZING if I could prove this.]
+\end{proof}
 
 Of course, as always there is an equivalence between the language of fusion systems and the language of categories:
 
@@ -3002,9 +3349,11 @@ Similarly, let $\Ccat$ be a multiplicity-free modular tensor category. The const
 
 We now define a unitary structure on the MTC associated with the toric code, $\Zcal(\Vecc_{\ZZ_2})$. The main point is that as fusion categories, the category $\Vecc$ of finite dimensional vector spaces and $\Hilb$ of finite dimensional Hilbert spaces are (non-canonically) equivalent. This allows one to endow $\Vecc_{G}$ (again, non-canonically) with the structure of a unitary fusion category. Taking Drinfeld centers this endows $\Zcal(\Vecc_{\ZZ_2})$ with the structure of a unitary MTC. Formally, we have the following:
 
-\begin{proposition} There is an equivalence of categories $\Vecc\xrightarrow{\sim}\Hilb$.
+\begin{proposition} There is a braided monoidal equivalence of categories $\Vecc\xrightarrow{\sim}\Hilb$.
 \end{proposition}
-\begin{proof}. [WORK: do proof]
+\begin{proof} Let $F:\Hilb\to \Vecc$ be the forgetful functor, assigning to each Hilbert spaceits underlying vector space. Choose a functor $F^{-1}: \Vecc\to \Hilb$ which satisfies $F\circ F^{-1}=\id_{\Vecc}$ (i.e. chooses an arbitary Hilbert space structure on every vector space), with the additional condition that the choice of Hilbert space structures respect tensor products. Both $F$ and $F^{-1}$ are clearly braided monoidal functors. Seeing as $F\circ F^{-1}$ is already defined to be the identity on $\Vecc$, all that is left to do is show that $F^{-1}\cdot F$ is monoidally naturally isomorphic to $\id_{\Hilb}$.
+
+Let $\eta: F\circ F^{-1}\to \id_{\Hilb}$ be the unique natural transformation which acts by the identity on the level of vector spaces on every Hilbert space. It is clear that $\eta$ satisfies the axioms of a monoidal natural transformation. It's inverse is the identity map going to the other direction, and hence it is a monoidal natural isomorphism as desired.
 \end{proof}
 
 \begin{proposition} Let $G$ be a finite group. Fix an equivalence of categories $\Hilb\xrightarrow{\sim}\Vecc$. Define the data for a unitary fusion category as follows:
@@ -3025,6 +3374,10 @@ This gives $\Vecc_G$ the structure on a unitary fusion category.
 Thus, $\Vecc_{\ZZ_2}$ can be given the structure of a unitary fusion category. Applying Proposition \ref{unitary MTC}, this means that $\Zcal(\Vecc_{\ZZ_2})$ has the structure of a unitary MTC, as desired. If one wishes to have a canonical unitary structure, then one can use instead the category of $G$-graded Hilbert spaces, $\Hilb_G$. It is equivalent to $\Vecc_G$, but its unitary structure is canonical. Thus, it is philosophically more correct to say that the unitary MTC associated with the toric code is not $\Zcal(\Vecc_{\ZZ_2})$, but $\Zcal(\Hilb_{\ZZ_2})$.
 
 As in the non-unitary case, there is an equivalence between unitary MTCs and (1-extended) unitary TQFTs [WORK: find source]. Under this equivalence, $\Zcal(\Hilb_{\ZZ_2})$ as a unitary MTC is identified with the $\ZZ_2$ Dijkgraaf-Witten theory as a unitary TQFT. Seeing as all physically realizable systems will be unitary, practically speaking it is this correspondence which is the most important.
+
+\section{Fusion System/MTC correspondance}
+
+.[WORK: Give full proofs for the correspondance between fusion systems and MTCs.]
 
 \section{Anyon data}
 

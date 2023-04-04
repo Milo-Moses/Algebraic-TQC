@@ -1,21 +1,22 @@
 \contentsline {section}{\numberline {1}Preface}{3}
 \contentsline {section}{\numberline {2}Introduction}{5}
 \contentsline {section}{\numberline {3}Quantum foundations}{10}
-\contentsline {section}{\numberline {4}The Toric Code}{21}
-\contentsline {section}{\numberline {5}Topological Quantum Field Theories}{34}
-\contentsline {subsection}{\numberline {5.1}The general picture}{34}
-\contentsline {subsection}{\numberline {5.2}The $\mathbb {Z}_2$ Dijkgraaf-Witten TQFT}{40}
+\contentsline {section}{\numberline {4}The Toric Code}{20}
+\contentsline {section}{\numberline {5}Topological Quantum Field Theories}{33}
+\contentsline {subsection}{\numberline {5.1}The general picture}{33}
+\contentsline {subsection}{\numberline {5.2}The $\mathbb {Z}_2$ Dijkgraaf-Witten TQFT}{39}
 \contentsline {section}{\numberline {6}Category Theory}{46}
-\contentsline {section}{\numberline {7}Modular Tensor Categories}{55}
-\contentsline {subsection}{\numberline {7.1}Fusion systems}{55}
-\contentsline {subsection}{\numberline {7.2}The category-theoretic viewpoint}{65}
-\contentsline {subsection}{\numberline {7.3}The MTC $\mathcal {Z}(\mathbf {Rep}_{\mathbb {Z}_2})$}{80}
-\contentsline {section}{\numberline {8}Topological Quantum Computing}{88}
-\contentsline {subsection}{\numberline {8.1}The TQC framework}{88}
-\contentsline {subsection}{\numberline {8.2}Revisiting toric code TQC}{89}
-\contentsline {subsection}{\numberline {8.3}Universal TQC with the Fibbonacci anyon}{89}
-\contentsline {section}{\numberline {A}$\mathbb {Z}_2$ Homology Theory}{90}
-\contentsline {section}{\numberline {B}Unitarity}{91}
-\contentsline {subsection}{\numberline {B.1}Unitary TQFTs}{91}
-\contentsline {subsection}{\numberline {B.2}Unitary MTCs}{93}
-\contentsline {section}{\numberline {C}Anyon data}{96}
+\contentsline {section}{\numberline {7}Modular Tensor Categories}{58}
+\contentsline {subsection}{\numberline {7.1}Fusion systems}{58}
+\contentsline {subsection}{\numberline {7.2}The category-theoretic viewpoint}{68}
+\contentsline {subsection}{\numberline {7.3}The MTC $\mathcal {Z}(\mathbf {Rep}_{\mathbb {Z}_2})$}{84}
+\contentsline {section}{\numberline {8}Topological Quantum Computing}{99}
+\contentsline {subsection}{\numberline {8.1}The TQC framework}{99}
+\contentsline {subsection}{\numberline {8.2}Revisiting toric code TQC}{100}
+\contentsline {subsection}{\numberline {8.3}Universal TQC with the Fibbonacci anyon}{100}
+\contentsline {section}{\numberline {A}$\mathbb {Z}_2$ Homology Theory}{101}
+\contentsline {section}{\numberline {B}Unitarity}{102}
+\contentsline {subsection}{\numberline {B.1}Unitary TQFTs}{102}
+\contentsline {subsection}{\numberline {B.2}Unitary MTCs}{104}
+\contentsline {section}{\numberline {C}Fusion System/MTC correspondance}{108}
+\contentsline {section}{\numberline {D}Anyon data}{108}

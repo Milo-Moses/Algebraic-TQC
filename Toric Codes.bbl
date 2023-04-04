@@ -228,6 +228,12 @@ Yang Qiu and Zhenghan Wang.
   tqfts.
 \newblock {\em Communications in Mathematical Physics}, 382:2071--2100, 2021.
 
+\bibitem[Reg09]{regev2009lattices}
+Oded Regev.
+\newblock On lattices, learning with errors, random linear codes, and
+  cryptography.
+\newblock {\em Journal of the ACM (JACM)}, 56(6):1--40, 2009.
+
 \bibitem[Rof19]{roffe2019quantum}
 Joschka Roffe.
 \newblock Quantum error correction: an introductory guide.
@@ -251,6 +257,12 @@ Michael Spivak.
 \newblock {\em Calculus on manifolds: a modern approach to classical theorems
   of advanced calculus}.
 \newblock CRC press, 2018.
+
+\bibitem[Tan19]{tang2019quantum}
+Ewin Tang.
+\newblock A quantum-inspired classical algorithm for recommendation systems.
+\newblock In {\em Proceedings of the 51st annual ACM SIGACT symposium on theory
+  of computing}, pages 217--228, 2019.
 
 \bibitem[TTWL08]{trebst2008short}
 Simon Trebst, Matthias Troyer, Zhenghan Wang, and Andreas~WW Ludwig.
