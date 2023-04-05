@@ -2234,13 +2234,12 @@ This turns the rigidity graphical diagrams into the following much easier to par
   \tikzfig{rigidity}
 \end{equation*}
 
-[WORK: this is a cop out. One really needs to know this makes a functor, and $f^{**}=f$. Work it into the next proposition.]Additionally, we observe that given any $f:A\to B$ in a fusion category, there is a canonical map $f^{*}:B^*\to A^*$ defined by the composition
+We now use this graphical language to prove some basic results about duals which would have been much more cumbersome in the language of commutative diagrams. Seeing as we will not be using any structures of fusion categories other than duals, we broaded our attention to the more general case of \textit{rigid categories}. That is, monoidal categories with duals and evaluation/co-evaluation maps satisfying the axiom of rigidity.
 
-$$f^*:B^*\xrightarrow{\coev_A\otimes \id_{B^*}} A^*\otimes A\otimes B^*\xrightarrow{\id_{A^*}\otimes f\otimes \id_{B^*}} A^*\otimes B\otimes B^* \xrightarrow{\id_{A^*}\otimes \ev_A} A^*.$$
+\begin{proposition} The following claims about duals in a rigid category $\Ccat$ are true.
 
-The most important fact about duals is that they are unique, in the sense that any two choices of duals will be canonically isomorphic:
-
-\begin{proposition} Let $A\in \Ccat$ be an object in a fusion category. Suppose $(\tilde{A}^{*},\tilde{\ev}_A,\tilde{\coev}_A)$ is another choice of dual for $A$, that is, the triple satisfiying the axiom of rigidity. There is a canonical isomorphism $A^{*}\xrightarrow{\sim}\tilde{A}^{*}$ making the diagrams
+\begin{enumerate}
+\item Duals are unique up to unique isomorphism. That is, let $A\in \Ccat$ be an object and let $(\tilde{A}^{*},\tilde{ev}_A,\tilde{\coev}_A)$ be another choice of dual (i.e. anohter choice of triple satisfying the axiom of rigidity). There is a unique isomorphism $A^{*}\xrightarrow{\sim}\tilde{A}^{*}$ making the diagrams
 
 \[\begin{tikzcd}
 	& {A^{*}\otimes A} && {A\otimes A^{*}} \\
@@ -2255,8 +2254,44 @@ The most important fact about duals is that they are unique, in the sense that a
 \end{tikzcd}\]
 
 commute.
+
+\item Duality is functorial. That is, the assignment $(\--)^{*}:\Ccat^{\op}\to \Ccat$ sending an object $A^{\op}\in \Ccat^{\op}$ to $A^{*}\in \Ccat$ and sending a morphism $f^{\op}\in \Hom(A^{\op},B^{\op})$ to the morphism
+
+$$f^*:A^*\xrightarrow{\coev_B\otimes \id_{A^*}} B^*\otimes B\otimes A^*\xrightarrow{\id_{B^*}\otimes f\otimes \id_{A^*}} B^*\otimes A\otimes A^* \xrightarrow{\id_{B^*}\otimes \ev_A} B^*$$
+
+in $\Hom(A^{*},B^{*})$ is a functor.
+\end{enumerate}
 \end{proposition}
-\begin{proof} 
+\begin{proof} We begin by proving part (1). We claim that the map
+
+$$\left(\id_{\tilde{A}^*}\otimes \ev_{A}\right)\circ \left(\tilde{\coev}_A\otimes \id_{A^{*}}\right): A^{*}\to \tilde{A}^*$$
+
+is an isomorphism, whose inverse is given by $\left(\id_{A^*}\otimes \tilde{\ev}_{A}\right)\circ \left(\coev_A\otimes \id_{\tilde{A}^{*}}\right)$. Once this has been done, showing that the isomorphism satisfies the desired diagrams and that it is unique is straightforward and left as an exercise to the reader. We now compute
+
+$$\left(\id_{A^*}\otimes \tilde{\ev}_{A}\right)\circ \left(\coev_A\otimes \id_{\tilde{A}^{*}}\right)\circ \left(\id_{\tilde{A}^*}\otimes \ev_{A}\right)\circ \left(\tilde{\coev}_A\otimes \id_{A^{*}}\right)=\id_{A^{*}}$$
+
+in  graphical language as follows:
+
+\begin{equation*}
+  \tikzfig{rigidity-proof}
+\end{equation*}
+
+They key point is that one can re-arrange the order of terms that affect disjoint strands, by the funtoriality of the tensor product. This allows us to put the $\tilde{\ev}_{A}$ and $\tilde{\coev}_{A}$ together, apply rigidity of $\tilde{A}^{*}$, and then apply rigidity of $A^{*}$. The proof that the other composition equals the identity is exactly the same.
+
+We now move on to point (2). We need to prove that if $f^{\op}: A^{\op}\to B^{\op}$ and $g^{\op}:B^{\op}\to C^{\op}$ are morphisms in $\Ccat^{\op}$, then $(f\circ g)^{*}=g^{*}\circ f^{*}$. Graphically, we have the diagram
+
+\begin{equation*}
+  \tikzfig{rigidity-functor}
+\end{equation*}
+
+Thus, changing the orders morphisms which affect disjoint sets of tensor factors when neccecary and applying rigidity, we find that
+
+\begin{equation*}
+  \tikzfig{rigidity-functor-proof}
+\end{equation*}
+
+as desired. The fact that $(\id_{A})^{*}=\id_{A^{*}}$ follows immediately from rigidity. Hence, our proof is complete.
+
 \end{proof}
 
 We now contrast fusion categories and fusion systems. The first claim is as follows:
@@ -2442,7 +2477,7 @@ The intuition for the twist of a MTC is that it helps deal with the non-triviali
 
 $$\tr(f): 1\xrightarrow{\coev_A} A^*\otimes A\xrightarrow{\id_{A^*}\otimes (\theta_X\circ f)} A^*\otimes A \xrightarrow{\beta_{A^*,A}}A\otimes A^*\xrightarrow{\ev_A}1.$$
 
-The space $\End(1)$ is one dimensional by Schur's Lemma (Theorem \ref{Schurs Lemma}), with a canonical generator $\id_1$. Hence, we can canonically identify $\tr(f)$ with a complex number. Graphically, we represent trace as the closed loop [WORK: make diagram].
+The space $\End(1)$ is one dimensional by Schur's Lemma (Theorem \ref{Schurs Lemma}), with generator $\id_1$. Hence, we can canonically identify $\tr(f)$ with a complex number. Graphically, we represent trace as the closed loop [WORK: make diagram, fix notation for un-standard cup and cap using twist to make this rigorous.].
 
 For all $A,B\in \Ccat$, the following claims are all true:
 
@@ -2450,7 +2485,8 @@ For all $A,B\in \Ccat$, the following claims are all true:
 \item $\tr(f\otimes g)=\tr(f)\cdot \tr(g)$ for all $f\in \End(A)$, $g\in \End(B)$
 \item $\tr(f\oplus g)=\tr(f)+\tr(g)$ for all $f\in \End(A)$, $g\in \End(B)$
 \item $\tr(f\circ g)=\tr(g\circ f)$ for all $f,g\in \End(A)$
-\item Trace is independent of choice of duals. That is, let $(\tilde{A}^*,\tilde{\coev}_{A}, \tilde{\ev}_A)$ be a different choice of dual, unit, and co-unit for $A$ satisfying the triangle axioms of rigidity, as in the definition of fusion category. Defining $\tilde{\tr}(f)$ exactly like $\tr(f)$ except with this new unit, we find that $\tilde{\tr}(f)=\tr(f)$.
+\item .[WORK: 2nd formula for trace, putting $\beta$ and $\theta$ before $f$]
+\item Trace is independent of choice of duals. That is, let $(\tilde{A}^*,\tilde{\coev}_{A}, \tilde{\ev}_A)$ be a different choice of dua  for $A$. Defining $\tilde{\tr}(f)$ exactly like $\tr(f)$ except with this new unit, we find that $\tilde{\tr}(f)=\tr(f)$.
 \item Trace is preserved by functors. That is, let $\Ccat,\Dcat$ be MTCs with traces $\tr_{\Ccat},\tr_{\Ccat}$ respectively. Let $F:\Ccat\to \Dcat$ be a braided tensor functor. We have that $\tr_{\Ccat}(f)=\tr_{\Dcat}(F(f))$.
 \end{enumerate}
 \end{proposition}
@@ -2526,16 +2562,14 @@ is a representation of the modular group. That is, extending $\rho_{\Ccat}$ by m
 
 These $S$-matricies and $T$-matricies are very important invariants of MTCs. They do not, however, uniquely determine the MTC \cite{mignard2021modular}. We summarize some important facts about MTCs:
 
-\begin{theorem} The follows claims about MTCs are all true:
+\begin{theorem} The following claims about MTCs are all true:
 
 \begin{itemize}
-\item Suppose $\Ccat$ is a category satisfying all of the conditions of a MTC, except for non-degeneracy ( this is called a pre-modular category). Then, $\Ccat$ is modular if and only if the $S$-matrix is invertible.
+\item (\cite{bruguieres2000categories})Suppose $\Ccat$ is a category satisfying all of the conditions of a MTC, except for non-degeneracy ( this is called a pre-modular category). Then, $\Ccat$ is modular if and only if the $S$-matrix is invertible.
 \item (\cite{bruillard2016rank}) There are finitely many MTCs, up to braided monoidal equivilance, of a given rank.
 \item (\cite{ng2010congruence}) The modular representations of MTCs have finite image.
 \end{itemize}
 \end{theorem}
-\begin{proof}. [WORK: prove the first part]
-\end{proof}
 
 \subsection{The MTC $\Zcal(\Rep_{\ZZ_2})$}
 \label{VecZ2 MTC}
@@ -2865,25 +2899,7 @@ This gives $\Zcal(\Vecc_G)$ the structure of an MTC.
 \begin{proof} We verify the axioms one at a time.
 
 \begin{enumerate}
-\item We wish to show that the diagram
-
-\[\begin{tikzcd}
-	& {(VW)(VW)^*(VW)^{**}} & {(VW)^*(VW)(VW)^{**}} & {(VW)^{**}} & VW \\
-	VW &&&& WV \\
-	& {(VV^*V^{**})(WW^*W^{**})} & {(V^*VV^{**})(W^*WW^{**})} & {V^{**}W^{**}} & VW
-	\arrow["{\beta_{VW,(VW)^*}}", from=1-2, to=1-3]
-	\arrow["{\beta_{V,V^*}\beta_{W,W^*}}"', from=3-2, to=3-3]
-	\arrow["{\ev_{V}\ev_{W}}"', from=3-3, to=3-4]
-	\arrow["{\ev_{VW}}", from=1-3, to=1-4]
-	\arrow[from=1-4, to=1-5]
-	\arrow[from=3-4, to=3-5]
-	\arrow["{\beta_{V,W}}"', from=3-5, to=2-5]
-	\arrow["{\beta_{W,V}}"', from=2-5, to=1-5]
-	\arrow["{\coev_{(VW)^*}}"{description}, from=2-1, to=1-2]
-	\arrow["{\coev_{V^*}\coev_{W^*}}"{description}, from=2-1, to=3-2]
-\end{tikzcd}\]
-
-commutes. [WORK: This seems annoying.]
+\item .[WORK: Do the proof. Needs to wait for proper braiding package.]
 
 \item .[WORK: This seems really annoying as well.]
 
@@ -3010,7 +3026,7 @@ commute)
 
 \item Show that the modular tensor fusion data associated to the toric code forms a modular tensor fusion system.
 
-\item  Let $\Ccat$ be an MTC, and let $\LL$ be the set of isomorphism classes of simple objects. Then, [WORK: doing what?] the coefficinets of the $S$-matrix of $\Ccat$ can be expressed in terms of the twist, fusion coefficients, and quantum dimensions as follows:
+\item  Let $\Ccat$ be an MTC, and let $\LL$ be the set of isomorphism classes of simple objects. Then, [WORK: doing what? Apprently one just takes the trace of the ``twisting relation"...] the coefficinets of the $S$-matrix of $\Ccat$ can be expressed in terms of the twist, fusion coefficients, and quantum dimensions as follows:
 
 $$s_{a,b}=\frac{1}{\theta_a \theta_b}\sum_{C\in \LL}N^{a^*,b}_{c}d_{c}\theta_{c}.$$
 
@@ -3368,7 +3384,17 @@ $$\left<f(v),w\right>=\left<v,f^{\dagger}(w)\right>.$$
 
 This gives $\Vecc_G$ the structure on a unitary fusion category.
 \end{proposition}
-\begin{proof}. [WORK: do proof]
+\begin{proof} To begin we perform a useful computation on $\tr_{\Vecc_G}(f)$, for morphisms $f:V\to V$, $V\in \Vecc_G$. Namely we show that
+
+$$\tr_{\Vecc_G}(f)=\sum_{g\in G}\tr(f_g),$$
+
+where $f_g: V_g\to V_g$ are the $g$-components of $f$, whose trace is defined in the standard linear algebra sense. In particular, we find when $G$ is the trivial group that the caegorical traces in $\Vecc$ agree with the standard linear algebra traces. Moreover, from the base case of $\Vecc$ the general case follows in a straightforward fashion from the fact that the identity component of $V^{*}\otimes V$ is $\bigoplus_{g\in G}V_g^{\otimes }\otimes V_g$, hence we assume that $G$ is trivial without loss of generality. Let $\{v_i\}_{i\in I}$ be a basis for $V$ labeled by some indexing set $I$, and let $\{\varphi_i\}_{i\in I}$ be the dual basis of $V^{*}$. Seeing as the evaluation map assigns $1$s to pairs $\varphi_i\otimes v_j$ when $i=j$ and zero otherwise, the conjugate transpose sends the vector $1\in \CC$ to $\sum_{i\in I}\varphi_i\otimes v_i$. That is, the coevaluation map is the conjugate transpose of the evaluation map. We thus see from the definition of trace that
+
+$$\tr(f)=\sum_{i\in I}\varphi_i(f(v_i)).$$
+
+The term $\varphi_i(f(v_i))$ is exactly the $i$th diagonal entry of the matrix representation of $f$ in the basis $v_i$, and thus we recover $\tr$ as a sum of diagonal entries. Moreover, we observe that linear trace adds over direct sums. If we think of $f:V\to V$ as a linear map of the vector space $\bigoplus_{g\in G}V_g$ to itself, this lemma shows that the trace of $f$ computed categorically or by linear algebra methods is the same.
+
+From this we observe that the categorical inner product $\left<\cdot | \cdot \right>$ defined by $\left<f|g\right>=\tr(f\cdot g^{\dagger})$ is exactly one of the standard inner products from linear algebra, as in Proposition \ref{Hilbert properties}. Hence, unitarity follows immediately. The remaining axioms are standard facts about conjugate transposes from linear algebra.
 \end{proof}
 
 Thus, $\Vecc_{\ZZ_2}$ can be given the structure of a unitary fusion category. Applying Proposition \ref{unitary MTC}, this means that $\Zcal(\Vecc_{\ZZ_2})$ has the structure of a unitary MTC, as desired. If one wishes to have a canonical unitary structure, then one can use instead the category of $G$-graded Hilbert spaces, $\Hilb_G$. It is equivalent to $\Vecc_G$, but its unitary structure is canonical. Thus, it is philosophically more correct to say that the unitary MTC associated with the toric code is not $\Zcal(\Vecc_{\ZZ_2})$, but $\Zcal(\Hilb_{\ZZ_2})$.
@@ -3376,6 +3402,9 @@ Thus, $\Vecc_{\ZZ_2}$ can be given the structure of a unitary fusion category. A
 As in the non-unitary case, there is an equivalence between unitary MTCs and (1-extended) unitary TQFTs [WORK: find source]. Under this equivalence, $\Zcal(\Hilb_{\ZZ_2})$ as a unitary MTC is identified with the $\ZZ_2$ Dijkgraaf-Witten theory as a unitary TQFT. Seeing as all physically realizable systems will be unitary, practically speaking it is this correspondence which is the most important.
 
 \section{Fusion System/MTC correspondance}
+
+While the connection between fusion categories and fusion systems is relatively straightforward, giving full proofs and constructions can be somewhat cumbersome. In this appendix we offer these proofs and constructions in full detail.
+
 
 .[WORK: Give full proofs for the correspondance between fusion systems and MTCs.]
 

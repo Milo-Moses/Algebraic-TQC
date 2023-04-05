@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  3 APR 2023 21:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  4 APR 2023 17:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1022,26 +1022,27 @@ mr/m/n/10 ))$
  []
 
 [74] (./figures/bad-rigidity.tikz) (./figures/eval-coeval.tikz)
-(./figures/rigidity.tikz) [75] [76] (./figures/cotriangle-reprise.tikz)
-[77] (./figures/first-basis.tikz) (./figures/second-basis.tikz) [78] [79]
-[80] [81] [82] [83]
+(./figures/rigidity.tikz) [75] (./figures/rigidity-proof.tikz) [76]
+(./figures/rigidity-functor.tikz) (./figures/rigidity-functor-proof.tikz)
+[77] [78] (./figures/cotriangle-reprise.tikz) (./figures/first-basis.tikz)
+[79] (./figures/second-basis.tikz) [80] [81] [82] [83] [84]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2532.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2568.
 
- [84] [85]
-Overfull \hbox (13.3451pt too wide) detected at line 2606
+ [85] [86] [87]
+Overfull \hbox (13.3451pt too wide) detected at line 2640
 []
  []
 
-[86] [87]
-Overfull \hbox (17.10213pt too wide) in paragraph at lines 2670--2671
+[88] [89]
+Overfull \hbox (17.10213pt too wide) in paragraph at lines 2704--2705
 []\OT1/cmr/m/n/10 The def-i-ni-tion of the in-verse ma-trix says that $[][] \OM
 L/cmm/m/it/10 c[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 c[]\OT1/cmr/m/n/10 )[] = []$
 .
  []
 
-[88] [89]
-Overfull \hbox (38.02985pt too wide) in paragraph at lines 2717--2718
+[90]
+Overfull \hbox (38.02985pt too wide) in paragraph at lines 2751--2752
 []\OT1/cmr/bx/it/10 morphisms: \OT1/cmr/m/it/10 Given $\OT1/cmr/m/n/10 (\OML/cm
 m/m/it/10 A; \U/eur/m/n/10 ^^L[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/
 n/10 (\OML/cmm/m/it/10 B; \U/eur/m/n/10 ^^L[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10
@@ -1051,59 +1052,54 @@ cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; \U/eur/m/n/10 ^^L[]\OT1/cmr/
 m/n/10 ))$
  []
 
-
-Overfull \hbox (20.32211pt too wide) in paragraph at lines 2727--2728
+[91]
+Overfull \hbox (20.32211pt too wide) in paragraph at lines 2761--2762
 []\OT1/cmr/bx/it/10 braiding:  \OT1/cmr/m/it/10 We de-fine the braid-ing be-twe
 en two el-e-ments $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A; ^^L[]\OT1/cmr/m/n/10 )\
 OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; ^^L[]\OT1/cmr/m/n/10 ) \
 OMS/cmsy/m/n/10 2
  []
 
-[90]
-Overfull \hbox (78.26105pt too wide) detected at line 2745
+
+Overfull \hbox (78.26105pt too wide) detected at line 2779
 []
  []
 
-
-Overfull \hbox (7.29327pt too wide) detected at line 2763
+[92]
+Overfull \hbox (7.29327pt too wide) detected at line 2797
 []
  []
 
-[91]
-Overfull \hbox (25.6396pt too wide) in paragraph at lines 2804--2805
+[93]
+Overfull \hbox (25.6396pt too wide) in paragraph at lines 2838--2839
 []\OT1/cmr/m/n/10 (All monomor-phisms and epi-mor-phisms are nor-mal) En-dow-in
 g ker-nels/cokernels
  []
 
-[92] [93]
-Overfull \hbox (100.55403pt too wide) detected at line 2884
-[]
- []
-
-[94]
-Overfull \hbox (0.96248pt too wide) in paragraph at lines 2890--2891
+[94] [95]
+Overfull \hbox (0.96248pt too wide) in paragraph at lines 2906--2907
 []\OT1/cmr/m/n/10 (Non-degeneracy) .[WORK: How do I de-fine the right half-brai
 ding? Hope-
  []
 
-[95]
-Overfull \hbox (614.78932pt too wide) in paragraph at lines 2929--2929
+[96]
+Overfull \hbox (614.78932pt too wide) in paragraph at lines 2945--2945
 []
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 2931--2932
+[97]
+Underfull \hbox (badness 10000) in paragraph at lines 2947--2948
 
  []
 
 
-Overfull \hbox (7.59065pt too wide) in paragraph at lines 2944--2945
+Overfull \hbox (7.59065pt too wide) in paragraph at lines 2960--2961
 []\OT1/cmr/m/n/10 (Morphisms) A mor-phism be-tween closed ori-ented $\OML/cmm/m
 /it/10 n$\OT1/cmr/m/n/10 -manifolds $\OML/cmm/m/it/10 Y[]; Y[]$
  []
 
-[96] [97] [98] [99] [100] [101]
-Overfull \hbox (1.3881pt too wide) in paragraph at lines 3175--3176
+[98] [99] [100] [101] [102] [103]
+Overfull \hbox (1.3881pt too wide) in paragraph at lines 3191--3192
 []\OT1/cmr/m/n/10 (Conjugation) A lin-ear map $\OMS/cmsy/m/n/10 y \OT1/cmr/m/n/
 10 : [](\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 
 )\OML/cmm/m/it/10 ; V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 )) \O
@@ -1113,82 +1109,82 @@ MS/cmsy/m/n/10 ! []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 (\OML/cmm
  []
 
 
-Overfull \hbox (13.79912pt too wide) in paragraph at lines 3184--3185
+Overfull \hbox (13.79912pt too wide) in paragraph at lines 3200--3201
 \OT1/cmr/m/n/10 de-fined by $[] = [](\OML/cmm/m/it/10 f \OMS/cmsy/m/n/10 ^^N \O
 ML/cmm/m/it/10 g[]\OT1/cmr/m/n/10 )$ is an in-ner prod-uct, en-dow-ing $[](\OML
 /cmm/m/it/10 V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 )\OML/cmm/m/
 it/10 ; V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 ))$
  []
 
-[102]
-Overfull \hbox (18.39388pt too wide) in paragraph at lines 3201--3202
+[104]
+Overfull \hbox (18.39388pt too wide) in paragraph at lines 3217--3218
 []\OT1/cmr/bx/n/10 Proposition B.1. []\OT1/cmr/m/it/10 Equipped with its nat-u-
 ral con-ju-ga-tion struc-ture, the $\U/msb/m/n/10 Z[]$ \OT1/cmr/m/it/10 Dijkgra
 af-
  []
 
-[103] [104] [105] [106]
-Overfull \hbox (1.05043pt too wide) in paragraph at lines 3352--3353
+[105] [106] [107]
+Overfull \hbox (1.05043pt too wide) in paragraph at lines 3368--3369
 []\OT1/cmr/bx/n/10 Proposition B.7. []\OT1/cmr/m/it/10 There is a braided monoi
 dal equiv-a-lence of cat-e-gories $[] []
  []
 
-[107] (./Toric Codes.bbl [108] [109] [110] [111]
-Underfull \hbox (badness 1360) in paragraph at lines 301--306
+[108] [109] (./Toric Codes.bbl [110] [111] [112] [113]
+Underfull \hbox (badness 1360) in paragraph at lines 307--312
 []\OT1/cmr/m/n/10 Fangyuan Yang, Alexan-der A Zi-brov, Rui-heng Bai, Takashi
  []
 
-) [112] (./Toric Codes.aux) ) 
+[114]) [115] (./Toric Codes.aux) ) 
 Here is how much of TeX's memory you used:
- 20062 strings out of 492649
- 436252 string characters out of 6129622
- 493910 words of memory out of 5000000
- 23480 multiletter control sequences out of 15000+600000
+ 20061 strings out of 492649
+ 435805 string characters out of 6129622
+ 493087 words of memory out of 5000000
+ 23470 multiletter control sequences out of 15000+600000
  23574 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,20n,84p,1523b,1111s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2018/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmbxti10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/ams
-fonts/cmextra/cmex7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.p
-fb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></u
-sr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/
-local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
-ocal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/loc
-al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local
-/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/t
-exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
-live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texl
-ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texli
-ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive
-/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2
-018/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/local/texlive
-/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/local/texliv
-e/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/te
-xlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/loca
-l/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/l
-ocal/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/tex
-live/2018/texmf-dist/fonts/type1/public/rsfs/rsfs5.pfb></usr/local/texlive/2018
-/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb>
-Output written on "Toric Codes.pdf" (112 pages, 3878974 bytes).
+</usr/local/texlive/2018/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
+c/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7
+.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pf
+b></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><
+/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></us
+r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/
+local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/lo
+cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loca
+l/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local
+/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/
+texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/te
+xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/local/te
+xlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/local/t
+exlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/loc
+al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr
+/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></
+usr/local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/loca
+l/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs5.pfb></usr/local/texlive
+/2018/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb>
+Output written on "Toric Codes.pdf" (115 pages, 3886786 bytes).
 PDF statistics:
- 554 PDF objects out of 1000 (max. 8388607)
- 367 compressed objects within 4 object streams
+ 564 PDF objects out of 1000 (max. 8388607)
+ 374 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  98 words of extra memory for PDF output out of 10000 (max. 10000000)
 
