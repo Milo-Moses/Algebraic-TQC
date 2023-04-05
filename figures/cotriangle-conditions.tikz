@@ -1,0 +1,39 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-6, 4) {};
+		\node [style=none] (1) at (-4, 2) {};
+		\node [style=none] (2) at (-2, 4) {};
+		\node [style=none] (3) at (-4, 0) {};
+		\node [style=none] (4) at (-4, -0.5) {$A$};
+		\node [style=none] (5) at (-6, 4.5) {$A$};
+		\node [style=none] (6) at (-2, 4.5) {$1$};
+		\node [style=none] (7) at (-2, 1.25) {$=\rho_A,$};
+		\node [style=none] (8) at (0, 4) {};
+		\node [style=none] (9) at (2, 2) {};
+		\node [style=none] (10) at (4, 4) {};
+		\node [style=none] (11) at (2, 0) {};
+		\node [style=none] (12) at (2, -0.5) {$A$};
+		\node [style=none] (13) at (0, 4.5) {$1$};
+		\node [style=none] (14) at (4, 4.5) {$A$};
+		\node [style=none] (15) at (4, 1.25) {$=\lambda_A,$};
+		\node [style=none] (16) at (6, 4) {};
+		\node [style=none] (17) at (8, 2) {};
+		\node [style=none] (18) at (10, 4) {};
+		\node [style=none] (19) at (8, 0) {};
+		\node [style=none] (20) at (8, -0.5) {$1$};
+		\node [style=none] (21) at (6, 4.5) {$A^{*}$};
+		\node [style=none] (22) at (10, 4.5) {$A$};
+		\node [style=none] (23) at (10, 1.25) {$=\coev_A.$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0.center) to (1.center);
+		\draw (1.center) to (2.center);
+		\draw (1.center) to (3.center);
+		\draw (8.center) to (9.center);
+		\draw (9.center) to (10.center);
+		\draw (9.center) to (11.center);
+		\draw (16.center) to (17.center);
+		\draw (17.center) to (18.center);
+		\draw (17.center) to (19.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

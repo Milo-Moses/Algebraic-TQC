@@ -36,7 +36,7 @@
 
 \graphicspath{ {./images/} }
 \numberwithin{figure}{section}
-
+\setcounter{section}{-1}
 
 
 \title{Topological Quantum Computing\\ via \\ The Toric Code}
@@ -200,7 +200,7 @@ In TQC, information is still stored in knots. The main difference is that the st
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.25]{braiding}
-\caption{Braiding of quasiparticles in spacetime [WORK: do this in tikz]}
+\caption{Braiding of quasiparticles in spacetime [WORK: BRAID do this in tikz]}
 \label{fig:braiding}
 \end{center}
 \end{figure}
@@ -1355,7 +1355,7 @@ The universal property of $A\times_0 B$ says that there is a unique choice of fu
 Observe that not only do we recover an isomorphism between $A\times_0 B$ and $A\times _1 B$, but we recover an isomorphism which respects the relevant structure. Namely, the projection maps onto $A$ and $B$. With this isomorphism in hand, we can reasonably say that the product of $A$ and $B$ is unique. There are many choices, but they all have unique isomorphisms between each other which respect structure. We say in this situation that $A\times_0 B$ and $A\times_1 B$ can be \textit{canonically} identified. A structure is canonical if there is a unique natural choice of construction. In this case, the isomorphism is canonical since there is a unique choice, the one which makes the diagram commute. Generally, the canonical choice is the one which makes the most diagrams commute. It is the goal of much of category theory to formalize the notions of constructions being canonical. It is the goal of many mathematicians studying category theory to develop the most canonical possible constructions:
 
 \begin{quote}
-``I can assure you, at any rate, that [...] my results are invariant, probably canonical, perhaps even functorial." - André Weil\footnote{This quote appears in André Weil's collection \cite{weil2009oeuvres} on page 558. [WORK: verify, get details]}
+``I can assure you, at any rate, that [...] my results are invariant, probably canonical, perhaps even functorial." - Rudolf Lipschitz\footnote{This quote appears in a correspondence between Lipschitz and André Weil, which was documented in the collection \cite{weil2009oeuvres}, on page 558.}
 \end{quote}
 
 The term \textit{functorial} in the above quote makes reference to one of the most systematic measures of canonicality in category theory. Suppose one has two categories $\Ccat$ and $\Dcat$, and has an assignment of objects from $\Ccat$ to $\Dcat$. For instance $\Ccat=\Top$, $\Dcat=\Grp$, and the assignement sends a space $X$ to its first homology group with $\ZZ_2$ coefficients $H_1(X;\ZZ_2)$. Or perhaps $\Ccat=\Set$, $\Dcat=\bold{Vec}$, and the assignment sends a set\footnote{To get a finite dimensional vector space, $S$ has to be finite. Thus, this is really a functor $\bold{finSet}\to \Vecc$ whose source is the category of finite sets.} $S$ to the vector space $\CC[S]$ which has distinguished basis $S$. These assignments are very natural, and one would want a measure of the fact that they are canonical. In this case, we can say these maps are \textit{functorial}. This means that these assignments can be extended to functors, which we define below:
@@ -1634,6 +1634,8 @@ is a bijection. Here,$\Hom_{\Ccat}(A,\--)$ is considered as a functor in $\bold{
 
 \item The assignment $H_1(\--;\ZZ_2):\bold{Top}\to \bold{Grp}$ which assigns to each topological space $X$ the homology group $H_1(X;\ZZ_2)$, and assigns to each continuous map $f:X\to Y$ the group homomorphism $f_*: H_1(X;\ZZ_2)\to H_1(Y;\ZZ_2)$, defined as follows. For each function $f:X\to Y$, there exists celluations $\Delta_X,\Delta_Y$ such that $f$ sends edges in $X$ to edges in $Y$; this is the simplicial approximation theory. We define $f_*:C_1(X;\ZZ_2)\to C_1(Y;\ZZ_1)$ by sending $\omega$ to the chain $f_*(\omega)$, where  an edge $e$ of $Y$ is assigned the (mod 2) sum of $\omega$'s values at the edges in $f^{-1}(e)$. Show that this is well defined, and descends to a function $f_*:H_1(X;\ZZ_2)\to H_1(Y;\ZZ_2)$, completing the definition of our assignment.
 \end{enumerate}
+
+\item Let $\Ccat,\Dcat$ be categories. Show that a functor $F:\Ccat\to \Dcat$ induces an equivalence of categories (that is, admits a map $F^{-1}:\Dcat\to \Ccat$ making $(F,F^{-1})$ an equivalence of categories) if and only if it is full (surjective on hom sets), faithful (injective on hom sets), and essentially surjective (for every element $A\in \Dcat$, there exists $B\in \Ccat$ such that $F(B)$ is isomorphic to $A$). (HINT: Construct $F^{-1}$ arbitrarily by lifting objects, and show it is a functor)
 \end{enumerate}
 
 \section{Modular Tensor Categories}
@@ -1843,7 +1845,7 @@ A natural question about the definition of $6j$ symbols could be as follows: The
 
 In this context, Vakil's quote is very literal - we are studying particles by looking at their fusion rules. Fusion, as a process, generally happens when things hit each other very fast in a particle accelerator. By knowing that $a\otimes (b\otimes c)$ and $(a\otimes b)\otimes c$ can go to $d$ in all the same ways (with the relationship being those ways being specified by the matrix $F^{a,b,c}_d$), we can conclude an isomorphism between $a\otimes (b\otimes c)$ and $(a\otimes b)\otimes c$.
 
-We now define braided $6j$ fusion systems. A braiding should give the relashionship between $a\otimes b$ and $b\otimes a$. These objects will be isomorphic, but not equal. For example, the fact that $X$ and $Z$ anticommute in the toric code is exactly the statement that isomorphism $X\otimes Z\to Z\otimes X$ should be $-1$ times the identity. Keeping with our Yoneda perspective, instead of giving an isomorphism $a\otimes b$ and $b\otimes a$ we give isomorphism between the spaces $a\otimes b\to c$ and $b\otimes a\to c$ for every $c$. Graphically, this can be seen in Figure [WORK: make figure]. The formal definition is as follows:
+We now define braided $6j$ fusion systems. A braiding should give the relashionship between $a\otimes b$ and $b\otimes a$. These objects will be isomorphic, but not equal. For example, the fact that $X$ and $Z$ anticommute in the toric code is exactly the statement that isomorphism $X\otimes Z\to Z\otimes X$ should be $-1$ times the identity. Keeping with our Yoneda perspective, instead of giving an isomorphism $a\otimes b$ and $b\otimes a$ we give isomorphism between the spaces $a\otimes b\to c$ and $b\otimes a\to c$ for every $c$. Graphically, this can be seen in Figure [WORK: BRAID make figure]. The formal definition is as follows:
 
 \begin{definition}[Braided $6j$ Fusion system] A braided $6j$ fusion system is the following data.
 
@@ -1865,9 +1867,9 @@ $$\left(R^{a,c}_{e}\right)^{\pm 1}F^{b,a,c}_{d;e,m}\left(R^{a,b}_{m}\right)^{\pm
 \raggedleft\qedsymbol{}
 \end{definition}
 
-Again, the hexagon is a mess of symbols when written out explicitely. In graphical language, we can [WORK: what does braiding look like]. The hexagon identity is thus the condition that going either way around the following 6-term diagram gives the same answer:
+Again, the hexagon is a mess of symbols when written out explicitely. In graphical language, we can [WORK: BRAID what does braiding look like]. The hexagon identity is thus the condition that going either way around the following 6-term diagram gives the same answer:
 
-[WORK: Make hexagon]
+[WORK: BRAID Make hexagon]
 
 With all this, we can finally define an MTC:
 
@@ -1882,9 +1884,9 @@ With all this, we can finally define an MTC:
 \raggedleft\qedsymbol{}
 \end{definition}
 
-In graphical language, the spherical condition looks like [WORK: make diagram, explain why its neccecary.]
+In graphical language, the spherical condition looks like [WORK: BRAID make diagram, explain why its neccecary.]
 
-The non-degeneracy condition says that every non-trival particle should braid non-trivially with at least one other particle. Graphically, this is shown in [WORK: make diagram].
+The non-degeneracy condition says that every non-trival particle should braid non-trivially with at least one other particle. Graphically, this is shown in [WORK: BRAID make diagram].
 
 It is important to remember that even though the definition is long, at the end of the day these are still just finite collections of numbers satisfying a finite number of polynomial equations. This makes many things simple. For instance, we can define a morphism between fusion systems $(\LL,N)$ and $(\LL',N')$ to be a function $f:\LL\to \LL'$ such that $N^{a,b}_{c}=N'^{f(a),f(b)}_{f(c)}$. For $6j$ fusion sytems and braided $6j$ fusion systems, we simply require that $f$ should respect $F$ symbols and $R$ symols as well. We can thus properly speak of fusion systems up to equivilance. We will see in the next section, however, that the correct notion of equivilance is a weaker \textit{gauge equivilance}. This corresponds to keeping the same label set, but performing a local change of basis on $F$ matricies.
 
@@ -1908,7 +1910,7 @@ $$f_n^{b,c}f^{a,n}_{d}F^{a,b,c}_{d;n,m}=\tilde{F}^{a,b,c}_{d;n,m}f^{a,b}_{m}f^{m
 
 If $(\LL,N,F)$ and $(\LL',N',F')$ are $6j$ fusion systems with different label sets, then a gauge equivilance between $\LL$ and $\LL'$ is a guage equivilance of $(\LL,N,F)$ to some system $(\LL,N,\tilde{F})$, followed by a standard equivilance of fusion systems between $(\LL,N,\tilde{F})$ and $(\LL',N',F')$.
 
-.[WORK: Give explination of rectangle axiom, preferably with graphical language]
+.[WORK: BRAID Give explination of rectangle axiom, preferably with graphical language]
 
 In the case of the toric code we summarize the relevant data. The label set is $\LL=\{I,X,Y,Z\}$. The nonzero fusion coefficients are given by
 
@@ -2162,8 +2164,7 @@ commutes
 \raggedleft\qedsymbol{}
 \end{definition}
 
-We now can define exact sequence, as desired. Namely, given a morphism $f:A\to B$, we have a cokernel $B\to \coker f$. We define the image $\im f$ of $f$ to be the kernel of the cokernel. An exact sequence is defined to be a sequence of morphisms, in which the image of the incoming map at each object is equal to the kernel of the outgoing map. Alternatively, the image of $f$ could be defined as the cokernel of the kernel. The fact taht these two definitions of image coincide is \textit{equivilant} to the fact that all monomorphisms and epimorphisms are normal. This is Exercise \thesection.5. [WORK: maybe add to this exericse the fact that ``kernel => monomorphism" and ``cokernel => epimorphism".]
-
+We now can define exact sequence, as desired. Namely, given a morphism $f:A\to B$, we have a cokernel $B\to \coker f$. We define the image $\im f$ of $f$ to be the kernel of the cokernel. An exact sequence is defined to be a sequence of morphisms, in which the image of the incoming map at each object is equal to the kernel of the outgoing map. Alternatively, the image of $f$ could be defined as the cokernel of the kernel. The fact that these two definitions of image coincide is \textit{equivilant} to the fact that all monomorphisms and epimorphisms are normal. This is Exercise \thesection.5.
 
 A non-abelian $\CC$-linear category is a category whose hom spaces are $\CC$ vector spaces, and whose composition maps are linear, with no other restrictions. As always, when defining an object one must define the appropriate morphisms:
 
@@ -2236,7 +2237,7 @@ This turns the rigidity graphical diagrams into the following much easier to par
 
 We now use this graphical language to prove some basic results about duals which would have been much more cumbersome in the language of commutative diagrams. Seeing as we will not be using any structures of fusion categories other than duals, we broaded our attention to the more general case of \textit{rigid categories}. That is, monoidal categories with duals and evaluation/co-evaluation maps satisfying the axiom of rigidity.
 
-\begin{proposition} The following claims about duals in a rigid category $\Ccat$ are true.
+\begin{proposition}\label{rigidity} The following claims about duals in a rigid category $\Ccat$ are true.
 
 \begin{enumerate}
 \item Duals are unique up to unique isomorphism. That is, let $A\in \Ccat$ be an object and let $(\tilde{A}^{*},\tilde{ev}_A,\tilde{\coev}_A)$ be another choice of dual (i.e. anohter choice of triple satisfying the axiom of rigidity). There is a unique isomorphism $A^{*}\xrightarrow{\sim}\tilde{A}^{*}$ making the diagrams
@@ -2259,7 +2260,7 @@ commute.
 
 $$f^*:A^*\xrightarrow{\coev_B\otimes \id_{A^*}} B^*\otimes B\otimes A^*\xrightarrow{\id_{B^*}\otimes f\otimes \id_{A^*}} B^*\otimes A\otimes A^* \xrightarrow{\id_{B^*}\otimes \ev_A} B^*$$
 
-in $\Hom(A^{*},B^{*})$ is a functor.
+in $\Hom(A^{*},B^{*})$ is a monoidal functor. Moreover, this functor induces a monoidal equivalence of between $\Ccat^{\op}$ and $\Ccat$.
 \end{enumerate}
 \end{proposition}
 \begin{proof} We begin by proving part (1). We claim that the map
@@ -2290,7 +2291,13 @@ Thus, changing the orders morphisms which affect disjoint sets of tensor factors
   \tikzfig{rigidity-functor-proof}
 \end{equation*}
 
-as desired. The fact that $(\id_{A})^{*}=\id_{A^{*}}$ follows immediately from rigidity. Hence, our proof is complete.
+as desired. The fact that $(\id_{A})^{*}=\id_{A^{*}}$ follows immediately from rigidity. [WORK: there are other axioms (probably trivial) to make this a monoidal functor]. We now show that $(\--)^{*}$ full, faithful, and essentially surjective, which by Exercise \thesection.6 is enough to conclude that $(\--)^{*}$ induces an equialence of categories. For fully faithfulness, we define a linear mpa $\Hom(A^{*},B^{*})\to \Hom(B,A)$ taking the morphism $f:A^{*}\to B^{*}$ to the composition
+
+\begin{equation*}
+  \tikzfig{rigidity-inverse}
+\end{equation*}
+
+It is straightforward to see that this serves an inverse to the duality map $\Hom(B,A)\to \Hom(A^{*},B^{*})$, and hence $(\--)^{*}$ induces isomorphisms on hom sets. To see that the functor is essentially surjective, [WORK: I don't see how to do this. It follows from a straightforward counting argument on fusion categories shows this is the case there, but I don't see how to go in full generality.]
 
 \end{proof}
 
@@ -2302,10 +2309,25 @@ $$N^{a,b}_c=\dim_{\CC}\Hom(A\otimes B, C).$$
 
 The pair $(\LL,N^{a,b}_{c})$ is a fusion system.
 \end{proposition}
-\begin{proof}. [WORK: Prove this!]
+\begin{proof} We verify the axioms one by one.
+
+\begin{enumerate}
+\item (Indentity/Do-nothing) In a fusion category we assume that the tensor unit is simple, hence it gives an elment in $\LL$. Uniquness comes from the fact that the unit in a monoidal category is well defined up to isomorphism. That is, if $1$ and $1'$ are two monoidal units then $1\cong 1\otimes 1'\cong 1'$.
+
+\item (Inverse/anti-particle) This property comes from the fact firstly that duals of simple objects are simple, and secondly that they are unique. Uniquenesss is Proposition \ref{rigidity}. To show that duals of simple objects are simple, we note that given any object $A\in \Ccat$ and any morphism $f:A^{*}\to A^{*}$, we can define a morphism $A\to A$ by the formula [WORK: make diagram].
+
+Applying rigidity, we see that this serves as an inverse to the map $\End(A)\to \End(A^{*})$ sending $f$ to $f^{*}$. Hence, we get an isomorphism between these two hom spaces. Thus, the endomorphism space of an object and its dual are always of the same dimension. In particular, the dual of a simple object is simple as desired.
+
+\item (Associativity) This follows immediately from the existence of an associativity isomorphism on the monoidal structure of $\Ccat$.
+\end{enumerate}
 \end{proof}
 
-The interesting fact is that one can \textit{not} uniquely go the other direction. Namely, we have the following:
+The interesting fact is that one can \textit{not} uniquely go the other direction. That is, there there are non-equivalent fusion categories which give the same fusion system. To define the correct notion of equivalence, we need to know what natural transformations are allowed between monoidal functors:
+
+\begin{definition}[Monoidal natural transformation]. [WORK: hey]
+\end{definition}
+
+A \textit{monoidal equivalence} of categories is a pair of monoidal functors between them, such that both compositions are monoidally naturally equivalent to the identity. We have the following:
 
 \begin{theorem}[Ocneanu rigidity,\cite{gainutdinov2023davydov}] Let $\LL$ be a fusion system. There are finitely many (possibly $0$) fusion categories, up to monoidal equivilance, which give systems equivilant to $\LL$ under the process described in Proposition \ref{Make fusion system}.
 \end{theorem}
@@ -2337,12 +2359,19 @@ Finally, suppose $\Ccat$ is semisimple. Let $A$ be an object such that $\End(A)$
 The first step follows from the properties of the biproduct, which implies that the direct sum can be pulled out of $\Hom$ in both the first and second argument (see Exercise \thesection.7). The second step follows from the fact that $\Hom(B_0,B_1)$ is one dimensional when $B_0\cong B_1$, and $0$ dimensional otherwise. If $|S|\geq 2$, then we thus get that $\dim \End(A)\geq 2$, which is a contradiction. Hence, $A$ is a simple object as desired.
 \end{proof}
 
-\begin{proposition}\label{Make 6j system} Let $\Ccat$ be a fusion category, with associated fusion system $(\LL,N^{\--,\--}_{\--})$. Assume further that $\Ccat$ is multiplicity free, in the sense that all $N^{\--,\--}_{\--}\in\{0,1\}$. For all triples $a,b,c\in \LL$, choose representatives $A,B,C\in \Ccat$. Additionally, seeing as each hom space $\Hom(A\otimes B, C)$ is at most one dimensional, we can choose generators
+\begin{proposition}\label{Make 6j system} Let $\Ccat$ be a fusion category, with associated fusion system $(\LL,N^{\--,\--}_{\--})$. Assume further that $\Ccat$ is multiplicity free, in the sense that all $N^{\--,\--}_{\--}\in\{0,1\}$. For all triples $a,b,c\in \LL$, choose representatives $A,B,C\in \Ccat$. Additionally, seeing as each hom space $\Hom(A\otimes B, C)$ is at most one dimensional, we can choose distinguished generators
 
 
 \begin{equation*}
   \tikzfig{cotriangle-reprise}
 \end{equation*}
+
+These generators are chosen arbitrarily, except for the exceptional cases outlined below:
+
+\begin{equation*}
+  \tikzfig{cotriangle-conditions}
+\end{equation*}
+
 
 We find that $\Hom((A\otimes B)\otimes C,D)$ has a basis
 
@@ -2356,13 +2385,17 @@ and $\Hom(A\otimes (B\otimes C), D)$ has a basis
   \tikzfig{second-basis}
 \end{equation*}
 
-In both bases, $N$ ranges over representatives of isomorphism classes of simple objects. Define $F^{a,b,c}_{d;n,m}$ to be $[n,m]$ coefficient of the associativity morphism $\alpha_{A,B,C}:\Hom((A\otimes B)\otimes C, D)\to \Hom(A\otimes (B\otimes C),D)$, expressed as a matrix in the bases above. $(\LL,N,F)$ is a $6j$ fusion system.
+In both bases, $N$ ranges over representatives of isomorphism classes of simple objects. Define $F^{a,b,c}_{d;n,m}$ to be $[n,m]$ coefficient of the associativity morphism $\alpha_{A,B,C}:\Hom((A\otimes B)\otimes C, D)\to \Hom(A\otimes (B\otimes C),D)$, expressed as a matrix in the bases above, where we set $F^{a,b,c}_{d;n,m}=0$ if any of the relevant generators are zero (i.e. $(a,b,c,d,n,m)$ is not admissible).
+
+The triple $(\LL,N,F)$ specifies a $6j$ fusion system.
 \end{proposition}
-\begin{proof}. [WORK: Do proof]
+\begin{proof} The proof of this equivalence is cumbersome. To streamline discussion, we leave the details of the verifcation of the correspondence between fusion categories and fusion systems in Appendix \ref{Fusion System/MTC correspondance}
 \end{proof}
 
 \begin{theorem}[\cite{yamagami2002polygonal}] Let $\LL$ be a $6j$ fusion system. There is a unique fusion category up to monoidal equivilance which gives $\LL$ up to gauge equivilance, under the process described in Proposition \ref{Make 6j system}.
 \end{theorem}
+\begin{proof} The proof of this result is constructive. Namely, given a $6j$ fusion system one defines objects to be direct sums of elements of $\LL$, the tensor product in terms of the fusion rules, and associativity in terms of the $6j$ symbols. It is a natural consequence of the axioms of a $6j$ fusion system that the result category is a fusion category. Full details are found in Appendix \ref{Fusion System/MTC correspondance}.
+\end{proof}
 
 We now give some commentary on Proposition \ref{Make 6j system}, through the Yondea perspective. Namely, we elaborate on why it is that we encode associative in terms of the induced map $\Hom((A\otimes B)\otimes C,D)\to \Hom(A\otimes (B\otimes C),D)$ for all $D$, instead of as the original map $(A\otimes B)\otimes C\to A\otimes (B\otimes C)$. One pragmatic answer is that our hom spaces are vector spaces, not our objects, and so choosing bases of hom spaces is easier. Another answer is that this keeps in line with the Yoneda perspective - it is better to look at the relationship of an object with those around it (i.e., hom spaces) than the object itself. In this case, we systimatically defined $F$ matricies to associate  $\Hom((A\otimes B)\otimes C,D)$ with $\Hom(A\otimes (B\otimes C),D)$. Since raning $D$ over simple objects generatres $\Ccat$ by semisimplicity, this means that we have associates $\Hom((A\otimes B)\otimes C,\--)$ and $\Hom(A\otimes (B\otimes C),\--)$ for all possible choices of target. Since our $F$ matricies were chosen coherently, this assignment is a natural transformation. Thus, by the Yoneda lemma, this canonically specifies an isomorphism in $\Hom((A\otimes B)\otimes C,A\otimes (B\otimes C))$, namely, the associator $\alpha_{A,B,C}$. While encoding $\alpha_{A,B,C}$ as a collection of numbers proves difficult, encoding the associated natural transformation is simpler. We now define our analogues of abelian groups, braided fusion categories:
 
@@ -2429,13 +2462,13 @@ We now show that braided fusion categories are indeed equivilant to braided $6j$
 
 \begin{proposition}\label{Make braided system} Let $\Ccat$ be a multiplicity free braided fusion category, with associated $6j$ fusion system $(\LL,N^{\--,\--}_{\--},F^{\--,\--,\--}_{\--})$.  For all triples $a,b,c\in \LL$, choose reprasentatives $A,B,C\in \Ccat$. We define
 
-[WORK: cool braided symbol: = $\beta$ transformation of original].
+[WORK: BRAID cool braided symbol: = $\beta$ transformation of original].
 
-[WORK: find correct definition of $R$-values.]
+[WORK: BRAID find correct definition of $R$-values.]
 
 This process induces a one-to-one correspondance of braided fusion categories up to braided monoidal equivilance and braided fusion systems up to gauge equivilance.
 \end{proposition}
-\begin{proof}. [WORK: Do proof]
+\begin{proof} The proof of this proposition is found in Appendix \ref{Fusion System/MTC correspondance}.
 \end{proof}
 
 As usual, a braided monoidal equivalence of two categories means a pair of braided monoidal functors, such that both compositions are monoidally equivalent to the identity. We are now ready to give our final definition:
@@ -2470,6 +2503,8 @@ This allows us to state our final equivilance:
 
 \begin{proposition} The process in Proposition \ref{Make braided system} gives a one-to-one correspondance between Modular Tensor Categories up to modular equivilance and modular tensor fusion systems up to gauge equivilance.
 \end{proposition}
+\begin{proof} The proof of this fact is in Appendix \ref{Fusion System/MTC correspondance}.
+\end{proof}
 
 The intuition for the twist of a MTC is that it helps deal with the non-triviality of the braiding. In particular, it allows one to define the \textit{trace} of a morphism $f:A \to A$. The trace is a powerful operation, since it allows you to describe maps in terms of numbers, can be used both for linearization and invariants. The formal definition and basic properties of trace are as follows:
 
@@ -2477,7 +2512,7 @@ The intuition for the twist of a MTC is that it helps deal with the non-triviali
 
 $$\tr(f): 1\xrightarrow{\coev_A} A^*\otimes A\xrightarrow{\id_{A^*}\otimes (\theta_X\circ f)} A^*\otimes A \xrightarrow{\beta_{A^*,A}}A\otimes A^*\xrightarrow{\ev_A}1.$$
 
-The space $\End(1)$ is one dimensional by Schur's Lemma (Theorem \ref{Schurs Lemma}), with generator $\id_1$. Hence, we can canonically identify $\tr(f)$ with a complex number. Graphically, we represent trace as the closed loop [WORK: make diagram, fix notation for un-standard cup and cap using twist to make this rigorous.].
+The space $\End(1)$ is one dimensional by Schur's Lemma (Theorem \ref{Schurs Lemma}), with generator $\id_1$. Hence, we can canonically identify $\tr(f)$ with a complex number. Graphically, we represent trace as the closed loop [WORK: BRAID make diagram, fix notation for un-standard cup and cap using twist to make this rigorous.].
 
 For all $A,B\in \Ccat$, the following claims are all true:
 
@@ -2485,20 +2520,12 @@ For all $A,B\in \Ccat$, the following claims are all true:
 \item $\tr(f\otimes g)=\tr(f)\cdot \tr(g)$ for all $f\in \End(A)$, $g\in \End(B)$
 \item $\tr(f\oplus g)=\tr(f)+\tr(g)$ for all $f\in \End(A)$, $g\in \End(B)$
 \item $\tr(f\circ g)=\tr(g\circ f)$ for all $f,g\in \End(A)$
-\item .[WORK: 2nd formula for trace, putting $\beta$ and $\theta$ before $f$]
+\item .[WORK: BRAID 2nd formula for trace, putting $\beta$ and $\theta$ before $f$]
 \item Trace is independent of choice of duals. That is, let $(\tilde{A}^*,\tilde{\coev}_{A}, \tilde{\ev}_A)$ be a different choice of dua  for $A$. Defining $\tilde{\tr}(f)$ exactly like $\tr(f)$ except with this new unit, we find that $\tilde{\tr}(f)=\tr(f)$.
 \item Trace is preserved by functors. That is, let $\Ccat,\Dcat$ be MTCs with traces $\tr_{\Ccat},\tr_{\Ccat}$ respectively. Let $F:\Ccat\to \Dcat$ be a braided tensor functor. We have that $\tr_{\Ccat}(f)=\tr_{\Dcat}(F(f))$.
 \end{enumerate}
 \end{proposition}
-\begin{proof} We demonstrate the claims one by one.
-
-\begin{enumerate}
-\item .[WORK: Prove this. It seems like you're going to have to do something about tensor products and duals commuting...]
-
-\item .[WORK: Prove this. It seems like you're going to have to do something about tensor products and direct sums commuting...]
-
-\item 
-\end{enumerate}
+\begin{proof} .[WORK: BRAID do proof]
 \end{proof}
 
 The trace allows us to naturally define many very powerful, physically observable, and mathematically interesting invariants. For example, let $A\in \Ccat$ be an object in an MTC. Then, $\tr(\id_A)$ measures in some sense the size of $A$. For a vector space, the trace of the identity gives the dimension of the vector space. Thus, we define $d_A=\tr(\id_A)$ to be the \textit{quantum dimension} of $A$. The following peroperties give a taste of the deep mathematics present in this situation:
@@ -2538,7 +2565,7 @@ We are now ready to define the most important invariants of MTCs, representation
 
 \begin{theorem}[\cite{bakalov2001lectures}] Let $\Ccat$ be an MTC, whose set $\LL$ of isomorphism classes of simple objects has $n$ elements. We define the $S$-matrix of an MTC to be the $n$ by $n$ matrix whose $[a,b]$th coefficient is
 
-$$S_{a,b}=\tr\left(\beta_{A,B}\cdot \beta_{B,A}\right)=[WORK: make \,\, graphical \,\, formula]$$
+$$S_{a,b}=\tr\left(\beta_{A,B}\cdot \beta_{B,A}\right)=[WORK: BRAID make \,\, graphical \,\, formula]$$
 
 where $a,b$ are isomorphism classes of simple objects with representatives $A,B$. Similarly, we define the $T$-matrix of an MTC to be the $n$ by $n$ diagonal matrix whose $[a,a]$th coefficient is $\theta_A$. The map
 
@@ -2899,11 +2926,11 @@ This gives $\Zcal(\Vecc_G)$ the structure of an MTC.
 \begin{proof} We verify the axioms one at a time.
 
 \begin{enumerate}
-\item .[WORK: Do the proof. Needs to wait for proper braiding package.]
+\item .[WORK: BRAID Do the proof.]
 
-\item .[WORK: This seems really annoying as well.]
+\item .[WORK: BRAID This seems really annoying as well.]
 
-\item (Non-degeneracy) .[WORK: How do I define the right half-braiding? Hopefully there's an explicit construction...]
+\item (Non-degeneracy) .[WORK: BRAID How do I define the right half-braiding? Hopefully there's an explicit construction...]
 \end{enumerate}
 \end{proof}
 
@@ -2928,7 +2955,7 @@ Another intuition for $\Zcal(\Ccat)$, alluded to in the introduction of this sec
 A &\mapsto (A,\beta_{A,\--})
 \end{align*}
 
-Let $\Ccat^{\text{rev}}$ denote the braided monoidal category whose underlying monoidal category is $\Ccat$, but the braiding between $A,B$ is given by $\beta_{B,A}^{-1}$ instead of $\beta_{A,B}$.\footnote{$\Ccat^{\text{rev}}$ is \textit{not} the same thing is $\Ccat^{\op}$.} That is, the same category but with the braiding reversed. There is a canonical braided monoidal functor
+Let $\Ccat^{\text{rev}}$ denote the braided monoidal category whose underlying monoidal category is $\Ccat$, but the braiding between $A,B$ is given by $\beta_{B,A}^{-1}$ instead of $\beta_{A,B}$.\footnote{$\Ccat^{\text{rev}}$ is \textit{not} equal to $\Ccat^{\op}$.} That is, the same category but with the braiding reversed. There is a canonical braided monoidal functor
 
 \begin{align*}
 \Ccat^{\text{rev}} &\to \Zcal(\Ccat).\\
@@ -3026,25 +3053,39 @@ commute)
 
 \item Show that the modular tensor fusion data associated to the toric code forms a modular tensor fusion system.
 
-\item  Let $\Ccat$ be an MTC, and let $\LL$ be the set of isomorphism classes of simple objects. Then, [WORK: doing what? Apprently one just takes the trace of the ``twisting relation"...] the coefficinets of the $S$-matrix of $\Ccat$ can be expressed in terms of the twist, fusion coefficients, and quantum dimensions as follows:
+\item  Let $\Ccat$ be an MTC, and let $\LL$ be the set of isomorphism classes of simple objects. Then, [WORK: doing what? Apparently one just takes the trace of the ``twisting relation"...] the coefficinets of the $S$-matrix of $\Ccat$ can be expressed in terms of the twist, fusion coefficients, and quantum dimensions as follows:
 
-$$s_{a,b}=\frac{1}{\theta_a \theta_b}\sum_{C\in \LL}N^{a^*,b}_{c}d_{c}\theta_{c}.$$
+$$s_{a,b}=\frac{1}{\theta_a \theta_b}\sum_{c\in \LL}N^{a^*,b}_{c}d_{c}\theta_{c}.$$
 
 By [WORK: doing what?], one arrives the the \textit{Verlinde formula} for MTCs:
 
-$$N^{a,b}_{c}=\sum_{D\in \LL} \frac{s_{a,d} s_{b,d}s_{c^*,d}}{\dim{\Ccat}\cdot d_d}$$
+$$N^{a,b}_{c}=\sum_{d\in \LL} \frac{s_{a,d} s_{b,d}s_{c^*,d}}{\dim{\Ccat}\cdot d_d}$$
 
-\item Let $\Ccat$ be a category satisfying all of the axioms of a $\CC$-linear abelian category, except that monomorphisms and epimorphims are not neccecarily normal. Let $f:A\to B$ be a morphism. [WORK: state this properly. The notion of isomorphism must be restricted.]
+\item Let $\Ccat$ be a category satisfying all of the axioms of a $\CC$-linear abelian category, except that monomorphisms and epimorphims are not neccecarily normal. Let $f:A\to B$ be a morphism. Recall that $f$ is called a kernel if it satisfies the universal property of $\ker \overline{f}$ for some morphism $\overline{f}$, and $f$ is called a cokernel if it satisfies the universal property of $\coker \overline{f}$ for some morphism $\overline{f}$.
 
 \begin{enumerate}[(a)]
-\item A morphism $f$ is isomorphic to the kernel of some morphism if and only if $f\cong \ker(\coker f)$.
-\item A morphism $f$ is isomorphic to the kernel of some morphism if and only if $f\cong \coker(\ker f)$.
-\item There is a natural map $\coker(\ker f)\xrightarrow{\overline{f}} \ker(\coker f)$ defined by [WORK: how?], factoring $f$ as the composition
+\item If $f$ is a kernel it must be a monomorphism.
+\item If $f$ is a kernel, it must be an epimorphism.
+\item $f$ is a kernel if and only if $f$ satisfies the universal property of $\ker(\coker f)$.
+\item  $f$ is a cokernel if and only if $f$ satisfies the universal property of $\coker(\ker f)$
+\item There is a natural map $\coker(\ker f)\xrightarrow{\overline{f}} \ker(\coker f)$ uniquely to make the below diagram commute:
 
-$$A\to \coker(\ker f)\xrightarrow{\overline{f}}\ker(\coker f)\to B.$$
+\[\begin{tikzcd}
+	{\ker f} & A & B & {\coker f} \\
+	& {\coker (\ker f)} & {\ker (\coker f)}
+	\arrow[from=1-1, to=1-2]
+	\arrow["f", from=1-2, to=1-3]
+	\arrow[from=1-3, to=1-4]
+	\arrow[from=1-2, to=2-2]
+	\arrow[from=2-3, to=1-3]
+	\arrow[dashed, from=2-2, to=1-3]
+	\arrow["{\overline{f}}", dashed, from=2-2, to=2-3]
+\end{tikzcd}\]
 
-Show that $\overline{f}$ is an isomorphism for all choices of $f$ if and only if all monomorphisms and epimorphisms are normal.
+where the map $\coker (\ker f)\to B$ is first obtained by the universal property of the cokernel, and the map $\overline{f}$ is then obtained by the universal property of the kernel. Show that $\overline{f}$ is an isomorphism for all choices of $f$ if and only if all monomorphisms and epimorphisms are normal.
 \end{enumerate}
+
+\item Let $\Ccat,\Dcat$ be monoidal categories (resp. braided monoidal categories, MTCs). Let $F:\Ccat\to \Dcat$ be monoidal functor (resp. braided monoidal functor, braided tensor functor). Show that $F$ induces a monoidal equivalence of categories (resp. braided monoidal equiavlence of categories, braided tensor equivalence of categories) if and only if $F$ is fully faithful and essentially surjective (c.f. Exercise \ref{Categories}.4). 
 
 \item There is a canonical braided monoidal functor
 
@@ -3284,7 +3325,7 @@ The study of unitary fusion categories is much nicer than the study of fusion ca
 \item $\tr(f\circ g)=\tr(g\circ f)$ for all $f,g\in \End(A)$
 \end{enumerate}
 \end{proposition}
-\begin{proof}. [WORK: do proof]
+\begin{proof}. [WORK: BRAID do proof]
 \end{proof}
 
 We can now define an MTC. The compatibility conditions for the twist defined such that the definition for trace as an MTC and the definition of trace as a unitary fusion category coincide.
@@ -3336,7 +3377,7 @@ $$A\xrightarrow{\coev_{A^*}}A\otimes A^*\otimes A^{**}\xrightarrow{\left(\coev_{
 
 Along with the natural conjugation inherited from $\Ccat$, this endows $\Zcal(\Ccat)$ with the structure of a unitary MTC.
 \end{proposition}
-\begin{proof}. [WORK: do proof.]
+\begin{proof}. [WORK: BRAID do proof.]
 \end{proof}
 
 This allows us to state a formula which makes somewhat explicit our intuition of $\Zcal(\Ccat)$ as a ``quantum double" of $\Ccat$:
@@ -3360,16 +3401,14 @@ Of course, as always there is an equivalence between the language of fusion syst
 
 Similarly, let $\Ccat$ be a multiplicity-free modular tensor category. The construction in Proposition \ref{Make braided system} gives a unitary modular tensor fusion system if and only if there exists a unitary structure on $\Ccat$.
 \end{proposition}
-\begin{proof}. [WORK: do proof]
+\begin{proof} We give proofs of these results in Appendix \ref{Fusion System/MTC correspondance}.
 \end{proof}
 
 We now define a unitary structure on the MTC associated with the toric code, $\Zcal(\Vecc_{\ZZ_2})$. The main point is that as fusion categories, the category $\Vecc$ of finite dimensional vector spaces and $\Hilb$ of finite dimensional Hilbert spaces are (non-canonically) equivalent. This allows one to endow $\Vecc_{G}$ (again, non-canonically) with the structure of a unitary fusion category. Taking Drinfeld centers this endows $\Zcal(\Vecc_{\ZZ_2})$ with the structure of a unitary MTC. Formally, we have the following:
 
 \begin{proposition} There is a braided monoidal equivalence of categories $\Vecc\xrightarrow{\sim}\Hilb$.
 \end{proposition}
-\begin{proof} Let $F:\Hilb\to \Vecc$ be the forgetful functor, assigning to each Hilbert spaceits underlying vector space. Choose a functor $F^{-1}: \Vecc\to \Hilb$ which satisfies $F\circ F^{-1}=\id_{\Vecc}$ (i.e. chooses an arbitary Hilbert space structure on every vector space), with the additional condition that the choice of Hilbert space structures respect tensor products. Both $F$ and $F^{-1}$ are clearly braided monoidal functors. Seeing as $F\circ F^{-1}$ is already defined to be the identity on $\Vecc$, all that is left to do is show that $F^{-1}\cdot F$ is monoidally naturally isomorphic to $\id_{\Hilb}$.
-
-Let $\eta: F\circ F^{-1}\to \id_{\Hilb}$ be the unique natural transformation which acts by the identity on the level of vector spaces on every Hilbert space. It is clear that $\eta$ satisfies the axioms of a monoidal natural transformation. It's inverse is the identity map going to the other direction, and hence it is a monoidal natural isomorphism as desired.
+\begin{proof} Let $F:\Hilb\to \Vecc$ be the forgetful functor, assigning to each Hilbert spaceits underlying vector space. Morphisms of Hilbert spaces and exactly linear maps of vector spaces. Hence, this functor is fully faithful. Moreover, it is surjective on the level of objects since every vector space has a Hilbert space structure. Hence, the proposition follows from Exercise \ref{Modular Tensor Categories}.6.
 \end{proof}
 
 \begin{proposition} Let $G$ be a finite group. Fix an equivalence of categories $\Hilb\xrightarrow{\sim}\Vecc$. Define the data for a unitary fusion category as follows:
@@ -3402,6 +3441,7 @@ Thus, $\Vecc_{\ZZ_2}$ can be given the structure of a unitary fusion category. A
 As in the non-unitary case, there is an equivalence between unitary MTCs and (1-extended) unitary TQFTs [WORK: find source]. Under this equivalence, $\Zcal(\Hilb_{\ZZ_2})$ as a unitary MTC is identified with the $\ZZ_2$ Dijkgraaf-Witten theory as a unitary TQFT. Seeing as all physically realizable systems will be unitary, practically speaking it is this correspondence which is the most important.
 
 \section{Fusion System/MTC correspondance}
+\label{Fusion System/MTC correspondance}
 
 While the connection between fusion categories and fusion systems is relatively straightforward, giving full proofs and constructions can be somewhat cumbersome. In this appendix we offer these proofs and constructions in full detail.
 
