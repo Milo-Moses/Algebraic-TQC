@@ -6,17 +6,19 @@
 \contentsline {subsection}{\numberline {4.1}The general picture}{33}
 \contentsline {subsection}{\numberline {4.2}The $\mathbb {Z}_2$ Dijkgraaf-Witten TQFT}{39}
 \contentsline {section}{\numberline {5}Category Theory}{46}
-\contentsline {section}{\numberline {6}Modular Tensor Categories}{58}
-\contentsline {subsection}{\numberline {6.1}Fusion systems}{58}
-\contentsline {subsection}{\numberline {6.2}The category-theoretic viewpoint}{69}
-\contentsline {subsection}{\numberline {6.3}The MTC $\mathcal {Z}(\mathbf {Rep}_{\mathbb {Z}_2})$}{87}
-\contentsline {section}{\numberline {7}Topological Quantum Computing}{103}
-\contentsline {subsection}{\numberline {7.1}The TQC framework}{103}
-\contentsline {subsection}{\numberline {7.2}Revisiting toric code TQC}{104}
-\contentsline {subsection}{\numberline {7.3}Universal TQC with the Fibbonacci anyon}{104}
-\contentsline {section}{\numberline {A}$\mathbb {Z}_2$ Homology Theory}{104}
-\contentsline {section}{\numberline {B}Unitarity}{106}
-\contentsline {subsection}{\numberline {B.1}Unitary TQFTs}{106}
-\contentsline {subsection}{\numberline {B.2}Unitary MTCs}{107}
-\contentsline {section}{\numberline {C}Fusion System/MTC correspondance}{112}
-\contentsline {section}{\numberline {D}Anyon data}{112}
+\contentsline {subsection}{\numberline {5.1}Objects, morphisms, and composition}{46}
+\contentsline {subsection}{\numberline {5.2}Braided monoidal categories}{57}
+\contentsline {section}{\numberline {6}Modular Tensor Categories}{65}
+\contentsline {subsection}{\numberline {6.1}Fusion systems}{65}
+\contentsline {subsection}{\numberline {6.2}The category-theoretic viewpoint}{75}
+\contentsline {subsection}{\numberline {6.3}The MTC $\mathcal {Z}(\mathbf {Rep}_{\mathbb {Z}_2})$}{90}
+\contentsline {section}{\numberline {7}Topological Quantum Computing}{105}
+\contentsline {subsection}{\numberline {7.1}The TQC framework}{105}
+\contentsline {subsection}{\numberline {7.2}Revisiting toric code TQC}{106}
+\contentsline {subsection}{\numberline {7.3}Universal TQC with the Fibbonacci anyon}{106}
+\contentsline {section}{\numberline {A}$\mathbb {Z}_2$ Homology Theory}{106}
+\contentsline {section}{\numberline {B}Unitarity}{108}
+\contentsline {subsection}{\numberline {B.1}Unitary TQFTs}{108}
+\contentsline {subsection}{\numberline {B.2}Unitary MTCs}{109}
+\contentsline {section}{\numberline {C}Fusion System/MTC correspondance}{114}
+\contentsline {section}{\numberline {D}Anyon data}{114}

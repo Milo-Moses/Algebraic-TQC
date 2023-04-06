@@ -905,7 +905,7 @@ so that the ground states have eigenvalue $0$. This is more physically realistic
 
 $$\Ncal_{n}\hookrightarrow{}\Ncal_{m}$$
 
-defined by [WORK: What is the correct definition?]. Show that this map is linear and injective, and hence that $\Ncal_{n}$ can be realized as a sub vector space of $\Ncal_{m}$. Show that $\tilde{H}_{m}$ restricted to $\Ncal_{n}$ is equal to $\tilde{H}_n$. Show that the map $\Ncal_{n}\hookrightarrow{}\Ncal_{m}$ is norm-preserving, in the sense that if $\left|\chi\right>,\left|\psi\right>$ are states on $\Ncal_{n}$, the inner product $\left<\chi | \psi \right>$ is independent of whether or not it was computed in $\Ncal_{n}$ or $\Ncal_{m}$. Define
+defined by [WORK: PASS What is the correct definition?]. Show that this map is linear and injective, and hence that $\Ncal_{n}$ can be realized as a sub vector space of $\Ncal_{m}$. Show that $\tilde{H}_{m}$ restricted to $\Ncal_{n}$ is equal to $\tilde{H}_n$. Show that the map $\Ncal_{n}\hookrightarrow{}\Ncal_{m}$ is norm-preserving, in the sense that if $\left|\chi\right>,\left|\psi\right>$ are states on $\Ncal_{n}$, the inner product $\left<\chi | \psi \right>$ is independent of whether or not it was computed in $\Ncal_{n}$ or $\Ncal_{m}$. Define
 
 $$\Ncal_{\infty}=\bigcup_{n=3}^{\infty}\Ncal_{n},$$
 
@@ -1241,6 +1241,8 @@ $\newline\newline$
 
 \section{Category Theory}
 \label{Categories}
+
+\subsection{Objects, morphisms, and composition}
 
 Category theory the mathematical abstraction of things, and relationships between things. It is a language that almost all other mathematical fields can be expressed in, with often very fruitful consequences. Formally, a category is defined as follows:
 
@@ -1599,6 +1601,239 @@ commutes. Seeing as $F$ and $\Ecat$ were chosen arbitrarily, this completes the 
 
 This concludes our introduction to category theory. The canonical reference for category theory is Mac-Lane's foundational text \cite{mac2013categories}. As a readable way to begin learning the theory, however, there are modern sources which do a better job. For instance, Fong and Spivak's book \cite{fong2019invitation} gives a very well-motivated and grounded approach to the subject.
 
+\subsection{Braided monoidal categories}
+
+[WORK: Add a ``this will be our policy on including structures in statements" clause.]
+
+The tensor product is an extremely important operation in linear algebra, especially in its applications to TQC. Braided monoidal categories are categories in which there is a generalization of the tensor product. Physically, this will represent ``fusion". Namely, a monoidal category $\Ccat$ we will be a category along with a functor $\otimes : \Ccat\times \Ccat\to \Ccat$ which satisfies axioms reminiscent of the tensor product. Namely, there will be a tensor unit $1$ such that for all $A,B,C\in \Ccat$
+
+\begin{align*}
+1\otimes A\cong A\otimes 1\cong A \,\, &(\text{unit axiom})\\
+(A\otimes B)\otimes C \cong A\otimes (B\otimes C)\,\, &(\text{associativity axiom})\\
+A\otimes B \cong B\otimes A\,\, &(\text{commutivity axiom}).
+\end{align*}
+
+The key subtelty in the theory is that these isomorphisms are \textit{not} equalities. That is, $1\otimes A$ and $A$ need not be equal - they only need be isomorphic. The above thus aren't just axioms - they're structures. One must make a \textit{choice} of isomorphism. These choices should be all be coherent, in the sense that appying the unit, associativity, and commutivity axioms in different orders should give the same results. It was not at all clear in the early days of the theory exactly what the correct conditions should be. MacLane's original included more conditions than the treatment below - we give commentary about this in Exercise \thesection.5
+
+The condition that $A\otimes B\cong B\otimes A$ does not hold in every reasonable theory of tensor products. Hence, we first define a monoidal category to be a category with a possibly non-commutative tensor product, and then we define a braided monoidal category to be a commutative monoidal category.
+
+\begin{definition}[Monoidal category] A monoidal category is the following data:
+
+\begin{enumerate}
+\item A category $\Ccat$.
+\item A functor $\otimes: \Ccat \times \Ccat \to \Ccat$.
+\item (Identity) A distinguished element $1\in \Ccat.$
+\item (Associativity) A natural equivilance $\alpha: \--\otimes (\-- \otimes \--) \to (\--\otimes \--)\otimes \--$, where $\-- \otimes (\--\otimes \--)$ denotes the functor $\Ccat\times \Ccat\times \Ccat\to\Ccat$ sending $(A,B,C)$ to $A\otimes (B\otimes C)$, and similarly for $(\-- \otimes \-- )\otimes\--$.
+\item (Left unitor) A  natural equivilance $\lambda: 1\otimes \-- \to \--$, where $1\otimes \--$ denotes the functor $\Ccat\to \Ccat$ sending $A$ to $1\otimes A$, and $\--$ denotes the identity.
+\item (Right unitor) A natural equivilance $\rho: \--\otimes 1 \to \--$, where $\--\otimes 1$ is the functor $\Ccat\to \Ccat$ sending $A$ to $A\otimes 1$.
+\end{enumerate}
+
+Additionally, a monoidal category is required to satisfy the following properties:
+
+\begin{enumerate}
+\item (Triangle identity) For all $A,B\in \Ccat$, the diagram
+
+\[\begin{tikzcd}
+	{} & {} & {\left(A\otimes 1\right)\otimes B} & {} & {A\otimes (1\otimes B)} \\
+	&& {} & {A\otimes B} \\
+	&&&& {}
+	\arrow["{\alpha_{A,1,B}}", from=1-3, to=1-5]
+	\arrow["{\rho_A\otimes \id_B}"', from=1-3, to=2-4]
+	\arrow["{\id_A\otimes \lambda_B}", from=1-5, to=2-4]
+\end{tikzcd}\]
+
+commutes.
+
+\item (Pentagon identity) For all $A,B,C,D\in \Ccat$, the diagram
+
+\[\begin{tikzcd}
+	& {(A\otimes B)\otimes(C\otimes D)} \\
+	{((A\otimes B)\otimes C)\otimes D} && {A\otimes (B\otimes (C\otimes D))} \\
+	{(A\otimes (B\otimes C))\otimes D} && {A\otimes((B\otimes C)\otimes D)}
+	\arrow["{\alpha_{A\otimes B, C,D}}", from=2-1, to=1-2]
+	\arrow["{\alpha_{A,B,{C\otimes D}}}"', from=2-3, to=1-2]
+	\arrow["{\alpha_{A,B,C}\otimes \id_D}"', from=2-1, to=3-1]
+	\arrow["{\id_A\otimes_{B,C,D}}"', from=3-3, to=2-3]
+	\arrow["{\alpha_{A,B\otimes C,D}}"', from=3-1, to=3-3]
+\end{tikzcd}\]
+
+commutes.
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+The following theorem answers in what sense we really do get mileage out of considering categories in which we make strange choices of $\alpha,\lambda,\rho$, and in what sense we really do get mileage out of considering categories with multiple objects in the same equivilance class. The notion of monoidal equivilance is used in the theorem; we postpone the definition until after the statement:
+
+\begin{theorem}[\cite{hagge2009some}] Let $(\Ccat,\otimes_{\Ccat},\alpha_{\Ccat},\lambda_{\Ccat},\rho_{\Ccat})$ be a monoidal category. Then
+
+\begin{enumerate}
+\item (MacLane)  $\Ccat$ is monoidally equivilant to a category $(\Dcat,\otimes_{\Dcat},\alpha_{\Dcat},\lambda_{\Dcat},\rho_{\Dcat})$ in which $A\otimes_{\Dcat} (B\otimes_{\Dcat} C)=(A\otimes_{\Dcat} B)\otimes_{\Dcat} C$, $1\otimes_{\Dcat} A=A\otimes_{\Dcat} 1=1$, and $\alpha_{\Dcat},\lambda_{\Dcat},\rho_{\Dcat}$ are identity functors, for all $A,B,C\in \Dcat$. 
+\item $\Ccat$ is monoidally equivilant to a category in $\Dcat$ in which all objects which are isomorphic are equal.
+\end{enumerate}
+
+However, $\Ccat$ is \textbf{not} in general equivilant to a category which is both at the same time.
+\end{theorem}
+
+This theorem really says that you cannot have your cake and eat it too. You can forget about non-trivial maps or you can forget about non-equal isomorphic obects, but you can't do both at once. Authors will often assume either one condition or the other (known as \textit{strict} and \textit{skeletal} respectively), and this will sometimes lead to confusion across the literature. A monoidal equivilance between two categories is a pair of monoidal functors between them, such that both compositions are monoidally naturally equivalent to the identity.
+
+\begin{definition}[Monoidal functor] A monoidal functor between monoidal categories $(\Ccat,\otimes_{\Ccat}, \alpha_{\Ccat},\lambda_{\Ccat},\rho_{\Ccat},1_{\Ccat})$ and $(\Dcat,\otimes_{\Dcat},\alpha_{\Dcat},\lambda_{\Dcat},\rho_{\Dcat},1_{\Dcat})$ is the following data:
+
+\begin{enumerate}
+\item A functor $F: \Ccat\to \Dcat$.
+\item A morphism $\epsilon:1_{\Dcat}\to F(1_{\Ccat})$.
+\item A natural transformation $\mu$ between the functors $F(\--)\otimes_{\Dcat}F(\--)$ and $F(\--\otimes_{\Ccat}\--)$.
+\end{enumerate}
+
+Additionally, a monoidal functor is required to satisfy the following properties:
+
+\begin{enumerate}
+\item (Associativity) For all $A,B,C\in \Ccat$, the diagram
+
+\[\begin{tikzcd}
+	{(F(A)\otimes_{\Dcat}F(B))\otimes_{\Dcat}F(C)} &&& {F(A)\otimes_{\Dcat}(F(B)\otimes_{\Dcat}F(C))} \\
+	{F(A\otimes_{\Ccat}B)\otimes_{\Dcat}F(C)} &&& {F(A)\otimes_{\Dcat}F(B\otimes_{\Ccat}C)} \\
+	{F((A\otimes_{\Ccat} B)\otimes_{\Ccat}C)} && {} & {F(A\otimes_{\Ccat}B\otimes_{\Ccat}C)}
+	\arrow["{\mu_{A,B}\otimes \id_{F(C)}}", from=1-1, to=2-1]
+	\arrow["{\mu_{A\otimes_{\Ccat}B,C}}", from=2-1, to=3-1]
+	\arrow["{\mu_{A,B\otimes_{\Ccat}C}}", from=2-4, to=3-4]
+	\arrow["{\id_{F(A)}\otimes\mu_{B,C}}", from=1-4, to=2-4]
+	\arrow["{F(\alpha_{\Ccat;A,B,C})}"{description}, from=3-1, to=3-4]
+	\arrow["{\alpha_{\Dcat;F(A),F(B),F(C)}}"{description}, from=1-1, to=1-4]
+\end{tikzcd}\]
+
+commutes.
+\item (Unitality) The diagrams
+
+\[\begin{tikzcd}
+	{1_{\Dcat}\otimes_{\Dcat}F(A)} && {F(1_{\Ccat})\otimes F(A)} \\
+	{F(A)} && {F(1_{\Ccat}\otimes A)}
+	\arrow["{\lambda_{\Ccat;F(A)}}", from=1-1, to=2-1]
+	\arrow["{F(\lambda_{\Ccat;A})}"', from=2-3, to=2-1]
+	\arrow["{\mu_{1_{\Ccat},A}}"', from=1-3, to=2-3]
+	\arrow["{\epsilon\otimes \id_{F(A)}}"', from=1-1, to=1-3]
+\end{tikzcd}\]
+
+and
+
+\[\begin{tikzcd}
+	{F(A)\otimes_{\Dcat}1_{\Dcat}} && {F(A)\otimes_{\Dcat}F(1_{\Ccat})} \\
+	{F(A)} && {F(1_{\Ccat}\otimes A)}
+	\arrow["{\rho_{\Ccat;F(A)}}", from=1-1, to=2-1]
+	\arrow["{F(\rho_{\Ccat;A})}"', from=2-3, to=2-1]
+	\arrow["{\mu_{A,1_{\Ccat}}}"', from=1-3, to=2-3]
+	\arrow["{\id_{F(A)}\otimes\epsilon}"', from=1-1, to=1-3]
+\end{tikzcd}\]
+
+commute for all $A\in \Ccat$.
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+\begin{definition}[Monoidal natural transformation] A monoidal natural transformation between two functors $(F_0,\mu_0,\epsilon_0)$ and $(F_1,\mu_1,\epsilon_1)$ between monoidal categories $(\Ccat,\otimes_{\Ccat},1_{\Ccat})$ and $(\Dcat,\otimes_{\Dcat},1_{\Dcat})$ is a natural transformation $\eta$ between the underlying functors $F_0,F_1$. Additionally, a monoidal natural transformation is required to satisfy the following properties:
+
+\begin{enumerate}
+\item (Compatibility with tensor product) For all objects $A,B\in \Ccat$, the diagram
+
+\[\begin{tikzcd}
+	{F_0(A)\otimes_{\Dcat}F_1(B)} & {F_1(A)\otimes_{\Dcat}F_1(B)} \\
+	{F_0(A\otimes_{\Ccat} B)} & {F_1(A\otimes_{\Ccat} B)}
+	\arrow["{\mu_{0;A,B}}", from=1-1, to=2-1]
+	\arrow["{\mu_{1;A,B}}", from=1-2, to=2-2]
+	\arrow["{\eta_A\otimes \eta_B}", from=1-1, to=1-2]
+	\arrow["{\eta_{A\otimes B}}", from=2-1, to=2-2]
+\end{tikzcd}\]
+
+commutes.
+
+\item (Compatibility with unit) The diagram
+
+\[\begin{tikzcd}
+	& {1_{\Dcat}} \\
+	{F_0(1_{\Ccat})} && {F_1(1_{\Ccat})}
+	\arrow["{\eta_{1_{\Ccat}}}", from=2-1, to=2-3]
+	\arrow["{\epsilon_0}"', from=1-2, to=2-1]
+	\arrow["{\epsilon_1}", from=1-2, to=2-3]
+\end{tikzcd}\]
+
+commutes.
+\end{enumerate}
+\raggedleft\qedsymbol{}
+\end{definition}
+
+We are now ready to define braiding on our monoidal categories:
+
+\begin{definition}[Braided fusion category] A braided fusion category is the following data:
+
+\begin{enumerate}
+\item A fusion category $(\Ccat,\otimes,\alpha)$.
+\item A natural isomorphism $\beta$ between the functor $\Ccat\times \Ccat\to \Ccat$ sending $(A,B)\to A\otimes B$, and the functor sending $(A,B)\to B\otimes A$.
+\end{enumerate}
+
+Additionally, a braided fusion category is required to satisfy the following properties:
+
+\begin{enumerate}
+\item (Hexagon identities) For all $A,B,C\in \Ccat$, the diagrams
+
+\[\begin{tikzcd}
+	{A\otimes (B\otimes C)} && {(A\otimes B)\otimes C} && {C\otimes (A\otimes B)} \\
+	{A\otimes (C\otimes B)} && {(A\otimes C)\otimes B} && {(C\otimes A)\otimes B}
+	\arrow["{\alpha_{A,B,C}}", from=1-1, to=1-3]
+	\arrow["{\beta_{A\otimes B,C}}", from=1-3, to=1-5]
+	\arrow["{\alpha^{}_{B,C,A}}", from=1-5, to=2-5]
+	\arrow["{\id_A\otimes \beta_{B,C}}"', from=1-1, to=2-1]
+	\arrow["{\alpha_{A,C,B}}"', from=2-1, to=2-3]
+	\arrow["{\beta_{A,C}\otimes \id_B}"', from=2-3, to=2-5]
+\end{tikzcd}\]
+
+and
+
+\[\begin{tikzcd}
+	{(A\otimes B)\otimes C} && {A\otimes (B\otimes C)} && {(B\otimes C)\otimes A} \\
+	{(B\otimes A)\otimes C} && {B\otimes (A\otimes C)} && {B\otimes (C\otimes A)}
+	\arrow["{\alpha^{-1}_{A,B,C}}", from=1-1, to=1-3]
+	\arrow["{\beta_{A,B\otimes C}}", from=1-3, to=1-5]
+	\arrow["{\alpha^{-1}_{B,C,A}}", from=1-5, to=2-5]
+	\arrow["{\beta_{A,B}\otimes \id_C}"', from=1-1, to=2-1]
+	\arrow["{\alpha^{-1}_{B,A,C}}"', from=2-1, to=2-3]
+	\arrow["{\id_B\otimes \beta_{A,C}}"', from=2-3, to=2-5]
+\end{tikzcd}\]
+
+commute.
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+We will want to speak of equivalences of braided monoidal categories. That is, pairs of braided monoidal functors whose compositions in either direction have braided monoidal natural transformations to the identity. We give the definition below:
+
+\begin{definition}[Braided monoidal functor] A braided monoidal functor between braided fusion categories $(\Ccat,\otimes_{\Ccat},\beta_{\Ccat})$, $(\Dcat,\otimes_{\Dcat},\beta_{\Dcat})$ is a monoidal functor $(F,\mu):\Ccat\to \Dcat$ such that the diagram
+
+\[\begin{tikzcd}
+	{F(A)\otimes_{\Dcat}F(B)} && {F(B)\otimes_{\Dcat}F(A)} \\
+	\\
+	{F(A\otimes_{\Ccat}B)} && {F(B\otimes_{\Ccat}A)}
+	\arrow["{\mu_{A,B}}", from=1-1, to=3-1]
+	\arrow["{\beta_{\Dcat;F(A),F(B)}}"', from=1-1, to=1-3]
+	\arrow["{\mu_{B,A}}"', from=1-3, to=3-3]
+	\arrow["{F(\beta_{\Ccat;F(A),F(B)})}", from=3-1, to=3-3]
+\end{tikzcd}\]
+
+commutes for all $A,B\in \Ccat$.
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+Note that there is no such thing as a ``braided monoidal natural transformation" - any monoidal natural transformation between braided functors will automatically respect the braiding. Just as in the general case, braided monoidal categories can also be made strict or skeletal, but not both [WORK: find reference. Even just the coherence theorems would do.]
+
+We now give our last relevant definition for monoidal categories - the opposite of a monoidal category. We note first given a functor $F:\Ccat\to \Dcat$ there is a canonical functor $F^{\op}:\Ccat^{\op}\to \Ccat^{\op}$ defined by $F^{\op}(A^{\op})=F(A)^{\op}$ for all $A\in \Ccat$, and similarly for every natural transformation $\eta$ between two functors there is canonical natural transformation $\eta^{\op}$ between the opposte of those two functors.
+
+\begin{proposition}. [WORK: define opposite category for monoidal/braided monoidal categories; state that it is a category of the correct form.]
+\end{proposition}
+\begin{proof}. [WORK: Do the proof]
+\end{proof}
+
 $\newline\newline$
 
 \large \textbf{Exercises}:\normalsize
@@ -1635,7 +1870,57 @@ is a bijection. Here,$\Hom_{\Ccat}(A,\--)$ is considered as a functor in $\bold{
 \item The assignment $H_1(\--;\ZZ_2):\bold{Top}\to \bold{Grp}$ which assigns to each topological space $X$ the homology group $H_1(X;\ZZ_2)$, and assigns to each continuous map $f:X\to Y$ the group homomorphism $f_*: H_1(X;\ZZ_2)\to H_1(Y;\ZZ_2)$, defined as follows. For each function $f:X\to Y$, there exists celluations $\Delta_X,\Delta_Y$ such that $f$ sends edges in $X$ to edges in $Y$; this is the simplicial approximation theory. We define $f_*:C_1(X;\ZZ_2)\to C_1(Y;\ZZ_1)$ by sending $\omega$ to the chain $f_*(\omega)$, where  an edge $e$ of $Y$ is assigned the (mod 2) sum of $\omega$'s values at the edges in $f^{-1}(e)$. Show that this is well defined, and descends to a function $f_*:H_1(X;\ZZ_2)\to H_1(Y;\ZZ_2)$, completing the definition of our assignment.
 \end{enumerate}
 
-\item Let $\Ccat,\Dcat$ be categories. Show that a functor $F:\Ccat\to \Dcat$ induces an equivalence of categories (that is, admits a map $F^{-1}:\Dcat\to \Ccat$ making $(F,F^{-1})$ an equivalence of categories) if and only if it is full (surjective on hom sets), faithful (injective on hom sets), and essentially surjective (for every element $A\in \Dcat$, there exists $B\in \Ccat$ such that $F(B)$ is isomorphic to $A$). (HINT: Construct $F^{-1}$ arbitrarily by lifting objects, and show it is a functor)
+\item Let $\Ccat,\Dcat$ be categories. Show that a functor $F:\Ccat\to \Dcat$ induces an equivalence of categories (that is, admits a map $F^{-1}:\Dcat\to \Ccat$ making $(F,F^{-1})$ an equivalence of categories) if and only if it is full (surjective on hom sets), faithful (injective on hom sets), and essentially surjective (for every element $A\in \Dcat$, there exists $B\in \Ccat$ such that $F(B)$ is isomorphic to $A$). Show that this result still holds in the setting of monoidal and braided monoidal categories. That is, a fully faithful essentially surjective (braided) monoidal functor will induce a (braided) equivalence of categories.(HINT: Construct $F^{-1}$ arbitrarily by lifting objects, and show it is a functor)
+
+\item The original list of axioms for a monoidal category was longer. It was later found by Max Kelly \cite{kelly1964maclane} that the smaller set we gave implies the rest. This exercise asks to derive his results.
+
+\begin{enumerate}[(a)]
+
+\item Show that for all monoidal categories $\Ccat$ the diagram
+
+\[\begin{tikzcd}
+	{(1\otimes A)\otimes B} \\
+	{1\otimes (A\otimes B)} & {A\otimes B}
+	\arrow["{\lambda_A\otimes\id_{B}}"{description}, from=1-1, to=2-2]
+	\arrow["{\alpha_{1,A,B}}"', from=1-1, to=2-1]
+	\arrow["{\lambda_{A\otimes B}}"', from=2-1, to=2-2]
+\end{tikzcd}\]
+
+commutes. (HINT: Suppressing identity maps and tensor products for clarity, show that the diagrams
+
+\[\begin{tikzcd}
+	& {(1(1A)B} & {1((1A)B)} \\
+	{((11)A)B} & {(11)(AB)} && {1(1(AB))} \\
+	& {(1A)B} & {1(AB)}
+	\arrow["{\rho_1}"', from=2-1, to=3-2]
+	\arrow["{\alpha_{1,1,A}}", from=2-1, to=1-2]
+	\arrow["{\alpha_{1,1A,B}}", from=1-2, to=1-3]
+	\arrow["{\alpha_{1,A,B}}", from=1-3, to=2-4]
+	\arrow["{\alpha_{1,A,B}}", from=3-2, to=3-3]
+	\arrow["{\lambda_{AB}}", from=2-4, to=3-3]
+	\arrow["{\alpha_{11,A,B}}", from=2-1, to=2-2]
+	\arrow["{\alpha_{1,1,AB}}", from=2-2, to=2-4]
+\end{tikzcd}\]
+
+and
+
+\[\begin{tikzcd}
+	{((11)A)B} & {(1(1A))B} & {1((1A)B)} & {1(1(AB))} \\
+	& {(1A)B} & {1(AB)}
+	\arrow["{\alpha_{1,1,A}}", from=1-1, to=1-2]
+	\arrow["{\alpha_{1,1A,B}}", from=1-2, to=1-3]
+	\arrow["{\alpha_{1,A,B}}", from=1-3, to=1-4]
+	\arrow["{\lambda_{AB}}", from=1-4, to=2-3]
+	\arrow["{\alpha_{1,A,B}}"', from=2-2, to=2-3]
+	\arrow["{\lambda_A}"', from=1-2, to=2-2]
+	\arrow["{\lambda_A}"{description}, from=1-3, to=2-3]
+	\arrow["{\rho_1}"', from=1-1, to=2-2]
+\end{tikzcd}\]
+
+commute)
+
+\item Let $\Ccat$ be a category. Define a tensor product on $\bold{\Hom}(\Ccat,\Ccat)$ by letting $F\otimes G=F\circ G$, for functors $F,G:\Ccat\to \Ccat$. Along with canonical associativity, unit, and unitors, show that this gives $\bold{\Hom}(\Ccat,\Ccat)$ the structure of a (not neccecarily braided) monoidal category.
+
 \end{enumerate}
 
 \section{Modular Tensor Categories}
@@ -1651,7 +1936,7 @@ To describe Topological Quantum Computation (TQC), one has to describe topologic
 \item It is hard to deal directly with anyons (quasiparticles), which can make describing TQC (the braiding of anyons) very difficult. This is resolved in part by the consideration of \textit{extended} TQFTs, where we allow punctures in surfaces to represent anyons, but this results in even more data to carry around.
 \end{enumerate}
 
-To summaraize, what we want is a mathematical desciption of topological quantum phases of matter that puts anyons and their motions/behaviors front and center. This is what Modular Tensor Categories give us. The objects and morphisms of a Modular Tensor Category (MTC) are thought of abstractly as
+To summaraize, what we want is a mathematical desciption of topological quantum phases of matter that puts anyons and their motions/behaviors front and center. This is what Modular Tensor Categories give us. Abstractly, a Modular Tensor Category (MTC) can be thought of as
 
 $$
 \begin{pmatrix}
@@ -1660,9 +1945,7 @@ $$
 \end{pmatrix}.
 $$
 
-For those needing a refresher on Category Theory, Appendix \ref{Categories} contains the neccecary prerequisites. For this subsection, however, no knowledge of categories will be needed. This is becasue MTCs also have an elementary description as a finite collection of numbers representing physical properties of anyons.
-
-It should not be seen as too surprising that topological quantum phases of matter can be described with a finite set of numbers. At the end of the day, when measuring physical phenomina all one will get is a number - wavelength, spin, energy etc... Thus, any practical physical theory should be able to be boiled down to a collection of numbers.
+For this subsection, however, no knowledge of categories will be needed. This is becasue MTCs also have an elementary description as a finite collection of numbers representing physical properties of anyons. It should not be seen as too surprising that topological quantum phases of matter can be described with a finite set of numbers. At the end of the day, when measuring physical phenomina all one will get is a number - wavelength, spin, energy etc... Thus, any practical physical theory should be able to be boiled down to a collection of numbers.
 
 The most fundamental operation on anyons is \textit{fusion}, which we have up to now seldom discussed. The reason for this is that the elementary description of the toric code given in Section \ref{The Toric Code} works perfectly well without introducting fusion, so the notion was ommited for clarity. We now revisit the picture of Section \ref{The Toric Code}, with our eyes towards fusion. Fusion is the process in which two elementary particles collide, and output other types of particles. 
 
@@ -1819,8 +2102,6 @@ If one of $a,b,c$ is $1$, then $F^{a,b,c}_{d}$ should surely be the identity. Im
 
 The pentagon identity is exactly the sort of identity for which graphical language is useful. As stated, it is quite non-obvious to decipher meaning from the expression. It becomes the statement that applying associativity in two diffent ways is identical. In graphical language, it becomes the fact that going either way around the 5-term diagram in Figure \ref{fig:pentagon} gives the same answer (hence the name pentagon). All of terms in the pentagon are maps $a \otimes b\otimes c\otimes d \to e$. Each of the arrows corresponds to applying the approproate $F$-matrix.
 
-
-
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.28]{pentagon}
@@ -1828,7 +2109,6 @@ The pentagon identity is exactly the sort of identity for which graphical langua
 \label{fig:pentagon}
 \end{center}
 \end{figure}
-
 
 Time reversal symmetry can be explained as follows. Taking an inverse corresponds to doing a process in reverse. That is, instead of fusing particles the matrix $F^{-1}$ will correspond to the creation of particles. The time reversal symmetry says associvity on creating particles will be the same associativity on fusing particles. Diagramatically, this means
 
@@ -1976,123 +2256,8 @@ Finite abelian group & Braided fusion category \\
 ``non-degenerate" finite abelian group & Modular Tensor Category  
 \end{tabular}
 \end{center}
-. We begin with the generalization of monoid:
 
-\begin{definition}[Monoidal category] A monoidal category is the following data:
-
-\begin{enumerate}
-\item A category $\Ccat$.
-\item A functor $\otimes: \Ccat \times \Ccat \to \Ccat$.
-\item (Identity) A distinguished element $1\in \Ccat.$
-\item (Associativity) A natural equivilance $\alpha: \--\otimes (\-- \otimes \--) \to (\--\otimes \--)\otimes \--$, where $\-- \otimes (\--\otimes \--)$ denotes the functor $\Ccat\times \Ccat\times \Ccat\to\Ccat$ sending $(A,B,C)$ to $A\otimes (B\otimes C)$, and similarly for $(\-- \otimes \-- )\otimes\--$.
-\item (Left unitor) A  natural equivilance $\lambda: 1\otimes \-- \to \--$, where $1\otimes \--$ denotes the functor $\Ccat\to \Ccat$ sending $A$ to $1\otimes A$, and $\--$ denotes the identity.
-\item (Right unitor) A natural equivilance $\rho: \--\otimes 1 \to \--$, where $\--\otimes 1$ is the functor $\Ccat\to \Ccat$ sending $A$ to $A\otimes 1$.
-\end{enumerate}
-
-Additionally, a monoidal category is required to satisfy the following properties:
-
-\begin{enumerate}
-\item (Triangle identity) For all $A,B\in \Ccat$, the diagram
-
-\[\begin{tikzcd}
-	{} & {} & {\left(A\otimes 1\right)\otimes B} & {} & {A\otimes (1\otimes B)} \\
-	&& {} & {A\otimes B} \\
-	&&&& {}
-	\arrow["{\alpha_{A,1,B}}", from=1-3, to=1-5]
-	\arrow["{\rho_A\otimes \id_B}"', from=1-3, to=2-4]
-	\arrow["{\id_A\otimes \lambda_B}", from=1-5, to=2-4]
-\end{tikzcd}\]
-
-commutes.
-
-\item (Pentagon identity) For all $A,B,C,D\in \Ccat$, the diagram
-
-\[\begin{tikzcd}
-	& {(A\otimes B)\otimes(C\otimes D)} \\
-	{((A\otimes B)\otimes C)\otimes D} && {A\otimes (B\otimes (C\otimes D))} \\
-	{(A\otimes (B\otimes C))\otimes D} && {A\otimes((B\otimes C)\otimes D)}
-	\arrow["{\alpha_{A\otimes B, C,D}}", from=2-1, to=1-2]
-	\arrow["{\alpha_{A,B,{C\otimes D}}}"', from=2-3, to=1-2]
-	\arrow["{\alpha_{A,B,C}\otimes \id_D}"', from=2-1, to=3-1]
-	\arrow["{\id_A\otimes_{B,C,D}}"', from=3-3, to=2-3]
-	\arrow["{\alpha_{A,B\otimes C,D}}"', from=3-1, to=3-3]
-\end{tikzcd}\]
-
-commutes.
-\end{enumerate}
-
-\raggedleft\qedsymbol{}
-\end{definition}
-
-Observe the parallels between the propreties of monoidal categories and the prerties of $6j$ fusion systems. The triangle identity can be seen as analagous to the fact that associativity being trivial on two inputs, and the pentagon is analagous to the pentagon. We will make this explicit when we show how to make fusion systems from categories.
-
-In the definition of fusion systems, the identity, associativity, and inverse are properties instead of structures. They are unique if they exist. While the identity will be unique up to isomorphism, one still must make a choice of object. There are possibly multiple different choices of natural equivilances for the unit. In category theory, the difference between equal and isomorphic is very pronounced, and one needs to choose an isomorphism. The following theorem answers in what sense we really do get mileage out of considering categories in which we make strange choices of $\alpha,\lambda,\rho$, and in what sense we really do get mileage out of considering categories with multiple objects in the same equivilance class. The notion of monoidal equivilance is used in the theorem; we postpone the definition until after the statement.
-
-\begin{theorem}[\cite{hagge2009some}] Let $(\Ccat,\otimes_{\Ccat},\alpha_{\Ccat},\lambda_{\Ccat},\rho_{\Ccat})$ be a monoidal category. Then
-
-\begin{enumerate}
-\item (MacLane)  $\Ccat$ is monoidally equivilant to a category $(\Dcat,\otimes_{\Dcat},\alpha_{\Dcat},\lambda_{\Dcat},\rho_{\Dcat})$ in which $A\otimes_{\Dcat} (B\otimes_{\Dcat} C)=(A\otimes_{\Dcat} B)\otimes_{\Dcat} C$, $1\otimes_{\Dcat} A=A\otimes_{\Dcat} 1=1$, and $\alpha_{\Dcat},\lambda_{\Dcat},\rho_{\Dcat}$ are identity functors, for all $A,B,C\in \Dcat$. 
-\item $\Ccat$ is monoidally equivilant to a category in $\Dcat$ in which all objects which are isomorphic are equal.
-\end{enumerate}
-
-However, $\Ccat$ is \textbf{not} in general equivilant to a category which is both at the same time.
-\end{theorem}
-
-This theorem really says that you cannot have your cake and eat it too. You can forget about non-trivial maps or you can forget about non-equal isomorphic obects, but you can't do both at once. Authors will often assume either one condition or the other (known as \textit{strict} and \textit{skeletal} respectively), and this will sometimes lead to confusion across the literature. A monoidal equivilance between two categories is a pair of monoidal functors between them, such that both compositions are monoidally naturally equivalent to the identity.
-
-\begin{definition}[Monoidal functor] A monoidal functor between monoidal categories $(\Ccat,\otimes_{\Ccat}, \alpha_{\Ccat},\lambda_{\Ccat},\rho_{\Ccat},1_{\Ccat})$ and $(\Dcat,\otimes_{\Dcat},\alpha_{\Dcat},\lambda_{\Dcat},\rho_{\Dcat},1_{\Dcat})$ is the following data:
-
-\begin{enumerate}
-\item A functor $F: \Ccat\to \Dcat$.
-\item A morphism $\epsilon:1_{\Dcat}\to F(1_{\Ccat})$.
-\item A natural transformation $\mu$ between the functors $F(\--)\otimes_{\Dcat}F(\--)$ and $F(\--\otimes_{\Ccat}\--)$.
-\end{enumerate}
-
-Additionally, a monoidal functor is required to satisfy the following properties:
-
-\begin{enumerate}
-\item (Associativity) For all $A,B,C\in \Ccat$, the diagram
-
-\[\begin{tikzcd}
-	{(F(A)\otimes_{\Dcat}F(B))\otimes_{\Dcat}F(C)} &&& {F(A)\otimes_{\Dcat}(F(B)\otimes_{\Dcat}F(C))} \\
-	{F(A\otimes_{\Ccat}B)\otimes_{\Dcat}F(C)} &&& {F(A)\otimes_{\Dcat}F(B\otimes_{\Ccat}C)} \\
-	{F((A\otimes_{\Ccat} B)\otimes_{\Ccat}C)} && {} & {F(A\otimes_{\Ccat}B\otimes_{\Ccat}C)}
-	\arrow["{\mu_{A,B}\otimes \id_{F(C)}}", from=1-1, to=2-1]
-	\arrow["{\mu_{A\otimes_{\Ccat}B,C}}", from=2-1, to=3-1]
-	\arrow["{\mu_{A,B\otimes_{\Ccat}C}}", from=2-4, to=3-4]
-	\arrow["{\id_{F(A)}\otimes\mu_{B,C}}", from=1-4, to=2-4]
-	\arrow["{F(\alpha_{\Ccat;A,B,C})}"{description}, from=3-1, to=3-4]
-	\arrow["{\alpha_{\Dcat;F(A),F(B),F(C)}}"{description}, from=1-1, to=1-4]
-\end{tikzcd}\]
-
-commutes.
-\item (Unitality) The diagrams
-
-\[\begin{tikzcd}
-	{1_{\Dcat}\otimes_{\Dcat}F(A)} && {F(1_{\Ccat})\otimes F(A)} \\
-	{F(A)} && {F(1_{\Ccat}\otimes A)}
-	\arrow["{\lambda_{\Ccat;F(A)}}", from=1-1, to=2-1]
-	\arrow["{F(\lambda_{\Ccat;A})}"', from=2-3, to=2-1]
-	\arrow["{\mu_{1_{\Ccat},A}}"', from=1-3, to=2-3]
-	\arrow["{\epsilon\otimes \id_{F(A)}}"', from=1-1, to=1-3]
-\end{tikzcd}\]
-
-and
-
-\[\begin{tikzcd}
-	{F(A)\otimes_{\Dcat}1_{\Dcat}} && {F(A)\otimes_{\Dcat}F(1_{\Ccat})} \\
-	{F(A)} && {F(1_{\Ccat}\otimes A)}
-	\arrow["{\rho_{\Ccat;F(A)}}", from=1-1, to=2-1]
-	\arrow["{F(\rho_{\Ccat;A})}"', from=2-3, to=2-1]
-	\arrow["{\mu_{A,1_{\Ccat}}}"', from=1-3, to=2-3]
-	\arrow["{\id_{F(A)}\otimes\epsilon}"', from=1-1, to=1-3]
-\end{tikzcd}\]
-
-commute for all $A\in \Ccat$.
-\end{enumerate}
-
-\raggedleft\qedsymbol{}
-\end{definition}
+[WORK: Here lies the corpse of the definition of monoidal category]
 
 We now define fusion categories. One key difficulty is deciding what category-theorertical object should correspond to the label set $\LL$ of a fusion system. The answer is as follows. We want general elements of $\Ccat$ to be uniquely representable as direct sums of the elements in the label set. The elements of $\Ccat$ which cannot be broken down further as direct sums of smaller objects are known as indecomposable objects. Direct sums are also known as biproducts because they can be alternatively defined as objects which simultaneously satisfy the axioms of a product, as well as the duals axioms of a``co"-product. This is explored in Exercise \thesection.7.
 
@@ -2314,20 +2479,13 @@ The pair $(\LL,N^{a,b}_{c})$ is a fusion system.
 \begin{enumerate}
 \item (Indentity/Do-nothing) In a fusion category we assume that the tensor unit is simple, hence it gives an elment in $\LL$. Uniquness comes from the fact that the unit in a monoidal category is well defined up to isomorphism. That is, if $1$ and $1'$ are two monoidal units then $1\cong 1\otimes 1'\cong 1'$.
 
-\item (Inverse/anti-particle) This property comes from the fact firstly that duals of simple objects are simple, and secondly that they are unique. Uniquenesss is Proposition \ref{rigidity}. To show that duals of simple objects are simple, we note that given any object $A\in \Ccat$ and any morphism $f:A^{*}\to A^{*}$, we can define a morphism $A\to A$ by the formula [WORK: make diagram].
-
-Applying rigidity, we see that this serves as an inverse to the map $\End(A)\to \End(A^{*})$ sending $f$ to $f^{*}$. Hence, we get an isomorphism between these two hom spaces. Thus, the endomorphism space of an object and its dual are always of the same dimension. In particular, the dual of a simple object is simple as desired.
+\item (Inverse/anti-particle) This property comes from the fact that duals of simple objects are simple and unique, and shown in Proposition \ref{rigidity}. 
 
 \item (Associativity) This follows immediately from the existence of an associativity isomorphism on the monoidal structure of $\Ccat$.
 \end{enumerate}
 \end{proof}
 
-The interesting fact is that one can \textit{not} uniquely go the other direction. That is, there there are non-equivalent fusion categories which give the same fusion system. To define the correct notion of equivalence, we need to know what natural transformations are allowed between monoidal functors:
-
-\begin{definition}[Monoidal natural transformation]. [WORK: hey]
-\end{definition}
-
-A \textit{monoidal equivalence} of categories is a pair of monoidal functors between them, such that both compositions are monoidally naturally equivalent to the identity. We have the following:
+The interesting fact is that one can \textit{not} uniquely go the other direction. That is, there there are non-equivalent fusion categories which give the same fusion system:
 
 \begin{theorem}[Ocneanu rigidity,\cite{gainutdinov2023davydov}] Let $\LL$ be a fusion system. There are finitely many (possibly $0$) fusion categories, up to monoidal equivilance, which give systems equivilant to $\LL$ under the process described in Proposition \ref{Make fusion system}.
 \end{theorem}
@@ -2397,68 +2555,9 @@ The triple $(\LL,N,F)$ specifies a $6j$ fusion system.
 \begin{proof} The proof of this result is constructive. Namely, given a $6j$ fusion system one defines objects to be direct sums of elements of $\LL$, the tensor product in terms of the fusion rules, and associativity in terms of the $6j$ symbols. It is a natural consequence of the axioms of a $6j$ fusion system that the result category is a fusion category. Full details are found in Appendix \ref{Fusion System/MTC correspondance}.
 \end{proof}
 
-We now give some commentary on Proposition \ref{Make 6j system}, through the Yondea perspective. Namely, we elaborate on why it is that we encode associative in terms of the induced map $\Hom((A\otimes B)\otimes C,D)\to \Hom(A\otimes (B\otimes C),D)$ for all $D$, instead of as the original map $(A\otimes B)\otimes C\to A\otimes (B\otimes C)$. One pragmatic answer is that our hom spaces are vector spaces, not our objects, and so choosing bases of hom spaces is easier. Another answer is that this keeps in line with the Yoneda perspective - it is better to look at the relationship of an object with those around it (i.e., hom spaces) than the object itself. In this case, we systimatically defined $F$ matricies to associate  $\Hom((A\otimes B)\otimes C,D)$ with $\Hom(A\otimes (B\otimes C),D)$. Since raning $D$ over simple objects generatres $\Ccat$ by semisimplicity, this means that we have associates $\Hom((A\otimes B)\otimes C,\--)$ and $\Hom(A\otimes (B\otimes C),\--)$ for all possible choices of target. Since our $F$ matricies were chosen coherently, this assignment is a natural transformation. Thus, by the Yoneda lemma, this canonically specifies an isomorphism in $\Hom((A\otimes B)\otimes C,A\otimes (B\otimes C))$, namely, the associator $\alpha_{A,B,C}$. While encoding $\alpha_{A,B,C}$ as a collection of numbers proves difficult, encoding the associated natural transformation is simpler. We now define our analogues of abelian groups, braided fusion categories:
+We now give some commentary on Proposition \ref{Make 6j system}, through the Yondea perspective. Namely, we elaborate on why it is that we encode associative in terms of the induced map $\Hom((A\otimes B)\otimes C,D)\to \Hom(A\otimes (B\otimes C),D)$ for all $D$, instead of as the original map $(A\otimes B)\otimes C\to A\otimes (B\otimes C)$. One pragmatic answer is that our hom spaces are vector spaces, not our objects, and so choosing bases of hom spaces is easier. Another answer is that this keeps in line with the Yoneda perspective - it is better to look at the relationship of an object with those around it (i.e., hom spaces) than the object itself. In this case, we systimatically defined $F$ matricies to associate  $\Hom((A\otimes B)\otimes C,D)$ with $\Hom(A\otimes (B\otimes C),D)$. Since raning $D$ over simple objects generatres $\Ccat$ by semisimplicity, this means that we have associates $\Hom((A\otimes B)\otimes C,\--)$ and $\Hom(A\otimes (B\otimes C),\--)$ for all possible choices of target. Since our $F$ matricies were chosen coherently, this assignment is a natural transformation. Thus, by the Yoneda lemma, this canonically specifies an isomorphism in $\Hom((A\otimes B)\otimes C,A\otimes (B\otimes C))$, namely, the associator $\alpha_{A,B,C}$. While encoding $\alpha_{A,B,C}$ as a collection of numbers proves difficult, encoding the associated natural transformation is simpler.
 
-\begin{definition}[Braided fusion category] A braided fusion category is the following data:
-
-\begin{enumerate}
-\item A fusion category $(\Ccat,\otimes,\alpha)$.
-\item A natural isomorphism $\beta$ between the functor $\Ccat\times \Ccat\to \Ccat$ sending $(A,B)\to A\otimes B$, and the functor sending $(A,B)\to B\otimes A$.
-\end{enumerate}
-
-Additionally, a braided fusion category is required to satisfy the following properties:
-
-\begin{enumerate}
-\item (Hexagon identities) For all $A,B,C\in \Ccat$, the diagrams
-
-\[\begin{tikzcd}
-	{A\otimes (B\otimes C)} && {(A\otimes B)\otimes C} && {C\otimes (A\otimes B)} \\
-	{A\otimes (C\otimes B)} && {(A\otimes C)\otimes B} && {(C\otimes A)\otimes B}
-	\arrow["{\alpha_{A,B,C}}", from=1-1, to=1-3]
-	\arrow["{\beta_{A\otimes B,C}}", from=1-3, to=1-5]
-	\arrow["{\alpha^{}_{B,C,A}}", from=1-5, to=2-5]
-	\arrow["{\id_A\otimes \beta_{B,C}}"', from=1-1, to=2-1]
-	\arrow["{\alpha_{A,C,B}}"', from=2-1, to=2-3]
-	\arrow["{\beta_{A,C}\otimes \id_B}"', from=2-3, to=2-5]
-\end{tikzcd}\]
-
-and
-
-\[\begin{tikzcd}
-	{(A\otimes B)\otimes C} && {A\otimes (B\otimes C)} && {(B\otimes C)\otimes A} \\
-	{(B\otimes A)\otimes C} && {B\otimes (A\otimes C)} && {B\otimes (C\otimes A)}
-	\arrow["{\alpha^{-1}_{A,B,C}}", from=1-1, to=1-3]
-	\arrow["{\beta_{A,B\otimes C}}", from=1-3, to=1-5]
-	\arrow["{\alpha^{-1}_{B,C,A}}", from=1-5, to=2-5]
-	\arrow["{\beta_{A,B}\otimes \id_C}"', from=1-1, to=2-1]
-	\arrow["{\alpha^{-1}_{B,A,C}}"', from=2-1, to=2-3]
-	\arrow["{\id_B\otimes \beta_{A,C}}"', from=2-3, to=2-5]
-\end{tikzcd}\]
-
-commute.
-\end{enumerate}
-
-\raggedleft\qedsymbol{}
-\end{definition}
-
-\begin{definition}[Braided monoidal functor] A braided monoidal functor between braided fusion categories $(\Ccat,\otimes_{\Ccat},\beta_{\Ccat})$, $(\Dcat,\otimes_{\Dcat},\beta_{\Dcat})$ is a monoidal functor $(F,\mu):\Ccat\to \Dcat$ such that the diagram
-
-\[\begin{tikzcd}
-	{F(A)\otimes_{\Dcat}F(B)} && {F(B)\otimes_{\Dcat}F(A)} \\
-	\\
-	{F(A\otimes_{\Ccat}B)} && {F(B\otimes_{\Ccat}A)}
-	\arrow["{\mu_{A,B}}", from=1-1, to=3-1]
-	\arrow["{\beta_{\Dcat;F(A),F(B)}}"', from=1-1, to=1-3]
-	\arrow["{\mu_{B,A}}"', from=1-3, to=3-3]
-	\arrow["{F(\beta_{\Ccat;F(A),F(B)})}", from=3-1, to=3-3]
-\end{tikzcd}\]
-
-commutes for all $A,B\in \Ccat$.
-
-\raggedleft\qedsymbol{}
-\end{definition}
-
-We now show that braided fusion categories are indeed equivilant to braided $6j$ fusion systems:
+A braided fusion category is a fusion category whose underlying monoidal category is a braided monoidal category. There are no extra compatibility conditions.
 
 \begin{proposition}\label{Make braided system} Let $\Ccat$ be a multiplicity free braided fusion category, with associated $6j$ fusion system $(\LL,N^{\--,\--}_{\--},F^{\--,\--,\--}_{\--})$.  For all triples $a,b,c\in \LL$, choose reprasentatives $A,B,C\in \Ccat$. We define
 
@@ -2520,6 +2619,7 @@ For all $A,B\in \Ccat$, the following claims are all true:
 \item $\tr(f\otimes g)=\tr(f)\cdot \tr(g)$ for all $f\in \End(A)$, $g\in \End(B)$
 \item $\tr(f\oplus g)=\tr(f)+\tr(g)$ for all $f\in \End(A)$, $g\in \End(B)$
 \item $\tr(f\circ g)=\tr(g\circ f)$ for all $f,g\in \End(A)$
+\item .[WORK: $\tr(f^{*})=\tr(f)$?]
 \item .[WORK: BRAID 2nd formula for trace, putting $\beta$ and $\theta$ before $f$]
 \item Trace is independent of choice of duals. That is, let $(\tilde{A}^*,\tilde{\coev}_{A}, \tilde{\ev}_A)$ be a different choice of dua  for $A$. Defining $\tilde{\tr}(f)$ exactly like $\tr(f)$ except with this new unit, we find that $\tilde{\tr}(f)=\tr(f)$.
 \item Trace is preserved by functors. That is, let $\Ccat,\Dcat$ be MTCs with traces $\tr_{\Ccat},\tr_{\Ccat}$ respectively. Let $F:\Ccat\to \Dcat$ be a braided tensor functor. We have that $\tr_{\Ccat}(f)=\tr_{\Dcat}(F(f))$.
@@ -3000,58 +3100,11 @@ Along with natural choies of associativity, left/right unit, and braiding, show 
 \item Define an $(n+1)$-TQFT to be a braided monoidal functor $\Bord(n+1)\to \Vecc$. Show that this definition is canonically equivilant to the definition given in Section \ref{TQFTs} when $n=2$.
 \end{enumerate}
 
-\item The original list of axioms for a monoidal category was longer. It was later found by Max Kelly \cite{kelly1964maclane} that the smaller set we gave implies the rest. This exercise asks to derive his results.
-
-\begin{enumerate}[(a)]
-
-\item Show that for all monoidal categories $\Ccat$ the diagram
-
-\[\begin{tikzcd}
-	{(1\otimes A)\otimes B} \\
-	{1\otimes (A\otimes B)} & {A\otimes B}
-	\arrow["{\lambda_A\otimes\id_{B}}"{description}, from=1-1, to=2-2]
-	\arrow["{\alpha_{1,A,B}}"', from=1-1, to=2-1]
-	\arrow["{\lambda_{A\otimes B}}"', from=2-1, to=2-2]
-\end{tikzcd}\]
-
-commutes. (HINT: Suppressing identity maps and tensor products for clarity, show that the diagrams
-
-\[\begin{tikzcd}
-	& {(1(1A)B} & {1((1A)B)} \\
-	{((11)A)B} & {(11)(AB)} && {1(1(AB))} \\
-	& {(1A)B} & {1(AB)}
-	\arrow["{\rho_1}"', from=2-1, to=3-2]
-	\arrow["{\alpha_{1,1,A}}", from=2-1, to=1-2]
-	\arrow["{\alpha_{1,1A,B}}", from=1-2, to=1-3]
-	\arrow["{\alpha_{1,A,B}}", from=1-3, to=2-4]
-	\arrow["{\alpha_{1,A,B}}", from=3-2, to=3-3]
-	\arrow["{\lambda_{AB}}", from=2-4, to=3-3]
-	\arrow["{\alpha_{11,A,B}}", from=2-1, to=2-2]
-	\arrow["{\alpha_{1,1,AB}}", from=2-2, to=2-4]
-\end{tikzcd}\]
-
-and
-
-\[\begin{tikzcd}
-	{((11)A)B} & {(1(1A))B} & {1((1A)B)} & {1(1(AB))} \\
-	& {(1A)B} & {1(AB)}
-	\arrow["{\alpha_{1,1,A}}", from=1-1, to=1-2]
-	\arrow["{\alpha_{1,1A,B}}", from=1-2, to=1-3]
-	\arrow["{\alpha_{1,A,B}}", from=1-3, to=1-4]
-	\arrow["{\lambda_{AB}}", from=1-4, to=2-3]
-	\arrow["{\alpha_{1,A,B}}"', from=2-2, to=2-3]
-	\arrow["{\lambda_A}"', from=1-2, to=2-2]
-	\arrow["{\lambda_A}"{description}, from=1-3, to=2-3]
-	\arrow["{\rho_1}"', from=1-1, to=2-2]
-\end{tikzcd}\]
-
-commute)
-
 \item Using the result in part (a), show that for all monoidal categories $\Ccat$ the maps $\rho_1,\lambda_1:1\otimes 1\to 1$ are equal.
 
 \end{enumerate}
 
-\item Show that the modular tensor fusion data associated to the toric code forms a modular tensor fusion system.
+\item Show directly that the modular tensor fusion data associated to the toric code forms a modular tensor fusion system.
 
 \item  Let $\Ccat$ be an MTC, and let $\LL$ be the set of isomorphism classes of simple objects. Then, [WORK: doing what? Apparently one just takes the trace of the ``twisting relation"...] the coefficinets of the $S$-matrix of $\Ccat$ can be expressed in terms of the twist, fusion coefficients, and quantum dimensions as follows:
 
