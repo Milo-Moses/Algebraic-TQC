@@ -8,8 +8,8 @@
 		\node [style=none] (5) at (-11.25, 2) {};
 		\node [style=none] (6) at (-10.25, 2) {};
 		\node [style=none] (7) at (-13, 2) {$\ev_A=$};
-		\node [style=none] (8) at (-11.25, 2.4) {$A^{*}$};
-		\node [style=none] (9) at (-10.25, 2.4) {$A$};
+		\node [style=none] (8) at (-11.25, 2.4) {$A$};
+		\node [style=none] (9) at (-10.25, 2.4) {$A^{*}$};
 		\node [style=none] (10) at (-8.5, 1.75) {$,$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}

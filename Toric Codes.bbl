@@ -57,6 +57,17 @@ Parsa Bonderson, Kirill Shtengel, and Joost~K Slingerland.
 \newblock Probing non-abelian statistics with quasiparticle interferometry.
 \newblock {\em Physical review letters}, 97(1):016401, 2006.
 
+\bibitem[BW96]{barrett1996invariants}
+John Barrett and Bruce Westbury.
+\newblock Invariants of piecewise-linear 3-manifolds.
+\newblock {\em Transactions of the American Mathematical Society},
+  348(10):3997--4022, 1996.
+
+\bibitem[BW99]{barrett1999spherical}
+John~W Barrett and Bruce~W Westbury.
+\newblock Spherical categories.
+\newblock {\em Advances in Mathematics}, 143(2):357--375, 1999.
+
 \bibitem[CS09]{cooper2009observable}
 NR~Cooper and Ady Stern.
 \newblock Observable bulk signatures of non-abelian quantum hall states.
@@ -250,6 +261,16 @@ Eric Rowell and Zhenghan Wang.
 \newblock Mathematics of topological quantum computing.
 \newblock {\em Bulletin of the American Mathematical Society}, 55(2):183--238,
   2018.
+
+\bibitem[Sel11]{selinger2011survey}
+Peter Selinger.
+\newblock A survey of graphical languages for monoidal categories.
+\newblock {\em New structures for physics}, pages 289--355, 2011.
+
+\bibitem[Shi23]{shimizu2023ribbon}
+Kenichi Shimizu.
+\newblock Ribbon structures of the drinfeld center of a finite tensor category.
+\newblock {\em Kodai Mathematical Journal}, 46(1):75--114, 2023.
 
 \bibitem[Sho94]{shor1994algorithms}
 Peter~W Shor.
