@@ -24,6 +24,11 @@ Sven~Marian Albrecht, Andrew~P Higginbotham, Morten Madsen, Ferdinand Kuemmeth,
 \newblock Exponential protection of zero modes in majorana islands.
 \newblock {\em Nature}, 531(7593):206--209, 2016.
 
+\bibitem[AL18]{albash2018adiabatic}
+Tameem Albash and Daniel~A Lidar.
+\newblock Adiabatic quantum computation.
+\newblock {\em Reviews of Modern Physics}, 90(1):015002, 2018.
+
 \bibitem[Aub19]{aubert2019categories}
 Cl{\'e}ment Aubert.
 \newblock Categories for me, and you?
@@ -84,6 +89,11 @@ Giovanni de~Felice.
 \newblock Hopf algebras in quantum computation.
 \newblock {\em Unpublished doctoral dissertation}, 2017.
 
+\bibitem[DHW13]{davidovich2013arithmetic}
+Orit Davidovich, Tobias Hagge, and Zhenghan Wang.
+\newblock On arithmetic modular categories.
+\newblock {\em arXiv preprint arXiv:1305.2229}, 2013.
+
 \bibitem[DLF{\etalchar{+}}16]{debnath2016demonstration}
 Shantanu Debnath, Norbert~M Linke, Caroline Figgatt, Kevin~A Landsman, Kevin
   Wright, and Christopher Monroe.
@@ -96,10 +106,21 @@ Robbert Dijkgraaf and Edward Witten.
 \newblock Topological gauge theories and group cohomology.
 \newblock {\em Communications in Mathematical Physics}, 129:393--429, 1990.
 
+\bibitem[EG79]{eisenberg1979proof}
+Murray Eisenberg and Robert Guy.
+\newblock A proof of the hairy ball theorem.
+\newblock {\em The American Mathematical Monthly}, 86(7):571--574, 1979.
+
 \bibitem[ENO05]{etingof2005fusion}
 Pavel Etingof, Dmitri Nikshych, and Viktor Ostrik.
 \newblock On fusion categories.
 \newblock {\em Annals of Mathematics}, pages 581--642, 2005.
+
+\bibitem[FGH{\etalchar{+}}12]{freedman2012galois}
+Michael~H Freedman, Jan Gukelberger, Matthew~B Hastings, Simon Trebst, Matthias
+  Troyer, and Zhenghan Wang.
+\newblock Galois conjugates of topological phases.
+\newblock {\em Physical Review B}, 85(4):045414, 2012.
 
 \bibitem[FKLW03]{freedman2003topological}
 Michael Freedman, Alexei Kitaev, Michael Larsen, and Zhenghan Wang.
@@ -153,6 +174,17 @@ Tobias~J Hagge and Seung-Moon Hong.
 \newblock Some non-braided fusion categories of rank three.
 \newblock {\em Communications in Contemporary Mathematics}, 11(04):615--637,
   2009.
+
+\bibitem[JS86]{joyal1986braided}
+Andr{\'e} Joyal and Ross Street.
+\newblock Braided monoidal categories.
+\newblock {\em Mathematics Reports}, 86008, 1986.
+
+\bibitem[JS06]{joyal2006introduction}
+Andr{\'e} Joyal and Ross Street.
+\newblock An introduction to tannaka duality and quantum groups.
+\newblock In {\em Category Theory: Proceedings of the International Conference
+  held in Como, Italy, July 22--28, 1990}, pages 413--492. Springer, 2006.
 
 \bibitem[Kan98]{kane1998silicon}
 Bruce~E Kane.
@@ -262,15 +294,21 @@ Eric Rowell and Zhenghan Wang.
 \newblock {\em Bulletin of the American Mathematical Society}, 55(2):183--238,
   2018.
 
+\bibitem[Sch09]{schreiber2009aqft}
+Urs Schreiber.
+\newblock Aqft from n-functorial qft.
+\newblock {\em Communications in Mathematical Physics}, 291:357--401, 2009.
+
+\bibitem[Seg88]{segal1988definition}
+Graeme~B Segal.
+\newblock The definition of conformal field theory.
+\newblock {\em Differential geometrical methods in theoretical physics}, pages
+  165--171, 1988.
+
 \bibitem[Sel11]{selinger2011survey}
 Peter Selinger.
 \newblock A survey of graphical languages for monoidal categories.
 \newblock {\em New structures for physics}, pages 289--355, 2011.
-
-\bibitem[Shi23]{shimizu2023ribbon}
-Kenichi Shimizu.
-\newblock Ribbon structures of the drinfeld center of a finite tensor category.
-\newblock {\em Kodai Mathematical Journal}, 46(1):75--114, 2023.
 
 \bibitem[Sho94]{shor1994algorithms}
 Peter~W Shor.
@@ -284,6 +322,11 @@ Michael Spivak.
 \newblock {\em Calculus on manifolds: a modern approach to classical theorems
   of advanced calculus}.
 \newblock CRC press, 2018.
+
+\bibitem[Sto14]{stolz2014topology}
+Stephan Stolz.
+\newblock {\em Topology and Field Theories}, volume 613.
+\newblock American Mathematical Society, 2014.
 
 \bibitem[Tan19]{tang2019quantum}
 Ewin Tang.
@@ -304,7 +347,7 @@ Cumrun Vafa.
 \bibitem[Wan10]{wang2010topological}
 Zhenghan Wang.
 \newblock {\em Topological quantum computation}.
-\newblock Number 112. American Mathematical Soc., 2010.
+\newblock American Mathematical Soc., 2010.
 
 \bibitem[Wei09]{weil2009oeuvres}
 Andr{\'e} Weil.
