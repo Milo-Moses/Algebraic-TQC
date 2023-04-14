@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  12 APR 2023 17:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  14 APR 2023 12:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1004,190 +1004,138 @@ Overfull \hbox (11.38548pt too wide) in paragraph at lines 1848--1849
 <./images/Y-type.png, id=266, 394.47375pt x 389.455pt>
 File: ./images/Y-type.png Graphic file (type png)
 <use ./images/Y-type.png>
-Package pdftex.def Info: ./images/Y-type.png  used on input line 1949.
+Package pdftex.def Info: ./images/Y-type.png  used on input line 1953.
 (pdftex.def)             Requested size: 118.34303pt x 116.83739pt.
  [64 <./images/Y-type.png>] [65]
 <./images/graphical-language.png, id=274, 1130.2225pt x 760.8425pt>
 File: ./images/graphical-language.png Graphic file (type png)
 <use ./images/graphical-language.png>
 Package pdftex.def Info: ./images/graphical-language.png  used on input line 20
-38.
+42.
 (pdftex.def)             Requested size: 226.0405pt x 152.1658pt.
  [66]
-(./figures/simple-cotriangle.tikz) [67 <./images/graphical-language.png>]
-(./figures/6j-tree.tikz) [68]
+(./figures/simple-cotriangle.tikz) (./figures/6j-tree.tikz) [67 <./images/graph
+ical-language.png>] [68]
 <./images/pentagon.png, id=286, 507.8975pt x 478.78876pt>
 File: ./images/pentagon.png Graphic file (type png)
 <use ./images/pentagon.png>
-Package pdftex.def Info: ./images/pentagon.png  used on input line 2100.
+Package pdftex.def Info: ./images/pentagon.png  used on input line 2104.
 (pdftex.def)             Requested size: 142.21033pt x 134.05994pt.
- (./figures/time-symmetry.tikz) [69 <./images/pentagon.png>] [70] [71] [72] [73
-]
-Overfull \hbox (11.89902pt too wide) in paragraph at lines 2273--2274
-[]\OT1/cmr/m/n/10 (Linearity) The com-po-si-tion map $[](\OML/cmm/m/it/10 A; B\
-OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^B []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; C\
-OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ! []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A; C\OT
-1/cmr/m/n/10 )$
+ (./figures/time-symmetry.tikz) [69 <./images/pentagon.png>] [70]
+Overfull \hbox (13.46875pt too wide) in paragraph at lines 2188--2189
+\OT1/cmr/m/n/10 (\U/rsfs/m/n/10 L\OML/cmm/m/it/10 ; N; []\OT1/cmr/m/n/10 )$, fo
+l-lowed by an iso-mor-phism of fu-sion sys-tems $(\U/rsfs/m/n/10 L\OML/cmm/m/it
+/10 ; N; []\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ! \OT1/cmr/m/n/10 (\U/rsfs/m/n/10
+ L[]\OML/cmm/m/it/10 ; N[]; F[]\OT1/cmr/m/n/10 )$. 
  []
 
-[74]
-Overfull \hbox (0.19406pt too wide) in paragraph at lines 2318--2319
-[]\OT1/cmr/m/n/10 (All monomor-phisms and epi-mor-phisms are nor-mal) A monomor
--phism
+
+Overfull \hbox (4.01346pt too wide) in paragraph at lines 2190--2191
+[]\OT1/cmr/m/n/10 .[WORK: BRAID Give ex-pla-na-tion of rect-an-gle ax-iom, pref
+er-ably with graph-
  []
 
-[75] (./figures/bad-rigidity.tikz) [76] (./figures/eval-coeval.tikz)
-(./figures/rigidity.tikz)
-Overfull \hbox (4.69907pt too wide) detected at line 2417
-\OML/cmm/m/it/10 f[] \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 A[] [] B[] \OMS/cmsy/m/
-n/10 
- \OML/cmm/m/it/10 B \OMS/cmsy/m/n/10 
- \OML/cmm/m/it/10 A[] [] B[] \OMS/cmsy/m/n/10 
- \OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 
- \OML/cmm/m/it/10 A[] [] B[]
+[71] [72] [73]
+Overfull \hbox (8.96042pt too wide) in paragraph at lines 2315--2316
+\OT1/cmr/m/n/10 gories $\U/rsfs/m/n/10 C\OML/cmm/m/it/10 ; \U/rsfs/m/n/10 D$ \O
+T1/cmr/m/n/10 is a func-tor $\OML/cmm/m/it/10 F \OT1/cmr/m/n/10 : \U/rsfs/m/n/1
+0 C \OMS/cmsy/m/n/10 ! \U/rsfs/m/n/10 D$ \OT1/cmr/m/n/10 such that $\OML/cmm/m/
+it/10 F \OT1/cmr/m/n/10 : [](\OML/cmm/m/it/10 A; B\OT1/cmr/m/n/10 ) \OMS/cmsy/m
+/n/10 ! []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
+A\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B\OT1/c
+mr/m/n/10 ))$
  []
 
-[77] (./figures/rigidity-proof.tikz) [78] (./figures/rigidity-functor.tikz)
-(./figures/rigidity-functor-proof.tikz) (./figures/rigidity-inverse.tikz)
-[79] [80] [81] (./figures/cotriangle-reprise.tikz)
+[74] (./figures/bad-rigidity.tikz) [75] (./figures/eval-coeval.tikz)
+(./figures/rigidity.tikz) [76] (./figures/rigidity-proof.tikz) [77]
+(./figures/rigidity-functor.tikz) (./figures/rigidity-functor-proof.tikz)
+(./figures/rigidity-inverse.tikz) [78]
+Overfull \hbox (1.70798pt too wide) in paragraph at lines 2458--2459
+[]\OT1/cmr/m/it/10 We call $\U/rsfs/m/n/10 C$ \OT1/cmr/m/it/10 mul-ti-plic-ity 
+free if $\OML/cmm/m/it/10 N[] \OMS/cmsy/m/n/10 2 f\OT1/cmr/m/n/10 0\OML/cmm/m/i
+t/10 ; \OT1/cmr/m/n/10 1\OMS/cmsy/m/n/10 g$ \OT1/cmr/m/it/10 for all triples. T
+he pair $\OT1/cmr/m/n/10 (\U/rsfs/m/n/10 L\OML/cmm/m/it/10 ; N[]\OT1/cmr/m/n/10
+ )$
+ []
+
+[79] (./figures/cotriangle-reprise.tikz) [80]
 (./figures/cotriangle-conditions.tikz) (./figures/first-basis.tikz)
-(./figures/second-basis.tikz) [82]
-
-LaTeX Warning: Reference `Fusion System/MTC correspondance' on page 83 undefine
-d on input line 2541.
-
-
-LaTeX Warning: Reference `Fusion System/MTC correspondance' on page 83 undefine
-d on input line 2546.
-
-[83]
-
-LaTeX Warning: Reference `Fusion System/MTC correspondance' on page 84 undefine
-d on input line 2561.
-
-[84]
-
-LaTeX Warning: Reference `Fusion System/MTC correspondance' on page 85 undefine
-d on input line 2596.
-
-[85] (./figures/trace.tikz) (./figures/trace-right.tikz) [86] [87] [88]
+(./figures/second-basis.tikz) [81] [82] [83] (./figures/trace.tikz)
+(./figures/trace-right.tikz) [84] [85] [86]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2733.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2725.
 
-
-[89] [90]
-Overfull \hbox (5.78354pt too wide) in paragraph at lines 2788--2789
-[]\OT1/cmr/m/n/10 (monomorphism $ =[]\OMS/cmsy/m/n/10 ) $ \OT1/cmr/m/n/10 in-je
-c-tive) Sup-pose $\OML/cmm/m/it/10 f \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 V \OMS/
-cmsy/m/n/10 ! \OML/cmm/m/it/10 W$ \OT1/cmr/m/n/10 is a monomor-
- []
-
-[91]
-Overfull \hbox (30.90067pt too wide) detected at line 2817
+ [87] [88] [89]
+Overfull \hbox (32.03278pt too wide) detected at line 2812
 []
  []
 
-[92]
-Overfull \hbox (3.56825pt too wide) in paragraph at lines 2840--2841
-[]\OT1/cmr/m/it/10 (Evaluation) Given $\OML/cmm/m/it/10 V \OMS/cmsy/m/n/10 2 \U
-/rsfs/m/n/10 C$\OT1/cmr/m/it/10 , we de-fine $[]$ as the map on the $\OML/cmm/m
-/it/10 e$\OT1/cmr/m/it/10 -component
- []
-
-[93]
-Overfull \hbox (34.6577pt too wide) in paragraph at lines 2881--2882
+[90] [91]
+Overfull \hbox (17.10213pt too wide) in paragraph at lines 2876--2877
 []\OT1/cmr/m/n/10 The def-i-ni-tion of the in-verse ma-trix says that $[][] \OM
 L/cmm/m/it/10 c[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 c[]\OT1/cmr/m/n/10 )[] = []$
 .
  []
 
+[92] [93]
+Overfull \hbox (34.12456pt too wide) in paragraph at lines 2925--2926
+[]\OT1/cmr/m/it/10 (Morphisms) Given $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A; \U/e
+ur/m/n/10 ^^L[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/
+it/10 B; \U/eur/m/n/10 ^^L[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 Z\OT1/cmr/m/n/
+10 (\U/rsfs/m/n/10 C\OT1/cmr/m/n/10 )$\OT1/cmr/m/it/10 , $[][]\OT1/cmr/m/n/10 (
+(\OML/cmm/m/it/10 A; \U/eur/m/n/10 ^^L[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT
+1/cmr/m/n/10 (\OML/cmm/m/it/10 B; \U/eur/m/n/10 ^^L[]\OT1/cmr/m/n/10 ))$
+ []
+
+
+Overfull \hbox (15.49455pt too wide) in paragraph at lines 2935--2936
+[]\OT1/cmr/m/it/10 (Braiding) We de-fine the braid-ing be-tween two el-e-ments 
+$\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A; ^^L[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; 
+\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; ^^L[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2
+ []
+
+
+Overfull \hbox (78.26105pt too wide) detected at line 2953
+[]
+ []
+
 [94]
-Overfull \hbox (55.58542pt too wide) in paragraph at lines 2928--2929
-[]\OT1/cmr/bx/it/10 morphisms: \OT1/cmr/m/it/10 Given $\OT1/cmr/m/n/10 (\OML/cm
-m/m/it/10 A; \U/eur/m/n/10 ^^L[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/
-n/10 (\OML/cmm/m/it/10 B; \U/eur/m/n/10 ^^L[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10
- 2 Z\OT1/cmr/m/n/10 (\U/rsfs/m/n/10 C\OT1/cmr/m/n/10 )$\OT1/cmr/m/it/10 , $[][]
-\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 A; \U/eur/m/n/10 ^^L[]\OT1/cmr/m/n/10 )\OML/
-cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; \U/eur/m/n/10 ^^L[]\OT1/cmr/
-m/n/10 ))$
+Overfull \hbox (7.29327pt too wide) detected at line 2971
+[]
  []
 
 [95]
-Overfull \hbox (37.87769pt too wide) in paragraph at lines 2938--2939
-[]\OT1/cmr/bx/it/10 braiding:  \OT1/cmr/m/it/10 We de-fine the braid-ing be-twe
-en two el-e-ments $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A; ^^L[]\OT1/cmr/m/n/10 )\
-OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; ^^L[]\OT1/cmr/m/n/10 ) \
-OMS/cmsy/m/n/10 2
+Overfull \hbox (25.6396pt too wide) in paragraph at lines 3013--3014
+[]\OT1/cmr/m/n/10 (All monomor-phisms and epi-mor-phisms are nor-mal) En-dow-in
+g ker-nels/cokernels
  []
 
-
-Overfull \hbox (98.81665pt too wide) detected at line 2956
-[]
+[96] [97]
+Overfull \hbox (6.19286pt too wide) in paragraph at lines 3075--3076
+[]\OT1/cmr/m/n/10 (Non-degeneracy) .[WORK: BRAID How do I de-fine the right hal
+f-braiding?
  []
 
-[96]
-Overfull \hbox (24.84885pt too wide) detected at line 2974
-[]
- []
+[98]
+Underfull \hbox (badness 10000) in paragraph at lines 3124--3125
 
-[97] [98]
-Overfull \hbox (6.68463pt too wide) in paragraph at lines 3035--3036
-[]\OT1/cmr/m/n/10 Suppose we had a non-trivial lin-ear re-la-tion-ship of half-
-braidings $\OML/cmm/m/it/10 ^^L[] \OT1/cmr/m/n/10 =
  []
 
 [99]
-Overfull \hbox (11.82492pt too wide) in paragraph at lines 3070--3071
-\OT1/cmr/m/n/10 book. For in-stance, Ex-am-ple 8.5.4 and Propo-si-tion 8.6.3, C
-orol-lary 8.20.13]We
+Overfull \hbox (7.59065pt too wide) in paragraph at lines 3137--3138
+[]\OT1/cmr/m/n/10 (Morphisms) A mor-phism be-tween closed ori-ented $\OML/cmm/m
+/it/10 n$\OT1/cmr/m/n/10 -manifolds $\OML/cmm/m/it/10 Y[]; Y[]$
  []
 
 [100]
-Overfull \hbox (2.9229pt too wide) in paragraph at lines 3095--3096
-[]\OT1/cmr/m/n/10 Thus, we have ar-rived at the MTC as-so-ci-ated with the tori
-c code: $\OMS/cmsy/m/n/10 Z\OT1/cmr/m/n/10 ([][])$,
- []
-
-
-Overfull \hbox (4.97601pt too wide) in paragraph at lines 3113--3114
-[]\OT1/cmr/bx/n/10 Proposition 6.16. []\OT1/cmr/m/it/10 Let $\U/rsfs/m/n/10 C$ 
-\OT1/cmr/m/it/10 be a spher-i-cal cat-e-gory. We have that $[] \OMS/cmsy/m/n/10
- Z\OT1/cmr/m/n/10 (\U/rsfs/m/n/10 C\OT1/cmr/m/n/10 ) =
- []
-
-[101]
-Underfull \hbox (badness 10000) in paragraph at lines 3126--3127
-
- []
-
-
-Overfull \hbox (12.89182pt too wide) in paragraph at lines 3150--3151
-\OT1/cmr/m/n/10 braid-ing, show that this forms a braided monoidal cat-e-gory, 
-$[](\OML/cmm/m/it/10 n \OT1/cmr/m/n/10 +
- []
-
-
-Overfull \hbox (1.83745pt too wide) in paragraph at lines 3152--3153
-[]\OT1/cmr/m/n/10 Define an $(\OML/cmm/m/it/10 n \OT1/cmr/m/n/10 + 1)$-TQFT to 
-be a braided monoidal func-tor $[](\OML/cmm/m/it/10 n \OT1/cmr/m/n/10 +
- []
-
-[102]
-Overfull \hbox (5.30623pt too wide) in paragraph at lines 3174--3175
+Overfull \hbox (5.30623pt too wide) in paragraph at lines 3170--3171
 []$\OML/cmm/m/it/10 f$ \OT1/cmr/m/n/10 is a ker-nel if and only if $\OML/cmm/m/
 it/10 f$ \OT1/cmr/m/n/10 sat-is-fies the uni-ver-sal prop-erty of $[]([]\OML/cm
 m/m/it/10 f\OT1/cmr/m/n/10 )$. 
  []
 
-
-Overfull \hbox (4.02367pt too wide) in paragraph at lines 3193--3194
-[]\OT1/cmr/m/n/10 Let $\U/rsfs/m/n/10 C\OML/cmm/m/it/10 ; \U/rsfs/m/n/10 D$ \OT
-1/cmr/m/n/10 be monoidal cat-e-gories (resp. braided monoidal cat-e-gories, MTC
-s).
- []
-
-[103] [104] [105] [106] [107]
-Overfull \hbox (1.3881pt too wide) in paragraph at lines 3349--3350
+[101] [102] [103] [104] [105]
+Overfull \hbox (1.3881pt too wide) in paragraph at lines 3345--3346
 []\OT1/cmr/m/n/10 (Conjugation) A lin-ear map $\OMS/cmsy/m/n/10 y \OT1/cmr/m/n/
 10 : [](\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 
 )\OML/cmm/m/it/10 ; V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 )) \O
@@ -1196,69 +1144,57 @@ MS/cmsy/m/n/10 ! []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 (\OML/cmm
 /10 S[]\OT1/cmr/m/n/10 ))$
  []
 
-[108]
-Overfull \hbox (13.79912pt too wide) in paragraph at lines 3358--3359
+
+Overfull \hbox (13.79912pt too wide) in paragraph at lines 3354--3355
 \OT1/cmr/m/n/10 de-fined by $[] = [](\OML/cmm/m/it/10 f \OMS/cmsy/m/n/10 ^^N \O
 ML/cmm/m/it/10 g[]\OT1/cmr/m/n/10 )$ is an in-ner prod-uct, en-dow-ing $[](\OML
 /cmm/m/it/10 V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 )\OML/cmm/m/
 it/10 ; V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 ))$
  []
 
-
-Overfull \hbox (18.39388pt too wide) in paragraph at lines 3375--3376
-[]\OT1/cmr/bx/n/10 Proposition B.1. []\OT1/cmr/m/it/10 Equipped with its nat-u-
-ral con-ju-ga-tion struc-ture, the $\U/msb/m/n/10 Z[]$ \OT1/cmr/m/it/10 Dijkgra
-af-
- []
-
-[109] [110] [111]
-
-LaTeX Warning: Reference `Fusion System/MTC correspondance' on page 112 undefin
-ed on input line 3490.
-
-
-Overfull \hbox (1.05043pt too wide) in paragraph at lines 3495--3496
-[]\OT1/cmr/bx/n/10 Proposition B.6. []\OT1/cmr/m/it/10 There is a braided monoi
+[106] [107] [108]
+Overfull \hbox (1.05043pt too wide) in paragraph at lines 3476--3477
+[]\OT1/cmr/bx/n/10 Proposition B.5. []\OT1/cmr/m/it/10 There is a braided monoi
 dal equiv-a-lence of cat-e-gories $[] []
  []
 
-[112] [113]
-Underfull \hbox (badness 10000) in paragraph at lines 3529--3530
+[109]
+Underfull \hbox (badness 10000) in paragraph at lines 3507--3508
 
  []
 
-[114] (./figures/cotriangle-second-reprise.tikz) [115]
-Overfull \hbox (3.49374pt too wide) in paragraph at lines 3607--3608
+[110] [111] (./figures/cotriangle-second-reprise.tikz)
+Overfull \hbox (3.49374pt too wide) in paragraph at lines 3586--3587
 []\OT1/cmr/m/it/10 to mean the mor-phism $\OT1/cmr/m/n/10 1[]\OML/cmm/m/it/10 ;
  c$\OT1/cmr/m/it/10 . Com-pos-ing these to give bases of $[]\OT1/cmr/m/n/10 ((\
 OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 
 
  []
 
-(./figures/6j-tree.tikz) [116]
-Overfull \hbox (4.3061pt too wide) in paragraph at lines 3647--3648
+[112] (./figures/6j-tree.tikz)
+Overfull \hbox (4.3061pt too wide) in paragraph at lines 3626--3627
 []\OT1/cmr/m/n/10 This cor-re-spon-dence gen-er-al-izes to braided monoidal fu-
 sion cat-e-gories, MTCs,
  []
 
-[117] (./Toric Codes.bbl [118] [119] [120] [121]
+[113] (./Toric Codes.bbl [114] [115] [116] [117] [118]
 Underfull \hbox (badness 1360) in paragraph at lines 371--376
 []\OT1/cmr/m/n/10 Fangyuan Yang, Alexan-der A Zi-brov, Rui-heng Bai, Takashi
  []
 
-[122]) [123] (./Toric Codes.aux)
+) [119] (./Toric Codes.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 20279 strings out of 492649
- 441317 string characters out of 6129622
- 488789 words of memory out of 5000000
- 23669 multiletter control sequences out of 15000+600000
+ 20278 strings out of 492649
+ 441283 string characters out of 6129622
+ 497193 words of memory out of 5000000
+ 23668 multiletter control sequences out of 15000+600000
  23574 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,20n,84p,1446b,1211s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,20n,84p,1317b,1107s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></
@@ -1297,10 +1233,10 @@ onts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2018/texmf-dis
 t/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2018/texmf-dist/fonts/
 type1/public/rsfs/rsfs5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pub
 lic/rsfs/rsfs7.pfb>
-Output written on "Toric Codes.pdf" (123 pages, 3823112 bytes).
+Output written on "Toric Codes.pdf" (119 pages, 3811973 bytes).
 PDF statistics:
- 587 PDF objects out of 1000 (max. 8388607)
- 391 compressed objects within 4 object streams
+ 574 PDF objects out of 1000 (max. 8388607)
+ 382 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  93 words of extra memory for PDF output out of 10000 (max. 10000000)
 
