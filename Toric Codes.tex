@@ -149,7 +149,7 @@ The structure of the manuscript is as follows:
 
 \item Section \ref{Modular Tensor Categories} gives an introduction to Modular Tensor Categories (MTCs), the compressed mathematical abstraction of topological quantum phases of matter. Subsection \ref{Fusion systems} gives an overview of the subject. Subsection \ref{Category viewpoint} gives the more elegant interpretation of MTCs in the language of categories. Subsection \ref{VecZ2 MTC} defines $\Zcal(\Rep_{\ZZ_2})$, the MTC associated with the toric code.
 
-\item Section \ref{Topological Quantum Computing} gives an introduction to the general TQC methodology, using all of the tools developed in the previous sections. Subsection \ref{The TQC framework} gives a detailed overview of TQC, including measurement-based algorithms. Subsection \ref{Revisiting toric code TQC} carries this out explicitly for the toric code. Subsection \ref{Universal TQC with the Fibonacci anyon} introduces the Fibonacci anyon model, and shows that it gives universal quantum computation via braiding alone.
+\item Section \ref{Topological Quantum Computing} gives an introduction to the general TQC methodology, using all of the tools developed in the previous sections. Subsection \ref{The TQC framework} gives a detailed overview of TQC, including measurement-based algorithms. Subsection \ref{Revisiting toric code TQC} carries this out explicitly for the toric code. Subsection \ref{Universal TQC with Fibonacci anyons} introduces the Fibonacci anyon model, and shows that it gives universal quantum computation via braiding alone.
 
 \end{itemize}
 
@@ -407,7 +407,19 @@ H^{\dagger}&=(UDU^{\dagger})^{\dagger}\\
 
 Here, we used that $D^{\dagger}=D$ since it is real symmetric, hence fixed under both taking transpose and complex conjugate. We also used that $U^{\dagger\dagger}=U$, which comes from the fact that taking two complex conjugates and two transposes takes a matrix back to itself.
 
-The converse is much more difficult, and its proof would take us too far astray. A good reference for this sort of quantum linear algebra, with a special emphasis on spectral theorems, is Hall's book \cite{hall2013quantum}. [WORK: Proof is actually reasonable. Do it.]
+We now prove the converse. We consider the map $\left<\cdot |\cdot \right>$ as defined in the proof of Proposition \ref{unitary equivilance}. Since $\CC$ is algebraically complete the characteristic polynomial of $H$ must have a root, hence we know that $H$ has some eigenvector $e$, with eigenvalue $\lambda$. Scaling $e$ if neccecary, we can assume without loss of generality that $\left<e | e\right> = 1$. Let $V$ be the subspace of vectors $x\in \CC[S]$ such that $\left<e | x\right>=0$. This is an $|S|-1$ dimensional subspace. Exercise \thesection.2 says that $H=H^{\dagger}$ implies
+
+$$\left<x | H(y)\right>=\left<H(x) |y\right>\,\, \forall x,y\in \CC[S].$$
+
+In particular, if $\left<e | x\right>=0$ then
+
+$$\left< e | H(x) \right>=\left<H(e) | x \right>=\lambda \left< e| x \right>=0.$$
+
+Thus, $H$ restricts to a map on $V$. Continuing this proccess of picking eigenvectors and restricting $H$ to the subspace of vectors for which $\left<\cdot|\cdot\right>=0$, we find that $\CC[S]$ has a basis of normalized eigenvectors, such that $\left<\cdot|\cdot\right>$ for any distinct pair. Moreover, all of these eigenvectors satisfy
+
+$$\lambda \left<e | e\right>=\left<H(e) | e\right>=\left<e | H(e)\right>=\overline{\lambda}\left<e | e\right>,$$
+
+so their eigenvalues $\lambda=\overline{\lambda}$ are real. Label these eigenvectors $\{e_s\}_{s\in S}$ arbitrarily by elements of $S$. We can define a unitary matrix $U$ by $U(\left|s\right>)=e_s$. Letting $D$ be the diagonal matrix whose $(s,s)$ entry is the eigenvalue of $e_s$, we find that $H=U D U^{-1}$, completing the proof.
 \end{proof}
  
 The conditions on unitary and Hermitian matrices we have obtained are independent of unitary change of basis, in the sense that unitary (resp. Hermitian) matrices will stay unitary (resp. Hermitian) under a unitary change of basis. Additionally, unitary matrices are defined to send normalized vectors to normalized vectors, and hence the notion of normalized vector is unitary basis-independent as well. This almost allows us to state the axioms of quantum mechanics in a basis independent way. The trouble is that the notations of unitary, Hermitian, and normalized are not invariant under arbitrary change of basis. The solution to this problem is to introduce \textit{Hilbert spaces}. Roughly, Hilbert spaces are vector spaces paired with a notion of normalized vectors, which allows one to define unitary and Hermitian matrices. Abstractly, in the same way that there is a canonical identification
@@ -420,7 +432,7 @@ $$
 there is an identification
 
 $$
-\left(\text{Vector spaces with basis}\right)/\left(\text{orthogonal change of basis}\right)\cong
+\left(\text{Vector spaces with basis}\right)/\left(\text{unitary change of basis}\right)\cong
 \left(\text{Hilbert spaces}\right).
 $$
 
@@ -448,7 +460,7 @@ It follows from these axioms that $\left<\cdot | \cdot \right>$ is conjugate lin
 
 $$\left<\phi|a\psi_0+b\psi_1\right>=\overline{a}\left<\phi|\psi_0\right>+\overline{b}\left<\phi|\psi_1\right>.$$
 
-The point of this definition is that we can define the norm of $\ppsi\in V$ to be $\sqrt{\left<\psi|\psi\right>}$, and thus by forcing $\left<\psi |\psi\right>=1$ we have a well-defined notion of normalized vector. We now show that Hilbert spaces have the desired property of characterizing vector spaces up to orthogonal change of basis:
+The point of this definition is that we can define the norm of $\ppsi\in V$ to be $\sqrt{\left<\psi|\psi\right>}$, and thus by forcing $\left<\psi |\psi\right>=1$ we have a well-defined notion of normalized vector. We now show that Hilbert spaces have the desired property of characterizing vector spaces up to unitary change of basis:
 
 \begin{proposition}\label{Hilbert properties} Let $V$ be a an $n$ dimensional vector space. The following statements are true:
 
@@ -470,7 +482,7 @@ This is an inner product, and gives $V$ the structure of a Hilbert space. $(\lef
 \item Two bases induce the same Hilbert space structure on $V$ if and only if they can be related to each other by a unitary matrix.
 \end{enumerate}
 
-In this sense, one can canonically identify equivalence classes of based vector spaces up to orthogonal change of basis with Hilbert spaces.
+In this sense, one can canonically identify equivalence classes of based vector spaces up to unitary change of basis with Hilbert spaces.
 \end{proposition}
 \begin{proof} We demonstrate the claims one by one.
 
@@ -518,7 +530,7 @@ where $x_0,x_1\in V$, $y_0,y_1\in W$. (see Exercise \thesection.3). Thus, we can
 
 \begin{enumerate}
 \item (Systems) A quantum system is a complex Hilbert space $V$
-\item (Processes) A quantum process going from a system $V$ to a system $W$ is an orthogonal transformation from $V$ to $W$
+\item (Processes) A quantum process going from a system $V$ to a system $W$ is a unitary transformation from $V$ to $W$
 \item (Joining systems) If $V$ and $W$ are two quantum systems, the system obtained by joining $V$ and $W$ is $V\otimes W$.
 \item (Measuring systems) Given a normalized vector in $\ppsi\in V$, measurement corresponds to Hermitian matrices $H$. Namely, writing $\ppsi=\sum_{k=0}^{n-1}c_k\left|x_k\right>$ where $\left(\left|x_k\right>\right)_{k=0}^{n-1}$ is an orthonormal basis of eigenvectors of $H$, measurement will collapse $\ppsi$, going to the state $\left|x_k\right>$ with probability $|c_k|^2$. One will additionally observe a physical quantity corresponding to the eigenvalue of $H$ at $\left|x_k\right>$.
 \end{enumerate}
@@ -558,7 +570,7 @@ The two dimensional quantum system $\CC^{2}$ is a qubit. It is now clear that sp
 \item How quantum information is measured. That is, what observables one can measure to reliably read information about quantum states from $\left(\CC^2\right)^{\otimes m}$.
 \end{enumerate}
 
-This concludes our introduction of quantum mechanics.
+This concludes our introduction of quantum mechanics. A good reference for this sort of linear algebra, with a special focus on quantum mechanics, is Hall's book \cite{hall2013quantum}.
 
 $\newline\newline$
 
@@ -750,7 +762,7 @@ For $B_p$s, we observe that applying $B_p$ to a pure state $\left|\gamma\right>$
 
 To show that $\left|\omega\right>$ is normalized, we observe that there are exactly that there are exactly $2^{n^2-1}$ cycles homologous to $\omega$. This is proved as follows. Starting with a fixed representative $\omega_0$ of $\omega$, cycles homologous to $\omega$ correspond to flipping qubits around the edges, i.e., applying $B_p$s at faces. Since there are $n^2$ faces, this gives $2^{n^2}$ cycles. This over counts the space of cycles homologous to $\omega$ by a factor of $2$, since $\prod_{\text{faces }p}B_p=I$ by Proposition \ref{AvBp} (iv). The fact that the codespace is 4 dimensional says that this is the \textit{only} relation between the $B_p$s. Hence, there are $2^{n^2-1}$ cycles.
 
-We finally observe that no cycle can be homologous to two of the $\{\bold{0},\alpha,\beta,\alpha\beta\}$, hence $\left\{\nullclass,\alphaclass,\betaclass,\alphabetaclass\right\}$ have disjoint support, hence they are mutually orthogonal as desired.
+We finally observe that no cycle can be homologous to two of the $\{\bold{0},\alpha,\beta,\alpha\beta\}$, hence $\left\{\nullclass,\alphaclass,\betaclass,\alphabetaclass\right\}$ have disjoint support, hence they are orthogonal as desired.
 \end{proof}
 
 Letting $T$ denote the torus, the above shows that we can view the codespace of the toric code as a physical realization of the vector space $\CC[H_1(T;\ZZ_2)]$. Quantum physics gives the physical analogue of the abstract mathematical notation of an equivalence class, namely, an equivalence class is realized as the superposition over all possible representatives. This can be compared with the path integral formulation of quantum mechanics, where one integrates over all possible paths between two points.
@@ -863,7 +875,14 @@ reduce the generating set to $\{\text{NOT}_{\alpha},\text{NOT}_{\beta},(-1)_{\al
 \end{proof}
 
 
-Before moving to the next section, we make a few final remarks about the behavior of quasiparticles on the toric codes. Consider the simple braiding of adjacent $X$-type and $Z$-type quasiparticles around each other, as in Figure \ref{fig:braiding} [WORK: re-port this here]. A line going under another corresponds to the particle having passed through that space first, before the other particle. This process corresponds to a transformation $\Ncal\to \Ncal$ by tensoring with the appropriate $\sigma_X$s and $\sigma_Z$s. The key observation is that this transformation is \textit{not} the identity on the codespace. Namely, since $\sigma_Z\sigma_X=-\sigma_X\sigma_Z$, this operation corresponds to a global phase shift of $-1$ on the system.
+Before moving to the next section, we make a few final remarks about the behavior of quasiparticles on the toric codes. Consider the simple braiding of adjacent $X$-type and $Z$-type quasiparticles around each other, as shown below
+
+\begin{equation*}
+\tikzfig{basic-braid-XY}
+\end{equation*}
+
+
+A line going under another corresponds to the particle having passed through that space first, before the other particle. This process corresponds to a transformation $\Ncal\to \Ncal$ by tensoring with the appropriate $\sigma_X$s and $\sigma_Z$s. The key observation is that this transformation is \textit{not} the identity on the codespace. Namely, since $\sigma_Z\sigma_X=-\sigma_X\sigma_Z$, this operation corresponds to a global phase shift of $-1$ on the system.
 
 Thus, the braiding of $X$ type and $Z$ type particles corresponds to a phase shift of $-1$. This is in contrast to braiding two identical $X$ type or $Z$ type particles, which corresponds to the identity since $\sigma_X$ and $\sigma_Z$ commute with themselves. All particles in the standard model of physics are \textit{fermions}, which give a phase shift of $-1$ when you braid them with themselves, or \textit{bosons}, which act by the identity when you braid them with themselves. Seeing as $X$ type and $Z$ type particles in the toric code braid by the identity with themselves, one would expect them to be bosons. However, bosons always braid by the identity with each other and hence the $-1$ phase shift from braiding $X$ and $Z$ type particles should be impossible. The conclusion is that these really are \textit{quasi}particles, which behave differently than particles in the standard model. Quasiparticles with simultaneously non-bosonic and non-fermionic braiding rules are known as \textit{anyons}. The name comes from the fact that they can have ``any" braiding rules, hence ``any"-on. All interesting quasiparticles in topological quantum materials will be anyons.
 
@@ -1829,14 +1848,12 @@ $\newline\newline$
 \large \textbf{Exercises}:\normalsize
 
 \begin{enumerate}[\thesection .1.]
-\item . [WORK: define non-degenerate pairing, then state that the pairing at hand is non-degenerate] Given a category $\Ccat$, show that the pairing
+\item Let $\Ccat$ and $\Dcat$ be categories. A pairing between $\Ccat$ and $\Dcat$ is a functor $\Ccat\times \Dcat\to \Set$. We call a pairing $F$ non-denerate on the right if $F(A,\--)\cong F(B,\--)\implies A\cong B$, for all $A,B\in \Ccat$. The symbol $\cong$ denotes isomorphism in the respective categories. That is, $F(A,\--)\cong F(B,\--)$ means that there is a natural isomorphism $F(A,\--)\xrightarrow{\sim}F(B,\--)$, treated both as functors $\Dcat\to \Set$. Simiarly, a pairing $F$ is called non-degenerate on the left if $F(\--,A)\cong F(\--,B)\implies A\cong B$ for all $A,B\in \Dcat$.
 
-\begin{align*}
-\Ccat \times \bold{Hom}(\Ccat,\Set)&\to\Set\\
-(A,F)&\mapsto F(A)
-\end{align*}
-
-is functorial. Use the Yoneda lemma to show that this pairing is non-degenerate, in the sense that if $F(A)=G(A)$ for all $A$ then $F=G$, and if $F(A)=F(B)$ for all $F$ then $A=B$.
+\begin{enumerate}
+\item Show that the map $\Ccat\times \Ccat^{\op}\to \Set$ sending $(A,B^{\op})\in \Ccat\times \Ccat^{\op}$ to $\Hom(A,B)\in \Set$ is functorial.
+\item Use the Yoneda lemma to show that the above pairing is non-degenerate both on the left and on the right.
+\end{enumerate}
 
 \item Given a objects $A,B$ in category $\Ccat$, use the Yoneda lemma to show that the mapping
 
@@ -2122,7 +2139,13 @@ A natural question about $6j$ symbols could be as follows: the goal was to defin
 
 In this context, Vakil's quote is very literal - we are studying particles by looking at their fusion rules. Fusion, as a process, often happens when things hit each other very fast in a particle accelerator. By learning the relationship betwen the behaviors of $a\otimes (b\otimes c)$ and $(a\otimes b)\otimes c$ when hit by all particles, we learn about the relationship between $a\otimes (b\otimes c)$ and $(a\otimes b)\otimes c$. The Yoneda perspective will persist through this manuscript.
 
-We now define braided $6j$ fusion systems. Braiding gives an isomorphism between $a\otimes b$ and $b\otimes a$. For example, since $X$ and $Z$ anticommute in the toric code, the braiding isomorphism $X\otimes Z\to Z\otimes X$ is $-1$ times the identity. Keeping with our Yoneda perspective, instead of explicitely giving an isomorphism $a\otimes b$ and $b\otimes a$ we give isomorphism between the shom-paces $a\otimes b\to c$ and $b\otimes a\to c$ for every $c$. Graphically, this can be seen in Figure [WORK: BRAID make figure]. The formal definition is as follows:
+We now define braided $6j$ fusion systems. Braiding gives an isomorphism between $a\otimes b$ and $b\otimes a$. For example, since $X$ and $Z$ anticommute in the toric code, the braiding isomorphism $X\otimes Z\to Z\otimes X$ is $-1$ times the identity. Keeping with our Yoneda perspective, instead of explicitely giving an isomorphism $a\otimes b$ and $b\otimes a$ we give isomorphism between the hom-paces $a\otimes b\to c$ and $b\otimes a\to c$ for every $c$. Graphically, this can be seen as the formula
+
+\begin{equation*}
+\tikzfig{R-symbols}
+\end{equation*}
+
+The formal definition is as follows:
 
 \begin{definition}[Braided $6j$ Fusion system] A braided $6j$ fusion system is the following data.
 
@@ -2144,9 +2167,21 @@ $$\left(R^{a,c}_{e}\right)^{\pm 1}F^{b,a,c}_{d;e,m}\left(R^{a,b}_{m}\right)^{\pm
 \raggedleft\qedsymbol{}
 \end{definition}
 
-Again, the hexagon is a mess of symbols when written explicitly. In graphical language, we can [WORK: BRAID what does braiding look like]. The hexagon identity is thus the condition that going either way around the following 6-term diagram gives the same answer:
+Again, the hexagon is a mess of symbols when written explicitly. In graphical language, however, it becomes the condition that going either way around the 6-term diagram in Figure \ref{fig:hexagon} gives the same answer. The fact that there is a hexagon identity for $R^{+}$ and $R^{-}$ corresponds to the fact that one can fix the notation
 
-[WORK: BRAID Make hexagon]
+\begin{equation*}
+\tikzfig{R-symbols-inverse}
+\end{equation*}
+
+and so the second hexagon identity is the fact that Figure \ref{fig:hexagon} commutes with over crossings replaced by under crossings.
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.25]{hexagon}
+\caption{ The hexagon identity in graphical language, with $R$ and $F$ denoting the respective applications of $R$ and $F$ matricies [WORK: this can be made way better]}
+\label{fig:hexagon}
+\end{center}
+\end{figure}
 
 With all this, we can finally define MTCs:
 
@@ -2163,7 +2198,11 @@ With all this, we can finally define MTCs:
 
 In graphical language, the spherical condition says [WORK: BRAID make diagram, explain why its necessary.]
 
-The non-degeneracy condition says that every non-trivial particle should braid non-trivially with at least one other particle. Graphically, this is shown as [WORK: BRAID make diagram].
+The non-degeneracy condition says that every non-trivial particle should braid non-trivially with at least one other particle. Graphically, this is shown as
+
+\begin{equation*}
+\tikzfig{non-degeneracy}
+\end{equation*}
 
 It is important to remember that even though the definition is long, at the end of the day these are still just finite collections of numbers satisfying a finite number of polynomial equations. This makes many things simple. For instance, we can define a morphism between fusion systems $(\LL,N)$ and $(\LL',N')$ to be a function $f:\LL\to \LL'$ such that $N^{a,b}_{c}=N'^{f(a),f(b)}_{f(c)}$. For $6j$ fusion systems and braided $6j$ fusion systems, we simply require that $f$ should respect $6j$ symbols and $R$ symbols as well. We can thus properly speak of the \textit{category} of fusion systems. Naïve isomorphism of fusion systems (invertible morphisms) are the wrong notation of equivalence: it is too restrictive. The correction notion is \textit{gauge equivalence}, which corresponds to performing a local change of basis on $6j$ symbols.
 
@@ -2185,7 +2224,9 @@ $$f_n^{b,c}f^{a,n}_{d}F^{a,b,c}_{d;n,m}=\tilde{F}^{a,b,c}_{d;n,m}f^{a,b}_{m}f^{m
 \raggedleft\qedsymbol{}
 \end{definition}
 
-More generally, a gauge equivalent between $6j$ fusion systems $(\LL,N,F)$ and $(\LL',N',F')$ is a gauge equivalence between $(\LL,N,F)$ and some system $(\LL,N,\tilde{F})$, followed by an isomorphism of fusion systems $(\LL,N,\tilde{F})\to (\LL',N',F')$.
+More generally, a gauge equivalence between $6j$ fusion systems $(\LL,N,F)$ and $(\LL',N',F')$ is a gauge equivalence between $(\LL,N,F)$ and some system $(\LL,N,\tilde{F})$, followed by an isomorphism of fusion systems $(\LL,N,\tilde{F})\to (\LL',N',F')$.
+
+[WORK: Define braided gauge equivalence]
 
 .[WORK: BRAID Give explanation of rectangle axiom, preferably with graphical language]
 
@@ -2540,20 +2581,44 @@ The triple $(\LL,N,F)$ specifies a $6j$ fusion system.
 
 We now give some commentary on Proposition \ref{Make 6j system}, through the Yoneda perspective. Namely, we elaborate on why we encode associativity in terms of the induced map $\Hom((A\otimes B)\otimes C,D)\to \Hom(A\otimes (B\otimes C),D)$ for all $D$, instead of as the original map $(A\otimes B)\otimes C\to A\otimes (B\otimes C)$. One pragmatic answer is that our hom-set are vector spaces, not our objects. Another answer is that this keeps in line with the Yoneda perspective - it is better to look at the relationship of an object with those around it (i.e., hom-spaces) than the object itself. In this case, we systematically defined $F$-matrices to associate $\Hom((A\otimes B)\otimes C,D)$ with $\Hom(A\otimes (B\otimes C),D)$. Since our $F$-matrices were chosen coherently, this gives a natural transformation $\Hom((A\otimes B)\otimes C,\--)\to\Hom(A\otimes (B\otimes C),\--)$. By the Yoneda lemma, this canonically specifies an isomorphism in $\Hom((A\otimes B)\otimes C,A\otimes (B\otimes C))$, namely, the associator $\alpha_{A,B,C}$.
 
-A braided fusion category is a fusion category whose underlying monoidal category is a braided monoidal category. There are no extra compatibility conditions.
+A braided fusion category is a fusion category whose underlying monoidal category is a braided monoidal category. There are no extra compatibility conditions. Seeing as we will be very often using the braiding isomorphism $\beta$, we fix the notation
 
-\begin{proposition}\label{Make braided system} Let $\Ccat$ be a multiplicity free braided fusion category, with associated $6j$ fusion system $(\LL,N^{\--,\--}_{\--},F^{\--,\--,\--}_{\--})$. For all triples $a,b,c\in \LL$, choose representatives $A,B,C\in \Ccat$. We define
+\begin{equation*}
+\tikzfig{braiding-notation}
+\end{equation*}
 
-[WORK: BRAID cool braided symbol: = $\beta$ transformation of original].
+From braided fusion categories, we can construct braided $6j$ fusion systems:
 
-[WORK: BRAID find correct definition of $R$-values.]
+\begin{proposition}\label{Make braided system} Let $\Ccat$ be a multiplicity free braided fusion category, with associated $6j$ fusion system $(\LL,N^{\--,\--}_{\--},F^{\--,\--,\--}_{\--})$. For all triples $a,b,c\in \LL$, choose representatives $A,B,C\in \Ccat$, and distinguished generators of $\Hom(A\otimes B,C)$. Define a $6j$ fusion system just as in Proposition \ref{Make 6j system}. Define $R^{a,b}_{c}$ to be the unique value such that
+
+\begin{equation*}
+\tikzfig{R-symbols-reprise}
+\end{equation*}
 
 This process induces a one-to-one correspondence of braided fusion categories up to braided monoidal equivalence and braided fusion systems up to gauge equivalence.
 \end{proposition}
 \begin{proof} See Appendix \ref{Fusion System/MTC correspondence}.
 \end{proof}
 
-As usual, a braided monoidal equivalence of two categories means a pair of braided monoidal functors, such that both compositions are monoidally equivalent to the identity. We now define MTCs:
+As usual, a braided monoidal equivalence of two categories means a pair of braided monoidal functors, such that both compositions are monoidally equivalent to the identity. Graphically, the axioms of a braiding simply state that we can move strands around like one would expect to be able to. We demonstrate this will a useful lemma:
+
+\begin{lemma}\label{pulling-lemma} Let $A,B,C,D\in \Ccat$ be objects in a braided monoidal category, and let $f:C\to B\otimes D$ and $g: A\otimes C\to 1$ be morphisms. We have that
+
+\begin{equation*}
+\tikzfig{pulling-lemma}
+\end{equation*}
+
+\end{lemma}
+\begin{proof} We compute as follows:
+
+\begin{equation*}
+\tikzfig{pulling-lemma-proof}
+\end{equation*}
+
+and hence we conclude the result.
+\end{proof}
+
+We now define MTCs:
 
 \begin{definition}[Modular tensor category] A modular tensor category (MTC) is the following data:
 
@@ -2576,6 +2641,8 @@ then $A\cong 1$.
 \raggedleft\qedsymbol{}
 \end{definition}
 
+[WORK: Non-degeneracy can be motivated pretty well. We want our MTCs to give TQFTs.]
+
 \begin{definition}[Braided tensor functor] A braided tensor functor between two MTCs $(\Ccat,\theta_\Ccat)$, $(\Dcat,\theta_{\Dcat})$ is a braided monoidal functor $F:\Ccat\to \Dcat$ such that $F(\theta_{\Ccat;A})=\theta_{\Dcat;A}$ for all $A\in \Ccat$.
 
 \raggedleft\qedsymbol{}
@@ -2588,9 +2655,29 @@ This allows us to state our final equivalence:
 \begin{proof} See Appendix \ref{Fusion System/MTC correspondence}.
 \end{proof}
 
-The intuition for MTC twists is that they help deal with the non-triviality of the braiding, allowing one to define good maps $A^{*}\otimes A\to 1$ and $1\to A\otimes A^{*}$ which look like evaluation/co-evaluation but with tensor factors reversed, giving objects ``two sided" duals. To be precise, we fix the notation
+The intuition for MTC twists is that they help deal with the non-triviality of the braiding, allowing one to define good maps $A^{*}\otimes A\to 1$ and $1\to A\otimes A^{*}$ which look like evaluation/co-evaluation but with tensor factors reversed, giving objects ``two sided" duals. [WORK: That's not exactly the case. What $\theta$ lets you do is define a trace \textit{which respects tensor products}. Make this clear. Making $\theta=1$ will still give a spherical category. Mention the hexagon identity maybe, since its a good analogy?]To be precise, we fix the notation
 
-[WORK: BRAID Write down correct maps.]
+\begin{equation*}
+\tikzfig{co-dual}
+\end{equation*}
+
+This allows us to express the twist in graphical language:
+
+\begin{proposition} Let $A\in \Ccat$ be an object in an MTC. We have that
+
+\begin{equation*}
+\tikzfig{graphical-twist}
+\end{equation*}
+
+\end{proposition}
+\begin{proof} We compute using Lemma \ref{pulling-lemma} and rigidity that
+
+\begin{equation*}
+\tikzfig{graphical-twist-proof}
+\end{equation*}
+
+as desired.
+\end{proof}
 
 We will later find ourselves interested more generally in the categories with two sided duals, known as pivotal categories \cite{selinger2011survey}. We state this formally below:
 
@@ -2613,6 +2700,7 @@ Additionally, a pivotal category is required to satisfy the following conditions
 \end{definition}
 
 Seeing as $A$ is a dual for $A^{*}$, uniqueness of duals (Proposition \ref{rigidity}) says that we have a canonical isomorphism $A$ with $A^{**}$. Pivotal categories thus can be alternatively described as rigid categories in which there is a natural isomorphism between the functors $(\--)$ and $(\--)^{**}$ (Exercise \thesection.11). We now prove that our choices of maps for MTCs give pivotal structure:
+
 
 \begin{proposition} All MTCs are pivotal categories.
 \end{proposition}
@@ -2647,7 +2735,6 @@ We now demonstrate some basic facts traces:
 \begin{proposition}\label{trace} Let $\Ccat$ be a spherical category. For all $A,B\in \Ccat$, $f\in \End(A)$ the following claims are all true:
 
 \begin{enumerate}
-\item $\tr(f\otimes g)=\tr(f)\cdot \tr(g)$ for all $g\in \End(B)$
 \item $\tr(f\oplus g)=\tr(f)+\tr(g)$ for all $g\in \End(B)$
 \item $\tr(f\circ g)=\tr(g\circ f)$ for all $g\in \End(A)$
 \item $\tr(f^{*})=\tr(f)$
@@ -2657,6 +2744,13 @@ We now demonstrate some basic facts traces:
 
 \end{proposition}
 \begin{proof} .[WORK: BRAID do proof]
+\end{proof}
+
+To commute with the tensor product, one needs the twist of an MTC:
+
+\begin{proposition} .[WORK: Prove that ribbon identity $\implies$ nice graphical compatibility condition, and thus in turn that $\tr(f\otimes g)=\tr(f)\cdot \tr(g)$]
+\end{proposition}
+\begin{proof}.[WORK: Do proof.]
 \end{proof}
 
 Traces allow us to naturally define many very powerful, physically observable, and mathematically interesting invariants. For example, let $A\in \Ccat$ be an object in a spherical category. In vector spaces, the trace of the identity gives the dimension of the vector space. Thus, we define more generally $d_A=\tr(\id_A)$ to be the \textit{quantum dimension} of $A$. The following properties give a taste of the depth present in this theory:
@@ -3018,7 +3112,7 @@ We now move on to showing that $\Zcal(\Ccat)$ is really a braided fusion categor
 \begin{enumerate}
 \item Linearity of $\Zcal(\Ccat)$ follows from the linearity of $\Ccat$.
 
-\item (Rigidity) Diagrams commuting in $\Ccat$ implies they commute in $\Zcal(\Ccat)$, hence rigidity is immediate. However, one does need to make sure that $\beta_{A^*,\--}$ is a valid half-braiding, as well as that $\ev$ and $\coev$ satisfy the compatibility condition required to be morphisms in $\Zcal(\Ccat)$. Seeing as the only term in the definition of $\beta_{A^*,B\otimes C}$ that deals with $B\otimes C$ is $\beta_{A,\--}$, the fact that $\beta_{A,\--}$ is a half-braiding immediately implies that $\beta_{A^*,\--}$. The fact that $\ev_A$ and $\coev_A$ satisfy the compatibility conditions follows from a straightforward computation. [WORK: This is wrong. Give cool graphical proof.]
+\item (Rigidity) Diagrams commuting in $\Ccat$ implies they commute in $\Zcal(\Ccat)$, hence rigidity is immediate. However, one does need to make sure that $\beta_{A^*,\--}$ is a valid half-braiding, as well as that $\ev$ and $\coev$ satisfy the compatibility condition required to be morphisms in $\Zcal(\Ccat)$. Seeing as the only term in the definition of $\beta_{A^*,B\otimes C}$ that deals with $B\otimes C$ is $\beta_{A,\--}$, the fact that $\beta_{A,\--}$ is a half-braiding immediately implies that $\beta_{A^*,\--}$. The fact that $\ev_A$ and $\coev_A$ satisfy the compatibility conditions follows from a straightforward computation. [WORK: This is wrong. Give cool graphical proof instead.]
 
 \item (Semisimplicity) Suppose $A\in \Zcal(\Ccat)$ has a decomposition $A\cong A_0\oplus A_1$ in $\Ccat$. We can canonically define the half braiding $\beta_{A_0,\--}$ by being the composition
 
@@ -3092,7 +3186,7 @@ induces a natural isomorphim between the identity functor and the double dual fu
 
 Thus, we have arrived at the MTC associated with the toric code: $\Zcal(\Vecc_{\ZZ_2})$, the Drinfeld center of of the category of $\ZZ_2$ graded vector spaces. This is in some sense the simplest MTC. Namely, the simplest MTCs are those which come from spherical fusion categories, $\Zcal(\Ccat)$ for some $\Ccat$. The simplest fusion categories are those which come from groups, $\Rep_G$ for some $G$. The simplest non-trivial group is $\ZZ_2$.
 
-[WORK: Quantum double of mixed state=pure state $\implies$ intuition?] Another intuition for $\Zcal(\Ccat)$, alluded to in the introduction of this section, is that it is a sort of ``quantum double" \cite{felice2017hopf}. The intuition for why $\Zcal$ can be viewed as gluing two copies of $\Ccat$ with a twist is seen as follows. Suppose $(\Ccat,\beta)$ is a braided monoidal category. Then, there is a canonical braided monoidal functor
+[WORK: Quantum double of mixed state=pure state $\implies$ intuition? Maybe there's something in \cite{cowtan2022quantum}.] Another intuition for $\Zcal(\Ccat)$, alluded to in the introduction of this section, is that it is a sort of ``quantum double" \cite{felice2017hopf}. The intuition for why $\Zcal$ can be viewed as gluing two copies of $\Ccat$ with a twist is seen as follows. Suppose $(\Ccat,\beta)$ is a braided monoidal category. Then, there is a canonical braided monoidal functor
 
 \begin{align*}
 \Ccat &\to \Zcal(\Ccat).\\
@@ -3238,7 +3332,10 @@ are isomorphisms for all $C\in \Ccat$.
 
 Just as with MTCs, twists $\theta$ induce pivotal structures. Conversely, any pivotal structure satisfying the condition of (ii) gives a twisting by [WORK: what process? Seems fancy again.]. Show that these two processes are well defined and are inverses of one another, hence given an equivalence between statements (i) and (ii). A rigid monoidal category satisfying either of these conditions is called a \textit{ribbon} monoidal category. Thus, MTCs can be defined as ``non-degenerate ribbon fusion categories".
 
-\item . [WORK: Define the Deligne tensor product. Show that there is a map $\Ccat\boxtimes \Ccat^{rev}\to \Zcal(\Ccat)$. Can I walk people through the proof that this is an isomorphism if and only if $\Ccat$ is modular?]
+\item . [WORK: Define the Deligne tensor product. Show that there is a map $\Ccat\boxtimes \Ccat^{rev}\to \Zcal(\Ccat)$. Can I walk people through the proof that this is an isomorphism if and only if $\Ccat$ is modular?]. [WORK: This whose ``property vs. structure" buisness is messing me up. Given a braided fusion category, is being modular a property or a structure?]
+
+\item [WORK: Frobenius-Schur indicator exercise? I think it might be a bit unnecarily actually.]
+
 \end{enumerate}
 
 \section{Topological Quantum Computing}
@@ -3252,7 +3349,7 @@ Just as with MTCs, twists $\theta$ induce pivotal structures. Conversely, any pi
 [WORK: The big thing is to draw the picture between topological quantum phases of matter, TQFTs, MTCs, and TQC. Show exactly what this looks like in the case of the toric code, i.e., what the topological quantum phase of matter is, the TQFT, the MTC, and the resulting TQC. Add all the connections and insights that I've come up with along this journey, and things I would feel remiss not including. Really, this should be a version of an introduction-to-TQC-for-experts section. Should definitely mention that TQFTs are generally $1$-extended with punctures, to visualize anyons. Should mention that literally making torus bigger will make error rate smaller, since it's harder for things to accidentally interact with each other (exponential decrease). Maybe another thing to add is how the 1st priority is to minimize energy, and the 2nd order is to maximize entanglement.]
 
 
-[WORK: Find full correct reference to TQFT/MTC correspondence. Can I find one for the unitary case?]
+[WORK: Find full correct reference to TQFT/MTC correspondence (I think the best is here: \cite{bartlett2015modular}) Can I find one for the unitary case?]
 
 [WORK: Give 2nd motivation for topological quantum computing. Namely, that this might be a good avenue for proving that QC can solve NP complete problems, or close to NP problems! Bring up how this is clearly a good theory for computing knot invariants (add reference to examples of knot invariants that were proved to be easy to calculate using this method). Then, mention that computing the Jones polynomial is known to be NP hard! This is in the introduction of Wang and Rowell's ``Mathematics of Topological Quantum Computation". This could be a motivation for hybrid computing like
 
@@ -3286,10 +3383,10 @@ This sort of ``TQC $\implies$ QC" has an analogy to the process of ``QC $\implie
 .[WORK: compute what everything looks like for the toric code using category theory. Give the big picture triangle correspondence for the toric code.]
 
 
-\subsection{Universal TQC with the Fibonacci anyon}
-\label{Universal TQC with the Fibonacci anyon}
+\subsection{Universal TQC with Fibonacci anyons}
+\label{Universal TQC with Fibonacci anyons}
 
-.[WORK: introduce the Fibonacci anyon. Prove that it is universal with braiding alone. Really what I want to do is show that any form of TQC is universal, but I just think Fibonacci will be simplest. If anyone has a definition it should be here: \cite{trebst2008short}. There's a cool physics paper, which motivates the fact that the Fibonacci anyon can't be made in the lab \cite{freedman2012galois}.]
+.[WORK: introduces Fibonacci anyon. Prove they are universal with braiding alone. Really what I want to do is show that any form of TQC is universal, but I just think Fibonacci will be simplest. If anyone has a definition it should be here: \cite{trebst2008short}. There's a cool physics paper which motivates the fact that the Fibonacci anyon can't be made in the lab \cite{freedman2012galois}.]
 
 
 

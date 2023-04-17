@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  14 APR 2023 12:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  17 APR 2023 03:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -834,97 +834,92 @@ Overfull \hbox (6.3804pt too wide) detected at line 329
  []
 
 [12] [13] [14] [15] [16] [17]
-Overfull \hbox (0.32915pt too wide) in paragraph at lines 523--524
+Overfull \hbox (0.32915pt too wide) in paragraph at lines 535--536
 \OT1/cmr/m/n/10 cor-re-sponds to Her-mi-tian ma-tri-ces $\OML/cmm/m/it/10 H$\OT
 1/cmr/m/n/10 . Namely, writ-ing $[] = [][] \OML/cmm/m/it/10 c[] []$
  []
 
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 563--564
+[18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 575--576
 
  []
 
-[19]
-<./images/torus.png, id=96, 1089.06876pt x 478.28688pt>
+[20]
+<./images/torus.png, id=99, 1089.06876pt x 478.28688pt>
 File: ./images/torus.png Graphic file (type png)
 <use ./images/torus.png>
-Package pdftex.def Info: ./images/torus.png  used on input line 595.
+Package pdftex.def Info: ./images/torus.png  used on input line 607.
 (pdftex.def)             Requested size: 272.26653pt x 119.57143pt.
- [20] [21 <./images/torus.png>] [22]
+ [21 <./images/torus.png>] [22]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 674.
+(amsmath)                 on input line 686.
 
 [23] [24]
 <./images/homology-classes.png, id=116, 752.31062pt x 323.70938pt>
 File: ./images/homology-classes.png Graphic file (type png)
 <use ./images/homology-classes.png>
-Package pdftex.def Info: ./images/homology-classes.png  used on input line 729.
+Package pdftex.def Info: ./images/homology-classes.png  used on input line 741.
 
 (pdftex.def)             Requested size: 263.31265pt x 113.29997pt.
  [25 <./images/homology-classes.png>]
-Overfull \hbox (2.23648pt too wide) in paragraph at lines 753--754
+Overfull \hbox (2.23648pt too wide) in paragraph at lines 765--766
 []\OT1/cmr/m/n/10 We fi-nally ob-serve that no cy-cle can be ho-mol-o-gous to t
 wo of the $\OMS/cmsy/m/n/10 f\OT1/cmr/bx/n/10 0\OML/cmm/m/it/10 ; ; ^^L; ^^L\
 OMS/cmsy/m/n/10 g$\OT1/cmr/m/n/10 ,
  []
 
-[26]
-<./images/not-alpha-gate.png, id=125, 705.63625pt x 277.53688pt>
+[26] [27]
+<./images/not-alpha-gate.png, id=128, 705.63625pt x 277.53688pt>
 File: ./images/not-alpha-gate.png Graphic file (type png)
 <use ./images/not-alpha-gate.png>
-Package pdftex.def Info: ./images/not-alpha-gate.png  used on input line 790.
+Package pdftex.def Info: ./images/not-alpha-gate.png  used on input line 802.
 (pdftex.def)             Requested size: 317.53337pt x 124.89043pt.
- [27] [28 <./images/not-alpha-gate.png>]
+ [28 <./images/not-alpha-gate.png>]
 <./images/dual-celluation.png, id=133, 379.4175pt x 381.425pt>
 File: ./images/dual-celluation.png Graphic file (type png)
 <use ./images/dual-celluation.png>
-Package pdftex.def Info: ./images/dual-celluation.png  used on input line 818.
+Package pdftex.def Info: ./images/dual-celluation.png  used on input line 830.
 (pdftex.def)             Requested size: 113.82613pt x 114.42838pt.
- [29 <./images/dual-celluation.png>]
-Overfull \hbox (25.00888pt too wide) in paragraph at lines 854--855
+ [29 <./images/dual-celluation.png>] [30]
+Overfull \hbox (25.00888pt too wide) in paragraph at lines 866--867
 []\OT1/cmr/m/n/10 Hence, we now have a full set of gen-er-a-tors for our gate g
 roup: $\OMS/cmsy/m/n/10 f^^F\OML/cmm/m/it/10 I; [][]; \OT1/cmr/m/n/10 (\OMS/cms
 y/m/n/10 ^^@\OT1/cmr/m/n/10 1)[]\OMS/cmsy/m/n/10 g$\OT1/cmr/m/n/10 ,
  []
 
-
-LaTeX Warning: Reference `fig:braiding' on page 30 undefined on input line 866.
-
-
-[30]
-Underfull \hbox (badness 10000) in paragraph at lines 872--873
+(./figures/basic-braid-XY.tikz) [31]
+Underfull \hbox (badness 10000) in paragraph at lines 891--892
 
  []
 
-[31] [32]
-<./images/genus-two.jpeg, id=152, 215.80624pt x 235.88126pt>
+[32] [33]
+<./images/genus-two.jpeg, id=156, 215.80624pt x 235.88126pt>
 File: ./images/genus-two.jpeg Graphic file (type jpg)
 <use ./images/genus-two.jpeg>
-Package pdftex.def Info: ./images/genus-two.jpeg  used on input line 957.
+Package pdftex.def Info: ./images/genus-two.jpeg  used on input line 976.
 (pdftex.def)             Requested size: 53.95142pt x 58.97017pt.
- [33 <./images/genus-two.jpeg>]
 <./images/klein-bottle.png, id=157, 351.3125pt x 262.9825pt>
 File: ./images/klein-bottle.png Graphic file (type png)
 <use ./images/klein-bottle.png>
-Package pdftex.def Info: ./images/klein-bottle.png  used on input line 978.
+Package pdftex.def Info: ./images/klein-bottle.png  used on input line 997.
 (pdftex.def)             Requested size: 87.8279pt x 65.74545pt.
- [34 <./images/klein-bottle.png>]
-<./images/cobordism.png, id=161, 588.1975pt x 273.02pt>
+ [34 <./images/genus-two.jpeg>] [35 <./images/klein-bottle.png>]
+<./images/cobordism.png, id=164, 588.1975pt x 273.02pt>
 File: ./images/cobordism.png Graphic file (type png)
 <use ./images/cobordism.png>
-Package pdftex.def Info: ./images/cobordism.png  used on input line 1026.
+Package pdftex.def Info: ./images/cobordism.png  used on input line 1045.
 (pdftex.def)             Requested size: 235.27483pt x 109.20605pt.
 
-[35 <./images/cobordism.png>] [36] [37]
+[36 <./images/cobordism.png>] [37]
 <./images/all-moves.png, id=173, 1209.51875pt x 750.805pt>
 File: ./images/all-moves.png Graphic file (type png)
 <use ./images/all-moves.png>
-Package pdftex.def Info: ./images/all-moves.png  used on input line 1072.
+Package pdftex.def Info: ./images/all-moves.png  used on input line 1091.
 (pdftex.def)             Requested size: 241.89946pt x 150.15834pt.
- [38 <./images/all-moves.png>]
-Overfull \hbox (5.54213pt too wide) in paragraph at lines 1111--1112
+ [38] [39 <./images/all-moves.png>]
+Overfull \hbox (5.54213pt too wide) in paragraph at lines 1130--1131
 \OT1/cmr/m/n/10 spond-ing vec-tor in $\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 (\OML/c
 mm/m/it/10 S\OT1/cmr/m/n/10 )$, $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 Z[]\OT1/cmr
 /m/n/10 (\OML/cmm/m/it/10 S\OT1/cmr/m/n/10 ; \U/msb/m/n/10 Z[]\OT1/cmr/m/n/10 )
@@ -933,19 +928,19 @@ mm/m/it/10 S\OT1/cmr/m/n/10 )$, $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 Z[]\OT1/cmr
 /10 Z[]\OT1/cmr/m/n/10 )$,
  []
 
-[39] [40]
-Overfull \hbox (9.92447pt too wide) in paragraph at lines 1139--1140
+[40] [41]
+Overfull \hbox (9.92447pt too wide) in paragraph at lines 1158--1159
 []\OT1/cmr/m/n/10 We
  []
 
-[41]
-<./images/cohomologous.png, id=188, 832.10875pt x 300.12125pt>
+[42]
+<./images/cohomologous.png, id=191, 832.10875pt x 300.12125pt>
 File: ./images/cohomologous.png Graphic file (type png)
 <use ./images/cohomologous.png>
-Package pdftex.def Info: ./images/cohomologous.png  used on input line 1179.
+Package pdftex.def Info: ./images/cohomologous.png  used on input line 1198.
 (pdftex.def)             Requested size: 249.63455pt x 90.03706pt.
- [42 <./images/cohomologous.png>] [43]
-Overfull \hbox (13.9935pt too wide) in paragraph at lines 1225--1226
+ [43 <./images/cohomologous.png>] [44]
+Overfull \hbox (13.9935pt too wide) in paragraph at lines 1244--1245
 []\OT1/cmr/m/n/10 The bor-dism $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 has the ef-
 fect of swap-ping $\OML/cmm/m/it/10 S[]$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 
 S[]$\OT1/cmr/m/n/10 , hence sends $\OML/cmm/m/it/10 H[]\OT1/cmr/m/n/10 (\OML/cm
@@ -953,76 +948,90 @@ m/m/it/10 S[]\OT1/cmr/m/n/10 ; \U/msb/m/n/10 Z[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n
 /10 ^^B
  []
 
-[44]
-Underfull \hbox (badness 10000) in paragraph at lines 1235--1236
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 1254--1255
 
  []
 
-[45] [46] [47] [48] [49] [50] [51] [52]
-Overfull \hbox (11.06pt too wide) in paragraph at lines 1511--1512
+[46] [47] [48] [49] [50] [51] [52] [53]
+Overfull \hbox (11.06pt too wide) in paragraph at lines 1530--1531
 []\OT1/cmr/m/n/10 Now, choose $\OML/cmm/m/it/10 g[] \OT1/cmr/m/n/10 : \OML/cmm/
 m/it/10 C[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 D[]$\OT1/cmr/m/n/10 . The state
 -ment that $[][](\OML/cmm/m/it/10 g; A\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^N []
 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f; A\OT1/cmr/m/n/10 ) =
  []
 
-[53]
-Overfull \hbox (27.33253pt too wide) in paragraph at lines 1526--1527
+
+Overfull \hbox (27.33253pt too wide) in paragraph at lines 1545--1546
 \OT1/cmr/m/n/10 trans-for-ma-tion be-tween the func-tors $[]$ and $[]$.
  []
 
-[54] [55] [56]
-Overfull \hbox (9.9589pt too wide) detected at line 1653
+[54] [55] [56] [57]
+Overfull \hbox (9.9589pt too wide) detected at line 1672
 []
  []
 
-[57]
-Overfull \hbox (11.37311pt too wide) detected at line 1699
+[58]
+Overfull \hbox (11.37311pt too wide) detected at line 1718
 []
  []
 
 
-Overfull \hbox (16.41956pt too wide) in paragraph at lines 1731--1732
+Overfull \hbox (16.41956pt too wide) in paragraph at lines 1750--1751
 \OT1/cmr/m/n/10 ma-tion be-tween two monoidal func-tors $(\OML/cmm/m/it/10 F[];
  ^^V[]; ^^O[]\OT1/cmr/m/n/10 )$ and $(\OML/cmm/m/it/10 F[]; ^^V[]; ^^O[]\OT1/cm
 r/m/n/10 )$ be-tween monoidal
  []
 
-[58] [59]
-Underfull \hbox (badness 10000) in paragraph at lines 1827--1828
+[59] [60]
+Underfull \hbox (badness 10000) in paragraph at lines 1846--1847
 
  []
 
-[60]
-Overfull \hbox (11.38548pt too wide) in paragraph at lines 1848--1849
+
+Overfull \hbox (3.88943pt too wide) in paragraph at lines 1855--1856
+[]\OT1/cmr/m/n/10 Use the Yoneda lemma to show that the above pair-ing is non-d
+egenerate
+ []
+
+[61]
+Overfull \hbox (11.38548pt too wide) in paragraph at lines 1865--1866
 []\OT1/cmr/m/n/10 is a bi-jec-tion. Here, $[][](\OML/cmm/m/it/10 A;\OT1/cmr/m/n
 /10 - \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 )$ is con-sid-ered as a func-tor in $
 [](\U/rsfs/m/n/10 C[]\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 )$,
  []
 
-[61] [62] [63]
-<./images/Y-type.png, id=266, 394.47375pt x 389.455pt>
+[62] [63] [64]
+<./images/Y-type.png, id=269, 394.47375pt x 389.455pt>
 File: ./images/Y-type.png Graphic file (type png)
 <use ./images/Y-type.png>
-Package pdftex.def Info: ./images/Y-type.png  used on input line 1953.
+Package pdftex.def Info: ./images/Y-type.png  used on input line 1970.
 (pdftex.def)             Requested size: 118.34303pt x 116.83739pt.
- [64 <./images/Y-type.png>] [65]
-<./images/graphical-language.png, id=274, 1130.2225pt x 760.8425pt>
+ [65 <./images/Y-type.png>] [66]
+<./images/graphical-language.png, id=277, 1130.2225pt x 760.8425pt>
 File: ./images/graphical-language.png Graphic file (type png)
 <use ./images/graphical-language.png>
 Package pdftex.def Info: ./images/graphical-language.png  used on input line 20
-42.
+59.
 (pdftex.def)             Requested size: 226.0405pt x 152.1658pt.
- [66]
-(./figures/simple-cotriangle.tikz) (./figures/6j-tree.tikz) [67 <./images/graph
-ical-language.png>] [68]
+
+(./figures/simple-cotriangle.tikz) [67] (./figures/6j-tree.tikz) [68 <./images/
+graphical-language.png>]
 <./images/pentagon.png, id=286, 507.8975pt x 478.78876pt>
 File: ./images/pentagon.png Graphic file (type png)
 <use ./images/pentagon.png>
-Package pdftex.def Info: ./images/pentagon.png  used on input line 2104.
+Package pdftex.def Info: ./images/pentagon.png  used on input line 2121.
 (pdftex.def)             Requested size: 142.21033pt x 134.05994pt.
- (./figures/time-symmetry.tikz) [69 <./images/pentagon.png>] [70]
-Overfull \hbox (13.46875pt too wide) in paragraph at lines 2188--2189
+ (./figures/time-symmetry.tikz) [69] [70 <./images/pentagon.png>] (./figures/R-
+symbols.tikz) (./figures/R-symbols-inverse.tikz)
+[71]
+<./images/hexagon.png, id=297, 681.54625pt x 606.265pt>
+File: ./images/hexagon.png Graphic file (type png)
+<use ./images/hexagon.png>
+Package pdftex.def Info: ./images/hexagon.png  used on input line 2180.
+(pdftex.def)             Requested size: 170.38614pt x 151.56587pt.
+ (./figures/non-degeneracy.tikz) [72 <./images/hexagon.png>]
+Overfull \hbox (13.46875pt too wide) in paragraph at lines 2227--2228
 \OT1/cmr/m/n/10 (\U/rsfs/m/n/10 L\OML/cmm/m/it/10 ; N; []\OT1/cmr/m/n/10 )$, fo
 l-lowed by an iso-mor-phism of fu-sion sys-tems $(\U/rsfs/m/n/10 L\OML/cmm/m/it
 /10 ; N; []\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ! \OT1/cmr/m/n/10 (\U/rsfs/m/n/10
@@ -1030,13 +1039,13 @@ l-lowed by an iso-mor-phism of fu-sion sys-tems $(\U/rsfs/m/n/10 L\OML/cmm/m/it
  []
 
 
-Overfull \hbox (4.01346pt too wide) in paragraph at lines 2190--2191
+Overfull \hbox (4.01346pt too wide) in paragraph at lines 2231--2232
 []\OT1/cmr/m/n/10 .[WORK: BRAID Give ex-pla-na-tion of rect-an-gle ax-iom, pref
 er-ably with graph-
  []
 
-[71] [72] [73]
-Overfull \hbox (8.96042pt too wide) in paragraph at lines 2315--2316
+[73] [74] [75]
+Overfull \hbox (8.96042pt too wide) in paragraph at lines 2356--2357
 \OT1/cmr/m/n/10 gories $\U/rsfs/m/n/10 C\OML/cmm/m/it/10 ; \U/rsfs/m/n/10 D$ \O
 T1/cmr/m/n/10 is a func-tor $\OML/cmm/m/it/10 F \OT1/cmr/m/n/10 : \U/rsfs/m/n/1
 0 C \OMS/cmsy/m/n/10 ! \U/rsfs/m/n/10 D$ \OT1/cmr/m/n/10 such that $\OML/cmm/m/
@@ -1046,11 +1055,11 @@ A\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B\OT1/c
 mr/m/n/10 ))$
  []
 
-[74] (./figures/bad-rigidity.tikz) [75] (./figures/eval-coeval.tikz)
-(./figures/rigidity.tikz) [76] (./figures/rigidity-proof.tikz) [77]
+[76] (./figures/bad-rigidity.tikz) (./figures/eval-coeval.tikz) [77]
+(./figures/rigidity.tikz) [78] (./figures/rigidity-proof.tikz)
 (./figures/rigidity-functor.tikz) (./figures/rigidity-functor-proof.tikz)
-(./figures/rigidity-inverse.tikz) [78]
-Overfull \hbox (1.70798pt too wide) in paragraph at lines 2458--2459
+[79] (./figures/rigidity-inverse.tikz)
+Overfull \hbox (1.70798pt too wide) in paragraph at lines 2499--2500
 []\OT1/cmr/m/it/10 We call $\U/rsfs/m/n/10 C$ \OT1/cmr/m/it/10 mul-ti-plic-ity 
 free if $\OML/cmm/m/it/10 N[] \OMS/cmsy/m/n/10 2 f\OT1/cmr/m/n/10 0\OML/cmm/m/i
 t/10 ; \OT1/cmr/m/n/10 1\OMS/cmsy/m/n/10 g$ \OT1/cmr/m/it/10 for all triples. T
@@ -1058,27 +1067,31 @@ he pair $\OT1/cmr/m/n/10 (\U/rsfs/m/n/10 L\OML/cmm/m/it/10 ; N[]\OT1/cmr/m/n/10
  )$
  []
 
-[79] (./figures/cotriangle-reprise.tikz) [80]
-(./figures/cotriangle-conditions.tikz) (./figures/first-basis.tikz)
-(./figures/second-basis.tikz) [81] [82] [83] (./figures/trace.tikz)
-(./figures/trace-right.tikz) [84] [85] [86]
+[80] [81] (./figures/cotriangle-reprise.tikz)
+(./figures/cotriangle-conditions.tikz) (./figures/first-basis.tikz) [82]
+(./figures/second-basis.tikz) [83] (./figures/braiding-notation.tikz)
+(./figures/R-symbols-reprise.tikz) [84] (./figures/pulling-lemma.tikz)
+(./figures/pulling-lemma-proof.tikz) [85] (./figures/co-dual.tikz)
+(./figures/graphical-twist.tikz) (./figures/graphical-twist-proof.tikz)
+[86] (./figures/trace.tikz) [87] (./figures/trace-right.tikz) [88] [89]
+[90]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2725.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2819.
 
- [87] [88] [89]
-Overfull \hbox (32.03278pt too wide) detected at line 2812
+ [91] [92] [93]
+Overfull \hbox (32.03278pt too wide) detected at line 2906
 []
  []
 
-[90] [91]
-Overfull \hbox (17.10213pt too wide) in paragraph at lines 2876--2877
+[94]
+Overfull \hbox (17.10213pt too wide) in paragraph at lines 2970--2971
 []\OT1/cmr/m/n/10 The def-i-ni-tion of the in-verse ma-trix says that $[][] \OM
 L/cmm/m/it/10 c[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 c[]\OT1/cmr/m/n/10 )[] = []$
 .
  []
 
-[92] [93]
-Overfull \hbox (34.12456pt too wide) in paragraph at lines 2925--2926
+[95] [96]
+Overfull \hbox (34.12456pt too wide) in paragraph at lines 3019--3020
 []\OT1/cmr/m/it/10 (Morphisms) Given $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A; \U/e
 ur/m/n/10 ^^L[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/
 it/10 B; \U/eur/m/n/10 ^^L[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 Z\OT1/cmr/m/n/
@@ -1088,54 +1101,64 @@ it/10 B; \U/eur/m/n/10 ^^L[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 Z\OT1/cmr/m/n/
  []
 
 
-Overfull \hbox (15.49455pt too wide) in paragraph at lines 2935--2936
+Overfull \hbox (15.49455pt too wide) in paragraph at lines 3029--3030
 []\OT1/cmr/m/it/10 (Braiding) We de-fine the braid-ing be-tween two el-e-ments 
 $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A; ^^L[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; 
 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; ^^L[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2
  []
 
-
-Overfull \hbox (78.26105pt too wide) detected at line 2953
+[97]
+Overfull \hbox (78.26105pt too wide) detected at line 3047
 []
  []
 
-[94]
-Overfull \hbox (7.29327pt too wide) detected at line 2971
+
+Overfull \hbox (7.29327pt too wide) detected at line 3065
 []
  []
 
-[95]
-Overfull \hbox (25.6396pt too wide) in paragraph at lines 3013--3014
+[98]
+Overfull \hbox (25.6396pt too wide) in paragraph at lines 3107--3108
 []\OT1/cmr/m/n/10 (All monomor-phisms and epi-mor-phisms are nor-mal) En-dow-in
 g ker-nels/cokernels
  []
 
-[96] [97]
-Overfull \hbox (6.19286pt too wide) in paragraph at lines 3075--3076
+[99] [100]
+Overfull \hbox (6.19286pt too wide) in paragraph at lines 3169--3170
 []\OT1/cmr/m/n/10 (Non-degeneracy) .[WORK: BRAID How do I de-fine the right hal
 f-braiding?
  []
 
-[98]
-Underfull \hbox (badness 10000) in paragraph at lines 3124--3125
+[101]
+
+Package natbib Warning: Citation `cowtan2022quantum' on page 102 undefined on i
+nput line 3189.
+
+[102]
+Underfull \hbox (badness 10000) in paragraph at lines 3218--3219
 
  []
 
-[99]
-Overfull \hbox (7.59065pt too wide) in paragraph at lines 3137--3138
+
+Overfull \hbox (7.59065pt too wide) in paragraph at lines 3231--3232
 []\OT1/cmr/m/n/10 (Morphisms) A mor-phism be-tween closed ori-ented $\OML/cmm/m
 /it/10 n$\OT1/cmr/m/n/10 -manifolds $\OML/cmm/m/it/10 Y[]; Y[]$
  []
 
-[100]
-Overfull \hbox (5.30623pt too wide) in paragraph at lines 3170--3171
+[103]
+Overfull \hbox (5.30623pt too wide) in paragraph at lines 3264--3265
 []$\OML/cmm/m/it/10 f$ \OT1/cmr/m/n/10 is a ker-nel if and only if $\OML/cmm/m/
 it/10 f$ \OT1/cmr/m/n/10 sat-is-fies the uni-ver-sal prop-erty of $[]([]\OML/cm
 m/m/it/10 f\OT1/cmr/m/n/10 )$. 
  []
 
-[101] [102] [103] [104] [105]
-Overfull \hbox (1.3881pt too wide) in paragraph at lines 3345--3346
+[104] [105]
+
+Package natbib Warning: Citation `bartlett2015modular' on page 106 undefined on
+ input line 3352.
+
+[106] [107] [108]
+Overfull \hbox (1.3881pt too wide) in paragraph at lines 3442--3443
 []\OT1/cmr/m/n/10 (Conjugation) A lin-ear map $\OMS/cmsy/m/n/10 y \OT1/cmr/m/n/
 10 : [](\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 
 )\OML/cmm/m/it/10 ; V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 )) \O
@@ -1145,98 +1168,98 @@ MS/cmsy/m/n/10 ! []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 (\OML/cmm
  []
 
 
-Overfull \hbox (13.79912pt too wide) in paragraph at lines 3354--3355
+Overfull \hbox (13.79912pt too wide) in paragraph at lines 3451--3452
 \OT1/cmr/m/n/10 de-fined by $[] = [](\OML/cmm/m/it/10 f \OMS/cmsy/m/n/10 ^^N \O
 ML/cmm/m/it/10 g[]\OT1/cmr/m/n/10 )$ is an in-ner prod-uct, en-dow-ing $[](\OML
 /cmm/m/it/10 V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 )\OML/cmm/m/
 it/10 ; V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 ))$
  []
 
-[106] [107] [108]
-Overfull \hbox (1.05043pt too wide) in paragraph at lines 3476--3477
+[109] [110] [111]
+Overfull \hbox (1.05043pt too wide) in paragraph at lines 3573--3574
 []\OT1/cmr/bx/n/10 Proposition B.5. []\OT1/cmr/m/it/10 There is a braided monoi
 dal equiv-a-lence of cat-e-gories $[] []
  []
 
-[109]
-Underfull \hbox (badness 10000) in paragraph at lines 3507--3508
+[112] [113]
+Underfull \hbox (badness 10000) in paragraph at lines 3604--3605
 
  []
 
-[110] [111] (./figures/cotriangle-second-reprise.tikz)
-Overfull \hbox (3.49374pt too wide) in paragraph at lines 3586--3587
+[114] [115] (./figures/cotriangle-second-reprise.tikz)
+Overfull \hbox (3.49374pt too wide) in paragraph at lines 3683--3684
 []\OT1/cmr/m/it/10 to mean the mor-phism $\OT1/cmr/m/n/10 1[]\OML/cmm/m/it/10 ;
  c$\OT1/cmr/m/it/10 . Com-pos-ing these to give bases of $[]\OT1/cmr/m/n/10 ((\
 OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 
 
  []
 
-[112] (./figures/6j-tree.tikz)
-Overfull \hbox (4.3061pt too wide) in paragraph at lines 3626--3627
+(./figures/6j-tree.tikz) [116]
+Overfull \hbox (4.3061pt too wide) in paragraph at lines 3723--3724
 []\OT1/cmr/m/n/10 This cor-re-spon-dence gen-er-al-izes to braided monoidal fu-
 sion cat-e-gories, MTCs,
  []
 
-[113] (./Toric Codes.bbl [114] [115] [116] [117] [118]
+[117] (./Toric Codes.bbl [118] [119] [120] [121] [122]
 Underfull \hbox (badness 1360) in paragraph at lines 371--376
 []\OT1/cmr/m/n/10 Fangyuan Yang, Alexan-der A Zi-brov, Rui-heng Bai, Takashi
  []
 
-) [119] (./Toric Codes.aux)
+)
 
-LaTeX Warning: There were undefined references.
+Package natbib Warning: There were undefined citations.
 
- ) 
+[123] (./Toric Codes.aux) ) 
 Here is how much of TeX's memory you used:
- 20278 strings out of 492649
- 441283 string characters out of 6129622
- 497193 words of memory out of 5000000
- 23668 multiletter control sequences out of 15000+600000
+ 20745 strings out of 492649
+ 448897 string characters out of 6129622
+ 506918 words of memory out of 5000000
+ 24101 multiletter control sequences out of 15000+600000
  23574 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,20n,84p,1317b,1107s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></
-usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></us
-r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/
-local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr
-/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/
-local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></u
-sr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/
-local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/lo
-cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/loca
-l/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/
-texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/te
-xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texl
-ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texliv
-e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2
-018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2018
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2018/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2018/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2018/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2018/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
-public/amsfonts/euler/eurm10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
-1/public/amsfonts/euler/eurm7.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
-e1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2018/texmf-dist/fonts
-/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/texmf-dist/f
-onts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2018/texmf-dis
-t/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2018/texmf-dist/fonts/
-type1/public/rsfs/rsfs5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pub
-lic/rsfs/rsfs7.pfb>
-Output written on "Toric Codes.pdf" (119 pages, 3811973 bytes).
+</usr/local/texlive/2018/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmbx9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmbxti10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfo
+nts/cmextra/cmex7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.
+pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
+></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></
+usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr
+/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/lo
+cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
+al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local
+/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/t
+exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/tex
+live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texli
+ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texliv
+e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive
+/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2
+018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/201
+8/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/local/texlive/2
+018/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/local/texlive/
+2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/
+texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/loc
+al/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texli
+ve/2018/texmf-dist/fonts/type1/public/rsfs/rsfs5.pfb></usr/local/texlive/2018/t
+exmf-dist/fonts/type1/public/rsfs/rsfs7.pfb>
+Output written on "Toric Codes.pdf" (123 pages, 3888405 bytes).
 PDF statistics:
- 574 PDF objects out of 1000 (max. 8388607)
- 382 compressed objects within 4 object streams
+ 589 PDF objects out of 1000 (max. 8388607)
+ 391 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 98 words of extra memory for PDF output out of 10000 (max. 10000000)
 
