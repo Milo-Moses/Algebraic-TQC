@@ -171,7 +171,7 @@ If all forms of quantum computation are roughly equivalent it is reasonable to a
 
 The intuition is as follows. The $\#$1 challenge in quantum computation is error correction. While fault tolerant quantum computers (quantum computers that fix errors faster than they arise) can provably exist, the error rate must be unrealistically low \cite{gottesman1998theory}. \textit{Topology} is the mathematical study of those properties of geometric objects that are invariant under small perturbations. The key insight of TQC is that instead of storing quantum information in the states of individual particles, the information can be stored in topological invariants of geometric objects. As such, even when physical errors happen (e.g. the geometric object is perturbed) the information stored in the qubits remains the same. More than being error correcting, TQC is naturally error resistant!
 
-As a thought experiment to reinforce this idea, suppose that Alice and Bob are placed across the country, and are given only a string to communicate with. By ``string" we really mean string: This is some physical piece of twine or rope. They can ship this string via train, and through this process there will undoubtedly be errors (e.g. the string will get pushed around during the voyage). How can Alice and Bob effectively communicate, while being relatively confident there are no errors?
+As a thought experiment to reinforce this idea, suppose that Alice and Bob are placed across the country, and are given only a string to communicate with. By ``string" we really mean string: this is some physical piece of twine or rope. They can ship this string via train, and through this process there will undoubtedly be errors (e.g. the string will get pushed around during the voyage). How can Alice and Bob effectively communicate, while being relatively confident there are no errors?
 
 \begin{figure}
 \begin{center}
@@ -1824,7 +1824,7 @@ commute for all $A,B,C\in \Ccat$.
 
 We will want to speak of equivalences of braided monoidal categories. That is, pairs of braided monoidal functors whose compositions in either direction have monoidal natural isomorphisms with the identity. We give the definition below:
 
-\begin{definition}[Braided monoidal functor] A braided monoidal functor between braided fusion categories $(\Ccat,\otimes_{\Ccat},\beta_{\Ccat})$, $(\Dcat,\otimes_{\Dcat},\beta_{\Dcat})$ is a monoidal functor $(F,\mu):\Ccat\to \Dcat$ such that the diagram
+\begin{definition}[Braided monoidal functor] A braided monoidal functor between braided monoidal categories $(\Ccat,\otimes_{\Ccat},\beta_{\Ccat})$, $(\Dcat,\otimes_{\Dcat},\beta_{\Dcat})$ is a monoidal functor $(F,\mu):\Ccat\to \Dcat$ such that the diagram
 
 \[\begin{tikzcd}
 	{F(A)\otimes_{\Dcat}F(B)} && {F(B)\otimes_{\Dcat}F(A)} \\
@@ -1959,9 +1959,9 @@ $$
 
 For this subsection, however, no knowledge of categories will be needed. This is because MTCs also have an elementary description as a finite collection of numbers representing physical properties of anyons. It should not be seen as too surprising that topological quantum phases of matter can be described with finite sets of numbers. At the end of the day, measuring physical phenomena always gives a number - wavelength, spin, energy etc... Thus, any practical physical theory should be boilable down to a collection of numbers.
 
-The most fundamental operation on anyons is \textit{fusion}, which we have up to now seldom discussed. The reason for this is that the elementary description of the toric code given in section \ref{The Toric Code} works perfectly well without introducing fusion, so the notion was omitted for clarity. We now revisit the picture of section \ref{The Toric Code}, with our eyes towards fusion. Fusion is the process in which two elementary particles collide, and output other types of particles. 
+The most fundamental operation on anyons is \textit{fusion}: the process in which quasiparticles fuse into one. The topological quantum computing (TQC) process in section \ref{The Toric Code} was based on creation, and the subsequent fusion, of particle anti/particle pairs. Both the $X$-type and $Z$-type quasiparticles in the toric code are their own antiparticle, meaning they fuse with themselves to give the ``do-nothing" quasiparticle. The $X$ and $Z$ type quasiparticles are named that way because they move by tensoring with $\sigma_X$ and $\sigma_Z$. The do-nothing quasiparticle moves by tensoring with the identity $I$, and hence call it the $I$-type quasiparticle.
 
-In the context of the toric code, we have discussed two types of quasiparticles: $X$-type and $Z$-type. When they fuse together, we get a third $Y$-type particle. Seeing as $X$-type particles move along edges and $Z$-type particles move along faces, we observe that the intersection of the trajectory of an $X$-type particle and a $Z$-type particle must occur at the center of an edge. Moving the $X$-type particle along that edge corresponds to tensoring that edge with $\sigma_{X}$, and moving the $Z$-type particle corresponds to tensoring with $\sigma_{Z}$. Hence, creating two pairs of $X$ and $Z$ type particles and fusing them together corresponds to tensoring with $\sigma_X\sigma_Z$. Seeing as $\sigma_X\sigma_Z=i\sigma_Y$, we call these $Y$-\textit{type} particles.
+The subtle issue is what happens when we fuse $X$ and $Z$ type quasiparticles. Seeing as $X$-type particles move along edges and $Z$-type particles move along faces, we observe that the intersection of the trajectory of an $X$-type particle and a $Z$-type particle must occur at the center of an edge. Moving the $X$-type particle along that edge corresponds to tensoring that edge with $\sigma_{X}$, and moving the $Z$-type particle corresponds to tensoring with $\sigma_{Z}$. Hence, creating two pairs of $X$ and $Z$ type particles and fusing them together corresponds to tensoring with $\sigma_X\sigma_Z$. Seeing as $\sigma_X\sigma_Z=i\sigma_Y$, we call these $Y$-\textit{type} particles.
 
 Visualizing $Y$-type particles is cumbersome - hence the desire to stick with $X$ and $Z$ particles. One practice could be to place the $Y$ type particle halfway between the $X$ and $Z$ type particles that fused to make it. Tensoring with $i\sigma_Y$ will move the particle in a strange fashion, keeping it halfway between faces and edges, as seen in Figure \ref{fig:Y-type}.
 
@@ -1973,30 +1973,21 @@ Visualizing $Y$-type particles is cumbersome - hence the desire to stick with $X
 \end{center}
 \end{figure}
 
-To write out the full set of fusion rules for the toric code, we need one last particle type. Namely, the ``do-nothing" particle that one gets when fusing a particle with its own antiparticle. While physically trivial, this particle is necessary to make our mathematical descriptions. Seeing as the do-nothing particle moves by doing nothing, we call it the $I$-type particle since it moves by tensoring with the identity matrix $I$. We denote $a\otimes b$ for the fusion of particles $a$ and $b$. We use the tensor product notation for fusion, becase it gives MTCs monoidal structure. The fusion rules are given as a table below:
+In generalizing this theory, we find ourselves finding a key difference: fusion is no longer a deterministic process. There can be two quasiparticles which, upon fusion, can create different possible quasiparticles. Quasiparticles which fuse in deterministic ways are exactly, in fact, the \textit{abelian} anyons [WORK: cite reference for this fact... Maybe make exercise?]. Thus, non-deterministic fusing is a key aspect of TQC.
 
-\begin{center}
-\begin{tabular}{c |c |c |c |c} 
- & $I$ & $X$ & $Y$ & $Z$ \\ [0.5ex] 
- \hline
- $I$ & $I$ & $X$ & $Y$ & $Z$ \\ 
- \hline
- $X$ & $X$ & $I$ & $Z$ & $Y$ \\
- \hline
- $Y$ & $Y$ & $-Z$ & $I$ & $X$ \\
- \hline
- $Z$ & $Z$ & $-Y$ & $-X$ & $I$
-\end{tabular}
-\end{center}
+To model this algebraically we are thus interested in spaces that look a lot like finite groups, but where the group operation on two elements (i.e. fusion) returns probability distribution on the other particles. This group operation should still have an analogue identity element, inverses, and associativity.
 
-We make a few observations. The fact that $X$ fused with $Z$ is $Y$ is by definition. The fact that $Z$ and $X$ fuse to $-Y$ comes from the fact that fusing the opposite direction means applying $\sigma_Z\sigma_X$ to the edge instead of $\sigma_X\sigma_Z$. Seeing as $\sigma_X$ and $\sigma_Z$ anticommute, this gives a $-1$ sign. All of the other boxes in the table are verified similarly. For example, $Z\otimes Y=-X$ because $\sigma_Z(i\sigma_Y)=-\sigma_X$. We observe that fusion essentially gives a group law on the space of anyon types. However, this is not exactly the case: sometimes the output is positive, and sometimes the output is negative.
+One key physical observation [WORK: cite reference. Maybe none exists?] is that when two quasiparticles are fused, the probability of observing any other quasiparticle will always be \textit{rational}. Clearing denominators, we can thus represent the fusion operation as assining an integer ``multiplicity" to every anyon type, which gives the relative probability of that particle being observed. For notation, we will say that if $a$ and $b$ are quasiparticle types which fuse to each anyon type $c$ with relative probability $N^{a,b}_{c}$, then
 
-In general, fusion will have the following structure. Let $\LL$ be a finite set, which we think of as being the possible anyon types. For any $a,b\in \LL$, we assert the formal equality
+$$a\otimes b = \sum_{c}N^{a,b}_{c}c.$$
 
-$$a\otimes b=\sum_{c\in \LL}N_{c}^{a,b}c.$$
+We use the tensor product $\otimes$ for fusion because in category theoretic language it will extend to a monoidal structure, and we use the notation of summation on the right hand side because in category theoretic language it will extend to a direct sum. The probability of observing $c$ after fusing $a$ and $b$ is
 
-This formula intuitively says that when $a$ and $b$ are fused this will result in a collection of particles, consisting of $N_c^{a,b}$ copies of $c$ for each $c\in \LL$. This can be thought of as the generalization of a finite group, where now the group law is allowed to output formal linear combinations of elements in the group. These generalizations of groups are called \textit{fusion systems}. Those fusion systems which satisfy a generalization of commutivity are called \textit{braided fusion systems}. MTCs are braided fusion categories which satisfy a certain non-degeneracy condition. In this way, one can think of MTCs as being vast ``non-degenerate" generalizations of finite abelian groups. We now formally state the definition of fusion system:
+$$\frac{N^{a,b}_{c}}{\sum_{d}N^{a,b}_{d}}.$$
 
+This generalization of a group is called a fusion system. Those fusion systems which satisfy a generalization of commutivity are called \textit{braided fusion systems}. MTCs are braided fusion categories which have a ``twist" and satisfy a certain non-degeneracy condition. In this way, one can think of MTCs as being vast ``non-degenerate" generalizations of finite abelian groups.
+
+As we add all of this structure to our fusion systems to better approximate the physical world, we will find that higher multiplicity terms (i.e. $N^{a,b}_c\geq 2$) generate a great deal of complexity. For this reason we restrict ourselves to \textit{multiplicity free} fusion systems, where all $N^{a,b}_c$ are $0$ or $1$. Physically, this means that when any two particles are fused, all of the possible results will occur equally likely. Many important MTCs are not multiplicity free. This is thus one of the advantages of the category theoretic viewpoint - we can consider the more general case with no extra effort. We now formally state the definition of fusion system
 
 \begin{definition}[Fusion system] A fusion system is the following data.
 
@@ -2040,10 +2031,6 @@ $$\sum_{e\in \LL}N_e^{a,b}N_{d}^{e,c}=\sum_{e\in \LL}N_{e}^{b,c}N_d^{a,e}.$$
 \raggedleft\qedsymbol{}
 \end{definition}
 
-.[WORK: I don't understand what fusion means anymore. Help! This will lead to rehauling this introduction part.]
-
-Observe that in the above definition we required that $N_c^{a,b}$ always be $0$ or $1$. That is, when two particles are fused they will not create multiple copies of the same particle. This condition is not strictly necessary, but we included it here as it greatly simplifies the theory. Many authors do not put this stipulation, and refer to examples with $N_c^{a,b}$ always equal to $0$ or $1$ as multiplicity free. 
-
 The next piece of the puzzle is based on one of the key ideas of monoidal categories: strict versus skeletal. Given quasiparticles $a,b,c$ the quantities $(a\otimes b)\otimes c$ and $a\otimes (b\otimes c)$ may be equal (i.e. the category is skeletal), but that does \textit{not} mean that the associativity map $(a\otimes b)\otimes c\to a\otimes (b\otimes c)$ is the identity (i.e the category is strict). This is in the same way that $X\otimes Y$ and $Y\otimes X$ are equal in the toric code, but the braiding map between them is non-trival: it is $-1$ times the identity. We roughly define a $6j$ fusion system to be a fusion system in which we have chosen isomorphisms between $(a\otimes b)\otimes c$ and $a\otimes (b\otimes c)$ for all $a,b,c\in \LL$.
 
 This is best visualized in a graphical language. The idea is to make rigorous the sorts of diagrams one will naturally draw when explaining the subject. The general policy for these diagrams is as follows:
@@ -2062,15 +2049,13 @@ This is best visualized in a graphical language. The idea is to make rigorous th
 \end{center}
 \end{figure}
 
-Some examples are found in Figure \ref{fig:graphical-language}. Special functions are encoded via special graphical diagrams. For example, suppose we choose a distinguished function $a\otimes b\to c$ to represent $a\otimes b$ fusing into $c$. In general the choice is mostly arbitrary, and changing our choices of such functions is \textit{gauge symmetry}, as will be formally defined later. Our informal notion of function will be put in firmer footing in subsection \ref{Category viewpoint} when we use category theory. We graphically write our distinguished function $a\otimes b\to c$ as
+Some examples are found in Figure \ref{fig:graphical-language}. Special functions are encoded via special graphical diagrams. For example, suppose we choose a distinguished function $a\otimes b\to c$ to represent $a\otimes b$ fusing into $c$. In general the choice is mostly arbitrary - changing our choices of such functions is \textit{gauge symmetry}, as will be formally defined later. Our informal notion of function will be put in firmer footing in subsection \ref{Category viewpoint} when we use category theory. We graphically write our distinguished function $a\otimes b\to c$ as
 
 \begin{equation*}
   \tikzfig{simple-cotriangle}
 \end{equation*}
 
-[WORK: Talk about ``admissability" here.
-
-Admissibility of the triple $(a,b,c)$ says that $N^{a,b}_{c}\neq 0$, which is equivalent to saying that when $a$ and $b$ fuse, a $c$ particle is created. In the language of functions, this is saying that there is a nonzero map $a\otimes b\to c$, i.e., a nonzero physical transforming $a\otimes b$ into $c$.]
+By our intuition of fusion there should be a morphism $a\otimes b\to c$ if and only if $N^{a,b}_c=1$, i.e., if and only if the probability of $a$ and $b$ fusing into $c$ is non-zero. We call a triple $(a,b,c)$ with $N^{a,b}_{c}=1$ \textit{admissible}. It is here that our assumption of multiplicity-freedom is so vital. When higher multiplicity terms are present, the space of morphisms $a\otimes b\to c$ will be higher dimensional. We would have to choose a \textit{basis} of distinguished morphisms. Keeping track of these basis functions is a hastle, but it is a fundamentally similar process.
 
 Consider a function $(a\otimes b)\otimes c \to d$. This can be decomposed as first taking a function $a\otimes b\to n$,  and then taking a function $n\otimes c\to d$, i.e., as
 
@@ -2137,7 +2122,7 @@ A natural question about $6j$ symbols could be as follows: the goal was to defin
 ``You work at a particle accelerator. You want to understand some particle. All you can do are throw other particles at it and see what happens. If you understand how your mystery particle responds to all possible test particles at all possible test energies, then you know everything there is to know about your mystery particle" - Ravi Vakil\footnote{This quote is relayed by an answer to the MathOverflow post ``'Philosophical' meaning of the Yoneda Lemma" by Theo Johnson-Freyd}.
 \end{quote}
 
-In this context, Vakil's quote is very literal - we are studying particles by looking at their fusion rules. Fusion, as a process, often happens when things hit each other very fast in a particle accelerator. By learning the relationship betwen the behaviors of $a\otimes (b\otimes c)$ and $(a\otimes b)\otimes c$ when hit by all particles, we learn about the relationship between $a\otimes (b\otimes c)$ and $(a\otimes b)\otimes c$. The Yoneda perspective will persist through this manuscript.
+In this context, Vakil's quote is very literal - we are studying particles by looking at their fusion rules. Fusion, as a process, often happens when things hit each other very fast in a particle accelerator. Fusion, properly, is not the tensor product but functions out of the tensor product. By learning the relationship betwen the behaviors of $a\otimes (b\otimes c)$ and $(a\otimes b)\otimes c$ under every fusion process, we learn about the relationship between $a\otimes (b\otimes c)$ and $(a\otimes b)\otimes c$. The Yoneda perspective will persist through this manuscript.
 
 We now define braided $6j$ fusion systems. Braiding gives an isomorphism between $a\otimes b$ and $b\otimes a$. For example, since $X$ and $Z$ anticommute in the toric code, the braiding isomorphism $X\otimes Z\to Z\otimes X$ is $-1$ times the identity. Keeping with our Yoneda perspective, instead of explicitely giving an isomorphism $a\otimes b$ and $b\otimes a$ we give isomorphism between the hom-paces $a\otimes b\to c$ and $b\otimes a\to c$ for every $c$. Graphically, this can be seen as the formula
 
@@ -2193,6 +2178,9 @@ With all this, we can finally define MTCs:
 
 \item (Non-degenerate) For $a\in \LL$, if $B_c^{a,b}=B_c^{b,a}$ for all $b,c\in \LL$, then $a=1$.
 \end{enumerate}
+
+[WORK: A big confused about the structure vs. property thing here. Shouldn't we have twists as part of the data?]
+
 \raggedleft\qedsymbol{}
 \end{definition}
 
@@ -2224,29 +2212,41 @@ $$f_n^{b,c}f^{a,n}_{d}F^{a,b,c}_{d;n,m}=\tilde{F}^{a,b,c}_{d;n,m}f^{a,b}_{m}f^{m
 \raggedleft\qedsymbol{}
 \end{definition}
 
-More generally, a gauge equivalence between $6j$ fusion systems $(\LL,N,F)$ and $(\LL',N',F')$ is a gauge equivalence between $(\LL,N,F)$ and some system $(\LL,N,\tilde{F})$, followed by an isomorphism of fusion systems $(\LL,N,\tilde{F})\to (\LL',N',F')$.
-
-[WORK: Define braided gauge equivalence]
+More generally, a gauge equivalence between $6j$ fusion systems $(\LL,N,F)$ and $(\LL',N',F')$ is a gauge equivalence between $(\LL,N,F)$ and some system $(\LL,N,\tilde{F})$, followed by an isomorphism of fusion systems $(\LL,N,\tilde{F})\to (\LL',N',F')$
 
 .[WORK: BRAID Give explanation of rectangle axiom, preferably with graphical language]
 
-In the case of the toric code we summarize the relevant data. The label set is $\LL=\{I,X,Y,Z\}$. The nonzero fusion coefficients are given by
+\begin{definition}[Braided gauge equivilance of $R$-matricies] A braided gauge equivilance of $R$-matricies $R^{\--,\--}_{\--}$ and $\tilde{R}^{\--,\--}_{\--}$ on a $6j$ fusion system $(\LL,N^{\--,\--}_{\--},F^{\--,\--\,--}_{\--;\--,\--})$ is the following data:
+
+\begin{enumerate}
+\item .[WORK: idk]
+\end{enumerate}
+
+Additionally, a braided gauge equivilance of $R$-matricies is required to satisfy the following properties:
+
+\begin{enumerate}
+\item .[WORK: idk]
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+In the case of the toric code we summarize the relevant data. The label set is $\LL=\{I,X,Y,Z\}$. For every pair $(a,b)^2\in \LL$, there is a unique $c$ such that $N^{a,b}_c=1$ - all other values are zero. A table of $(a,b)\in \LL^2$ along with that unique value of $c$ is below:
 
 \begin{center}
 \begin{tabular}{c |c |c |c |c} 
  & $I$ & $X$ & $Y$ & $Z$ \\ [0.3ex] 
  \hline
 \noalign{\vskip 0.25ex}   
- $I$ & $N^{I,I}_{I}=1$ & $N^{I,X}_{X}=1$ & $N^{I,Y}_{Y}=1$ & $N^{I,Z}_{Z}=1$ \\ [0.2ex] 
+ $I$ & $I$ & $X$ & $Y$ & $Z$ \\ [0.2ex] 
  \hline
 \noalign{\vskip 0.25ex}   
- $X$ & $N^{X,I}_{X}=1$ & $N^{X,X}_{I}=1$ & $N^{X,Y}_{Z}=1$ & $N^{X,Z}_{Y}=1$ \\ [0.2ex] 
+ $X$ & $X$ & $I$ & $Z$ & $Y$ \\ [0.2ex] 
  \hline
 \noalign{\vskip 0.25ex}   
- $Y$ & $N^{Y,I}_{Y}=1$ & $N^{Y,X}_{Z}=1$ & $N^{Y,Y}_{I}=1$ & $N^{Y,Z}_{X}=1$ \\ [0.2ex] 
+ $Y$ & $Y$ & $Z$ & $I$ & $X$ \\ [0.2ex] 
  \hline
 \noalign{\vskip 0.25ex}   
- $Z$ & $N^{Z,I}_{Z}=1$ & $N^{Z,X}_{Y}=1$ & $N^{Z,Y}_X=1$ & $N^{Z,Z}_I=1$
+ $Z$ & $Z$ & $Y$ & $X$ & $I$
 \end{tabular}
 \end{center}
 
@@ -2268,6 +2268,8 @@ All $F$-matrices are the identity. The non-unit non-zero braiding coefficients a
  $Z$ &  & $R^{Z,X}_{Y}=-1$ & $R^{Z,Y}_X=-1$ & 
 \end{tabular}
 \end{center}
+
+.[WORK: Give twistings!]
 
 This gives a full definition of the toric code as modular tensor fusion system. All that is left is to show is that the axioms of are satisfied - this is Exercise \thesection.3.
 
@@ -2449,7 +2451,9 @@ commute.
 
 $$f^*:A^*\xrightarrow{\coev_B\otimes \id_{A^*}} B^*\otimes B\otimes A^*\xrightarrow{\id_{B^*}\otimes f\otimes \id_{A^*}} B^*\otimes A\otimes A^* \xrightarrow{\id_{B^*}\otimes \ev_A} B^*$$
 
-in $\Hom(A^{*},B^{*})$ is a functor. Moreover, this functor induces a equivalence of between $\Ccat^{\op}$ and $\Ccat$.
+in $\Hom(A^{*},B^{*})$ is a fully faithful functor. If $\Ccat$ is a fusion category, then this functor induces an equivalence of between $\Ccat^{\op}$ and $\Ccat$.
+
+\item Duals preserve tensor products. That is, $B^{*}\otimes A^*$ is a dual for $A\otimes B$, for all $A,B\in \Ccat$.
 \end{enumerate}
 \end{proposition}
 \begin{proof} We begin by proving part (1). We claim that the map
@@ -2486,11 +2490,18 @@ as desired. The fact that $(\id_{A})^{*}=\id_{A^{*}}$ follows immediately from r
   \tikzfig{rigidity-inverse}
 \end{equation*}
 
-It is straightforward to see that this serves an inverse to the duality map $\Hom(B,A)\to \Hom(A^{*},B^{*})$, and hence that $(\--)^{*}$ induces isomorphisms on hom-spaces. To see that the functor is essentially surjective, [WORK: PASS I don't see how to do this. It follows from a straightforward counting argument on fusion categories shows this is the case there, but I don't see how to go in full generality.]
+It is straightforward to see that this serves an inverse to the duality map $\Hom(B,A)\to \Hom(A^{*},B^{*})$, and hence that $(\--)^{*}$ induces isomorphisms on hom-spaces. Now, assume that $\Ccat$ is a fusion category. It is clear from uniqueness of duals that if two simple objects have the isomorphic dual, then they must be isomorphic. By a counting argument on the finite set of isomorphism classes of simple objects, we find that every object is is isomorphic to the dual of some other object. Taking direct sums, we thus find that $(\--)^{*}$ is essentially surjective. The result thus follows from Exercise \ref{Categories}.4.
+
+We now move on to point (3). We define maps $\tilde{\ev}_{A\otimes B}:A\otimes B\otimes B^{*}\otimes A^{*}\to 1$ and $\tilde{\coev}_{A\otimes B}: B^{*}\otimes A^{*}\otimes A\otimes B$ by first applying $\ev/\coev$ on the center terms, and then applying $\ev/\coev$ on the remaining outside terms. These satisfy the axioms of rigidity, since
+
+\begin{equation*}
+  \tikzfig{tensor-product-rigidity}
+\end{equation*}
+
 
 \end{proof}
 
-We now contrast fusion categories and fusion systems. The first claim is as follows:
+In light of this proposition, we will often assume that $(A\otimes B)^*=B^*\otimes A^*$. While technically incorrect, these two objects are always canonically isomorphic and we do not lose any generality by imposing this condition. We now contrast fusion categories and fusion systems. The first claim is as follows:
 
 \begin{proposition}\label{Make fusion system} Let $\Ccat$ be a fusion category, in the. Let $\LL$ be the set of isomorphism classes of simple objects in $\Ccat$. For any $a,b,c\in \LL$ with representatives $A,B,C\in\Ccat$, define
 
@@ -2581,11 +2592,15 @@ The triple $(\LL,N,F)$ specifies a $6j$ fusion system.
 
 We now give some commentary on Proposition \ref{Make 6j system}, through the Yoneda perspective. Namely, we elaborate on why we encode associativity in terms of the induced map $\Hom((A\otimes B)\otimes C,D)\to \Hom(A\otimes (B\otimes C),D)$ for all $D$, instead of as the original map $(A\otimes B)\otimes C\to A\otimes (B\otimes C)$. One pragmatic answer is that our hom-set are vector spaces, not our objects. Another answer is that this keeps in line with the Yoneda perspective - it is better to look at the relationship of an object with those around it (i.e., hom-spaces) than the object itself. In this case, we systematically defined $F$-matrices to associate $\Hom((A\otimes B)\otimes C,D)$ with $\Hom(A\otimes (B\otimes C),D)$. Since our $F$-matrices were chosen coherently, this gives a natural transformation $\Hom((A\otimes B)\otimes C,\--)\to\Hom(A\otimes (B\otimes C),\--)$. By the Yoneda lemma, this canonically specifies an isomorphism in $\Hom((A\otimes B)\otimes C,A\otimes (B\otimes C))$, namely, the associator $\alpha_{A,B,C}$.
 
-A braided fusion category is a fusion category whose underlying monoidal category is a braided monoidal category. There are no extra compatibility conditions. Seeing as we will be very often using the braiding isomorphism $\beta$, we fix the notation
+A \textit{braided fusion category} is a fusion category whose underlying monoidal category is a braided monoidal category. There are no extra compatibility conditions. Seeing as we will be very often using the braiding isomorphism $\beta$, we fix the notation
 
 \begin{equation*}
 \tikzfig{braiding-notation}
 \end{equation*}
+
+It is a signficant advantage of our graphical language that the hexagon identiites, like with the triangles and pentagon, becomes invisible. That is, the hexagon identities are the statement that braiding between $A\otimes B$ and $C$ is unambigious for objects $A,B,C$ in a braided category $\Ccat$:
+
+[WORK: graphical-hexagon]
 
 From braided fusion categories, we can construct braided $6j$ fusion systems:
 
@@ -2600,7 +2615,7 @@ This process induces a one-to-one correspondence of braided fusion categories up
 \begin{proof} See Appendix \ref{Fusion System/MTC correspondence}.
 \end{proof}
 
-As usual, a braided monoidal equivalence of two categories means a pair of braided monoidal functors, such that both compositions are monoidally equivalent to the identity. Graphically, the axioms of a braiding simply state that we can move strands around like one would expect to be able to. We demonstrate this will a useful lemma:
+As usual, a braided monoidal equivalence of two categories means a pair of braided monoidal functors, such that both compositions are monoidally equivalent to the identity. We now establish a useful graphical lemma about braided monoidal categories which will be useful:
 
 \begin{lemma}\label{pulling-lemma} Let $A,B,C,D\in \Ccat$ be objects in a braided monoidal category, and let $f:C\to B\otimes D$ and $g: A\otimes C\to 1$ be morphisms. We have that
 
@@ -2618,50 +2633,65 @@ As usual, a braided monoidal equivalence of two categories means a pair of braid
 and hence we conclude the result.
 \end{proof}
 
-We now define MTCs:
+We now move on to MTCs. A \textit{non-degenerate} braided fusion category is one in which for all simple objects $A\in \Ccat$,
 
-\begin{definition}[Modular tensor category] A modular tensor category (MTC) is the following data:
+$$\beta_{B,A}\circ \beta_{A,B}=\id_{A\otimes B}\,\,\forall \,\,B \text{ simple}\implies A\cong 1.$$
+
+The physical motivation for this non-degeneracy condition is given in section \ref{Topological Quantum Computing}. It is a key subtelty of the theory that MTCs are \textit{not} simply non-degenerate braided fusion categories. Every MTC will additionally have a ``twisting" operation. The reason for this is as follows. Not only should our theory have distinguihsed moprhisms $A\otimes A^*\to 1$ and $1\to A^*\otimes A$, but it should also have distinguished morphisms $A^*\otimes A\to 1$ and $1\to A\otimes A^*$. Doing this naively using braiding works to a limited degree, but it ends up being incompatible with tensor products. Hence, we must introduce a twist to remedy the situation:
+
+\begin{definition}[Ribbon category] A ribbon category is the following data:
 
 \begin{enumerate}
-\item A braided fusion category $\Ccat$.
+\item A braided monoidal category $\Ccat$.
 \item (Twist) A natural isomorphism $\theta:\id_{\Ccat} \to \id_{\Ccat}$.
 \end{enumerate}
 
-Additionally, an MTC is required to satisfy the following properties:
+Additionally, an ribbon category is required to satisfy the following properties:
 
 \begin{enumerate}
 \item $\theta_{A\otimes B}=\beta_{B,A}\circ \beta_{A,B}\circ (\theta_{A}\otimes \theta_{B})$ for all $A,B\in \Ccat$.
 \item $\theta_{A^*}=\left(\theta_A\right)^*$ for all $A\in \Ccat$.
-\item (Non-degeneracy) If $A\in \Ccat$ is a simple object such that for all other simple objects $B\in \Ccat$
-
-$$\beta_{A,B}\circ \beta_{B,A}=\mathrm{id}_{A\otimes B},$$
-
-then $A\cong 1$.
 \end{enumerate}
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{definition} 
 
-[WORK: Non-degeneracy can be motivated pretty well. We want our MTCs to give TQFTs.]
-
-\begin{definition}[Braided tensor functor] A braided tensor functor between two MTCs $(\Ccat,\theta_\Ccat)$, $(\Dcat,\theta_{\Dcat})$ is a braided monoidal functor $F:\Ccat\to \Dcat$ such that $F(\theta_{\Ccat;A})=\theta_{\Dcat;A}$ for all $A\in \Ccat$.
-
-\raggedleft\qedsymbol{}
-\end{definition}
-
-This allows us to state our final equivalence:
-
-\begin{proposition}\label{Make MTC} The process in Proposition \ref{Make braided system} gives a one-to-one correspondence between MTCs up to modular equivalence and modular tensor fusion systems up to gauge equivalence.
-\end{proposition}
-\begin{proof} See Appendix \ref{Fusion System/MTC correspondence}.
-\end{proof}
-
-The intuition for MTC twists is that they help deal with the non-triviality of the braiding, allowing one to define good maps $A^{*}\otimes A\to 1$ and $1\to A\otimes A^{*}$ which look like evaluation/co-evaluation but with tensor factors reversed, giving objects ``two sided" duals. [WORK: That's not exactly the case. What $\theta$ lets you do is define a trace \textit{which respects tensor products}. Make this clear. Making $\theta=1$ will still give a spherical category. Mention the hexagon identity maybe, since its a good analogy?]To be precise, we fix the notation
+This allows us to define the distinguished morphisms
 
 \begin{equation*}
 \tikzfig{co-dual}
 \end{equation*}
 
-This allows us to express the twist in graphical language:
+The key point which would be invalid if we did not add the twist is as follows\footnote{It is for this reason that we call ribbon categories \textit{ribbon}. We can replace single strands properly with their two-strand counterparts, forming bands which look like ribbons}: [WORK: use term ``topological spin" to motivate why we are using a twist-centric definition]
+
+\begin{proposition}\label{ribbon-property} .[WORK: move this to the end of us building up the ribbon?] Let $\Ccat$ be a ribbon category. For all $A,B\in \Ccat$,
+
+\begin{equation*}
+\tikzfig{ribbon-property}
+\end{equation*}
+
+\end{proposition}
+\begin{proof} We prove only the first identity, since the proof of the second is identical. We compute as follows:
+
+\begin{equation*}
+\tikzfig{ribbon-property-proof}
+\end{equation*}
+\end{proof}
+
+We now have our main definition:
+
+\begin{definition}[Modular tensor category] A modular tensor category (MTC) is a non-degenerate ribbon fusion category.
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+Morphisms between ribbon categories should respect the twisting operation. A \textit{ribbon functor}\footnote{This is more popularly refered to as a \textit{braided tensor functor}. [WORK: Do I need to define this at all?]} between two MTCs $(\Ccat,\theta_\Ccat),(\Dcat,\theta_{\Dcat})$ is a braided monoidal functor $F:\Ccat\to \Dcat$ such that $F(\theta_{\Ccat;A})=\theta_{\Dcat;A}$ for all $A\in \Ccat$. A ribbon equivalence is thus a pair of ribbon functors whose compositions in either direction are monoidally naturall equivalent to the identity. This allows us to state our final equivalence:
+
+\begin{proposition}\label{Make MTC} The process in Proposition \ref{Make braided system} gives a one-to-one correspondence between MTCs up to ribbon equivalence and modular tensor fusion systems up to gauge equivalence.
+\end{proposition}
+\begin{proof} See Appendix \ref{Fusion System/MTC correspondence}.
+\end{proof}
+
+We spend the remainder of this section discussing the properties of MTCs. Seeing as we will be often refering to the twist, we demonstrate that it can be expressed in a purely graphical formula:
 
 \begin{proposition} Let $A\in \Ccat$ be an object in an MTC. We have that
 
@@ -2676,38 +2706,28 @@ This allows us to express the twist in graphical language:
 \tikzfig{graphical-twist-proof}
 \end{equation*}
 
-as desired.
+as desired. The second equality follows similarly.
 \end{proof}
 
-We will later find ourselves interested more generally in the categories with two sided duals, known as pivotal categories \cite{selinger2011survey}. We state this formally below:
+The distinguished morphisms of a ribbon category give good ``two-sided" duals, in the sense that if $A$ is a dual of $A^*$ then $A^*$ is also a dual of $A$. That is, we can identify $A$ with $A^**$. We will later find ourselves interested more generally in the categories wit such two-sieded duals, known as pivotal categories \cite{selinger2011survey}. Formally, a pivotal category is a monoidal category $\Ccat$ paired with a monoidal natural isomorphism $(\--)\to (\--)^{**}$. Pivotal categories can be described explicitely in graphical language:
 
-\begin{definition}[Pivotal category] A pivotal category is the following data:
+\begin{proposition}. [WORK: write out what the axioms of a pivotal category imply. Remove the associated exercise.]
+\end{proposition}
 
-\begin{enumerate}
-\item Underlying monoidal category $\Ccat$.
-\item Choices of morphisms $1\to A^{*}\otimes A$, $A\otimes A^{*}\to 1$, $1\to A\otimes A^{*}$, and $A^{*}\otimes A\to 1$ for every $A\in \Ccat$.
-\end{enumerate}
+[WORK: Re-do this introduction sentence]The following shows that all MTCs are pivotal, but also that braided monoidal categoires without twist are pivotal:
 
-Additionally, a pivotal category is required to satisfy the following conditions:
+\begin{proposition}\label{pivotal-proposition} Let $\Ccat$ be a braided monoidal category, and let $\theta:\id_{\Ccat}\to\id_{\Ccat}$ be a natural transformation such that $(\theta_A)^*=\theta_{A^*}$ for all $A\in \Ccat$. The distinguished morphisms. [WORK: Re-do this. Go through Deligne's lemma that giving a pivotal structure is the \textit{same} as giving a twist, for braided categories. Original reference]
 
-\begin{enumerate}
-\item The distinguished morphisms $A\otimes A^{*}\to 1$ and $1\to A^{*}\otimes A$ give $A^{*}$ the structure of a dual for $A$, in the sense that these morphisms satisfy the axioms of rigidity.
+\begin{equation*}
+\tikzfig{co-dual}
+\end{equation*}
 
-\item The distinguished morphisms $A^{*}\otimes A\to 1$ and $1\to A\otimes A^{*}$ give $A$ the structure of a dual for $A^{*}$, in these sense that these morphisms satisfy the axioms of rigidity.
-\end{enumerate}
-
-\raggedleft\qedsymbol{}
-\end{definition}
-
-Seeing as $A$ is a dual for $A^{*}$, uniqueness of duals (Proposition \ref{rigidity}) says that we have a canonical isomorphism $A$ with $A^{**}$. Pivotal categories thus can be alternatively described as rigid categories in which there is a natural isomorphism between the functors $(\--)$ and $(\--)^{**}$ (Exercise \thesection.11). We now prove that our choices of maps for MTCs give pivotal structure:
-
-
-\begin{proposition} All MTCs are pivotal categories.
+give $\Ccat$ the structure of a pivotal category.
 \end{proposition}
 \begin{proof}. [WORK: Do proof]
 \end{proof}
 
-The power of pivotal categories is that one can define the \textit{trace} of a morphism $f:A \to A$. The trace is a powerful operation, since it allows you to qualify morphisms in terms of numbers, which can be used both for linearization and defining invariants. Naturally, one wants to define trace by ``closing the loop" on $f$. That is,
+The power of pivotal categories is that one can define the \textit{trace} of a morphism $f:A \to A$. The trace is a powerful operation, since it allows you to qualify morphisms in terms of dnumbers, which can be used both for linearization and defining invariants. Naturally, one wants to define trace by ``closing the loop" on $f$. That is,
 
 \begin{equation*}
 \tikzfig{trace}
@@ -2725,12 +2745,14 @@ However, there is an ambiguity: one could also close the loop the other directio
 
 When working with pivotal categories, one only has the weaker notions of ``left trace" and ``right trace". MTCs are automatically spherical:
 
-\begin{proposition} All MTCs are spherical categories.
+\begin{proposition} Let $(\Ccat,\theta)$ be as in Proposition \ref{pivotal-proposition}. $\Ccat$ is a spherical category. [WORK: There is an extra condition needed which is equivalent to being spherical - cite it exactly. Lemma 4.27 in reference.]
 \end{proposition}
 \begin{proof}. [WORK: Do proof]
 \end{proof}
 
 We now demonstrate some basic facts traces:
+
+[WORK: I want to know what's true. I DON'T think you can move $f$ to $f^*$ on the other. I can't figure out how to prove that trace commutes with composition.]
 
 \begin{proposition}\label{trace} Let $\Ccat$ be a spherical category. For all $A,B\in \Ccat$, $f\in \End(A)$ the following claims are all true:
 
@@ -2746,11 +2768,15 @@ We now demonstrate some basic facts traces:
 \begin{proof} .[WORK: BRAID do proof]
 \end{proof}
 
-To commute with the tensor product, one needs the twist of an MTC:
+For compatibility with the tensor product, one needs the ribbon axiom:
 
-\begin{proposition} .[WORK: Prove that ribbon identity $\implies$ nice graphical compatibility condition, and thus in turn that $\tr(f\otimes g)=\tr(f)\cdot \tr(g)$]
+\begin{proposition} Let $\Ccat$ be a ribbon category. For all $A\in \Ccat$, $f\in \End(A)$,  $\tr(f\otimes g)=\tr(f)\cdot \tr(g)$.
 \end{proposition}
-\begin{proof}.[WORK: Do proof.]
+\begin{proof} Using the ribbon property of Proposition \ref{ribbon-property}, we compute
+
+\begin{equation*}
+\tikzfig{trace-tensor}
+\end{equation*}
 \end{proof}
 
 Traces allow us to naturally define many very powerful, physically observable, and mathematically interesting invariants. For example, let $A\in \Ccat$ be an object in a spherical category. In vector spaces, the trace of the identity gives the dimension of the vector space. Thus, we define more generally $d_A=\tr(\id_A)$ to be the \textit{quantum dimension} of $A$. The following properties give a taste of the depth present in this theory:
@@ -2790,7 +2816,9 @@ We are now ready to define the most important invariants of MTCs: representation
 
 \begin{theorem}[\cite{bakalov2001lectures}] Let $\Ccat$ be an MTC, with set $\LL$ of isomorphism classes of simple. We define the $S$-matrix of an MTC to be the matrix whose $[a,b]$th coefficient is
 
-$$S_{a,b}=\tr\left(\beta_{A,B}\cdot \beta_{B,A}\right)=[WORK: BRAID make \,\, graphical \,\, formula]$$
+\begin{equation*}
+\tikzfig{S-matrix}
+\end{equation*}
 
 where $A,B$ are representatives of $a,b\in \LL$. Similarly, we define the $T$-matrix of an MTC to be the diagonal matrix whose $[a,a]$th coefficient is $\theta_A$. The map
 
@@ -2816,9 +2844,13 @@ These $S$-matrices and $T$-matrices are very important invariants of MTCs, and a
 \begin{theorem} The following claims about MTCs are all true:
 
 \begin{itemize}
-\item (Bruguieres, \cite{bruguieres2000categories}) Suppose $\Ccat$ is a category satisfying all of the conditions of a MTC, except for non-degeneracy (this is called a pre-modular category). Then, $\Ccat$ is modular if and only if the $S$-matrix is invertible.
+\item (Bruguieres, \cite{bruguieres2000categories}) Ribbon fusion categories are non-degenerate (and hence are MTCs) if and only if their $S$-matrix is invertible.
 \item (Bruillard-Ng-Rowell-Wang, \cite{bruillard2016rank}) There are finitely many MTCs, up to braided monoidal equivalence, of a given rank.
-\item (Schauenburg-Ng, \cite{ng2010congruence}) The modular representations of MTCs have finite image.
+\item (Schauenburg-Ng, \cite{ng2010congruence}) The modular representations of MTCs have finite image. More precisely the kernels of modular representations are \textit{congruence subgroups}, meaning that they all contain the subgroup
+
+$$\left\{ \left. M\in \SL_2(\ZZ) \right| M\equiv I\,\,\, \mathrm{mod}\, n\right\}$$
+
+for some $n\geq 1$.
 \end{itemize}
 \end{theorem}
 
@@ -3005,9 +3037,7 @@ To motivate the Drinfeld center, we recall the usual center of a monoid. Namely,
 
 $$\Zcal(G)=\{g\in G \st gh=hg\,\,\forall\,\, h\in G\},$$
 
-the submonoid of elements that commute with all other elements. When defining the center of an MTC, we find ourself having a subtle issue. Commutivity in the context of monoids is replaced by braiding in the context of categories. While commutivity of monoids is a property, braiding of categories is a structure. One needs to choose a braiding, of which there can be many. The center $\Zcal(\Ccat)$ of an MTC $\Ccat$ thus consists of elements $A\in \Ccat$, along with choices of natural isomorphism between the functors $A\otimes \--$ and $\-- \otimes A$. That is, elements of $\Ccat$ that commute under $\otimes$ with every other element of $\Ccat$, and a functorial choice of how that commuting should be done.
-
-[WORK: define half-braiding somewhere]
+the submonoid of elements that commute with all other elements. When defining the center of an MTC, we find ourself having a subtle issue. Commutivity in the context of monoids is replaced by braiding in the context of categories. While commutivity of monoids is a property, braiding of categories is a structure. One needs to choose a braiding, of which there can be many. The center $\Zcal(\Ccat)$ of an MTC $\Ccat$ thus consists of elements $A\in \Ccat$, along with choices of natural isomorphism between the functors $A\otimes \--$ and $\-- \otimes A$. That is, elements of $\Ccat$ that commute under $\otimes$ with every other element of $\Ccat$, and a functorial choice of how that commuting should be done. These choices of commutivity are called \textit{half-braidings}.
 
 \begin{proposition} The Drinfeld center of a monoidal category $\Ccat$ is a braided monoidal category defined as follows:
 
@@ -3065,8 +3095,6 @@ Note the key use of the fact that the central terms in the composition could be 
 \end{tikzcd}\]
 \end{enumerate}
 
-[WORK: Change to graphical definition]
-
 Along with canonical evaluation and co-evaluation maps inherited from $\Ccat$, this gives $\Zcal(\Ccat)$ the structure of a braided fusion category.
 \end{proposition}
 \begin{proof} To begin, we need to show that $\Zcal(\Ccat)$ with this vector space structure on hom-spaces is is indeed $\CC$-linear abelian. We demonstrate the axioms one at a time.
@@ -3112,7 +3140,19 @@ We now move on to showing that $\Zcal(\Ccat)$ is really a braided fusion categor
 \begin{enumerate}
 \item Linearity of $\Zcal(\Ccat)$ follows from the linearity of $\Ccat$.
 
-\item (Rigidity) Diagrams commuting in $\Ccat$ implies they commute in $\Zcal(\Ccat)$, hence rigidity is immediate. However, one does need to make sure that $\beta_{A^*,\--}$ is a valid half-braiding, as well as that $\ev$ and $\coev$ satisfy the compatibility condition required to be morphisms in $\Zcal(\Ccat)$. Seeing as the only term in the definition of $\beta_{A^*,B\otimes C}$ that deals with $B\otimes C$ is $\beta_{A,\--}$, the fact that $\beta_{A,\--}$ is a half-braiding immediately implies that $\beta_{A^*,\--}$. The fact that $\ev_A$ and $\coev_A$ satisfy the compatibility conditions follows from a straightforward computation. [WORK: This is wrong. Give cool graphical proof instead.]
+\item (Rigidity) Diagrams commuting in $\Ccat$ implies they commute in $\Zcal(\Ccat)$, hence rigidity is immediate. However, one does need to make sure that $\beta_{A^*,\--}$ is a valid half-braiding. Graphically, $\beta_{A^*,B}$ is given the compostion
+
+\begin{equation*}
+\tikzfig{drinfeld-duals}
+\end{equation*}
+
+Hence, we can compute as follows:
+
+\begin{equation*}
+\tikzfig{drinfeld-hexagon}
+\end{equation*}
+
+Additionally we must check that $\ev$ and $\coev$ satisfy the compatibility condition required to be morphisms in $\Zcal(\Ccat)$. This is straightforward, and we ommit the proof.
 
 \item (Semisimplicity) Suppose $A\in \Zcal(\Ccat)$ has a decomposition $A\cong A_0\oplus A_1$ in $\Ccat$. We can canonically define the half braiding $\beta_{A_0,\--}$ by being the composition
 
@@ -3147,15 +3187,17 @@ finishing the proof. Note that this equality can be tight (such as in the case o
 
 In general, not every fusion category's center will be an MTC. The categories whose centers are MTCs are, in fact, spherical fusion categories.
 
-\begin{proposition}\label{spherical-center-modular} Let $\Ccat$ be a spherical fusion category. Define the following data for an MTC:
+\begin{proposition}\label{spherical-center-modular} Let $\Ccat$ be a spherical fusion category. Define the following data for a ribbon fusion category:
 
 \begin{enumerate}
 \item (Underlying braided fusion category) $\Zcal(\Ccat)$.
 \item (Twist) Given $(A,\upbeta_{A,\--})\in \Ccat$, we define the twist $\theta_{(A,\upbeta_{A,\--})}$ by the composition
 
-$$A\xrightarrow{\coev_{A^*}} A\otimes A^*\otimes A^{**}\xrightarrow{\upbeta_{A,A^*}} A^*\otimes A \otimes A^{**}\xrightarrow{\ev_{A}} A^{**}\to A.$$
+\begin{equation*}
+\tikzfig{twisting-definition}
+\end{equation*}
 
-The last arrow $A^{**}\to A$ is the double dual isomorphism induced by the pivotal structure on $\Ccat$. This gives $\Zcal(\Ccat)$ the structure of an MTC.
+This gives $\Zcal(\Ccat)$ the structure of an MTC.
 \end{enumerate}
 
 \end{proposition}
@@ -3186,7 +3228,7 @@ induces a natural isomorphim between the identity functor and the double dual fu
 
 Thus, we have arrived at the MTC associated with the toric code: $\Zcal(\Vecc_{\ZZ_2})$, the Drinfeld center of of the category of $\ZZ_2$ graded vector spaces. This is in some sense the simplest MTC. Namely, the simplest MTCs are those which come from spherical fusion categories, $\Zcal(\Ccat)$ for some $\Ccat$. The simplest fusion categories are those which come from groups, $\Rep_G$ for some $G$. The simplest non-trivial group is $\ZZ_2$.
 
-[WORK: Quantum double of mixed state=pure state $\implies$ intuition? Maybe there's something in \cite{cowtan2022quantum}.] Another intuition for $\Zcal(\Ccat)$, alluded to in the introduction of this section, is that it is a sort of ``quantum double" \cite{felice2017hopf}. The intuition for why $\Zcal$ can be viewed as gluing two copies of $\Ccat$ with a twist is seen as follows. Suppose $(\Ccat,\beta)$ is a braided monoidal category. Then, there is a canonical braided monoidal functor
+Another intuition for $\Zcal(\Ccat)$, alluded to in the introduction of this section, is that it is a sort of ``quantum double" \cite{felice2017hopf}. The intuition for why $\Zcal$ can be viewed as gluing two copies of $\Ccat$ with a twist is seen as follows. Suppose $(\Ccat,\beta)$ is a braided monoidal category. Then, there is a canonical braided monoidal functor
 
 \begin{align*}
 \Ccat &\to \Zcal(\Ccat).\\
@@ -3334,7 +3376,7 @@ Just as with MTCs, twists $\theta$ induce pivotal structures. Conversely, any pi
 
 \item . [WORK: Define the Deligne tensor product. Show that there is a map $\Ccat\boxtimes \Ccat^{rev}\to \Zcal(\Ccat)$. Can I walk people through the proof that this is an isomorphism if and only if $\Ccat$ is modular?]. [WORK: This whose ``property vs. structure" buisness is messing me up. Given a braided fusion category, is being modular a property or a structure?]
 
-\item [WORK: Frobenius-Schur indicator exercise? I think it might be a bit unnecarily actually.]
+\item .[WORK: Frobenius-Schur indicator exercise? I think it might be a bit unnecarily actually.]
 
 \end{enumerate}
 
@@ -3376,6 +3418,17 @@ This sort of ``TQC $\implies$ QC" has an analogy to the process of ``QC $\implie
 ]
 
 [WORK: Look at \cite{lahtinen2017short}, an intro-level physics discussion. Is there something to learn from it?]
+
+[WORK: Here's a good motivation for the non-degeneracy condition. We want MTCs to give TQFTs. In particular, we need a map from automorphisms of a surface (mapping class group!) to automorphisms of a vector space. Now, there is the celebrated result that MCG(torus)=$\SL_2(\ZZ)$. Letting $(V_{\Ccat},Z_{\Ccat})$ denote the TQFT attached to $\Ccat$, we can very explicitely in this case write out the commutative diagram
+
+\begin{equation*}
+\tikzfig{mapping-class-group}
+\end{equation*}
+
+that is, the TQFT mapping class group representation on the torus is the MTC modular representation. For this to be an actual representation, we need the $S$ matrix to be invertible. It is a miracle that this implies all other MCG reps are reps, as well as other axioms of a TQFT (not too surprising tho, since all other surfaces are more-holed torii).
+. ``A certain invertible physical process should give an invertible quantum transformation, i.e., a matrix with nonzero determinant". Also, this $\implies$ that $S$ matrix non-degeneracy is the ``correct" way of thinking about non-degeneracy.]
+
+[WORK: From the above, we can also give the intuation of a TQFT as (roughly) a collection of compatible mapping class group representations.]
 
 \subsection{Revisiting toric code TQC}
 \label{Revisiting toric code TQC}
@@ -3463,7 +3516,7 @@ In the case of the $\ZZ_2$ Dijkgraaf-Witten theory, this is obvious to do. Namel
 
 $$\left<f(v),w\right>=\left<v,f^{\dagger}(w)\right>$$
 
-for all $v\in V(Y_0)$, $w\in V(Y_1)$ (see Exercise [WORK: ref]). All that is left to check is that the axioms are satisfied:
+for all $v\in V(Y_0)$, $w\in V(Y_1)$ (see Exercise \ref{Quantum foundations}.2). All that is left to check is that the axioms are satisfied:
 
 \begin{proposition} The $\ZZ_2$ Dijkgraaf-Witten theory is a unitary (2+1)-TQFT.
 \end{proposition}
@@ -3599,7 +3652,7 @@ From this we observe that the categorical inner product $\left<\cdot | \cdot \ri
 
 Thus, $\Vecc_{\ZZ_2}$ can be given the structure of a unitary fusion category. Applying Proposition \ref{unitary MTC}, this means that $\Zcal(\Vecc_{\ZZ_2})$ has the structure of a unitary MTC, as desired. If one wishes to have a canonical unitary structure, then one can use instead the category of $G$-graded Hilbert spaces, $\Hilb_G$. It is equivalent to $\Vecc_G$, but its unitary structure is canonical. Philosophically it is thus more correct to say that the unitary MTC associated with the toric code is $\Zcal(\Hilb_{\ZZ_2})$, $\Zcal(\Vecc_{\ZZ_2})$.
 
-As in the non-unitary case, there is an equivalence between unitary MTCs and (1-extended) unitary TQFTs. Under this equivalence, $\Zcal(\Hilb_{\ZZ_2})$ is identified with the unitary $\ZZ_2$ Dijkgraaf-Witten theory. [WORK: ref]
+As in the non-unitary case, there is an equivalence between unitary MTCs and (1-extended) unitary TQFTs. Under this equivalence, $\Zcal(\Hilb_{\ZZ_2})$ is identified with the unitary $\ZZ_2$ Dijkgraaf-Witten theory. [WORK: cite something]
 
 $\newline\newline$
 

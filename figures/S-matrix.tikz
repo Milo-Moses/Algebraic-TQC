@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-7, 1) {$S_{a,b}=\tr\left(\beta_{A,B}\cdot \beta_{B,A}\right)=$};
+		\node [style=none] (1) at (0.25, 1) {};
+		\node [style=none] (2) at (-1.75, 1) {};
+		\node [style=none] (3) at (-0.75, 1) {};
+		\node [style=none] (4) at (1.25, 1) {};
+		\node [style=none] (5) at (-2.35, 1) {$A^*$};
+		\node [style=none] (6) at (0.65, 1) {$A$};
+		\node [style=none] (7) at (-1.2, 1) {$B$};
+		\node [style=none] (9) at (1.875, 1) {$B^*$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [in=90, out=90, looseness=1.75] (3.center) to (4.center);
+		\draw [bend right=90, looseness=1.75] (2.center) to (1.center);
+		\draw [style=overlap, bend right=90, looseness=1.75] (3.center) to (4.center);
+		\draw [style=overlap, bend left=90, looseness=1.75] (2.center) to (1.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

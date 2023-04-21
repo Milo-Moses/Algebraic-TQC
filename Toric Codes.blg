@@ -3,44 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Toric Codes.aux
 The style file: alpha.bst
 Database file #1: ref.bib
-You've used 68 entries,
+You've used 69 entries,
             2543 wiz_defined-function locations,
-            961 strings with 14333 characters,
-and the built_in function-call counts, 27201 in all, are:
-= -- 2721
-> -- 1243
-< -- 45
-+ -- 424
-- -- 414
-* -- 2014
-:= -- 4483
-add.period$ -- 206
-call.type$ -- 68
-change.case$ -- 419
-chr.to.int$ -- 68
-cite$ -- 68
-duplicate$ -- 1081
-empty$ -- 1962
-format.name$ -- 503
-if$ -- 5494
+            964 strings with 14484 characters,
+and the built_in function-call counts, 27658 in all, are:
+= -- 2762
+> -- 1285
+< -- 44
++ -- 440
+- -- 430
+* -- 2050
+:= -- 4571
+add.period$ -- 209
+call.type$ -- 69
+change.case$ -- 428
+chr.to.int$ -- 69
+cite$ -- 69
+duplicate$ -- 1093
+empty$ -- 1983
+format.name$ -- 519
+if$ -- 5580
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 79
-newline$ -- 344
-num.names$ -- 204
-pop$ -- 353
+missing$ -- 80
+newline$ -- 349
+num.names$ -- 207
+pop$ -- 360
 preamble$ -- 1
-purify$ -- 498
+purify$ -- 508
 quote$ -- 0
-skip$ -- 897
+skip$ -- 910
 stack$ -- 0
-substring$ -- 1659
-swap$ -- 157
-text.length$ -- 45
-text.prefix$ -- 29
+substring$ -- 1665
+swap$ -- 158
+text.length$ -- 44
+text.prefix$ -- 28
 top$ -- 0
-type$ -- 500
+type$ -- 508
 warning$ -- 0
-while$ -- 271
-width$ -- 71
-write$ -- 879
+while$ -- 274
+width$ -- 73
+write$ -- 891

@@ -1,5 +1,5 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
-\begin{thebibliography}{OKMH22}
+\begin{thebibliography}{BDSPV15}
 
 \bibitem[AA81]{ascher1981code}
 Marcia Ascher and Robert Ascher.
@@ -33,6 +33,13 @@ Tameem Albash and Daniel~A Lidar.
 Cl{\'e}ment Aubert.
 \newblock Categories for me, and you?
 \newblock {\em arXiv preprint arXiv:1910.05172}, 2019.
+
+\bibitem[BDSPV15]{bartlett2015modular}
+Bruce Bartlett, Christopher~L Douglas, Christopher~J Schommer-Pries, and Jamie
+  Vicary.
+\newblock Modular categories as representations of the 3-dimensional bordism
+  2-category.
+\newblock {\em arXiv preprint arXiv:1509.06811}, 2015.
 
 \bibitem[BGH{\etalchar{+}}17]{bruillard2017fermionic}
 Paul Bruillard, C{\'e}sar Galindo, Tobias Hagge, Siu-Hung Ng, Julia~Yael
@@ -72,6 +79,11 @@ John Barrett and Bruce Westbury.
 John~W Barrett and Bruce~W Westbury.
 \newblock Spherical categories.
 \newblock {\em Advances in Mathematics}, 143(2):357--375, 1999.
+
+\bibitem[CM22]{cowtan2022quantum}
+Alexander Cowtan and Shahn Majid.
+\newblock Quantum double aspects of surface code models.
+\newblock {\em Journal of Mathematical Physics}, 63(4):042202, 2022.
 
 \bibitem[CS09]{cooper2009observable}
 NR~Cooper and Ady Stern.
@@ -360,12 +372,6 @@ G{\"o}ran Wendin.
 \newblock Quantum information processing with superconducting circuits: a
   review.
 \newblock {\em Reports on Progress in Physics}, 80(10):106001, 2017.
-
-\bibitem[Yam02]{yamagami2002polygonal}
-Shigeru Yamagami.
-\newblock Polygonal presentations of semisimple tensor categories.
-\newblock {\em Journal of the Mathematical Society of Japan}, 54(1):61--88,
-  2002.
 
 \bibitem[YZB{\etalchar{+}}21]{yang2021experimental}
 Fangyuan Yang, Alexander~A Zibrov, Ruiheng Bai, Takashi Taniguchi, Kenji
