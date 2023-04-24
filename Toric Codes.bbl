@@ -34,6 +34,12 @@ Cl{\'e}ment Aubert.
 \newblock Categories for me, and you?
 \newblock {\em arXiv preprint arXiv:1910.05172}, 2019.
 
+\bibitem[Bar09]{bartlett2009unitary}
+Bruce Bartlett.
+\newblock On unitary 2-representations of finite groups and topological quantum
+  field theory.
+\newblock {\em arXiv preprint arXiv:0901.3975}, 2009.
+
 \bibitem[BDSPV15]{bartlett2015modular}
 Bruce Bartlett, Christopher~L Douglas, Christopher~J Schommer-Pries, and Jamie
   Vicary.
@@ -79,11 +85,6 @@ John Barrett and Bruce Westbury.
 John~W Barrett and Bruce~W Westbury.
 \newblock Spherical categories.
 \newblock {\em Advances in Mathematics}, 143(2):357--375, 1999.
-
-\bibitem[CM22]{cowtan2022quantum}
-Alexander Cowtan and Shahn Majid.
-\newblock Quantum double aspects of surface code models.
-\newblock {\em Journal of Mathematical Physics}, 63(4):042202, 2022.
 
 \bibitem[CS09]{cooper2009observable}
 NR~Cooper and Ady Stern.
@@ -161,10 +162,20 @@ Brendan Fong and David~I Spivak.
   compositionality}.
 \newblock Cambridge University Press, 2019.
 
+\bibitem[Gal14]{galindo2014braided}
+C{\'e}sar Galindo.
+\newblock On braided and ribbon unitary fusion categories.
+\newblock {\em Canadian Mathematical Bulletin}, 57(3):506--510, 2014.
+
 \bibitem[GHS23]{gainutdinov2023davydov}
 Azat~M Gainutdinov, Jonas Haferkamp, and Christoph Schweigert.
 \newblock Davydov-yetter cohomology, comonads and ocneanu rigidity.
 \newblock {\em Advances in Mathematics}, 414:108853, 2023.
+
+\bibitem[GN08]{gelaki2008nilpotent}
+Shlomo Gelaki and Dmitri Nikshych.
+\newblock Nilpotent fusion categories.
+\newblock {\em Advances in Mathematics}, 217(3):1053--1071, 2008.
 
 \bibitem[Got98]{gottesman1998theory}
 Daniel Gottesman.
@@ -250,6 +261,12 @@ Micha{\"e}l Mignard and Peter Schauenburg.
 \newblock Modular categories are not determined by their modular data.
 \newblock {\em Letters in Mathematical Physics}, 111(3):60, 2021.
 
+\bibitem[M{\"u}g03]{muger2003subfactors}
+Michael M{\"u}ger.
+\newblock From subfactors to categories and topology ii: The quantum double of
+  tensor categories and subfactors.
+\newblock {\em Journal of Pure and Applied Algebra}, 180(1-2):159--219, 2003.
+
 \bibitem[MZF{\etalchar{+}}12]{mourik2012signatures}
 Vincent Mourik, Kun Zuo, Sergey~M Frolov, SR~Plissard, Erik~PAM Bakkers, and
   Leo~P Kouwenhoven.
@@ -294,6 +311,11 @@ Oded Regev.
 \newblock On lattices, learning with errors, random linear codes, and
   cryptography.
 \newblock {\em Journal of the ACM (JACM)}, 56(6):1--40, 2009.
+
+\bibitem[Reu23]{reutter2023uniqueness}
+David Reutter.
+\newblock Uniqueness of unitary structure for unitarizable fusion categories.
+\newblock {\em Communications in Mathematical Physics}, 397(1):37--52, 2023.
 
 \bibitem[Rof19]{roffe2019quantum}
 Joschka Roffe.
@@ -372,6 +394,20 @@ G{\"o}ran Wendin.
 \newblock Quantum information processing with superconducting circuits: a
   review.
 \newblock {\em Reports on Progress in Physics}, 80(10):106001, 2017.
+
+\bibitem[WW14]{wen2014pattern}
+Xiao-Gang Wen and Zhenghan Wang.
+\newblock Pattern-of-zeros approach to fractional quantum hall states and a
+  classification of symmetric polynomial of infinite variables.
+\newblock In {\em Conformal Field Theories and Tensor Categories: Proceedings
+  of a Workshop Held at Beijing International Center for Mathematical
+  Research}, pages 33--65. Springer, 2014.
+
+\bibitem[Yet92]{yetter1992framed}
+David~N Yetter.
+\newblock Framed tangles and a theorem of deligne on braided deformations of
+  tannakian categories.
+\newblock {\em Contemp. Math}, 134:325--350, 1992.
 
 \bibitem[YZB{\etalchar{+}}21]{yang2021experimental}
 Fangyuan Yang, Alexander~A Zibrov, Ruiheng Bai, Takashi Taniguchi, Kenji

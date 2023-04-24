@@ -1,0 +1,59 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-8, 4) {};
+		\node [style=none] (1) at (-6, 2) {};
+		\node [style=none] (2) at (-8, 2) {};
+		\node [style=none] (3) at (-6, 4) {};
+		\node [style=none] (4) at (-4, 3) {$=$};
+		\node [style=none] (11) at (-8, 4.5) {$A\otimes B$};
+		\node [style=none] (12) at (-6, 4.5) {$C$};
+		\node [style=none] (13) at (-8, 1.5) {$C$};
+		\node [style=none] (14) at (-6, 1.5) {$A\otimes B$};
+		\node [style=none] (30) at (-2, 4) {};
+		\node [style=none] (31) at (-1.1, 4) {};
+		\node [style=none] (32) at (-2, 2) {};
+		\node [style=none] (33) at (-0.85, 2) {};
+		\node [style=none] (34) at (0.1, 2) {};
+		\node [style=none] (35) at (0.1, 4) {};
+		\node [style=none] (36) at (-2, 4.5) {$A$};
+		\node [style=none] (37) at (-1.1, 4.5) {$B$};
+		\node [style=none] (38) at (0.05, 4.5) {$C$};
+		\node [style=none] (39) at (-2, 1.5) {$C$};
+		\node [style=none] (40) at (-0.85, 1.5) {$A$};
+		\node [style=none] (41) at (0.1, 1.5) {$B$};
+		\node [style=none] (42) at (2, 2.5) {and};
+		\node [style=none] (43) at (4, 4) {};
+		\node [style=none] (44) at (6, 2) {};
+		\node [style=none] (45) at (4, 2) {};
+		\node [style=none] (46) at (6, 4) {};
+		\node [style=none] (47) at (8, 3) {$=$};
+		\node [style=none] (48) at (4, 4.5) {$A\otimes B$};
+		\node [style=none] (49) at (6, 4.5) {$C$};
+		\node [style=none] (50) at (4, 1.5) {$C$};
+		\node [style=none] (51) at (6, 1.5) {$A\otimes B$};
+		\node [style=none] (52) at (10, 4) {};
+		\node [style=none] (53) at (10.9, 4) {};
+		\node [style=none] (54) at (10, 2) {};
+		\node [style=none] (55) at (11.15, 2) {};
+		\node [style=none] (56) at (12.1, 2) {};
+		\node [style=none] (57) at (12.1, 4) {};
+		\node [style=none] (58) at (10, 4.5) {$A$};
+		\node [style=none] (59) at (10.9, 4.5) {$B$};
+		\node [style=none] (60) at (12.05, 4.5) {$C$};
+		\node [style=none] (61) at (10, 1.5) {$C$};
+		\node [style=none] (62) at (11.15, 1.5) {$A$};
+		\node [style=none] (63) at (12.1, 1.5) {$B$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [in=-90, out=90, looseness=1.25] (2.center) to (3.center);
+		\draw [style=overlap, in=90, out=-90, looseness=1.25] (0.center) to (1.center);
+		\draw [in=-90, out=90, looseness=1.25] (32.center) to (35.center);
+		\draw [style=overlap, in=90, out=-90, looseness=0.75] (30.center) to (33.center);
+		\draw [style=overlap, in=90, out=-90, looseness=0.75] (31.center) to (34.center);
+		\draw [in=90, out=-90, looseness=1.25] (43.center) to (44.center);
+		\draw [in=90, out=-90, looseness=0.75] (52.center) to (55.center);
+		\draw [in=90, out=-90, looseness=0.75] (53.center) to (56.center);
+		\draw [style=overlap, in=90, out=-90, looseness=1.25] (46.center) to (45.center);
+		\draw [style=overlap, in=90, out=-90, looseness=1.25] (57.center) to (54.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

@@ -1,10 +1,10 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=none] (0) at (-3.75, 5) {};
-		\node [style=none] (1) at (-3.75, 1) {};
-		\node [style=none] (2) at (-3.75, 0.5) {$A$};
-		\node [style=none] (3) at (-3.75, 5.5) {$A$};
-		\node [style=none] (4) at (-5.375, 3) {$=$};
+		\node [style=none] (0) at (-7.5, 5) {};
+		\node [style=none] (1) at (-7.5, 1) {};
+		\node [style=none] (2) at (-7.5, 0.5) {$A$};
+		\node [style=none] (3) at (-7.5, 5.5) {$A$};
+		\node [style=none] (4) at (-9.125, 3) {$=$};
 		\node [style=none] (5) at (-10.25, 1) {};
 		\node [style=none] (6) at (-10.25, 5) {};
 		\node [style=none] (7) at (-10.25, 5.5) {$A$};
@@ -13,22 +13,34 @@
 		\node [style=none] (10) at (-10.25, 2.5) {};
 		\node [style=none] (11) at (-11, 3.5) {};
 		\node [style=none] (12) at (-11, 2.5) {};
-		\node [style=none] (13) at (-4.25, 3.75) {};
-		\node [style=none] (14) at (-3.25, 3.75) {};
-		\node [style=none] (15) at (-3.25, 2.5) {};
-		\node [style=none] (16) at (-4.25, 2.5) {};
-		\node [style=none] (17) at (-3.75, 3.75) {};
-		\node [style=none] (18) at (-3.75, 2.5) {};
-		\node [style=none] (19) at (-3.725, 3.075) {$\theta_A$};
-		\node [style=none] (20) at (-9, 3) {$=$};
-		\node [style=none] (21) at (-7.5, 1) {};
-		\node [style=none] (22) at (-7.5, 5) {};
-		\node [style=none] (23) at (-7.5, 5.5) {$A$};
-		\node [style=none] (24) at (-7.5, 0.5) {$A$};
-		\node [style=none] (25) at (-7.5, 3.5) {};
-		\node [style=none] (26) at (-7.5, 2.5) {};
-		\node [style=none] (27) at (-6.75, 3.5) {};
-		\node [style=none] (28) at (-6.75, 2.5) {};
+		\node [style=none] (13) at (-8, 3.75) {};
+		\node [style=none] (14) at (-7, 3.75) {};
+		\node [style=none] (15) at (-7, 2.5) {};
+		\node [style=none] (16) at (-8, 2.5) {};
+		\node [style=none] (17) at (-7.5, 3.75) {};
+		\node [style=none] (18) at (-7.5, 2.5) {};
+		\node [style=none] (19) at (-7.475, 3.075) {$\theta_A$};
+		\node [style=none] (21) at (-3, 1) {};
+		\node [style=none] (22) at (-3, 5) {};
+		\node [style=none] (23) at (-3, 5.5) {$A$};
+		\node [style=none] (24) at (-3, 0.5) {$A$};
+		\node [style=none] (25) at (-3, 3.5) {};
+		\node [style=none] (26) at (-3, 2.5) {};
+		\node [style=none] (27) at (-2.25, 3.5) {};
+		\node [style=none] (28) at (-2.25, 2.5) {};
+		\node [style=none] (29) at (1.125, 5) {};
+		\node [style=none] (30) at (1.125, 1) {};
+		\node [style=none] (31) at (1.125, 0.5) {$A$};
+		\node [style=none] (32) at (1.125, 5.5) {$A$};
+		\node [style=none] (33) at (-0.75, 3) {$=$};
+		\node [style=none] (34) at (0.375, 3.75) {};
+		\node [style=none] (35) at (1.875, 3.75) {};
+		\node [style=none] (36) at (1.875, 2.5) {};
+		\node [style=none] (37) at (0.375, 2.5) {};
+		\node [style=none] (38) at (1.125, 3.75) {};
+		\node [style=none] (39) at (1.125, 2.5) {};
+		\node [style=none] (40) at (1.15, 3.075) {$\theta^{-1}_A$};
+		\node [style=none] (41) at (-5, 2) {and};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (6.center) to (9.center);
@@ -47,5 +59,11 @@
 		\draw [in=0, out=0, looseness=1.50] (27.center) to (28.center);
 		\draw [in=-180, out=90, looseness=0.75] (26.center) to (27.center);
 		\draw [style=overlap, in=-180, out=-90, looseness=0.75] (25.center) to (28.center);
+		\draw (34.center) to (35.center);
+		\draw (35.center) to (36.center);
+		\draw (36.center) to (37.center);
+		\draw (37.center) to (34.center);
+		\draw (30.center) to (39.center);
+		\draw (38.center) to (29.center);
 	\end{pgfonlayer}
 \end{tikzpicture}

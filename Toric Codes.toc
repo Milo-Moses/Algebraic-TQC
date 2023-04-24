@@ -9,16 +9,17 @@
 \contentsline {subsection}{\numberline {5.1}Objects, morphisms, and composition}{46}
 \contentsline {subsection}{\numberline {5.2}Braided monoidal categories}{56}
 \contentsline {section}{\numberline {6}Modular Tensor Categories}{64}
-\contentsline {subsection}{\numberline {6.1}Fusion Systems}{64}
+\contentsline {subsection}{\numberline {6.1}Fusion systems}{64}
 \contentsline {subsection}{\numberline {6.2}The category-theoretic viewpoint}{74}
-\contentsline {subsection}{\numberline {6.3}The MTC $\mathcal {Z}(\mathbf {Rep}_{\mathbb {Z}_2})$}{94}
-\contentsline {section}{\numberline {7}Topological Quantum Computing}{109}
-\contentsline {subsection}{\numberline {7.1}The TQC framework}{109}
-\contentsline {subsection}{\numberline {7.2}Revisiting toric code TQC}{111}
-\contentsline {subsection}{\numberline {7.3}Universal TQC with Fibonacci anyons}{111}
-\contentsline {section}{\numberline {A}$\mathbb {Z}_2$ Homology Theory}{112}
-\contentsline {section}{\numberline {B}Unitarity}{113}
-\contentsline {subsection}{\numberline {B.1}Unitary TQFTs}{113}
-\contentsline {subsection}{\numberline {B.2}Unitary MTCs}{114}
-\contentsline {section}{\numberline {C}Fusion System/MTC Correspondence}{118}
-\contentsline {section}{\numberline {D}Anyon Data}{122}
+\contentsline {subsection}{\numberline {6.3}The MTC $\mathcal {Z}(\mathbf {Rep}_{\mathbb {Z}_2})$}{87}
+\contentsline {subsection}{\numberline {6.4}Rigidity}{99}
+\contentsline {section}{\numberline {7}Topological Quantum Computing}{112}
+\contentsline {subsection}{\numberline {7.1}The TQC framework}{112}
+\contentsline {subsection}{\numberline {7.2}Revisiting toric code TQC}{114}
+\contentsline {subsection}{\numberline {7.3}Universal TQC with Fibonacci anyons}{114}
+\contentsline {section}{\numberline {A}$\mathbb {Z}_2$ Homology Theory}{114}
+\contentsline {section}{\numberline {B}Unitarity}{116}
+\contentsline {subsection}{\numberline {B.1}Unitary TQFTs}{116}
+\contentsline {subsection}{\numberline {B.2}Unitary MTCs}{117}
+\contentsline {section}{\numberline {C}Fusion System/MTC Correspondence}{121}
+\contentsline {section}{\numberline {D}Anyon Data}{125}
