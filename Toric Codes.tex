@@ -2033,7 +2033,7 @@ $$\sum_{e\in \LL}N_e^{a,b}N_{d}^{e,c}=\sum_{e\in \LL}N_{e}^{b,c}N_d^{a,e}.$$
 
 The next piece of the puzzle is based on one of the key ideas of monoidal categories: strict versus skeletal. Given quasiparticles $a,b,c$ the quantities $(a\otimes b)\otimes c$ and $a\otimes (b\otimes c)$ may be equal (i.e. the category is skeletal), but that does \textit{not} mean that the associativity map $(a\otimes b)\otimes c\to a\otimes (b\otimes c)$ is the identity (i.e the category is strict). This is in the same way that $X\otimes Y$ and $Y\otimes X$ are equal in the toric code, but the braiding map between them is non-trival: it is $-1$ times the identity. We roughly define a $6j$ fusion system to be a fusion system in which we have chosen isomorphisms between $(a\otimes b)\otimes c$ and $a\otimes (b\otimes c)$ for all $a,b,c\in \LL$.
 
-This is best visualized in a graphical language. The idea is to make rigorous the sorts of diagrams one will naturally draw when explaining the subject. The general policy for these diagrams is as follows:
+This is best visualized in a graphical language. The idea is to make rigorous the sorts of diagrams one naturally draws when explaining the subject. The general policy for these diagrams is as follows\footnote{String diagrams were first introduced in \cite{hotz1965algebraisierung}. Notation has since fractured, and there are no accepted conventions for graphical language.}:
 
 \begin{enumerate}
 \item The diagrams are to be read from top to bottom.
@@ -2055,7 +2055,7 @@ Some examples are found in Figure \ref{fig:graphical-language}. Special function
   \tikzfig{simple-cotriangle}
 \end{equation*}
 
-By our intuition of fusion there should be a morphism $a\otimes b\to c$ if and only if $N^{a,b}_c=1$, i.e., if and only if the probability of $a$ and $b$ fusing into $c$ is non-zero. We call a triple $(a,b,c)$ with $N^{a,b}_{c}=1$ \textit{admissible}. It is here that our assumption of multiplicity-freedom is so vital. When higher multiplicity terms are present, the space of morphisms $a\otimes b\to c$ will be higher dimensional. We would have to choose a \textit{basis} of distinguished morphisms. Keeping track of these basis functions is a hastle, but it is a fundamentally similar process.
+By our intuition of fusion there should be a morphism $a\otimes b\to c$ if and only if $N^{a,b}_c=1$, i.e., if and only if the probability of $a$ and $b$ fusing into $c$ is non-zero. We call a triple $(a,b,c)$ with $N^{a,b}_{c}=1$ \textit{admissible}. It is here that our assumption of multiplicity-freedom is vital. When higher multiplicity terms are present, the space of morphisms $a\otimes b\to c$ will be higher dimensional. We would have to choose a \textit{basis} of distinguished morphisms. Keeping track of these basis functions is a hastle, but it is a fundamentally similar process.
 
 Consider a function $(a\otimes b)\otimes c \to d$. This can be decomposed as first taking a function $a\otimes b\to n$,  and then taking a function $n\otimes c\to d$, i.e., as
 
@@ -2372,7 +2372,7 @@ Seeing as fusion categories should correspond to groups, they will have inverses
 \item Morphisms $\ev_{A}: A\otimes A^*\to 1$, and $\coev_{A}: 1\to A^*\otimes A$ for all $A\in \Ccat$.
 \end{enumerate}
 
-Additionally, a rigid category is required to satisfy the following property that $(\ev_A \otimes \id_A)\circ (\id_A\otimes \coev_A)=\id_A$ and $(\id_{A^*}\otimes \ev_A)\circ (\coev_{A}\otimes \id_{A^*})=\id_{A^*}$ for all $A\in \Ccat$. 
+Additionally, a rigid category is required to satisfy the property that $(\ev_A \otimes \id_A)\circ (\id_A\otimes \coev_A)=\id_A$ and $(\id_{A^*}\otimes \ev_A)\circ (\coev_{A}\otimes \id_{A^*})=\id_{A^*}$ for all $A\in \Ccat$. 
 
 \raggedleft\qedsymbol{}
 \end{definition}
@@ -2409,13 +2409,15 @@ This turns the rigidity graphical diagrams into the following much easier to par
   \tikzfig{rigidity}
 \end{equation*}
 
+[WORK: duals of morphisms goes here]
+
 We now contrast fusion categories and fusion systems. The first claim is as follows:
 
-\begin{proposition}\label{Make fusion system} Let $\Ccat$ be a fusion category, in the. Let $\LL$ be the set of isomorphism classes of simple objects in $\Ccat$. For any $a,b,c\in \LL$ with representatives $A,B,C\in\Ccat$, define
+\begin{proposition}\label{Make fusion system} Let $\Ccat$ be a fusion category, in the. Let $\LL$ be the set of isomorphism classes of simple objects in $\Ccat$. For any $a,b\in \LL$ with representatives $A,B\in\Ccat$, define $N^{a,b}_c$ to be the unique quantities such that
 
-$$N^{a,b}_c=\dim_{\CC}\Hom(A\otimes B, C).$$
+$$A\otimes B\cong \sum_{c\in \LL} N^{a,b}_c\cdot C,$$
 
-We call $\Ccat$ \textit{multiplicity free} if $N^{a,b}_{c}\in \{0,1\}$ for all triples. The pair $(\LL,N^{\--,\--}_{\--})$ is a fusion system whenever $\Ccat$ is multiplicity free.
+where $C$ is a representative for $c$ and $N^{a,b}_c\cdot C$ denotes $N^{a,b}_c$ copies of $C$ direct summed together. We call $\Ccat$ \textit{multiplicity free} if $N^{a,b}_{c}\in \{0,1\}$ for all triples. The pair $(\LL,N^{\--,\--}_{\--})$ is a fusion system whenever $\Ccat$ is multiplicity free.
 \end{proposition}
 \begin{proof} We postpone the proof to Appendix \ref{Fusion System/MTC correspondence}
 \end{proof}
@@ -2446,11 +2448,13 @@ Finally, let $A\in \Ccat$ be an object in a semisimple category. By assumption, 
 \begin{align*}
 \dim \End(A)&=\dim \Hom\left(\bigoplus_{B\in S}B,\bigoplus_{B\in S} B\right)\\
 &=\dim \bigoplus_{B_0 \in S}\bigoplus_{B_1\in S}\Hom(B_0,B_1)\\
-&=\bigoplus_{\substack{B_0,B_1\in S \\ B_0\cong B_1}}1.
+&=\sum_{\substack{B_0,B_1\in S \\ B_0\cong B_1}}1.
 \end{align*}
 
 The first step follows from Exercise \thesection.12, which implies that the direct sum can be pulled out of $\Hom$ in both the first and second argument. The second step follows from the fact that $\Hom(B_0,B_1)$ is one dimensional when $B_0\cong B_1$, and $0$ dimensional otherwise. If $|S|\geq 2$, we thus get that $\dim \End(A)\geq 2$. Hence, $\End(A)$ is one dimensional if and only if $A$ is simple as desired.
 \end{proof}
+
+Schur's lemma is useful not only because it clarifies the role of simple objects, but it also simplifies our definition of the fusion system attached to a fusion category. Namely, we have that  $N^{a,b}_c=\dim_{\CC}\Hom(A\otimes B,C)$.
 
 \begin{proposition}\label{Make 6j system} Let $\Ccat$ be a multiplicity free fusion category, with associated fusion system $(\LL,N^{\--,\--}_{\--})$. For all triples $a,b,c\in \LL$, choose representatives $A,B,C\in \Ccat$. Seeing as each hom-space $\Hom(A\otimes B, C)$ is at most one dimensional, we can choose distinguished generators
 
@@ -2534,7 +2538,7 @@ Additionally, an ribbon category is required to satisfy the following properties
 
 \begin{enumerate}
 \item $\theta_{A\otimes B}=\beta_{B,A}\circ \beta_{A,B}\circ (\theta_{A}\otimes \theta_{B})$ for all $A,B\in \Ccat$.
-\item $\theta_{A^*}=\left(\theta_A\right)^*$ for all $A\in \Ccat$. [WORK: we have yet to define the dual of a function. Maybe pull this up a bit?]
+\item $\theta_{A^*}=\left(\theta_A\right)^*$ for all $A\in \Ccat$.
 \end{enumerate}
 \raggedleft\qedsymbol{}
 \end{definition} 
@@ -2561,7 +2565,7 @@ Morphisms between ribbon categories should respect the twisting operation. A \te
 
 We spend the remainder of this section discussing the properties of MTCs. Seeing as we will be often refering to the twist, we demonstrate that it can be expressed in a purely graphical formula:
 
-\begin{proposition} Let $A\in \Ccat$ be an object in an MTC. We have that
+\begin{proposition}\label{graphical-twist} Let $A\in \Ccat$ be an object in an MTC. We have that
 
 \begin{equation*}
 \tikzfig{graphical-twist}
@@ -2636,12 +2640,12 @@ where $A,B$ are representatives of $a,b\in \LL$. Similarly, we define the $T$-ma
 0 & -1\\
 1 & 0
 \end{pmatrix}
-&\mapsto \frac{1}{\sqrt{\dim \Ccat }}\cdot S, \\
+&\mapsto \frac{1}{\sqrt{\dim \Ccat }}\cdot S \\
 \begin{pmatrix}
 1 & 1\\
 0 & 1
 \end{pmatrix}
-&\mapsto \frac{\sqrt[3]{p^+_{\Ccat}}}{\sqrt[6]{\dim \Ccat }}\cdot T.
+&\mapsto \frac{\sqrt[3]{p^+_{\Ccat}}}{\sqrt[6]{\dim \Ccat }}\cdot T
 \end{align*}
 
 is a representation of the modular group. That is, extending $\rho_{\Ccat}$ by matrix multiplication gives a well-defined group homomorphism.
@@ -2651,18 +2655,20 @@ These $S$-matrices and $T$-matrices are very important invariants of MTCs, and a
 
 \begin{theorem} The following claims about MTCs are all true:
 
-\begin{itemize}
+\begin{enumerate}
 \item (Bruguieres, \cite{bruguieres2000categories}) Ribbon fusion categories are non-degenerate (and hence are MTCs) if and only if their $S$-matrix is invertible.
+
 \item (Bruillard-Ng-Rowell-Wang, \cite{bruillard2016rank}) There are finitely many MTCs, up to braided monoidal equivalence, of a given rank.
+
 \item (Schauenburg-Ng, \cite{ng2010congruence}) The modular representations of MTCs have finite image. More precisely the kernels of modular representations are \textit{congruence subgroups}, meaning that they all contain the subgroup
 
 $$\left\{ \left. M\in \SL_2(\ZZ) \right| M\equiv I\,\,\, \mathrm{mod}\, n\right\}$$
 
-for some $n\geq 1$.
-\end{itemize}
+for some $n\geq 2$.
+\end{enumerate}
 \end{theorem}
 
-[WORK: add conclusion]
+This concludes our basic introduction to MTCs. In the rest of this section we give a series of key examples and constructions, as well as clarification on the properties and axioms of MTC.
 
 \subsection{The MTC $\Zcal(\Rep_{\ZZ_2})$}
 \label{VecZ2 MTC}
@@ -2862,9 +2868,18 @@ Inheriting associativity, unitors, and composition from $\Ccat$, this gives $\Zc
 
 $$\upbeta_{A,B\otimes C}=\alpha_{C,A,B}^{-1}\circ \left(\id_{B}\otimes \upbeta_{A,C}\right)\circ \alpha_{A,C,B}\circ\left(\upbeta_{A,B}\otimes \id_C\right)\circ \alpha^{-1}_{A,B,C}.$$
 
-This condition makes the second hexagon identity tautological. Similarly, the definition of tensor product given is not strictly correct - one must add the correct associator terms, making the first hexagon identity tautological. Lastly one must verify the half-braidings defined on the tensor unit/tensor product are actually half braidings, i.e., that they satisfy the hexagon condition. These follow from straightforward computations, which we leave as exercises. This completes the proof.
+This condition makes the second hexagon identity tautological. Similarly, the definition of tensor product given is not strictly correct - one must add the correct associator terms, making the first hexagon identity immediate. Lastly one must verify the half-braidings defined on the tensor unit/tensor product are actually half braidings, i.e., that they satisfy the hexagon condition. These follow from straightforward computations, which we leave as exercises. This completes the proof.
 
 \end{proof}
+
+As usual, the most subtle issue in the theory comes down to duals. It is \textit{not} generally true that the center of a rigid monoidal category is not neccecarily rigid. Namely, we have the following:
+
+\begin{lemma}.[WORK: do it]
+\end{lemma}
+\begin{proof}. [WORK: do proof]
+\end{proof}
+
+In a generic rigid monoidal category we need not have isomorphisms between objects and their double dual\footnote{The existence of a counterexample is folklore, first alluded to in \cite[Page 9]{muger2008tensor}. In the monoidal category of functors (Exercise \ref{Categories}.6) duals correspond to adjoint functors. We are thus interested in sequences of adjoint functors for which the right adjoint and left adjoint are not neccecarily naturally isomorphic. These are readily available in mathematics (e.g. \cite[Remark 6.11]{rahn2021generalized})}. However, this \textit{does} hold  for fusion categories. We postpone the proof to next section, in Proposition \ref{two-duals}. We now have the following:
 
 \begin{proposition} Let $\Ccat$ be a fusion category. Define the following data for a fusion category:
 
@@ -2979,7 +2994,7 @@ In general, not every fusion category's center will be an MTC. The categories wh
 
 satisfying a number of desirable comaptibility conditions. One can think of spherical fusion categories as being the minimal structure in which traces behave well. For this reason, we can speak of quantum dimensions of objects in spherical categories. The MTC structure on the Drinfeld center is as follows:
 
-\begin{proposition}[\cite{muger2003subfactors}]\label{spherical-center-modular} Let $\Ccat$ be a spherical fusion category. Define the following data for a ribbon fusion category:
+\begin{theorem}[\cite{muger2003subfactors}]\label{spherical-center-modular} Let $\Ccat$ be a spherical fusion category. Define the following data for a ribbon fusion category:
 
 \begin{enumerate}
 \item (Underlying braided fusion category) $\Zcal(\Ccat)$.
@@ -2992,7 +3007,7 @@ satisfying a number of desirable comaptibility conditions. One can think of sphe
 This gives $\Zcal(\Ccat)$ the structure of an MTC.
 \end{enumerate}
 
-\end{proposition}
+\end{theorem}
 
 We can apply to construct MTCs from $G$-graded vector spaces, by showing that $\Vecc_G$ is spherical. Concretely, recall the double-dual isomorphism on vector spaces
 
@@ -3018,7 +3033,7 @@ Another intuition for $\Zcal(\Ccat)$, alluded to in the introduction of this sec
 A &\mapsto (A,\beta_{A,\--})
 \end{align*}
 
-Let $\Ccat^{\text{rev}}$ denote the braided monoidal category whose underlying monoidal category is $\Ccat$, but the braiding between $A,B$ is given by $\beta_{B,A}^{-1}$ instead of $\beta_{A,B}$.\footnote{$\Ccat^{\text{rev}}$ is \textit{not} equal to $\Ccat^{\op}$.} That is, the same category but with braiding reversed. There is a canonical braided monoidal functor
+Let $\Ccat^{\text{rev}}$ denote the braided monoidal category whose underlying monoidal category is $\Ccat$, but the braiding between $A,B$ is given by $\beta_{B,A}^{-1}$ instead of $\beta_{A,B}$.\footnote{$\Ccat^{\text{rev}}$ is \textit{not} $\Ccat^{\op}$.} That is, the same category but with braiding reversed. There is a canonical braided monoidal functor
 
 \begin{align*}
 \Ccat^{\text{rev}} &\to \Zcal(\Ccat).\\
@@ -3118,12 +3133,12 @@ We offer some commentary about this proposition. Firstly we find that while dual
 
 We now move on to the study of ``two-sided" duals. Distinguihsed maps going from $A^*\otimes A \to 1$ and $1\to A\otimes A$ were a key use of ribbon structure on MTCs. These morphisms were similarly useful when defining MTC structure on the Drinfeld center of spherical categories. Physically, a particle should be able to fuse with its antiparticle from the left or from the right. Two-sided duals mean that not only is $A^*$ a dual for $A$, but $A$ is a dual for $A^*$. That is, from uniquness of duals, we should have an isomorphism $A\cong A^{**}$. While not true for all rigid categories, this is the case for fusion categories:
 
-\begin{proposition} Let $A\in \Ccat$ be an object in a fusion category. There is a non-canonical isomorphism $A\cong A^{**}.$
+\begin{proposition}\label{two-duals} Let $A\in \Ccat$ be an object in a fusion category. There is a non-canonical isomorphism $A\cong A^{**}.$
 \end{proposition}
 \begin{proof}.[WORK: Do proof]
 \end{proof}
 
-The issue with these non-canonical isomorphisms is that we have no guarantee that all of our distinguished maps will satisfy good compatibility properties. For this reason we introduce the following notion: A \textit{pivotal category} is a rigid category $\Ccat$ paired with a monoidal natural isomorphism $i:\id_{\Ccat}\to (\--)^{**}$ \cite{selinger2011survey}. While seemingly a structure, this is really more of a property. If a rigid category admits a pivotal structure, then all of those pivotal structures will be the same up to precomposing with a a monoidal natural endomorphism of the identity functor\footnote{For fusion categories, the group $\Aut_{\otimes}(\id_{\Ccat})$ of monoidal automorphisms of the identity is \textit{finite}. In particular, there are only finitely many choices of pivotal structure. One can explicitely decribe $\Aut_{\otimes}(\id_{\Ccat})$ as $\Hom(U_{\Ccat},\CC^{\times})$, where $U_{\Ccat}$ is the ``universal grading group" of $\Ccat$ \cite[Prop. 3.9]{gelaki2008nilpotent}} \cite[Prop. 5.7, Lemma 6.2]{bartlett2009unitary}. It is a fascinating feature of the theory that the double dual is not a-priori isomorphic to the identity. Conjecturally, however, we have the following:
+The issue with these non-canonical isomorphisms is that we have no guarantee that all of our distinguished maps will satisfy good compatibility properties. For this reason we introduce the following notion: a \textit{pivotal category} is a rigid category $\Ccat$ paired with a monoidal natural isomorphism $i:\id_{\Ccat}\to (\--)^{**}$ \cite{selinger2011survey}. While seemingly a structure, this is really more of a property. If a rigid category admits a pivotal structure, then all of those pivotal structures will be the same up to precomposing with a a monoidal natural endomorphism of the identity functor\footnote{For fusion categories, the group $\Aut_{\otimes}(\id_{\Ccat})$ of monoidal automorphisms of the identity is \textit{finite}. In particular, there are only finitely many choices of pivotal structure. One can explicitely decribe $\Aut_{\otimes}(\id_{\Ccat})$ as $\Hom(U_{\Ccat},\CC^{\times})$, where $U_{\Ccat}$ is the ``universal grading group" of $\Ccat$ \cite[Prop. 3.9]{gelaki2008nilpotent}} \cite[Prop. 5.7, Lemma 6.2]{bartlett2009unitary}. It is a fascinating feature of the theory that the double dual is not a-priori isomorphic to the identity. Conjecturally, however, we have the following:
 
 \begin{conjecture}[Etingof, Nikshych, and Ostrik] In every fusion category, there is a natural monoidal isomorphism between the identity functor and the double dual functor $(\--)^{**}$. That is, every fusion category admits a pivotal structure.
 \end{conjecture}
@@ -3138,7 +3153,7 @@ While questions of the existence of pivotal structures is of much interest to th
 
 The compact definition of pivotal can be expanded into something more useful, as below:
 
-\begin{proposition} Let $(\Ccat,i)$ be a pivotal category. We graphically define the distinguished morphisms
+\begin{proposition}\label{pivotal-alternative} Let $(\Ccat,i)$ be a pivotal category. We graphically define the distinguished morphisms
 
 \begin{equation*}
 \tikzfig{pivotal-eval-coeval}
@@ -3177,23 +3192,39 @@ Conversely, any rigid category with duals satisfying these axioms will be pivota
 This gives a bijection between pivotal categories and rigid categories with duals satisfying these axioms.
 
 \end{proposition}
-\begin{proof} We begin with the forward direction, proving that both properties are satisfied.
-
-\begin{enumerate}
-\item .[WORK: Do proof]
-
-\item .[WORK: Do proof]
-\end{enumerate}
-
-We now move on to the converse direction. [WORK: do proof]
+\begin{proof} Proving the forward direction is immediate, so we leave it as an exercise. Conversely, suppose we are given duals satisfying the axioms of the proposition. The map $i$ is a natural transformation by the following computation:
 
 \begin{equation*}
 \tikzfig{pivotal-naturality}
 \end{equation*}
 
+It is monoidal because
+
+\begin{equation*}
+\tikzfig{pivotal-monoidality}
+\end{equation*}
+
+It is clear that these two processes are inverses of one another, and hence we have established our bijection.
+
 \end{proof}
 
-In the case of braided monoidal categories, it is an amazing fact that pivotal structures can be alternatively described in terms of \textit{twists}:
+In the case of braided monoidal categories, it is an amazing fact that pivotal structures can be alternatively described in terms of \textit{twists}. We prove this after a lemma.
+
+\begin{lemma}\label{pulling-lemma} Let $A,B,C,D\in \Ccat$ be objects in a braided monoidal category, and let $f:C\to B\otimes D$ and $g: A\otimes C\to 1$ be morphisms. We have that
+
+\begin{equation*}
+\tikzfig{pulling-lemma}
+\end{equation*}
+
+\end{lemma}
+\begin{proof} We compute as follows:
+
+\begin{equation*}
+\tikzfig{pulling-lemma-proof}
+\end{equation*}
+
+and hence we conclude the result.
+\end{proof}
 
 \begin{proposition}[Deligne, \cite{yetter1992framed}]\label{pivotal-proposition} Let $\Ccat$ be a braided monoidal category. Given any natural isomorphism $\theta:\id_{\Ccat}\to\id_{\Ccat}$ such that $\theta_{A\otimes B}=\beta_{B,A}\circ \beta_{A,B}\circ (\theta_A\otimes \theta_B)$ for all $A,B\in \Ccat$, the distinguished morphisms
 
@@ -3203,7 +3234,7 @@ In the case of braided monoidal categories, it is an amazing fact that pivotal s
 
 give $\Ccat$ the structure of a pivotal category. This map induces a canonical bijection between the set of pivotal structures on $\Ccat$ and the set of natural isomorphism $\theta$ satisfying $\theta_{A\otimes B}=\beta_{B,A}\circ \beta_{A,B}\circ (\theta_A\otimes \theta_B)$ for all $A,B\in \Ccat$.
 \end{proposition}
-\begin{proof}. [WORK: Do proof]
+\begin{proof} We show that the distinuished morphisms defined satisfy the axioms of Proposition \ref{pivotal-alternative}. Firstly, it is 
 
 \begin{equation*}
 \tikzfig{something-property-proof}
@@ -3225,22 +3256,7 @@ However, there is an ambiguity: one could also close the loop the other directio
 \tikzfig{trace-right}
 \end{equation*}
 
-When working with pivotal categories, one only has the weaker notions of ``left trace" and ``right trace". Abstractly, we can think of spherical categories as the minimal structure in which traces are well defined. The spherical property is automatic for braided pivotal categories:
-
-\begin{proposition} All braided pivotal categories are spherical.
-\end{proposition}
-\begin{proof}. [WORK: Do proof]
-\end{proof}
-
-For $\Vecc_G$, we have the following:
-
-\begin{proposition} The double dual isomorphism on vector spaces induces a pivotal structure on $\Vecc_G$.
-\end{proposition}
-\begin{proof}. [WORK: do proof]
-\end{proof}
-
-
-We now express ribbon categories in twist-theoretic language, as promised:
+When working with pivotal categories, one only has the weaker notions of ``left trace" and ``right trace". Abstractly, we can think of spherical categories as the minimal structure in which traces are well defined. For braided pivotal categories, sphericality and ribbon structure are intimately linked:
 
 \begin{proposition}\label{something-property} Let $\Ccat$ be a braided pivotal category. For any object $A\in \Ccat$, the following are equivalent:
 
@@ -3251,46 +3267,62 @@ We now express ribbon categories in twist-theoretic language, as promised:
 \tikzfig{ribbon-property}
 \end{equation*}
 
-holds [WORK: literally rubbish - assumes we have a twist. Re-do this in graphical language.].
+holds.
 
 \item $\theta_{A^*}=(\theta_A)^*$, where $\theta$ is the twist associated to the pivotal structure on $\Ccat$ under the bijection of Proposition \ref{pivotal-proposition}.
 \end{enumerate}
 
-In particular, ribbon categories can be equivalently described as braided pivotal categories for which the formula (1) holds for every $A$.
+In particular, ribbon categories can be equivalently described as braided pivotal categories for which the formula (1) holds for every $A$. All ribbon categories are spherical. Moreover, if $\Ccat$ is a fusion category then it is ribbon if and only if it is spherical.
 
 \end{proposition}
-\begin{proof} [WORK: do the proof]
-\end{proof}
-
-We now demonstrate some basic facts traces, after a lemma:
-
-\begin{lemma}\label{pulling-lemma} Let $A,B,C,D\in \Ccat$ be objects in a braided monoidal category, and let $f:C\to B\otimes D$ and $g: A\otimes C\to 1$ be morphisms. We have that
+\begin{proof} From Proposition \ref{graphical-twist} we deduce that
 
 \begin{equation*}
-\tikzfig{pulling-lemma}
+\tikzfig{ribbon-property-proof}
 \end{equation*}
 
-\end{lemma}
-\begin{proof} We compute as follows:
+Hence, it is clear that (1) and (2) are equivalent. We now observe that
 
 \begin{equation*}
-\tikzfig{pulling-lemma-proof}
+\tikzfig{spherical-a-priori}
 \end{equation*}
 
-and hence we conclude the result.
+and hence a ribbon category will be spherical. We now assume $\Ccat$ is a fusion category. [WORK: finish the proof]
 \end{proof}
+
+Observe that this proves part of Theorem \ref{spherical-center-modular}, which we ommited before. When $\Ccat$ is spherical, $\Zcal(\Ccat)$ will be spherical as well. Proposition \ref{something-property} tells us then that $\Zcal(\Ccat)$ must be ribbon. The fact that $\Zcal(\Ccat)$ is non-degenerate is much more non-trivial. For $\Vecc_G$, we have the following:
+
+\begin{proposition} The double dual isomorphism on vector spaces induces a spherical pivotal structure on $\Vecc_G$. Given an endomorphism $f\in \End(\{V_i\}_{i\in I})$ in $\Vecc_G$, we can treat $f$ as an endomorphism of $V=\bigoplus_{i\in I}V_i$. The trace $\tr_{\Ccat}(f)$ computed in $\Ccat$ agrees with the linear algebra trace of $f$.
+\end{proposition}
+\begin{proof}. [WORK: do proof]
+\end{proof}
+
+We now prove some basic facts about traces. The first is that given a morphism, we can explicitely compute the trace using a straightforward procedure:
+
+\begin{proposition} Let $f:A\to A$ be an endomorphism in a fusion category $\Ccat$. Fix a decomposition $A\cong \bigoplus_{i\in I}A_i$ of $A$ into simple objects $A_i$. Moreover, we take the decomposition such that if $A_i\cong A_j$ then $A_i=A_j$. We can decompose
+
+$$\Hom(A,A)\cong \Hom(\bigoplus_{i\in I} A_i,\bigoplus_{i\in I}A_i)=\bigoplus_{i\in I, j\in I}\Hom(A_i,A_j).$$
+
+Let $M$ be the matrix whose collums and rows are labeled by $I$, and whose $(i,j)$ entry is $0$ if $A_i\not\cong A_j$ and $\lambda \cdot d_{A_i}$ if $A_i=A_j$, where $\lambda\in \CC$ is the unique value such that the $\Hom(A_i,A_j)$ component of $f$ is $\lambda\cdot \id_{A_i}$. We have that
+
+$$\tr_{\Ccat}(f)=\tr_{\Vecc}(M).$$
+
+\end{proposition}
+\begin{proof} .[WORK: do proof]
+\end{proof}
+
+Other properties of the trace are summarized below:
 
 \begin{proposition}\label{trace} . [WORK: I want to know what's true. Try to prove all these things, see if there is any difficulty. I am sure I am wrong in several parts.]Let $\Ccat$ be a spherical fusion category. For all $A,B\in \Ccat$, $f\in \End(A)$ the following claims are all true:
 
 \begin{enumerate}
+\item $\tr(\lambda\cdot f)=\lambda \cdot \tr(f)$ for all $\lambda\in \CC$.
 \item $\tr(f\oplus g)=\tr(f)+\tr(g)$ for all $g\in \End(B)$
 \item $\tr(f\circ g)=\tr(g\circ f)$ for all $g\in \End(A)$
 \item $\tr(f^{*})=\tr(f)$
+\item $\tr(f\otimes g)=\tr(f)\cdot \tr(g)$ for all $g\in \End(B)$
 \item Trace is preserved by functors. That is, let $\Ccat,\Dcat$ be spherical categories with traces $\tr_{\Ccat},\tr_{\Dcat}$ respectively. Let $F:\Ccat\to \Dcat$ be a braided tensor functor. We have that $\tr_{\Ccat}(f)=\tr_{\Dcat}(F(f))$.
 \end{enumerate}
-
-If $\Ccat$ is moreover a ribbon fusion category, then $\tr(f\otimes g)=\tr(f)\cdot \tr(g)$.
-
 
 \end{proposition}
 \begin{proof} .[WORK: prove the first parts] Using Proposition \ref{something-property}, we compute
@@ -3341,7 +3373,7 @@ $$s_{a,b}=\frac{1}{\theta_a \theta_b}\sum_{c\in \LL}N^{a^*,b}_{c}d_{c}\theta_{c}
 
 By [WORK: doing what?], one arrives the the \textit{Verlinde formula} for MTCs:
 
-$$N^{a,b}_{c}=\sum_{d\in \LL} \frac{s_{a,d} s_{b,d}s_{c^*,d}}{\dim{\Ccat}\cdot d_d}$$
+$$N^{a,b}_{c}=\sum_{e\in \LL} \frac{s_{a,e} s_{b,e}s_{c^*,e}}{\dim{\Ccat}\cdot d_e}$$
 
 \item Let $\Ccat$ be a category satisfying all of the axioms of a $\CC$-linear abelian category, except that monomorphisms and epimorphism are not necessarily normal. Let $f:A\to B$ be a morphism. Recall that $f$ is called a kernel if it satisfies the universal property of $\ker \overline{f}$ for some morphism $\overline{f}$, and $f$ is called a cokernel if it satisfies the universal property of $\coker \overline{f}$ for some morphism $\overline{f}$.
 
@@ -3419,8 +3451,6 @@ are isomorphisms for all $C\in \Ccat$.
 
 \subsection{The TQC framework}
 \label{The TQC framework}
-
-[WORK: Change particle types from $A,B,C$ to $X,Y,Z$.]
 
 [WORK: The big thing is to draw the picture between topological quantum phases of matter, TQFTs, MTCs, and TQC. Show exactly what this looks like in the case of the toric code, i.e., what the topological quantum phase of matter is, the TQFT, the MTC, and the resulting TQC. Add all the connections and insights that I've come up with along this journey, and things I would feel remiss not including. Really, this should be a version of an introduction-to-TQC-for-experts section. Should definitely mention that TQFTs are generally $1$-extended with punctures, to visualize anyons. Should mention that literally making torus bigger will make error rate smaller, since it's harder for things to accidentally interact with each other (exponential decrease). Maybe another thing to add is how the 1st priority is to minimize energy, and the 2nd order is to maximize entanglement.]
 
@@ -3607,9 +3637,9 @@ The map $\left<\cdot|\cdot\right>:\Hom(A,B)\times \Hom(A,B)\to \CC$ defined by $
 \raggedleft\qedsymbol{}
 \end{definition}
 
-Unitary fusion categories make for a pleasant object of study because the distinguished maps $(\ev_A)^{\dagger}:1\to A^{*}\otimes A$ and $(\coev_A)^{\dagger}:A\otimes A^{*}\to 1$ induce a spherical structure:
+Unitary fusion categories make for a pleasant object of study because the distinguished maps $(\ev_A)^{\dagger}:1\to A^{*}\otimes A$ and $(\coev_A)^{\dagger}:A\otimes A^{*}\to 1$ induce a pivotal structure:
 
-\begin{proposition} All unitary fusion categories are spherical.
+\begin{proposition} All unitary fusion categories are spherical pivotal categories.
 \end{proposition}
 \begin{proof}.[WORK: Should be literally trivial...]
 \end{proof}
@@ -3645,7 +3675,7 @@ $$\rho_{\Ccat}:\SL_2(\ZZ)\to \Aut(\CC[\LL])$$
 is unitary, in the sense that all matrices in the image are unitary. In particular, the $S$-matrix of every MTC is unitary.
 \end{theorem}
 
-Since unitary fusion categories are spherical, Proposition \ref{spherical-center-modular} implies their centers are MTCs. Further, they can canonically be made unitary:
+Since unitary fusion categories are spherical, Theorem \ref{spherical-center-modular} implies their centers are MTCs. Further, they can canonically be made unitary:
 
 \begin{proposition}\label{unitary MTC}$ \Zcal(\Ccat)$ inherits a canonical conjugation structure from $\Ccat$, endowing it with the structure of a unitary MTC.
 \end{proposition}
@@ -3693,6 +3723,8 @@ From this we observe that the categorical inner product $\left<\cdot | \cdot \ri
 Thus, $\Vecc_{\ZZ_2}$ can be given the structure of a unitary fusion category. Applying Proposition \ref{unitary MTC}, this means that $\Zcal(\Vecc_{\ZZ_2})$ has the structure of a unitary MTC, as desired. If one wishes to have a canonical unitary structure, then one can use instead the category of $G$-graded Hilbert spaces, $\Hilb_G$. It is equivalent to $\Vecc_G$, but its unitary structure is canonical. Philosophically it is thus more correct to say that the unitary MTC associated with the toric code is $\Zcal(\Hilb_{\ZZ_2})$, $\Zcal(\Vecc_{\ZZ_2})$.
 
 As in the non-unitary case, there is an equivalence between unitary MTCs and (1-extended) unitary TQFTs. Under this equivalence, $\Zcal(\Hilb_{\ZZ_2})$ is identified with the unitary $\ZZ_2$ Dijkgraaf-Witten theory. [WORK: cite something]
+
+[WORK: add the fact that ribbon fusion categories with positive quantum dimensions are conjectured to be unitary]
 
 $\newline\newline$
 

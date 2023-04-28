@@ -46,8 +46,6 @@
 		\draw (6.center) to (9.center);
 		\draw (5.center) to (10.center);
 		\draw [in=-180, out=-180, looseness=1.25] (11.center) to (12.center);
-		\draw [in=-90, out=0, looseness=0.75] (12.center) to (9.center);
-		\draw [style=overlap, in=0, out=90, looseness=0.75] (10.center) to (11.center);
 		\draw (13.center) to (14.center);
 		\draw (14.center) to (15.center);
 		\draw (15.center) to (16.center);
@@ -65,5 +63,7 @@
 		\draw (37.center) to (34.center);
 		\draw (30.center) to (39.center);
 		\draw (38.center) to (29.center);
+		\draw [in=90, out=0, looseness=0.75] (11.center) to (10.center);
+		\draw [style=overlap, in=0, out=-90, looseness=0.75] (9.center) to (12.center);
 	\end{pgfonlayer}
 \end{tikzpicture}

@@ -198,6 +198,12 @@ Tobias~J Hagge and Seung-Moon Hong.
 \newblock {\em Communications in Contemporary Mathematics}, 11(04):615--637,
   2009.
 
+\bibitem[Hot65]{hotz1965algebraisierung}
+G{\"u}nter Hotz.
+\newblock Eine algebraisierung des syntheseproblems von schaltkreisen i.
+\newblock {\em Elektronische Informationsverarbeitung und Kybernetik},
+  1(3):185--205, 1965.
+
 \bibitem[JS86]{joyal1986braided}
 Andr{\'e} Joyal and Ross Street.
 \newblock Braided monoidal categories.
@@ -267,6 +273,11 @@ Michael M{\"u}ger.
   tensor categories and subfactors.
 \newblock {\em Journal of Pure and Applied Algebra}, 180(1-2):159--219, 2003.
 
+\bibitem[M{\"u}g08]{muger2008tensor}
+Michael M{\"u}ger.
+\newblock Tensor categories: a selective guided tour.
+\newblock {\em arXiv preprint arXiv:0804.3587}, 2008.
+
 \bibitem[MZF{\etalchar{+}}12]{mourik2012signatures}
 Vincent Mourik, Kun Zuo, Sergey~M Frolov, SR~Plissard, Erik~PAM Bakkers, and
   Leo~P Kouwenhoven.
@@ -321,6 +332,11 @@ David Reutter.
 Joschka Roffe.
 \newblock Quantum error correction: an introductory guide.
 \newblock {\em Contemporary Physics}, 60(3):226--245, 2019.
+
+\bibitem[RS21]{rahn2021generalized}
+Moritz Rahn and Michael Shulman.
+\newblock Generalized stability for abstract homotopy theories.
+\newblock {\em Annals of K-Theory}, 6(1):1--28, 2021.
 
 \bibitem[RW18]{rowell2018mathematics}
 Eric Rowell and Zhenghan Wang.
