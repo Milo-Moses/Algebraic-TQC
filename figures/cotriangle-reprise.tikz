@@ -7,7 +7,7 @@
 		\node [style=none] (6) at (-10, 5.5) {$A$};
 		\node [style=none] (7) at (-6, 5.5) {$B$};
 		\node [style=none] (8) at (-8, 0.5) {$C$};
-		\node [style=none] (9) at (-2.5, 2.5) {$\displaystyle{\in \Hom(A\otimes B,C)\cong \CC}.$};
+		\node [style=none] (9) at (-3, 2.5) {$\displaystyle{\in \Hom(A\otimes B,C)}.$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (0.center) to (1.center);

@@ -97,6 +97,13 @@ Cyrus~Lawence Day.
   Ancient Culture, with a Translation and Analysis of" Oribasius de Laqueis"}.
 \newblock University Press of Kansas, 2021.
 
+\bibitem[Del07]{deligne2007categories}
+Pierre Deligne.
+\newblock Cat{\'e}gories tannakiennes.
+\newblock {\em The Grothendieck Festschrift: A Collection of Articles Written
+  in Honor of the 60th Birthday of Alexander Grothendieck}, pages 111--195,
+  2007.
+
 \bibitem[dF17]{felice2017hopf}
 Giovanni de~Felice.
 \newblock Hopf algebras in quantum computation.
@@ -123,6 +130,11 @@ Robbert Dijkgraaf and Edward Witten.
 Murray Eisenberg and Robert Guy.
 \newblock A proof of the hairy ball theorem.
 \newblock {\em The American Mathematical Monthly}, 86(7):571--574, 1979.
+
+\bibitem[EGNO16]{etingof2016tensor}
+Pavel Etingof, Shlomo Gelaki, Dmitri Nikshych, and Victor Ostrik.
+\newblock {\em Tensor categories}, volume 205.
+\newblock American Mathematical Soc., 2016.
 
 \bibitem[ENO05]{etingof2005fusion}
 Pavel Etingof, Dmitri Nikshych, and Viktor Ostrik.
@@ -155,6 +167,11 @@ Michael~H Freedman, Michael Larsen, and Zhenghan Wang.
 Theodore Frankel.
 \newblock Homology and flows on manifolds.
 \newblock {\em Annals of Mathematics}, pages 331--339, 1957.
+
+\bibitem[Fra13]{franco2013tensor}
+Ignacio~L{\'o}pez Franco.
+\newblock Tensor products of finitely cocomplete and abelian categories.
+\newblock {\em Journal of Algebra}, 396:207--219, 2013.
 
 \bibitem[FS19]{fong2019invitation}
 Brendan Fong and David~I Spivak.
@@ -203,6 +220,12 @@ G{\"u}nter Hotz.
 \newblock Eine algebraisierung des syntheseproblems von schaltkreisen i.
 \newblock {\em Elektronische Informationsverarbeitung und Kybernetik},
   1(3):185--205, 1965.
+
+\bibitem[HRW08]{hong2008exotic}
+Seung-Moon Hong, Eric Rowell, and Zhenghan Wang.
+\newblock On exotic modular tensor categories.
+\newblock {\em Communications in Contemporary Mathematics},
+  10(supp01):1049--1074, 2008.
 
 \bibitem[JS86]{joyal1986braided}
 Andr{\'e} Joyal and Ross Street.
@@ -333,10 +356,20 @@ Joschka Roffe.
 \newblock Quantum error correction: an introductory guide.
 \newblock {\em Contemporary Physics}, 60(3):226--245, 2019.
 
+\bibitem[Row06]{rowell2006quantum}
+Eric~C Rowell.
+\newblock From quantum groups to unitary modular tensor categories.
+\newblock {\em Contemporary Mathematics}, 413:215--230, 2006.
+
 \bibitem[RS21]{rahn2021generalized}
 Moritz Rahn and Michael Shulman.
 \newblock Generalized stability for abstract homotopy theories.
 \newblock {\em Annals of K-Theory}, 6(1):1--28, 2021.
+
+\bibitem[RSW09]{rowell2009classification}
+Eric Rowell, Richard Stong, and Zhenghan Wang.
+\newblock On classification of modular tensor categories.
+\newblock {\em Communications in Mathematical Physics}, 292(2):343--389, 2009.
 
 \bibitem[RW18]{rowell2018mathematics}
 Eric Rowell and Zhenghan Wang.
@@ -366,6 +399,11 @@ Peter~W Shor.
   factoring.
 \newblock In {\em Proceedings 35th annual symposium on foundations of computer
   science}, pages 124--134. Ieee, 1994.
+
+\bibitem[Sou70]{soublin1970anneaux}
+Jean-Pierre Soublin.
+\newblock Anneaux et modules coh{\'e}rents.
+\newblock {\em Journal of Algebra}, 15(4):455--472, 1970.
 
 \bibitem[Spi18]{spivak2018calculus}
 Michael Spivak.
