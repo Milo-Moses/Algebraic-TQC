@@ -1987,7 +1987,7 @@ $$\frac{N^{a,b}_{c}}{\sum_{d}N^{a,b}_{d}}.$$
 
 This generalization of a group is called a fusion system. Those fusion systems which satisfy a generalization of commutivity are called \textit{braided fusion systems}. MTCs are braided fusion categories which have a ``twist" and satisfy a certain non-degeneracy condition. In this way, one can think of MTCs as being vast ``non-degenerate" generalizations of finite abelian groups
 
-As we add all of this structure to our fusion systems to better approximate the physical world, we will find that higher multiplicity terms (i.e. $N^{a,b}_c\geq 2$) generate a great deal of complexity. For this reason we restrict ourselves at our earliest convenience to \textit{multiplicity free} fusion systems, where all $N^{a,b}_c$ are $0$ or $1$. Physically, this means that when any two particles are fused, all of the possible results will occur equally likely. Many important MTCs are not multiplicity free. This is thus one of the advantages of the category theoretic viewpoint - we can consider the more general case with no extra effort. We now formally state the definition of fusion system
+As we add all of this structure to our fusion systems to better approximate the physical world, we will find that higher multiplicity terms (i.e. $N^{a,b}_c\geq 2$) generate a great deal of complexity. For this reason we restrict ourselves at our earliest convenience to \textit{multiplicity free} fusion systems, where all $N^{a,b}_c$ are $0$ or $1$. Physically, this means that when any two particles are fused, all of the possible results will occur equally likely. Many important MTCs are not multiplicity free. This is thus one of the advantages of the category theoretic viewpoint - we can consider the more general case with no extra effort. We now formally state the definition of fusion system. [WORK: This is wrong in lots of ways. For one, this does NOT mean probabilities are equally likely. Addiitionally, ``many important examples" are NOT multiplicity free. Only a handfull of examples are known. See \cite{barter2022computing} for a discussion.] [WORK: to fix probability theory, we have to introduce unitarity.]
 
 \begin{definition}[Fusion system] A fusion system is the following data.
 
@@ -3076,12 +3076,54 @@ These two functors in some sense generate $\Zcal(\Ccat)$, and thus $\Zcal(\Ccat)
 \begin{theorem}[Müger, \cite{muger2003subfactors}] Let $\Ccat$ be a spherical fusion category. We have that $\dim \Zcal(\Ccat) = (\dim \Ccat)^2$. Moreover both Gauss sums for $\Zcal(\Ccat)$ are equal, $p_{\Zcal(\Ccat)}^{\pm}=\dim \Ccat$.
 \end{theorem}
 
-We now verify that our two definitions of the MTC associated with the toric code are equivalent:
+In the case of $\Vecc_G$, we can explicitely compute what half braidings look like:
+
+\begin{proposition} Let $G$ be a finite group, and choose $V\in \Vecc_G$. There is a canonical bijection
+
+$$\left\{
+\begin{matrix} \text{half braidings} \\ \text{on }V
+\end{matrix}
+\right\}
+\xrightarrow{\sim}
+\left\{
+\begin{matrix} \text{homomorphisms }\rho:G\to\Aut(V)\\ \st \rho(h)(V_g)\subseteq V_{h^{-1}gh}
+\end{matrix}
+\right\}$$
+
+sending a homomorphism $\rho:G\to \Aut(V)$ to the half-braiding $\beta_{V,\--}$, defined on $g$-components by
+
+\[\begin{tikzcd}
+	{(V\otimes W)_g} \\
+	{\bigoplus_{hk=g}V_h\otimes W_k} & {\bigoplus_{hk=g}W_k\otimes V_h} \\
+	& {\bigoplus_{hk=g}W_k\otimes \rho(k)(V_h)} & {\bigoplus_{hk=g}W_k\otimes V_{k^{-1} h k}} \\
+	&& {(W\otimes V)_g}.
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-2, to=3-2]
+	\arrow[from=3-2, to=3-3]
+	\arrow["\sim", from=1-1, to=2-1]
+	\arrow["\sim", from=3-3, to=4-3]
+\end{tikzcd}\]
+
+\end{proposition}
+\begin{proof} Seeing as the only part of $\beta_{V,\--}$ that affects $W$ is the simple swapping $V_h\otimes W_k\to W_k\otimes V_h$, it is clear that $\beta_{V,\--}$ is a half-braiding. Conversely, suppose that $\beta_{V,\--}$ is a half-braiding. In particular, we have maps
+
+$$\beta_{V,\CC_h}:V\otimes \CC_h=\bigoplus_{g\in G}V_{gh^{-1}}\to \bigoplus_{g\in G}V_{h^{-1}g}=\CC_h\otimes V.$$
+
+These maps are graded, and hence descend to morphisms $(\beta_{V,\CC_h})_{gh}: V_g\to V_{h^{-1}gh}$. We define a map $\rho:G\to \Aut(V)$ by acting on the $g$-compnent of $V$ by $(\beta_{V,\CC_h})_{gh}$. The fact that this is a homomorphism is precisely the hexagon identity:
+
+$$\rho(hk)=\beta_{V,\CC_{hk}}=\beta_{V,\CC_h\otimes \CC_k}=\beta_{V,\CC_k}\circ \beta_{V,\CC_h}=\rho(k)\circ \rho(h).$$
+
+Additionally, it is clear from the construction that $\rho(V_g)\subseteq V_{h^{-1}gh}$. It is straightforward to check that these two constructions serve as inverses to one another, and hence our proof is complete.
+\end{proof}
+
+In this way we can think of $\Zcal(\Vecc_G)$ as $G$-graded representations of $G$. We can now now verify that our two definitions of the MTC associated with the toric code are equivalent:
 
 \begin{proposition} Applying the process in Proposition \ref{Make braided system} to $\Zcal(\Vecc_{\ZZ_2})$ recovers the MTC data for the toric code, as detailed at the end of subsection \ref{Fusion systems}
 \end{proposition}
 \begin{proof} .[WORK: do proof. This should come down to explicitly giving a set of representatives of isomorphism classes of simple objects for $\Zcal(\Vecc_{\ZZ_2})$. Then, showing that they satisfy the correct conditions shouldn't be too hard.]
 \end{proof}
+
+.[WORK: Need good abstract reasoning about why the Drinfeld center shows up. The toric code was defined as a stablizer code, in the sense that our codespace is the stablizer subspace of a certain subgroup of Pauli matricies. Defining codespaces to be stablizing spaces of certain actions is a much more general phenominon in quantum error correction \cite{gottesman1997stabilizer}. The operators which act the codespace are exactly those which preserve the codespace setwise, i.e., the normalizer of the subspace whose invariance defines the codespace. So of course something inherently about commutivity like the center will show up. Though, this leads to a bigger question: why do the quantum double codes in general have associated MTC $\Zcal(\Vecc_G)$? The proof of this result should contain all the intution I need (c.f. \cite{pachos2012introduction}).]
 
 \subsection{Rigidity}
 \label{Rigidity}

@@ -40,6 +40,11 @@ Bruce Bartlett.
   field theory.
 \newblock {\em arXiv preprint arXiv:0901.3975}, 2009.
 
+\bibitem[BBW22]{barter2022computing}
+Daniel Barter, Jacob Bridgeman, and Ramona Wolf.
+\newblock Computing associators of endomorphism fusion categories.
+\newblock {\em SciPost Physics}, 13(2):029, 2022.
+
 \bibitem[BDSPV15]{bartlett2015modular}
 Bruce Bartlett, Christopher~L Douglas, Christopher~J Schommer-Pries, and Jamie
   Vicary.
@@ -194,6 +199,11 @@ Shlomo Gelaki and Dmitri Nikshych.
 \newblock Nilpotent fusion categories.
 \newblock {\em Advances in Mathematics}, 217(3):1053--1071, 2008.
 
+\bibitem[Got97]{gottesman1997stabilizer}
+Daniel Gottesman.
+\newblock {\em Stabilizer codes and quantum error correction}.
+\newblock California Institute of Technology, 1997.
+
 \bibitem[Got98]{gottesman1998theory}
 Daniel Gottesman.
 \newblock Theory of fault-tolerant quantum computation.
@@ -328,6 +338,11 @@ Yun-Tak Oh, Jintae Kim, Eun-Gook Moon, and Jung~Hoon Han.
 Udo Pachner.
 \newblock Pl homeomorphic manifolds are equivalent by elementary shellings.
 \newblock {\em European journal of Combinatorics}, 12(2):129--145, 1991.
+
+\bibitem[Pac12]{pachos2012introduction}
+Jiannis~K Pachos.
+\newblock {\em Introduction to topological quantum computation}.
+\newblock Cambridge University Press, 2012.
 
 \bibitem[Pre99]{preskill1999lecture}
 John Preskill.
