@@ -13,13 +13,14 @@
 \contentsline {subsection}{\numberline {6.2}The category-theoretic viewpoint}{74}
 \contentsline {subsection}{\numberline {6.3}The MTC $\mathcal {Z}(\mathbf {Rep}_{\mathbb {Z}_2})$}{88}
 \contentsline {subsection}{\numberline {6.4}Rigidity}{102}
-\contentsline {section}{\numberline {7}Topological Quantum Computing}{118}
-\contentsline {subsection}{\numberline {7.1}The TQC framework}{118}
-\contentsline {subsection}{\numberline {7.2}Revisiting toric code TQC}{119}
-\contentsline {subsection}{\numberline {7.3}Universal TQC with Fibonacci anyons}{120}
-\contentsline {section}{\numberline {A}$\mathbb {Z}_2$ Homology Theory}{120}
-\contentsline {section}{\numberline {B}Unitarity}{121}
-\contentsline {subsection}{\numberline {B.1}Unitary TQFTs}{121}
-\contentsline {subsection}{\numberline {B.2}Unitary MTCs}{123}
-\contentsline {section}{\numberline {C}Fusion System/MTC Correspondence}{127}
-\contentsline {section}{\numberline {D}Anyon Data}{130}
+\contentsline {section}{\numberline {7}Topological Quantum Computing}{122}
+\contentsline {subsection}{\numberline {7.1}The TQC framework}{122}
+\contentsline {subsection}{\numberline {7.2}Revisiting toric code TQC}{124}
+\contentsline {subsection}{\numberline {7.3}Universal TQC with Fibonacci anyons}{125}
+\contentsline {section}{\numberline {A}$\mathbb {Z}_2$ Homology Theory}{125}
+\contentsline {section}{\numberline {B}Partial Measurement}{126}
+\contentsline {section}{\numberline {C}Unitarity}{127}
+\contentsline {subsection}{\numberline {C.1}Unitary TQFTs}{127}
+\contentsline {subsection}{\numberline {C.2}Unitary MTCs}{128}
+\contentsline {section}{\numberline {D}Fusion System/MTC Correspondence}{131}
+\contentsline {section}{\numberline {E}Anyon Data}{135}

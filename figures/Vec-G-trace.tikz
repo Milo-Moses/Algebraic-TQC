@@ -1,0 +1,34 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-7, 4) {};
+		\node [style=none] (1) at (-6, 4) {};
+		\node [style=none] (2) at (-7.5, 4.5) {$V^*$};
+		\node [style=none] (3) at (-5.75, 4.5) {$V$};
+		\node [style=none] (4) at (-6.5, 4) {};
+		\node [style=none] (5) at (-5.5, 4) {};
+		\node [style=none] (6) at (-6.5, 3.2) {};
+		\node [style=none] (7) at (-5.5, 3.2) {};
+		\node [style=none] (8) at (-6, 3.6) {$f$};
+		\node [style=none] (9) at (-7, 3) {};
+		\node [style=none] (11) at (-7, 2.25) {};
+		\node [style=none] (12) at (-6, 2.25) {};
+		\node [style=none] (13) at (-7.5, 1.75) {$V$};
+		\node [style=none] (14) at (-5.5, 1.75) {$V^*$};
+		\node [style=none] (15) at (-6, 3) {};
+		\node [style=none] (16) at (-6, 3.2) {};
+		\node [style=none] (17) at (-9.75, 3) {$\tr_{\Vecc_G}(f)=$};
+		\node [style=none] (18) at (-4.75, 2.75) {$.$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend left=90, looseness=1.75] (0.center) to (1.center);
+		\draw (4.center) to (5.center);
+		\draw (7.center) to (5.center);
+		\draw (4.center) to (6.center);
+		\draw (6.center) to (7.center);
+		\draw (9.center) to (0.center);
+		\draw [in=90, out=-90] (9.center) to (12.center);
+		\draw [bend right=90, looseness=1.75] (11.center) to (12.center);
+		\draw [style=default] (16.center) to (15.center);
+		\draw [style=overlap, in=90, out=-90] (15.center) to (11.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
