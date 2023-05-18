@@ -136,16 +136,15 @@ Murray Eisenberg and Robert Guy.
 \newblock A proof of the hairy ball theorem.
 \newblock {\em The American Mathematical Monthly}, 86(7):571--574, 1979.
 
+\bibitem[EG97]{etingof1997some}
+Pavel Etingof and Shlomo Gelaki.
+\newblock Some properties of finite-dimensional semisimple hopf algebras.
+\newblock {\em arXiv preprint q-alg/9712033}, 1997.
+
 \bibitem[EGNO16]{etingof2016tensor}
 Pavel Etingof, Shlomo Gelaki, Dmitri Nikshych, and Victor Ostrik.
 \newblock {\em Tensor categories}, volume 205.
 \newblock American Mathematical Soc., 2016.
-
-\bibitem[Eil60]{eilenberg1960abstract}
-Samuel Eilenberg.
-\newblock Abstract description of some basic functors.
-\newblock {\em The Journal of the Indian Mathematical Society}, pages 231--234,
-  1960.
 
 \bibitem[ENO05]{etingof2005fusion}
 Pavel Etingof, Dmitri Nikshych, and Viktor Ostrik.
@@ -156,12 +155,6 @@ Pavel Etingof, Dmitri Nikshych, and Viktor Ostrik.
 Gerd Faltings.
 \newblock A proof for the verlinde formula.
 \newblock {\em Journal of Algebraic Geometry}, 3(2):347, 1994.
-
-\bibitem[Fem16]{femic2016eilenberg}
-Bojana Femi{\'c}.
-\newblock Eilenberg--watts theorem for 2-categories and quasi-monoidal
-  structures for module categories over bialgebroid categories.
-\newblock {\em Journal of Pure and Applied Algebra}, 220(9):3156--3181, 2016.
 
 \bibitem[FGH{\etalchar{+}}12]{freedman2012galois}
 Michael~H Freedman, Jan Gukelberger, Matthew~B Hastings, Simon Trebst, Matthias
@@ -377,13 +370,6 @@ John Preskill.
 \newblock Lecture notes for physics 219: Quantum computation.
 \newblock {\em Caltech Lecture Notes}, page~7, 1999.
 
-\bibitem[Qui06]{quillen2006higher}
-Daniel Quillen.
-\newblock Higher algebraic k-theory: I.
-\newblock In {\em Higher K-Theories: Proceedings of the Conference held at the
-  Seattle Research Center of the Battelle Memorial Institute, from August 28 to
-  September 8, 1972}, pages 85--147. Springer, 2006.
-
 \bibitem[QW21]{qiu2021representations}
 Yang Qiu and Zhenghan Wang.
 \newblock Representations of motion groups of links via dimension reduction of
@@ -493,12 +479,6 @@ Zhenghan Wang.
 \newblock {\em Topological quantum computation}.
 \newblock American Mathematical Soc., 2010.
 
-\bibitem[Wat60]{watts1960intrinsic}
-Charles~E Watts.
-\newblock Intrinsic characterizations of some additive functors.
-\newblock {\em Proceedings of the American Mathematical Society}, 11(1):5--8,
-  1960.
-
 \bibitem[Wei09]{weil2009oeuvres}
 Andr{\'e} Weil.
 \newblock {\em Oeuvres Scientifiques/Collected Papers: Volume 2 (1951-1964)},
@@ -531,10 +511,5 @@ Fangyuan Yang, Alexander~A Zibrov, Ruiheng Bai, Takashi Taniguchi, Kenji
 \newblock Experimental determination of the energy per particle in partially
   filled landau levels.
 \newblock {\em Physical review letters}, 126(15):156802, 2021.
-
-\bibitem[ZW21]{zini2021mixed}
-Modjtaba~Shokrian Zini and Zhenghan Wang.
-\newblock Mixed-state tqfts.
-\newblock {\em arXiv preprint arXiv:2110.13946}, 2021.
 
 \end{thebibliography}

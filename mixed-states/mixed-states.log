@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  15 MAY 2023 11:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  16 MAY 2023 16:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**verlinde-formula.tex
-(./verlinde-formula.tex
+**mixed-states.tex
+(./mixed-states.tex
 LaTeX2e <2018-04-01> patch level 2
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
@@ -668,8 +668,8 @@ brarydecorations.pathmorphing.code.tex)))
 \c@remark=\count149
 \c@experiment=\count150
 \c@proposition-definition=\count151
- (./verlinde-formula.aux)
-\openout1 = `verlinde-formula.aux'.
+ (./mixed-states.aux)
+\openout1 = `mixed-states.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
 LaTeX Font Info:    ... okay on input line 46.
@@ -772,54 +772,28 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 49.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-(./figures/S-matrix.tikz)
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 118.
+(./mixed-states.bbl) [1
 
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 118.
- [1
-
-{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./figures/grothendieck-ring-iso.tikz) (./figures/mu-iso-formula.tikz)
-(./figures/algebra-morphism.tikz)
-Overfull \hbox (66.00365pt too wide) detected at line 157
-[]
- []
-
-[2] (./verlinde-formula.bbl) [3] (./verlinde-formula.aux) ) 
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./mixe
+d-states.aux) ) 
 Here is how much of TeX's memory you used:
- 18243 strings out of 492649
- 391708 string characters out of 6129622
- 463557 words of memory out of 5000000
- 21712 multiletter control sequences out of 15000+600000
- 15251 words of font info for 63 fonts, out of 8000000 for 9000
+ 17716 strings out of 492649
+ 384197 string characters out of 6129622
+ 438332 words of memory out of 5000000
+ 21208 multiletter control sequences out of 15000+600000
+ 11596 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,11n,84p,480b,703s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/
-2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2
-018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/20
-18/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/201
-8/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2018/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2018/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2018/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/font
-s/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018/texmf-dist/fonts
-/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/texmf-dist/f
-onts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2018/texmf-dis
-t/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2018/texmf-dist/fonts/
-type1/public/rsfs/rsfs7.pfb>
-Output written on verlinde-formula.pdf (3 pages, 146979 bytes).
+ 61i,6n,84p,476b,202s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
+10.pfb>
+Output written on mixed-states.pdf (1 page, 62647 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
+ 31 PDF objects out of 1000 (max. 8388607)
+ 22 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

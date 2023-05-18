@@ -3,49 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Toric Codes.aux
 The style file: alpha.bst
 Database file #1: ref.bib
-Repeated entry---line 73 of file ref.bib
- : @article{femic2016eilenberg
- :                            ,
-I'm skipping whatever remains of this entry
-You've used 97 entries,
+You've used 93 entries,
             2543 wiz_defined-function locations,
-            1109 strings with 18393 characters,
-and the built_in function-call counts, 38013 in all, are:
-= -- 3844
-> -- 1627
-< -- 69
-+ -- 544
-- -- 533
-* -- 2765
-:= -- 6229
-add.period$ -- 295
-call.type$ -- 97
-change.case$ -- 578
-chr.to.int$ -- 97
-cite$ -- 97
-duplicate$ -- 1543
-empty$ -- 2796
-format.name$ -- 670
-if$ -- 7704
+            1087 strings with 17757 characters,
+and the built_in function-call counts, 36411 in all, are:
+= -- 3669
+> -- 1595
+< -- 63
++ -- 536
+- -- 525
+* -- 2664
+:= -- 5992
+add.period$ -- 282
+call.type$ -- 93
+change.case$ -- 558
+chr.to.int$ -- 93
+cite$ -- 93
+duplicate$ -- 1464
+empty$ -- 2661
+format.name$ -- 654
+if$ -- 7356
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 111
-newline$ -- 489
-num.names$ -- 291
-pop$ -- 486
+missing$ -- 107
+newline$ -- 469
+num.names$ -- 279
+pop$ -- 467
 preamble$ -- 1
-purify$ -- 689
+purify$ -- 665
 quote$ -- 0
-skip$ -- 1267
+skip$ -- 1204
 stack$ -- 0
-substring$ -- 2393
-swap$ -- 221
-text.length$ -- 69
-text.prefix$ -- 48
+substring$ -- 2262
+swap$ -- 200
+text.length$ -- 63
+text.prefix$ -- 44
 top$ -- 0
-type$ -- 720
+type$ -- 688
 warning$ -- 0
-while$ -- 385
-width$ -- 102
-write$ -- 1252
-(There was 1 error message)
+while$ -- 367
+width$ -- 97
+write$ -- 1199

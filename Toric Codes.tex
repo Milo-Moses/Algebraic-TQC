@@ -21,7 +21,6 @@
 
 
 
-
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{corollary}{Corollary}[section]
@@ -37,6 +36,11 @@
 \graphicspath{ {./images/} }
 \numberwithin{figure}{section}
 \setcounter{section}{-1}
+
+
+
+\newcounter{quantumdim}
+
 
 
 \title{Topological Quantum Computing\\ via \\ The Toric Code}
@@ -1999,7 +2003,7 @@ As we add all of this structure to our fusion systems to better approximate the 
 \item (Fusion coefficients) Integers $N_{c}^{a,b}\in \ZZ_{\geq 0}$ for all $a,b,c\in \LL$.
 \end{enumerate}
 
-Additionally, a fusion system is required to satisfy the following properties: [WORK: Do I need to include ``Frobenius Reciprocity? Sebastien Palcoux does on his webpage."]
+Additionally, a fusion system is required to satisfy the following properties: [WORK: STAG Do I need to include ``Frobenius Reciprocity? Sebastien Palcoux does on his webpage."]
 
 \begin{enumerate}
 \item (Identity/Do-nothing) There is a unique element $1\in \LL$ such that
@@ -2184,7 +2188,7 @@ With all this, we can finally define MTCs:
 \item (Non-degenerate) For $a\in \LL$, if $B_c^{a,b}=B_c^{b,a}$ for all $b,c\in \LL$, then $a=1$.
 \end{enumerate}
 
-[WORK: I feel like I'm cheating by assuming all pivotal coefficients are $1$. Is this a bad thing to do? Is there a twist-centric version?]
+[WORK: STAG I feel like I'm cheating by assuming all pivotal coefficients are $1$. Is this a bad thing to do? Is there a twist-centric version?]
 
 \raggedleft\qedsymbol{}
 \end{definition}
@@ -2218,18 +2222,18 @@ $$f_n^{b,c}f^{a,n}_{d}F^{a,b,c}_{d;n,m}=\tilde{F}^{a,b,c}_{d;n,m}f^{a,b}_{m}f^{m
 
 More generally, a gauge equivalence between $6j$ fusion systems $(\LL,N,F)$ and $(\LL',N',F')$ is a gauge equivalence between $(\LL,N,F)$ and some system $(\LL,N,\tilde{F})$, followed by an isomorphism of fusion systems $(\LL,N,\tilde{F})\to (\LL',N',F')$
 
-.[WORK: BRAID Give explanation of rectangle axiom, preferably with graphical language]
+.[WORK: STAG Give explanation of rectangle axiom, preferably with graphical language]
 
 \begin{definition}[Braided gauge equivilance of $R$-matricies] A braided gauge equivilance of $R$-matricies $R^{\--,\--}_{\--}$ and $\tilde{R}^{\--,\--}_{\--}$ on a $6j$ fusion system $(\LL,N^{\--,\--}_{\--},F^{\--,\--\,--}_{\--;\--,\--})$ is the following data:
 
 \begin{enumerate}
-\item .[WORK: idk]
+\item .[WORK: STAG idk]
 \end{enumerate}
 
 Additionally, a braided gauge equivilance of $R$-matricies is required to satisfy the following properties:
 
 \begin{enumerate}
-\item .[WORK: idk]
+\item .[WORK: STAG idk]
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
@@ -2434,7 +2438,7 @@ where $C$ is a representative for $c$ and $N^{a,b}_c\cdot C$ denotes $N^{a,b}_c$
 
 The interesting fact is that one can \textit{not} uniquely go the other direction. That is, there there are non-equivalent fusion categories which give the same fusion system. However, the failure is in some sense bounded:
 
-\begin{theorem}[Ocneanu rigidity,\cite{gainutdinov2023davydov}] Let $\LL$ be a fusion system. There are finitely many (possibly $0$) fusion categories, up to monoidal equivalence, which give systems equivalent to $\LL$ under the process described in Proposition \ref{Make fusion system}.
+\begin{theorem}[Ocneanu rigidity,\cite{gainutdinov2023davydov}]\label{Ocneanu rigidity} Let $\LL$ be a fusion system. There are finitely many (possibly $0$) fusion categories, up to monoidal equivalence, which give systems equivalent to $\LL$ under the process described in Proposition \ref{Make fusion system}.
 \end{theorem}
 
 The correct correspondence, in fact, is between fusion categories and $6j$ fusion systems. Before stating this correspondence, we need an important alternate characterization of simple objects.
@@ -2603,25 +2607,38 @@ $$\tr(f): 1\xrightarrow{\coev_A} A^*\otimes A\xrightarrow{\id_{A^*}\otimes (\the
 
 In vector spaces, the trace of the identity gives the dimension of the vector space. Thus, we define more generally $d_A=\tr(\id_A)$ to be the \textit{quantum dimension} of $A$. As we saw in the previous subsection, the quantum dimensions serve as key physical aspects in the theory, due to their relation with the probabilities of observing various quasiparticles after fusion. [WORK: restate definition of unitarity here if ``pos q.d. $\implies$ unitary", or appeal to appendix.] The following properties give a taste of the depth present in this theory:
 
-\begin{theorem} Let $A\in \Ccat$ be a simple object in a MTC. The following claims about the quantum dimension are all true:
+\begin{theorem}\label{quantum dimensions} Let $\Ccat$ be a simple object in a spherical fusion category, with set $\LL$ of isomorphism classes of simple objects. Choose $a\in \LL$ with representative $A\in\Ccat$. The following claims about the quantum dimension are all true:
 
-\begin{enumerate}
-\item .[WORK: state the more basic things which apply in general. This first one should be $d_A\neq 0$. Do I get any other restrictions on where $d_A$ can be?]
+\begin{enumerate}[(a)]
+\item $d_a$ is a non-zero real number. This holds even for non-simple objects.
 
-\item .[WORK: The matrix $N_A$ may not have a unique largest eigenvalue. Zhenghan said that $d_A$ would be a Galois conjugate of one of the largest roots, or something...]
+\item $d_a$ is an algebraic integer. In particular, $d_a$ is an eigenvalue of the fusion matrix $N^{a}=(N^{a,b}_c)_{(b,c)\in \LL^2}$.
+
+\setcounter{quantumdim}{\value{enumi}}
+
 \end{enumerate}
 
-If $\Ccat$ is unitary, the we moreover have the following:
+If $\Ccat$ is unitary, then we moreover have the following:
 
-\begin{enumerate}
-\item ([WORK: get reference]) If $1\leq d_A\leq 2$, then $d_A=2\cos(\pi /m)$ for some integer $m\geq 3$. Otherwise, $d_A\geq 4$.
+\begin{enumerate}[(a)]
+\setcounter{enumi}{\value{quantumdim}}
 
-\item $d_A=1$ if and only if $A$ is an abelian anyon. That is, if and only if [WORK: there's a few things I could put here. I could put "braiding gives scalar multiples of identity" and "deterministic fusing of partices" or both or neither...]
+\item If $1\leq d_a\leq 2$, then $d_a=2\cos(\pi /m)$ for some integer $m\geq 3$. Otherwise, $d_a\geq 4$.
 
-\item ([WORK: get reference]) The fusion matrix $N_A$ has a unique eigenvalue of largest absolute value. This eigenvalue is real, and is equal to $d_A$.
+\item $d_a$ is the unique eigenvalue of $N^a$ of largest absolute value.
+
+\item The following conditions are equivialent.
+
+\begin{enumerate}[1.]
+\item $d_a=1$.
+\item $N^a$ is a permutation matrix. That is, $A$ exhibits deterministic fusing.
+\item $\beta_{B,A}\circ \beta_{A,B}$ is a scalar multiple of the identity for all $B\in \Ccat$. That is, braiding with $A$ only causes global phase shifts.
+\end{enumerate}
+
+If any of these three equivalent conditions are met, we call $A$ is \textit{abelian}. 
 \end{enumerate}
 \end{theorem}
-\begin{proof}. [WORK: prove what I can]
+\begin{proof} .[WORK: do proof]
 \end{proof}
 
 This theorem is quite useful experimentally. For example, suppose we wish to observe non-abelian anyons. The state of current laboratories are such that creating the appropriate conditions, braiding anyons, and recording non-abelian statistics is out of reach with proposed methods \cite{bonderson2006probing}. Thus, one observes non-abelian anyons indirectly by measuring physical quantities which are associated with non-abelian statistics. For example, the quantum dimension can be related to the \textit{entropy} of a physical system \cite{kitaev2006topological}. Abelian MTCs have $d_A=1$, whereas non-abelian MTCs will have measurably larger quantum dimensions - the second part of the theorem implies $d_A\geq 2\cos(\pi/4)=\sqrt{2}$. This distinctly different entropy can be physically measured. Namely, the thermodynamic Maxwell's equation relates entropy to chemical potential, which in turn can be measured by changes in voltage \cite{cooper2009observable}.
@@ -2630,9 +2647,14 @@ This raised entropy is known as topological entanglement entropy. It can be unde
 
 $$\dim \Ccat = \sum_{a\in \LL} d_a^2,$$
 
-where as usual $\LL$ is the set of isomorphism of classes of simple objects. The tological enganglement of an MTC is given by $\log (\dim \Ccat)$. We now state some important facts about ribbon fusion categories:
+where as usual $\LL$ is the set of isomorphism of classes of simple objects. The tological enganglement of an MTC is given by $\log (\dim \Ccat)$. A key fact about this global dimension $\dim\Ccat$ is that it restrticts the possibilities for quantum dimensions of objects:
 
-\begin{theorem}[Vafa, \cite{vafa1988toward}] Let $\Ccat$ be a modular tensor category, and let $\LL$ be the set of isomorphism classes of simple objects. For each simple object $A\in \Ccat$, $\theta_A\in \End(A)$ lives in a one dimensional space with generator $\id_A$. Hence, we can canonically identify $\theta_A$ with a complex number. Define
+\begin{theorem}[\cite{etingof1997some}] Let $a$ be an isomorphism class of simple objects in  a ribbon fusion category $\Ccat$. We have that $d_a$ divides $\sqrt{\dim \Ccat}$ as an algebraic integer.
+\end{theorem}
+
+We now state the most important numerical facts about twists of ribbon fusion categories:
+
+\begin{theorem}[Vafa, \cite{vafa1988toward}] Let $\Ccat$ be a ribbon fusion category, and let $\LL$ be the set of isomorphism classes of simple objects. For each $a\in \Ccat$ with representative $A$, $\theta_A\in \End(A)$ lives in a one dimensional space with generator $\id_A$. Hence, we can canonically identify $\theta_A$ with a complex number. This number is independent of choice of representative, and hence descends to an invariant $\theta_a\in\CC$. Define
 
 $$p^{\pm}_{\Ccat}=\sum_{a\in \LL}\theta_a^{\pm 1}d_a^2.$$
 
@@ -2640,10 +2662,22 @@ The quantities $\theta_a$ and $p^{+}_{\Ccat}/p^{-}_{\Ccat}$ are roots of unity, 
 
 $$p^{+}_{\Ccat}p^{-}_{\Ccat}=\dim \Ccat.$$
 \end{theorem}
+\begin{proof} To begin, it is clear that $\theta_A$ is independent of isomorphism class. Next, we wish to prove that $\theta_a$ is is a root of unity. To do this, we first observe that for any $n\geq0$, one can define a natural trnasformation on $\Ccat$ by acting on any $A,B\in\Ccat$ by
+
+$$(\beta_{B,A}\circ \beta_{A,B})^n\circ \beta_{A,B}.$$
+
+It is straightforward to check that this is a braiding. We will show in Proposition \ref{drinfeld-fusion} that there are finitely many braidings on a ribbon fusion category, and hence we must have that $(\beta_{B,A}\circ \beta_{A,B})^n=\id_{A,B}$ uniformly over $A,B\in \Ccat$ for some large enough $n$. Now, using the naturality of $\beta_{\--,\--}$ and $\theta_{\--}$ we find that
+
+$$\theta_{A\otimes B}^{n}=(\beta_{B,A}\circ \beta_{A,B})^n\circ (\theta_A^n\otimes \theta_B^n)=\theta_A^n\otimes \theta_B^n.$$
+
+Hence, $\theta_A^n$ is a monoidal natural endomorphism of the identity functor. By Proposition \ref{monoidal endomorphisms} there are only finitely many such monoidal natural endomorphisms. Thus, $\theta_A^n$ must be the identity when raised to some large enough power. Collecting, we get that $\theta_{\--}^{n'}$ is the identity for some sufficiently large $n'$. In paricular, $\theta_A^{n'}=(\theta_a)^{n'}\id_{A}=\id_{A}$, so $\theta_a$ is a root of unity as desired.
+
+The last parts of the theorem are more difficult, and can be found in \cite[Corollary 3.1.10 (b), Theorem 3.1.19]{bakalov2001lectures}.
+\end{proof}
 
 We are now ready to define the most important invariants of MTCs: representations of the group $\SL_2(\ZZ)$ of $2$ by $2$ matrices with unit determinant. $\SL_2(\ZZ)$ is known as the modular group, due to its connections with moduli spaces of elliptic curves. It is because of these representations that modular tensor categories are called modular. We define the modular representations:
 
-\begin{theorem}[\cite{bakalov2001lectures}] Let $\Ccat$ be an MTC, with set $\LL$ of isomorphism classes of simple. We define the $S$-matrix of an MTC to be the matrix whose $(a,b)$ coefficient is
+\begin{theorem}[\cite{bakalov2001lectures}] Let $\Ccat$ be a ribbon fusion category, with set $\LL$ of isomorphism classes of simple. We define the $S$-matrix of an MTC to be the matrix whose $(a,b)$ coefficient is
 
 \begin{equation*}
 \tikzfig{S-matrix}
@@ -2670,9 +2704,9 @@ is a representation of the modular group. That is, extending $\rho_{\Ccat}$ by m
 
 These $S$-matrices and $T$-matrices are very important invariants of MTCs, and are refered to as the \textit{modular data}. They do not, however, uniquely determine the MTC \cite{mignard2021modular}. We summarize some relevant facts:
 
-\begin{theorem} The following claims about MTCs are all true:
+\begin{theorem}\label{MTC facts} The following claims about MTCs are all true:
 
-\begin{enumerate}
+\begin{enumerate}[(a)]
 \item (Bruguieres, \cite{bruguieres2000categories}) Ribbon fusion categories are non-degenerate (and hence are MTCs) if and only if their $S$-matrix is invertible.
 
 \item (Bruillard-Ng-Rowell-Wang, \cite{bruillard2016rank}) There are finitely many MTCs, up to braided monoidal equivalence, of a given rank.
@@ -3217,7 +3251,7 @@ We now move on to point (3). We define maps $\tilde{\ev}_{A\otimes B}:A\otimes B
   \tikzfig{tensor-product-rigidity}
 \end{equation*}
 
-We now move on to point (4). Taking the distinguished morphisms $i_{A^*}=(p_{A})^*$, $i_{B^*}=(p_B)^*$, $p_{A^*}=(i_A)^*$, $p_{B^*}=(i_B)^*$, the fact that the functor $(\--)^*$ is linear clearly implies that $(A\oplus B)^*\cong A^*\oplus B^*$. Explicitely we can describe evaluation on $A\oplus B$ by
+We now move on to point (4). This follows from general principles, as in Exercise \thesection. 5. Alternatively, one can explicitely describe evaluation and coevalution for $A^*\oplus B^*$. Evaluation is the following composition:
 
 \[\begin{tikzcd}
 	{(A\oplus B)\otimes (A^*\oplus B^*)} & {\substack{(A\otimes A^*)\oplus (B\otimes A^*)\\\oplus (A\otimes B^*)\oplus (B\otimes B^*)}} \\
@@ -3228,7 +3262,7 @@ We now move on to point (4). Taking the distinguished morphisms $i_{A^*}=(p_{A})
 	\arrow[from=1-2, to=2-2]
 \end{tikzcd}\]
 
-where the first isomorphism comes from Exercise \thesection.7, the downwards arrow is the identity on $A\otimes A^*$, $B\otimes B^*$ and zero on the other factors, the map to $1\oplus 1$ is $\ev_A\oplus \ev_B$, and the last arrow is the sum of the two projection maps $1\oplus 1\to 1$. Coevaluation can be described similarly.
+where the first isomorphism comes from Exercise \thesection.7, the downwards arrow is the identity on $A\otimes A^*$, $B\otimes B^*$ and zero on the other factors, the map to $1\oplus 1$ is $\ev_A\oplus \ev_B$, and the last arrow is the sum of the two projection maps $1\oplus 1\to 1$. Coevaluation is described similarly.
 
 \end{proof}
 
@@ -3241,7 +3275,15 @@ We now move on to the study of ``two-sided" duals. Distinguihsed maps going from
 \begin{proof} By Proposition \ref{Make fusion system}, the dual of an isomorphism class $a$ of simple objects is charactarized by the fact that $N^{a,a^{*}}_1=N^{a^*,a}_1=1$. This condition is completely symmetric in switching $a$ and $a^*$. Hence, the dual of $a^*$ is isomorphic to $a$, yielding the desired conclusion for all simple objects. By semisimplicity, this implies that all objects are isomorphic to their double duals.
 \end{proof}
 
-The issue with these non-canonical isomorphisms is that we have no guarantee that all of our distinguished maps will satisfy good compatibility properties. For this reason we introduce the following notion: a \textit{pivotal category} is a rigid category $\Ccat$ paired with a monoidal natural isomorphism $i:\id_{\Ccat}\to (\--)^{**}$ \cite{selinger2011survey}. While seemingly a structure, this is really more of a property. If a rigid category admits a pivotal structure, then all of those pivotal structures will be the same up to precomposing with a a monoidal natural endomorphism of the identity functor\footnote{For fusion categories, the group $\Aut_{\otimes}(\id_{\Ccat})$ of monoidal automorphisms of the identity is \textit{finite}. In particular, there are only finitely many choices of pivotal structure. One can explicitely decribe $\Aut_{\otimes}(\id_{\Ccat})$ as $\Hom(U_{\Ccat},\CC^{\times})$, where $U_{\Ccat}$ is the ``universal grading group" of $\Ccat$ \cite[Prop. 3.9]{gelaki2008nilpotent}.} \cite[Prop. 5.7, Lemma 6.2]{bartlett2009unitary}. It is a fascinating feature of the theory that the double dual is not a-priori isomorphic to the identity. Conjecturally, however, we have the following:
+The issue with these non-canonical isomorphisms is that we have no guarantee that all of our distinguished maps will satisfy good compatibility properties. For this reason we introduce the following notion: a \textit{pivotal category} is a rigid category $\Ccat$ paired with a monoidal natural isomorphism $i:\id_{\Ccat}\to (\--)^{**}$ \cite{selinger2011survey}. Given two pivotal structures $i,i'$, their composition $i'\circ i^{-1}$ will be a monoidal natural automorphisms of the identity functor. This means that once a single pivotal structure is discovered, one can easily traverse through the rest of the pivotal structures by precomposing with monoidal endomorphisms of the identity. In particular, there are only finitely many pivotal structures on fusion categories by the following fact:
+
+\begin{proposition}\label{monoidal endomorphisms} Let $\Ccat$ be a fusion category. The group $\Aut^\otimes(\id_{\Ccat})$ of monoidal natural automorphisms of the identity functor is finite.
+\end{proposition}
+\begin{proof} We even have the stronger fact that $\Aut^\otimes(\id_{\Ccat})$ is canonically isomorphic to $\Hom(U_{\Ccat},\CC^\times)$, where $U_{\Ccat}$ is the explicitely described ``universal grading group" of $\Ccat$. Since $U_{\Ccat}$ is finite, we get our result \cite[Prop. 3.9]{gelaki2008nilpotent}.
+\end{proof}
+
+
+It is a fascinating feature of the theory that the double dual is not a-priori naturally isomorphic to the identity. Conjecturally, however, we have the following:
 
 \begin{conjecture}[Etingof, Nikshych, and Ostrik] In every fusion category, there is a natural monoidal isomorphism between the identity functor and the double dual functor $(\--)^{**}$. That is, every fusion category admits a pivotal structure.
 \end{conjecture}
@@ -3448,10 +3490,10 @@ Observe that this proves part of Theorem \ref{spherical-center-modular}, which w
 \tikzfig{Vec-G-trace}
 \end{equation*}
 
-Unpacking the definition, we compute
+Unpacking the definition, we compute $\tr_{\Vecc_G}(f)$ as
 
 \[\begin{tikzcd}
-	\CC & {V^*\otimes V} & {V^*\otimes V} & {V^*\otimes V} & \CC. \\
+	\CC & {V^*\otimes V} & {V^*\otimes V} & {V\otimes V^*} & \CC. \\
 	1 & {\sum_i \varphi_i\otimes v_i} & {\sum_i\varphi_i\otimes f(v_i)} & {\sum_i f(v_i)\otimes \varphi_i} & {\sum_i\varphi_i(f(v_i))}
 	\arrow[from=1-1, to=1-2]
 	\arrow[from=1-2, to=1-3]
@@ -3534,25 +3576,37 @@ $$\tr_{\Ccat}(f)=\tr_{\Vecc}(M).$$
 
 With our better understand of traces, we can compute explicitely the coefficients of the $S$-matrix of a ribbon fusion category. In the case of MTCs, we can flip this formula around and compute the fusion rules in terms of $S$-matrix entries.
 
-\begin{proposition} Let $\Ccat$ be a ribbon fusion category, with set $\LL$ of isomorphism classes of simple objects.
+\begin{proposition}\label{verlinde} Let $\Ccat$ be a ribbon fusion category, with set $\LL$ of isomorphism classes of simple objects.
 
 \begin{enumerate}[(a)]
-\item If $\Ccat$ is an MTC, the collumns of the $S$-matrix are simultaneous eigenvectors for the fusion matricies
+\item For all simple objects $a,b\in \LL$,
+
+$$S_{a,b}=\frac{1}{\theta_a\theta_b}\sum_{c\in \LL}N^{a,b}_{c}\theta_c d_{c}.$$
+
+\item For $a\in \LL$, define the fusion matrix
 
 $$N^{a}=(N^{a,b}_{c})_{b,c\in \LL}.$$
 
-The eigenvalues are quantum dimensions [WORK: find correct statement]
-
-\item For all simple objects $a,b\in \LL$,
-
-$$s_{a,b}=\frac{1}{\theta_a\theta_b}\sum_{c\in \LL}N^{a^*,b^*}_{c}\theta_c d_{c}.$$
+If $\Ccat$ is an MTC then $D^a=S N^a S^{-1}$ is a diagonal matrix. Moreover, the $(b,b)$ entry of $D^a$ is $S_{a,b}/d_b$.
 
 \item (Verlinde formula\footnote{This formula was first conjectured by Verlinde \cite{verlinde1988fusion}, and proved the following year in \cite{moore1989classical}. There are now many Verlinde-type formulas. Most imporantly, there is one for vertex operator algebras \cite{huang2008vertex} and one in algebraic geometry \cite{faltings1994proof}.}) For all simple objects $a,b,c\in\LL$,
 
-$$N^{a,b}_{c}=\sum_{e\in \LL} \frac{s_{a,e} s_{b,e}s_{c^*,e}}{\dim{\Ccat}\cdot d_e}$$
+$$N^{a,b}_{c}=\sum_{e\in \LL} \frac{S_{a,e} S_{b,e} (S^{-1})_{c,e}}{d_e}$$
 \end{enumerate}
 \end{proposition}
-\begin{proof} .[WORK: do proof. Part (a) is postponed to the exercises]
+\begin{proof} The identity $\theta_{A\otimes B}=\beta_{B,A}\circ \beta_{A,B}\circ (\theta_A\otimes \theta_B)$ shows that $S_{a,b}=\tr(\theta_{A\otimes B}\circ (\theta^{-1}_A\otimes \theta^{-1}_B))$. Now, $\theta^{-1}_A$ is scalar multiplication by $\theta_a^{-1}$ and $\theta^{-1}_B$ is scalar multiplication by $B$. Using the bilinearity of tensor product and composition, we thus get that
+
+$$S_{a,b}=\frac{1}{\theta_a\theta_b}\tr(\theta_{A\otimes B}).$$
+
+Exercise \thesection.4 tells us that natural transformations commute with direct sums, so
+
+$$\theta_{A\otimes B}=\bigoplus_{c\in \LL}N^{a,b}_{c} \theta_C$$
+
+where we choose representives $C$ for each isomorphism class $c$, and we identity $A\otimes B\cong \bigoplus_{c\in \LL}N^{a,b}_c C$. Thus, using Proposition \ref{trace} we compute that
+
+$$\tr(\theta_{A\otimes B})=\sum_{c\in \LL}N^{a,b}_{c}\tr(\theta_C)=\sum_{c\in \LL}N^{a,b}_c \theta_c d_c,$$
+
+as desired. Part (b) is much more intricate, so we ommit a full proof. An outline is given in Exercise \thesection.6. From part (b), however, part (c) is immediate. It follows from writing $N^a=S^{-1}D^a S$, expanding, and comparing coefficients.
 \end{proof}
 
 
@@ -3589,7 +3643,7 @@ Letting the associativity, left/right unitors, and braiding, be the identity, sh
 \item Define an $(n+1)$-TQFT to be a braided monoidal functor $\Bord(n+1)\to \Vecc$. Show that this definition is canonically equivalent to the definition given in section \ref{TQFTs} when $n=2$.
 \end{enumerate}
 
-\item Let $\Ccat$ be a category satisfying all of the axioms of a $\CC$-linear abelian category, except that monomorphisms and epimorphism are not necessarily normal. Let $f:A\to B$ be a morphism. Recall that $f$ is called a kernel if it satisfies the universal property of $\ker \overline{f}$ for some morphism $\overline{f}$, and $f$ is called a cokernel if it satisfies the universal property of $\coker \overline{f}$ for some morphism $\overline{f}$.
+\item Let $\Ccat$ be a category satisfying all of the axioms of an abelian category, except that monomorphisms and epimorphism are not necessarily normal. Let $f:A\to B$ be a morphism. Recall that $f$ is called a kernel if it satisfies the universal property of $\ker \overline{f}$ for some morphism $\overline{f}$, and $f$ is called a cokernel if it satisfies the universal property of $\coker \overline{f}$ for some morphism $\overline{f}$.
 
 \begin{enumerate}[(a)]
 \item If $f$ is a kernel it must be a monomorphism.
@@ -3613,17 +3667,12 @@ Letting the associativity, left/right unitors, and braiding, be the identity, sh
 where the map $\coker (\ker f)\to B$ is first obtained by the universal property of the cokernel, and the map $\overline{f}$ is then obtained by the universal property of the kernel. Show that $\overline{f}$ is an isomorphism for all choices of $f$ if and only if all monomorphisms and epimorphisms are normal.
 \end{enumerate}
 
-\item Let $A,B$ be objects in a $\CC$-linear abelian category $\Ccat$.
+\item Let $A,B$ be objects in an abelian category $\Ccat$.
 
 \begin{enumerate}[(a)]
 \item Show that the direct sum  $A\oplus B$ simultaneously satisfies the category-theoretic conditions of a product, as well as the dual conditions of a co-product. That is, the triple $(A\oplus B, p_A, p_B)$ is a product in $\Ccat$, and the triple $((A\oplus B)^{\op}, (i_A)^{\op},(i_B)^{\op})$ is a product in $\Ccat^{\op}$. For this reason, the direct sum is often refered to as a \textit{biproduct}.
 
 \item Given a morphism $f:A\to B$, show there are canonical isomorphisms $A\cong \im f\oplus \ker f$ and $B\cong \im f\oplus \coker f$.
-\end{enumerate}
-
-\item Let $A,B,C$ be objects a fusion category $\Ccat$.
-
-\begin{enumerate}[(a)]
 
 \item For any $A,B,C\in \Ccat$, show that the natural maps
 
@@ -3640,45 +3689,60 @@ f &\mapsto (p_A\circ f)\oplus (p_B\circ f)
 \end{align*}
 
 are isomorphisms for all $C\in \Ccat$.
-
-\item Given a morphism $f:A\to B$ that there are canonical isomorphisms $\ker (f\otimes \id_C)\cong \ker f\otimes C$ and $\coker (f\otimes \id_C)\cong \coker f$ for all $C\in \Ccat$.
 \end{enumerate}
 
-\item Let $\Ccat$ be a $\CC$-linear abelian monoidal category, whose tensor product, associativity, and unitors are all linear functors.  Show that
+\item Let $\Ccat,\Dcat$ be abelian categories, $A,B\in \Ccat$ be objects, let $F,G:\Ccat\to \Dcat$ be (linear) functors, and let $\eta:F\to G$ be a natural transformation.
 
 \begin{enumerate}[(a)]
+\item Show there is a canonical isomorphism $F(A\oplus B)\cong F(A)\oplus F(B)$. More explicitely, show that the maps $\pi_{F(A)}=F(\pi_A)$, $\pi_{F(B)}=F(\pi_B)$, $i_{F(A)}=F(i_A)$ and $i_{F(B)}=F(i_B)$ give $F(A\oplus B)$ the structure of a direct sum.
+\item Identifying $F(A\oplus B)\cong F(A)\oplus F(B)$ by part (a), show that $\eta_{A\oplus B}:A\oplus B\to F(A)\oplus F(B)$ decomposes as $\eta_{A\oplus B}=\eta_{A}\oplus \eta_{B}$.
+\end{enumerate}
+
+\item Let $A,B,C$ be objects an abelian monoidal category $\Ccat$, whose tensor product associativity, and unitors are all linear functors. This is sometimes called a \textit{tensor category}, though the term tensor category will change meaning from author to author.
+
+\begin{enumerate}[(a)]
+
+\item Given a morphism $f:A\to B$ that there are canonical isomorphisms $\ker (f\otimes \id_C)\cong \ker f\otimes C$ and $\coker (f\otimes \id_C)\cong \coker f$ for all $C\in \Ccat$.
 \item The tensor product preserves direct sums. That is, $(A\oplus B)\otimes C\cong (A\otimes C)\oplus (B\otimes C) $ for all $A,B,C\in \Ccat$.
-\item The tensor product is right exact. That is, for every short exact sequence $0\to A\to B\to C\to 0$ in $\Ccat$, the sequence [WORK: it might be exact on the left too? Moreover, we might need this left exactness to deduce the ring structure...]
+\item The tensor product is right exact. That is, for every short exact sequence $0\to A\to B\to C\to 0$ in $\Ccat$, the sequence
 
 $$A\otimes D\to B\otimes D\to C\otimes D\to 0$$
 
 is exact for all $D\in \Ccat$.
 \end{enumerate}
 
-It is interesting to note that in some important cases these properties uniquely specify the tensor product. In particular, suppose we have a right exact functor which preserves direct sums between categories of modules over a right. The Eilenberg-Watts theorem says that this functor will be naturally isomorphic to tensoring with some bimodule This theorem was proved simultaneously by Eilenberg \cite{eilenberg1960abstract} and Watts \cite{watts1960intrinsic}, and has since been generalized to the setting of fusion categories \cite{femic2016eilenberg}.
+\item Let $\Ccat$ be a fusion category, with set $\LL$ of isomorphism classes of simple objects. Define $K_{\CC}(\Ccat)$ to be the $\CC$-algebra whose underlying vector space is $\CC[\LL]$, and whose multiplication is given by
 
-\item Let $K(\Ccat)$ be the abelian group generated by objects in $\Ccat$, subject to the relation that $[A]+[C]=[B]$ whenever there is an exact sequence
+$$\left|a\right>\cdot \left| b\right>=\left| a\otimes b\right>=\sum_{c\in \LL}N^{a,b}_{c}\left| c\right>.$$
 
-$$0\to A\to B\to C\to0.$$
-
-We call this the \textit{Grothendieck group} of $\Ccat$. It is an important invariant, and serves as the basis of algebraic K-theory \cite{quillen2006higher}. Exercise \thesection.5 tells us that the product $[A]\cdot [B]=[A\otimes B]$ gives $K(\Ccat)$ a ring structure, and hence we get a \textit{Grothendieck ring}. For MTCs, we can compute with this ring very explicitely, as shown in this exercise.
+This is known as the (complexified) \textit{fusion ring} or \textit{Grothendieck ring} of $\Ccat$.
 
 \begin{enumerate}[(a)]
-\item Let $\Ccat$ be a ribbon fusion category. Let $\LL$ denote the set of isomorphism classes of simple objects of $\Ccat$. Define a map $\mu: K(\Ccat)\otimes_{\ZZ}\CC\to \CC[\LL]$ by sending $[A]$, $A\in \Ccat$, to
+\item Show that $K_{\CC}(\Ccat)$ satisfies the axioms of a $\CC$-algebra.
+\item Suppose further that $\Ccat$ is a ribbon fusion category. Let $\CC[\LL]^{\func}$ denote the $\CC$-algebra on $\CC[\LL]$ whose multiplication is performed componentwise. Define a map $\mu: K_{\CC}(\Ccat)\to \CC[\LL]$ by sending $\left| a\right>$, $a\in \LL$, to 
 
 \begin{equation*}
 \tikzfig{grothendieck-ring-iso}
 \end{equation*}
 
-where $B$ is a representative for $b$ as usual. Show that this induces a well defined morphism of $\CC$-algebras.
+where $A,B$ is a representatives for $a,b$ as usual. Show that this induces a well defined morphism of $\CC$-algebras.
 
-\item Suppose further that $\Ccat$ is an MTC. Show that
+\item Show that
 
 $$\mu([a])=\sum_{b\in \LL}\frac{s_{a,b}}{d_b}\left|b\right>.$$
 
-Conclude from the invertability of the $S$-matrix (Proposition [WORK: ref]) that $\mu$ induces an isomorphism $K(\Ccat)\otimes_{\ZZ}\CC\cong \CC[\LL]$. Note the key use of Proposition [WORK: ref], which says that the quantum dimensions are non-zero.
+In the case that $\Ccat$ is an MTC, conclude from the invertability of the $S$-matrix (Proposition \ref{MTC facts} (a)) that $\mu$ induces an isomorphism $K_{\CC}(\Ccat)\cong \CC[\LL]^{\func}$. Note the key use of Proposition \ref{quantum dimensions} (a) which says that the quantum dimensions are non-zero.
 
-\item Comparing that the $S$-matrix simultaneously diagonalizes the fusion matricies [WORK: I don't know what the exact correct statement is. Also, I don't know whether there should be a hint here. I should be able to do it on my own...]
+\item Suppose $\Ccat$ is an MTC. Show that
+
+$$\left| a \right>\cdot \mu^{-1}(\left|b\right>)=\frac{S_{a,b}}{d_b}\cdot \mu^{-1}(\left| b\right>).$$
+
+Conclude that $\mu^{-1}(\left| b\right>)$ is an eigenvector for the fusion matrix $N^a$, with eigenvalue $S_{a,b}/d_b$. Use this to show that
+
+$$S N^a S^{-1}=D^a$$
+
+where $D^a$ is the diagonal matrix whose $(b,b)$ entry is $S_{a,b}/d_b$, proving Proposition \ref{verlinde} (c).
+
 \end{enumerate}
 
 \item This exercise builds up the basic theory of Deligne tensor products, as first introduced in \cite{deligne2007categories}. The Deligne tensor product does not exist between every pair of abelian categories - there are countexamples, based on an eariler work of Soublin \cite{soublin1970anneaux}. For such generality one must appeal to the Kelly tensor product \cite{franco2013tensor}. We thus restrict ourselves to the case that $\Ccat$ is fusion for simplicity.
@@ -3694,15 +3758,15 @@ Conclude from the invertability of the $S$-matrix (Proposition [WORK: ref]) that
 	\arrow[from=2-1, to=1-1]
 \end{tikzcd}\]
 
-commute. It is a theorem of Deligne that the Deligne tensor product exists. Show that it is unique up to unique isomorphism. Recall that a functor $F$ of abelian categories is \textit{right exact} if for every short exact sequence $0\to A\to B\to C\to 0$ there is a short exact sequence
+commute. Recall that a functor $F$ of abelian categories is \textit{right exact} if for every short exact sequence $0\to A\to B\to C\to 0$ there is a short exact sequence
 
 $$F(A)\to F(B)\to F(C)\to 0.$$
 
-We say that a functor $F$ from $\Ccat\times \Dcat$ is right exact if for every short exact sequence $0\to A\to B\to C\to 0$ in $\Ccat$ and $D\in \Dcat$ the sequence
+We say that a functor $F$ from $\Ccat\times \Dcat$ is right exactin the $\Ccat$ component if for every short exact sequence $0\to A\to B\to C\to 0$ in $\Ccat$ and $D\in \Dcat$ the sequence
 
 $$F(A\times D)\to F(B\times D)\to F(C\times D)\to 0$$
 
-is exact.
+is exact, and similarly for the $\Dcat$ component. It is a theorem of Deligne that the Deligne tensor product of fusion categories exists. Show that it is unique up to unique isomorphism
 
 \item Given $(A_0,B_0),(A_1,B_1)\in \Ccat\times \Dcat$, show that
 
@@ -3710,22 +3774,27 @@ $$\Hom_{\Ccat\boxtimes \Dcat}(A_0\boxtimes B_0,A_1\boxtimes B_1)\cong \Hom_{\Cca
 
 In particular, show that the simple objects in $\Ccat\boxtimes \Dcat$ are exactly those of the form $A\boxtimes B$, where $A\in\Ccat$, $B\in \Dcat$ are simple.
 
-\item Show that for finite groups $G,H$, we have that $\Vecc_G\boxtimes \Vecc_H\cong \Vecc_{G\times H}$. Note that this is part of a more general phenominon, that the Deligne tensor product of representation categories of algebras is the representation category is the tensor product of algebras \cite[Prop. 1.11.2]{etingof2016tensor}.
+\item Show that for finite groups $G,H$, we have that $\Vecc_G\boxtimes \Vecc_H\cong \Vecc_{G\times H}$. See  \cite[Prop. 1.11.2]{etingof2016tensor} for a more general representation-theoretic statement.
 
 \item Given a braided fusion category $\Ccat$, show that the functors $\Ccat\to \Zcal(\Ccat)$ and $\Ccat^{rev}\to \Zcal(\Ccat)$ are exact fully faithul braided monoidal. Show that they combine to give a exact faithul braided monoidal functor $\Ccat\boxtimes \Ccat^{rev}\to \Zcal(\Ccat)$.
 \end{enumerate}
 
-This additionally gives an alternate characterization of MTCs. Namely, a ribbon fusion category $\Ccat$ is non-degenerate if and only if $\Ccat\boxtimes \Ccat^{rev}\to \Zcal(\Ccat)$ is an equivalence of categories \cite[8.20.12]{etingof2016tensor}.
+This exercise allows for the statement of an alternate characterization of MTCs. Namely, a ribbon fusion category $\Ccat$ is non-degenerate if and only if $\Ccat\boxtimes \Ccat^{rev}\to \Zcal(\Ccat)$ is an equivalence of categories \cite[8.20.12]{etingof2016tensor}.
 
-\item Let $G$ be a finite group, and consider $\Vecc_G$ as an abelian category. Define the structures of tensor product and unitors as usual. Let $\alpha: (\-- \otimes \--)\otimes \--\to \--\otimes(\--\otimes\--)$ be a choice of associativity which turns $\Vecc_G$ into a monoidal category. Define a map $\omega_\alpha: G\times G\times G\to \CC^\times$ sending $(g_0,g_1,g_2)$ to the unique scalar $\lambda$ such that
+\item Let $G$ be a finite group, and consider $\Vecc_G$ as an abelian category. Define the structures of tensor product and unitors as usual.
+
+\begin{enumerate}[(a)]
+\item Let $\alpha: (\-- \otimes \--)\otimes \--\to \--\otimes(\--\otimes\--)$ be a choice of associativity which turns $\Vecc_G$ into a monoidal category. Define a map $\omega_\alpha: G\times G\times G\to \CC^\times$ sending $(g_0,g_1,g_2)$ to the unique scalar $\lambda$ such that
 
 $$\alpha_{V_{g_0},V_{g_1},V_{g_2}}=\lambda \cdot \id_{V_{g_0}\otimes V_{g_1}\otimes V_{g_2}},$$
 
-where we use $\id$ in an abuse of notation to mean the standard associativity map, and we know that such a $\lambda$ exists since $V_{g_0}\otimes V_{g_1}\otimes V_{g_2}\cong V_{g_0g_1g_2}$ is a simple object. Show that $\omega_{\alpha}$ a $3$-cocycle. That is, it satisfes the condition
+where we use $\id$ in an abuse of notation to mean the standard associativity map, and we know that such a $\lambda$ exists since $V_{g_0}\otimes V_{g_1}\otimes V_{g_2}\cong V_{g_0g_1g_2}$ is a simple object. Show that $\omega_{\alpha}$ a $3$-cocycle. That is, $\omega_{\alpha}$ satisfes the condition
 
 $$\omega(g_0,g_1,g_2)\omega(g_1,g_2,g_3)=\omega(g_0g_1,g_2,g_3)\omega(g_0,g_1g_2,g_3)^{-1}\omega(g_0,g_1,g_2g_3)$$
 
-Moreover, show that this induces a bijection between the set of associativity structures on $\Vecc_G$ and the set $Z^3(G,\CC^\times)$ of $3$-cocycles on $\Vecc_G$. In fact, show that this descends to a bijection
+\item Show that the assignment $\alpha\mapsto \omega_{\alpha}$ induces a bijection between the set of associativity structures on $\Vecc_G$ and the set $Z^3(G,\CC^\times)$ of $3$-cocycles on $\Vecc_G$.
+
+\item Show that this descends to a bijection
 
 $$
 \left.\begin{pmatrix} \text{Associativity structures}\\
@@ -3745,7 +3814,8 @@ where $\varphi:G\times G\to \CC^\times$ is any function satisfying the 2-cocycle
 
 $$\varphi(g_0,g_1)\varphi(g_1,g_2)^{-1}=\varphi(g_0g_1,g_2)\varphi^{-1}(g_0,g_1g_2).$$
 
-We denote the monoidal category attached to a cocycle $\omega\in Z^3(G,\CC^\times)$ by $\Vecc_G^\omega$. Observe that $H^3(G,\CC^\times)$ is finite, as predicted by Ocneanu rigidity.
+\end{enumerate}
+We denote the monoidal category attached to a cocycle $\omega\in Z^3(G,\CC^\times)$ by $\Vecc_G^\omega$. Observe that $H^3(G,\CC^\times)$ is finite, as predicted by Ocneanu rigidity (Proposition \ref{Ocneanu rigidity}).
 
 \section{Topological Quantum Computing}
 \label{Topological Quantum Computing}
@@ -3862,12 +3932,6 @@ The observant reader might find the above discussion frustrating. In particular,
 The worry regarding the distinction between these two notions is justified. In general, the group obtained by imposing the equivalence relation of continuous deformations will not be equal to the homology group $H_1(X)$. The group resulting from imposing the continuous deformation restriction is called the \textit{fundamental group} of $X$, and is denoted $\pi_1(X)$. In general $\pi_1(X)$ can be quite a bit larger than $H_1(X)$. The groups are related by the fact that $H_1(X)$ is the abelianization of $\pi_1(X)$, i.e., the maximal abelian quotient of $\pi_1(X)$. In the case that $\pi_1(X)$ is abelian (for example, when $X$ is a torus), this means that there is no distinction between these spaces, and one should not make any worry about the discrepancies in intuition.
 
 The canonical reference for this subject (known as \textit{Algebraic Topology}) is Alan Hatcher's textbook \cite{hatcher2005algebraic}.
-
-\section{Partial Measurement}
-
-[WORK: Add a little appendix explaining partial measurement graphically, with a special focus on the example of the quantum double. Mention mixed state TQFTs in passing \cite{zini2021mixed} - we can really say that the TV construction is the quantum double of the RT construction, as said in the last paragraph of his paper.]
-
-[WORK: I'm realizing I don't know what ``states" look like in MTCs. For TQFTs you can do state sum stuff so it makes sense, but for MTCs you can't really. What does make sense is maps which behave like density matricies, i.e., mixed state looking things. Maybe these are states? Maybe pure states are special subsets of this? This is something to ask zhenghan.]
 
 \section{Unitarity}
 \label{Unitarity}
