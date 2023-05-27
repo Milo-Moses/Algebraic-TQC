@@ -10,16 +10,17 @@
 \contentsline {subsection}{\numberline {5.2}Braided monoidal categories}{56}
 \contentsline {section}{\numberline {6}Modular Tensor Categories}{64}
 \contentsline {subsection}{\numberline {6.1}Fusion systems}{64}
-\contentsline {subsection}{\numberline {6.2}The category-theoretic viewpoint}{74}
-\contentsline {subsection}{\numberline {6.3}The MTC $\mathcal {Z}(\mathbf {Rep}_{\mathbb {Z}_2})$}{89}
-\contentsline {subsection}{\numberline {6.4}Rigidity}{103}
-\contentsline {section}{\numberline {7}Topological Quantum Computing}{123}
-\contentsline {subsection}{\numberline {7.1}The TQC framework}{123}
-\contentsline {subsection}{\numberline {7.2}Revisiting toric code TQC}{126}
-\contentsline {subsection}{\numberline {7.3}Universal TQC with Fibonacci anyons}{126}
-\contentsline {section}{\numberline {A}$\mathbb {Z}_2$ Homology Theory}{126}
-\contentsline {section}{\numberline {B}Unitarity}{128}
-\contentsline {subsection}{\numberline {B.1}Unitary TQFTs}{128}
-\contentsline {subsection}{\numberline {B.2}Unitary MTCs}{129}
-\contentsline {section}{\numberline {C}Fusion System/MTC Correspondence}{132}
-\contentsline {section}{\numberline {D}Anyon Data}{136}
+\contentsline {subsection}{\numberline {6.2}The category-theoretic viewpoint}{75}
+\contentsline {subsection}{\numberline {6.3}The MTC $\mathcal {Z}(\mathbf {Rep}_{\mathbb {Z}_2})$}{90}
+\contentsline {subsection}{\numberline {6.4}Rigidity}{105}
+\contentsline {section}{\numberline {7}Topological Quantum Computing}{126}
+\contentsline {subsection}{\numberline {7.1}The TQC framework}{126}
+\contentsline {subsection}{\numberline {7.2}Revisiting toric code TQC}{128}
+\contentsline {subsection}{\numberline {7.3}Universal TQC with Fibonacci anyons}{129}
+\contentsline {section}{\numberline {A}$\mathbb {Z}_2$ Homology Theory}{129}
+\contentsline {section}{\numberline {B}Non-Negative Matricies}{131}
+\contentsline {section}{\numberline {C}Unitarity}{131}
+\contentsline {subsection}{\numberline {C.1}Unitary TQFTs}{131}
+\contentsline {subsection}{\numberline {C.2}Unitary MTCs}{132}
+\contentsline {section}{\numberline {D}Fusion System/MTC Correspondence}{136}
+\contentsline {section}{\numberline {E}Anyon Data}{140}

@@ -34,12 +34,6 @@ Cl{\'e}ment Aubert.
 \newblock Categories for me, and you?
 \newblock {\em arXiv preprint arXiv:1910.05172}, 2019.
 
-\bibitem[Bar09]{bartlett2009unitary}
-Bruce Bartlett.
-\newblock On unitary 2-representations of finite groups and topological quantum
-  field theory.
-\newblock {\em arXiv preprint arXiv:0901.3975}, 2009.
-
 \bibitem[BBW22]{barter2022computing}
 Daniel Barter, Jacob Bridgeman, and Ramona Wolf.
 \newblock Computing associators of endomorphism fusion categories.
@@ -305,6 +299,11 @@ Ville Lahtinen and Jiannis Pachos.
 Michael~A Levin and Xiao-Gang Wen.
 \newblock String-net condensation: A physical mechanism for topological phases.
 \newblock {\em Physical Review B}, 71(4):045110, 2005.
+
+\bibitem[Mey00]{meyer2000perron}
+Carl Meyer.
+\newblock Perron--frobenius theory of nonnegative matrices.
+\newblock {\em Matrix analysis and applied linear algebra, SIAM}, 2000.
 
 \bibitem[ML13]{mac2013categories}
 Saunders Mac~Lane.

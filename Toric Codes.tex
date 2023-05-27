@@ -38,8 +38,8 @@
 \setcounter{section}{-1}
 
 
-
 \newcounter{quantumdim}
+\newcounter{fusionsystem}
 
 
 
@@ -71,6 +71,7 @@
 \newcommand{\st}{\,\,\mathrm{s.t.}\,\,}
 \newcommand{\mm}{\mathfrak{m}}
 \newcommand{\pp}{\mathfrak{p}}
+\newcommand{\dd}{\bold{d}}
 \newcommand{\Hom}{\mathrm{Hom}}
 \newcommand{\Aut}{\mathrm{Aut}}
 \newcommand{\Frac}{\mathrm{Frac}}
@@ -91,6 +92,7 @@
 \newcommand{\Grp}{\bold{Grp}}
 \newcommand{\Hilb}{\bold{Hilb}}
 \newcommand{\Bord}{\bold{Bord}}
+\newcommand{\FPdim}{\mathrm{FPdim}}
 \newcommand{\Cat}{\bold{Cat}}
 \newcommand{\func}{\mathrm{func}}
 \newcommand{\0}{\left|0\right>}
@@ -161,22 +163,24 @@ The structure of the manuscript is as follows:
 \section{Introduction}
 \label{Introduction}
 
-Of the many approaches to quantum computation, topological quantum computation (TQC) has the distinction of being both one of the most mathematically complicated and potentially powerful methods. In general, to describe a theory of quantum computation one must specify the following:
+Of the many approaches to quantum computation, topological quantum computation (TQC) has the distinction of being both one of the most mathematically complicated and potentially powerful methods.
+
+In general, to describe a theory of quantum computation one must specify the following:
 
 \begin{enumerate}
-\item How quantum information is stored (i.e. what physical model of qubits\footnote{Qubit (or, ``quantum bit") is the abstract unit of quantum information} one is using)
+\item How quantum information is stored (i.e. what physical model of qubits\footnote{A qubit (or, ``quantum bit") is the abstract unit of quantum information} one is using)
 \item How quantum information is acted on (i.e. what physical actions one can perform on the qubits)
-\item How quantum information is measured (i.e. what observables can be physically measured in the system)
+\item How quantum information is measured (i.e. what observables can be physically realized in the system)
 \end{enumerate}
 
 
-There are many proposed methods of quantum computation (superconducting quantum computers \cite{wendin2017quantum}, trapped ion quantum computers \cite{debnath2016demonstration}, semiconductor based quantum computers \cite{kane1998silicon}, etc...), but they all have roughly similar mathematical descriptions. This common description is known as \textit{universal} quantum computation. TQC has a fundamentally different mathematical formalism. It was a major milestone when TQC was shown to be equivalent to universal quantum computation, in the sense that universal quantum computers can effectively simulate all instances of TQC, and there are instances of TQC that can simulate universal quantum computers  \cite{freedman2002modular, freedman2002simulation}. It is expected that every reasonable mathematical formalism for quantum computation will be equivalent in this sense: this is the content of the Freedman-Church-Turing thesis \cite{freedman2003topological}.
+There are many proposed methods of quantum computation (superconducting quantum computers \cite{wendin2017quantum}, trapped ion quantum computers \cite{debnath2016demonstration}, semiconductor based quantum computers \cite{kane1998silicon}, etc...), but they all have roughly similar mathematical descriptions. This common description is known as \textit{universal quantum computation}. TQC has a fundamentally different mathematical formalism. It was a major milestone when TQC was shown to be equivalent to universal quantum computation, in the sense that universal quantum computers can effectively simulate all instances of TQC, and there are instances of TQC that can simulate universal quantum computers  \cite{freedman2002modular, freedman2002simulation}. It is expected that every reasonable mathematical formalism for quantum computation will be equivalent in this sense: this is the content of the Freedman-Church-Turing thesis \cite{freedman2003topological}.
 
-If all forms of quantum computation are roughly equivalent it is reasonable to ask why one would consider TQC to be more promising than other models. This is an especially relevant question seeing as Google's superconducting quantum computer can harness 53 qubits and has demonstrated quantum superiority, while Microsoft's TQC has not been able to reliably harness a single qubit \cite{arute2019quantum}.
+Since all forms of quantum computation are computationally equivalent, it is reasonable to ask why TQC is any more promising than other models. This is an especially relevant question seeing as Google's superconducting quantum computer can harness 53 qubits and has demonstrated quantum superiority, while Microsoft's TQC has not reliably harnessed a single qubit \cite{arute2019quantum}.
 
-The intuition is as follows. The $\#$1 challenge in quantum computation is error correction. While fault tolerant quantum computers (quantum computers that fix errors faster than they arise) can provably exist, the error rate must be unrealistically low \cite{gottesman1998theory}. \textit{Topology} is the mathematical study of those properties of geometric objects that are invariant under small perturbations. The key insight of TQC is that instead of storing quantum information in the states of individual particles, the information can be stored in topological invariants of geometric objects. As such, even when physical errors happen (e.g. the geometric object is perturbed) the information stored in the qubits remains the same. More than being error correcting, TQC is naturally error resistant!
+The intuition is as follows. The $\#$1 challenge in quantum computation is error correction. While quantum computers that fix errors faster than they arise (known as ``fault tolerant") can provably exist, the error rate must be unrealistically low \cite{gottesman1998theory}. \textit{Topology} is the mathematical study of those properties of geometric objects that are invariant under small perturbations. The key insight of TQC is that instead of storing quantum information in the states of individual particles, the information can be stored in topological invariants of geometric objects. As such, even when physical errors happen (e.g. the geometric object is perturbed) the information stored in the qubits remains the same. More than being error correcting, TQC is naturally error \textit{resistant}!
 
-As a thought experiment to reinforce this idea, suppose that Alice and Bob are placed across the country, and are given only a string to communicate with. By ``string" we really mean string: this is some physical piece of twine or rope. They can ship this string via train, and through this process there will undoubtedly be errors (e.g. the string will get pushed around during the voyage). How can Alice and Bob effectively communicate, while being relatively confident there are no errors?
+As a thought experiment to reinforce this idea, suppose Alice and Bob are placed across the country, given only a string to communicate with. By ``string" we really mean string: this is some physical piece of twine or rope. This string can be shipped via train, but not without errors: the string will get pushed around during the voyage. How can Alice and Bob effectively communicate, while being relatively confident there are no errors?
 
 \begin{figure}
 \begin{center}
@@ -186,9 +190,9 @@ As a thought experiment to reinforce this idea, suppose that Alice and Bob are p
 \end{center}
 \end{figure}
 
-The answer is simple: store the information in knots! By tying a certain number of simple knots in the string Alice can specify an integer that Bob can simply read off by counting (as in Figure \ref{fig:rope-deformations})! The beauty lies in the fact that while the string may be perturbed during the sending process, it would take a very specialized and unlikely error to untie the rope or to accidentally re-tie an extra knot. This knotting number is a topological invariant (small perturbations don't change how many knots were tied), and so we can see intuitively that topological invariants are naturally error resistant.
+The answer is simple: store information in knots! By tying a certain number of simple knots in the string Alice can specify an integer that Bob can read off by simply counting (as in Figure \ref{fig:rope-deformations}). The beauty lies in the fact that while the string may be perturbed during the sending process, it would take a very specialized and unlikely error to untie the rope or to accidentally re-tie an extra knot. This knotting number is a topological invariant (small perturbations don't change how many knots were tied). Thus, we can see intuitively that topological invariants are error resistant.
 
-The above situation is more than just a thought experiment: This is exactly the scheme that the ancient South American Incas used over 4000 years ago! The Incas stored all sorts of information in \textit{Quipus}, intricately knotted collections of fibered strings \cite{ascher1981code} as seen in Figure \ref{fig:quipu}. Storing information in knot invariants was also common practice in ancient Chinese, Tibetan, and Polynesian cultures \cite{day2021quipus}. In a sense, these are the earliest examples of topological computation.
+The above situation is more than just a thought experiment: this is exactly the scheme South American Incas used over 4000 years ago! They stored all sorts of information in \textit{Quipus}, intricately knotted collections of fibered strings \cite{ascher1981code} as seen in Figure \ref{fig:quipu}. Storing information in knot invariants was also common practice in ancient Chinese, Tibetan, and Polynesian cultures \cite{day2021quipus}. In a sense, these are the earliest examples of topological computation.
 
 \begin{figure}
 \begin{center}
@@ -198,17 +202,17 @@ The above situation is more than just a thought experiment: This is exactly the 
 \end{center}
 \end{figure}
 
-In TQC, information is still stored in knots. The main difference is that the strands being knotted are no longer physical pieces of twine, but \textit{trajectories of quasiparticles through spacetime}. For instance, suppose $A$ and $B$ are two quasiparticles (we will elaborate more on this in later). Moving through space from time $t_0$ to $t_1$, the trajectories can look something like
+In TQC, information is still stored in knots. The main difference is that the strands being knotted are no longer physical pieces of twine, but \textit{trajectories of quasiparticles through spacetime}. For instance, suppose $A$ and $B$ are two quasiparticles - we will elaborate more on this in later. Moving through space from time $t_0$ to $t_1$, the trajectories can look something like
 
 \begin{equation*}
 \tikzfig{basic-braid}
 \end{equation*}
 
-Spooky action at a distance causes non-trivial knots to store non-trivial quantum information. That is, moving one quasiparticle around another will lead to a physically different quantum system than if the particle had not been moved. The resulting physical system doesn't depend on how the first particle moved around the other, however - only the topology of the knot matters.
+Spooky action at a distance causes non-trivial knots to store non-trivial quantum information. That is, moving one quasiparticle around another will lead to a physically different quantum system than if the particle had not been moved, despite the final positions being identical. Importantly, the resulting physical system doesn't depend on exactly how the first particle moved around the other - it only depends on the topology of the path. That is, the direction or number of loops the first particle did around the second.
 
-Notice that to make 3 dimensional spacetime, we modeled space as being 2 dimensional. While one might initially think this is a quirk of our human incapacity of visualizing 4 dimensional space, there is a deeper mathematical truth at play: there are no knots in 4 dimensional space. The extra dimension always gives the strands space to evade and move past each other without collision. In particular, for TQC to work we must have space be two dimensional. While this task seems initially impossible, phases of matter living entirely in a two dimensional subspace of our three dimensional world have been experimentally constructed\footnote{Of course, these are not \textit{literally} two dimensional. Motion in the third dimension is just so tightly constrained that $3$D models break down, and $2$D models start to work.}. Things that behave like particles in these 2 dimensional phases of matter are known as quasiparticles, and form non-trivial knots when braided.
+Notice that to make 3 dimensional spacetime, we modeled space as being 2 dimensional. While one might initially think this is a quirk of our human incapacity of visualizing 4 dimensions, there is a deeper mathematical truth at play: there are no knots in 4 dimensional space. The extra dimension always gives the strands space to evade and move past each other without collision. In particular, for TQC to work we must have space be 2 dimensional. While this task seems initially impossible, phases of matter living entirely in a 2 dimensional subspace of our 3 dimensional world have been experimentally constructed\footnote{Of course, these are not \textit{literally} 2 dimensional. Motion in the third dimension is just so tightly constrained that $3$D models break down, and $2$D models start to work.}. Things that behave like particles in these 2 dimensional phases of matter are known as quasiparticles, and form non-trivial knots when braided.
 
-The following is a rough description of how these 2 dimensional electron gasses are constructed. One begins by preparing a series of layers of graphene with a small gap in the middle. Upon subjecting the system to extremely cold temperatures and an extremely high magnetic field, the electrons in the graphene begin to move around. To balance the electric charge on both sides, electrons move to the exact center of the setup. This resulting thin layer of electrons is a two dimensional electron gas. In such extreme conditions, all of the electrons will become highly entangled with each other, forming a quantum phase of matter \cite{yang2021experimental}. A diagram showing this process is found in Figure \ref{fig:spin-liquid}
+The following is a rough description of how these 2 dimensional phases of matter are constructed. One begins by preparing a series of layers of graphene with a small gap in the middle. Upon subjecting the system to extremely cold temperatures and an extremely high magnetic field, the electrons in the graphene begin to move around. To balance the electric charge on both sides, electrons move to the exact center of the setup. In such extreme conditions, all of the electrons will become highly entangled with each other, forming a quantum phase of matter known as an electron gas \cite{yang2021experimental}. A diagram showing this process is found in Figure \ref{fig:spin-liquid}
 
 \begin{figure}
 \begin{center}
@@ -220,9 +224,9 @@ The following is a rough description of how these 2 dimensional electron gasses 
 
 A key insight of Kitaev \cite{kitaev2003fault}, and one of the motivating pushes towards quantum computation, was that the topological properties of the 2 dimensional phase of matter will determine how the electrons entangle with each other. In other words, 2 dimensional sheets of electrons will form different quantum systems depending on their shape.
 
-To understand this better, suppose that you have a 2 dimensional sphere of electrons. They will want to quantize and align their spins together in the same direction. This amounts to choosing a unit tangent vector at each point on the sphere. However, there is no coherent way to do this. Every choice of tangent vectors will necessarily have some discontinuity or singularity: this is the content of the ``hairy ball theorem" \cite{eisenberg1979proof}.
+To understand this better, suppose that you have a 2 dimensional sphere of electrons. They will want to quantize and align their spins together in the same direction. This amounts to choosing a unit tangent vector at each point on the sphere, representng the direction of the spin. However, there is no coherent way to do this. Every choice of tangent vectors will necessarily have some discontinuity or singularity: this is the content of the ``hairy ball theorem" \cite{eisenberg1979proof}.
 
-If your sheet of electrons was on a donut, however, the situation is much different. There are several ways to coherently assign unit tangent vectors to each point; thus there are several ways for all of the electrons to quantize their spins together, as seen in Figure \ref{fig:hairy-ball}. This is aptly known as a \textit{spin liquid}. In mathematical language a ``donut" is called a torus, hence the name \textit{toric code}. The spin liquid associated with this procedure on a torus is called the ``$\ZZ_2$ spin liquid", and it is the physical realization of the toric code. Note that generally when making such $\ZZ_2$ spin liquids in labs one does not make an actual torus; instead, one artificially simulates the boundary conditions of a torus in nanowires, for technical reasons \cite{albrecht2016exponential, mourik2012signatures}.
+If your sheet of electrons was on a donut, however, the situation is much different. There are several ways to coherently assign unit tangent vectors to each point. Thus there are several ways for all of the electrons to quantize their spins together, as seen in Figure \ref{fig:hairy-ball}. This simple spin-aligned electron gas is known as the $\ZZ_2$ \textit{spin liquid} phase of matter.  In mathematical language a ``donut" is called a torus, so the quantum system obtained by applying the $\ZZ_2$ spin liquid phase on the donut is called the \textit{toric code}. Note that when making spin liquids in labs one does not generally make an actual torus. Instead, one artificially simulates the boundary conditions of a torus in nanowires, for technical reasons \cite{albrecht2016exponential, mourik2012signatures}.
 
 \begin{figure}
 \begin{center}
@@ -232,9 +236,11 @@ If your sheet of electrons was on a donut, however, the situation is much differ
 \end{center}
 \end{figure}
 
-We find it illustrative here to make an analogy with classical computing. Consider the following puzzle: classical bits are stored in the magnetization of small regions on a hard disk. The magnetization of each atom is highly sensitive to thermal fluctuations. So why is it that classical computers seem so resistant to errors? The answer is that since all of the atoms are magnetized in the same direction, any one atom flipping will automatically be corrected back by the normalizing influence of the atoms around it: magnets are naturally error resistant. It is exactly the same with these spin liquids that quantize together: any one electron's spin decohering will immediately be corrected by the normalizing influence of all of its neighbors.
+We find it illustrative here to make an analogy with classical computing. Consider the following puzzle: classical bits are stored in the magnetization of small regions of a hard disk. The magnetization of each atom is highly sensitive to thermal fluctuations. So why is it that classical computers seem so resistant to errors? The answer is that since all of the atoms are magnetized in the same direction, any one atom flipping will automatically be corrected back by the normalizing influence of the atoms around it: magnets are naturally error resistant. It is exactly the same with these spin liquids that quantize together. Any one electron's spin decohering will immediately be corrected by the normalizing influence of its neighbors.
 
-All electrons having the same spin is a result of them being in the lowest energy state. An ``excited" electron with deviant spin will raise the energy of the system. These excited electrons are quasiparticles. In this way, quasiparticles can be interpreted as excitations of a topological quantum material. This motivates the fact that (topological) quantum computers must be exceptionally cold to function: Any extra energy will correspond to extra excitations, which will interfere with computation. Compactly, we use the term \textit{ground state} to refer to a state in a system with lowest possible energy.
+In the lab, all one needs to do to make all spins in a quantum materal align is wait long enough for the system to form an equilibrium in a low energy environment. The spin conflicts between neighbors will be sorted out naturally. Any ``excited" electron with deviant spin will raise the energy of the system. Interestingly, such exited electrons behave freely like particles in the quantum material. Hence, we refer to them as quasiparticles. This motivates the fact that topological quantum computers must be exceptionally cold to function: any extra energy will correspond to extra excitations, which will interfere with computation. Compactly, we use the term \textit{ground state} to refer to a state in a system with lowest possible energy. Ground states are exactly those with no quasiparticles.
+
+[WORK: add a paragraph here outlining particle/antiparticle pairs and braiding, to make sense of why these have to be computations.]
 
 We now offer a general description of the TQC process, in the style of the three points listed in the beginning of the introduction:
 
@@ -2089,7 +2095,8 @@ Additionally, a $6j$ fusion system is required to satisfy the following properti
 
 \item (Multiplicity-free) All $N^{\--,\--}_{\--}$ are $0$ or $1$.
 
-\item (Admissibility) We call a triple $(a,b,c)\in \LL^3$ admissible if $N^{a,b}_c\neq 0$. We call a sextuple $(a,b,c,d,n,m)\in \LL^6$ admissible if $(a,b,m)$, $(m,c,d)$, and $(b,c,n)$ are all admissible. We write $F^{a,b,c}_{d}$ to be the matrix whose coefficients are $F^{a,b,c}_{d;n,m}$, where $n,m$ run over pairs making $(a,b,c,d,n,m)$ admissible. We have that
+\item (Admissibility) We call a triple $(a,b,c)\in \LL^3$ admissible if $N^{a,b}_c\neq 0$. We call a sextuple $(a,b,c,d,n,m)\in \LL^6$ admissible if $(a,b,m)$, $(m,c,d)$, and $(b,c,n)$ are all admissible. We write $F^{a,b,c}_{d}$ to be the matrix whose coefficients are $F^{a,b,c}_{d;n,m}$, where $n,m$ run over pairs making $(a,b,c,d,n,m)$ admissible. We have that [WORK: STAG I think that the admissibility definition is wrong...]
+
 \begin{itemize}
 \item $F^{a,b,c}_{d;n,m}=0$ if $(a,b,c,d,n,m)$ is not admissible
 \item $F^{a,b,c}_{d}$ is invertible
@@ -2199,6 +2206,40 @@ The spherical axioms is a technical condition, which will be explained in more d
 \begin{equation*}
 \tikzfig{non-degeneracy}
 \end{equation*}
+
+We now prove some basic properties of fusion systems:
+
+\begin{proposition}\label{fusion-properties} Let $\LL$ be a fusion system. For all $a,b,c\in\LL$,
+
+\begin{enumerate}[(a)]
+\item $N^{a,b}_{c^*}=N^{c,a}_{b^*}=N^{b,c}_{a^*}$,
+\item $N^{a,b}_c=N^{a^*,b^*}_{c^*}$,
+\setcounter{fusionsystem}{\value{enumi}}
+\end{enumerate}
+
+If $\LL$ is moreover a braided $6j$ fusion system, then
+
+\begin{enumerate}[(a)]
+\setcounter{enumi}{\value{fusionsystem}}
+\item $N^{a,b}_c=N^{b,a}_c$.
+\end{enumerate}
+\end{proposition}
+\begin{proof} We go point-by-point.
+
+\begin{enumerate}[(a)]
+\item Applying the associaity constraint for $\LL$ with $d=1$ yields
+
+$$\sum_{e\in\LL}N^{a,b}_e N^{e,c}_{1}=\sum_{e\in\LL}N^{b,c}_{e}N^{a,e}_{1}.$$
+
+The only non-zero term on the left hand side is $e=c^*$ and the only non-zero term on the right hand side is $e=a^*$. Hence, we arrive at $N^{a,b}_{c^*}=N^{b,c}_{a^*}$. Cyclically permuting again, we get the third equality.
+
+\item .[WORK: STAG Seems like this might rely on $6j$ fusion structure...]
+
+\item .[WORK: STAG Should follow from a proper treatment of $R$-symbols...]
+
+
+\end{enumerate}
+\end{proof}
 
 It is important to remember that even though the definition is long, at the end of the day these are still just finite collections of numbers satisfying a finite number of polynomial equations. This makes many things simple. For instance, we can define a morphism between fusion systems $(\LL,N)$ and $(\LL',N')$ to be a function $f:\LL\to \LL'$ such that $N^{a,b}_{c}=N'^{f(a),f(b)}_{f(c)}$. For $6j$ fusion systems and braided $6j$ fusion systems, we simply require that $f$ should respect $6j$ symbols and $R$ symbols as well. We can thus properly speak of the \textit{category} of fusion systems. Naïve isomorphism of fusion systems (invertible morphisms) are the wrong notation of equivalence: it is too restrictive. The correction notion is \textit{gauge equivalence}, which corresponds to performing a local change of basis on $6j$ symbols.
 
@@ -2431,7 +2472,7 @@ We now contrast fusion categories and fusion systems. The first claim is as foll
 
 $$A\otimes B\cong \sum_{c\in \LL} N^{a,b}_c\cdot C,$$
 
-where $C$ is a representative for $c$ and $N^{a,b}_c\cdot C$ denotes $N^{a,b}_c$ copies of $C$ direct summed together. We call $\Ccat$ \textit{multiplicity free} if $N^{a,b}_{c}\in \{0,1\}$ for all triples. The pair $(\LL,N^{\--,\--}_{\--})$ is a fusion system whenever $\Ccat$ is multiplicity free.
+where $C$ is a representative for $c$ and $N^{a,b}_c\cdot C$ denotes $N^{a,b}_c$ copies of $C$ direct summed together. We call $\Ccat$ \textit{multiplicity free} if $N^{a,b}_{c}\in \{0,1\}$ for all triples. The pair $(\LL,N^{\--,\--}_{\--})$ is a fusion system.
 \end{proposition}
 \begin{proof} We postpone the proof to Appendix \ref{Fusion System/MTC correspondence}
 \end{proof}
@@ -2607,12 +2648,12 @@ $$\tr(f): 1\xrightarrow{\coev_A} A^*\otimes A\xrightarrow{\id_{A^*}\otimes (\the
 
 In vector spaces, the trace of the identity gives the dimension of the vector space. Thus, we define more generally $d_A=\tr(\id_A)$ to be the \textit{quantum dimension} of $A$. As we saw in the previous subsection, the quantum dimensions serve as key physical aspects in the theory, due to their relation with the probabilities of observing various quasiparticles after fusion. [WORK: restate definition of unitarity here if ``pos q.d. $\implies$ unitary", or appeal to appendix.] The following properties give a taste of the depth present in this theory:
 
-\begin{theorem}\label{quantum dimensions} Let $\Ccat$ be a simple object in a spherical fusion category, with set $\LL$ of isomorphism classes of simple objects. Choose $a\in \LL$ with representative $A\in\Ccat$. The following claims about the quantum dimension are all true:
+\begin{theorem}\label{quantum dimensions} Let $\Ccat$ be a spherical fusion category, with set $\LL$ of isomorphism classes of simple objects. Choose $a\in \LL$ with representative $A\in\Ccat$. The following claims about the quantum dimension are all true:
 
 \begin{enumerate}[(a)]
 \item $d_a$ is a non-zero real number. This holds even for non-simple objects.
 
-\item $d_a$ is an algebraic integer. In particular, $d_a$ is an eigenvalue of the fusion matrix $N^{a}=(N^{a,b}_c)_{(b,c)\in \LL^2}$.
+\item $d_a$ is an algebraic integer\footnote{Recall that an \textit{algebraic integer} is a complex number which is the root of some monic polynomial with integer coefficients. Eigenvalues of matricies with integer coefficients are algebraic integers, since they are roots of the characteristic polynomial.}. More strongly, $d_a$ is an eigenvalue of the fusion matrix $N^{a}=(N^{a,b}_c)_{(b,c)\in \LL^2}$.
 
 \setcounter{quantumdim}{\value{enumi}}
 
@@ -2623,33 +2664,61 @@ If $\Ccat$ is unitary, then we moreover have the following:
 \begin{enumerate}[(a)]
 \setcounter{enumi}{\value{quantumdim}}
 
-\item If $1\leq d_a\leq 2$, then $d_a=2\cos(\pi /m)$ for some integer $m\geq 3$. Otherwise, $d_a\geq 4$.
+\item $d_1\geq 1$. If $d_a<2$, then $d_a=2\cos(\pi /n)$ for some integer $n\geq 3$.  [WORK: Is there a ``Jones gap" in this context?]
 
-\item $d_a$ is the unique eigenvalue of $N^a$ of largest absolute value.
+\item $d_a$ is the largest non-negative real eigenvalue of $N^a$.
 
 \item The following conditions are equivialent.
 
 \begin{enumerate}[1.]
 \item $d_a=1$.
-\item $N^a$ is a permutation matrix. That is, $A$ exhibits deterministic fusing.
+\item $N^a$ is a permutation matrix\footnote{A permutation matrix is a matrix for which every row and collumn has a single $1$ entry, and all other entries are zero. They are called such because they act on other matrices on the right/left by permuting rows/collumns}. That is, $A$ exhibits deterministic fusing.
 \item $\beta_{B,A}\circ \beta_{A,B}$ is a scalar multiple of the identity for all $B\in \Ccat$. That is, braiding with $A$ only causes global phase shifts.
 \end{enumerate}
 
 If any of these three equivalent conditions are met, we call $A$ is \textit{abelian}. 
 \end{enumerate}
 \end{theorem}
-\begin{proof} .[WORK: do proof]
+\begin{proof} We prove the statements one-by-one.
+
+\begin{enumerate}[(a)]
+\item Fix an isomorphism $A\otimes A^*\cong \sum_{c\in\LL}N^{a,a^*}_{c}C$. Since $N^{a,a^*}_1=1$, by Proposition \ref{Make fusion system}, $N^{a,a^*}_1=1$. We thus find that the distinguished map $ 1\to A^*\otimes A$ will act by a non-zero scalar on the $1\to1$ component, and by zero on every other component. Similarly, the distinguished map $A^*\otimes A\to 1$ will act by a non-zero scalar on the $1\to 1$ and by zero on every other component. The composition is thus a non-zero map $1\to 1$, and hence the trace is non-zero.
+
+To show that $d_a$ is real, we observe the following. Let $\dd=(d_a)_{a\in\LL}$ be the vector whose entries are quantum dimensions. Taking the trace of the fusion equation and applying Proposition \ref{trace}, we get
+
+$$d_ad_b=\sum_{c\in\LL}N^{a,b}_c d_c$$
+
+for all $a,b\in\LL$. This is exactly the statement that $N^a \dd =d_a \dd$ for all $a\in\LL$. Now, we observe additionally that 
+
+$$\dd^{\dagger}N^a=\left(\left(N^a\right)^\dagger \dd\right)^\dagger=\left(N^{a^*}\dd\right)^{\dagger}=\left(d_{a^*}\dd\right)^{\dagger}=\overline{d}_{a^*}\dd^{\dagger}.$$
+
+Where we used the fact that $(N^{a})^{\dagger}=N^{a^*}$ since $N^{a,c}_{b}=N^{a^*,b}_c$ by Proposition \ref{fusion-properties}. Combining these formulas, we get that
+
+$$d_a |\dd|^2=\dd^{\dagger}N^a\dd=\overline{d}_{a^*}|\dd|^2.$$
+
+Since $|\dd|^2\neq 0$, we get that $d_a=\overline{d}_{a^*}$. Additionally, the fact that $\Ccat$ is spherical implies that $d_{a^*}=d_a$. Hence, $d_a=\overline{d}_a$ is real. 
+
+\item We proved this in the course of going through part (a).
+
+\item .[WORK: Muger has a reference]
+
+\item Since the quantum dimensions are positive, $\dd$ must be the Frobenius-Perron eigenvector. The result now follows from the Frobenius-Perron theorem (Theorem [WORK: ref]).
+
+\item .[WORK: Do this well.]
+\end{enumerate}
 \end{proof}
 
-This theorem is quite useful experimentally. For example, suppose we wish to observe non-abelian anyons. The state of current laboratories are such that creating the appropriate conditions, braiding anyons, and recording non-abelian statistics is out of reach with proposed methods \cite{bonderson2006probing}. Thus, one observes non-abelian anyons indirectly by measuring physical quantities which are associated with non-abelian statistics. For example, the quantum dimension can be related to the \textit{entropy} of a physical system \cite{kitaev2006topological}. Abelian MTCs have $d_A=1$, whereas non-abelian MTCs will have measurably larger quantum dimensions - the second part of the theorem implies $d_A\geq 2\cos(\pi/4)=\sqrt{2}$. This distinctly different entropy can be physically measured. Namely, the thermodynamic Maxwell's equation relates entropy to chemical potential, which in turn can be measured by changes in voltage \cite{cooper2009observable}.
+The fact that quantum dimensions can be negative adds a great deal of complexity to the theory of spherical fusion categories. However, the \textit{Frobenius-Perron theorem} reveals a perhaps even more natural notion of dimension. Namely, even in the non-unitary case the fusion matricies $N^a$ will have unique largest non-negative eigenvalues. These so-called Frobenius-Perron eigenvalues satisfy some enjoyable properties. This is explored in Exercise [WORK: ref].
 
-This raised entropy is known as topological entanglement entropy. It can be understood philosophically as saying that in more complicated MTCs, knots will be harder to untie. The non-trivial topology in these entangled knots store information - it is exactly with this information we are trying to make TQC! The higher the topological entanglement entropy the more information is being stored in knots. More precisely, we define the dimension of a ribbon fusion category to be
+The quantum dimensions can be put together to give a measure of complexity to a spherical fusion category. That is, we define
 
 $$\dim \Ccat = \sum_{a\in \LL} d_a^2,$$
 
-where as usual $\LL$ is the set of isomorphism of classes of simple objects. The tological enganglement of an MTC is given by $\log (\dim \Ccat)$. A key fact about this global dimension $\dim\Ccat$ is that it restrticts the possibilities for quantum dimensions of objects:
+to be the global dimension of a spherical fusion category, where as usual $\LL$ is the set of isomorphism of classes of simple objects. It is an important invariant, and the fact that it measures the complexity of $\Ccat$ can be well motivated from physics. A complicated fusion category should be one in which knots are hard to untie. That is, if one allows quasiparticles to move around and form knots then more information should be stored in more complicated fusion categories. This information is exactly what TQC is based on, and is known as \textit{topological entanglement entropy}. It can be explicitely defined, calculated, and measured. These computations were first done systematically in Kitaev and Preskill's paper \cite{kitaev2006topological}, where it was found that the topological entanglement entropy is related to the global dimension: it is exactly $\frac{1}{2}\log(\dim \Ccat)$. 
 
-\begin{theorem}[\cite{etingof1997some}] Let $a$ be an isomorphism class of simple objects in  a ribbon fusion category $\Ccat$. We have that $d_a$ divides $\sqrt{\dim \Ccat}$ as an algebraic integer.
+A key mathematical fact about the global dimension is that it restrticts the possibilities for quantum dimensions of objects:
+
+\begin{theorem}[\cite{etingof1997some}] Let $a$ be an isomorphism class of simple objects in a spherical fusion category $\Ccat$. We have that $d_a$ divides $\sqrt{\dim \Ccat}$ as an algebraic integer\footnote{An algebraic integer $x$ divides an algebraic integer $y$ when $y/x$ is an algebraic integer.}.
 \end{theorem}
 
 We now state the most important numerical facts about twists of ribbon fusion categories:
@@ -3814,6 +3883,22 @@ where $\varphi:G\times G\to \CC^\times$ is any function satisfying the 2-cocycle
 
 $$\varphi(g_0,g_1)\varphi(g_1,g_2)^{-1}=\varphi(g_0g_1,g_2)\varphi^{-1}(g_0,g_1g_2).$$
 
+\item In this exericse we work out the basics of the Frobenius-Perron dimension. Unlike the more standard notion of dimension as the trace of the identity, the Frobenius-Perron dimension does not rely on the trace. Hence, it is well defned much more generally. Let $(\LL,N^{\--,\--}_{\--})$ be a fusion system. We defne the Frobenius-Perron dimension $\FPdim(a)$ of an object $a\in\LL$ to be the Frobenius-Perron eigenvalue of the fusion matrix $N^a=(N^{a,b}_c)_{(b,c)\in\LL^2}$. More generally, letting $a=\bigoplus_{i} \cdot a_i$ be a formal linear combination of objects $a_i\in\LL$ we define
+
+$$\FPdim(a)=\sum_i \FPdim(a_i).$$
+
+\begin{enumerate}[(a)]
+\item Show $\FPdim(a\otimes b)=\FPdim(a)\cdot\FPdim(b)$ for all linear combinations $a=\bigoplus_i a_i,b=\bigoplus_jb_j$ of objects in $\LL$. Here, the tensor product is defined on the level of simple objects as
+
+$$a_i\otimes b_j=\bigoplus_{c\in\LL}N^{a_i,b_j}_{c} c,$$
+
+and extended by bilinearity to all of $a\otimes b$.
+
+\item Show that for all $a\in\LL$ we have that $\FPdim(a)\geq 1$, and moreover $\FPdim(a)=2\cos(\pi/n)$ for some $n\geq 3$ when  $\FPdim(a)<2$.
+
+\item Show that $d_a=1$ if and only if $N^a$ is a permutation matrix.
+\end{enumerate}
+
 \end{enumerate}
 We denote the monoidal category attached to a cocycle $\omega\in Z^3(G,\CC^\times)$ by $\Vecc_G^\omega$. Observe that $H^3(G,\CC^\times)$ is finite, as predicted by Ocneanu rigidity (Proposition \ref{Ocneanu rigidity}).
 
@@ -3865,6 +3950,8 @@ that is, the TQFT mapping class group representation on the torus is the MTC mod
 
 [WORK: From the above, we can also give the intuation of a TQFT as (roughly) a collection of compatible mapping class group representations.]
 
+[WORK: Use language of ``string diagrams" instead of ``graphical language" more - its precise]
+
 [WORK: Read "Anyons in Infinite Quantum Systems QFT in d = 2+1 and the Toric Code". Elaina thinks it is a good thing to do.]
 
 [WORK: Mention the deep connection between quantum groups on modular tensor categories: \cite{rowell2006quantum}. The quantum group associated with the toric code is $\text{SO}(16)_1$ \cite{rowell2009classification}. Maybe say a few words about what quantum groups are? ``Deformations of universal envelloping algebras of lie algebras". Add in unitarity section that it is conjectured that all unitary MTCs come from quantum groups \cite{hong2008exotic}]
@@ -3882,18 +3969,27 @@ We can show this does indeed recover the partial trace, since
 \end{equation*}
 
 ]
+
 \subsection{Revisiting toric code TQC}
 \label{Revisiting toric code TQC}
 
 .[WORK: compute what everything looks like for the toric code using category theory. Give the big picture triangle correspondence for the toric code.]
+
+[WORK: We're obviously going to have to look at things of the form $\Hom(1,A^{\otimes n})$. Thus, it will be important to prove the nifty formula
+
+$$\lim_{n\to\infty}\left(\dim \Hom(1,A^{\otimes n})\right)^{1/n}=d_A,$$
+
+which will also be useful as a motivation of the term ``quantum dimension" since for vector spaces this process trivially recovers the dimension. Actually, this might only be a Majorana thing. This DOES work (and the proof is beautiful) for endomorphism spaces more generally. Maybe that's the only thng that needs to be done.
+]
+
+
+.[WORK: The braid group representations attached to abelian anyons are going to be homomorphisms $B_n\to \CC^\times$. This might be a good place to prove that $B_n^{\text{ab}}\cong\ZZ$, and thus that these representatons are always going to be ``boring", i.e., you just pick a root of unity and twist by it. For the toric code, the reps will all be either trivial or the sign representation.]
 
 
 \subsection{Universal TQC with Fibonacci anyons}
 \label{Universal TQC with Fibonacci anyons}
 
 .[WORK: introduces Fibonacci anyon. Prove they are universal with braiding alone. Really what I want to do is show that any form of TQC is universal, but I just think Fibonacci will be simplest. If anyone has a definition it should be here: \cite{trebst2008short}. There's a cool physics paper which motivates the fact that the Fibonacci anyon can't be made in the lab \cite{freedman2012galois}.]
-
-
 
 
 [WORK: Here are some misc things for the rest of the manuscript.
@@ -3933,10 +4029,30 @@ The worry regarding the distinction between these two notions is justified. In g
 
 The canonical reference for this subject (known as \textit{Algebraic Topology}) is Alan Hatcher's textbook \cite{hatcher2005algebraic}.
 
+\section{Non-Negative Matricies}
+\label{Non-Negative Matricies}
+
+.[WORK: Introduce the theory of non-negative matricies. Main thing to do: Frobenius-Perron theorem. I also need to state Kronecker's theorem, but not prove it. I also want to do perron projection enough for me to be able to Frobenius-Perron projection, which will allow me to measure the dimenson of endomorphsm spaces.]
+
+.[WORK: Also need to do this well enough so that I can easily prove $d_a=1$ if and only if $N^a$ is a permutaton matrx.]
+
+\begin{theorem}[Frobenius-Perron, \cite{meyer2000perron}] Let $M$ be a matrix with non-negative real entries. Let $r$ be the largest absolute value among the eigenvalues of $M$. Then
+
+\begin{enumerate}[(a)]
+\item There exists an eigenvector with non-negative real entries whose eigenvalue is $r$.
+\item Every eigenvector with non-negative real entries must have eigenvalue $r$.
+\end{enumerate}
+
+\end{theorem}
+\begin{proof}.[WORK: do proof]
+\end{proof}
+
 \section{Unitarity}
 \label{Unitarity}
 
 \subsection{Unitary TQFTs}
+
+[WORK: I think that there's a great canonical structure. First, strictify. Then, given maps you can define an inner product by adding up ``diagonal" entries in direct sum and adding a conjugate. Up to the correct fudge factors (quantum dimension?) this should be well defined and work properly, and could get us the ``positive q.d. $\iff$ unitary"]
 
 [WORK: mention the fact that this is really a property, not a structure! \cite{reutter2023uniqueness}]
 
