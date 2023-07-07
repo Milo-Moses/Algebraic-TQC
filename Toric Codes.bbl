@@ -57,6 +57,11 @@ Bojko Bakalov and Alexander~A Kirillov.
 \newblock {\em Lectures on tensor categories and modular functors}, volume~21.
 \newblock American Mathematical Soc., 2001.
 
+\bibitem[BKKK22]{bravyi2022adaptive}
+Sergey Bravyi, Isaac Kim, Alexander Kliesch, and Robert Koenig.
+\newblock Adaptive constant-depth circuits for manipulating non-abelian anyons.
+\newblock {\em arXiv preprint arXiv:2205.01933}, 2022.
+
 \bibitem[BNRW16]{bruillard2016rank}
 Paul Bruillard, Siu-Hung Ng, Eric Rowell, and Zhenghan Wang.
 \newblock Rank-finiteness for modular categories.
@@ -69,11 +74,6 @@ Alain Bruguieres.
   vari{\'e}t{\'e}s de dimension 3.
 \newblock {\em Mathematische Annalen}, 316(2):215--236, 2000.
 
-\bibitem[BSS06]{bonderson2006probing}
-Parsa Bonderson, Kirill Shtengel, and Joost~K Slingerland.
-\newblock Probing non-abelian statistics with quasiparticle interferometry.
-\newblock {\em Physical review letters}, 97(1):016401, 2006.
-
 \bibitem[BW96]{barrett1996invariants}
 John Barrett and Bruce Westbury.
 \newblock Invariants of piecewise-linear 3-manifolds.
@@ -84,11 +84,6 @@ John Barrett and Bruce Westbury.
 John~W Barrett and Bruce~W Westbury.
 \newblock Spherical categories.
 \newblock {\em Advances in Mathematics}, 143(2):357--375, 1999.
-
-\bibitem[CS09]{cooper2009observable}
-NR~Cooper and Ady Stern.
-\newblock Observable bulk signatures of non-abelian quantum hall states.
-\newblock {\em Physical review letters}, 102(17):176807, 2009.
 
 \bibitem[Day21]{day2021quipus}
 Cyrus~Lawence Day.
@@ -247,6 +242,14 @@ Yi-Zhi Huang.
 \newblock {\em Communications in Contemporary Mathematics}, 10(01):103--154,
   2008.
 
+\bibitem[ITV{\etalchar{+}}23]{iqbal2023creation}
+Mohsin Iqbal, Nathanan Tantivasadakarn, Ruben Verresen, Sara~L Campbell, Joan~M
+  Dreiling, Caroline Figgatt, John~P Gaebler, Jacob Johansen, Michael Mills,
+  Steven~A Moses, et~al.
+\newblock Creation of non-abelian topological order and anyons on a trapped-ion
+  processor.
+\newblock {\em arXiv preprint arXiv:2305.03766}, 2023.
+
 \bibitem[JS86]{joyal1986braided}
 Andr{\'e} Joyal and Ross Street.
 \newblock Braided monoidal categories.
@@ -310,6 +313,17 @@ Saunders Mac~Lane.
 \newblock {\em Categories for the working mathematician}, volume~5.
 \newblock Springer Science \& Business Media, 2013.
 
+\bibitem[Moc03]{mochon2003anyons}
+Carlos Mochon.
+\newblock Anyons from nonsolvable finite groups are sufficient for universal
+  quantum computation.
+\newblock {\em Physical Review A}, 67(2):022315, 2003.
+
+\bibitem[Moc04]{mochon2004anyon}
+Carlos Mochon.
+\newblock Anyon computers with smaller groups.
+\newblock {\em Physical Review A}, 69(3):032306, 2004.
+
 \bibitem[MS89]{moore1989classical}
 Gregory Moore and Nathan Seiberg.
 \newblock Classical and quantum conformal field theory.
@@ -363,6 +377,12 @@ Udo Pachner.
 Jiannis~K Pachos.
 \newblock {\em Introduction to topological quantum computation}.
 \newblock Cambridge University Press, 2012.
+
+\bibitem[Pre98]{preskill1998fault}
+John Preskill.
+\newblock Fault-tolerant quantum computation.
+\newblock In {\em Introduction to quantum computation and information}, pages
+  213--269. World Scientific, 1998.
 
 \bibitem[Pre99]{preskill1999lecture}
 John Preskill.
@@ -462,6 +482,12 @@ Simon Trebst, Matthias Troyer, Zhenghan Wang, and Andreas~WW Ludwig.
 \newblock A short introduction to fibonacci anyon models.
 \newblock {\em Progress of Theoretical Physics Supplement}, 176:384--407, 2008.
 
+\bibitem[TVV22]{tantivasadakarn2022shortest}
+Nathanan Tantivasadakarn, Ruben Verresen, and Ashvin Vishwanath.
+\newblock The shortest route to non-abelian topological order on a quantum
+  processor.
+\newblock {\em arXiv preprint arXiv:2209.03964}, 2022.
+
 \bibitem[Vaf88]{vafa1988toward}
 Cumrun Vafa.
 \newblock Toward classification of conformal theories.
@@ -489,6 +515,12 @@ G{\"o}ran Wendin.
 \newblock Quantum information processing with superconducting circuits: a
   review.
 \newblock {\em Reports on Progress in Physics}, 80(10):106001, 2017.
+
+\bibitem[WN90]{wen1990ground}
+Xiao-Gang Wen and Qian Niu.
+\newblock Ground-state degeneracy of the fractional quantum hall states in the
+  presence of a random potential and on high-genus riemann surfaces.
+\newblock {\em Physical Review B}, 41(13):9377, 1990.
 
 \bibitem[WW14]{wen2014pattern}
 Xiao-Gang Wen and Zhenghan Wang.

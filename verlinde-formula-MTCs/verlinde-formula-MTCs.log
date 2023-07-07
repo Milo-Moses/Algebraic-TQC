@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  18 MAY 2023 00:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  27 JUN 2023 09:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -772,33 +772,33 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 49.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-(./figures/temp.tikz) (./figures/S-matrix.tikz)
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 121.
+(./figures/S-matrix.tikz)
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 117.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 121.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 117.
  [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (./figures/grothendieck-ring-iso.tikz) (./figures/mu-iso-formula.tikz)
 (./figures/algebra-morphism.tikz)
-Overfull \hbox (66.00365pt too wide) detected at line 153
+Overfull \hbox (66.00365pt too wide) detected at line 149
 []
  []
 
 [2] (./verlinde-formula-MTCs.bbl) [3] (./verlinde-formula-MTCs.aux) ) 
 Here is how much of TeX's memory you used:
- 18282 strings out of 492649
- 392483 string characters out of 6129622
- 463503 words of memory out of 5000000
- 21749 multiletter control sequences out of 15000+600000
+ 18249 strings out of 492649
+ 391907 string characters out of 6129622
+ 463144 words of memory out of 5000000
+ 21718 multiletter control sequences out of 15000+600000
  15251 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,11n,84p,506b,701s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,11n,84p,506b,703s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/loca
 l/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local
 /texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/
@@ -816,7 +816,7 @@ dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2018
 /texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2018/texmf-d
 ist/fonts/type1/public/rsfs/rsfs7.pfb>
-Output written on verlinde-formula-MTCs.pdf (3 pages, 147824 bytes).
+Output written on verlinde-formula-MTCs.pdf (3 pages, 146716 bytes).
 PDF statistics:
  81 PDF objects out of 1000 (max. 8388607)
  59 compressed objects within 1 object stream

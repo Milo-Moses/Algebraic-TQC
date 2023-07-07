@@ -108,7 +108,7 @@
 
 
 \begin{abstract}
-One of the most exciting forms of quantum computation proposed today is topological quantum computation. In this manuscript we give a detailed introduction to topological quantum computation, with special focus on the simplest non-trivial example: the toric code. We give explanations in terms of elementary mathematics and physics, as well as the high-power languages of topological quantum field theory and modular tensor categories.
+One of the most exciting forms of quantum computation proposed today is topological quantum computation. In this manuscript we give a detailed introduction to topological quantum computation with special focus on the simplest non-trivial example: the toric code. We give explanations in terms of elementary mathematics and physics, as well as the high-power languages of topological quantum field theory and modular tensor categories.
 \end{abstract}
 
 \newpage
@@ -120,11 +120,11 @@ One of the most exciting forms of quantum computation proposed today is topologi
 \section{Preface}
 \label{Preface}
 
-Quantum computing has seen massive advances over the last 30 years — prompted in large part by Peter Shor's discovery of an efficient quantum factoring algorithm \cite{shor1994algorithms} — and gained notoriety as an emerging technology and area of insight. However, as of yet, nobody has made a usable quantum computer. Precisely controlling the microscopic world has proved quite challenging in large part due to thermal fluctuations which cause quantum states to decohere and scramble. Thus, the current state of quantum computing has been dubbed the ``NISQ" era: The noisy intermediate-scale quantum era.
+Quantum computing has seen massive advances over the last 30 years — prompted in large part by Peter Shor's discovery of an efficient quantum factoring algorithm \cite{shor1994algorithms} — and has gained notoriety as an emerging technology and area of insight. However, as of yet, nobody has made a usable quantum computer. Precisely controlling the microscopic world has proved quite challenging in large part due to thermal fluctuations which cause quantum states to decohere and scramble. Thus, the current state of quantum computing has been dubbed the ``NISQ" era: the noisy intermediate-scale quantum era.
 
-Moving past this era will require some major insights and discoveries, and perhaps an entirely new model of quantum computation. One of the most recent such models is ``topological quantum computation" (TQC), proposed formally in a 2008 paper of Freedman-Kitaev-Larsen-Wang \cite{freedman2003topological}. The foremost team working on TQC is Microsoft Station Q, based in Santa Barbara, California. While this team has not been able to reliably perform computations with even a single qubit, they have made significant progress on the underlying theoretical physics.
+Moving past this era will require some major insights and discoveries, or perhaps an entirely new model of quantum computation. One of the more recent such models is ``topological quantum computation" (TQC), proposed formally in a 2008 paper of Freedman-Kitaev-Larsen-Wang \cite{freedman2003topological}. The foremost team working on TQC is Microsoft Station Q, based in Santa Barbara, California. While this team has not been able to reliably perform computations with even a single qubit, they have made significant progress on the underlying theoretical physics.
 
-There are already a few good surveys of TQC. The relevant mathematics is described in \cite{bakalov2001lectures} and \cite{rowell2018mathematics}. Physics oriented people will get more out of \cite{preskill1999lecture} and \cite{nayak2008non}. Wang's book \cite{wang2010topological} gives a relatively complete picture of the subject. The research article by Freedman et al. \cite{freedman2002simulation} gives a good introduction as well. While certainly important references, they all expect the reader to have advanced knowledge of quantum mechanics, algebraic geometry, and category theory. This text serves as a much more elementary entry point into this vast and intricate field.
+There are already a few good surveys of TQC. The relevant mathematics is described in \cite{bakalov2001lectures} and \cite{rowell2018mathematics}. Physics-oriented readers will get more out of \cite{preskill1999lecture} and \cite{nayak2008non}. Wang's book \cite{wang2010topological} paints a relatively complete picture of the subject. The research article by Freedman et al. \cite{freedman2002simulation} offers a good introduction as well. While certainly important references, they all expect the reader to have advanced knowledge of quantum mechanics, algebraic geometry, and category theory. This text serves as a much more elementary entry point into this vast and intricate field.
 
 To remain as grounded as possible, we put front-and-center the simplest example of TQC: the toric code. This special case is used as motivation for the general theory. In the words of Alexei Kitaev, the inventor of the toric code:
 
@@ -136,7 +136,7 @@ This manuscript is based on lecture notes from a course on TQC taught by Zhengha
 
 The primary reference for the toric code is the seminal work of Kitaev \cite{kitaev2003fault}. It was there that the idea of computation by braiding anyons was first described.
 
-Many of the propositions and descriptions offered here are nowhere to be found in literature. This is not due to their being particularly novel, but rather to their being seen as too obvious to be stated explicitly. A secondary goal of this manuscript is to present a formal treatment of these implicit ideas.
+Many of the propositions and descriptions offered here are nowhere to be found in literature. This is not due to their novelty, but rather to their being seen as too obvious to be stated explicitly. A secondary goal of this manuscript is to present a formal treatment of these implicit ideas.
 
 Finally, we end with a terminological clarification. The name ``toric code" refers to an example of TQC, but also to a quantum error correction algorithm. Moreover, it is from this use in error correcting that it is dubbed a `` code". Famously, Google uses the toric code algorithm for its quantum computer. A readable reference to the surface codes (a generalization of the toric code) as error correction can be found in J. Roffe's article \cite{roffe2019quantum}. The takeaway is that TQC is so intrinsically error resistant that its mathematical descriptions immediately give associated error correction algorithms. The widespread use and study of the toric code outside of TQC is a testament to the power of the theory.
 
@@ -150,11 +150,11 @@ The structure of the manuscript is as follows:
 
 \item Section \ref{The Toric Code} gives an elementary mathematical description of the toric code. While not strictly necessary, having taken a first course in algebraic topology would be preferable. For those unfamiliar with the subject, an introduction is given in Appendix \ref{Homology}. 
 
-\item Section \ref{TQFTs} gives an introduction to topological quantum field theories (TQFTs), the formal mathematical abstractions of topological quantum phases of matter. Subsection \ref{The general picture} gives an overview of the subject. Subsection \ref{DW TQFT} defines the $\ZZ_2$ Dijkgraaf-Witten theory, the TQFT associated with the toric code. This section has no extra formal prerequisites, but from here on out a significantly stronger mathematical maturity will be assumed.
+\item Section \ref{TQFTs} gives an introduction to topological quantum field theories (TQFTs), the formal mathematical abstractions of topological quantum phases of matter. Subsection \ref{The general picture} gives an overview of the subject. Subsection \ref{DW TQFT} defines the $\ZZ_2$ Dijkgraaf-Witten theory, the TQFT associated with the toric code. This section has no extra formal prerequisites, but from here on a significantly stronger mathematical maturity will be assumed.
 
 \item Section \ref{Categories} gives an introduction to the relevant category theory. Subsection \ref{Objects} gives a general treatment of categories, and subsection \ref{Braided monoidal categories} deals with braided monoidal categories.
 
-\item Section \ref{Modular Tensor Categories} gives an introduction to Modular Tensor Categories (MTCs), the compressed mathematical abstraction of topological quantum phases of matter. Subsection \ref{Fusion systems} gives an overview of the subject. Subsection \ref{Category viewpoint} gives the more elegant interpretation of MTCs in the language of categories. Subsection \ref{VecZ2 MTC} defines $\Zcal(\Rep_{\ZZ_2})$, the MTC associated with the toric code.
+\item Section \ref{Modular Tensor Categories} gives an introduction to Modular Tensor Categories (MTCs), the compressed mathematical abstraction of topological quantum phases of matter. Subsection \ref{Fusion systems} gives an overview of the subject. Subsection \ref{Category viewpoint} gives a more elegant interpretation of MTCs in the language of categories. Subsection \ref{VecZ2 MTC} defines $\Zcal(\Rep_{\ZZ_2})$, the MTC associated with the toric code.
 
 \item Section \ref{Topological Quantum Computing} gives an introduction to the general TQC methodology, using all of the tools developed in the previous sections. Subsection \ref{The TQC framework} gives a detailed overview of TQC, including measurement-based algorithms. Subsection \ref{Revisiting toric code TQC} carries this out explicitly for the toric code. Subsection \ref{Universal TQC with Fibonacci anyons} introduces the Fibonacci anyon model, and shows that it gives universal quantum computation via braiding alone.
 
@@ -163,7 +163,7 @@ The structure of the manuscript is as follows:
 \section{Introduction}
 \label{Introduction}
 
-Of the many approaches to quantum computation, topological quantum computation (TQC) has the distinction of being both one of the most mathematically complicated and potentially powerful methods.
+Topological quantum computation (TQC) has the distinction of being both one of the most mathematically complicated and potentially powerful approaches to quantum computation.
 
 In general, to describe a theory of quantum computation one must specify the following:
 
@@ -174,11 +174,11 @@ In general, to describe a theory of quantum computation one must specify the fol
 \end{enumerate}
 
 
-There are many proposed methods of quantum computation (superconducting quantum computers \cite{wendin2017quantum}, trapped ion quantum computers \cite{debnath2016demonstration}, semiconductor based quantum computers \cite{kane1998silicon}, etc...), but they all have roughly similar mathematical descriptions. This common description is known as \textit{universal quantum computation}. TQC has a fundamentally different mathematical formalism. It was a major milestone when TQC was shown to be equivalent to universal quantum computation, in the sense that universal quantum computers can effectively simulate all instances of TQC, and there are instances of TQC that can simulate universal quantum computers  \cite{freedman2002modular, freedman2002simulation}. It is expected that every reasonable mathematical formalism for quantum computation will be equivalent in this sense: this is the content of the Freedman-Church-Turing thesis \cite{freedman2003topological}.
+There are many proposed methods of quantum computation (superconducting quantum computers \cite{wendin2017quantum}, trapped ion quantum computers \cite{debnath2016demonstration}, semiconductor based quantum computers \cite{kane1998silicon}, etc...), but they all have roughly similar mathematical descriptions. This common description is known as \textit{universal quantum computation}. TQC has a fundamentally different mathematical formalism. It was a major milestone when TQC was shown to be equivalent to universal quantum computation, in the sense that universal quantum computers can effectively simulate all instances of TQC, and there are instances of TQC that can simulate universal quantum computers  \cite{freedman2002modular, freedman2002simulation}. It is expected that every reasonable mathematical formalism for quantum computation will be equivalent in this sense; this is the content of the Freedman-Church-Turing thesis \cite{freedman2003topological}.
 
 Since all forms of quantum computation are computationally equivalent, it is reasonable to ask why TQC is any more promising than other models. This is an especially relevant question seeing as Google's superconducting quantum computer can harness 53 qubits and has demonstrated quantum superiority, while Microsoft's TQC has not reliably harnessed a single qubit \cite{arute2019quantum}.
 
-The intuition is as follows. The $\#$1 challenge in quantum computation is error correction. While quantum computers that fix errors faster than they arise (known as ``fault tolerant") can provably exist, the error rate must be unrealistically low \cite{gottesman1998theory}. \textit{Topology} is the mathematical study of those properties of geometric objects that are invariant under small perturbations. The key insight of TQC is that instead of storing quantum information in the states of individual particles, the information can be stored in topological invariants of geometric objects. As such, even when physical errors happen (e.g. the geometric object is perturbed) the information stored in the qubits remains the same. More than being error correcting, TQC is naturally error \textit{resistant}!
+The intuition is as follows. The foremost challenge in quantum computation is error correction. While quantum computers that fix errors faster than they arise (known as ``fault tolerant") are mathematically possible, the error rate must be unrealistically low \cite{gottesman1998theory}. \textit{Topology} is the mathematical study of those properties of geometric objects that are invariant under small perturbations. The key insight of TQC is that instead of storing quantum information in the states of individual particles, the information can be stored in topological invariants of geometric objects. Thus, even when physical errors happen (e.g. the geometric object is perturbed) the information stored in the qubits remains the same. TQC is not meerly error correcting, it's naturally error \textit{resistant}!
 
 As a thought experiment to reinforce this idea, suppose Alice and Bob are placed across the country, given only a string to communicate with. By ``string" we really mean string: this is some physical piece of twine or rope. This string can be shipped via train, but not without errors: the string will get pushed around during the voyage. How can Alice and Bob effectively communicate, while being relatively confident there are no errors?
 
@@ -192,7 +192,7 @@ As a thought experiment to reinforce this idea, suppose Alice and Bob are placed
 
 The answer is simple: store information in knots! By tying a certain number of simple knots in the string Alice can specify an integer that Bob can read off by simply counting (as in Figure \ref{fig:rope-deformations}). The beauty lies in the fact that while the string may be perturbed during the sending process, it would take a very specialized and unlikely error to untie the rope or to accidentally re-tie an extra knot. This knotting number is a topological invariant (small perturbations don't change how many knots were tied). Thus, we can see intuitively that topological invariants are error resistant.
 
-The above situation is more than just a thought experiment: this is exactly the scheme South American Incas used over 4000 years ago! They stored all sorts of information in \textit{Quipus}, intricately knotted collections of fibered strings \cite{ascher1981code} as seen in Figure \ref{fig:quipu}. Storing information in knot invariants was also common practice in ancient Chinese, Tibetan, and Polynesian cultures \cite{day2021quipus}. In a sense, these are the earliest examples of topological computation.
+The above situation is more than just a thought experiment: this is exactly the scheme South American Incas used over 4000 years ago! They stored information in \textit{Quipus}, intricately knotted collections of fibered strings \cite{ascher1981code} as seen in Figure \ref{fig:quipu}. Storing information in knot invariants was also common practice in ancient Chinese, Tibetan, and Polynesian cultures \cite{day2021quipus}. In a sense, these are the earliest examples of topological computation.
 
 \begin{figure}
 \begin{center}
@@ -210,7 +210,7 @@ In TQC, information is still stored in knots. The main difference is that the st
 
 Spooky action at a distance causes non-trivial knots to store non-trivial quantum information. That is, moving one quasiparticle around another will lead to a physically different quantum system than if the particle had not been moved, despite the final positions being identical. Importantly, the resulting physical system doesn't depend on exactly how the first particle moved around the other - it only depends on the topology of the path. That is, the direction or number of loops the first particle did around the second.
 
-Notice that to make 3 dimensional spacetime, we modeled space as being 2 dimensional. While one might initially think this is a quirk of our human incapacity of visualizing 4 dimensions, there is a deeper mathematical truth at play: there are no knots in 4 dimensional space. The extra dimension always gives the strands space to evade and move past each other without collision. In particular, for TQC to work we must have space be 2 dimensional. While this task seems initially impossible, phases of matter living entirely in a 2 dimensional subspace of our 3 dimensional world have been experimentally constructed\footnote{Of course, these are not \textit{literally} 2 dimensional. Motion in the third dimension is just so tightly constrained that $3$D models break down, and $2$D models start to work.}. Things that behave like particles in these 2 dimensional phases of matter are known as quasiparticles, and form non-trivial knots when braided.
+Notice that to make 3 dimensional spacetime, we modeled space as 2 dimensional. While one might initially think this is a quirk of our human inability to visualize 4 dimensions, there is a deeper mathematical truth at play: there are no knots in 4 dimensional space. The extra dimension always gives the strands space to evade and move past each other without collision. In particular, for TQC to work we must have space be 2 dimensional. While this task seems initially impossible, phases of matter living entirely in a 2 dimensional subspace of our 3 dimensional world have been experimentally constructed\footnote{Of course, these are not \textit{literally} 2 dimensional. Motion in the third dimension is just so tightly constrained that $3$D models break down, and $2$D models start to work.}. Things that behave like particles in these 2 dimensional phases of matter are known as quasiparticles, and form non-trivial knots when braided.
 
 The following is a rough description of how these 2 dimensional phases of matter are constructed. One begins by preparing a series of layers of graphene with a small gap in the middle. Upon subjecting the system to extremely cold temperatures and an extremely high magnetic field, the electrons in the graphene begin to move around. To balance the electric charge on both sides, electrons move to the exact center of the setup. In such extreme conditions, all of the electrons will become highly entangled with each other, forming a quantum phase of matter known as an electron gas \cite{yang2021experimental}. A diagram showing this process is found in Figure \ref{fig:spin-liquid}
 
@@ -224,9 +224,9 @@ The following is a rough description of how these 2 dimensional phases of matter
 
 A key insight of Kitaev \cite{kitaev2003fault}, and one of the motivating pushes towards quantum computation, was that the topological properties of the 2 dimensional phase of matter will determine how the electrons entangle with each other. In other words, 2 dimensional sheets of electrons will form different quantum systems depending on their shape.
 
-To understand this better, suppose that you have a 2 dimensional sphere of electrons. They will want to quantize and align their spins together in the same direction. This amounts to choosing a unit tangent vector at each point on the sphere, representng the direction of the spin. However, there is no coherent way to do this. Every choice of tangent vectors will necessarily have some discontinuity or singularity: this is the content of the ``hairy ball theorem" \cite{eisenberg1979proof}.
+To understand this better, suppose that you have a 2 dimensional sphere of electrons. They will want to quantize and align their spins together in the same direction. This amounts to choosing a unit tangent vector at each point on the sphere to represent the direction of the spin. However, there is no coherent way to do this. Every choice of tangent vectors will necessarily have some discontinuity or singularity: this is the content of the ``hairy ball theorem" \cite{eisenberg1979proof}.
 
-If your sheet of electrons was on a donut, however, the situation is much different. There are several ways to coherently assign unit tangent vectors to each point. Thus there are several ways for all of the electrons to quantize their spins together, as seen in Figure \ref{fig:hairy-ball}. This simple spin-aligned electron gas is known as the $\ZZ_2$ \textit{spin liquid} phase of matter.  In mathematical language a ``donut" is called a torus, so the quantum system obtained by applying the $\ZZ_2$ spin liquid phase on the donut is called the \textit{toric code}. Note that when making spin liquids in labs one does not generally make an actual torus. Instead, one artificially simulates the boundary conditions of a torus in nanowires, for technical reasons \cite{albrecht2016exponential, mourik2012signatures}.
+If your sheet of electrons is on a donut, however, the situation is much different. There are several ways to coherently assign unit tangent vectors to each point. Thus there are several ways for all of the electrons to quantize their spins together, as seen in Figure \ref{fig:hairy-ball}. This simple spin-aligned electron gas is known as the $\ZZ_2$ \textit{spin liquid} phase of matter.  In mathematical language a ``donut" is called a torus, so the quantum system obtained by applying the $\ZZ_2$ spin liquid phase on the donut is called the \textit{toric code}. Note that when making spin liquids in labs one does not generally make an actual torus; instead one artificially simulates the boundary conditions of a torus in nanowires, for technical reasons \cite{albrecht2016exponential, mourik2012signatures}. [WORK: we have an issue - the different ways spins go around do not correspond to different states, since those vector fields can be continuously deformed from one to another! The innequivalent vector fields actually look quite different but maybe can be made into 4 chunks.]
 
 \begin{figure}
 \begin{center}
@@ -236,17 +236,17 @@ If your sheet of electrons was on a donut, however, the situation is much differ
 \end{center}
 \end{figure}
 
-We find it illustrative here to make an analogy with classical computing. Consider the following puzzle: classical bits are stored in the magnetization of small regions of a hard disk. The magnetization of each atom is highly sensitive to thermal fluctuations. So why is it that classical computers seem so resistant to errors? The answer is that since all of the atoms are magnetized in the same direction, any one atom flipping will automatically be corrected back by the normalizing influence of the atoms around it: magnets are naturally error resistant. It is exactly the same with these spin liquids that quantize together. Any one electron's spin decohering will immediately be corrected by the normalizing influence of its neighbors.
+We find it illustrative here to make an analogy with classical computing. Consider the following puzzle: classical bits are stored in the magnetization of small regions of a hard disk. The magnetization of each atom is highly sensitive to thermal fluctuations. So, why is it that classical computers seem so resistant to errors? The answer is that since all the atoms are magnetized in the same direction, any one atom flipping will automatically be corrected back by the normalizing influence of those around it: magnets are naturally error resistant. It is exactly the same with spin liquids. Any one electron's spin decohering will immediately be corrected by the normalizing influence of its neighbors. [WORK: This is not exactly true. Modern computers are all silicone based. Even on magnet based computers the magnets are used to affect the charges in wires, which themselves are succeptible to noice. Add a footnote explaininng this]
 
-In the lab, all one needs to do to make all spins in a quantum materal align is wait long enough for the system to form an equilibrium in a low energy environment. The spin conflicts between neighbors will be sorted out naturally. Any ``excited" electron with deviant spin will raise the energy of the system. Interestingly, such exited electrons behave freely like particles in the quantum material. Hence, we refer to them as quasiparticles. This motivates the fact that topological quantum computers must be exceptionally cold to function: any extra energy will correspond to extra excitations, which will interfere with computation. Compactly, we use the term \textit{ground state} to refer to a state in a system with lowest possible energy. Ground states are exactly those with no quasiparticles.
+To make spin liquids in the lab, you prepare the right condtions and then wait long enough for the system to form an equilibrium in a low energy environment. The spin conflicts between neighbors will be sorted out naturally. Any ``excited" electron with deviant spin will raise the energy of the system. These excited electrons behave as if they were exotic particles with curious properties living in a two-dimensional vacuum. Hence, we refer to them as quasiparticles. This is why topological quantum computers must be exceptionally cold to function: extra energy will cause extra excitations, which will interfere with computation. These lowest energy equilibrium states are known as \textit{ground states}. TQC's quantum information is stored in ground states. This is done because the ground states of a topological quantum phases of matter will be ``protected", in the sense that small amounts of heat or noise won't affect the system \cite{wen1990ground}. [WORK: This aligning of spin is a general fact about fermions in the Ising model. Mention this.]
 
-[WORK: add a paragraph here outlining particle/antiparticle pairs and braiding, to make sense of why these have to be computations.]
+To act on this quantum information, we pass to a higher energy level. That is, we first create quasiparticles, braid them and move them around the material, then annihilate them to return to a ground state. This will transform the ground state we started with. The key point is that some braids which are easy to make by moving around quasiparticles will act highly non-trivially on the space of ground states, and so recording the action will serve the role of an otherwise costly computation.
 
-We now offer a general description of the TQC process, in the style of the three points listed in the beginning of the introduction:
+We now offer a general description of the TQC process, in the style of the three points listed at the beginning of the introduction:
 
 \begin{enumerate}
 \item Information is stored in the ground states of topological quantum materials.
-\item Ground states are acted on by braiding of quasiparticles, that is, by generating pairs of quasiparticles and knotting them in spacetime.
+\item Ground states are acted on by braiding of quasiparticles.
 \item Measurements are performed by observing the topological properties of the resulting ground state.
 \end{enumerate}
 
@@ -475,7 +475,7 @@ The point of this definition is that we can define the norm of $\ppsi\in V$ to b
 
 \begin{proposition}\label{Hilbert properties} Let $V$ be a an $n$ dimensional vector space. The following statements are true:
 
-\begin{enumerate}
+\begin{enumerate}[(a)]
 \item If $\left<\cdot|\cdot\right>$ is an inner product on $V$, there exists an orthonormal basis with respect to $\left<\cdot|\cdot\right>$. That is, a basis $\left|x_k\right>$, $k\in \{0...n-1\}$ such that
 
 $$\left<x_k|x_j\right>=
@@ -497,7 +497,7 @@ In this sense, one can canonically identify equivalence classes of based vector 
 \end{proposition}
 \begin{proof} We demonstrate the claims one by one.
 
-\begin{enumerate}
+\begin{enumerate}[(a)]
 \item We proceed by induction on $n$. When $n=1$, let $\left|\tilde{x}_0\right>$ be any non-zero vector. By positive definiteness, $\left<\tilde{x}_0|\tilde{x}_0\right>\neq 0$. Letting
 
 $$\left|x_0\right>=\left<\tilde{x}_0|\tilde{x}_0\right>^{-1/2}\cdot \left|\tilde{x}_0\right>$$
@@ -576,7 +576,7 @@ $$f:\left(\CC^2\right)^{\otimes n}\to \left(\CC^2\right)^{\otimes m}.$$
 The two dimensional quantum system $\CC^{2}$ is a qubit. It is now clear that specifying a theory of quantum computation requires specifying
 
 \begin{enumerate}
-\item How quantum information is stored. That is, what physically object will have associated quantum state-space $\left(\CC^2\right)^{\otimes n}$.
+\item How quantum information is stored. That is, what physical object will have associated quantum state-space $\left(\CC^2\right)^{\otimes n}$.
 \item How quantum information is acted on. That is, what physical actions one will do to perform the function $f$.
 \item How quantum information is measured. That is, what observables one can measure to reliably read information about quantum states from $\left(\CC^2\right)^{\otimes m}$.
 \end{enumerate}
@@ -608,6 +608,8 @@ where $x_0,x_1\in V$, $y_0,y_1\in W$. Show that $\left<\cdot| \cdot\right>$ is a
 
 \section{The Toric Code}
 \label{The Toric Code}
+
+[WORK: maybe re-do whole section with new vector field interpretation? This would also certainly apply to the TQFT section...]
 
 Consider a torus. We will imagine the torus as being a quantum system, corresponding physically to the quantum system one would observe in the $\ZZ_2$ spin liquid topological quantum phase of matter. The \textit{code space} of the torus is the space of states on which we will be building our quantum computer, i.e., those states we will be using to store quantum information. In general topological quantum computing (TQC) fashion, the codespace of the toric code will be its ground states.
 
@@ -659,7 +661,7 @@ Letting $I$ denote the identity matrix, the key facts about the $A_v$s and $B_p$
 
 \begin{proposition}\label{AvBp}We have that
 
-\begin{enumerate}[(i)]
+\begin{enumerate}[(a)]
 \item $A_v^2=B_p^2=I$ for all $v,p$
 \item All $A_v$s and $B_p$s have half eigenvalues $+1$ and half eigenvalues $-1$
 \item All $A_v$s and $B_p$s commute
@@ -669,21 +671,24 @@ Letting $I$ denote the identity matrix, the key facts about the $A_v$s and $B_p$
 \end{proposition}
 \begin{proof} We demonstrate the points one by one.
 
-$(i).$ Multiplying tensor product matrices corresponds to simply multiplying component-wise. Hence, this part  follows immediately from the relations $\sigma_X^2=\sigma_Z^2=I$.
+\begin{enumerate}[(a)]
+\item Multiplying tensor product matrices corresponds to simply multiplying component-wise. Hence, this part  follows immediately from the relations $\sigma_X^2=\sigma_Z^2=I$.
 
-$(ii).$ We define an isomorphism between the $+1$ eigenspace and $-1$ eigenspace of $A_v$. Namely, apply $\sigma_X$ to an edge $e$ touching $v$. Since $\sigma_X\sigma_Z=-\sigma_Z\sigma_X$, the computation
+\item We define an isomorphism between the $+1$ eigenspace and $-1$ eigenspace of $A_v$. Namely, apply $\sigma_X$ to an edge $e$ touching $v$. Since $\sigma_X\sigma_Z=-\sigma_Z\sigma_X$, the computation
 
 $$A_v \left(\bigotimes_{\text{edge }e}\sigma_X\right)\ppsi = -A_v \left(\bigotimes_{\text{edge }e}\sigma_X\right)A_v\ppsi $$
 
 shows that a $+1$ eigenstate will be transformed into a $-1$ eigenstate, and a $-1$ eigenstate will be turned into $+1$ eigenstate. Thus, this is an isomorphism between the desired eigenspaces. Applying $\sigma_Z$ instead of $\sigma_X$, we can define a similar isomorphism for $B_p$.
 
-$(iii).$ All the $A_v$s commute with each other since $\sigma_Z$ commutes with itself, and all the $B_p$s commute with each other since $\sigma_X$ commutes with itself. What's left to check is that $A_vB_p=B_pA_v$. Notice that if $v$ is not touching $p$, none of the $\sigma_Z$s in the tensor product of $A_v$ will be in the same spots as any of the $\sigma_X$s as the tensor product for $B_p$. Hence, $A_v$ and $B_p$ commute in this case. If $v$ is touching $p$, then exactly two of the $\sigma_Z$s in the tensor product of $A_v$ will be in the same spots as $\sigma_X$s in the tensor product of $B_p$. Hence, pulling $B_v$ through $A_v$ corresponds to switching $\sigma_X$ and $\sigma_Z$. Since $\sigma_X\sigma_Z=-\sigma_Z\sigma_X$, this introduces an overall phase shift of $(-1)^2=1$. Hence, $A_vB_p=B_pA_v$ as desired.
+\item All the $A_v$s commute with each other since $\sigma_Z$ commutes with itself, and all the $B_p$s commute with each other since $\sigma_X$ commutes with itself. What's left to check is that $A_vB_p=B_pA_v$. Notice that if $v$ is not touching $p$, none of the $\sigma_Z$s in the tensor product of $A_v$ will be in the same spots as any of the $\sigma_X$s as the tensor product for $B_p$. Hence, $A_v$ and $B_p$ commute in this case. If $v$ is touching $p$, then exactly two of the $\sigma_Z$s in the tensor product of $A_v$ will be in the same spots as $\sigma_X$s in the tensor product of $B_p$. Hence, pulling $B_v$ through $A_v$ corresponds to switching $\sigma_X$ and $\sigma_Z$. Since $\sigma_X\sigma_Z=-\sigma_Z\sigma_X$, this introduces an overall phase shift of $(-1)^2=1$. Hence, $A_vB_p=B_pA_v$ as desired.
 
-$(iv).$ Applying $\prod_{\text{vertices } v}A_v$, is the same as applying $\sigma_Z$ to each vertex twice, since each edge touches exactly two vertices. Hence,
+\item  Applying $\prod_{\text{vertices } v}A_v$, is the same as applying $\sigma_Z$ to each vertex twice, since each edge touches exactly two vertices. Hence,
 
 $$\prod_{\text{vertices } v}A_v=\bigotimes_{\text{edges}}\sigma^2_Z=\bigotimes_{\text{edges}}I=I.$$
 
 Similarly, since every edge touches exactly $2$ faces, the fact that $\prod_{\text{faces } p}B_p=I$ follows from $\sigma^2_X=1$.
+
+\end{enumerate}
 \end{proof}
 
 Using the above facts about the $A_v$s and $B_p$s, we can describe the eigenspaces of $H$ well enough to compute their dimension:
@@ -859,11 +864,11 @@ In particular, $\bold{0}$ doesn't intersect $\beta$, $\beta$ doesn't intersect $
 
 Sadly for the toric code, these are essentially the only gates that can be implemented. No matter how one moves around particles, there is not enough complexity in the system to generate interesting gates. We formalize this by writing out the \textit{group of gates} of the toric codes. We think of quantum gates on a system as forming a group, where the group law is given by the composition of processes, and every element has an inverse since unitary matrices are invertible.
 
-\begin{proposition}\label{Yparticle} There are exactly 16 possible computations in the toric codes. The group of gates is (non canonically) isomorphic to the Pauli group, i.e., the group whose objects are
+\begin{proposition}\label{Yparticle} There are exactly 16 possible computations in the toric codes, generated by $\{\text{NOT}_{\alpha},\text{NOT}_{\beta},(-1)_{\alpha}\}$. The group of gates is (non canonically) isomorphic to the Pauli group, i.e., the group whose objects are
 
 $$\{\pm I, \pm iI, \pm \sigma_X, \pm i \sigma_X, \pm \sigma_Y, \pm i\sigma_Y, \pm \sigma_Z, \pm i \sigma_Z\}$$
 
-and whose group operation is given by matrix multiplication. A minimal generating set is given by $\{\text{NOT}_{\alpha},\text{NOT}_{\beta},(-1)_{\alpha}\}$.
+and whose group operation is given by matrix multiplication.
 \end{proposition}
 \begin{proof} To begin, we define $\text{NOT}_{\beta},\text{NOT}_{\alpha\beta},(-1)_{\beta},$ in complete analogy to how we define $\text{NOT}_{\alpha}$. Namely, $\text{NOT}_{\beta}$ flips whether or not a state has a `$\beta$' in it, and $\text{NOT}_{\alpha\beta}$ flips whether or not a state has an `$\alpha\beta$' in it, i.e.,
 
@@ -1166,7 +1171,7 @@ Let $(S_0,\Delta_{S_0})$ and $\left(S_1,\Delta_{S_1}\right)$ be surfaces with ce
 \item $|\left\{\omega_{S_1}\in C^1(\Delta_{S_1};\ZZ_2)\st (\omega_{S_0},\omega_{S_1})\,\, \& \,\,(\omega_{S_1},\omega_{S_2})\text{ extendable}\right\}|$ is independent of choice of $\omega_{S_0}$, $\omega_{S_2}$, so long as $(\omega_{S_0},\omega_{S_2})$ is extendable
 \end{enumerate}
 \end{lemma}
-\begin{proof} [WORK: fix this proof. How do I know I can pick such $\omega_{S_1}$ in the first place? Cite external reference. Should be in Rouke Sanderson's paper] We prove $(i)$, and leave $(ii)$ as an exercise (Exercise $\thesection.2$) since its proof is identical. Fix $\omega_{S_1}$ and $\omega_{S_1}$ such that $(\omega_{S_0},\omega_{S_1})$ and $(\omega_{S_0},\omega'_{S_1})$ are extendable. Then, adding extensions of these pairs together edgewise we get that $(\omega_{S_0}+\omega_{S_0},\omega_{S_1}+\omega'_{S_1})$ is extendable. Since $\omega_{S_0}+\omega_{S_0}=0$, we find that there is a $1$-to-$1$ bijection between $\omega_{S_1}$ such that $(0,\omega_{S_1})$ is extendable and $\omega_{S_1}$ such that $(\omega_{S_0},\omega_{S_1})$ is extendable, sending $\omega_{S_1}$ to $\omega_{S_0}+\omega_{S_1}$ Thus, these sets have the same cardinality, and we conclude $(i)$.
+\begin{proof} .[WORK: fix this proof. How do I know I can pick such $\omega_{S_1}$ in the first place? Cite external reference. Should be in Rouke Sanderson's paper] We prove $(i)$, and leave $(ii)$ as an exercise (Exercise $\thesection.2$) since its proof is identical. Fix $\omega_{S_1}$ and $\omega_{S_1}$ such that $(\omega_{S_0},\omega_{S_1})$ and $(\omega_{S_0},\omega'_{S_1})$ are extendable. Then, adding extensions of these pairs together edgewise we get that $(\omega_{S_0}+\omega_{S_0},\omega_{S_1}+\omega'_{S_1})$ is extendable. Since $\omega_{S_0}+\omega_{S_0}=0$, we find that there is a $1$-to-$1$ bijection between $\omega_{S_1}$ such that $(0,\omega_{S_1})$ is extendable and $\omega_{S_1}$ such that $(\omega_{S_0},\omega_{S_1})$ is extendable, sending $\omega_{S_1}$ to $\omega_{S_0}+\omega_{S_1}$ Thus, these sets have the same cardinality, and we conclude $(i)$.
 \end{proof}
 
 \begin{proposition}\label{composition} Letting $X_0,X_1$ be as in Lemma \ref{independence}, the composition law
@@ -3939,6 +3944,8 @@ This sort of ``TQC $\implies$ QC" has an analogy to the process of ``QC $\implie
 
 [WORK: Look at \cite{lahtinen2017short}, an intro-level physics discussion. Is there something to learn from it?]
 
+[WORK: I should add something about when group-theoretical MTCs give universal quantum computation. Namely, the first paper showed that this was possible for $A_5$ \cite{preskill1998fault}, then all non-solvable groups \cite{mochon2003anyons}, and then finally for all non-nilponent groups \cite{mochon2004anyon}]
+
 [WORK: Here's a good motivation for the non-degeneracy condition. We want MTCs to give TQFTs. In particular, we need a map from automorphisms of a surface (mapping class group!) to automorphisms of a vector space. Now, there is the celebrated result that MCG(torus)=$\SL_2(\ZZ)$. Letting $(V_{\Ccat},Z_{\Ccat})$ denote the TQFT attached to $\Ccat$, we can very explicitely in this case write out the commutative diagram
 
 \begin{equation*}
@@ -3999,6 +4006,19 @@ In the introduction, maybe add something about the number of Nobel prizes associ
 I got rid of the unit TQFT axiom, which now includes the degenerate possibility that $V(S)=\emptyset$ for all $S$. Is that okay?
 
 Why can I always lift celluations? Zhenghan mentioned this in class, but didn't cite a reference.]
+
+\section{Topological Quantum Error Correcting Codes}
+
+[WORK: Talk about how TQC can be naturally used to make error correcting codes]
+
+[WORK: There should be a first subsection giving the big idea, and an overview. Namely, we should consider the repetition code and talk about how it comes from magnets, and then introduce the Schor code]
+
+[WORK: There should be a second subsection explicitely doing all this for the toric code]
+
+[WORK: There should be a last subsection where we talk about how to construct the circuits in general. This should mainly follow \cite{bravyi2022adaptive}.]
+
+[WORK: Mention the fact that this has been simplified for $D4$ in \cite{tantivasadakarn2022shortest}. Somewhere we have to mention the fact that this actually happened \cite{iqbal2023creation}. Also, we definitely need to bring up the fact that a few people did the toric code...]
+
 \appendix
 
 \section{$\ZZ_2$ Homology Theory}
@@ -4052,7 +4072,9 @@ The canonical reference for this subject (known as \textit{Algebraic Topology}) 
 
 \subsection{Unitary TQFTs}
 
-[WORK: I think that there's a great canonical structure. First, strictify. Then, given maps you can define an inner product by adding up ``diagonal" entries in direct sum and adding a conjugate. Up to the correct fudge factors (quantum dimension?) this should be well defined and work properly, and could get us the ``positive q.d. $\iff$ unitary"]
+[WORK: On a given fusion category, do different choices of pivotal structure change whether or not your category is unitary?]
+
+[WORK: I think that there's a great canonical structure. First, strictify. Then, given maps you can define an inner product by adding up ``diagonal" entries in direct sum and adding a conjugate. Up to the correct fudge factors (quantum dimension?) this should be well defined and work properly, and could get us the ``positive q.d. $\iff$ unitary" Maybe??? Why isn't this always a pivotal structure? What's going on?]
 
 [WORK: mention the fact that this is really a property, not a structure! \cite{reutter2023uniqueness}]
 
@@ -4145,7 +4167,7 @@ Unitary fusion categories make for a pleasant object of study because the distin
 \begin{proof}.[WORK: Should be literally trivial...]
 \end{proof}
 
-We can now define unitary MTCs. The compatibility conditions for the twist are chosen so that the definition of trace as an MTC and the definition of trace as a unitary fusion category coincide.
+We can now define unitary MTCs. The compatibility conditions for the twist are chosen so that the definition of trace as an MTC and the definition of trace as a unitary fusion category coincide. [WORK: I think the defnition below is WRONG. Go back to my conditions - $\ev_A^\dagger$ and $\coev_A^\dagger$ should be my distinguished morphisms.]
 
 \begin{definition}[Unitary Modular Tensor Category] A unitary Modular Tensor Category is the following data:
 
