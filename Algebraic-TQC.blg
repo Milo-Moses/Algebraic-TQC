@@ -1,11 +1,11 @@
 This is BibTeX, Version 0.99d (TeX Live 2018)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
-The top-level auxiliary file: Toric Codes.aux
+The top-level auxiliary file: Algebraic-TQC.aux
 The style file: alpha.bst
 Database file #1: ref.bib
 You've used 98 entries,
             2543 wiz_defined-function locations,
-            1107 strings with 18671 characters,
+            1107 strings with 18675 characters,
 and the built_in function-call counts, 38486 in all, are:
 = -- 3869
 > -- 1715

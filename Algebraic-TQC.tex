@@ -43,7 +43,7 @@
 
 
 
-\title{Topological Quantum Computing\\ via \\ The Toric Code}
+\title{The Algebraic Theory\\ of \\ Topological Quantum Computing}
 \author{by Milo Moses}
 
 \date{\textit{University of California, Santa Barbara} \\ [2ex] \today}
@@ -108,7 +108,7 @@
 
 
 \begin{abstract}
-One of the most exciting forms of quantum computation proposed today is topological quantum computation. In this manuscript we give a detailed introduction to topological quantum computation with special focus on the simplest non-trivial example: the toric code. We give explanations in terms of elementary mathematics and physics, as well as the high-power languages of topological quantum field theory and modular tensor categories.
+One of the most exciting forms of quantum computation proposed today is topological quantum computation. In this manuscript we give a detailed introduction to topological quantum computation with special focus on the simplest non-trivial example: the toric code. We give explanations in terms of elementary mathematics and physics, as well as the high-power languages of topological quantum field theory and modular tensor categories. [WORK: this abstract is out of date]
 \end{abstract}
 
 \newpage
@@ -119,6 +119,10 @@ One of the most exciting forms of quantum computation proposed today is topologi
 
 \section{Preface}
 \label{Preface}
+
+[WORK: I should re-do structure. Add a ``history/further reading" to the end of chapters, like Nielsen and Chuang.]
+
+[WORK: new scope; change the preface.]
 
 Quantum computing has seen massive advances over the last 30 years — prompted in large part by Peter Shor's discovery of an efficient quantum factoring algorithm \cite{shor1994algorithms} — and has gained notoriety as an emerging technology and area of insight. However, as of yet, nobody has made a usable quantum computer. Precisely controlling the microscopic world has proved quite challenging in large part due to thermal fluctuations which cause quantum states to decohere and scramble. Thus, the current state of quantum computing has been dubbed the ``NISQ" era: the noisy intermediate-scale quantum era.
 
@@ -609,7 +613,11 @@ where $x_0,x_1\in V$, $y_0,y_1\in W$. Show that $\left<\cdot| \cdot\right>$ is a
 \section{The Toric Code}
 \label{The Toric Code}
 
+[WORK: The quantum double model should be done in more generality, because it is so useful. Maybe best is to make this three sections - one for toric code, one for abelian groups, and one for non-abelian groups. Call this section something like ``the quantum double model".]
+
 [WORK: maybe re-do whole section with new vector field interpretation? This would also certainly apply to the TQFT section...]
+
+[WORK: maybe I should add an appendix where I go over the quantum dimer model, so people can see the more ``standard" approach. Really, I should just learn the quantum dimer stuff and judge for myself which is easiest.]
 
 Consider a torus. We will imagine the torus as being a quantum system, corresponding physically to the quantum system one would observe in the $\ZZ_2$ spin liquid topological quantum phase of matter. The \textit{code space} of the torus is the space of states on which we will be building our quantum computer, i.e., those states we will be using to store quantum information. In general topological quantum computing (TQC) fashion, the codespace of the toric code will be its ground states.
 
@@ -693,7 +701,7 @@ Similarly, since every edge touches exactly $2$ faces, the fact that $\prod_{\te
 
 Using the above facts about the $A_v$s and $B_p$s, we can describe the eigenspaces of $H$ well enough to compute their dimension:
 
-\begin{proposition}\label{eigenspaces} All eigenvalues of $H$ are of the form $-2n^2+4q$, for an integer $q\leq n^2/2$. The $-2n^2+4q$ eigenspace can be described as the space of states $\ppsi$ such that
+\begin{proposition}\label{eigenspaces} .[WORK: this might have a much cleaner proof based on the same idea. Namely, you show the only condition you need sastsied is evenness, then you do NOT count binomial coofs. You just note that there are free to make arbitrary choices of $\pm 1$, except your last person who gets forced - a $/2$ on dimension for both stabilizers.] All eigenvalues of $H$ are of the form $-2n^2+4q$, for an integer $q\leq n^2/2$. The $-2n^2+4q$ eigenspace can be described as the space of states $\ppsi$ such that
 
 $$\left|\left\{\left. v,p\right| A_v\ppsi =-1,\,\, B_p\ppsi=-1\right\}\right|=2q,$$
 
@@ -928,7 +936,7 @@ show that $H$ and $H'$ are similar, in the sense that $H'=MHM^{-1}$. Use this to
 
 \item Show that eigenvectors of the Hamiltonian are equally likely to give $0$ or $1$ when measured at every qubit. This implies that the eigenvectors of the Hamiltonian are \textit{maximally entangled}. Ground states being highly entangle is a more general phenomenon in TQC, and gives the theory much of its power. (HINT: prove this for ground states first, then lift to general eigenstates using an induction argument along the lines of the proof of Proposition \ref{eigenspaces})
 
-\item Let $\Ncal_{n}$ denote the vector space associated to the $n$ by $n$ grid on the torus. Let
+\item .[WORK: I think that this exercise is misformulated. It wants the limiting space to be a direct limit. This is working against the natural direction of the arrows. They are telling us to take an \textit{inverse} limit] Let $\Ncal_{n}$ denote the vector space associated to the $n$ by $n$ grid on the torus. Let
 
 $$\tilde{H}_n=H_n+(2n^2)I,$$
 

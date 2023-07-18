@@ -5,20 +5,20 @@
 \contentsline {section}{\numberline {4}Topological Quantum Field Theories}{34}
 \contentsline {subsection}{\numberline {4.1}The general picture}{34}
 \contentsline {subsection}{\numberline {4.2}The $\mathbb {Z}_2$ Dijkgraaf-Witten TQFT}{40}
-\contentsline {section}{\numberline {5}Category Theory}{46}
-\contentsline {subsection}{\numberline {5.1}Objects, morphisms, and composition}{46}
+\contentsline {section}{\numberline {5}Category Theory}{47}
+\contentsline {subsection}{\numberline {5.1}Objects, morphisms, and composition}{47}
 \contentsline {subsection}{\numberline {5.2}Braided monoidal categories}{57}
-\contentsline {section}{\numberline {6}Modular Tensor Categories}{64}
-\contentsline {subsection}{\numberline {6.1}Fusion systems}{64}
+\contentsline {section}{\numberline {6}Modular Tensor Categories}{65}
+\contentsline {subsection}{\numberline {6.1}Fusion systems}{65}
 \contentsline {subsection}{\numberline {6.2}The category-theoretic viewpoint}{76}
 \contentsline {subsection}{\numberline {6.3}The MTC $\mathcal {Z}(\mathbf {Rep}_{\mathbb {Z}_2})$}{91}
 \contentsline {subsection}{\numberline {6.4}Rigidity}{106}
-\contentsline {section}{\numberline {7}Topological Quantum Computing}{126}
-\contentsline {subsection}{\numberline {7.1}The TQC framework}{126}
+\contentsline {section}{\numberline {7}Topological Quantum Computing}{127}
+\contentsline {subsection}{\numberline {7.1}The TQC framework}{127}
 \contentsline {subsection}{\numberline {7.2}Revisiting toric code TQC}{129}
-\contentsline {subsection}{\numberline {7.3}Universal TQC with Fibonacci anyons}{129}
+\contentsline {subsection}{\numberline {7.3}Universal TQC with Fibonacci anyons}{130}
 \contentsline {section}{\numberline {8}Topological Quantum Error Correcting Codes}{130}
-\contentsline {section}{\numberline {A}$\mathbb {Z}_2$ Homology Theory}{130}
+\contentsline {section}{\numberline {A}$\mathbb {Z}_2$ Homology Theory}{131}
 \contentsline {section}{\numberline {B}Non-Negative Matricies}{132}
 \contentsline {section}{\numberline {C}Unitarity}{132}
 \contentsline {subsection}{\numberline {C.1}Unitary TQFTs}{132}
