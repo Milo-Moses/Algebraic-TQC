@@ -1,161 +1,44 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
-\begin{thebibliography}{BDSPV15}
+\begin{thebibliography}{ASWZ85}
 
 \bibitem[AA81]{ascher1981code}
 Marcia Ascher and Robert Ascher.
 \newblock Code of the quipu.
 \newblock {\em Ann Arbor: University of Michigan Press}, pages 56--74, 1981.
 
-\bibitem[AAB{\etalchar{+}}19]{arute2019quantum}
-Frank Arute, Kunal Arya, Ryan Babbush, Dave Bacon, Joseph~C Bardin, Rami
-  Barends, Rupak Biswas, Sergio Boixo, Fernando~GSL Brandao, David~A Buell,
-  et~al.
-\newblock Quantum supremacy using a programmable superconducting processor.
-\newblock {\em Nature}, 574(7779):505--510, 2019.
+\bibitem[AB59]{aharonov1959significance}
+Yakir Aharonov and David Bohm.
+\newblock Significance of electromagnetic potentials in the quantum theory.
+\newblock {\em Physical review}, 115(3):485, 1959.
 
-\bibitem[Aar13]{aaronson2013quantum}
-Scott Aaronson.
-\newblock {\em Quantum computing since Democritus}.
-\newblock Cambridge University Press, 2013.
-
-\bibitem[AHM{\etalchar{+}}16]{albrecht2016exponential}
-Sven~Marian Albrecht, Andrew~P Higginbotham, Morten Madsen, Ferdinand Kuemmeth,
-  Thomas~Sand Jespersen, Jesper Nyg{\aa}rd, Peter Krogstrup, and CM~Marcus.
-\newblock Exponential protection of zero modes in majorana islands.
-\newblock {\em Nature}, 531(7593):206--209, 2016.
-
-\bibitem[AL18]{albash2018adiabatic}
-Tameem Albash and Daniel~A Lidar.
-\newblock Adiabatic quantum computation.
-\newblock {\em Reviews of Modern Physics}, 90(1):015002, 2018.
-
-\bibitem[Aub19]{aubert2019categories}
-Cl{\'e}ment Aubert.
-\newblock Categories for me, and you?
-\newblock {\em arXiv preprint arXiv:1910.05172}, 2019.
-
-\bibitem[BBW22]{barter2022computing}
-Daniel Barter, Jacob Bridgeman, and Ramona Wolf.
-\newblock Computing associators of endomorphism fusion categories.
-\newblock {\em SciPost Physics}, 13(2):029, 2022.
-
-\bibitem[BDSPV15]{bartlett2015modular}
-Bruce Bartlett, Christopher~L Douglas, Christopher~J Schommer-Pries, and Jamie
-  Vicary.
-\newblock Modular categories as representations of the 3-dimensional bordism
-  2-category.
-\newblock {\em arXiv preprint arXiv:1509.06811}, 2015.
-
-\bibitem[BGH{\etalchar{+}}17]{bruillard2017fermionic}
-Paul Bruillard, C{\'e}sar Galindo, Tobias Hagge, Siu-Hung Ng, Julia~Yael
-  Plavnik, Eric~C Rowell, and Zhenghan Wang.
-\newblock Fermionic modular categories and the 16-fold way.
-\newblock {\em Journal of Mathematical Physics}, 58(4):041704, 2017.
-
-\bibitem[BK01]{bakalov2001lectures}
-Bojko Bakalov and Alexander~A Kirillov.
-\newblock {\em Lectures on tensor categories and modular functors}, volume~21.
-\newblock American Mathematical Soc., 2001.
-
-\bibitem[BKKK22]{bravyi2022adaptive}
-Sergey Bravyi, Isaac Kim, Alexander Kliesch, and Robert Koenig.
-\newblock Adaptive constant-depth circuits for manipulating non-abelian anyons.
-\newblock {\em arXiv preprint arXiv:2205.01933}, 2022.
-
-\bibitem[BNRW16]{bruillard2016rank}
-Paul Bruillard, Siu-Hung Ng, Eric Rowell, and Zhenghan Wang.
-\newblock Rank-finiteness for modular categories.
-\newblock {\em Journal of the American Mathematical Society}, 29(3):857--881,
-  2016.
-
-\bibitem[Bru00]{bruguieres2000categories}
-Alain Bruguieres.
-\newblock Cat{\'e}gories pr{\'e}modulaires, modularisations et invariants des
-  vari{\'e}t{\'e}s de dimension 3.
-\newblock {\em Mathematische Annalen}, 316(2):215--236, 2000.
-
-\bibitem[BW96]{barrett1996invariants}
-John Barrett and Bruce Westbury.
-\newblock Invariants of piecewise-linear 3-manifolds.
+\bibitem[Ale28]{alexander1928topological}
+James~W Alexander.
+\newblock Topological invariants of knots and links.
 \newblock {\em Transactions of the American Mathematical Society},
-  348(10):3997--4022, 1996.
+  30(2):275--306, 1928.
 
-\bibitem[BW99]{barrett1999spherical}
-John~W Barrett and Bruce~W Westbury.
-\newblock Spherical categories.
-\newblock {\em Advances in Mathematics}, 143(2):357--375, 1999.
+\bibitem[ASWZ85]{arovas1985statistical}
+Daniel~P Arovas, Robert Schrieffer, Frank Wilczek, and Anthony Zee.
+\newblock Statistical mechanics of anyons.
+\newblock {\em Nuclear Physics B}, 251:117--126, 1985.
 
-\bibitem[Day21]{day2021quipus}
-Cyrus~Lawence Day.
-\newblock {\em Quipus and Witches' Knots: The Role of the Knot in Primitive and
-  Ancient Culture, with a Translation and Analysis of" Oribasius de Laqueis"}.
-\newblock University Press of Kansas, 2021.
+\bibitem[AT77]{anderson1977phase}
+PHILIP~W Anderson and G~Toulouse.
+\newblock Phase slippage without vortex cores: vortex textures in superfluid he
+  3.
+\newblock {\em Physical Review Letters}, 38(9):508, 1977.
 
-\bibitem[Del07]{deligne2007categories}
-Pierre Deligne.
-\newblock Cat{\'e}gories tannakiennes.
-\newblock {\em The Grothendieck Festschrift: A Collection of Articles Written
-  in Honor of the 60th Birthday of Alexander Grothendieck}, pages 111--195,
-  2007.
+\bibitem[BGS{\etalchar{+}}09]{bolotin2009observation}
+Kirill~I Bolotin, Fereshte Ghahari, Michael~D Shulman, Horst~L Stormer, and
+  Philip Kim.
+\newblock Observation of the fractional quantum hall effect in graphene.
+\newblock {\em Nature}, 462(7270):196--199, 2009.
 
-\bibitem[dF17]{felice2017hopf}
-Giovanni de~Felice.
-\newblock Hopf algebras in quantum computation.
-\newblock {\em Unpublished doctoral dissertation}, 2017.
-
-\bibitem[DHW13]{davidovich2013arithmetic}
-Orit Davidovich, Tobias Hagge, and Zhenghan Wang.
-\newblock On arithmetic modular categories.
-\newblock {\em arXiv preprint arXiv:1305.2229}, 2013.
-
-\bibitem[DLF{\etalchar{+}}16]{debnath2016demonstration}
-Shantanu Debnath, Norbert~M Linke, Caroline Figgatt, Kevin~A Landsman, Kevin
-  Wright, and Christopher Monroe.
-\newblock Demonstration of a small programmable quantum computer with atomic
-  qubits.
-\newblock {\em Nature}, 536(7614):63--66, 2016.
-
-\bibitem[DW90]{dijkgraaf1990topological}
-Robbert Dijkgraaf and Edward Witten.
-\newblock Topological gauge theories and group cohomology.
-\newblock {\em Communications in Mathematical Physics}, 129:393--429, 1990.
-
-\bibitem[EG79]{eisenberg1979proof}
-Murray Eisenberg and Robert Guy.
-\newblock A proof of the hairy ball theorem.
-\newblock {\em The American Mathematical Monthly}, 86(7):571--574, 1979.
-
-\bibitem[EG97]{etingof1997some}
-Pavel Etingof and Shlomo Gelaki.
-\newblock Some properties of finite-dimensional semisimple hopf algebras.
-\newblock {\em arXiv preprint q-alg/9712033}, 1997.
-
-\bibitem[EGNO16]{etingof2016tensor}
-Pavel Etingof, Shlomo Gelaki, Dmitri Nikshych, and Victor Ostrik.
-\newblock {\em Tensor categories}, volume 205.
-\newblock American Mathematical Soc., 2016.
-
-\bibitem[ENO05]{etingof2005fusion}
-Pavel Etingof, Dmitri Nikshych, and Viktor Ostrik.
-\newblock On fusion categories.
-\newblock {\em Annals of Mathematics}, pages 581--642, 2005.
-
-\bibitem[Fal94]{faltings1994proof}
-Gerd Faltings.
-\newblock A proof for the verlinde formula.
-\newblock {\em Journal of Algebraic Geometry}, 3(2):347, 1994.
-
-\bibitem[FGH{\etalchar{+}}12]{freedman2012galois}
-Michael~H Freedman, Jan Gukelberger, Matthew~B Hastings, Simon Trebst, Matthias
-  Troyer, and Zhenghan Wang.
-\newblock Galois conjugates of topological phases.
-\newblock {\em Physical Review B}, 85(4):045414, 2012.
-
-\bibitem[FKLW03]{freedman2003topological}
-Michael Freedman, Alexei Kitaev, Michael Larsen, and Zhenghan Wang.
-\newblock Topological quantum computation.
-\newblock {\em Bulletin of the American Mathematical Society}, 40(1):31--38,
-  2003.
+\bibitem[Dir31]{dirac1931quantised}
+Paul Adrien~Maurice Dirac.
+\newblock Quantised singularities in the electromagnetic field.
+\newblock {\em Proceedings of the Royal Society of London. Series A, Containing
+  Papers of a Mathematical and Physical Character}, 133(821):60--72, 1931.
 
 \bibitem[FKW02]{freedman2002simulation}
 Michael~H Freedman, Alexei Kitaev, and Zhenghan Wang.
@@ -167,151 +50,59 @@ Michael~H Freedman, Michael Larsen, and Zhenghan Wang.
 \newblock A modular functor which is universal for quantum computation.
 \newblock {\em Communications in Mathematical Physics}, 227:605--622, 2002.
 
-\bibitem[Fra57]{frankel1957homology}
-Theodore Frankel.
-\newblock Homology and flows on manifolds.
-\newblock {\em Annals of Mathematics}, pages 331--339, 1957.
+\bibitem[Fre98]{freedman1998p}
+Michael~H Freedman.
+\newblock P/np, and the quantum field computer.
+\newblock {\em Proceedings of the National Academy of Sciences}, 95(1):98--101,
+  1998.
 
-\bibitem[Fra13]{franco2013tensor}
-Ignacio~L{\'o}pez Franco.
-\newblock Tensor products of finitely cocomplete and abelian categories.
-\newblock {\em Journal of Algebra}, 396:207--219, 2013.
+\bibitem[Hal83]{haldane1983nonlinear}
+F~Duncan~M Haldane.
+\newblock Nonlinear field theory of large-spin heisenberg antiferromagnets:
+  semiclassically quantized solitons of the one-dimensional easy-axis n{\'e}el
+  state.
+\newblock {\em Physical review letters}, 50(15):1153, 1983.
 
-\bibitem[FS19]{fong2019invitation}
-Brendan Fong and David~I Spivak.
-\newblock {\em An invitation to applied category theory: seven sketches in
-  compositionality}.
-\newblock Cambridge University Press, 2019.
+\bibitem[Hal88]{haldane1988model}
+F~Duncan~M Haldane.
+\newblock Model for a quantum hall effect without landau levels:
+  Condensed-matter realization of the" parity anomaly".
+\newblock {\em Physical review letters}, 61(18):2015, 1988.
 
-\bibitem[Gal14]{galindo2014braided}
-C{\'e}sar Galindo.
-\newblock On braided and ribbon unitary fusion categories.
-\newblock {\em Canadian Mathematical Bulletin}, 57(3):506--510, 2014.
+\bibitem[Jon97]{jones1997polynomial}
+Vaughan~FR Jones.
+\newblock A polynomial invariant for knots via von neumann algebras.
+\newblock In {\em Fields Medallists' Lectures}, pages 448--458. World
+  Scientific, 1997.
 
-\bibitem[GHS23]{gainutdinov2023davydov}
-Azat~M Gainutdinov, Jonas Haferkamp, and Christoph Schweigert.
-\newblock Davydov-yetter cohomology, comonads and ocneanu rigidity.
-\newblock {\em Advances in Mathematics}, 414:108853, 2023.
+\bibitem[JVW90]{jaeger1990computational}
+Fran{\c{c}}ois Jaeger, Dirk~L Vertigan, and Dominic~JA Welsh.
+\newblock On the computational complexity of the jones and tutte polynomials.
+\newblock In {\em Mathematical Proceedings of the Cambridge Philosophical
+  Society}, volume 108, pages 35--53. Cambridge University Press, 1990.
 
-\bibitem[GN08]{gelaki2008nilpotent}
-Shlomo Gelaki and Dmitri Nikshych.
-\newblock Nilpotent fusion categories.
-\newblock {\em Advances in Mathematics}, 217(3):1053--1071, 2008.
-
-\bibitem[Got97]{gottesman1997stabilizer}
-Daniel Gottesman.
-\newblock {\em Stabilizer codes and quantum error correction}.
-\newblock California Institute of Technology, 1997.
-
-\bibitem[Got98]{gottesman1998theory}
-Daniel Gottesman.
-\newblock Theory of fault-tolerant quantum computation.
-\newblock {\em Physical Review A}, 57(1):127, 1998.
-
-\bibitem[Hal13]{hall2013quantum}
-Brian~C Hall.
-\newblock {\em Quantum theory for mathematicians}.
-\newblock Springer, 2013.
-
-\bibitem[Hat05]{hatcher2005algebraic}
-Allen Hatcher.
-\newblock {\em Algebraic topology}.
-\newblock Tsinghua University Press, 2005.
-
-\bibitem[HH09]{hagge2009some}
-Tobias~J Hagge and Seung-Moon Hong.
-\newblock Some non-braided fusion categories of rank three.
-\newblock {\em Communications in Contemporary Mathematics}, 11(04):615--637,
-  2009.
-
-\bibitem[Hot65]{hotz1965algebraisierung}
-G{\"u}nter Hotz.
-\newblock Eine algebraisierung des syntheseproblems von schaltkreisen i.
-\newblock {\em Elektronische Informationsverarbeitung und Kybernetik},
-  1(3):185--205, 1965.
-
-\bibitem[HRW08]{hong2008exotic}
-Seung-Moon Hong, Eric Rowell, and Zhenghan Wang.
-\newblock On exotic modular tensor categories.
-\newblock {\em Communications in Contemporary Mathematics},
-  10(supp01):1049--1074, 2008.
-
-\bibitem[Hua08]{huang2008vertex}
-Yi-Zhi Huang.
-\newblock Vertex operator algebras and the verlinde conjecture.
-\newblock {\em Communications in Contemporary Mathematics}, 10(01):103--154,
-  2008.
-
-\bibitem[ITV{\etalchar{+}}23]{iqbal2023creation}
-Mohsin Iqbal, Nathanan Tantivasadakarn, Ruben Verresen, Sara~L Campbell, Joan~M
-  Dreiling, Caroline Figgatt, John~P Gaebler, Jacob Johansen, Michael Mills,
-  Steven~A Moses, et~al.
-\newblock Creation of non-abelian topological order and anyons on a trapped-ion
-  processor.
-\newblock {\em arXiv preprint arXiv:2305.03766}, 2023.
-
-\bibitem[JS86]{joyal1986braided}
-Andr{\'e} Joyal and Ross Street.
-\newblock Braided monoidal categories.
-\newblock {\em Mathematics Reports}, 86008, 1986.
-
-\bibitem[JS06]{joyal2006introduction}
-Andr{\'e} Joyal and Ross Street.
-\newblock An introduction to tannaka duality and quantum groups.
-\newblock In {\em Category Theory: Proceedings of the International Conference
-  held in Como, Italy, July 22--28, 1990}, pages 413--492. Springer, 2006.
-
-\bibitem[Kan98]{kane1998silicon}
-Bruce~E Kane.
-\newblock A silicon-based nuclear spin quantum computer.
-\newblock {\em nature}, 393(6681):133--137, 1998.
-
-\bibitem[Kel64]{kelly1964maclane}
-Gregory~Maxwell Kelly.
-\newblock On maclane's conditions for coherence of natural associativities,
-  commutativities, etc.
-\newblock {\em Journal of Algebra}, 1(4):397--402, 1964.
-
-\bibitem[Kit97]{kitaev1997quantum}
-A~Yu Kitaev.
-\newblock Quantum error correction with imperfect gates.
-\newblock {\em Quantum communication, computing, and measurement}, pages
-  181--188, 1997.
+\bibitem[KDP80]{klitzing1980new}
+K~v Klitzing, Gerhard Dorda, and Michael Pepper.
+\newblock New method for high-accuracy determination of the fine-structure
+  constant based on quantized hall resistance.
+\newblock {\em Physical review letters}, 45(6):494, 1980.
 
 \bibitem[Kit03]{kitaev2003fault}
 A~Yu Kitaev.
 \newblock Fault-tolerant quantum computation by anyons.
 \newblock {\em Annals of physics}, 303(1):2--30, 2003.
 
-\bibitem[KP06]{kitaev2006topological}
-Alexei Kitaev and John Preskill.
-\newblock Topological entanglement entropy.
-\newblock {\em Physical review letters}, 96(11):110404, 2006.
+\bibitem[KT73]{kosterlitz1973ordering}
+JM~Kosterlitz and David~James Thouless.
+\newblock Ordering, metastability and phase transitions in two-dimensional
+  systems.
+\newblock {\em J. Phys. C}, 6:1181--1203, 1973.
 
-\bibitem[Lic99]{lickorish1999simplicial}
-William Bernard~Raymond Lickorish.
-\newblock Simplicial moves on complexes and manifolds.
-\newblock {\em Geometry and Topology Monographs}, 2(299-320):314, 1999.
-
-\bibitem[LP17]{lahtinen2017short}
-Ville Lahtinen and Jiannis Pachos.
-\newblock A short introduction to topological quantum computation.
-\newblock {\em SciPost Physics}, 3(3):021, 2017.
-
-\bibitem[LW05]{levin2005string}
-Michael~A Levin and Xiao-Gang Wen.
-\newblock String-net condensation: A physical mechanism for topological phases.
-\newblock {\em Physical Review B}, 71(4):045110, 2005.
-
-\bibitem[Mey00]{meyer2000perron}
-Carl Meyer.
-\newblock Perron--frobenius theory of nonnegative matrices.
-\newblock {\em Matrix analysis and applied linear algebra, SIAM}, 2000.
-
-\bibitem[ML13]{mac2013categories}
-Saunders Mac~Lane.
-\newblock {\em Categories for the working mathematician}, volume~5.
-\newblock Springer Science \& Business Media, 2013.
+\bibitem[Lan95]{landauer1995quantum}
+Rolf Landauer.
+\newblock Is quantum mechanics useful?
+\newblock {\em Philosophical Transactions of the Royal Society of London.
+  Series A: Physical and Engineering Sciences}, 353(1703):367--376, 1995.
 
 \bibitem[Moc03]{mochon2003anyons}
 Carlos Mochon.
@@ -319,134 +110,11 @@ Carlos Mochon.
   quantum computation.
 \newblock {\em Physical Review A}, 67(2):022315, 2003.
 
-\bibitem[Moc04]{mochon2004anyon}
-Carlos Mochon.
-\newblock Anyon computers with smaller groups.
-\newblock {\em Physical Review A}, 69(3):032306, 2004.
-
-\bibitem[MS89]{moore1989classical}
-Gregory Moore and Nathan Seiberg.
-\newblock Classical and quantum conformal field theory.
-\newblock {\em Communications in Mathematical Physics}, 123:177--254, 1989.
-
-\bibitem[MS21]{mignard2021modular}
-Micha{\"e}l Mignard and Peter Schauenburg.
-\newblock Modular categories are not determined by their modular data.
-\newblock {\em Letters in Mathematical Physics}, 111(3):60, 2021.
-
-\bibitem[M{\"u}g03]{muger2003subfactors}
-Michael M{\"u}ger.
-\newblock From subfactors to categories and topology ii: The quantum double of
-  tensor categories and subfactors.
-\newblock {\em Journal of Pure and Applied Algebra}, 180(1-2):159--219, 2003.
-
-\bibitem[M{\"u}g08]{muger2008tensor}
-Michael M{\"u}ger.
-\newblock Tensor categories: a selective guided tour.
-\newblock {\em arXiv preprint arXiv:0804.3587}, 2008.
-
-\bibitem[MZF{\etalchar{+}}12]{mourik2012signatures}
-Vincent Mourik, Kun Zuo, Sergey~M Frolov, SR~Plissard, Erik~PAM Bakkers, and
-  Leo~P Kouwenhoven.
-\newblock Signatures of majorana fermions in hybrid
-  superconductor-semiconductor nanowire devices.
-\newblock {\em Science}, 336(6084):1003--1007, 2012.
-
-\bibitem[NS10]{ng2010congruence}
-Siu-Hung Ng and Peter Schauenburg.
-\newblock Congruence subgroups and generalized frobenius-schur indicators.
-\newblock {\em Communications in Mathematical Physics}, 300(1):1--46, 2010.
-
-\bibitem[NSS{\etalchar{+}}08]{nayak2008non}
-Chetan Nayak, Steven~H Simon, Ady Stern, Michael Freedman, and Sankar~Das
-  Sarma.
-\newblock Non-abelian anyons and topological quantum computation.
-\newblock {\em Reviews of Modern Physics}, 80(3):1083, 2008.
-
-\bibitem[OKMH22]{oh2022rank}
-Yun-Tak Oh, Jintae Kim, Eun-Gook Moon, and Jung~Hoon Han.
-\newblock Rank-2 toric code in two dimensions.
-\newblock {\em Physical Review B}, 105(4):045128, 2022.
-
-\bibitem[Pac91]{pachner1991pl}
-Udo Pachner.
-\newblock Pl homeomorphic manifolds are equivalent by elementary shellings.
-\newblock {\em European journal of Combinatorics}, 12(2):129--145, 1991.
-
-\bibitem[Pac12]{pachos2012introduction}
-Jiannis~K Pachos.
-\newblock {\em Introduction to topological quantum computation}.
-\newblock Cambridge University Press, 2012.
-
-\bibitem[Pre98]{preskill1998fault}
-John Preskill.
-\newblock Fault-tolerant quantum computation.
-\newblock In {\em Introduction to quantum computation and information}, pages
-  213--269. World Scientific, 1998.
-
-\bibitem[Pre99]{preskill1999lecture}
-John Preskill.
-\newblock Lecture notes for physics 219: Quantum computation.
-\newblock {\em Caltech Lecture Notes}, page~7, 1999.
-
-\bibitem[QW21]{qiu2021representations}
-Yang Qiu and Zhenghan Wang.
-\newblock Representations of motion groups of links via dimension reduction of
-  tqfts.
-\newblock {\em Communications in Mathematical Physics}, 382:2071--2100, 2021.
-
-\bibitem[Reg09]{regev2009lattices}
-Oded Regev.
-\newblock On lattices, learning with errors, random linear codes, and
-  cryptography.
-\newblock {\em Journal of the ACM (JACM)}, 56(6):1--40, 2009.
-
-\bibitem[Reu23]{reutter2023uniqueness}
-David Reutter.
-\newblock Uniqueness of unitary structure for unitarizable fusion categories.
-\newblock {\em Communications in Mathematical Physics}, 397(1):37--52, 2023.
-
-\bibitem[Rof19]{roffe2019quantum}
-Joschka Roffe.
-\newblock Quantum error correction: an introductory guide.
-\newblock {\em Contemporary Physics}, 60(3):226--245, 2019.
-
-\bibitem[Row06]{rowell2006quantum}
-Eric~C Rowell.
-\newblock From quantum groups to unitary modular tensor categories.
-\newblock {\em Contemporary Mathematics}, 413:215--230, 2006.
-
-\bibitem[RS21]{rahn2021generalized}
-Moritz Rahn and Michael Shulman.
-\newblock Generalized stability for abstract homotopy theories.
-\newblock {\em Annals of K-Theory}, 6(1):1--28, 2021.
-
-\bibitem[RSW09]{rowell2009classification}
-Eric Rowell, Richard Stong, and Zhenghan Wang.
-\newblock On classification of modular tensor categories.
-\newblock {\em Communications in Mathematical Physics}, 292(2):343--389, 2009.
-
-\bibitem[RW18]{rowell2018mathematics}
-Eric Rowell and Zhenghan Wang.
-\newblock Mathematics of topological quantum computing.
-\newblock {\em Bulletin of the American Mathematical Society}, 55(2):183--238,
-  2018.
-
-\bibitem[Sch09]{schreiber2009aqft}
-Urs Schreiber.
-\newblock Aqft from n-functorial qft.
-\newblock {\em Communications in Mathematical Physics}, 291:357--401, 2009.
-
-\bibitem[Seg88]{segal1988definition}
-Graeme~B Segal.
-\newblock The definition of conformal field theory.
-\newblock {\em Differential geometrical methods in theoretical physics}, pages
-  165--171, 1988.
-
-\bibitem[Sel11]{selinger2011survey}
-Peter Selinger.
-\newblock A survey of graphical languages for monoidal categories.
-\newblock {\em New structures for physics}, pages 289--355, 2011.
+\bibitem[SBZ22]{schotte2022fault}
+Alexis Schotte, Lander Burgelman, and Guanyu Zhu.
+\newblock Fault-tolerant error correction for a universal non-abelian
+  topological quantum computer at finite temperature.
+\newblock {\em arXiv preprint arXiv:2301.00054}, 2022.
 
 \bibitem[Sho94]{shor1994algorithms}
 Peter~W Shor.
@@ -455,92 +123,41 @@ Peter~W Shor.
 \newblock In {\em Proceedings 35th annual symposium on foundations of computer
   science}, pages 124--134. Ieee, 1994.
 
-\bibitem[Sou70]{soublin1970anneaux}
-Jean-Pierre Soublin.
-\newblock Anneaux et modules coh{\'e}rents.
-\newblock {\em Journal of Algebra}, 15(4):455--472, 1970.
+\bibitem[Sky62]{skyrme1962unified}
+Tony Hilton~Royle Skyrme.
+\newblock A unified field theory of mesons and baryons.
+\newblock {\em Nuclear Physics}, 31:556--569, 1962.
 
-\bibitem[Spi18]{spivak2018calculus}
-Michael Spivak.
-\newblock {\em Calculus on manifolds: a modern approach to classical theorems
-  of advanced calculus}.
-\newblock CRC press, 2018.
+\bibitem[SZBV22]{schotte2022quantum}
+Alexis Schotte, Guanyu Zhu, Lander Burgelman, and Frank Verstraete.
+\newblock Quantum error correction thresholds for the universal fibonacci
+  turaev-viro code.
+\newblock {\em Physical Review X}, 12(2):021012, 2022.
 
-\bibitem[Sto14]{stolz2014topology}
-Stephan Stolz.
-\newblock {\em Topology and Field Theories}, volume 613.
-\newblock American Mathematical Society, 2014.
+\bibitem[TSG82]{tsui1982two}
+Daniel~C Tsui, Horst~L Stormer, and Arthur~C Gossard.
+\newblock Two-dimensional magnetotransport in the extreme quantum limit.
+\newblock {\em Physical Review Letters}, 48(22):1559, 1982.
 
-\bibitem[Tan19]{tang2019quantum}
-Ewin Tang.
-\newblock A quantum-inspired classical algorithm for recommendation systems.
-\newblock In {\em Proceedings of the 51st annual ACM SIGACT symposium on theory
-  of computing}, pages 217--228, 2019.
+\bibitem[Wil82]{wilczek1982quantum}
+Frank Wilczek.
+\newblock Quantum mechanics of fractional-spin particles.
+\newblock {\em Physical review letters}, 49(14):957, 1982.
 
-\bibitem[TTWL08]{trebst2008short}
-Simon Trebst, Matthias Troyer, Zhenghan Wang, and Andreas~WW Ludwig.
-\newblock A short introduction to fibonacci anyon models.
-\newblock {\em Progress of Theoretical Physics Supplement}, 176:384--407, 2008.
+\bibitem[Wit88]{witten1988topological}
+Edward Witten.
+\newblock Topological quantum field theory.
+\newblock {\em Communications in Mathematical Physics}, 117(3):353--386, 1988.
 
-\bibitem[TVV22]{tantivasadakarn2022shortest}
-Nathanan Tantivasadakarn, Ruben Verresen, and Ashvin Vishwanath.
-\newblock The shortest route to non-abelian topological order on a quantum
-  processor.
-\newblock {\em arXiv preprint arXiv:2209.03964}, 2022.
+\bibitem[Wit89]{witten1989quantum}
+Edward Witten.
+\newblock Quantum field theory and the jones polynomial.
+\newblock {\em Communications in Mathematical Physics}, 121(3):351--399, 1989.
 
-\bibitem[Vaf88]{vafa1988toward}
-Cumrun Vafa.
-\newblock Toward classification of conformal theories.
-\newblock {\em Physics Letters B}, 206(3):421--426, 1988.
-
-\bibitem[Ver88]{verlinde1988fusion}
-Erik Verlinde.
-\newblock Fusion rules and modular transformations in 2d conformal field
-  theory.
-\newblock {\em Nuclear Physics B}, 300:360--376, 1988.
-
-\bibitem[Wan10]{wang2010topological}
-Zhenghan Wang.
-\newblock {\em Topological quantum computation}.
-\newblock American Mathematical Soc., 2010.
-
-\bibitem[Wei09]{weil2009oeuvres}
-Andr{\'e} Weil.
-\newblock {\em Oeuvres Scientifiques/Collected Papers: Volume 2 (1951-1964)},
-  volume~2.
-\newblock Springer Science \& Business Media, 2009.
-
-\bibitem[Wen17]{wendin2017quantum}
-G{\"o}ran Wendin.
-\newblock Quantum information processing with superconducting circuits: a
-  review.
-\newblock {\em Reports on Progress in Physics}, 80(10):106001, 2017.
-
-\bibitem[WN90]{wen1990ground}
-Xiao-Gang Wen and Qian Niu.
-\newblock Ground-state degeneracy of the fractional quantum hall states in the
-  presence of a random potential and on high-genus riemann surfaces.
-\newblock {\em Physical Review B}, 41(13):9377, 1990.
-
-\bibitem[WW14]{wen2014pattern}
-Xiao-Gang Wen and Zhenghan Wang.
-\newblock Pattern-of-zeros approach to fractional quantum hall states and a
-  classification of symmetric polynomial of infinite variables.
-\newblock In {\em Conformal Field Theories and Tensor Categories: Proceedings
-  of a Workshop Held at Beijing International Center for Mathematical
-  Research}, pages 33--65. Springer, 2014.
-
-\bibitem[Yet92]{yetter1992framed}
-David~N Yetter.
-\newblock Framed tangles and a theorem of deligne on braided deformations of
-  tannakian categories.
-\newblock {\em Contemp. Math}, 134:325--350, 1992.
-
-\bibitem[YZB{\etalchar{+}}21]{yang2021experimental}
-Fangyuan Yang, Alexander~A Zibrov, Ruiheng Bai, Takashi Taniguchi, Kenji
-  Watanabe, Michael~P Zaletel, and Andrea~F Young.
-\newblock Experimental determination of the energy per particle in partially
-  filled landau levels.
-\newblock {\em Physical review letters}, 126(15):156802, 2021.
+\bibitem[ZGHS15]{zhu2015fractional}
+W~Zhu, SS~Gong, FDM Haldane, and DN~Sheng.
+\newblock Fractional quantum hall states at $\nu$= 13/5 and 12/5 and their
+  non-abelian nature.
+\newblock {\em Physical review letters}, 115(12):126805, 2015.
 
 \end{thebibliography}

@@ -3,44 +3,58 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Algebraic-TQC.aux
 The style file: alpha.bst
 Database file #1: ref.bib
-You've used 98 entries,
+Repeated entry---line 392 of file ref.bib
+ : @article{mochon2003anyons
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1177 of file ref.bib
+ : @article{freedman2002simulation
+ :                                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1306 of file ref.bib
+ : @article{freedman2002modular
+ :                             ,
+I'm skipping whatever remains of this entry
+Warning--can't use both volume and number fields in jaeger1990computational
+You've used 28 entries,
             2543 wiz_defined-function locations,
-            1107 strings with 18675 characters,
-and the built_in function-call counts, 38486 in all, are:
-= -- 3869
-> -- 1715
-< -- 67
-+ -- 580
-- -- 568
-* -- 2813
-:= -- 6345
-add.period$ -- 298
-call.type$ -- 98
-change.case$ -- 595
-chr.to.int$ -- 98
-cite$ -- 98
-duplicate$ -- 1547
-empty$ -- 2792
-format.name$ -- 704
-if$ -- 7770
+            748 strings with 8935 characters,
+and the built_in function-call counts, 11289 in all, are:
+= -- 1160
+> -- 466
+< -- 19
++ -- 158
+- -- 155
+* -- 851
+:= -- 1846
+add.period$ -- 87
+call.type$ -- 28
+change.case$ -- 169
+chr.to.int$ -- 28
+cite$ -- 29
+duplicate$ -- 447
+empty$ -- 835
+format.name$ -- 196
+if$ -- 2290
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 112
-newline$ -- 494
-num.names$ -- 294
-pop$ -- 503
+missing$ -- 28
+newline$ -- 144
+num.names$ -- 84
+pop$ -- 116
 preamble$ -- 1
-purify$ -- 707
+purify$ -- 197
 quote$ -- 0
-skip$ -- 1272
+skip$ -- 363
 stack$ -- 0
-substring$ -- 2342
-swap$ -- 214
-text.length$ -- 67
-text.prefix$ -- 47
+substring$ -- 750
+swap$ -- 64
+text.length$ -- 19
+text.prefix$ -- 14
 top$ -- 0
-type$ -- 728
-warning$ -- 0
-while$ -- 383
-width$ -- 102
-write$ -- 1262
+type$ -- 224
+warning$ -- 1
+while$ -- 118
+width$ -- 31
+write$ -- 370
+(There were 3 error messages)

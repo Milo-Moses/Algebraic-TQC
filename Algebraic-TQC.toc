@@ -1,27 +1,11 @@
 \contentsline {section}{\numberline {0}Preface}{3}
-\contentsline {section}{\numberline {1}Introduction}{5}
-\contentsline {section}{\numberline {2}Quantum Foundations}{10}
-\contentsline {section}{\numberline {3}The Toric Code}{21}
-\contentsline {section}{\numberline {4}Topological Quantum Field Theories}{34}
-\contentsline {subsection}{\numberline {4.1}The general picture}{34}
-\contentsline {subsection}{\numberline {4.2}The $\mathbb {Z}_2$ Dijkgraaf-Witten TQFT}{40}
-\contentsline {section}{\numberline {5}Category Theory}{47}
-\contentsline {subsection}{\numberline {5.1}Objects, morphisms, and composition}{47}
-\contentsline {subsection}{\numberline {5.2}Braided monoidal categories}{57}
-\contentsline {section}{\numberline {6}Modular Tensor Categories}{65}
-\contentsline {subsection}{\numberline {6.1}Fusion systems}{65}
-\contentsline {subsection}{\numberline {6.2}The category-theoretic viewpoint}{76}
-\contentsline {subsection}{\numberline {6.3}The MTC $\mathcal {Z}(\mathbf {Rep}_{\mathbb {Z}_2})$}{91}
-\contentsline {subsection}{\numberline {6.4}Rigidity}{106}
-\contentsline {section}{\numberline {7}Topological Quantum Computing}{127}
-\contentsline {subsection}{\numberline {7.1}The TQC framework}{127}
-\contentsline {subsection}{\numberline {7.2}Revisiting toric code TQC}{129}
-\contentsline {subsection}{\numberline {7.3}Universal TQC with Fibonacci anyons}{130}
-\contentsline {section}{\numberline {8}Topological Quantum Error Correcting Codes}{130}
-\contentsline {section}{\numberline {A}$\mathbb {Z}_2$ Homology Theory}{131}
-\contentsline {section}{\numberline {B}Non-Negative Matricies}{132}
-\contentsline {section}{\numberline {C}Unitarity}{132}
-\contentsline {subsection}{\numberline {C.1}Unitary TQFTs}{132}
-\contentsline {subsection}{\numberline {C.2}Unitary MTCs}{134}
-\contentsline {section}{\numberline {D}Fusion System/MTC Correspondence}{137}
-\contentsline {section}{\numberline {E}Anyon Data}{141}
+\contentsline {section}{\numberline {1}Overview}{4}
+\contentsline {subsection}{\numberline {1.1}Conception introduction}{4}
+\contentsline {subsubsection}{\numberline {1.1.1}Motivation and applications}{4}
+\contentsline {subsubsection}{\numberline {1.1.2}Mathematical picture}{5}
+\contentsline {subsubsection}{\numberline {1.1.3}History of the subject}{6}
+\contentsline {subsection}{\numberline {1.2}Technical introduction}{8}
+\contentsline {subsubsection}{\numberline {1.2.1}Principles of topological quantum information}{8}
+\contentsline {subsubsection}{\numberline {1.2.2}Defects in ordered media}{11}
+\contentsline {subsubsection}{\numberline {1.2.3}The fundamental group}{14}
+\contentsline {subsubsection}{\numberline {1.2.4}Topological classical computation}{14}
