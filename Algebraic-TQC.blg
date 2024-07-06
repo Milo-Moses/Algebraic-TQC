@@ -3,58 +3,47 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Algebraic-TQC.aux
 The style file: alpha.bst
 Database file #1: ref.bib
-Repeated entry---line 392 of file ref.bib
- : @article{mochon2003anyons
- :                          ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1177 of file ref.bib
- : @article{freedman2002simulation
- :                                ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1306 of file ref.bib
- : @article{freedman2002modular
- :                             ,
-I'm skipping whatever remains of this entry
 Warning--can't use both volume and number fields in jaeger1990computational
-You've used 28 entries,
+Warning--there's a number but no series in wang2010topological
+You've used 50 entries,
             2543 wiz_defined-function locations,
-            748 strings with 8935 characters,
-and the built_in function-call counts, 11289 in all, are:
-= -- 1160
-> -- 466
-< -- 19
-+ -- 158
-- -- 155
-* -- 851
-:= -- 1846
-add.period$ -- 87
-call.type$ -- 28
-change.case$ -- 169
-chr.to.int$ -- 28
-cite$ -- 29
-duplicate$ -- 447
-empty$ -- 835
-format.name$ -- 196
-if$ -- 2290
+            875 strings with 12069 characters,
+and the built_in function-call counts, 20118 in all, are:
+= -- 2013
+> -- 960
+< -- 29
++ -- 332
+- -- 326
+* -- 1529
+:= -- 3348
+add.period$ -- 155
+call.type$ -- 50
+change.case$ -- 313
+chr.to.int$ -- 50
+cite$ -- 52
+duplicate$ -- 775
+empty$ -- 1440
+format.name$ -- 391
+if$ -- 4044
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 28
-newline$ -- 144
-num.names$ -- 84
-pop$ -- 116
+missing$ -- 55
+newline$ -- 254
+num.names$ -- 150
+pop$ -- 244
 preamble$ -- 1
-purify$ -- 197
+purify$ -- 368
 quote$ -- 0
-skip$ -- 363
+skip$ -- 638
 stack$ -- 0
-substring$ -- 750
-swap$ -- 64
-text.length$ -- 19
-text.prefix$ -- 14
+substring$ -- 1167
+swap$ -- 99
+text.length$ -- 29
+text.prefix$ -- 19
 top$ -- 0
-type$ -- 224
-warning$ -- 1
-while$ -- 118
-width$ -- 31
-write$ -- 370
-(There were 3 error messages)
+type$ -- 380
+warning$ -- 2
+while$ -- 199
+width$ -- 52
+write$ -- 653
+(There were 2 warnings)

@@ -1,10 +1,15 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
-\begin{thebibliography}{ASWZ85}
+\begin{thebibliography}{vKCK{\etalchar{+}}20}
 
 \bibitem[AA81]{ascher1981code}
 Marcia Ascher and Robert Ascher.
 \newblock Code of the quipu.
 \newblock {\em Ann Arbor: University of Michigan Press}, pages 56--74, 1981.
+
+\bibitem[Aar13]{aaronson2013quantum}
+Scott Aaronson.
+\newblock {\em Quantum computing since Democritus}.
+\newblock Cambridge University Press, 2013.
 
 \bibitem[AB59]{aharonov1959significance}
 Yakir Aharonov and David Bohm.
@@ -17,6 +22,11 @@ James~W Alexander.
 \newblock {\em Transactions of the American Mathematical Society},
   30(2):275--306, 1928.
 
+\bibitem[AMV18]{armitage2018weyl}
+NP~Armitage, EJ~Mele, and Ashvin Vishwanath.
+\newblock Weyl and dirac semimetals in three-dimensional solids.
+\newblock {\em Reviews of Modern Physics}, 90(1):015001, 2018.
+
 \bibitem[ASWZ85]{arovas1985statistical}
 Daniel~P Arovas, Robert Schrieffer, Frank Wilczek, and Anthony Zee.
 \newblock Statistical mechanics of anyons.
@@ -28,17 +38,45 @@ PHILIP~W Anderson and G~Toulouse.
   3.
 \newblock {\em Physical Review Letters}, 38(9):508, 1977.
 
+\bibitem[Bar05]{bartlett2005categorical}
+Bruce~H Bartlett.
+\newblock Categorical aspects of topological quantum field theories.
+\newblock {\em arXiv preprint math/0512103}, 2005.
+
 \bibitem[BGS{\etalchar{+}}09]{bolotin2009observation}
 Kirill~I Bolotin, Fereshte Ghahari, Michael~D Shulman, Horst~L Stormer, and
   Philip Kim.
 \newblock Observation of the fractional quantum hall effect in graphene.
 \newblock {\em Nature}, 462(7270):196--199, 2009.
 
+\bibitem[BK{\etalchar{+}}01]{bakalov2001lectures}
+Bojko Bakalov, Alexander~A Kirillov, et~al.
+\newblock {\em Lectures on tensor categories and modular functors}, volume~21.
+\newblock American Mathematical Society Providence, RI, 2001.
+
+\bibitem[CLRL17]{chan2017photocurrents}
+Ching-Kit Chan, Netanel~H Lindner, Gil Refael, and Patrick~A Lee.
+\newblock Photocurrents in weyl semimetals.
+\newblock {\em Physical Review B}, 95(4):041104, 2017.
+
 \bibitem[Dir31]{dirac1931quantised}
 Paul Adrien~Maurice Dirac.
 \newblock Quantised singularities in the electromagnetic field.
 \newblock {\em Proceedings of the Royal Society of London. Series A, Containing
   Papers of a Mathematical and Physical Character}, 133(821):60--72, 1931.
+
+\bibitem[EGNO16]{etingof2016tensor}
+Pavel Etingof, Shlomo Gelaki, Dmitri Nikshych, and Victor Ostrik.
+\newblock {\em Tensor categories}, volume 205.
+\newblock American Mathematical Soc., 2016.
+
+\bibitem[FEC{\etalchar{+}}21]{fuhrer2021proposal}
+Michael~S Fuhrer, Mark~T Edmonds, Dimitrie Culcer, Muhammad Nadeem, Xiaolin
+  Wang, Nikhil Medhekar, Yuefeng Yin, and Jared~H Cole.
+\newblock Proposal for a negative capacitance topological quantum field-effect
+  transistor.
+\newblock In {\em 2021 IEEE International Electron Devices Meeting (IEDM)},
+  pages 38--2. IEEE, 2021.
 
 \bibitem[FKW02]{freedman2002simulation}
 Michael~H Freedman, Alexei Kitaev, and Zhenghan Wang.
@@ -69,6 +107,11 @@ F~Duncan~M Haldane.
   Condensed-matter realization of the" parity anomaly".
 \newblock {\em Physical review letters}, 61(18):2015, 1988.
 
+\bibitem[HK10]{hasan2010colloquium}
+M~Zahid Hasan and Charles~L Kane.
+\newblock Colloquium: topological insulators.
+\newblock {\em Reviews of modern physics}, 82(4):3045--3067, 2010.
+
 \bibitem[Jon97]{jones1997polynomial}
 Vaughan~FR Jones.
 \newblock A polynomial invariant for knots via von neumann algebras.
@@ -92,11 +135,22 @@ A~Yu Kitaev.
 \newblock Fault-tolerant quantum computation by anyons.
 \newblock {\em Annals of physics}, 303(1):2--30, 2003.
 
+\bibitem[KL09]{kauffman2009topological}
+Louis~H Kauffman and Samuel~J Lomonaco.
+\newblock Topological quantum information theory.
+\newblock In {\em Proceedings of Symposia in Applied Mathematics}, volume~68,
+  2009.
+
 \bibitem[KT73]{kosterlitz1973ordering}
 JM~Kosterlitz and David~James Thouless.
 \newblock Ordering, metastability and phase transitions in two-dimensional
   systems.
 \newblock {\em J. Phys. C}, 6:1181--1203, 1973.
+
+\bibitem[KZ22]{kong2022invitation}
+Liang Kong and Zhi-Hao Zhang.
+\newblock An invitation to topological orders and category theory.
+\newblock {\em arXiv preprint arXiv:2205.05565}, 2022.
 
 \bibitem[Lan95]{landauer1995quantum}
 Rolf Landauer.
@@ -104,17 +158,52 @@ Rolf Landauer.
 \newblock {\em Philosophical Transactions of the Royal Society of London.
   Series A: Physical and Engineering Sciences}, 353(1703):367--376, 1995.
 
+\bibitem[Mer79]{mermin1979topological}
+N~David Mermin.
+\newblock The topological theory of defects in ordered media.
+\newblock {\em Reviews of Modern Physics}, 51(3):591, 1979.
+
 \bibitem[Moc03]{mochon2003anyons}
 Carlos Mochon.
 \newblock Anyons from nonsolvable finite groups are sufficient for universal
   quantum computation.
 \newblock {\em Physical Review A}, 67(2):022315, 2003.
 
+\bibitem[MZ21]{marrows2021perspective}
+CH~Marrows and K~Zeissler.
+\newblock Perspective on skyrmion spintronics.
+\newblock {\em Applied Physics Letters}, 119(25), 2021.
+
+\bibitem[PBD17]{placke2017model}
+Benedikt Placke, Stefano Bosco, and David~P DiVincenzo.
+\newblock A model study of present-day hall-effect circulators.
+\newblock {\em EPJ Quantum Technology}, 4:1--14, 2017.
+
+\bibitem[RB11]{regnault2011fractional}
+Nicolas Regnault and B~Andrei Bernevig.
+\newblock Fractional chern insulator.
+\newblock {\em Physical Review X}, 1(2):021014, 2011.
+
+\bibitem[RS20]{ramirez2020dawn}
+Arthur~P Ramirez and Brian Skinner.
+\newblock Dawn of the topological age?
+\newblock {\em Physics Today}, 73(9):30--36, 2020.
+
+\bibitem[SA17]{sato2017topological}
+Masatoshi Sato and Yoichi Ando.
+\newblock Topological superconductors: a review.
+\newblock {\em Reports on Progress in Physics}, 80(7):076501, 2017.
+
 \bibitem[SBZ22]{schotte2022fault}
 Alexis Schotte, Lander Burgelman, and Guanyu Zhu.
 \newblock Fault-tolerant error correction for a universal non-abelian
   topological quantum computer at finite temperature.
 \newblock {\em arXiv preprint arXiv:2301.00054}, 2022.
+
+\bibitem[SF18]{skinner2018large}
+Brian Skinner and Liang Fu.
+\newblock Large, nonsaturating thermopower in a quantizing magnetic field.
+\newblock {\em Science advances}, 4(5):eaat2621, 2018.
 
 \bibitem[Sho94]{shor1994algorithms}
 Peter~W Shor.
@@ -123,10 +212,20 @@ Peter~W Shor.
 \newblock In {\em Proceedings 35th annual symposium on foundations of computer
   science}, pages 124--134. Ieee, 1994.
 
+\bibitem[Sim23]{simon2023topological}
+Steven~H Simon.
+\newblock {\em Topological quantum}.
+\newblock Oxford University Press, 2023.
+
 \bibitem[Sky62]{skyrme1962unified}
 Tony Hilton~Royle Skyrme.
 \newblock A unified field theory of mesons and baryons.
 \newblock {\em Nuclear Physics}, 31:556--569, 1962.
+
+\bibitem[{\v{S}}MYM18]{vsmejkal2018topological}
+Libor {\v{S}}mejkal, Yuriy Mokrousov, Binghai Yan, and Allan~H MacDonald.
+\newblock Topological antiferromagnetic spintronics.
+\newblock {\em Nature physics}, 14(3):242--251, 2018.
 
 \bibitem[SZBV22]{schotte2022quantum}
 Alexis Schotte, Guanyu Zhu, Lander Burgelman, and Frank Verstraete.
@@ -138,6 +237,23 @@ Alexis Schotte, Guanyu Zhu, Lander Burgelman, and Frank Verstraete.
 Daniel~C Tsui, Horst~L Stormer, and Arthur~C Gossard.
 \newblock Two-dimensional magnetotransport in the extreme quantum limit.
 \newblock {\em Physical Review Letters}, 48(22):1559, 1982.
+
+\bibitem[VD14]{viola2014hall}
+Giovanni Viola and David~P DiVincenzo.
+\newblock Hall effect gyrators and circulators.
+\newblock {\em Physical Review X}, 4(2):021019, 2014.
+
+\bibitem[vKCK{\etalchar{+}}20]{von202040}
+Klaus von Klitzing, Tapash Chakraborty, Philip Kim, Vidya Madhavan, Xi~Dai,
+  James McIver, Yoshinori Tokura, Lucile Savary, Daria Smirnova, Ana~Maria Rey,
+  et~al.
+\newblock 40 years of the quantum hall effect.
+\newblock {\em Nature Reviews Physics}, 2(8):397--401, 2020.
+
+\bibitem[Wan10]{wang2010topological}
+Zhenghan Wang.
+\newblock {\em Topological quantum computation}.
+\newblock Number 112. American Mathematical Soc., 2010.
 
 \bibitem[Wil82]{wilczek1982quantum}
 Frank Wilczek.
