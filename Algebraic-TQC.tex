@@ -9,6 +9,8 @@
 \usepackage{amsfonts}
 \usepackage{braket}
 \usepackage{mathtools}
+\usepackage{lmodern}
+\usepackage{float}
 
 
 \newtheorem{theorem}{Theorem}[section]
@@ -16,6 +18,7 @@
 \newtheorem{corollary}{Corollary}[section]
 \newtheorem{conjecture}{Conjecture}[section]
 \newtheorem{proposition}{Proposition}[section]
+\newtheorem{propositionph}{$\text{Proposition}^{ph}$}[section]
 
 \theoremstyle{definition}
 \newtheorem*{definition}{Definition}
@@ -41,6 +44,8 @@
 \newcommand{\wind}{\mathrm{wind}}
 \newcommand{\Free}{\mathrm{Free}}
 \newcommand{\Sym}{\mathrm{Sym}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\swap}{\mathrm{swap}}
 
 
 \newcommand{\RR}{\mathbb{R}}
@@ -48,11 +53,16 @@
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\SO}{\mathrm{SO}}
+\newcommand{\NN}{\mathcal{N}}
+\newcommand{\C}{\mathcal{C}}
 
 
 \newcommand{\0}{\left|0\right>}
 \newcommand{\1}{\left|1\right>}
 
+\newcommand{\NOT}{\text{\scshape NOT\normalfont}}
+\newcommand{\AND}{\text{\scshape AND\normalfont}}
+\newcommand{\OR}{\text{\scshape OR\normalfont}}
 
 
 \begin{abstract}
@@ -83,6 +93,9 @@ The structure of this book is as follows.
 
 \end{enumerate}
 
+[WORK: make it clear that this is NOT a topology textbook. The topology will be extremely handwaivy. This is an algebra textbook.]
+
+[WORK: to add on to the above point - maybe I should add something like $\text{Theorem}^{ph}$ for ``physical theorem"? Use it only for topology stuff, never for algebra stuff.]
 \newpage
 
 \section{Overview}
@@ -131,10 +144,6 @@ The naive mathematical description of topological order is \textit{topological q
 
 While they are useful in many contexts, topological quantum field theories do have several difficulties associated with them. The most prominent of which is that their definition requires a large amount of essentially redundant data. This makes them hard to construct, inaccessible to computational methods, and opaque in their realizations of important phenomena. One solution to this problem is to dig down to the core algebraic data lying within topological quantum field theories. This algebraic data contains far less redundancy than the original topological quantum field theory. This makes the algebraic data thus easier to construct, more accessible to computational methods, and more clear in its realization of important phenomena. The algebraic structure which houses the algebraic data of a (2+1)D topological quantum field theory is known as a \textit{modular tensor category}. These algebraic structures are the main mathematical object of this text, and it is because of this focus that this book is called the \textit{algebraic theory} of topological quantum information. Once one has a modular tensor category it is easy to manipulate the stored information to perform computations. This gives us the overall schema of our mathematical discussion, as illustrated visually below:
 
-\begin{equation*}
-\tikzfig{mathematical-outline}
-\end{equation*}
-
 This schema is part of a more general pattern in the field of topological mathematical physics, illustrated below:
 
 \begin{equation*}
@@ -173,6 +182,8 @@ Together, these two results show that in a real sense topological quantum comput
 In this section I will lay out the general principles of topological quantum information. As an organizational tool, I will introduce these principles one by one as I construct a sample topological system. This example is meant to be representative of the systems we will encounter throughout this text, and within the broader field of topological quantum information. As a further organization tool, I will construct this example with the stated goal of obtaining a topological quantum computer.
 
 Our system will be flat, containing only \textit{two spatial dimensions}. Our system will be mostly homogenous, essentially identical everywhere, at the exception of finitely many localized regions. These regions will differ substantially from the top-dimensional homogeneous bulk. These localized regions are called \textit{quasiparticles}. The beauty of systems like these is that they behave as though homogeneous bulk were empty, and the quasiparticles were fundamental particles within the bulk. In fact, in its algebraic description, these topological systems are \textit{identical} to ones in which the homogenous bulk is empty and the quasiparticles are fundamental particles. This is where the term quasiparticle arises. It is important however to remember that in most relevant applications the bulk is \textit{not} empty and the quasiparticles are \textit{not} fundamental particles. The bulk will typically be some highly entangled wavefunction, and the quasiparticles will be emergent phenomena made up of smaller microscopic degrees of freedom.
+
+[WORK: add nice picture of wavefunction localized at points]
 
 Our aim is to build a computer. In general this requires three components:
 
@@ -216,7 +227,7 @@ Progress on topological quantum computing has thus been focused on realizing top
 
 We will now work through a complete mathematical example of a family of topological systems. Our examples will be \textit{classical} topological systems. Many of the important subtlties of topological quantum information are already present in the classical case. Topological classical information is a smaller subject than topological quantum information - the reader should have a relatively complete grasp of the subject by the end of the chapter. Much of the discussion in this chapter is taken from an excellent review article by Mermin \cite{mermin1979topological}. The goal of this chapter is both to give a family of relevant examples to the reader, as well as to give a crash-course on the relevant topology.
 
-The family of systems we will describe goes by many names. In communities of experimentally focused physicists it goes by the name \textit{ordered media}. In mathematical physics communities it goes by the name \textit{classical gauge theory}. In pure mathematics it would be described as \textit{homotopy theory}. We will construct a system based on every topological space $M$. We will call $M$ the order space of our theory.
+The family of systems we will describe goes by many names. In communities of experimentally focused physicists it goes by the name \textit{ordered media}. In mathematical physics communities it goes by the name \textit{classical gauge theory} [WORK: is ``classical gauge theory" really a thing, or is this ``classical field theory"? I should ask a physicist to make sure I've got my terminology right.]. In pure mathematics it would be described as \textit{homotopy theory}. We will construct a system based on every topological space $M$. We will call $M$ the order space of our theory.
 
 To describe a system in physics, the first step is to define the space of possible states of the system. In this case, states will correspond to \textit{continuous maps $\phi: \RR^2\to M$}. We now give physical intuition for this choice of state space. The choice of $\RR^2$ as a source represents the underlying material. We are working on an infinite flat plane. Describing a function $\phi: \RR^2\to M$ amounts to choosing a value $\phi(x)$ for every point $x\in \RR^2$. In this way we imagine our system as being made up of infinitely many objects, one placed at each point in $\RR^2$, each of which has an internal state space $M$. The fact that $\phi$ must be continuous is a compatibility condition between the states of the objects at nearby points. It says that nearby objects must have similar states. We now list some examples:
 
@@ -589,9 +600,9 @@ Given a finite set $S$, a normalized vector in $\RR[S]$ is one of the form $\sum
 
 In quantum mechanics we re-define the notation of normalized vector. A normalized vector in quantum mechanics is a state $\sum_{x\in S}c_x \ket{x}$, where $c_x\in \CC$ are arbitary complex numbers and $\sum_{x\in S}|c_x|^2=1$. The sum of norm-squares $\sum_{x\in S}|c_x|^2$ is known as the \textit{2-norm} of the vector $c=(c_x)_{x\in S}$. In this way, the norm-squares $|c_x|^2$ form a probility distrubution on $S$.
 
-Thus, given some finite set $S$, states in the quantum system based on $S$ correspond to normalized vectors in $\CC[S]$. As a matter of convention, normalized vectors in $\RR[S]$ will always refer to the 1-norm definition and normalized vectors in $\CC[S]$ will always refer to the 2-norm definition. We are now ready to state the basic axioms of quantum theory:
+Thus, given some finite set $S$, states in the quantum system based on $S$ correspond to normalized vectors in $\CC[S]$. As a matter of convention, normalized vectors in $\RR[S]$ will always refer to the 1-norm definition and normalized vectors in $\CC[S]$ will always refer to the 2-norm definition. We are now ready to state the basic axioms of quantum theory, with a caveat that it does not give the full picture of measurement:
 
-\begin{definition}[Axioms of quantum mechanics, version 1] $\,$
+\begin{definition}[Axioms of quantum mechanics, basis dependent version] $\,$
 
 \begin{enumerate}
 \item (Systems) A quantum system is a complex vector space of the form $\CC[S]$, where $S$ is a finite set. The normalized vectors in $\CC[S]$ correspond to quantum states on $S$. Here, a \textit{normalized} vector $v=\sum_{x\in S}c_x\left|x\right>$ is one for which $\sum_{x\in S}|c_x|^2=1$, where $|c_x|^2$ denotes the norm square.
@@ -624,27 +635,262 @@ $$H\left(\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1\right)=\frac{1}{\sqrt{2}}\lef
 
 We can summarize this as saying that there was \textit{constructive interference} in the $\0$, and \textit{destructive interference} in the $\1$. The amplitudes had the same signs in the $\0$ causing the probability of measuring $0$ to add, and the amplitudes had opposite signs in the $\1$, causing the probabilities of measuring $1$ to cancel. 
 
+\subsubsection{Measurement}
 
+The axioms in the previous section are all accurate, but they do not give a complete picture of measurement in quantum theory. In particular, the type of measurment which takes a state $\sum_{x\in S}c_x \ket{x}$ and collapses it to $\ket{x}$ with probability $|c_x|^2$ is only a special type of measurement. There are key subtleties that are ignored in our naive treatment:
+
+\begin{enumerate}
+\item It is possible to measure with respect to bases other than the standard basis;
+\item Measurements can be incomplete, meaning that they do not collapse a wavefunction all the way down to a particle;
+\item Measurements always have \textit{observables} associated with them.
+\end{enumerate}
+
+The easiest point to discuss is observables. Every time you measure something in a laboratory, there is always a real number output associated with the measurement:
+
+\begin{itemize}
+\item If you measure the velocity of a particle, the ouput is a speed in meters/second;
+\item If you measure the relative position of two objects, the output is a distance in meters;
+\item If you measure the intensity of a light source, the output is a luminescence in candelas/square meter;
+\item etc, etc...
+\end{itemize}
+
+Seeing as these real numbers are the only quantities which we actually get to record as experiments, we have to make them into our theory. For example, consider some finite set S with associated quantum system $\CC[S]$. Suppose we measure the energy of the system in joules (J). Since $S$ is finite there are finitely many possibilities for the energy, say 1J, 5J, 10J. In a quantum system, measuring with respect to energy will produce some output (1J, 5J, or 10J) and collapse the system onto a state with a well-defined energy.
+
+A crucial point is that these states with well-defined energy have \textit{absolutely no reason} to be the same as the elements of $S$. Different observables can have different collections of states with well-defined values of those observables. A state with a well-defined value of some observable is called an \textit{eigenstate} of that observable. Yes, this will connect back to our usual notation of eigenvector from linear algebra.
+
+As an example, suppose $S=\{0,1\}$. We define an observable called energy. We say that the state $\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1$ has energy $2J$ and the state $\frac{1}{\sqrt{2}}\0-\frac{1}{\sqrt{2}}\1$ has energy 3J. The state $\0$ can be decomposed as
+
+$$\0=\frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1\right)+\frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}\0-\frac{1}{\sqrt{2}}\1\right).$$
+
+We see here that $\0$ is in an equal superposition of the state with energy 2J and the state with energy 3J. When we measure this state, it will collapse onto some energy eigenstate. It will collapse onto $\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}$ with probability $1/2$ and it will collapse onto $\frac{1}{\sqrt{2}}\0-\frac{1}{\sqrt{2}}\1$ with probability $1/2$, depending on the value of energy that was measured.
+
+It is important that one needs to take care when defining observables to make sure that no contradictions appear. For instance, once the values of the observable are specified on a basis then the rest of the values of the observable follow by linearity. A more subtle restricition is seen in the following example. Supose that $\0$ is given energy 2J and $\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}$ is given energy 3J. Then, we can write
+
+$$\1=-\sqrt{2}(\0)+\sqrt{2}\left(\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\right).$$
+
+In this way, $\1$ has energy 2J with amplitude $-\sqrt{2}$ and energy 3J with amplitude $+\sqrt{2}$. Clearly, the norm squares of these amplitdues does not give a valid probability distribution. They key algebraic requirement is \textit{orthogonality}. Namely, we have an \textit{inner product} on $\CC[S]$ defined by
+
+$$\left<\left.\sum_{x\in S}c_x\ket{x}\right| \sum_{x\in S}c'_x \ket{x}\right>=\sum_{x\in S}c_x\overline{c_x'}.$$
+
+Two states in $\CC[S]$ are called \textit{orthogonal} if their inner product is $0$. If the values of an observable are specififed with respect to a basis in which every basis vector is normalized and every pair of basis vectors is orthogonal, then this observable can be extended to all normalized vectors in $\CC[S]$ without issues. Before stating this axiom formally, we introduce some notation. If a basis of $\CC[S]$ consists of normalized pairwise orthogonal vectors, we call it \textit{orthonormal}. An \textit{obervable} on $\CC[S]$ is a pair $(B,v)$ where $B\subset \CC[S]$ is an orthonormal basis and $v:B\to \RR$ is a set function.
+
+This gives us our next version of the axioms of quantum mechanics. There are issues that arise when $v$ is not injective, so we state our axioms with a restriction on $v$ for now:
+
+\begin{enumerate}[1'.]
+\setcounter{enumi}{2}
+
+\item (Measuring systems) Let $(B,v)$ be an observable for which $v$ is injective. The system $\CC[S]$ can be measured with respect to $(B,v)$. When $\ket{\psi} = \sum_{b\in B} c_b \ket{b}\in \CC[S]$ is measured with respect to $(B,v)$, the state collapses to each $\ket{b}$, $b\in B$, with probability $|c_b|^2$. In the case that $\ket{\psi}$ collapses onto $\ket{b}$, we say that the outcome of the measurement is $v(b)\in \RR$.
+\end{enumerate}
+
+
+We will verify that the values $|c_b|^2$ indeed form a probability distribuution later in the section.
+
+\subsubsection{Incomplete measurement}
+
+The above discussion is still missing some generality. Namely, it ignores the fact that that measurements can be \textit{incomplete}. Incomplete measurements arrise when two linearly indendent vectors have the same value of an observable. When the observable is measured, it doesn't know which of those two linearly independent vectors to collapse to! In this situation, we say that the observable is \textit{degenerate}. The term degeneracy here comes from its general mathematical usage, whereby it used to describe edge cases where not-neccecarily-equal values happen to be equal.
+
+Instead of collapsing all the way down to an eigenstate, the measurement of degenerate observables will project a state onto the subspace spanned by the eigenstates with the measured value of the observable. For example, let $S=\{0,1,2\}$. Suppose that the state $\0$ has energy 5J, and that the states $\1$ and $\ket{2}$ have energy 10J. Suppose further that we measure the state
+
+$$\frac{1}{\sqrt{3}}\0+\frac{1}{\sqrt{3}}\1-\frac{i}{\sqrt{3}}\ket{2}$$
+
+with respect to energy, and the observed valu is 10J. This will collapse the state onto $\frac{1}{\sqrt{2}}\1-\frac{i}{\sqrt{2}}\ket{2}$. The projection respects phases, but scales the absolute value of the state so that it becomes normalized. Formally, this is an orthogonal projection. To state this axiom it is good to introduce some notation. Let $S$ be a finite set and let $\ket{\psi}$, $\ket{\varphi}$ be states in $\CC[S]$. We use the notation
+
+$$\left< \left. \ket{\psi} \right| \ket{\varphi}\right>\coloneqq \left< \left. \psi \right| \varphi \right>.$$
+
+This gives us a complete description of measurement in quantum mechanics:
+
+\begin{enumerate}[1''.]
+\setcounter{enumi}{2}
+
+\item (Measuring systems) Let $(B,v)$ be an observable. The system $\CC[S]$ can be measured with respect to $(B,v)$. Let $\ket{\psi}=\sum_{b\in B}c_b \ket{b}\in \CC[S]$ be a state, and let $\lambda\in \RR$ be a real number. The probability that the outcome of the measurement is equal to $\lambda$ is $\sum_{v(b)=\lambda}|c_b|^2$. In this case, the state $\ket{\psi}$ will collapse onto
+
+$$\left.\left(\sum_{v(b)=\lambda}c_b \ket{b}\right)\right/ \left(\sum_{v(b)=\lambda}|c_b|^2\right).$$
+\end{enumerate}
 
 
 
 \subsubsection{Basis-independent quantum mechanics}
 
-\subsection{Secondary structures}
+From our discussion of measurement it is clear that, unlike probibilistic systems, quantum systems do not have a favored choice of basis. However, our definition of quantum system is still woefully basis-dependent. Namely, it starts by choosing a distinguished basis $S$ of $\CC[S]$. What would be better if we could remove this choice, and make a quantum system simply a vector space.
 
-\subsubsection{Entanglement and incomplete measurements}
+This poses some immediate problems however. The first is that vector spaces have no notion of norm. Hence, we cannot speak of normalized vectors, and hence we cannot speak of sates. What's more, measurements are required to use an orthonormal basis. To define orthogonality we used the canonical inner product on $\CC[S]$. Without a basis there is no distinguished choice of inner product. However, in a real sense that is the \textit{only} piece of information we need about our basis - its inner product. This means that we can state the axioms of quantum mechanics for any vector space with a distinguished choice of inner product. We define what it means for a space to have an inner product below:
+
+[WORK: define Hilbert space]
+
+In any Hilbert space $V$, we can define the 2-norm of a vector $\ket{\psi}\in V$ to be
+
+$$|\ket{\psi}|=\sqrt{\Braket{\psi | \psi}}$$.
+
+A normalized vector in a Hilbert space is any state for which $|\ket{\psi}|=1$. Observe that this agrees with our previous definition of normalized vector. If $B$ is any orthonormal basis of $V$ and $\ket{\psi}=\sum_{b\in B}c_b \ket{b}$, then
+
+\begin{align*}
+\Braket{\psi|\psi}&=\Braket{\sum_{b\in B}c_b\left|b\right>|\sum_{b\in B}c_b \left|b\right>}\\
+&=\sum_{b_0,b_1\in B}c_{b_0}\overline{c}_{b_1}\Braket{b_0 | b_1}\\
+&=\sum_{b\in B} |c_b|^2.
+\end{align*}
+
+Thus, $|\ket{\psi}|=1$ if and only if $\sum_{b\in B} |c_b|^2=1$ relative to any (equivalently, all) orthonormal bases.
+
+The quantum process and quantum measurement axioms are obvious to state in any Hilbert space. The difficulty is in the joining axiom. It's here that we observe that for any finite sets $S,S'$, there is a canonical isomorphism
+
+\begin{align*}
+\CC[S\times S']&\cong \CC[S]\otimes \CC[S']\\
+\ket{(x,x')}&\mapsto \ket{s}\otimes \ket{s'}
+\end{align*}
+
+where $\otimes$ is the tensor product. For those unfamilar with the tensor product, this could be taken as the \textit{definition} of it. We note that the tensor product of two Hilbert spaces $(V,\left<\cdot|\cdot\right>_V)$, $(V',\left<\cdot|\cdot\right>_{V'})$ is a Hilbert space. The inner product on $V\otimes V'$ is given by
+
+$$\left<(v\otimes v')| (w\otimes w')\right>_{V\otimes V'}=\left<v | w\right>_V\cdot \left<v' | w'\right>_{V'}.$$
+
+This leads us to the following basis independent formulation of the axioms of quantum mechanics:
+
+\begin{definition}[Axioms of quantum mechanics, basis independent version] $\,$
+
+\begin{enumerate}
+\item (Systems) A quantum system is a complex Hilbert space $V$
+\item (Processes) A quantum process going from a system $V$ to a system $W$ is a unitary transformation from $V$ to $W$
+\item (Joining systems) If $V$ and $W$ are two quantum systems, the system obtained by joining $V$ and $W$ is $V\otimes W$.
+\item (Measuring systems) Let $(B,v)$ be an observable. The system $V$ can be measured with respect to $(B,v)$. Let $\ket{\psi}=\sum_{b\in B}c_b \ket{b}\in V$ be a state, and let $\lambda\in \RR$ be a real number. The probability that the outcome of the measurement is equal to $\lambda$ is $\sum_{v(b)=\lambda}|c_b|^2$. In this case, the state $\ket{\psi}$ will collapse onto
+
+$$\left.\left(\sum_{v(b)=\lambda}c_b \ket{b}\right)\right/ \left(\sum_{v(b)=\lambda}|c_b|^2\right).$$
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+Now that we have stated our final version of the axioms of quantum mechanics, we make some technical comments which aid in our future endevors. The first is that operators which send normalized states to normalized states have a very concise charactarization in terms of the \textit{conjugate tranpose}. Of course, without a basis we have no way of identifying linear operators with matrces, and hence no way of defining the transpose. Given a Hilbert space $V$ and a linear map $M:V\to V$ there may be no way to define the transpose but there \textit{is} a way of defining the component-wise conjugate transpose of $V$. This conjugate tranpose is denoted $M^\dagger$, and is defined by the inner-product formula
+
+$$\Braket{ U \psi  | \varphi}=\Braket{\psi | U^\dagger \varphi}.$$
+
+It is verified in Exercise [ref] that this formula always specifies a unique well-defined operator, and that this operator is equal to the conjugate tranpose of $V$ relative to any orthonormal basis. Here is our charactarization of maps which send normalized vectors to normalized vectors:
+
+\begin{proposition}\label{unitary equivilance} Let $V$ be a Hilbert space, and let $U:V\to V$ be a linear transformation. The following are equivalent:
+
+\begin{enumerate}
+\item $U$ sends normalized vectors to normalized vectors;
+\item $U^{\dagger}=U^{-1}$.
+\end{enumerate}
+
+If either of these two equivalent conditions are met, we call $U$ a unitary transformation.
+\end{proposition}
+\begin{proof} We observe that if $U^\dagger=U^{-1}$, then for any normalized vector $\ket{\psi}$
+
+$$|U\ket{\psi}|=\Braket{U \psi | U \psi}=\Braket{\psi | U^\dagger U \psi}=\Braket{\psi | \psi} =1.$$
+
+Hence, $(2)\implies (1)$. To show the other direction, suppose that $U$ sends normalized vectors to normalized vectors. By scaling, we observe that $|U\ket{\psi}|=|\ket{\psi}|$ for all $\ket{\psi}\in V$. We now show that $U$ sends orthogonal vectors to orthogonal vectors. Let $\ket{\psi},\ket{\varphi}$ be orthogonal vectors. We wish to show that $U\ket{\psi}$ and $U\ket{\varphi}$ are orthogonal as well. We compute:
+
+\begin{align*}
+|\ket{\psi}|^2+|\ket{\varphi}|^2&=\Braket{\psi+\varphi | \psi+ \varphi}\\
+&=\Braket{U(\psi+\varphi) | U(\psi+ \varphi)}\\
+&=\Braket{U\psi | U\psi}+\Braket{U\varphi | U \varphi}+\Braket{U\psi | U\varphi}+\Braket{U\varphi | U\psi}\\
+&=|\ket{\psi}|^2+|\ket{\varphi}|^2+2\Re\left(\Braket{U\psi | U\varphi}\right)\\
+\end{align*}
+
+where $\Re(\cdot)$ denotes the real part of a complex number. Thus, we conclude that $\Re\left(\Braket{U\psi | U\varphi}\right)=0$. However, chaning $\ket{\varphi}$ by a phase, we can assume without loss of generality that $\Braket{U\psi | U\varphi}$ is real, and hence we conclude that $\Braket{U\psi | U\varphi}=0$. Thus, we conclude that $\Braket{U\psi | U\varphi}=\Braket{\psi | \varphi}$ whenever $\psi$ and $\varphi$ are equal or orthogonal. Letting $\psi$, $\varphi$ run over an orthonormal basis, we thus conclude that the equation $\Braket{U\psi | U\varphi}=\Braket{\psi | \varphi}$ holds on a basis. Extending via linearity we conclude it holds everywhere, which is exactly the statement that $U^\dagger=U^{-1}$, as desired. 
+\end{proof}
+
+Our second comment is in its heart a way of compact packaging the data of an observable. Given a Hilbert space $V$, instead of working with a choice of orthonormal basis $B$ and a function $v:B\to \RR$ we can work instead with a single operator $H:V\to V$. This is done by defining
+
+$$H(b)=v(b)\cdot b$$
+
+for all $b\in B$. The set $B$ can now be recovered as the eigenvectors of $H$, and the measured results of the observable correspond to the eigenvalues. It is from this repackaging that the states in $B$ get the name eigenstate. This packaging is useful because the space of linear operators $H:V\to V$ has more structure than the space of orthonormal bases of $B$ paired with functions $v:B\to \RR$. For example, we can now add two observables together, or tensor two observables on smaller systems to obtain an observable on a larger system. These sorts of operations will be very important going forward. In fact, the operator $H$ will often have a simple form, and even computing what the elements of $B$ are can be highly complex.
+
+In a similar vein to our characterization of unitary operators, we give a characterization of those linear operators which arrise from observables:
+
+\begin{proposition}[Spectral theorem]\label{Spectral theorem} Let $H: V\to V$ be a linear transformation. The following are equivalent:
+
+\begin{enumerate}
+\item There exists an observable $(B,v)$ such that $H(b)=v(b)\cdot b$ for all $b\in B$;
+\item $H=H^{\dagger}$.
+\end{enumerate}
+
+If any of the three equivalent conditions are met, we call $H$ a Hermitian matrix.
+\end{proposition}
+\begin{proof} We do $(1)\implies (2)$ first. From Exercise [ref], we know that $H^{\dagger}$ can be computed as the conjugate transpose relative to any orthonormal basis. Choosing the orthonormal basis $B$, $H$ is a real diagonal matrix. Hence, it is clearly equal to its own conjugate transpose.
+
+We now prove the converse. We consider the map $\left<\cdot |\cdot \right>$ as defined in the proof of Proposition \ref{unitary equivilance}. Since $\CC$ is algebraically closed the characteristic polynomial of $H$ must have a root, hence we know that $H$ has some eigenvector $e$, with eigenvalue $\lambda$. Scaling $e$ if neccecary, we can assume without loss of generality that $\left<e | e\right> = 1$. Let $V$ be the subspace of vectors $x\in \CC[S]$ such that $\left<e | x\right>=0$. This space has dimension one less than $V$. We know from the definiton of conjugate transpose that
+
+$$\left<x | Hy\right>=\left<Hx |y\right>\,\, \forall x,y\in \CC[S].$$
+
+In particular, if $\left<e | x\right>=0$ then
+
+$$\left< e | Hx \right>=\left<He | x \right>=\lambda \left< e| x \right>=0.$$
+
+Thus, $H$ restricts to a map on $V$. Continuing this proccess of picking eigenvectors and restricting $H$ to the subspace of vectors orthogonal to it, we find that $V$ has an orthonormal basis of eigenvectors. Moreover, all of these eigenvectors satisfy
+
+$$\lambda \left<e | e\right>=\left<H(e) | e\right>=\left<e | H(e)\right>=\overline{\lambda}\left<e | e\right>,$$
+
+so their eigenvalues $\lambda=\overline{\lambda}$ are real. Thus, $(2)\implies (1)$ as desired.
+\end{proof}
+
+This concludes our treatment of the basic axioms of quantum mechanics.
 
 \subsubsection{Hamiltonians and the Schrodinger equation}
 
-\subsection{Computational complexity}
+We now know the basic rules of quantum mechanics. Suppose, however, that we are given some quantum mechanical system in a lab. How will it evolve in time? Certinaly it will evolve by a unitary transformation, as per the axioms. But \textit{which} unitary? The answer to this question is the Schrodinger equation. It gives us time dynamics in quantum mechanics. Once the initial state of the universe was set, the rest of time was just an evolution by the Schrodinger equation. 
 
-\subsubsection{Classical computation}
+At the heart of the Schrodinger equation is the \textit{Hamiltonian} of a quantum system. The Hamiltonian is an observable. The physical quantity it coressponds to is \textit{total energy}. States with definite total energy are known as energy eigenstates, and their energy is some real number. In line with general principles established in the previous subsection, we will think of the Hamiltonian as being a linear operator $H:V\to V$. The Schrodinger equation is defined as follows:
 
-\subsubsection{Probabilistic computation}
+\begin{definition} (Schrodinger equation) Let $V$ be a Hilbert space, corresponding to a quantum system. Let $H$ be a Hermitian operator, corresponding to the Hamiltonian of $V$. Let $\ket{\psi(t)}$ denote the state of the system at time $t$. We have the formula
 
-\subsubsection{Quantum computation}
+$$\ket{\psi(t)}=e^{-i H t}\ket{\psi(0)}$$
 
-[WORK: add a history section]
+where $e^M=\sum_{n=0}^{\infty}\frac{M^n}{n!}$ is the matrix exponential.
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+This equation deserves several comments. First, we comment on terminology. Initially words \textit{state of the system at time $t$} currently have no meaning. In fact time itself is at the current moment undefined. In this way, the Schrodinger equation is defining what time is in quantum mechanics (a one dimensional real parameter) and what it means for a system to be in a state at a time. We still do need to verify that the Schrodiner equation is consistent with our intuitive notion of time. For instance, if we first evolve the system in forward by $t$ time units and then by $s$ time units is that the same as evolving the system forward by $t+s$ time units? Under the Schroding equation, this is the same as verifying the equation
+
+$$e^{-i H (t+s)}\ket{\psi(0)}\stackrel{?}{=}e^{- i H t} e^{- i H s}\ket{\psi(0)}.$$
+
+This formula follows from the well known fact about matrix exponentials, which we will not prove:
+
+\begin{proposition} If $A$ and $B$ are commuting operators, then
+
+$$e^{A}e^{B}=e^{A+B}.$$
+\end{proposition}
+
+Second, we make sure that the equation as stated is consistent with the axioms of quantum mechanics as we have previously defined them. In other words, is the map $e^{-iHt}: V\to V$ really a unitary operator for every $t\in \RR$? This follows from the following important computation:
+
+\begin{align*}
+\left(e^{-iHt}\right)^\dagger &= \left(\sum_{n=0}^{\infty}\frac{(-i H t)^n}{n!}\right)^{\dagger}\\
+&= \sum_{n=0}^{\infty}\frac{\left((-i H t)^\dagger\right)^n}{n!}\\
+&= \sum_{n=0}^{\infty}\frac{\left(i H t\right)^n}{n!}\\
+&=e^{i H t}.
+\end{align*}
+
+The operators $e^{- i H t}$ and $e^{i H t}$ are inverses by Proposition [ref].
+
+A third comment to make about the Schrodinger equation is about units. Both time and energy, austensibly, should have units. However, we have treated them as dimensionless mathematical quantities. How can this be? The answer is that implicitely we \textit{did} choose units. When different choices of units are made, different constants need to be put into the Schrodinger equation. The version of the Schrodinger equtaion which includes units is
+
+$$\ket{\psi(t)}=e^{-i H t/\hbar}\ket{\psi(0)}$$
+
+where $\hbar$ is the normalized plank constant. In our original statement of the Schrodinger equation we have simply decided to use units in which the normalized plank constant is equal to $1$.
+
+[WORK: talk to a physicist who can say why the Schrodinger equation is true. I only have vague waffle.]
+
+The Schrodinger equation tells us that all we need to do to understand the dynamics of a quantum system is solve the Schrodinger equation. Suppose now that $\ket{\psi(0)}$ is some initial state in a quantum system with extended state space $V$ and Hamiltonian $H$. Suppose that we have a decomposition $\ket{\psi(0)}=\sum_{x\in B}c_x \ket{x}$ where $B$ is the set of energy eigenstates of $H$. Then, the Schrodinger equation would tell us that
+
+$$\ket{\psi(t)}=\sum_{x\in B}e^{- i v(b) t}c_x \ket{x}$$
+
+where $v(b)$ is the eigenvalue corresponding to $v$. In this way, we see that by writing $\ket{\psi(0)}$ in terms of an energy eigenbasis we can exactly solve the Schrodinger equation.
+
+In this way, solving quantum dynamics correponds exactly to finding the eigenvectors of the Hamiltonian. Or, in other words, diagonalizing the Hamiltonian. This task, while conceptually easy, can be very difficult in specific cases. Diagonalizing matrices has never been so exciting!
+
+
+$\newline$
+\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{
+
+\begin{center}
+\textbf{History and further reading:}\\
+\end{center}
+
+[WORK: there are people who can do a history of quantum mechanics way better than me]
+
+A fantastic place to first learn about quantum mechanics and its principles is the popular science book ``Quantum computing since Democritus" \cite{aaronson2013quantum}. A more formal, but still excellent, introduction to finite-dimensional quantum theory is Nielsen-Chuang's book ``Quantum computation and quantum information" \cite{nielsen2010quantum}. Past this there are many great textbooks which go into full depth on infinite-dimensional quantum theory and advanced properties of quantum systems. A good physics-oriented text is Shankar's ``Principles of quantum mechanics" \cite{shankar2012principles}, and a good math-oriented text is Hall's ``Quantum theory for mathematicians" \cite{hall2013quantum}.
+
+}}
 
 
 $\newline\newline$
@@ -653,10 +899,585 @@ $\newline\newline$
 
 \begin{enumerate}[\thesection .1.]
 
-\item hey
+\item .[WORK: show that the adjoint really is the conjugate transpose] [WORK: change verbiage above from ``conjugate transpose" to ``adjoint"]
 \end{enumerate}
 
+[WORK: need to add somewhere that global phases don't matter, clear up this ambiguity]
+
+
 \section{Topological quantum order}
+
+\subsection{Overview}
+
+\subsubsection{Introduction}
+
+In this chapter we will be giving a detailed analysis of topological quantum order, a particular type of topological quantum system. We recall below how this fits into the general framework of this book:
+
+\begin{equation*}
+\tikzfig{mathematical-outline-TQO}
+\end{equation*}
+
+Topological quantum systems are distinguished by the fact that their states don't depend on local properties - they depend only on global topological properties of the system. One way of getting this sort of topological invariance is through \textit{discreteness}. If a system is discrete, all of its parts are in a sense \textit{far away} from each other. Things which are far away cannot be continusly deformed from one to another - local changes can't change discrete objects. A real-number values invariant could move all over the place and depend heavily on local properties of a system, but an integer-valued invariant is \textit{neccecarily} topological invariant. It's for this reason that physicists often defined topological quantum invariants to be integer-valued quantum invariants [Thouless book].
+
+We demonstrate this below in its most basic form. Suppose that $V$ is a Hilbert space and $H:V\to V$ is a Hermitian operator. This represents a quantum system and its Hamiltonian. Let $\ket{\psi}$ be an energy eigenstate with energy $E$. Suppose further that the $E$-eigensapce of $H$ is one dimensional, and that every other eigenvalue $E'$ on $H$ satisfies $|E'-E|\geq \Delta$ for some real number $\Delta>0$. This situation is demonstrated in the below graph:
+
+\begin{equation*}
+\tikzfig{TQO-spectrum-1}
+\end{equation*}
+
+This energy gap around $E$ adds a sort of discretness to the spectrum of $H$. Suppose that the system is in state $\ket{\psi}$ and we distort it a small amount. Typically, \textit{this will not affect the state}. The state $\ket{\psi}$ would need to jump all the way to some other state, but all other states have significantly different energies. In particular, if the perturbation applied to $\ket{\psi}$ has magnitutde significatly less than $\Delta$, then $\ket{\psi}$ cannot change. This connection between gaps in energy spectra and topological states is so essential that many physicists use the terms \textit{topological system} and \textit{gapped system} interchangably. 
+
+So, in practice, how do we make sure that the perturbations being applied to $\ket{\psi}$ are always much smaller than $\Delta$? We make the system \textit{cold}. Roughly we say that a system has \textit{temperature} $T$ if the states of the Hamiltonian being occupied all have energy $<T$, and perturbations from the environment have magnitute $\approx T$. We renormalize our Hamiltonain so that the lowest energy eigenstate has energy $0$. We call the lowest energy eigenstates the \textit{ground states} of the system. We now assume that the ground state space is one dimensional, so there is a unique ground state. We assume that the next lowest energy eigenvalue is $\Delta>0$. This gives us a new picture:
+
+\begin{equation*}
+\tikzfig{TQO-spectrum-2}
+\end{equation*}
+
+So long as the temperature is much smaller than the energy gap ($T\ll \Delta$), then our system will remain in the ground state. We say that the system $(V,H)$ \textit{becomes topological at low temerature}. 
+
+Of course, there's a big problem in our above discussion. \textit{Every} finite dimensional quantum system is gapped. The Hamiltonian has finitely many eigenvalues, so its spectrum is neccecarily discrete. What we should really be imagnining is an infinite family of systems, paramaterized by some real number $L>0$ called the \textit{linear system size}. Working in a two dimensional system, this will look like the below picture:
+
+\begin{equation*}
+\tikzfig{system-size}
+\end{equation*}
+
+Letting $\dim(V)$ denote the dimension of $V$, this gives us an assymptotic formula $\dim(V)\sim e^{(\text{const})\cdot L^2}$ where the constant in the exponent depends on the density of quantum degrees of freedom in the system. Let $\Delta_L$ be the lowest nonzero energy of the Hamiltonian in the size-$L$ system. Of course, we will always have a gap $\Delta_L>0$. What's important is that we require that $\Delta_L>\Delta$ for some uniform $\Delta>0$. In most quantum systems this will \textit{not} be there case - as the system size gets larger there will be states with smaller and smaller nonzero energies.
+
+The issue with our discussion up to now is that it is \textit{no use} for making a topological quantum computing. There is only a single ground state, so there is no non-trivial topologically protected information. There's just a point. To make a quantum computer we will need to introduce \textit{degeneracy} into the ground states - make the lowest energy eigenspace higher dimensional. This degenerate ground space is where we will store our information.
+
+If we do this naively, there's an immediate issue which appears. What if a perturbation of the system keeps the vectors in the ground space, but perturbs exactly which vector in the ground space is being stored. Wouldn't this corrupt the data? The trick is choose the ground space correctly so that this does not happen. The way this works is by choosing a ground space which has a basis consiting of vectors which are in a certain sense ``far apart". Because they are far apart, they cannot easily be distored from one to another.
+
+More explicitley, let us choose standard basis $S$ for $V$, inducing an isomorphism $V= \CC[S]$. This basis should correspond to the physical degrees of freedom underlying the system. If $V$ is made up of an $L$ by $L$ grid of some repeating quantum sub-system, then choosing some arbitary basis $D$ for that subsystem a good choice for $S$ is $D^{L^2}$, coming from the isomorphism $\CC[S]\cong \CC[D]^{\otimes L^2}$ where $\otimes$ in the exponent denotes repeated tensor product. The canonical metric on $\CC$ induces a product metric on $V=\CC[S]$. It is with respect to this topology that we want our basis for the ground space to be far apart. That is, we require a basis $B$ for the ground space such that for every $b_1,b_2\in B$, $|b_1-b_2|$ is large. The exact scale of large depends on the topological system. At the very least it should tend to ininity with system size. In this case we will require an exponential scaling, $|b_1-b_2|>e^{(\text{const})L}$:
+
+\begin{equation*}
+\tikzfig{TQO-basis-distance}
+\end{equation*}
+
+[WORK: this stuff about distance is totally bogus. The real point is that if you differ at a large number of sites then it neccecarily takes a large number of local errors to make a difference! Probability gets exponentially suppressed. Global feature $\implies$ touches $>(\text{const})\cdot L$ sites ]
+
+This allows us to state a full picture of how to store topological information in a gapped system. Suppose we have some gapped system as before with distinguished geometric basis $S$, Hilbert space $V=\CC[S]$, Hamiltonian $H$, temperature $T$, topological energy gap $\Delta$, and linear system size $L$. We suppose $T\ll \Delta$, $L\gg 0$. Suppose further that the information we wish to store is the ground state
+
+$$\ket{\psi}=\sum_{x\in S}c_x \ket{x}.$$
+
+As time goes, we image the coefficents $c_x$ continuously varying due to noise. This noise should have magnitute $\cong T$. We control our information by repeately measuring with repsect to $H$. This measurement continually projects the our information back into an eigenstate. This is a mathematical mechanism for \textit{cooling} - keeping the energy low. A few things could happen when $H$ is measured.
+
+\begin{enumerate}
+\item Typically, after measuring the state will be projected back into the ground state space. The stored information will change a small continuous amount. The magnitute of this change is on the order of $T/e^{(\text{const})L}$. This is because basis vectors in the ground space are on the scale of $e^{(\text{const})L}$ times further apart than the basis vectors of $\CC[S]$. Hence, the metric on the ground space is dialated by a factor of $e^{(\text{const})L}$, which has the effect of dampening the magnitute of the drift. Even though our stored information is always being corrupted by noise, the magnitute of this noise is tiny. Making the system size large, we can efficently make the drift arbitaraily small. For any polynomial-length algorithm, the total amount of drift is still suppressed to large enough degree that the errors are tolerable. This means that our information is \textit{topologically protected} in this case.
+
+\item After measurement, the state could get projected onto an energy eigenstate which is \textit{not} a ground state. This corresponds to a spontanous jump in energy. The probability of such a jump is suppressed by the magnitute of the gap, giving a probability on the order of $T/\Delta$. Choosing $T\ll \Delta$, we can make this probability small. However, we cannot make it arbitrarily small, and errors of this type need to dealt with as they will surely appear in any sufficently long algorithm. The upside is that when these errors occur it is entirely detectable - the outcome of the measurement of $H$ is some observable energy, and it can be detected when that energy becomes nonzero. When it is detected that the energy is nonzero, then the experimenters can project the system back into the ground space by applying some external probe. The experiments can choose this projection carefully so that it sends the state to the nearest ground state, keeping the information drift on the order $T/e^{(\text{const})L}$. The details of how experimenters project non-ground states into ground states depends from topological system to topological system, and is often the heart of a proposal for topological quantum computing.
+\end{enumerate}
+
+All in all, we find that following the procedures outlined above we can store topological information with essentially no errors. This is topological quantum memory.
+
+The question now is how to make a \textit{computer} of this. How do you act on the information stored this way in a gapped system? How do we go from one state to another in a topologically protected way? There are lots of different ways to do this, each of which have many equivalent descriptions. Here I will present a framework similar to the one introduced by Aasen-Wang-Hastings \cite{aasen2022adiabatic}. In this framework, we perform computations by slowly transformation which Hamiltonian $H$ we use to cool the system.
+
+Suppose we have some state $\ket{\psi}$ we want to perform our computation on. We will choose some a family of Hamiltonians $H_t$, one for each time $t\in [0,1]$. We will require that $H_0=H_1=H$ is our original Hamiltonian. We will continuously transform which Hamiltonian we use to cool the system. That is, at every time step $t$, we measure the system with repsect to the Hamiltonian $H_t$. Assuming that the Hamiltonians vary slowly enough, our comments above apply. Namely, at time $t$ either the state will stay a ground state of $H_t$ with minimal drift or it will spontanously jump to an excited state. In the case that it jumps to an excited state, we can apply an external probe to project it back into a ground state. Letting $\ket{\psi(t)}$ denote the state at time $t$, we find that $\ket{\psi(1)}$ will be some new ground state of $H$, which is well-defined up to errors on the scale $T/e^{(\text{const})L}$.
+
+The beautiful observation is that $\ket{\psi(1)}$ does not need to be equal to $\ket{\psi(0)}=\ket{\psi}$. If the path taken by the Hamiltonains is non-trivial it can have a non-trivial action on the ground states, and serve as a source of computation. This is topological quantum computation. This sort of continuous evolution of a Hamiltonian while keeping a state in the ground state is known as an \textit{adiabatic} evolution of the Hamiltonian. An important point to emphaize is that for the above procedure to work, the Hamiltonians $H_t$ must all have energy gaps, and these gaps must all be bounded below. Namely, $>\Delta$ for a fixed $\Delta$. This model of computation can be summarized as saying that computations are performed by adiabatically transforming the Hamiltonian along non-trivial paths in the configuration space of all possible gapped Hamiltonians.
+
+This already allows us to make interesting comments about the nature of topological quantum computing. To make a powerful quantum computer, there needs to be a lot of different loops that the Hamiltonian can go around, corresponding to a lot of possible different gates that can be applied. This means that the path-connected component of the original Hamiltonian in the configuration space of all possible gapped Hamiltonians has to have lots of non-trivial loops - its fundamental group needs to be large. Choosing gapped Hamiltonains whose path connected component in the space of gapped Hamiltonians has interesting topology is the art of topological quantum computing. It is here that we can get the definition of what a topological order is. It is a path connected component in the configuration space of gapped Hamiltonians. Or, equivalently, an equivalence class of gapped Hamiltonian up to continuous deformation.
+
+Note that the exact definition of gapped Hamiltonian is subtle, because really we are talking about infinite families of Hamiltonians paramaterized by system size, and so our above definiitons of topological order are only approximate. The point is that topological order captures the inherent algebraic structure and nontrivial topology with a gapped Hamiltonian, while forgetting the details of how that Hamiltonian is defined.
+
+[WORK: How should I define topological order, as opposed to simply ``gapped Hamiltoninan"? What am I missing? Is this something I even want to define it? Add a subsection?]
+
+\subsection{Lattice gauge theory}
+
+\subsubsection{Ordered media on a lattice}
+
+Above we defined topological order. The best way to demonstrate the general prinmciples of topological order is to give a good family of examples. The examples we will give in this section come from \textit{lattice gauge theory}. At its heart, lattice gauge theory is a quantum version of the notion of ordered media we defined in Chapter [ref] section [ref]. While mathematically unnececary, the next two subsections give physical motivation for why the formulas for lattice gauge theory have to be like they are, and why their analysis behaves like it does. Those who feel comfortable working with unmotivated formulas should skip to subsection [ref].
+
+We will go from ordered media to lattice gauge theory in two steps:
+
+\begin{enumerate}[Step 1:]
+\item Put ordered media on a lattice;
+\item Make it quantum.
+\end{enumerate}
+
+This first subsection is focused on Step 1. We will do Step 2 in the next subsection.
+
+The first natural question to ask is \textit{what is a lattice}. For our purpose a lattice is something like the picture below:
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=.04]{lattice-example}
+\end{center}
+\end{figure}
+
+A lattice is a collection of vertices, edges, and faces connected in some way. To keep in line with the terminology common in topological quantum information, we refer to the faces of our lattices using the French term \textit{plaquette}. Formally, by lattice we mean ``simplicial 2-complex" though there is no need to go into details because we will never be dealing with the subtleties in the definition. Often times we will need to deal with \textit{directed} lattices. These are lattices in which every edge has a direction, which we represent as an arrow on that edge.
+
+Before putting ordered media on a lattice, a good question is \textit{why} we would want to do this. There are two primary reasons. The first is that this will make this Hilbert spaces involved all finite dimensional. This is very important because we have only established quantum mechanics in the finite dimensional case, and working with the continuum limit can be highly complex. The second reason is that in practice, many of the systems physicists deal with are on lattices. For example, the chip of a quantum computer will store its information at finitely many sites, which can correspond to the vertices of some lattice. Many topological systems also arrise from materials which have crystal structures, which are modeled well by a lattice with atoms at the vertices and edges representing the geometry of the crystal.
+
+The best setting for putting our ordered media on a lattice is by first putting on a torus. This helps for several reasons. Firstly, a torus is compact and hence it will add even more finiteness to the problem. Secondly, a torus has nontrivial topology which is useful for seeing the characteristic phenomina of topological order. Thirdly, a torus has no boundary, which helps because boundaries in topological order are subtle and require more work to describe. We denote the torus by $T^2$, and identify it with a square having its opposite sides glued:
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=.04]{torus-definition}
+\end{center}
+\end{figure}
+
+Ordered media on the torus corresponds to continuous maps $\phi: T^2\to M$ where $M$ is some fixed order space. The steps to transforming a state $\phi$ into a lattice version of itself go as follows:
+
+\begin{enumerate}[Step $\text{1}$(a):]
+\item Choose a directed lattice on the torus;
+\item Choose a basepoint $m\in M$. Make \textit{local twists} around each vertex so that $\phi(v)=m$ for all vertices $v$ in the lattice.
+\item On every edge, write down the winding number of $\phi$ along that edge, as an element of $\pi_1(M,m)$;
+\item Forget $\phi$, and remember only the assignment of group elements in $\pi_1(M,m)$ to edges in the lattice.
+\end{enumerate}
+
+These steps deserve explanation. Step 1(a) is clear: we choose an arbitrary lattice on the torus. Typically we will choose the square lattice on the torus:
+
+[WORK: add diagram]
+
+Step 1(b) requires more explanation. The picture to imagine is that we take the state $\phi$ and twist its values in small neighborhoods around each vertex to enforce the condition $\phi(v)=m$. Formally, this means choosing another state $\tilde{\phi}$ such that $\tilde{\phi}(v)=m$ for every vertex $v$ of the lattice, and $\tilde{\phi}=\phi$ outside of some chosen small neighborhoods around each vertex. The fact that we can always choose such as state $\tilde{\phi}$ is a consequence of general mathematical principles in homotopy theory. Of course, different choices of $\tilde{\phi}$ will change the final result of our lattice encoding. However because any two choices of $\tilde{\phi}$ can only differ by local changes they can't be \textit{too} different, in a way we will quantify later in the subsection.
+
+Step 1(c) is straightforward. Every edge can be thought of as a path. Pushing forward with $\phi$, this gives us a path in $M$. Since the edge starts and ends at vertices and $\phi$ sends all vertices to $m$, this means that the push forward of our edge gives a loop in $M$ based at $m$. Hence, it gives an element of $\pi_1(M,m)$. We can record this element and attach it as a piece of data associated to the edge.
+
+Step 1(d) is entirely book keeping. It records the fact that we have successfully transformed our continuous data ($\phi:T^2\to M$) into discerete data (an assignement of group elements to edges in a lattice).
+
+A worked example is shown below in the case that $M=S^1$ is the circle:
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=.3]{full-example}
+\end{center}
+\end{figure}
+
+We now analyse our encoding of states in ordered media into assignements of group elements in $\pi_1(M,m)$ to edges in the lattice. The first fact from homotopy theory we will use is that these group elements determine the state $\phi$ exactly up to deformations localized within each face. Taking a limit of denser and denser lattices, this means that the group elements will specify $\phi$ up to increasingly local deformations. The intiution is that by taking an infinite lattice limit we should recover $\phi$ up to ``infinitely local deformations", i.e., we recover it exactly. In this way we did a good job with our lattice encoding.
+
+We observe that not every assignement of group elements to edges appears in our construction. There are implicit conditions. In particular, imagine taking the product of the group elements on edges along some contractible loop, taking inverses appropriately so that all the arrows are pointing in the same direction. This product will be equal to the group element associated with the loop around this whole path. The winding number along any contractible path under a continuous map should be trivial. Hence, the product of these group elements should be trivial. In particular, given any plaquette, the ordered product of group elements along its edges should be zero:
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=.06]{plaquette-rule}
+\end{center}
+\end{figure}
+
+Moreover, \textit{any} coloring of the edges of the lattice by elements of $\pi_1(M,m)$ will come from some map $\phi$ so long as it satisfies the condition above. This is one of the key formulas of the theory. It is in a real sense a lattice version of the continuity condition, since it is \textit{equivalent} to the condition of continuity in the infinite lattice limit. This lattice version of continutity is called \textit{flatness}. Flatness conditions are the most common sort of compatibility conditions which appear when you have local degrees of freedom valued in some group, making this lattice situation very general.
+
+The last thing do deal with in analysing our system is deformation. When analysing states in ordered media, a huge amount of our time was spent on performing continuous deformations. Topological information is defined to be information which is invariant under continuous deformation. What does this correspond to in the lattice model?
+
+Suppose we are given an ordered media state $\phi$ and its corresponding lattice coloring. If we deform $\phi$ in some small neighborhood within a face, this will not change the values along the edges and hence will not change the coloring. If we deform $\phi$ in some small neighborhood around the interior of some edge this also won't change the coloring, because this will correspond to deforming the loop in $M$ induced by going along that edge, and elements of the fundamental group are invariant under deformations of this sort. Another way of seeing that the coloring can't change is that flatness must be preserved - if the group element on the deformed edge changed, it would ruin flatness on the faces it bounds.
+
+Finally, we can consider deforming $\phi$ around some vertex. This certainly \textit{can} impact the coloring. An easy way to compute how it must impact the coloring is by using the fact that the flatness condition must be preserved. Suppose that an incoming edge labled by $g_1$ changes to $g_1 g$ after the deformation. Enforcing flatness along all of the faces touching the vertex allows one to conclude that all incoming edges $g_k$ will get changed to $g_k g$, and all outgoing edges $g_k$ will get changed to $g^{-1}g_k$, as shown below:
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=.04]{gauge-transformation}
+\end{center}
+\end{figure}
+
+Another way of seeing this result is by anlysing what a deformation of $\phi$ does. The value $\phi(v)$ can move along some loop, starting and ending at $m$. This loop induces some element of the fundamental group, $g\in \pi_1(M,m)$. Performing this deformation exactly acts by precomposing/postcomposing the adject edges with $g$/ $g^{-1}$ accordingly. We can see below a concrete example for $G=S^{1}$:
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=.45]{twisting}
+\end{center}
+\end{figure}
+
+Hence, we have a picture for ordered media on the lattice: states correspond to flat colorings of elements of $\pi_1(M,m)$ on a fixed lattice, and continuous deformations correspond to certain vertex actions by elements of $\pi_1(M,m)$.
+
+\subsubsection{From ordered media to gauge theory}
+
+In the previous subsection we showed how to put ordered media on a lattice. In this section we show how to make it quantum, turning it from a classical field theory to a quantum gauge theory. The idea of this jump is as follows. In Section [ref] we obtained an equivalence
+
+$$
+\left(\substack{\text{topological information}\\ \text{in ordered media}}\right)=\left(\text{states}\right)/\left(\substack{\text{continuous} \\ \text{deformation}}\right).
+$$
+
+It is neccecary to mod out by continuous deformation because there is topoloigcal information in states, but also local degrees of freedom. For instance, the group element assigned to any indivudal edge in ordered media on a lattice can be changed by a gauge transformation and hence is not topologically invariant. The idea of going from ordered media to gauge theory is as follows: gauge theory is what results from ordered media when quantum fluxtuations become so strong that local degrees of freedom are completely washed out and only the topology remains.
+
+The fluxtuations are quantum because we will imagine that our states will evolve in such a way that they are in a superposition of gauge transformations having been applied and not having been applied. Our states in gauge theory will be \textit{equal superpositions over all possible deformations} of a given state. In this way, we are using quantum mechanics as a physical mechanism for quotients. Equivalence classes under deformation will be physically realized as equal superpositions over all possible representatives.
+
+This can all be made completely rigorous. Choose a lattice on the torus, an order space $M$, and a basepoint $m$. We define a Hilbert space
+
+$$\NN=\bigotimes_{\text{edges}}\CC[G].$$
+
+We canonically identify the standard basis of $\NN$ with $G$-colorings of the lattice. Let $C$ be an equivalence class of flat $G$-colorings of $\NN$ up to gauge transformations. There is a corresponding state
+
+$$\ket{C}=\sum_{\gamma \in C}\frac{1}{\sqrt{|C|}}\ket{\gamma}.$$
+
+This state is a normalized equal superposition of representatives of $C$. This defines a sub-Hilbert space
+
+$$\C=\text{span}\left\{\left.\ket{C}\right| C\in \text{(flat $G$-colorings)}/\text{(gauge transformations)}\right\}.$$
+
+This Hilbert space $\C$ stores the information in our gauge theory.
+
+So far our system is relatively trivial - it is just a Hilbert space, with no Hamiltonian. We connect it back to our original picture of topological order. The space $\C$ is the collection of ground states in a topologically ordered system. Above it there is a whole spectrum of other states. This fuller picture with a Hamiltonian adds all of the subtlety and intrigue to the system.
+
+In particular, we observed in Chapter [ref] section [ref] we observed the importants of quasiparticles in ordered media. These formed the heart of our information processing. Similarly, in gauge theory there will be quasiparticles as well, which appear as anyons higher up in the spectrum of the Hamiltonian. Some of these anyons correspond to the classical quasiparticles in ordered media, but other anyons are entirely new features of the system which did not exist before. We will analyse all this in more in the subsection that follows.
+
+\subsubsection{Kitaev quantum double model}
+
+[WORK: not sure if this is readable to someone who skipped the first two sections, but it should be. Something to keep an eye on.]
+
+In this section we will give the Hamiltonian formulation of lattice gauge theory. Seeing as we have moved passed ordered media, we will no longer be working with order spaces and base points. Instead, we will choose an abstract finite group $G$ which replaces $\pi_1(M,m)$. The general picture for creating our Hamiltonian is simple, and follows a very general pattern in quantum theory: instead of enforcing properties rigidly as conditions, we will enforce them enforce properties energetically as terms in a Hamiltonian. The formulation we give below is known as the \textit{Kitaev quantum double model of lattice gauge theory}. It was introduced in Kitaev's seminimal paper on topological quantum information [ref]. It has been studied extensively in the literature by many authors [add more refs].
+
+Choose a directed lattice on the torus. Let
+
+$$\NN=\bigotimes_{\text{edges}}\CC[G]$$
+
+be the HIlbert space of our quantum system. The space $\NN$ has a canonical basis given by $\prod_{\text{edges}}G$, which we  identify with $G$-colorings of the lattice. Given a $G$-coloring $\gamma$, we will denote the corresponding state in $\NN$ by $\ket{\gamma}$. For every plaquette $p$ in the lattice, we define an operator on $\NN$ by
+
+$$B_p\ket{\gamma}=
+\begin{cases}
+\ket{\gamma} & \gamma \text{ flat at }p\\
+0 & \text{otherwise}.
+\end{cases}$$
+
+We observe immediately that
+
+$$\sum_{\text{plaquettes }p}(1-B_p)\ket{\gamma}=0 \iff \ket{\gamma} \text{ is flat.}$$
+
+It is in this way that we can enforce properties energetically by adding them as terms to a Hamiltonian. If we chose the Hamiltonian to be $\sum_{\text{plaquettes }p}(1-B_p)$, then the lowest energy eigenspace would exactly correspond to the space spanned by flat $G$-colorings. For every vertex $v$ and group element $g\in G$, we define an operator on $\NN$ by
+
+$$A_{v,g}\ket{\gamma}=\ket{\gamma \text{ acted on by the $g$ gauge action at $v$}}.$$
+
+For any $\ket{\psi}\in \NN$, we call $\ket{\psi}$ \textit{gauge invariant at $v$} if $A_{v,g}\ket{\psi}=\ket{\psi}$ for all $g\in G$. We call $\ket{\psi}$ gauge invariant if it is gauge invariant at $v$ for all vertices $v$. We define
+
+$$A_v=\frac{1}{|G|}\sum_{g\in G}A_{v,g}.$$
+
+We define the Hamiltonian of our system to be
+
+$$H=\sum_{\text{vertices $v$}}(I-A_v)+\sum_{\text{plaquettes $p$}}(I-B_p)$$
+
+where $I$ is the identity operator. We summarize the basic properties of this Hamiltonian below:
+
+\begin{proposition} The following properties of the Kitaev quantum double Hamiltonian hold:
+
+\begin{enumerate}[(a)]
+\item The operators $A_v$, $B_p$, and $H$ are Hermitian for all vertices $v$ and plaquettes $p$;
+\item The formula $A_{v,g}^{\dagger}=A_{v,-g}$ holds for all vertices $v$ and $g\in G$;
+\item All of the operators in the set $\{A_v,B_p\}_{v\in \text{vertices}, p\in \text{plaquettes}}$ commute with every other operator in the set;
+\item The eigenstates of $H$ are simultaneous eigenstates of the operators $A_v$, $B_p$;
+\item The eigenvalues of the $A_v,B_p$ are all $0$ or $1$;
+\item The lowest eigenvalue of $H$ is $0$, and the $0$-eigenspace of $H$ is
+
+$$\C=\text{span}\left\{\left.\ket{C}\right| C\in \text{(flat $G$-colorings)}/\text{(gauge transformations)}\right\}.$$
+
+where for we define the ket
+
+$$\ket{C}=\sum_{\gamma \in C}\frac{1}{\sqrt{|C|}}\ket{\gamma}$$
+
+for any equivalence class $C$ of $G$-colorings of the lattice up to gauge transformations.
+
+\end{enumerate}
+\end{proposition}
+\begin{proof}.[WORK: do proof]
+\end{proof}
+
+In particular, the above proposition tells us exactly that we have acheived our goal of realizing a Hamiltonian whose ground states capture the topological information in a lattice-version of ordered media.  The term ``double" in the Kitaev quantum double model refers to the fact that there are two families of terms in $H$ - one family of type $A_v$ and one family of type $B_p$. We can readily compute the dimension of the ground space as follows:
+
+\begin{proposition} Choose a vertex $v$ in the lattice. Every $G$-coloring of the lattice induces an assignment of lattice loops on the torus based at $v$ to elements of $G$, based on taking the oriented winding number along that loop relative to the coloring. This restricts to a map
+
+$$(\text{flat $G$-colorings})\xrightarrow{}\Hom(\pi_1(T^2,v), G)$$
+
+where $\Hom(\cdot,\cdot)$ denotes the space of group homomorphisms between two groups. Any two flat $G$-colorings which differ by gauge transformations will induce the same map in $\Hom(\pi_1(T^2,v), G)$, up to global conjugation by an element of $G$. This induces a bijection
+
+$$(\text{flat $G$-colorings})/(\text{gauge transformations})\xrightarrow{}\Hom(\pi_1(T^2,v), G)/\left(\substack{\text{simultaneous} \\ \text{conjugation}}\right).$$
+
+The set of vectors ${\ket{C}}_{C\in (\text{flat $G$-colorings})/(\text{gauge transformations})}$ is linearly independent. Hence, there is a canonical isomorphism
+
+$$\C \xrightarrow{}\CC[\Hom(\pi_1(T^2,v), G)/\left(\substack{\text{simultaneous} \\ \text{conjugation}}\right)]$$
+
+given by taking winding numbers.
+\end{proposition}
+\begin{proof}.[WORK: give proof]
+\end{proof}
+
+The final step in using the above formula is to compute the fundamental group of the torus:
+
+\begin{proposition} $\pi_1(T^2,v)\cong \ZZ^2$ for any vertex $v$. The two loops shown below are generators for $\pi_1(T^2,v)$:
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=.3]{torus}
+\end{center}
+\end{figure}
+
+\end{proposition}
+\begin{proof}.[WORK: proof]
+\end{proof}
+
+One last observation to make about this ground space is that its ground states really are globally different:
+
+\begin{proposition} Let $L$ be length of the shortest non-contractible loop on the lattice. Let $\gamma_0,\gamma_1$ be non-gauge equivalent flat $G$-colorings of the lattice. There are at least $L$ edges at which $\gamma_0$ and $\gamma_1$ assign different values.
+\end{proposition} 
+\begin{proof}.[WORK: do proof]
+\end{proof}
+
+In particular, if we choose the square lattice on the torus, then the length $L$ of the shortest non-contractible loop is obvioulsy a good measure of linear system size. Proposition [ref] tells us that the number of local changes requires to go from one ground state to another is on the order of $L$. This is exactly the sort of condition we needed in Section [ref] to conclude topological protection in the ground states. Of course, the smallest non-zero eigenvalue of $H$ is at least $1$, which is bounded away from zero and hence there is a system-size independent gap between the ground states and the other states. Hence, we see that $H$ is a good topologically ordered Hamiltonian. 
+
+The excited states of $H$ will be described localized excitations with quasiparticle behavior. Given a state $\ket{\psi}\in \NN$, we will say that a state has an \textit{anyon at vertex $v$} if $A_v\ket{\psi}=0$ and we will say that is \textit{unnoccupied at $p$} if $A_v\ket{\psi}=1$. We say that $\ket{\psi}$ has an \textit{anyon at plaquette $p$} if $B_p\ket{\psi}=0$ and that it is \textit{unnocupied at $p$} if $B_p\ket{\psi}=1$. By Proposition [ref], every energy eigensate is either occupied or unoccupied at every vertex/plaquette. The regions in which $\ket{\psi}$ is unnoccupied are all essentially identical, leading to a homogenous bulk. The sites at which $\ket{\psi}$ is occupied are different, and behave as quasiparticles. We will define operators which move these excitations around.
+
+We think of these anyons as being localized within faces or within arbitrarily small regions around vertices depending on whether they are vertex-type or plaquette-type. We will find that the states of $H$ can be almost entirely described by anyons and their behavior .
+
+[WORK: Add something about local indistinguishability of ground states - reinforce this ``homogenous bulk" idea]
+
+[WORK: Maybe also reinforce that this could be done on \textit{any manifold}, and the gound states would be the same? ]
+
+\subsection{The toric code}
+
+\subsubsection{Exact solution}
+
+In this section we move on to analyzing the Kitaev quantum double model for $G=\ZZ_2$, which is known as the \textit{toric code}. The name toric code comes from the fact that the toric code was first introduced as an error correcting code, and was only later recast as a topologically ordered system [refs]. The toric code is still the basis for many of the most popular error correcting codes [refs]. In a real sense the toric code is the simplest nontrivial topological order. It is a fantastic example which demonstrates almost all of the phenomina of topological order with relatively little work involved. The toric code, and more generally $\ZZ_2$ lattice gauge theories, can be found in all sorts of systems such as [WORK: give examples]. 
+
+We describe the model now. Because $G=\ZZ_2$ is abelian, we will switch to additive notation for our group operation. We choose a \textit{non-oriented} lattice structure on the torus. This lattice does not need to be oriented because changing the direction of edges in the lattice corresponds to taking inverses, and $g=g^{-1}$ for every element $g\in \ZZ_2$. We define
+
+$$\NN = \bigotimes_{\text{edges}}\CC[\ZZ_2]=\bigotimes_{\text{edges}}\CC^2.$$
+
+Here, we identify $\CC[\ZZ_2]$ with $\CC^2$ for convenience, endowing $\CC^2$ with a canonical basis $\{\ket{0},\ket{1}\}$. We call $\CC^2$ a \textit{qubit}, in analogy to ``bits" for classical computing. It is a standard two-level quantum system. Most quantum computers are based on qubits, which makes the toric code especially accessable to practical implementation as an error correcting code. The definition of the Hilbert space $\NN$ can be summarized as putting a qubit on every edge of the lattice. The Hamiltonian is
+
+$$H=\sum_{\text{vertices }v}(1-A_v)+\sum_{\text{plaquettes }p}(1-B_p).$$
+
+We unpack the general definitions of $A_v$ and $B_p$ for the toric code. The operator $A_{v,0}$ is the identity. The operator $A_{v,1}$ acts by a gauge transformation,
+
+[WORK: add $A_{v,1}$ formula]
+
+Defining
+
+\begin{align*}
+\sigma_X:\CC^2&\xrightarrow{}\CC^2\\
+\ket{0}&\mapsto \ket{1}\\
+\ket{1}&\mapsto \ket{0}
+\end{align*}
+
+we thus find that
+
+\begin{align*}
+A_{v,1}=\bigotimes_{\substack{\text{edges} \\ \text{touching }v}}\sigma_X, && A_v=\frac{1}{2}\left(I + A_{v,1}\right).
+\end{align*}
+
+Moving on to $B_p$, we recall that
+
+[WORK: add $B_p$ formula.]
+
+In the present case, $B_p$ has a more workable expressing that is symmetric to our description of $B_p$. Define
+
+\begin{align*}
+\sigma_Z:\CC^2&\xrightarrow{}\CC^2.\\
+\ket{0}&\mapsto \ket{0}\\
+\ket{1}&\mapsto -\ket{1}
+\end{align*}
+
+Philosophically, it is useful to interpret $\sigma_Z$ as acting as $\ket{g}\mapsto \chi(g)\ket{g}$ where $\chi:\ZZ_2\to\CC^\times$ is the unique nontrivial character of $\ZZ_2$, $\chi(0)=1$, $\chi(1)=-1$. Since $\chi$ is a group isomorphism, for any $g_1,g_2,g_3,g_3\in G$ we have an equivalence
+
+$$g_1+g_2+g_3+g_3=0 \iff \chi(g_1)\chi(g_2)\chi(g_3)\chi(g_4)=1.$$
+
+Defining an auxillary $B_{p,1}$, we thus find the following expression for $B_p$:
+
+\begin{align*}
+B_{p,1}=\bigotimes_{\substack{\text{edges} \\ \text{bounding }p}}\sigma_Z, && B_p=\frac{1}{2}\left(I + B_{p,1}\right).
+\end{align*}
+
+For simplicity, we will often rewrite the Hamiltonian as
+
+$$H=\frac{1}{2}\sum_{\text{vertices }v}(1-A_{v,1})+\frac{1}{2}\sum_{\text{plquettes }p}(1-B_{p,1}).$$
+
+The matrices $\sigma_X$ and $\sigma_Z$ we defined are known as \textit{Pauli matrices}. They are extremely common across formulae in quantum mechanics - this is another reason that the toric code is so ammenable to error correction applications. The basic properties of these matrices are summarized below:
+
+\begin{proposition}$\,$
+\begin{enumerate}[(a)]
+\item The operators $\sigma_X$ and $\sigma_Z$ are simultaneously unitary and Hermitian;
+\item $\sigma_X^2=\sigma_Z^2=I$;
+\item $\sigma_X \sigma_Z = - \sigma_Z \sigma_X$;
+\end{enumerate}
+\end{proposition}
+\begin{proof}.[WORK: do proof]
+\end{proof}
+
+An important thing to note is that $A_{v,1}$ and $B_{p,1}$ commute, despite the fact that $\sigma_X$ and $\sigma_Z$ anticommute. The fact that they commute follows from Proposition [ref], though it fruitful to reavulate that proposition in this present context. The important fact is that given any vertex $v$ on the exterior of any face touching $p$,  there are an \textit{even number} of edges which both touch $v$ and bound $p$. Hence, the number of tensor factors in which $A_{v,1}$ and $B_{p,1}$ anticommute is even, and hence overall they commute.
+
+The last step in reinterpreting our general theory of Kitaev quantum double models to the toric code is computing the ground space. We observe that since $\ZZ_2$ is abelian acting by conjugation does nothing, and hence
+
+$$\Hom(\pi_1(T^2,v), \ZZ_2)/\left(\substack{\text{simultaneous} \\ \text{conjugation}}\right)=\Hom(\pi_1(T^2,v), \ZZ_2).$$
+
+Seeing as we are no longer modding out by conjucation, the group operation on $\ZZ_2$ extends to a group operation on $\Hom(\pi_1(T^2,v), \ZZ_2)$. Hence this space forms an abelian group, which we denote
+
+$$H^1(T^2,\ZZ_2)=\Hom(\pi_1(T^2,v), \ZZ_2)=(\text{flat $\ZZ_2$-colorings})/(\text{gauge transformations}).$$
+
+[WORK: maybe set notation and write out four elements explicitely? Might be too much.]
+
+This is the \textit{cohomology group of $T^2$ with coeffecients in $\ZZ_2$}. Since $\pi_1(T^2,v)\cong \ZZ^2$, we conclude that
+
+$$H^1(T^2,\ZZ_2)\cong \ZZ_2^2.$$
+
+Hence, we obtain the following:
+
+\begin{proposition} The $0$-eigenspace of $H$ is four dimensional. It is spanned by the vectors
+
+$$\ket{C}=\frac{1}{\sqrt{|C|}}\sum_{\gamma\in C}\ket{\gamma}$$
+
+for $C\in H^1(T^2,\ZZ_2)$.
+\end{proposition}
+\begin{proof}.[WORK: do proof]
+\end{proof}
+
+\subsubsection{Anyons in the toric code}
+
+We now turn to analysing anyons in the toric code - localized excitations which behave as quasiparticles. Keeping in line with general principles about the Kitaev quantum double model, given a state $\ket{\psi}\in \NN$ we say that there is an anyon at vertex $v$ if $A_v\ket{\phi}=0$, and we say that vertex $v$ is unnoccupied if $A_v\ket{\phi}=\ket{\psi}$. Similarly, we say that there is a quasiparticle at plaquette $p$ if $B_p\ket{\psi}=0$ and that plaquette $p$ is unoccupied if $B_p\ket{\psi}=\ket{\psi}$. In summary,
+
+\begin{align*}
+\text{$\ket{\psi}$ has anyon at $v$}\iff A_v\ket{\psi}&=0 \iff A_{v,1}\ket{\psi}=-\ket{\psi}\\
+\text{$\ket{\psi}$ has anyon at $p$}\iff B_p\ket{\psi}&=0 \iff B_{p,1}\ket{\psi}=-\ket{\psi}.
+\end{align*}
+
+We call the anyons at vertices \textit{vertex type} or \textit{$Z$-type} anyons, and we call the anyons at faces \textit{plaquette type} or \textit{$X$-type} anyons. Our key observation is that applying $\sigma_X$ and $\sigma_Z$ gives total control over the behavior of anyons. Namely, applying $\sigma_X$ or $\sigma_Z$ in the correct circumstates corresponds to creating, moving, and fusing anyons. This comes from the following computation. Given an edge $e$ in the lattice and an operator $U:\CC^2\to \CC^2$, denote by $(U)_e:\NN\to\NN$ the operator which applies $U$ on the tnesor factor of $\CC^2$ at edge $e$. We compute the following:
+
+\begin{lemma} For any vertex $v$, edge $e$, plaquette $p$, we have
+
+\begin{align*}
+A_v  (\sigma_X)_e=(\sigma_X)e A_v, && B_p (\sigma_Z)_e=(\sigma_Z)e B_p,
+\end{align*}
+
+\begin{equation*}
+A_v (\sigma_Z)_e=
+\begin{cases}
+- (\sigma_Z)_e A_v & \text{if $e$ touches $v$}\\
+(\sigma_Z)_e A_V & \text{otherwise}
+\end{cases}
+\end{equation*}
+
+and
+
+\begin{equation*}
+B_p (\sigma_X)_e=
+\begin{cases}
+- (\sigma_X)_e B_p & \text{if $e$ bounds $p$}\\
+(\sigma_X)_e B_p & \text{otherwise}
+\end{cases}
+\end{equation*}
+
+
+\end{lemma}
+\begin{proof}.[WORK: do proof]
+\end{proof}
+
+Suppose that $\ket{\psi}$ is a state with no anyons -that is, a ground state. Given any edge $e$, the state $(\sigma_X)_e \ket{\psi}$ will not be a ground state. In particular, it will no longer commute with $B_p$ at the two plaquettes touching $e$. In this way, applying $\sigma_X$ to the edge $e$ spontanously created a pair of $X$-type anyons around it. Similarly, the staet $(\sigma_Z)_e\ket{\psi}$ will no longer commute with the $A_v$ operators at the two vertices touching $e$. Hence applying $\sigma_Z$ to the edge $e$ spontaneously created a pair of $Z$-type anyons around it. Applying further $\sigma_Z$ and $\sigma_X$ operators has the effect of chaning the quasiparticle content of the state further. If both the adjacent sites are unnoccupied then applying the operator will create a pair of anyons, if one of the sites is occupied then applying the operator will move the anyon from the occupied site to the unoccupied site, and if both of the sites are occupied then applying the operator will annhilate the anyons. We demonstrate this in some examples below
+
+[WORK: three little examples.]
+
+We can use this idea of anyons to fully solve the toric code. We introduce some terminology and notation. Given an energy eigenstate $\ket{\psi}$, there is an associated map $\lambda: (\text{vertices})\sqcup (\text{plaquettes})\to \{\pm 1\}$ defined by the relation $A_{v,1}\ket{\psi}=\lambda(v)\ket{\psi}$, $B_{p,1}\ket{\psi}=\lambda(p)\ket{\psi}$. We call maps $\lambda: (\text{vertices})\sqcup (\text{plaquettes})\to \{\pm 1\}$ \textit{syndromes}, and the map associated to $\ket{\psi}$ is the \textit{syndrome of $\ket{\psi}$}. These syndromes allow us to speak intelligently about the locations of anyons within a state. For any syndrome $\lambda$, define
+
+$$\NN_\lambda=\left\{\ket{\psi}\left| \text{syndrome of $\ket{\psi}$ is $\lambda$}\right.\right\}.$$
+
+It is clear that
+
+$$\NN=\bigoplus_{\text{syndromes $\lambda$}}\NN_\lambda$$
+
+and
+
+$$\C=\NN_{\sigma(v)=\sigma(p)=1 \,\, \forall v,p}$$
+
+The following proposition and its proof give a complete description of the eigenstates and eigenvalues
+
+\begin{proposition}The dimension of $\NN_{\lambda}$ is $4$ if the number of vertices $v$ and plaquettes $p$ for which $\lambda(v)=-1$ and $\lambda(p)=-1$ are both even, and the dimension of $\NN_{\lambda}$ is zero otherwise. The eigenvalue of every vector in $\NN_{\lambda}$ is equal to the total number of anyons in the system.
+\end{proposition}
+\begin{proof}.[WORK: do proof]
+\end{proof}
+
+The anyons in the toric code are interesting objects in their own right. For example, we can analyse what happens when we braid anyons. Suppose that $\ket{\psi}$ is a state with one $X$-type anyon and one $Z$-type anyon at adjacent sites. That is, the $X$-type anyon is at a vertex $v$ touching a plaquette $p$. Moving the $Z$-type anyon around the $X$-type anyon corresponds to applying $\sigma_Z$ to the edges around the $X$-type anyone one by one. In other words, the operator required to move the $Z$-type anyon is the tensor product of $\sigma_Z$ along the edges bounding $p$. However, by definition, this operator is exactly $B_{p,1}$. We know that $B_{p,1}\ket{\psi}=-\ket{\psi}$ by the definition of having an anyon at plaquette $p$. Hence, we conclude that \textit{moving a $Z$-type anyon around an $X$-type anyon results in a phase of $-1$}. Similarly, we oberve that moving a $Z$-type anyon around an $X$-type anyon also results in a phase of $-1$, as shown below:
+
+[WORK: include diagram.]
+
+We codify this in a proposition. However, seeing as we have not defined what it means for one anyon to move ``around" another, we can only state it on the physical level of rigor:
+
+\begin{propositionph} Moving $X$-type anyons around $Z$-type anyons results in a phase of $-1$. Similarly, moving $Z$-type anyons around $X$-type anyons results in a phase of $-1$.
+\end{propositionph}
+\begin{proof}.[WORK: do proof]
+\end{proof}
+
+There is also an interesting action of anyons on the ground states of the toric code. This action is performed by starting with a ground state, creating anyon pairs, and then moving one of the anyons in that pair around a non-trivial loop around the torus, and then annhilating it back with its partner. This process is shown below:
+
+[WORK: include diagram]
+
+We can describe this action completely as fllows:
+
+[WORK: give the picture of TQC by moving anyons around in proposition-format]
+
+This concludes our picture of anyons in the toric code.
+
+\subsection{Non-abelian anyons}
+
+\subsubsection{Principles of anyons}
+
+We recall that \textit{anyons} are localized excitations in topologically ordered systems. They behave as quasiparticles. In the previous section we analysed the toric code, and explored the behavior of anyons in the toric code. There were two types of anyons : $X$-type and $Z$-type. Each anyon type was its own antiparticle. The anyons braided trivially with themselves, but bothing any type of anyon around the other results in a $-1$ phase. In this subsection we will discuss the general theory of anyons which the toric code is part of.
+
+To begin, we will recall some broader themes in particle physics. The modern world of particle physics is dominated by the \textit{standard model}. This model is a quantum field theory which describes the fundamental particles of the universe and how they interact. There are 61 different elementary particle types, each taking part in a broad explanation of the fundamental forces of the unvierse. An important feature of the standard model is a dichotemy between \textit{bosons} and \textit{fermions}. When bosons are exchanged it does not affect their underlying wave function, and when fermions are exchanged it results in a phase of $-1$.
+
+Put more concretely, consider some particle type $A$. Let $V_2$ denote the Hilbert space of a system containing $2$ identical $A$-type particles. We can consider a unitary operator $\swap:V_2\to V_2$, which encodes the action on $V_2$ induces by taking the two particles and swapping their positions. It is a feature of the standard model that the details of how this swap doesn't change the action on $V_2$ - there is a well-defined $\swap$ map which only depends on the topology of the swap. It is a fact from the standard model that either $\swap$ is the identity map or $\swap$ is the unitary which multiples phases by $-1$. If $\swap=I$ then we call $A$ a boson, and if $\swap=-I$ we call $A$ a fermion.
+
+We now explain why all of the particles in the standard model are bosons or fermions. The general idea is as follos. If we swap twice, then the particles go back to their original position. Hence, $\swap^2=I$. Hence, $\swap=I$ or $\swap=-1$. This general arguments works well for the standard model, but it has several subtleties which are important to highlight. Firstly, just because $\swap^2$ brings the particles got back where they started doesn't mean that the path they took has trivial topology. In space time it looks like the following:
+
+[WORK: add diagram]
+
+If physical space had two dimensions, then this is a topologically nontrivial braid. The important feature of the standard model is that it has three space dimensions. In three space dimensions, the double swap has trivial topology: the two strands can be moved smoothly past each other without intersected by pushing them into different parts of the third dimension. In general, the possible ways that $n$ particles can move around each other in two dimensions is the braid group $B_n$ we defined in section [ref], whereas the ways that particles can move around each other in three dimensions degenerates to the symmetric group $S_n$. Let $V_n$ denote the $n$ particle system of $n$ identical particles of type $A$. In two dimensions, moving the $n$ particles around in braids gives a representation
+
+$$B_n\xrightarrow{}U(V_n)$$
+
+whereas in three dimensions it gives a representation
+
+$$S_n\xrightarrow{}U(V_n).$$
+
+This difference between $B_n$ and $S_n$ causes a huge change between what is possible in three dimensions versus two dimensions. For instance, suppose that our braids only act by phases. That is, the image of the particle statistics maps lie in $U(1)\hookrightarrow{}U(V_n)$. In $B_n$, there is such a representation corresponding to any phase $\omega\in U(1)$. In this representation, exchanging two identical particles results in a phase $\omega$. In $S_n$, there are only two such representations: the trivial representation and the sign representation, corresponding to the phases $+1$ and $-1$ accordingly. These two representations correspond to bosons and fermions.
+
+The last part of the explanation of why all particles in the standard model are fermions and bosons is more subtle. From our above discussion, it is clearly a-priori possible that there could be particles in 3 spacial dimensions which act by non-trivial higher dimensional representations of $S_n$. It turns out that this doesn't happen, and in fact it \textit{can't} happen in any (3+1)D quantum field theory, but this is for much more subtle reasons [WORK: add refs]. This doesn't mean that there aren't any models in 3 dimensions with quasiparticles that aren't bosons or fermions - these certainly exist [WORK: add refs]. It just means that these models are more rare and require some amount of trickery. The fact that all fundamental particles in (3+1)D quantum field theories are fermions or bosons is one of the main reasons we are working with (2+1)D systems in this book.
+
+The toric code already demonstrates how particles can behave in ways in (2+1)D which are impossible in (3+1)D. When an $X$-type particle is moved all the way around a $Z$-type particle it results in a phase of $-1$. Of course, in (3+1)D moving one particle all the way around another is topologically trivial and hence would have to result in a phase of $+1$.
+
+It is from this discussion that the name \textit{anyon} arrises. Bosons have $+1$ exchange phases, fermions have $-1$ exchange phases. Anyons, excitations in topolgoically ordered systems, can have \textit{any} exchange phase. Hence, \textit{any}on. Additionally, there are many natural systems which exhibit anyons whose exchange statistics results in higher dimensional representations of the braid group. These are known as \textit{non-abelian} anyons. Anyons which act by phases are known as \textit{abelian} anyons.
+
+One intuition for the name abelian versus non-abelian comes from the Kitaev quantum double model. We will see that the Kitaev quantum double model based on a finite group $G$ hosts non-abelian anyons if and only if $G$ is non-abelian. Alternatively, you could motivate the name by noticing that an anyon is abelian if and only if the image of its associated braid group representation is abelian.
+
+The algebraic theory of anyons is the heart and soul of topological order. This is quantified by the fact that our algebraic description of topological order will really be an algebraic description of anyons, and we will be asserting implicitely that describing the behavior of the anyons is enough to describe the topological order.
+
+\subsubsection{The $G=D_4$ Kitaev quantum double model}
+
+.[WORK: I'm assuming that this is the easiest model to work with. There should be nice descriptions for the line operators, and there should be a nice way of getting useful information out. Maybe its better to do stuff for general $G$? This is something that will require a lot of care to do right.]
+
+$\newline$
+\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{
+
+\begin{center}
+\textbf{History and further reading:}\\
+\end{center}
+
+The term topological order was first used in 1972 by Kosterlitz and Thouless to describe topological classical systems of the sort discussed in Chapter [ref] \cite{kosterlitz2018ordering} . The term has since evolved, and was re-coined in 1989 by Xiao-Gang Wen to describe the sort of topological classical systems defined in this chapter \cite{wen1989vacuum}.
+
+The history anyons is distinct from the history of topological order. It was first noted in 1976  in a paper of Leinass and Myrheim that the classification of particles in terms of fermions and bosons broke down in two dimensions \cite{leinaas1977theory}. The subject of anyons was then taken over by Wilczek who published a series of seminal papers on the topic \cite{wilczek1982magnetic, wilczek1982quantum, arovas1984fractional}. It was in these papers that Wilczek observed that anyons were present in the quantum Hall effect, and hence connected the theory of anyons and topological order together.
+
+[WORK: what is the history of gauge theory, and when was it introduced to the picture? A great reference is the de Wild Propitius and Bais survey. Also should mention Kitaev's paper again.]
+
+}}
+
+
+$\newline\newline$
+
+\large \textbf{Exercises}:\normalsize
+
+\begin{enumerate}[\thesection .1.]
+
+\item For vertices $v$ and plaquettes $p$, define
+
+\begin{align*}
+A'_{v,1}=\bigotimes_{\substack{\text{edges} \\ \text{touching }v}}\sigma_Z, && A'_v=\frac{1}{2}\left(I + A'_{v,1}\right),
+\end{align*}
+
+\begin{align*}
+B'_{p,1}=\bigotimes_{\substack{\text{edges} \\ \text{bounding }p}}\sigma_X, && B'_p=\frac{1}{2}\left(I + B'_{p,1}\right),
+\end{align*}
+
+and
+
+$$H'=\sum_{\text{vertices }v}(1-A'_v)+\sum_{\text{plaquettes }p}(1-B'_p).$$
+
+Define $M:\CC^2\to \CC^2$ by $M(\ket{0})=\frac{1}{\sqrt{2}}(\ket{0}+\ket{1})$ and $M(\ket{1})=\frac{1}{\sqrt{2}}(\ket{0}-\ket{1})$. Show that
+
+$$\sigma_X=M\sigma_ZM^{-1},\,\, \sigma_{Z}=M\sigma_X M^{-1},$$
+
+and show that $H$ and $H'$ are similar in the sense that $H'=MHM^{-1}$. Use this to conclude that all basis independent properties of the toric code are formally symmetric by replacing $\sigma_X$ with $\sigma_Z$. For example, conclude that the codespace of $H'$ is 4 dimensional.
+
+\end{enumerate}
 
 \section{Category theory}
 
@@ -668,7 +1489,44 @@ $\newline\newline$
 
 \section{Topological quantum computation}
 
+
+\subsection{Computational complexity}
+
+\subsubsection{Classical computation}
+
+Now that we have introduced quantum mechanics, we can move on to our discussion of quantum information and quantum computing. This will involve a serious consideration of what the abstract theory of computation is. It will also involve a consideration of where quantum computation derives its power.
+
+Importantly, quantum computation does \textit{not} get its power from its ability to exploit randomness and store states which are between $0$ and $1$. Probabilistic computers can do this as well. However,  it is believed that there are \textit{no problems} which are more efficent on a probabilistic computer than a classical computer. The power of a quantum computer comes from the subtle mechanics of unitary matrices, and measurement based on the 2-norm.
+
+There are many different equivalent ways of formulating the theory of computation, which end up all being equivalent. One of the universal ways of representing information is \textit{bits} - objects with two element state spaces. We denote a bit abstractly as $\ZZ_2=\{0,1\}$. Computations are functions
+
+$$f:\ZZ_2^n\to \ZZ_2^m$$
+
+for some $n,m\geq 1$. The basic computations in the theory of computation are \textit{logic gates}. Our basic logic gates will be $\NOT$, $\AND$, and $\OR$. They are defined as follows:
+
+\begin{align*}
+\NOT: \ZZ_2&\xrightarrow{}\ZZ_2 && \AND: \ZZ_2^2\xrightarrow{}\ZZ_2 && \OR:\ZZ_2^2\xrightarrow{}\ZZ_2\\
+0&\mapsto 1 && (1,1) \mapsto 1 && (1,1)\mapsto 1\\
+1&\mapsto 0 && (1,0)\mapsto 0 && (1,0)\mapsto 1\\
+& && (0,1)\mapsto 0 && (0,1)\mapsto 1\\
+& && (0,0)\mapsto 0 && (0,0)\mapsto 0\\
+\end{align*}
+
+A depth-1 circuit is a map $f:\ZZ_2^n\to \ZZ_2^m$ such that each component of the output is either a constant, the same as one of the input components, or one of the basic logic gates $\NOT$, $\AND$, and $\OR$. For example, the map
+
+\begin{align*}
+f:\ZZ_2^4&\xrightarrow{} \ZZ_2^4\\
+(b_1,b_2,b_3,b_4)&\mapsto (\AND(b_2,b_4), 0, b_1, \OR(b_1,b_3))
+\end{align*}
+
+is a depth-1 circuit. A depth-$k$ circuit is a map $f:\ZZ_2^n\to \ZZ_2^m$ which can be written as a combination on $k$ depth-1 circuits. Our intuitive notion of computational complexity is that a map $f:\ZZ_2^n\to \ZZ_2^m$ is \textit{efficient} if it can be represented as a circuit which uses few logic gates. That is, the sum of the number of logic gates used in each of its layers is small.
+
+\subsubsection{Probabilistic computation}
+
+\subsubsection{Quantum computation}
+
 \section{Further structure}
+
 \bibliographystyle{alpha}
 \bibliography{ref}
 

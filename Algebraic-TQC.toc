@@ -1,32 +1,44 @@
-\contentsline {section}{\numberline {0}Preface}{3}
-\contentsline {section}{\numberline {1}Overview}{4}
-\contentsline {subsection}{\numberline {1.1}Conceptual introduction}{4}
-\contentsline {subsubsection}{\numberline {1.1.1}Motivation and applications}{4}
-\contentsline {subsubsection}{\numberline {1.1.2}Mathematical picture}{6}
-\contentsline {subsubsection}{\numberline {1.1.3}History of the subject}{7}
-\contentsline {subsection}{\numberline {1.2}Technical introduction}{9}
-\contentsline {subsubsection}{\numberline {1.2.1}Principles of topological quantum information}{9}
-\contentsline {subsubsection}{\numberline {1.2.2}Defects in ordered media}{12}
-\contentsline {subsubsection}{\numberline {1.2.3}The fundamental group}{14}
-\contentsline {subsubsection}{\numberline {1.2.4}Topological classical computation}{17}
-\contentsline {section}{\numberline {2}Quantum mechanics}{20}
-\contentsline {subsection}{\numberline {2.1}Overview}{20}
-\contentsline {subsubsection}{\numberline {2.1.1}Introduction}{20}
-\contentsline {subsubsection}{\numberline {2.1.2}Experimental motivation}{21}
-\contentsline {subsection}{\numberline {2.2}Axiomatic development}{22}
-\contentsline {subsubsection}{\numberline {2.2.1}Probability theory}{22}
-\contentsline {subsubsection}{\numberline {2.2.2}Basis-dependent quantum mechanics}{23}
-\contentsline {subsubsection}{\numberline {2.2.3}Basis-independent quantum mechanics}{25}
-\contentsline {subsection}{\numberline {2.3}Secondary structures}{25}
-\contentsline {subsubsection}{\numberline {2.3.1}Entanglement and incomplete measurements}{25}
-\contentsline {subsubsection}{\numberline {2.3.2}Hamiltonians and the Schrodinger equation}{25}
-\contentsline {subsection}{\numberline {2.4}Computational complexity}{25}
-\contentsline {subsubsection}{\numberline {2.4.1}Classical computation}{25}
-\contentsline {subsubsection}{\numberline {2.4.2}Probabilistic computation}{25}
-\contentsline {subsubsection}{\numberline {2.4.3}Quantum computation}{25}
-\contentsline {section}{\numberline {3}Topological quantum order}{25}
-\contentsline {section}{\numberline {4}Category theory}{25}
-\contentsline {section}{\numberline {5}Topological quantum field theory}{26}
-\contentsline {section}{\numberline {6}Modular tensor categories}{26}
-\contentsline {section}{\numberline {7}Topological quantum computation}{26}
-\contentsline {section}{\numberline {8}Further structure}{26}
+\contentsline {section}{\numberline {0}Preface}{4}
+\contentsline {section}{\numberline {1}Overview}{5}
+\contentsline {subsection}{\numberline {1.1}Conceptual introduction}{5}
+\contentsline {subsubsection}{\numberline {1.1.1}Motivation and applications}{5}
+\contentsline {subsubsection}{\numberline {1.1.2}Mathematical picture}{7}
+\contentsline {subsubsection}{\numberline {1.1.3}History of the subject}{8}
+\contentsline {subsection}{\numberline {1.2}Technical introduction}{10}
+\contentsline {subsubsection}{\numberline {1.2.1}Principles of topological quantum information}{10}
+\contentsline {subsubsection}{\numberline {1.2.2}Defects in ordered media}{13}
+\contentsline {subsubsection}{\numberline {1.2.3}The fundamental group}{15}
+\contentsline {subsubsection}{\numberline {1.2.4}Topological classical computation}{18}
+\contentsline {section}{\numberline {2}Quantum mechanics}{21}
+\contentsline {subsection}{\numberline {2.1}Overview}{21}
+\contentsline {subsubsection}{\numberline {2.1.1}Introduction}{21}
+\contentsline {subsubsection}{\numberline {2.1.2}Experimental motivation}{22}
+\contentsline {subsection}{\numberline {2.2}Axiomatic development}{23}
+\contentsline {subsubsection}{\numberline {2.2.1}Probability theory}{23}
+\contentsline {subsubsection}{\numberline {2.2.2}Basis-dependent quantum mechanics}{24}
+\contentsline {subsubsection}{\numberline {2.2.3}Measurement}{26}
+\contentsline {subsubsection}{\numberline {2.2.4}Incomplete measurement}{28}
+\contentsline {subsubsection}{\numberline {2.2.5}Basis-independent quantum mechanics}{28}
+\contentsline {subsubsection}{\numberline {2.2.6}Hamiltonians and the Schrodinger equation}{32}
+\contentsline {section}{\numberline {3}Topological quantum order}{34}
+\contentsline {subsection}{\numberline {3.1}Overview}{34}
+\contentsline {subsubsection}{\numberline {3.1.1}Introduction}{34}
+\contentsline {subsection}{\numberline {3.2}Lattice gauge theory}{38}
+\contentsline {subsubsection}{\numberline {3.2.1}Ordered media on a lattice}{38}
+\contentsline {subsubsection}{\numberline {3.2.2}From ordered media to gauge theory}{42}
+\contentsline {subsubsection}{\numberline {3.2.3}Kitaev quantum double model}{43}
+\contentsline {subsection}{\numberline {3.3}The toric code}{46}
+\contentsline {subsubsection}{\numberline {3.3.1}Exact solution}{46}
+\contentsline {subsubsection}{\numberline {3.3.2}Anyons in the toric code}{48}
+\contentsline {subsection}{\numberline {3.4}Non-abelian anyons}{50}
+\contentsline {subsubsection}{\numberline {3.4.1}Principles of anyons}{50}
+\contentsline {subsubsection}{\numberline {3.4.2}The $G=D_4$ Kitaev quantum double model}{52}
+\contentsline {section}{\numberline {4}Category theory}{54}
+\contentsline {section}{\numberline {5}Topological quantum field theory}{54}
+\contentsline {section}{\numberline {6}Modular tensor categories}{54}
+\contentsline {section}{\numberline {7}Topological quantum computation}{54}
+\contentsline {subsection}{\numberline {7.1}Computational complexity}{54}
+\contentsline {subsubsection}{\numberline {7.1.1}Classical computation}{54}
+\contentsline {subsubsection}{\numberline {7.1.2}Probabilistic computation}{55}
+\contentsline {subsubsection}{\numberline {7.1.3}Quantum computation}{55}
+\contentsline {section}{\numberline {8}Further structure}{55}

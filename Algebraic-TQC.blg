@@ -3,47 +3,51 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Algebraic-TQC.aux
 The style file: alpha.bst
 Database file #1: ref.bib
+Repeated entry---line 251 of file ref.bib
+ : @article{wilczek1982quantum
+ :                            ,
+I'm skipping whatever remains of this entry
 Warning--can't use both volume and number fields in jaeger1990computational
 Warning--there's a number but no series in wang2010topological
-You've used 50 entries,
+You've used 59 entries,
             2543 wiz_defined-function locations,
-            875 strings with 12069 characters,
-and the built_in function-call counts, 20118 in all, are:
-= -- 2013
-> -- 960
-< -- 29
-+ -- 332
-- -- 326
-* -- 1529
-:= -- 3348
-add.period$ -- 155
-call.type$ -- 50
-change.case$ -- 313
-chr.to.int$ -- 50
-cite$ -- 52
-duplicate$ -- 775
-empty$ -- 1440
-format.name$ -- 391
-if$ -- 4044
-int.to.chr$ -- 1
+            920 strings with 13068 characters,
+and the built_in function-call counts, 23367 in all, are:
+= -- 2329
+> -- 1099
+< -- 35
++ -- 377
+- -- 370
+* -- 1751
+:= -- 3886
+add.period$ -- 183
+call.type$ -- 59
+change.case$ -- 362
+chr.to.int$ -- 58
+cite$ -- 61
+duplicate$ -- 921
+empty$ -- 1693
+format.name$ -- 448
+if$ -- 4712
+int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 55
-newline$ -- 254
-num.names$ -- 150
-pop$ -- 244
+missing$ -- 67
+newline$ -- 299
+num.names$ -- 177
+pop$ -- 295
 preamble$ -- 1
-purify$ -- 368
+purify$ -- 429
 quote$ -- 0
-skip$ -- 638
+skip$ -- 753
 stack$ -- 0
-substring$ -- 1167
-swap$ -- 99
-text.length$ -- 29
-text.prefix$ -- 19
+substring$ -- 1322
+swap$ -- 118
+text.length$ -- 35
+text.prefix$ -- 23
 top$ -- 0
-type$ -- 380
+type$ -- 440
 warning$ -- 2
-while$ -- 199
-width$ -- 52
-write$ -- 653
-(There were 2 warnings)
+while$ -- 230
+width$ -- 61
+write$ -- 769
+(There was 1 error message)
