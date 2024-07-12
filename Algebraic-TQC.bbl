@@ -54,6 +54,13 @@ Bruce~H Bartlett.
 \newblock Categorical aspects of topological quantum field theories.
 \newblock {\em arXiv preprint math/0512103}, 2005.
 
+\bibitem[BDSPV15]{bartlett2015modular}
+Bruce Bartlett, Christopher~L Douglas, Christopher~J Schommer-Pries, and Jamie
+  Vicary.
+\newblock Modular categories as representations of the 3-dimensional bordism
+  2-category.
+\newblock {\em arXiv preprint arXiv:1509.06811}, 2015.
+
 \bibitem[BGS{\etalchar{+}}09]{bolotin2009observation}
 Kirill~I Bolotin, Fereshte Ghahari, Michael~D Shulman, Horst~L Stormer, and
   Philip Kim.
@@ -64,6 +71,19 @@ Kirill~I Bolotin, Fereshte Ghahari, Michael~D Shulman, Horst~L Stormer, and
 Bojko Bakalov, Alexander~A Kirillov, et~al.
 \newblock {\em Lectures on tensor categories and modular functors}, volume~21.
 \newblock American Mathematical Society Providence, RI, 2001.
+
+\bibitem[BPZ84]{belavin1984infinite}
+Alexander~A Belavin, Alexander~M Polyakov, and Alexander~B Zamolodchikov.
+\newblock Infinite conformal symmetry in two-dimensional quantum field theory.
+\newblock {\em Nuclear Physics B}, 241(2):333--380, 1984.
+
+\bibitem[CK18]{coecke2018picturing}
+Bob Coecke and Aleks Kissinger.
+\newblock Picturing quantum processes: A first course on quantum theory and
+  diagrammatic reasoning.
+\newblock In {\em Diagrammatic Representation and Inference: 10th International
+  Conference, Diagrams 2018, Edinburgh, UK, June 18-22, 2018, Proceedings 10},
+  pages 28--31. Springer, 2018.
 
 \bibitem[CLRL17]{chan2017photocurrents}
 Ching-Kit Chan, Netanel~H Lindner, Gil Refael, and Patrick~A Lee.
@@ -76,10 +96,21 @@ Paul Adrien~Maurice Dirac.
 \newblock {\em Proceedings of the Royal Society of London. Series A, Containing
   Papers of a Mathematical and Physical Character}, 133(821):60--72, 1931.
 
+\bibitem[Dri86]{drinfeld1986quantum}
+Vladimir~Gershonovich Drinfeld.
+\newblock Quantum groups.
+\newblock {\em Zapiski Nauchnykh Seminarov POMI}, 155:18--49, 1986.
+
 \bibitem[EGNO16]{etingof2016tensor}
 Pavel Etingof, Shlomo Gelaki, Dmitri Nikshych, and Victor Ostrik.
 \newblock {\em Tensor categories}, volume 205.
 \newblock American Mathematical Soc., 2016.
+
+\bibitem[EM45]{eilenberg1945general}
+Samuel Eilenberg and Saunders MacLane.
+\newblock General theory of natural equivalences.
+\newblock {\em Transactions of the American Mathematical Society},
+  58(2):231--294, 1945.
 
 \bibitem[FEC{\etalchar{+}}21]{fuhrer2021proposal}
 Michael~S Fuhrer, Mark~T Edmonds, Dimitrie Culcer, Muhammad Nadeem, Xiaolin
@@ -99,11 +130,25 @@ Michael~H Freedman, Michael Larsen, and Zhenghan Wang.
 \newblock A modular functor which is universal for quantum computation.
 \newblock {\em Communications in Mathematical Physics}, 227:605--622, 2002.
 
+\bibitem[Fre70]{freyd1970homotopy}
+Peter Freyd.
+\newblock Homotopy is not concrete.
+\newblock In {\em The Steenrod Algebra and Its Applications: A Conference to
+  Celebrate NE Steenrod's Sixtieth Birthday: Proceedings of the Conference held
+  at the Battelle Memorial Institute, Columbus, Ohio March 30th--April 4th,
+  1970}, pages 25--34. Springer, 1970.
+
 \bibitem[Fre98]{freedman1998p}
 Michael~H Freedman.
 \newblock P/np, and the quantum field computer.
 \newblock {\em Proceedings of the National Academy of Sciences}, 95(1):98--101,
   1998.
+
+\bibitem[FS19]{fong2019invitation}
+Brendan Fong and David~I Spivak.
+\newblock {\em An invitation to applied category theory: seven sketches in
+  compositionality}.
+\newblock Cambridge University Press, 2019.
 
 \bibitem[Hal83]{haldane1983nonlinear}
 F~Duncan~M Haldane.
@@ -186,10 +231,20 @@ JM~Leinaas and J~Myrheim.
 \newblock On the theory of identical particles.
 \newblock {\em Il nuovo cimento}, 37:132, 1977.
 
+\bibitem[Lur08]{lurie2008classification}
+Jacob Lurie.
+\newblock On the classification of topological field theories.
+\newblock {\em Current developments in mathematics}, 2008(1):129--280, 2008.
+
 \bibitem[Mer79]{mermin1979topological}
 N~David Mermin.
 \newblock The topological theory of defects in ordered media.
 \newblock {\em Reviews of Modern Physics}, 51(3):591, 1979.
+
+\bibitem[ML13]{mac2013categories}
+Saunders Mac~Lane.
+\newblock {\em Categories for the working mathematician}, volume~5.
+\newblock Springer Science \& Business Media, 2013.
 
 \bibitem[Moc03]{mochon2003anyons}
 Carlos Mochon.
@@ -232,6 +287,12 @@ Alexis Schotte, Lander Burgelman, and Guanyu Zhu.
 \newblock Fault-tolerant error correction for a universal non-abelian
   topological quantum computer at finite temperature.
 \newblock {\em arXiv preprint arXiv:2301.00054}, 2022.
+
+\bibitem[Seg88]{segal1988definition}
+Graeme~B Segal.
+\newblock The definition of conformal field theory.
+\newblock In {\em Differential geometrical methods in theoretical physics},
+  pages 165--171. Springer, 1988.
 
 \bibitem[SF18]{skinner2018large}
 Brian Skinner and Liang Fu.

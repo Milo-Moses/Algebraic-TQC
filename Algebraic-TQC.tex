@@ -7,6 +7,7 @@
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{mathrsfs}  
 \usepackage{braket}
 \usepackage{mathtools}
 \usepackage{lmodern}
@@ -46,16 +47,18 @@
 \newcommand{\Sym}{\mathrm{Sym}}
 \newcommand{\Hom}{\mathrm{Hom}}
 \newcommand{\swap}{\mathrm{swap}}
-
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\GL}{\mathrm{GL}}
 
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\ZZ}{\mathbb{Z}}
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\CC}{\mathbb{C}}
-\newcommand{\SO}{\mathrm{SO}}
-\newcommand{\NN}{\mathcal{N}}
-\newcommand{\C}{\mathcal{C}}
 
+\newcommand{\NN}{\mathcal{N}}
+\newcommand{\Cc}{\mathcal{C}}
+\newcommand{\C}{\mathscr{C}}
 
 \newcommand{\0}{\left|0\right>}
 \newcommand{\1}{\left|1\right>}
@@ -63,6 +66,8 @@
 \newcommand{\NOT}{\text{\scshape NOT\normalfont}}
 \newcommand{\AND}{\text{\scshape AND\normalfont}}
 \newcommand{\OR}{\text{\scshape OR\normalfont}}
+
+\renewcommand{\Set}{\mathbf{Set}}
 
 
 \begin{abstract}
@@ -183,7 +188,11 @@ In this section I will lay out the general principles of topological quantum inf
 
 Our system will be flat, containing only \textit{two spatial dimensions}. Our system will be mostly homogenous, essentially identical everywhere, at the exception of finitely many localized regions. These regions will differ substantially from the top-dimensional homogeneous bulk. These localized regions are called \textit{quasiparticles}. The beauty of systems like these is that they behave as though homogeneous bulk were empty, and the quasiparticles were fundamental particles within the bulk. In fact, in its algebraic description, these topological systems are \textit{identical} to ones in which the homogenous bulk is empty and the quasiparticles are fundamental particles. This is where the term quasiparticle arises. It is important however to remember that in most relevant applications the bulk is \textit{not} empty and the quasiparticles are \textit{not} fundamental particles. The bulk will typically be some highly entangled wavefunction, and the quasiparticles will be emergent phenomena made up of smaller microscopic degrees of freedom.
 
-[WORK: add nice picture of wavefunction localized at points]
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=.04]{quasiparticle}
+\end{center}
+\end{figure}
 
 Our aim is to build a computer. In general this requires three components:
 
@@ -1027,7 +1036,11 @@ Ordered media on the torus corresponds to continuous maps $\phi: T^2\to M$ where
 
 These steps deserve explanation. Step 1(a) is clear: we choose an arbitrary lattice on the torus. Typically we will choose the square lattice on the torus:
 
-[WORK: add diagram]
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=.04]{torus-lattice}
+\end{center}
+\end{figure}
 
 Step 1(b) requires more explanation. The picture to imagine is that we take the state $\phi$ and twist its values in small neighborhoods around each vertex to enforce the condition $\phi(v)=m$. Formally, this means choosing another state $\tilde{\phi}$ such that $\tilde{\phi}(v)=m$ for every vertex $v$ of the lattice, and $\tilde{\phi}=\phi$ outside of some chosen small neighborhoods around each vertex. The fact that we can always choose such as state $\tilde{\phi}$ is a consequence of general mathematical principles in homotopy theory. Of course, different choices of $\tilde{\phi}$ will change the final result of our lattice encoding. However because any two choices of $\tilde{\phi}$ can only differ by local changes they can't be \textit{too} different, in a way we will quantify later in the subsection.
 
@@ -1099,11 +1112,11 @@ $$\ket{C}=\sum_{\gamma \in C}\frac{1}{\sqrt{|C|}}\ket{\gamma}.$$
 
 This state is a normalized equal superposition of representatives of $C$. This defines a sub-Hilbert space
 
-$$\C=\text{span}\left\{\left.\ket{C}\right| C\in \text{(flat $G$-colorings)}/\text{(gauge transformations)}\right\}.$$
+$$\Cc=\text{span}\left\{\left.\ket{C}\right| C\in \text{(flat $G$-colorings)}/\text{(gauge transformations)}\right\}.$$
 
-This Hilbert space $\C$ stores the information in our gauge theory.
+This Hilbert space $\Cc$ stores the information in our gauge theory.
 
-So far our system is relatively trivial - it is just a Hilbert space, with no Hamiltonian. We connect it back to our original picture of topological order. The space $\C$ is the collection of ground states in a topologically ordered system. Above it there is a whole spectrum of other states. This fuller picture with a Hamiltonian adds all of the subtlety and intrigue to the system.
+So far our system is relatively trivial - it is just a Hilbert space, with no Hamiltonian. We connect it back to our original picture of topological order. The space $\Cc$ is the collection of ground states in a topologically ordered system. Above it there is a whole spectrum of other states. This fuller picture with a Hamiltonian adds all of the subtlety and intrigue to the system.
 
 In particular, we observed in Chapter [ref] section [ref] we observed the importants of quasiparticles in ordered media. These formed the heart of our information processing. Similarly, in gauge theory there will be quasiparticles as well, which appear as anyons higher up in the spectrum of the Hamiltonian. Some of these anyons correspond to the classical quasiparticles in ordered media, but other anyons are entirely new features of the system which did not exist before. We will analyse all this in more in the subsection that follows.
 
@@ -1153,7 +1166,7 @@ where $I$ is the identity operator. We summarize the basic properties of this Ha
 \item The eigenvalues of the $A_v,B_p$ are all $0$ or $1$;
 \item The lowest eigenvalue of $H$ is $0$, and the $0$-eigenspace of $H$ is
 
-$$\C=\text{span}\left\{\left.\ket{C}\right| C\in \text{(flat $G$-colorings)}/\text{(gauge transformations)}\right\}.$$
+$$\Cc=\text{span}\left\{\left.\ket{C}\right| C\in \text{(flat $G$-colorings)}/\text{(gauge transformations)}\right\}.$$
 
 where for we define the ket
 
@@ -1178,7 +1191,7 @@ $$(\text{flat $G$-colorings})/(\text{gauge transformations})\xrightarrow{}\Hom(\
 
 The set of vectors ${\ket{C}}_{C\in (\text{flat $G$-colorings})/(\text{gauge transformations})}$ is linearly independent. Hence, there is a canonical isomorphism
 
-$$\C \xrightarrow{}\CC[\Hom(\pi_1(T^2,v), G)/\left(\substack{\text{simultaneous} \\ \text{conjugation}}\right)]$$
+$$\Cc \xrightarrow{}\CC[\Hom(\pi_1(T^2,v), G)/\left(\substack{\text{simultaneous} \\ \text{conjugation}}\right)]$$
 
 given by taking winding numbers.
 \end{proposition}
@@ -1232,7 +1245,11 @@ $$H=\sum_{\text{vertices }v}(1-A_v)+\sum_{\text{plaquettes }p}(1-B_p).$$
 
 We unpack the general definitions of $A_v$ and $B_p$ for the toric code. The operator $A_{v,0}$ is the identity. The operator $A_{v,1}$ acts by a gauge transformation,
 
-[WORK: add $A_{v,1}$ formula]
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=.04]{Av-gauge-action}
+\end{center}
+\end{figure}
 
 Defining
 
@@ -1250,7 +1267,11 @@ A_{v,1}=\bigotimes_{\substack{\text{edges} \\ \text{touching }v}}\sigma_X, && A_
 
 Moving on to $B_p$, we recall that
 
-[WORK: add $B_p$ formula.]
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=.04]{Bp-definition}
+\end{center}
+\end{figure}
 
 In the present case, $B_p$ has a more workable expressing that is symmetric to our description of $B_p$. Define
 
@@ -1355,7 +1376,11 @@ B_p (\sigma_X)_e=
 
 Suppose that $\ket{\psi}$ is a state with no anyons -that is, a ground state. Given any edge $e$, the state $(\sigma_X)_e \ket{\psi}$ will not be a ground state. In particular, it will no longer commute with $B_p$ at the two plaquettes touching $e$. In this way, applying $\sigma_X$ to the edge $e$ spontanously created a pair of $X$-type anyons around it. Similarly, the staet $(\sigma_Z)_e\ket{\psi}$ will no longer commute with the $A_v$ operators at the two vertices touching $e$. Hence applying $\sigma_Z$ to the edge $e$ spontaneously created a pair of $Z$-type anyons around it. Applying further $\sigma_Z$ and $\sigma_X$ operators has the effect of chaning the quasiparticle content of the state further. If both the adjacent sites are unnoccupied then applying the operator will create a pair of anyons, if one of the sites is occupied then applying the operator will move the anyon from the occupied site to the unoccupied site, and if both of the sites are occupied then applying the operator will annhilate the anyons. We demonstrate this in some examples below
 
-[WORK: three little examples.]
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=.04]{anyon-examples}
+\end{center}
+\end{figure}
 
 We can use this idea of anyons to fully solve the toric code. We introduce some terminology and notation. Given an energy eigenstate $\ket{\psi}$, there is an associated map $\lambda: (\text{vertices})\sqcup (\text{plaquettes})\to \{\pm 1\}$ defined by the relation $A_{v,1}\ket{\psi}=\lambda(v)\ket{\psi}$, $B_{p,1}\ket{\psi}=\lambda(p)\ket{\psi}$. We call maps $\lambda: (\text{vertices})\sqcup (\text{plaquettes})\to \{\pm 1\}$ \textit{syndromes}, and the map associated to $\ket{\psi}$ is the \textit{syndrome of $\ket{\psi}$}. These syndromes allow us to speak intelligently about the locations of anyons within a state. For any syndrome $\lambda$, define
 
@@ -1378,7 +1403,11 @@ The following proposition and its proof give a complete description of the eigen
 
 The anyons in the toric code are interesting objects in their own right. For example, we can analyse what happens when we braid anyons. Suppose that $\ket{\psi}$ is a state with one $X$-type anyon and one $Z$-type anyon at adjacent sites. That is, the $X$-type anyon is at a vertex $v$ touching a plaquette $p$. Moving the $Z$-type anyon around the $X$-type anyon corresponds to applying $\sigma_Z$ to the edges around the $X$-type anyone one by one. In other words, the operator required to move the $Z$-type anyon is the tensor product of $\sigma_Z$ along the edges bounding $p$. However, by definition, this operator is exactly $B_{p,1}$. We know that $B_{p,1}\ket{\psi}=-\ket{\psi}$ by the definition of having an anyon at plaquette $p$. Hence, we conclude that \textit{moving a $Z$-type anyon around an $X$-type anyon results in a phase of $-1$}. Similarly, we oberve that moving a $Z$-type anyon around an $X$-type anyon also results in a phase of $-1$, as shown below:
 
-[WORK: include diagram.]
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=.04]{mutual-anyon-stats}
+\end{center}
+\end{figure}
 
 We codify this in a proposition. However, seeing as we have not defined what it means for one anyon to move ``around" another, we can only state it on the physical level of rigor:
 
@@ -1409,7 +1438,11 @@ Put more concretely, consider some particle type $A$. Let $V_2$ denote the Hilbe
 
 We now explain why all of the particles in the standard model are bosons or fermions. The general idea is as follos. If we swap twice, then the particles go back to their original position. Hence, $\swap^2=I$. Hence, $\swap=I$ or $\swap=-1$. This general arguments works well for the standard model, but it has several subtleties which are important to highlight. Firstly, just because $\swap^2$ brings the particles got back where they started doesn't mean that the path they took has trivial topology. In space time it looks like the following:
 
-[WORK: add diagram]
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=.04]{two-swaps}
+\end{center}
+\end{figure}
 
 If physical space had two dimensions, then this is a topologically nontrivial braid. The important feature of the standard model is that it has three space dimensions. In three space dimensions, the double swap has trivial topology: the two strands can be moved smoothly past each other without intersected by pushing them into different parts of the third dimension. In general, the possible ways that $n$ particles can move around each other in two dimensions is the braid group $B_n$ we defined in section [ref], whereas the ways that particles can move around each other in three dimensions degenerates to the symmetric group $S_n$. Let $V_n$ denote the $n$ particle system of $n$ identical particles of type $A$. In two dimensions, moving the $n$ particles around in braids gives a representation
 
@@ -1481,14 +1514,308 @@ and show that $H$ and $H'$ are similar in the sense that $H'=MHM^{-1}$. Use this
 
 \section{Category theory}
 
-[WORK: use probability spaces and quantum spaces as examples of categories!]
+\subsection{Overview}
+
+\subsubsection{Introduction}
+
+There is a lot of math in the world. The development of the subject has spanned thousands of years, and has enjoyed a large uptick in the last two hundred or so. This has given ample time for the most important ideas to rise to the top. Among these important concepts there is one which is the focus of chapter: \textbf{composition}.
+
+Let $A,B,C$ be sets. Let $f:A\to B$ and $g:B\to C$ be functions. The \textit{composition} of $f$ and $g$ is the function $g\circ f: A\to C$ defined by the formula $(g\circ f)(x)=g(f(x))$ for all $x\in A$. More generally, composition is the act of doing one process followed by a second process. Composition is distinguished in its importance for two reasons:
+
+\begin{enumerate}
+\item Composition is ubiquitous;
+\item A very large number of more complicated structures can be described in terms of composition.
+\end{enumerate}
+
+These two primary reasons of importance lead to several emergent applications of composition:
+
+\begin{enumerate}
+\item It's a good organization principle - thinking in terms of composition gives a unifed approach to disperate subjects, which highlights the universality latent within mathematics;
+\item It's a good compression technique - in a composition-forward approach there's no need to remember details about objects or functions between them, only the way that those functions compose is used;
+\item Sometimes composition rules are the only data we have, making a composition-forward technique the only approach possible.
+\end{enumerate}
+
+This third point is the situation we find ourselves in with tthe algebraic theory of topological quantum information. We're trying to give a usable mathematical description of topologically ordered systems. The way that we find ourselves doing this is by focusing on anyons (the local quasiparticle excitations in topological order). Doing this we run into three important ponts:
+
+\begin{enumerate}
+\item Describing anyons exactly is hard. They are emergent phenomina, found within highly-entangled energy eigenstates of arbitrarily complicated gapped Hamiltonians.
+\item Describing the possible ways that anyons can transform is hard. This involved specifying intricate unitary operators on high-dimensional Hilbert spaces.
+\item Describing the ways that these transformations compose with one another is always relatively simple. It can be done using explicit-to-describe rules, which are independent of system size or choice of gapped Hamiltonian.
+\end{enumerate}
+
+What to do in this situation is clear: we will take a composition-first approach to anyons.
+
+We give some examples to demonstrate our point. Suppose we want to discuss braiding anyons in the toric code. We can abstractly talk about a syndrome of the toric code in which there is one $X$-type particle and one $Z$-type particle:
+
+[WORK: write out state.]
+
+On these states we can talk about braiding. We use the same sorts of spactime diagrams as before to represent these transformations:
+
+[WORK: write out state.]
+
+Without talking about the fact that transformations of this type are realized explicitely using Pauli operators, we can still abstractly discuss the way they compose with each other:
+
+[WORK: write out composition line]
+
+[WORK: add more complicated example coming from whatever case of Kitaev quantum double I describe explicitely in the TO chapter]
+
+The mathematical objects which allows one to speak intelligently about composition-first appraoches is known as a \textit{category}. The composition-first approach to mathematics is known as \textit{category theory}. Of course, to describe anyons we will need more than just the structure of composition. We will also need a way to encode what happens we we put anyons together, braid them, and fuse them. There structures are all completely compatible with the compostion-first approach, and correspond to adding extra structures onto the category. The categories describing anyons will all their extra structures is known as a \textit{modular tensor category}, and will be the subject of much of this book. This chapter deals with introducing category theory, as well as some of the structures which will be important for discussing anyons and modular tensor categories.
+
+\subsubsection{Definition and important obervations}
+
+As discussed before, a category is the structure which allows for a composition-first approach to map. Before going forward lets give a formal definition of category:
+
+\begin{definition}[Category] A category is the following data:
+
+\begin{enumerate}
+\item (Objects) A set $\C$.
+\item (Morphisms) A set $\Hom(A,B)$ for all $A,B\in \C$
+\item (Composition) Functions
+
+$$\circ: \Hom(B,C)\times \Hom(A,B)\to \Hom(A,C)$$
+
+for all $A,B,C\in \C$.
+\end{enumerate}
+
+Such that:
+
+\begin{enumerate}
+
+\item $(h\circ g)\circ f = h\circ (g\circ f)$, for all morphisms $f\in \Hom(A,B)$, $g\in \Hom(B,C)$, $h\in\Hom(C,D)$,  and objects $A,B,C,D\in \C$.
+
+\item (Identity) For all objects $A\in \C$ there exists a morphism $\id_{A}: A\to A$ such that for all $B\in \C$, $f\in \Hom(A,B)$, and $g\in \Hom(B,A)$,
+
+\begin{align*}
+f\circ \id_{A}=f, && \id_{A}\circ g = g.
+\end{align*}
+
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+The rest of this section will contain a loosely-related series of five observations about this definition:
+
+$\newline$
+\textbf{Observation 1:} \textit{The structure of this definition is very typical of algebra.}
+
+Roughly, algebra is defined to be the study of algebraic structures. An algebraic structure, roughly, is defined to be some collection structures on some space, with rules outlining how the structures interact with each other. The general way of definding algebraic structures is to first list the structures, and then list the axioms of how these structures inteact with each other. We will see many definitions of this sort throughout the rest of the book, so it is good to get used to it now.
+
+$\newline$
+\textbf{Observation 2:} \textit{In this text we have already seen many examples of categories.}
+
+We list some of them below:
+
+\begin{itemize}
+\item $\Set$, the category of sets. The objects are sets and the morphisms are functions.
+
+\item $\mathbf{Top}$, the category of topological spaces. The objects are topological spaces and the morphisms are continuous functions.
+
+\item $\mathbf{Vect}_k$, the category of vector spaces over a field $k$. The objects are vector spaces over $k$ and the morphisms are linear operators.
+
+\item $\mathbf{Grp}$, the category of groups. The objects are groups and the morphisms are group homomorphisms.
+
+\item $\mathbf{Hilb}$, the category of quantum systems. The objects are Hilbert spaces and the morphisms are unitary operators.
+
+\item $\mathbf{Prob}$, the category of probability spaces. The objects are real vector spaces with distinguished bases and the morphisms are operators which send normalized vectors to normalized vectors.
+
+\item $\mathbf{Ord}_M$, the category of ordered media with order space $M$. The objects are continuous maps $\phi: \RR^2\to M$ and the morphisms are continuous deformations.
+\end{itemize}
+
+$\newline$
+\textbf{Observation 3:} \textit{The objects and morphisms of a category do not have much complexity implicit to them.  All of the interesting structure is encoded within the composition structure.}
+
+This is despite the fact that when we listed our examples in Observation 2 we only described the objects and morphisms, and not the compositoin structure. The reason for this is that the composition structure between morphisms in all of our examples is clear. In all our examples the objects are sets with extra strcture, and the morphisms are maps of sets. The composition structure is inhereted from the composition structure on functions between sets.
+
+Going further, however, we observe that objects in abstract categories are \textit{not} required to be sets and the morphisms are \textit{not} required to be functions of sets. Most of our examples of categories will have objects which are sets and morphisms which are functions of sets, but there will be notable counterexamples. It is important to remember that there are some categories for which there is no interpreation of morphisms as functions between sets \cite{freyd1970homotopy}.
+
+$\newline$
+\textbf{Observation 4:} \textit{A category isn't just a space with a good notion of composition - it also has identity maps.}
+
+These identity maps are important, and we include them in the definition purposefully. There are two primary reasons: firstly that all of the relevant examples of categories will have identity maps, and secondly that most interesting properties of categories only make sense because of the identity maps. Hence if we didn't require identity maps then we would find ourselves constantly requiring them as a condition, which is a waste of space.
+
+It is important to take a closer look at what the identity map means, though. The identity map is trying to capture a very general phenominon about transformations: \textit{there is always the trivial transformation which results from doing nothing}. This do-nothing map is the identity. In the category of sets, the identity maps on the set $A$ is given by the formula $\id_A(x)=x$ for all $x\in A$. The fact that these maps are the identities in the category of sets is the reason that the identity axiom for categories is defined like it is. Really, there is an implicit lemma hidden in the definition of category:
+
+\begin{lemma} Let $A$ be a set. For all sets $B$ and for all $f:A\to B$, $g:B\to A$ we have
+
+\begin{align*}
+f\circ \id_{A}=f, && \id_{A}\circ g = g.
+\end{align*}
+
+In particular, $\id_A$ satisfies the axiom of an identity in the category of sets, and hence $\Set$ forms a category.
+\end{lemma}
+\begin{proof}.[WORK: do proof]
+\end{proof}
+
+These sorts of implicit lemmas are everywhere in category theory. Whenever a composition-forward definition is given in category theory, there is the assumption that it agrees with the standard definition at least in the category of sets. For instance, we make the following definition:
+
+\begin{definition}[Isomorphism] Let $\C$ be a category, let $A,B\in C$ be objects, and let $f:A\to B$ be a morphism. We say that $f$ is an \textit{isomorphism} if there exists a morphism $f^{-1}:B\to A$ such that $f^{-1}\circ f= \id_A$ and $f\circ f^{-1}=\id_B$. We call $f^{-1}$ the \textit{inverse} of $f$. In this case, we say that $A$ and $B$ are \textit{isomorphic objects}.
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+The implicit lemma in this definition is as follows:
+
+\begin{lemma} Let $A,B$ be sets, and let $f:A\to B$ be a function. The map $f$ is a bijection if and only if there exists a function $f^{-1}: B\to A$ such that $f^{-1}\circ f= \id_A$ and $f\circ f^{-1}=\id_B$. In particular, a function $f$ in the category $\Set$ is an isomorphism if and only it is a bijection.
+\end{lemma}
+\begin{proof}.[WORK: do proof]
+\end{proof}
+
+$\newline$
+\textbf{Observation 5:} \textit{Statements in category theory can be very broadly applied.}
+
+This is in some sense obvious by the fact that there are so many different examples of categories, but it's good to state the observation explicitely. Here's a good example:
+
+\begin{proposition} Let $\C$ be a category. Identities in $\C$ are unique. Explicitely, let $A\in \C$ be an object and let $\id_A,\tilde{\id}_A:A\to A$ be morphisms satisfying the identity axiom. We have that $\id_A=\tilde{\id}_A$.
+\end{proposition}
+\begin{proof}. Using the fact that $\id_A \circ f = f$ and $f\circ \tilde{\id}_A=f$ for any $f:A\to A$, we compute that
+
+$$\id_A= \id_A \circ \tilde{\id}_A = \tilde{\id}_A$$
+
+as desired.
+\end{proof}
+
+This has broad application. For instance: why are identity elements in groups unique? Le $G$ be a group and let $1,1'\in G$ be identity elements. We find that $1=1\cdot 1' = 1'$ as desired. Going further, here is another proposition in category theory:
+
+\begin{proposition}
+\label{inverse-unique}
+Let $\C$ be a category. Let $A,B$ be objects and let $f:A\to B$ be an isomorphism. The inverse of $f$ is unique. That is, let $f^{-1},\tilde{f}^-1$ be morphisms satisfying the definition of the inverse of $f$. We have that $f^{-1}=\tilde{f}^{-1}$.
+\end{proposition}
+\begin{proof} Using the associativity axiom, we compute
+
+$$f^{-1}=f^{-1}\circ \id _{B} = f^{-1}\circ (f \circ \tilde{f}^{-1})=(f^{-1}\circ f)\circ \tilde{f}^{-1}=\id_A \circ \tilde{f}^{-1}=\tilde{f}^{-1}$$
+
+as desired.
+\end{proof}
+
+This is very general. Why are inverses unique in groups? Why are inverses of matrices unique? Abstractly, why should the inverse of any reversible process be unique? Proposition \ref{inverse-unique} gives the answer.
+
+\subsection{Structures in category theory}
+
+[WORK: this section should include all of the structures which are neccecary for the rest of the book,
+and are too cumbersome to define on-site. It should also read as an introducting to how to think in the language of categories. Here is the running list of neccecary topics
+
+\begin{itemize}
+\item Products/coproducts/biproducts
+\item $\CC$-linear structure
+\item Functors, natural equivalence, equivalence of categories, NOT Yoneda lemma
+\end{itemize}
+]
+
+[WORK: maybe use homotopy theory as a reccuring motivating example?]
+
+\subsection{Braided monoidal categories}
+
+[WORK: should work the reader up to comfort-level with braided monoidal categories. Hard to write without knowing what is in the structures in category theory section.]
+
+$\newline$
+\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{
+
+\begin{center}
+\textbf{History and further reading:}\\
+\end{center}
+
+Category theory was first introduced and formalized by Saunders Mac Lane and Samuel Eilenberg in 1945 \cite{eilenberg1945general}. Of course, the ideas underlying category theory were present earlier and can be traced back arbitrarily far. In the subsequent decades the formalism of category theory spread far and wide, bringing with it the discovery of many deep theorems. The first major explicit appearance of category theory in physics was Vladimir Drinfeld's work on so-called \textit{quantum groups} in the early 1980s \cite{drinfeld1986quantum}. Quantum groups are certain kinds of mathematical objects righly related to content in this book. They were introduced as tools to help generate exactly-solvable models in condensed matter physics. Very quickly quantum groups were absorbed into the theory of the ideas of string theory of topological quantum field theory, which were both new at the time \cite{belavin1984infinite, witten1988topological}. The physics in this area has since become and remained extremely categorical in nature \cite{lurie2008classification, bartlett2015modular}.
+
+There are many excellent introductory texts to category theory. Some authors find it fruitful to reformulate all of quantum mechanics, and especially quantum information, in terms of category theory. A good source outlining this approach and introducing category theory through it is Coecke-Kissinger's textbook \cite{coecke2018picturing}. The Kong-Zhang textbook \cite{kong2022invitation} gives an introduction to category theory in the context of topological order. A good general-purpose textbook on category theory is Fong-Spivak \cite{fong2019invitation}, and a classical but slightly dated reference is \cite{mac2013categories}.
+}}
+
+
+$\newline\newline$
+
+\large \textbf{Exercises}:\normalsize
+
+\begin{enumerate}[\thesection .1.]
+
+\item .[WORK: make exercises]
+
+\end{enumerate}
 
 \section{Topological quantum field theory}
+
+\subsection{Overview}
+
+\subsubsection{Introduction}
+
+In this chapter we will be exploring topological quantum field theory, a particular way of mathematically formalizing topological order. We recall below how this fits into the general framework of this book:
+
+[WORK: add pretty picture.]
+
+Topological quantum field theory is not our primary approach for understanding topological order - we will mainly be performing our anlysis of topological order using modular tensor categories. For this reason, the present chapter is essentially auxillary to the rest of the book. This chapter is primarily included for the following reasons:
+
+\begin{enumerate}
+\item To help give a comprehensive picture of the algebraic theory of topological quantum information. Much of the work in the field is written in the language of topological quantum field theory. Not knowing topological quantum field theory can make existing in the world of topological quantum information more painful than it needs to be.
+
+\item Topological quantum field theory makes some important ideas clear which are opaque in the language of modular tensor cateogories. For instance, the proper way of interpreting the modular representation of a modular tensor category is to use concepts of topological quantum field theory.
+
+\item In contrast to modular tensor categories, the definition of a topological quantum field theory is very concise. This means that the fact that topological quantum field theories and modular tensor categories are equivalent is a strong indication that the definition of modular tensor category is well-chosen. As we will discuss in Chapter [ref], the definition of modular tensor category was explicitely chosen to be the way it so that they would be equivalent to topological quantum field theories.
+\end{enumerate}
+
+For brevity, we will use the accronym \textit{TQFT} to abbreviate Topological Quantum Field Theory. We will now move on to describing the big idea of TQFT. We will do this by starting with an abstract topological order $\C$. Of course, we haven't defined what an abstract topological order is yet. The point is that we will image that $\C$ is some family of gapped Hamiltonians which has topologically protected ground spaces. All the different gapped Hamiltonians should be related in the sense that they have the same underlying algebraic theory, though we haven't described what that theory is yet. That underlying algebraic theory will exactly be a TQFT. Because they are the only examples we have given, we will always image that $\C$ is the Kitaev quantum double model based on some finite group $G$, or even more specifically the toric code.
+
+The first step in definining TQFT is to think about $\C$ is a machine which takes in topological spaces and spits out quantum systems, by taking the space and putting the topological order $\C$ on it. For instance, if $\C$ is the Kitaev quantum double model based on a finite group $G$ and the input space is a torus, then the corresponding system is the Hamiltonian $H=\sum_{v}(1-A_v)+\sum_{p}(1-B_p)$ defined by choosing a lattice structure on the torus and collecting flatness and gauge invaraince conditions, as pictured below:
+
+[WORK: add picture.]
+
+The Hilbert space $\NN=\bigotimes_{\text{edges}}\CC[G]$ of this system clearly depends on the choice of lattice on the torus. However, as demonstrated in proposition [ref] the ground states of $\NN$ are $\Cc=\CC[\Hom(\pi_1(T^2,v), G)/\left(\substack{\text{simultaneous} \\ \text{conjugation}}\right)]$. Since the fundamental group is a topological invariant, we see thus that this Hilbert space does not depend on our choice of lattice - its dimension is fixed by the topology of the torus.
+
+More generally, this is what we should expect when putting a topological order on space. The excited states will depend on the details of the gapped Hamiltonian we choose, but the ground states are a topological invariant of the space. The fact that the ground states are topologically invariant is the \textit{defining feature} of topological order. Hence, the topological order $\C$ gives a well-defined assignement from topological spaces to quantum systems.
+
+Not every topological space can host topological order, however. We recall that our definition of topological order required physical space to be \textit{two dimensional}. Of course, there can be global curvature like in the torus. What's important is that locally the system is flat. Hence, the topological spaces on which we can apply our topological order are subspaces of $\RR^3$ which locally look like $\RR^2$. Topological spaces of this type are called \textit{surfaces}. The most important examples are the $g$-holed surfaces, for any $g\geq 0$, called $\Sigma_g$:
+
+[WORK: add $\Sigma_g$ picture]
+
+Hence, we find that every topological $\C$ induces an assignment
+
+[WORK: add formula - surfaces get assigned to the Hilbert space of ground statees of $\C$ on that surface.]
+
+This is the general picture for TQFT. A TQFT is an assignment from surfaces to vector spaces, with extra restrictioons which are required to get a reasonable theory. This sort of approach to quantum field theory can be generalized beyond TQFT. In these generalized cases, however, the assignment won't taken surfaces as inputs. Instead, it will take surfaces with detailed geometric structure which encodes the fact that the resulting quantum system will depend on distances and local geometric information. This approach is feasable in some cases but is quite technical \cite{segal1988definition}. Typically in non-topological cases people opt for other techniques.
+
+\subsubsection{Definition}
+
+We established that, given an abstract topological order $\C$, there should be an associated assignment
+
+[WORK: add formula - surfaces get assigned to the Hilbert space of ground statees of $\C$ on that surface.]
+
+This assignment is the TQFT corresponding to $\C$. In this chapter we will discuss the nature of this assignment more, and add reasonable restrictions on it to arrive at a workable theory.
+
+One important aspect of this assignment is that it should assign transformations of the input surface to transformation of the output surface. Transformations in physical space should correspond to transformations on the corresponding quantum system.
+
+
+
+\subsection{Dijkgraaf-Witten theory}
+
+\subsection{Extended TQFT}
+
+
+
+$\newline$
+\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{
+
+\begin{center}
+\textbf{History and further reading:}\\
+\end{center}
+
+[WORK: write history]
+
+}}
+
+
+$\newline\newline$
+
+\large \textbf{Exercises}:\normalsize
+
+\begin{enumerate}[\thesection .1.]
+
+\item .[WORK: there should definitely be an exercise about mapping class group reps.
+
+Namely, show that if $(V,Z)$ is a TQFT then for every $g\geq 0$ we get a map $\text{MCG}(\Sigma_g)\to \GL(V(\Sigma_g))$ ]
+
+\end{enumerate}
 
 \section{Modular tensor categories}
 
 \section{Topological quantum computation}
-
 
 \subsection{Computational complexity}
 
