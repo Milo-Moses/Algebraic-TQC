@@ -196,6 +196,11 @@ A~Yu Kitaev.
 \newblock Fault-tolerant quantum computation by anyons.
 \newblock {\em Annals of physics}, 303(1):2--30, 2003.
 
+\bibitem[Kit06]{kitaev2006anyons}
+Alexei Kitaev.
+\newblock Anyons in an exactly solved model and beyond.
+\newblock {\em Annals of Physics}, 321(1):2--111, 2006.
+
 \bibitem[KL09]{kauffman2009topological}
 Louis~H Kauffman and Samuel~J Lomonaco.
 \newblock Topological quantum information theory.
@@ -252,6 +257,22 @@ Carlos Mochon.
   quantum computation.
 \newblock {\em Physical Review A}, 67(2):022315, 2003.
 
+\bibitem[MS88]{moore1988polynomial}
+Gregory Moore and Nathan Seiberg.
+\newblock Polynomial equations for rational conformal field theories.
+\newblock {\em Physics Letters B}, 212(4):451--460, 1988.
+
+\bibitem[MS89]{moore1989classical}
+Gregory Moore and Nathan Seiberg.
+\newblock Classical and quantum conformal field theory.
+\newblock {\em Communications in Mathematical Physics}, 123:177--254, 1989.
+
+\bibitem[MS90]{moore1990lectures}
+Gregory Moore and Nathan Seiberg.
+\newblock Lectures on rcft.
+\newblock In {\em Physics, geometry and topology}, pages 263--361. Springer,
+  1990.
+
 \bibitem[MZ21]{marrows2021perspective}
 CH~Marrows and K~Zeissler.
 \newblock Perspective on skyrmion spintronics.
@@ -276,6 +297,11 @@ Nicolas Regnault and B~Andrei Bernevig.
 Arthur~P Ramirez and Brian Skinner.
 \newblock Dawn of the topological age?
 \newblock {\em Physics Today}, 73(9):30--36, 2020.
+
+\bibitem[RT91]{reshetikhin1991invariants}
+Nicolai Reshetikhin and Vladimir~G Turaev.
+\newblock Invariants of 3-manifolds via link polynomials and quantum groups.
+\newblock {\em Inventiones mathematicae}, 103(1):547--597, 1991.
 
 \bibitem[SA17]{sato2017topological}
 Masatoshi Sato and Yoichi Ando.
@@ -336,6 +362,17 @@ Alexis Schotte, Guanyu Zhu, Lander Burgelman, and Frank Verstraete.
 Daniel~C Tsui, Horst~L Stormer, and Arthur~C Gossard.
 \newblock Two-dimensional magnetotransport in the extreme quantum limit.
 \newblock {\em Physical Review Letters}, 48(22):1559, 1982.
+
+\bibitem[Tur92]{turaev1992modular}
+Vladimir~G Turaev.
+\newblock Modular categories and 3-manifold invariants.
+\newblock {\em International Journal of Modern Physics B}, 6(11n12):1807--1824,
+  1992.
+
+\bibitem[Tur10]{turaev2010quantum}
+Vladimir~G Turaev.
+\newblock {\em Quantum invariants of knots and 3-manifolds}.
+\newblock de Gruyter, 2010.
 
 \bibitem[VD14]{viola2014hall}
 Giovanni Viola and David~P DiVincenzo.

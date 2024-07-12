@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  11 JUL 2024 17:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  12 JUL 2024 16:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -555,6 +555,9 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
 (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
@@ -646,19 +649,19 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 (./Algebraic-TQC.aux)
 \openout1 = `Algebraic-TQC.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 42.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -763,40 +766,40 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 43.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 45.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 43.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 45.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 43.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 45.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 43.
+(Font)              <12> on input line 45.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 43.
+(Font)              <8> on input line 45.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 43.
-LaTeX Font Info:    Try loading font information for U+msa on input line 43.
+(Font)              <6> on input line 45.
+LaTeX Font Info:    Try loading font information for U+msa on input line 45.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 43.
+LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 43.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 45.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -825,30 +828,30 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 <./images/quasiparticle.jpeg, id=49, 3643.6125pt x 1812.7725pt>
 File: ./images/quasiparticle.jpeg Graphic file (type jpg)
 <use ./images/quasiparticle.jpeg>
-Package pdftex.def Info: ./images/quasiparticle.jpeg  used on input line 193.
+Package pdftex.def Info: ./images/quasiparticle.jpeg  used on input line 201.
 (pdftex.def)             Requested size: 145.71968pt x 72.49855pt.
  [10 <./images/quasiparticle.jpeg>]
 <./images/TQC-outline.png, id=53, 497.86pt x 401.5pt>
 File: ./images/TQC-outline.png Graphic file (type png)
 <use ./images/TQC-outline.png>
-Package pdftex.def Info: ./images/TQC-outline.png  used on input line 215.
+Package pdftex.def Info: ./images/TQC-outline.png  used on input line 223.
 (pdftex.def)             Requested size: 174.2536pt x 140.5271pt.
  [11]
 (./figures/shor-fibonacci.tikz) [12 <./images/TQC-outline.png>]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 244.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 252.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 244.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 252.
  [13] [14]
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 274.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 282.
 
 [15] [16]
-Overfull \hbox (11.01308pt too wide) in paragraph at lines 372--373
+Overfull \hbox (11.01308pt too wide) in paragraph at lines 380--381
 []\OT1/lmr/bx/n/10 Corollary 1.1. []\OT1/lmr/m/it/10 Choose $\OML/lmm/m/it/10 b
 ; x \OMS/lmsy/m/n/10 2 \U/msb/m/n/10 R[]$\OT1/lmr/m/it/10 . We have a canon-i-c
 al iso-mor-phism of groups $\OML/lmm/m/it/10 ^^Y[]\OT1/lmr/m/n/10 (\U/msb/m/n/1
@@ -857,25 +860,25 @@ b\OT1/lmr/m/n/10 ) []
  []
 
 [17] [18] [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 509--510
+Underfull \hbox (badness 10000) in paragraph at lines 517--518
 
  []
 
 [21] [22] [23] [24] [25] [26] [27] [28] [29]
-Overfull \hbox (22.67253pt too wide) in paragraph at lines 798--799
+Overfull \hbox (22.67253pt too wide) in paragraph at lines 806--807
 []\OT1/lmr/m/n/10 where $\OMS/lmsy/m/n/10 <\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 ^^
 A\OT1/lmr/m/n/10 )$ de-notes the real part of a com-plex num-ber. Thus, we con-
 clude that $\OMS/lmsy/m/n/10 < [] \OT1/lmr/m/n/10 =
  []
 
 [30] [31] [32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 905--906
+Underfull \hbox (badness 10000) in paragraph at lines 913--914
 
  []
 
 (./figures/mathematical-outline-TQO.tikz) [34] (./figures/TQO-spectrum-1.tikz)
 (./figures/TQO-spectrum-2.tikz) (./figures/system-size.tikz)
-Overfull \hbox (2.55212pt too wide) in paragraph at lines 953--954
+Overfull \hbox (2.55212pt too wide) in paragraph at lines 961--962
 []\OT1/lmr/m/n/10 Letting $[](\OML/lmm/m/it/10 V\OT1/lmr/m/n/10 )$ de-note the 
 di-men-sion of $\OML/lmm/m/it/10 V$\OT1/lmr/m/n/10 , this gives us an as-symp-t
 otic for-mula $[](\OML/lmm/m/it/10 V\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^X
@@ -885,7 +888,7 @@ otic for-mula $[](\OML/lmm/m/it/10 V\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^X
 <./images/lattice-example.jpeg, id=151, 2683.02374pt x 1790.69pt>
 File: ./images/lattice-example.jpeg Graphic file (type jpg)
 <use ./images/lattice-example.jpeg>
-Package pdftex.def Info: ./images/lattice-example.jpeg  used on input line 1012
+Package pdftex.def Info: ./images/lattice-example.jpeg  used on input line 1020
 .
 (pdftex.def)             Requested size: 107.30267pt x 71.6154pt.
 
@@ -896,42 +899,42 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <./images/torus-definition.jpeg, id=155, 3425.79875pt x 1190.4475pt>
 File: ./images/torus-definition.jpeg Graphic file (type jpg)
 <use ./images/torus-definition.jpeg>
-Package pdftex.def Info: ./images/torus-definition.jpeg  used on input line 102
-4.
+Package pdftex.def Info: ./images/torus-definition.jpeg  used on input line 103
+2.
 (pdftex.def)             Requested size: 137.0086pt x 47.60979pt.
 <./images/torus-lattice.jpeg, id=156, 2158.0625pt x 2069.7325pt>
 File: ./images/torus-lattice.jpeg Graphic file (type jpg)
 <use ./images/torus-lattice.jpeg>
-Package pdftex.def Info: ./images/torus-lattice.jpeg  used on input line 1041.
+Package pdftex.def Info: ./images/torus-lattice.jpeg  used on input line 1049.
 (pdftex.def)             Requested size: 86.3078pt x 82.77519pt.
  [39 <./images/lattice-example.jpeg> <./images/torus-definition.jpeg>]
 <./images/full-example.png, id=160, 926.46124pt x 354.32375pt>
 File: ./images/full-example.png Graphic file (type png)
 <use ./images/full-example.png>
-Package pdftex.def Info: ./images/full-example.png  used on input line 1055.
+Package pdftex.def Info: ./images/full-example.png  used on input line 1063.
 (pdftex.def)             Requested size: 277.9405pt x 106.29794pt.
 
 [40 <./images/torus-lattice.jpeg> <./images/full-example.png>]
 <./images/plaquette-rule.jpeg, id=165, 3704.84125pt x 1095.09125pt>
 File: ./images/plaquette-rule.jpeg Graphic file (type jpg)
 <use ./images/plaquette-rule.jpeg>
-Package pdftex.def Info: ./images/plaquette-rule.jpeg  used on input line 1065.
+Package pdftex.def Info: ./images/plaquette-rule.jpeg  used on input line 1073.
 
 (pdftex.def)             Requested size: 222.28088pt x 65.70264pt.
 <./images/gauge-transformation.jpeg, id=166, 3270.2175pt x 1237.62375pt>
 File: ./images/gauge-transformation.jpeg Graphic file (type jpg)
 <use ./images/gauge-transformation.jpeg>
 Package pdftex.def Info: ./images/gauge-transformation.jpeg  used on input line
- 1079.
+ 1087.
 (pdftex.def)             Requested size: 130.78642pt x 49.4965pt.
  [41 <./images/plaquette-rule.jpeg> <./images/gauge-transformation.jpeg>]
 <./images/twisting.png, id=170, 446.66875pt x 188.705pt>
 File: ./images/twisting.png Graphic file (type png)
 <use ./images/twisting.png>
-Package pdftex.def Info: ./images/twisting.png  used on input line 1087.
+Package pdftex.def Info: ./images/twisting.png  used on input line 1095.
 (pdftex.def)             Requested size: 200.99907pt x 84.91646pt.
  [42 <./images/twisting.png>] [43] [44]
-Overfull \hbox (9.69862pt too wide) in paragraph at lines 1192--1193
+Overfull \hbox (9.69862pt too wide) in paragraph at lines 1200--1201
 []\OT1/lmr/m/it/10 The set of vec-tors $[][]$ is lin-early in-de-pen-dent. Henc
 e,
  []
@@ -939,32 +942,32 @@ e,
 <./images/torus.png, id=182, 340.27126pt x 223.83624pt>
 File: ./images/torus.png Graphic file (type png)
 <use ./images/torus.png>
-Package pdftex.def Info: ./images/torus.png  used on input line 1207.
+Package pdftex.def Info: ./images/torus.png  used on input line 1215.
 (pdftex.def)             Requested size: 102.08215pt x 67.15138pt.
 [45 <./images/torus.png>] [46]
 <./images/Av-gauge-action.jpeg, id=190, 3754.025pt x 1218.5525pt>
 File: ./images/Av-gauge-action.jpeg Graphic file (type jpg)
 <use ./images/Av-gauge-action.jpeg>
-Package pdftex.def Info: ./images/Av-gauge-action.jpeg  used on input line 1250
+Package pdftex.def Info: ./images/Av-gauge-action.jpeg  used on input line 1258
 .
 (pdftex.def)             Requested size: 150.13542pt x 48.7338pt.
 <./images/Bp-definition.jpeg, id=191, 3648.63126pt x 1240.635pt>
 File: ./images/Bp-definition.jpeg Graphic file (type jpg)
 <use ./images/Bp-definition.jpeg>
-Package pdftex.def Info: ./images/Bp-definition.jpeg  used on input line 1272.
+Package pdftex.def Info: ./images/Bp-definition.jpeg  used on input line 1280.
 (pdftex.def)             Requested size: 145.9204pt x 49.61694pt.
  [47 <./images/Av-gauge-action.jpeg> <./images/Bp-definition.jpeg>] [48] [49]
 <./images/anyon-examples.jpeg, id=202, 3873.47125pt x 1300.86pt>
 File: ./images/anyon-examples.jpeg Graphic file (type jpg)
 <use ./images/anyon-examples.jpeg>
-Package pdftex.def Info: ./images/anyon-examples.jpeg  used on input line 1381.
+Package pdftex.def Info: ./images/anyon-examples.jpeg  used on input line 1389.
 
 (pdftex.def)             Requested size: 154.91246pt x 52.02553pt.
 <./images/mutual-anyon-stats.jpeg, id=203, 3617.515pt x 1908.12875pt>
 File: ./images/mutual-anyon-stats.jpeg Graphic file (type jpg)
 <use ./images/mutual-anyon-stats.jpeg>
 Package pdftex.def Info: ./images/mutual-anyon-stats.jpeg  used on input line 1
-408.
+416.
 (pdftex.def)             Requested size: 144.67595pt x 76.31215pt.
 
 
@@ -974,72 +977,75 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <./images/two-swaps.jpeg, id=212, 2670.97874pt x 2565.585pt>
 File: ./images/two-swaps.jpeg Graphic file (type jpg)
 <use ./images/two-swaps.jpeg>
-Package pdftex.def Info: ./images/two-swaps.jpeg  used on input line 1443.
+Package pdftex.def Info: ./images/two-swaps.jpeg  used on input line 1451.
 (pdftex.def)             Requested size: 106.82095pt x 102.60591pt.
 
 [52 <./images/two-swaps.jpeg>]
-Underfull \hbox (badness 10000) in paragraph at lines 1487--1488
+Underfull \hbox (badness 10000) in paragraph at lines 1495--1496
 
  []
 
 [53] [54] [55] [56] [57]
-Overfull \hbox (8.45052pt too wide) in paragraph at lines 1650--1651
+Overfull \hbox (8.45052pt too wide) in paragraph at lines 1659--1660
 []\OT1/lmr/m/n/10 These sorts of im-plicit lem-mas are ev-ery-where in cat-e-go
 ry the-ory. When-ever a composition-
  []
 
 [58]
-Underfull \hbox (badness 10000) in paragraph at lines 1724--1725
+Underfull \hbox (badness 10000) in paragraph at lines 1737--1738
 
  []
 
-[59] [60] [61]
-Underfull \hbox (badness 10000) in paragraph at lines 1804--1805
+[59] [60] [61] [62] [63] [64] [65] [66]
+Underfull \hbox (badness 10000) in paragraph at lines 2011--2012
 
  []
 
-[62] (./Algebraic-TQC.bbl [63] [64] [65] [66]) [67] (./Algebraic-TQC.aux) ) 
+[67] [68] [69] (./Algebraic-TQC.bbl [70] [71] [72] [73]) [74]
+(./Algebraic-TQC.aux) ) 
 Here is how much of TeX's memory you used:
- 17770 strings out of 492649
- 380711 string characters out of 6129622
- 487518 words of memory out of 5000000
- 21218 multiletter control sequences out of 15000+600000
+ 17987 strings out of 492649
+ 382876 string characters out of 6129622
+ 487411 words of memory out of 5000000
+ 21432 multiletter control sequences out of 15000+600000
  86017 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,26n,84p,1807b,1004s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/us
-r/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc}{/usr/local/texl
-ive/2018/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2018/t
-exmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2018/texmf-dist/
-fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvip
-s/lm/lm-mathex.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lm
-bx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><
-/usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/local/
-texlive/2018/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2
-018/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2018/texmf
--dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2018/texmf-dist/font
-s/type1/public/lm/lmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pu
-blic/lm/lmmi5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmm
-i7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr10.pfb></us
-r/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/tex
-live/2018/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2018/t
-exmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2018/texmf-dist/fo
-nts/type1/public/lm/lmr6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pu
-blic/lm/lmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr8
-.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/l
-ocal/texlive/2018/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texli
-ve/2018/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2018/te
-xmf-dist/fonts/type1/public/lm/lmri7.pfb></usr/local/texlive/2018/texmf-dist/fo
-nts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
-public/lm/lmsy5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/l
-msy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbol
-s/msbm10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/sy
-mbols/msbm7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsf
-s10.pfb>
-Output written on Algebraic-TQC.pdf (67 pages, 14752332 bytes).
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/l
+m-rmsc.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/u
+sr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/t
+exlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/201
+8/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}</usr/local/texlive/2018/texmf-di
+st/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/t
+ype1/public/lm/lmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
+c/lm/lmbx7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx9.
+pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr
+/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/te
+xlive/2018/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2018
+/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2018/texmf-dis
+t/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
+e1/public/lm/lmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/l
+m/lmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr12.pfb
+></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/loca
+l/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/20
+18/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2018/texmf-dis
+t/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
+1/public/lm/lmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/
+lmr9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmri10.pfb><
+/usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local
+/texlive/2018/texmf-dist/fonts/type1/public/lm/lmri7.pfb></usr/local/texlive/20
+18/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2018/texmf-d
+ist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2018/texmf-dist/fonts/t
+ype1/public/lm/lmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public
+/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pu
+blic/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
+/public/rsfs/rsfs10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
+rsfs/rsfs5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs
+7.pfb>
+Output written on Algebraic-TQC.pdf (74 pages, 14805491 bytes).
 PDF statistics:
- 354 PDF objects out of 1000 (max. 8388607)
- 237 compressed objects within 3 object streams
+ 389 PDF objects out of 1000 (max. 8388607)
+ 262 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  88 words of extra memory for PDF output out of 10000 (max. 10000000)
 

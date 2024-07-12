@@ -7,7 +7,7 @@
 \contentsline {subsection}{\numberline {1.2}Technical introduction}{10}
 \contentsline {subsubsection}{\numberline {1.2.1}Principles of topological quantum information}{10}
 \contentsline {subsubsection}{\numberline {1.2.2}Defects in ordered media}{13}
-\contentsline {subsubsection}{\numberline {1.2.3}The fundamental group}{15}
+\contentsline {subsubsection}{\numberline {1.2.3}The fundamental group}{16}
 \contentsline {subsubsection}{\numberline {1.2.4}Topological classical computation}{19}
 \contentsline {section}{\numberline {2}Quantum mechanics}{21}
 \contentsline {subsection}{\numberline {2.1}Overview}{21}
@@ -38,17 +38,21 @@
 \contentsline {subsubsection}{\numberline {4.1.1}Introduction}{54}
 \contentsline {subsubsection}{\numberline {4.1.2}Definition and important obervations}{56}
 \contentsline {subsection}{\numberline {4.2}Structures in category theory}{59}
-\contentsline {subsection}{\numberline {4.3}Braided monoidal categories}{59}
-\contentsline {section}{\numberline {5}Topological quantum field theory}{60}
+\contentsline {subsection}{\numberline {4.3}Monoidal categories}{59}
+\contentsline {section}{\numberline {5}Modular tensor categories}{60}
 \contentsline {subsection}{\numberline {5.1}Overview}{60}
 \contentsline {subsubsection}{\numberline {5.1.1}Introduction}{60}
-\contentsline {subsubsection}{\numberline {5.1.2}Definition}{61}
-\contentsline {subsection}{\numberline {5.2}Dijkgraaf-Witten theory}{62}
-\contentsline {subsection}{\numberline {5.3}Extended TQFT}{62}
-\contentsline {section}{\numberline {6}Modular tensor categories}{62}
-\contentsline {section}{\numberline {7}Topological quantum computation}{62}
-\contentsline {subsection}{\numberline {7.1}Computational complexity}{62}
-\contentsline {subsubsection}{\numberline {7.1.1}Classical computation}{62}
-\contentsline {subsubsection}{\numberline {7.1.2}Probabilistic computation}{63}
-\contentsline {subsubsection}{\numberline {7.1.3}Quantum computation}{63}
-\contentsline {section}{\numberline {8}Further structure}{63}
+\contentsline {subsubsection}{\numberline {5.1.2}Using the final product}{61}
+\contentsline {subsection}{\numberline {5.2}First properties}{61}
+\contentsline {subsubsection}{\numberline {5.2.1}Definition}{61}
+\contentsline {subsubsection}{\numberline {5.2.2}Anyons in MTCs}{63}
+\contentsline {subsubsection}{\numberline {5.2.3}States in MTCs and unitarity}{64}
+\contentsline {subsubsection}{\numberline {5.2.4}Fusion measurement}{66}
+\contentsline {section}{\numberline {6}Topological quantum computation}{67}
+\contentsline {subsection}{\numberline {6.1}Computational complexity}{67}
+\contentsline {subsubsection}{\numberline {6.1.1}Classical computation}{67}
+\contentsline {subsubsection}{\numberline {6.1.2}Probabilistic computation}{68}
+\contentsline {subsubsection}{\numberline {6.1.3}Quantum computation}{68}
+\contentsline {section}{\numberline {7}Further structure}{68}
+\contentsline {subsection}{\numberline {7.1}Odds and ends}{68}
+\contentsline {subsubsection}{\numberline {7.1.1}Topological quantum field theory}{68}
