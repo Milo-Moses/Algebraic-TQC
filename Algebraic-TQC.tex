@@ -1846,9 +1846,9 @@ Such that:
 
 A spherical fusion category now has a structure for fusion, and a full structure for pair-creation. The 2nd condition is known as the \textit{spherical axiom}. We will explain this axiom in more detail later.
 
-We can now move on to our definition of MTCs:
+Adding on a braiding, we can get all of the structures of a modular tensor category. However, adding this structure still misses one key structure of being a modular tensor category. Hence, we call it \textit{pre-modular}:
 
-\begin{definition}[Modular tensor category] A modular tensor category is the following data:
+\begin{definition}[Pre-modular tensor category] A pre-modular tensor category is the following data:
 
 \begin{enumerate}
 \item A spherical fusion category $\C$;
@@ -1859,13 +1859,21 @@ Such that:
 
 \begin{enumerate}
 \item .[WORK: compatibility between braiding + $\CC$-linearity, or compatibility between braiding and rigidity?]
-\item .[WORK: non-degeneracy]
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
 \end{definition}
 
-An MTC now has all of the structure we wanted it to have: fusion, pair-creation, and braiding. In this definition we also introduced the axiom of non-degeneracy. This axiom and its interpretation is subtle. We postpone its explination until later.
+This definition now has all of the structure we wanted it to have: fusion, pair-creation, and braiding. The final axiom is a non-degeneracy condition. It is subtle in its interpretation, and we will explain it several different ways throughout this chapter:
+
+
+\begin{definition}[Modular tensor category] A modular tensor category is a pre-modular tensor category satisfying the following condition:
+
+[WORK: add condition]
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
 
 \subsubsection{Anyons in MTCs}
 
@@ -1986,13 +1994,112 @@ $\newline$
 
 A good first question to ask when seeing the Hilbert space $\Hom_\C(\one, A_1\otimes A_2... A_n)$ is \textit{why} this should describe a state with anyon configuration $A_1$... $A_n$. The answer is that states can be described their history. [WORK: give good example of making a state by specifying its history; argue why it has to be this way in general].
 
-\subsubsection{Fusion measurement}
+\subsubsection{Topological charge measurement}
 
 When two anyons are fused together, they will form a superposition of other anyon types. Measuring the result of the fusion will collapse the answer into a specific anyon type. The outcome of this measurment is an observable quantity, which allows for the measurement of topological quantum information. In many cases this is the \textit{only} local observable quanitity. We give the formalism behind computing these probabilities now.
 
 [WORK: do this right - I don't know it well but it shouln't be hard to learn. Don't introduce anything too general, like trace or whatnot. Just quantum dimension, which should already have been introduced in previous chapter.] 
 
 
+\subsection{The MTC toolkit}
+
+\subsubsection{Twist}
+
+\subsubsection{Quantum dimension}
+
+\subsubsection{Trace}
+
+\subsubsection{Duality}
+
+\subsubsection{Verlinde formula}
+
+\subsubsection{Functors, natural transformations, and equivalence}
+
+\subsubsection{Deligne tensor product}
+
+
+
+\subsection{Quantum double MTCs}
+
+\subsubsection{The Drinfeld center}
+
+\subsubsection{Muger's theorem}
+
+\subsubsection{Levin-Wen model}
+
+\subsubsection{Mortia equivalence}
+
+\subsubsection{Factorizability}
+
+\subsubsection{Quantum doubles of finite groups}
+
+
+
+\subsection{The modular representation}
+
+\subsubsection{Definition}
+
+\subsubsection{Torus perspective}
+
+\subsubsection{Proof of modularity}
+
+\subsubsection{Proof of unitarity}
+
+\subsubsection{Bruguieres's modularity theorem}
+
+\subsubsection{Schauenberg-Ng theorem}
+
+
+
+\subsection{The Yoneda perspective}
+
+\subsubsection{Principle}
+
+\subsubsection{$F$-symbols}
+
+\subsubsection{$R$-symbols}
+
+\subsubsection{$\theta$-symbols}
+
+\subsubsection{Reconstruction theorem}
+
+
+
+\subsection{Unitarity}
+
+\subsubsection{Characterization of unitarizable MTCs}
+
+\subsubsection{Uniqueness of unitary structure}
+
+\subsubsection{Yoneda perspective on unitarity}
+
+
+
+
+\subsection{Number theory in MTCs}
+
+\subsubsection{.[prerequisites and introduction]}
+
+\subsubsection{Galois conjugation}
+
+\subsubsection{Ocneanu rigidity}
+
+\subsubsection{Rank-finiteness theorem}
+
+\subsubsection{Vafa's theorem}
+
+.[WORK: this section is going to host a lot more theorems]
+
+
+
+
+\subsection{Adjectives in MTCs}
+
+\subsubsection{Solvability}
+
+\subsubsection{Nilpotence}
+
+.[WORK: surely more adjectives will be hosted here.]
 
 
 $\newline$
@@ -2014,11 +2121,24 @@ $\newline\newline$
 
 \begin{enumerate}[\thesection .1.]
 
-\item .[WORK: make exercises]
+\item .[WORK: apply Verlinde formula to group-theoretical MTCs to recover classical theorem by Burnside]
 
 \end{enumerate}
 
+
+\section{Further structure}
+
+\subsection{Overview}
+
+\subsection{Domain walls}
+
+\subsection{Symmetry enriched topological order}
+
+\subsection{Fermionic topological order}
+
 \section{Topological quantum computation}
+
+\subsection{Overview}
 
 \subsection{Computational complexity}
 
@@ -2055,11 +2175,25 @@ is a depth-1 circuit. A depth-$k$ circuit is a map $f:\ZZ_2^n\to \ZZ_2^m$ which 
 
 \subsubsection{Quantum computation}
 
-\section{Further structure}
+\subsection{Computation with Fibonacci anyons}
 
-\subsection{Odds and ends}
+\subsection{Computation with doubles of finite groups}
 
-\subsubsection{Topological quantum field theory}
+\subsection{Computation with the toric code}
+
+.[WORK: using gapped boundaries. This is the surface code.]
+
+
+\subsection{Computation with Ising anyons}
+
+.[WORK: universal TQC with Ising twsit defects]
+
+
+\appendix
+
+\section{Odds and ends}
+
+\subsection{Topological quantum field theories}
 
 In this chapter we will be exploring topological quantum field theory, a particular way of mathematically formalizing topological order. We recall below how this fits into the general framework of this book:
 
@@ -2095,6 +2229,13 @@ Hence, we find that every topological $\C$ induces an assignment
 
 This is the general picture for TQFT. A TQFT is an assignment from surfaces to vector spaces, with extra restrictioons which are required to get a reasonable theory. This sort of approach to quantum field theory can be generalized beyond TQFT. In these generalized cases, however, the assignment won't taken surfaces as inputs. Instead, it will take surfaces with detailed geometric structure which encodes the fact that the resulting quantum system will depend on distances and local geometric information. This approach is feasable in some cases but is quite technical \cite{segal1988definition}. Typically in non-topological cases people opt for other techniques.
 
+\subsection{Quasitriangular weak Hopf algebras}
+
+\subsection{Quantum groups}
+
+\subsection{Subfactors}
+
+\subsection{Vertex operator algebras}
 
 
 \bibliographystyle{alpha}

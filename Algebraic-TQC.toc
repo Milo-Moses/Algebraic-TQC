@@ -1,58 +1,112 @@
-\contentsline {section}{\numberline {0}Preface}{4}
-\contentsline {section}{\numberline {1}Overview}{5}
-\contentsline {subsection}{\numberline {1.1}Conceptual introduction}{5}
-\contentsline {subsubsection}{\numberline {1.1.1}Motivation and applications}{5}
-\contentsline {subsubsection}{\numberline {1.1.2}Mathematical picture}{7}
-\contentsline {subsubsection}{\numberline {1.1.3}History of the subject}{8}
-\contentsline {subsection}{\numberline {1.2}Technical introduction}{10}
-\contentsline {subsubsection}{\numberline {1.2.1}Principles of topological quantum information}{10}
-\contentsline {subsubsection}{\numberline {1.2.2}Defects in ordered media}{13}
-\contentsline {subsubsection}{\numberline {1.2.3}The fundamental group}{16}
-\contentsline {subsubsection}{\numberline {1.2.4}Topological classical computation}{19}
-\contentsline {section}{\numberline {2}Quantum mechanics}{21}
-\contentsline {subsection}{\numberline {2.1}Overview}{21}
-\contentsline {subsubsection}{\numberline {2.1.1}Introduction}{21}
-\contentsline {subsubsection}{\numberline {2.1.2}Experimental motivation}{22}
-\contentsline {subsection}{\numberline {2.2}Axiomatic development}{23}
-\contentsline {subsubsection}{\numberline {2.2.1}Probability theory}{23}
-\contentsline {subsubsection}{\numberline {2.2.2}Basis-dependent quantum mechanics}{24}
-\contentsline {subsubsection}{\numberline {2.2.3}Measurement}{26}
-\contentsline {subsubsection}{\numberline {2.2.4}Incomplete measurement}{28}
-\contentsline {subsubsection}{\numberline {2.2.5}Basis-independent quantum mechanics}{28}
-\contentsline {subsubsection}{\numberline {2.2.6}Hamiltonians and the Schrodinger equation}{32}
-\contentsline {section}{\numberline {3}Topological quantum order}{34}
-\contentsline {subsection}{\numberline {3.1}Overview}{34}
-\contentsline {subsubsection}{\numberline {3.1.1}Introduction}{34}
-\contentsline {subsection}{\numberline {3.2}Lattice gauge theory}{38}
-\contentsline {subsubsection}{\numberline {3.2.1}Ordered media on a lattice}{38}
-\contentsline {subsubsection}{\numberline {3.2.2}From ordered media to gauge theory}{42}
-\contentsline {subsubsection}{\numberline {3.2.3}Kitaev quantum double model}{43}
-\contentsline {subsection}{\numberline {3.3}The toric code}{46}
-\contentsline {subsubsection}{\numberline {3.3.1}Exact solution}{46}
-\contentsline {subsubsection}{\numberline {3.3.2}Anyons in the toric code}{49}
-\contentsline {subsection}{\numberline {3.4}Non-abelian anyons}{51}
-\contentsline {subsubsection}{\numberline {3.4.1}Principles of anyons}{51}
-\contentsline {subsubsection}{\numberline {3.4.2}The $G=D_4$ Kitaev quantum double model}{53}
-\contentsline {section}{\numberline {4}Category theory}{54}
-\contentsline {subsection}{\numberline {4.1}Overview}{54}
-\contentsline {subsubsection}{\numberline {4.1.1}Introduction}{54}
-\contentsline {subsubsection}{\numberline {4.1.2}Definition and important obervations}{56}
-\contentsline {subsection}{\numberline {4.2}Structures in category theory}{59}
-\contentsline {subsection}{\numberline {4.3}Monoidal categories}{59}
-\contentsline {section}{\numberline {5}Modular tensor categories}{60}
-\contentsline {subsection}{\numberline {5.1}Overview}{60}
-\contentsline {subsubsection}{\numberline {5.1.1}Introduction}{60}
-\contentsline {subsubsection}{\numberline {5.1.2}Using the final product}{61}
-\contentsline {subsection}{\numberline {5.2}First properties}{61}
-\contentsline {subsubsection}{\numberline {5.2.1}Definition}{61}
-\contentsline {subsubsection}{\numberline {5.2.2}Anyons in MTCs}{63}
-\contentsline {subsubsection}{\numberline {5.2.3}States in MTCs and unitarity}{64}
-\contentsline {subsubsection}{\numberline {5.2.4}Fusion measurement}{66}
-\contentsline {section}{\numberline {6}Topological quantum computation}{67}
-\contentsline {subsection}{\numberline {6.1}Computational complexity}{67}
-\contentsline {subsubsection}{\numberline {6.1.1}Classical computation}{67}
-\contentsline {subsubsection}{\numberline {6.1.2}Probabilistic computation}{68}
-\contentsline {subsubsection}{\numberline {6.1.3}Quantum computation}{68}
-\contentsline {section}{\numberline {7}Further structure}{68}
-\contentsline {subsection}{\numberline {7.1}Odds and ends}{68}
-\contentsline {subsubsection}{\numberline {7.1.1}Topological quantum field theory}{68}
+\contentsline {section}{\numberline {0}Preface}{5}
+\contentsline {section}{\numberline {1}Overview}{6}
+\contentsline {subsection}{\numberline {1.1}Conceptual introduction}{6}
+\contentsline {subsubsection}{\numberline {1.1.1}Motivation and applications}{6}
+\contentsline {subsubsection}{\numberline {1.1.2}Mathematical picture}{8}
+\contentsline {subsubsection}{\numberline {1.1.3}History of the subject}{9}
+\contentsline {subsection}{\numberline {1.2}Technical introduction}{11}
+\contentsline {subsubsection}{\numberline {1.2.1}Principles of topological quantum information}{11}
+\contentsline {subsubsection}{\numberline {1.2.2}Defects in ordered media}{14}
+\contentsline {subsubsection}{\numberline {1.2.3}The fundamental group}{17}
+\contentsline {subsubsection}{\numberline {1.2.4}Topological classical computation}{20}
+\contentsline {section}{\numberline {2}Quantum mechanics}{22}
+\contentsline {subsection}{\numberline {2.1}Overview}{22}
+\contentsline {subsubsection}{\numberline {2.1.1}Introduction}{22}
+\contentsline {subsubsection}{\numberline {2.1.2}Experimental motivation}{23}
+\contentsline {subsection}{\numberline {2.2}Axiomatic development}{24}
+\contentsline {subsubsection}{\numberline {2.2.1}Probability theory}{24}
+\contentsline {subsubsection}{\numberline {2.2.2}Basis-dependent quantum mechanics}{25}
+\contentsline {subsubsection}{\numberline {2.2.3}Measurement}{27}
+\contentsline {subsubsection}{\numberline {2.2.4}Incomplete measurement}{29}
+\contentsline {subsubsection}{\numberline {2.2.5}Basis-independent quantum mechanics}{29}
+\contentsline {subsubsection}{\numberline {2.2.6}Hamiltonians and the Schrodinger equation}{33}
+\contentsline {section}{\numberline {3}Topological quantum order}{35}
+\contentsline {subsection}{\numberline {3.1}Overview}{35}
+\contentsline {subsubsection}{\numberline {3.1.1}Introduction}{35}
+\contentsline {subsection}{\numberline {3.2}Lattice gauge theory}{39}
+\contentsline {subsubsection}{\numberline {3.2.1}Ordered media on a lattice}{39}
+\contentsline {subsubsection}{\numberline {3.2.2}From ordered media to gauge theory}{43}
+\contentsline {subsubsection}{\numberline {3.2.3}Kitaev quantum double model}{44}
+\contentsline {subsection}{\numberline {3.3}The toric code}{47}
+\contentsline {subsubsection}{\numberline {3.3.1}Exact solution}{47}
+\contentsline {subsubsection}{\numberline {3.3.2}Anyons in the toric code}{50}
+\contentsline {subsection}{\numberline {3.4}Non-abelian anyons}{52}
+\contentsline {subsubsection}{\numberline {3.4.1}Principles of anyons}{52}
+\contentsline {subsubsection}{\numberline {3.4.2}The $G=D_4$ Kitaev quantum double model}{54}
+\contentsline {section}{\numberline {4}Category theory}{55}
+\contentsline {subsection}{\numberline {4.1}Overview}{55}
+\contentsline {subsubsection}{\numberline {4.1.1}Introduction}{55}
+\contentsline {subsubsection}{\numberline {4.1.2}Definition and important obervations}{57}
+\contentsline {subsection}{\numberline {4.2}Structures in category theory}{60}
+\contentsline {subsection}{\numberline {4.3}Monoidal categories}{60}
+\contentsline {section}{\numberline {5}Modular tensor categories}{61}
+\contentsline {subsection}{\numberline {5.1}Overview}{61}
+\contentsline {subsubsection}{\numberline {5.1.1}Introduction}{61}
+\contentsline {subsubsection}{\numberline {5.1.2}Using the final product}{62}
+\contentsline {subsection}{\numberline {5.2}First properties}{62}
+\contentsline {subsubsection}{\numberline {5.2.1}Definition}{62}
+\contentsline {subsubsection}{\numberline {5.2.2}Anyons in MTCs}{64}
+\contentsline {subsubsection}{\numberline {5.2.3}States in MTCs and unitarity}{66}
+\contentsline {subsubsection}{\numberline {5.2.4}Topological charge measurement}{67}
+\contentsline {subsection}{\numberline {5.3}The MTC toolkit}{68}
+\contentsline {subsubsection}{\numberline {5.3.1}Twist}{68}
+\contentsline {subsubsection}{\numberline {5.3.2}Quantum dimension}{68}
+\contentsline {subsubsection}{\numberline {5.3.3}Trace}{68}
+\contentsline {subsubsection}{\numberline {5.3.4}Duality}{68}
+\contentsline {subsubsection}{\numberline {5.3.5}Verlinde formula}{68}
+\contentsline {subsubsection}{\numberline {5.3.6}Functors, natural transformations, and equivalence}{68}
+\contentsline {subsubsection}{\numberline {5.3.7}Deligne tensor product}{68}
+\contentsline {subsection}{\numberline {5.4}Quantum double MTCs}{68}
+\contentsline {subsubsection}{\numberline {5.4.1}The Drinfeld center}{68}
+\contentsline {subsubsection}{\numberline {5.4.2}Muger's theorem}{68}
+\contentsline {subsubsection}{\numberline {5.4.3}Levin-Wen model}{68}
+\contentsline {subsubsection}{\numberline {5.4.4}Mortia equivalence}{68}
+\contentsline {subsubsection}{\numberline {5.4.5}Factorizability}{68}
+\contentsline {subsubsection}{\numberline {5.4.6}Quantum doubles of finite groups}{68}
+\contentsline {subsection}{\numberline {5.5}The modular representation}{68}
+\contentsline {subsubsection}{\numberline {5.5.1}Definition}{68}
+\contentsline {subsubsection}{\numberline {5.5.2}Torus perspective}{68}
+\contentsline {subsubsection}{\numberline {5.5.3}Proof of modularity}{68}
+\contentsline {subsubsection}{\numberline {5.5.4}Proof of unitarity}{68}
+\contentsline {subsubsection}{\numberline {5.5.5}Bruguieres's modularity theorem}{68}
+\contentsline {subsubsection}{\numberline {5.5.6}Schauenberg-Ng theorem}{68}
+\contentsline {subsection}{\numberline {5.6}The Yoneda perspective}{68}
+\contentsline {subsubsection}{\numberline {5.6.1}Principle}{68}
+\contentsline {subsubsection}{\numberline {5.6.2}$F$-symbols}{68}
+\contentsline {subsubsection}{\numberline {5.6.3}$R$-symbols}{68}
+\contentsline {subsubsection}{\numberline {5.6.4}$\theta $-symbols}{68}
+\contentsline {subsubsection}{\numberline {5.6.5}Reconstruction theorem}{68}
+\contentsline {subsection}{\numberline {5.7}Unitarity}{68}
+\contentsline {subsubsection}{\numberline {5.7.1}Characterization of unitarizable MTCs}{68}
+\contentsline {subsubsection}{\numberline {5.7.2}Uniqueness of unitary structure}{68}
+\contentsline {subsubsection}{\numberline {5.7.3}Yoneda perspective on unitarity}{68}
+\contentsline {subsection}{\numberline {5.8}Number theory in MTCs}{68}
+\contentsline {subsubsection}{\numberline {5.8.1}.[prerequisites and introduction]}{68}
+\contentsline {subsubsection}{\numberline {5.8.2}Galois conjugation}{68}
+\contentsline {subsubsection}{\numberline {5.8.3}Ocneanu rigidity}{68}
+\contentsline {subsubsection}{\numberline {5.8.4}Rank-finiteness theorem}{68}
+\contentsline {subsubsection}{\numberline {5.8.5}Vafa's theorem}{68}
+\contentsline {subsection}{\numberline {5.9}Adjectives in MTCs}{69}
+\contentsline {subsubsection}{\numberline {5.9.1}Solvability}{69}
+\contentsline {subsubsection}{\numberline {5.9.2}Nilpotence}{69}
+\contentsline {section}{\numberline {6}Further structure}{70}
+\contentsline {subsection}{\numberline {6.1}Overview}{70}
+\contentsline {subsection}{\numberline {6.2}Domain walls}{70}
+\contentsline {subsection}{\numberline {6.3}Symmetry enriched topological order}{70}
+\contentsline {subsection}{\numberline {6.4}Fermionic topological order}{70}
+\contentsline {section}{\numberline {7}Topological quantum computation}{70}
+\contentsline {subsection}{\numberline {7.1}Overview}{70}
+\contentsline {subsection}{\numberline {7.2}Computational complexity}{70}
+\contentsline {subsubsection}{\numberline {7.2.1}Classical computation}{70}
+\contentsline {subsubsection}{\numberline {7.2.2}Probabilistic computation}{71}
+\contentsline {subsubsection}{\numberline {7.2.3}Quantum computation}{71}
+\contentsline {subsection}{\numberline {7.3}Computation with Fibonacci anyons}{71}
+\contentsline {subsection}{\numberline {7.4}Computation with doubles of finite groups}{71}
+\contentsline {subsection}{\numberline {7.5}Computation with the toric code}{71}
+\contentsline {subsection}{\numberline {7.6}Computation with Ising anyons}{71}
+\contentsline {section}{\numberline {A}Odds and ends}{71}
+\contentsline {subsection}{\numberline {A.1}Topological quantum field theories}{71}
+\contentsline {subsection}{\numberline {A.2}Quasitriangular weak Hopf algebras}{73}
+\contentsline {subsection}{\numberline {A.3}Quantum groups}{73}
+\contentsline {subsection}{\numberline {A.4}Subfactors}{73}
+\contentsline {subsection}{\numberline {A.5}Vertex operator algebras}{73}
