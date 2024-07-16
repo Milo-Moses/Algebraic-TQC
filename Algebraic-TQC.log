@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  15 JUL 2024 11:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  16 JUL 2024 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -57,7 +57,10 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen110
 \Gm@dimlist=\toks16
 )
-(./tikzit.sty
+(./quiver.sty
+Package: quiver 2021/01/11 quiver
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
+Package: tikz-cd 2014/10/30 v0.9e Commutative diagrams with tikz
 (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
@@ -366,11 +369,62 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 s/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 )))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2013/07/12 v3.0.1a (rcs-revision 1.4)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2014/03/21 v3.0.1a (rcs-revision 1.4)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
+meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2015/05/13 v3.0.1a (rcs-revision 1.13)
+\pgfarrowinset=\dimen159
+\pgfarrowlength=\dimen160
+\pgfarrowwidth=\dimen161
+\pgfarrowlinewidth=\dimen162
+)))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks29
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.1a (rcs-revision 1.9)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathmorphing.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
+s.code.tex
+\pgfdecoratedcompleteddistance=\dimen163
+\pgfdecoratedremainingdistance=\dimen164
+\pgfdecoratedinputsegmentcompleteddistance=\dimen165
+\pgfdecoratedinputsegmentremainingdistance=\dimen166
+\pgf@decorate@distancetomove=\dimen167
+\pgf@decorate@repeatstate=\count110
+\pgfdecorationsegmentamplitude=\dimen168
+\pgfdecorationsegmentlength=\dimen169
+)
+\tikz@lib@dec@box=\box37
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathmorphing.code.tex))) (./tikzit.sty
 (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.3)
-\pgf@layerbox@background=\box37
-\pgf@layerboxsaved@background=\box38
+\pgf@layerbox@background=\box38
+\pgf@layerboxsaved@background=\box39
 )
 (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibraryarrows.code.tex
@@ -379,7 +433,7 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
 code.tex
 File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
-\arrowsize=\dimen159
+\arrowsize=\dimen170
 ))
 (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibraryshapes.code.tex
@@ -432,63 +486,43 @@ File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
 shapes.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
 
-\pgfnodepartlowerbox=\box39
-\pgfnodeparttwobox=\box40
-\pgfnodepartthreebox=\box41
-\pgfnodepartfourbox=\box42
-\pgfnodeparttwentybox=\box43
-\pgfnodepartnineteenbox=\box44
-\pgfnodeparteighteenbox=\box45
-\pgfnodepartseventeenbox=\box46
-\pgfnodepartsixteenbox=\box47
-\pgfnodepartfifteenbox=\box48
-\pgfnodepartfourteenbox=\box49
-\pgfnodepartthirteenbox=\box50
-\pgfnodeparttwelvebox=\box51
-\pgfnodepartelevenbox=\box52
-\pgfnodeparttenbox=\box53
-\pgfnodepartninebox=\box54
-\pgfnodeparteightbox=\box55
-\pgfnodepartsevenbox=\box56
-\pgfnodepartsixbox=\box57
-\pgfnodepartfivebox=\box58
+\pgfnodepartlowerbox=\box40
+\pgfnodeparttwobox=\box41
+\pgfnodepartthreebox=\box42
+\pgfnodepartfourbox=\box43
+\pgfnodeparttwentybox=\box44
+\pgfnodepartnineteenbox=\box45
+\pgfnodeparteighteenbox=\box46
+\pgfnodepartseventeenbox=\box47
+\pgfnodepartsixteenbox=\box48
+\pgfnodepartfifteenbox=\box49
+\pgfnodepartfourteenbox=\box50
+\pgfnodepartthirteenbox=\box51
+\pgfnodeparttwelvebox=\box52
+\pgfnodepartelevenbox=\box53
+\pgfnodeparttenbox=\box54
+\pgfnodepartninebox=\box55
+\pgfnodeparteightbox=\box56
+\pgfnodepartsevenbox=\box57
+\pgfnodepartsixbox=\box58
+\pgfnodepartfivebox=\box59
 )))
-\pgf@layerbox@edgelayer=\box59
-\pgf@layerboxsaved@edgelayer=\box60
-\pgf@layerbox@nodelayer=\box61
-\pgf@layerboxsaved@nodelayer=\box62
+\pgf@layerbox@edgelayer=\box60
+\pgf@layerboxsaved@edgelayer=\box61
+\pgf@layerbox@nodelayer=\box62
+\pgf@layerboxsaved@nodelayer=\box63
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
-Package: tikz-cd 2014/10/30 v0.9e Commutative diagrams with tikz
-
-(/usr/local/texlive/2018/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
-(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarymatrix.code.tex
-File: tikzlibrarymatrix.code.tex 2013/07/12 v3.0.1a (rcs-revision 1.4)
-)
-(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibraryquotes.code.tex
-File: tikzlibraryquotes.code.tex 2014/03/21 v3.0.1a (rcs-revision 1.4)
-)
-(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
-meta.code.tex
-File: pgflibraryarrows.meta.code.tex 2015/05/13 v3.0.1a (rcs-revision 1.13)
-\pgfarrowinset=\dimen160
-\pgfarrowlength=\dimen161
-\pgfarrowwidth=\dimen162
-\pgfarrowlinewidth=\dimen163
-)))
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2017/10/31 v2.20.4
-\thm@style=\toks29
-\thm@bodyfont=\toks30
-\thm@headfont=\toks31
-\thm@notefont=\toks32
-\thm@headpunct=\toks33
+\thm@style=\toks30
+\thm@bodyfont=\toks31
+\thm@headfont=\toks32
+\thm@notefont=\toks33
+\thm@headpunct=\toks34
 \thm@preskip=\skip43
 \thm@postskip=\skip44
 \thm@headsep=\skip45
-\dth@everypar=\toks34
+\dth@everypar=\toks35
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2017/09/02 v2.17a AMS math features
@@ -500,63 +534,53 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks35
-\ex@=\dimen164
+\@emptytoks=\toks36
+\ex@=\dimen171
 ))
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen165
+\pmbraise@=\dimen172
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count110
+\inf@bad=\count111
 LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count111
-\leftroot@=\count112
+\uproot@=\count112
+\leftroot@=\count113
 LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count113
-\DOTSCASE@=\count114
+\classnum@=\count114
+\DOTSCASE@=\count115
 LaTeX Info: Redefining \ldots on input line 472.
 LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
-\Mathstrutbox@=\box63
-\strutbox@=\box64
-\big@size=\dimen166
+\Mathstrutbox@=\box64
+\strutbox@=\box65
+\big@size=\dimen173
 LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count115
-\c@MaxMatrixCols=\count116
+\macc@depth=\count116
+\c@MaxMatrixCols=\count117
 \dotsspace@=\muskip10
-\c@parentequation=\count117
-\dspbrk@lvl=\count118
-\tag@help=\toks36
-\row@=\count119
-\column@=\count120
-\maxfields@=\count121
-\andhelp@=\toks37
-\eqnshift@=\dimen167
-\alignsep@=\dimen168
-\tagshift@=\dimen169
-\tagwidth@=\dimen170
-\totwidth@=\dimen171
-\lineht@=\dimen172
-\@envbody=\toks38
+\c@parentequation=\count118
+\dspbrk@lvl=\count119
+\tag@help=\toks37
+\row@=\count120
+\column@=\count121
+\maxfields@=\count122
+\andhelp@=\toks38
+\eqnshift@=\dimen174
+\alignsep@=\dimen175
+\tagshift@=\dimen176
+\tagwidth@=\dimen177
+\totwidth@=\dimen178
+\lineht@=\dimen179
+\@envbody=\toks39
 \multlinegap=\skip47
 \multlinetaggap=\skip48
-\mathdisplay@stack=\toks39
+\mathdisplay@stack=\toks40
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
-)
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
@@ -568,15 +592,15 @@ Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count122
-\calc@Bcount=\count123
-\calc@Adimen=\dimen173
-\calc@Bdimen=\dimen174
+\calc@Acount=\count123
+\calc@Bcount=\count124
+\calc@Adimen=\dimen180
+\calc@Bdimen=\dimen181
 \calc@Askip=\skip49
 \calc@Bskip=\skip50
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count124
+\calc@Ccount=\count125
 \calc@Cskip=\skip51
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/mathtools/mhsetup.sty
@@ -586,15 +610,15 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count125
-\l_MT_multwidth_dim=\dimen175
+\g_MT_multlinerow_int=\count126
+\l_MT_multwidth_dim=\dimen182
 \origjot=\skip52
-\l_MT_shortvdotswithinadjustabove_dim=\dimen176
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen177
-\l_MT_above_intertext_sep=\dimen178
-\l_MT_below_intertext_sep=\dimen179
-\l_MT_above_shortintertext_sep=\dimen180
-\l_MT_below_shortintertext_sep=\dimen181
+\l_MT_shortvdotswithinadjustabove_dim=\dimen183
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen184
+\l_MT_above_intertext_sep=\dimen185
+\l_MT_below_intertext_sep=\dimen186
+\l_MT_above_shortintertext_sep=\dimen187
+\l_MT_below_shortintertext_sep=\dimen188
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
@@ -633,35 +657,35 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count126
-\float@exts=\toks40
-\float@box=\box65
-\@float@everytoks=\toks41
-\@floatcapt=\box66
+\c@float@type=\count127
+\float@exts=\toks41
+\float@box=\box66
+\@float@everytoks=\toks42
+\@floatcapt=\box67
 )
-\c@theorem=\count127
-\c@lemma=\count128
-\c@corollary=\count129
-\c@conjecture=\count130
-\c@proposition=\count131
-\c@propositionph=\count132
+\c@theorem=\count128
+\c@lemma=\count129
+\c@corollary=\count130
+\c@conjecture=\count131
+\c@proposition=\count132
+\c@propositionph=\count133
 
 (./Algebraic-TQC.aux)
 \openout1 = `Algebraic-TQC.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 42.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 43.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -703,17 +727,17 @@ File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ABD: EveryShipout initializing macros
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count133
-\scratchdimen=\dimen182
-\scratchbox=\box67
-\nofMPsegments=\count134
-\nofMParguments=\count135
-\everyMPshowfont=\toks42
-\MPscratchCnt=\count136
-\MPscratchDim=\dimen183
-\MPnumerator=\count137
-\makeMPintoPDFobject=\count138
-\everyMPtoPDFconversion=\toks43
+\scratchcounter=\count134
+\scratchdimen=\dimen189
+\scratchbox=\box68
+\nofMPsegments=\count135
+\nofMParguments=\count136
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count137
+\MPscratchDim=\dimen190
+\MPnumerator=\count138
+\makeMPintoPDFobject=\count139
+\everyMPtoPDFconversion=\toks44
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -766,40 +790,40 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 45.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 46.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 45.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 46.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 45.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 46.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 45.
+(Font)              <12> on input line 46.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 45.
+(Font)              <8> on input line 46.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 45.
-LaTeX Font Info:    Try loading font information for U+msa on input line 45.
+(Font)              <6> on input line 46.
+LaTeX Font Info:    Try loading font information for U+msa on input line 46.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 45.
+LaTeX Font Info:    Try loading font information for U+msb on input line 46.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 45.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 46.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -828,30 +852,30 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 <./images/quasiparticle.jpeg, id=52, 3643.6125pt x 1812.7725pt>
 File: ./images/quasiparticle.jpeg Graphic file (type jpg)
 <use ./images/quasiparticle.jpeg>
-Package pdftex.def Info: ./images/quasiparticle.jpeg  used on input line 201.
+Package pdftex.def Info: ./images/quasiparticle.jpeg  used on input line 208.
 (pdftex.def)             Requested size: 145.71968pt x 72.49855pt.
  [11 <./images/quasiparticle.jpeg>]
 <./images/TQC-outline.png, id=56, 497.86pt x 401.5pt>
 File: ./images/TQC-outline.png Graphic file (type png)
 <use ./images/TQC-outline.png>
-Package pdftex.def Info: ./images/TQC-outline.png  used on input line 223.
+Package pdftex.def Info: ./images/TQC-outline.png  used on input line 230.
 (pdftex.def)             Requested size: 174.2536pt x 140.5271pt.
  [12]
 (./figures/shor-fibonacci.tikz) [13 <./images/TQC-outline.png>]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 252.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 259.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 252.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 259.
  [14] [15]
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 282.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 289.
 
 [16] [17]
-Overfull \hbox (11.01308pt too wide) in paragraph at lines 380--381
+Overfull \hbox (11.01308pt too wide) in paragraph at lines 387--388
 []\OT1/lmr/bx/n/10 Corollary 1.1. []\OT1/lmr/m/it/10 Choose $\OML/lmm/m/it/10 b
 ; x \OMS/lmsy/m/n/10 2 \U/msb/m/n/10 R[]$\OT1/lmr/m/it/10 . We have a canon-i-c
 al iso-mor-phism of groups $\OML/lmm/m/it/10 ^^Y[]\OT1/lmr/m/n/10 (\U/msb/m/n/1
@@ -860,25 +884,25 @@ b\OT1/lmr/m/n/10 ) []
  []
 
 [18] [19] [20] [21]
-Underfull \hbox (badness 10000) in paragraph at lines 517--518
+Underfull \hbox (badness 10000) in paragraph at lines 524--525
 
  []
 
 [22] [23] [24] [25] [26] [27] [28] [29] [30]
-Overfull \hbox (22.67253pt too wide) in paragraph at lines 806--807
+Overfull \hbox (22.67253pt too wide) in paragraph at lines 813--814
 []\OT1/lmr/m/n/10 where $\OMS/lmsy/m/n/10 <\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 ^^
 A\OT1/lmr/m/n/10 )$ de-notes the real part of a com-plex num-ber. Thus, we con-
 clude that $\OMS/lmsy/m/n/10 < [] \OT1/lmr/m/n/10 =
  []
 
 [31] [32] [33] [34]
-Underfull \hbox (badness 10000) in paragraph at lines 913--914
+Underfull \hbox (badness 10000) in paragraph at lines 920--921
 
  []
 
 (./figures/mathematical-outline-TQO.tikz) [35] (./figures/TQO-spectrum-1.tikz)
 (./figures/TQO-spectrum-2.tikz) (./figures/system-size.tikz)
-Overfull \hbox (2.55212pt too wide) in paragraph at lines 961--962
+Overfull \hbox (2.55212pt too wide) in paragraph at lines 968--969
 []\OT1/lmr/m/n/10 Letting $[](\OML/lmm/m/it/10 V\OT1/lmr/m/n/10 )$ de-note the 
 di-men-sion of $\OML/lmm/m/it/10 V$\OT1/lmr/m/n/10 , this gives us an as-symp-t
 otic for-mula $[](\OML/lmm/m/it/10 V\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^X
@@ -888,7 +912,7 @@ otic for-mula $[](\OML/lmm/m/it/10 V\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^X
 <./images/lattice-example.jpeg, id=154, 2683.02374pt x 1790.69pt>
 File: ./images/lattice-example.jpeg Graphic file (type jpg)
 <use ./images/lattice-example.jpeg>
-Package pdftex.def Info: ./images/lattice-example.jpeg  used on input line 1020
+Package pdftex.def Info: ./images/lattice-example.jpeg  used on input line 1027
 .
 (pdftex.def)             Requested size: 107.30267pt x 71.6154pt.
 
@@ -900,41 +924,41 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: ./images/torus-definition.jpeg Graphic file (type jpg)
 <use ./images/torus-definition.jpeg>
 Package pdftex.def Info: ./images/torus-definition.jpeg  used on input line 103
-2.
+9.
 (pdftex.def)             Requested size: 137.0086pt x 47.60979pt.
 <./images/torus-lattice.jpeg, id=159, 2158.0625pt x 2069.7325pt>
 File: ./images/torus-lattice.jpeg Graphic file (type jpg)
 <use ./images/torus-lattice.jpeg>
-Package pdftex.def Info: ./images/torus-lattice.jpeg  used on input line 1049.
+Package pdftex.def Info: ./images/torus-lattice.jpeg  used on input line 1056.
 (pdftex.def)             Requested size: 86.3078pt x 82.77519pt.
  [40 <./images/lattice-example.jpeg> <./images/torus-definition.jpeg>]
 <./images/full-example.png, id=163, 926.46124pt x 354.32375pt>
 File: ./images/full-example.png Graphic file (type png)
 <use ./images/full-example.png>
-Package pdftex.def Info: ./images/full-example.png  used on input line 1063.
+Package pdftex.def Info: ./images/full-example.png  used on input line 1070.
 (pdftex.def)             Requested size: 277.9405pt x 106.29794pt.
 
 [41 <./images/torus-lattice.jpeg> <./images/full-example.png>]
 <./images/plaquette-rule.jpeg, id=168, 3704.84125pt x 1095.09125pt>
 File: ./images/plaquette-rule.jpeg Graphic file (type jpg)
 <use ./images/plaquette-rule.jpeg>
-Package pdftex.def Info: ./images/plaquette-rule.jpeg  used on input line 1073.
+Package pdftex.def Info: ./images/plaquette-rule.jpeg  used on input line 1080.
 
 (pdftex.def)             Requested size: 222.28088pt x 65.70264pt.
 <./images/gauge-transformation.jpeg, id=169, 3270.2175pt x 1237.62375pt>
 File: ./images/gauge-transformation.jpeg Graphic file (type jpg)
 <use ./images/gauge-transformation.jpeg>
 Package pdftex.def Info: ./images/gauge-transformation.jpeg  used on input line
- 1087.
+ 1094.
 (pdftex.def)             Requested size: 130.78642pt x 49.4965pt.
  [42 <./images/plaquette-rule.jpeg> <./images/gauge-transformation.jpeg>]
 <./images/twisting.png, id=173, 446.66875pt x 188.705pt>
 File: ./images/twisting.png Graphic file (type png)
 <use ./images/twisting.png>
-Package pdftex.def Info: ./images/twisting.png  used on input line 1095.
+Package pdftex.def Info: ./images/twisting.png  used on input line 1102.
 (pdftex.def)             Requested size: 200.99907pt x 84.91646pt.
  [43 <./images/twisting.png>] [44] [45]
-Overfull \hbox (9.69862pt too wide) in paragraph at lines 1200--1201
+Overfull \hbox (9.69862pt too wide) in paragraph at lines 1207--1208
 []\OT1/lmr/m/it/10 The set of vec-tors $[][]$ is lin-early in-de-pen-dent. Henc
 e,
  []
@@ -942,32 +966,32 @@ e,
 <./images/torus.png, id=185, 340.27126pt x 223.83624pt>
 File: ./images/torus.png Graphic file (type png)
 <use ./images/torus.png>
-Package pdftex.def Info: ./images/torus.png  used on input line 1215.
+Package pdftex.def Info: ./images/torus.png  used on input line 1222.
 (pdftex.def)             Requested size: 102.08215pt x 67.15138pt.
 [46 <./images/torus.png>] [47]
 <./images/Av-gauge-action.jpeg, id=193, 3754.025pt x 1218.5525pt>
 File: ./images/Av-gauge-action.jpeg Graphic file (type jpg)
 <use ./images/Av-gauge-action.jpeg>
-Package pdftex.def Info: ./images/Av-gauge-action.jpeg  used on input line 1258
+Package pdftex.def Info: ./images/Av-gauge-action.jpeg  used on input line 1265
 .
 (pdftex.def)             Requested size: 150.13542pt x 48.7338pt.
 <./images/Bp-definition.jpeg, id=194, 3648.63126pt x 1240.635pt>
 File: ./images/Bp-definition.jpeg Graphic file (type jpg)
 <use ./images/Bp-definition.jpeg>
-Package pdftex.def Info: ./images/Bp-definition.jpeg  used on input line 1280.
+Package pdftex.def Info: ./images/Bp-definition.jpeg  used on input line 1287.
 (pdftex.def)             Requested size: 145.9204pt x 49.61694pt.
  [48 <./images/Av-gauge-action.jpeg> <./images/Bp-definition.jpeg>] [49] [50]
 <./images/anyon-examples.jpeg, id=206, 3873.47125pt x 1300.86pt>
 File: ./images/anyon-examples.jpeg Graphic file (type jpg)
 <use ./images/anyon-examples.jpeg>
-Package pdftex.def Info: ./images/anyon-examples.jpeg  used on input line 1389.
+Package pdftex.def Info: ./images/anyon-examples.jpeg  used on input line 1396.
 
 (pdftex.def)             Requested size: 154.91246pt x 52.02553pt.
 <./images/mutual-anyon-stats.jpeg, id=207, 3617.515pt x 1908.12875pt>
 File: ./images/mutual-anyon-stats.jpeg Graphic file (type jpg)
 <use ./images/mutual-anyon-stats.jpeg>
 Package pdftex.def Info: ./images/mutual-anyon-stats.jpeg  used on input line 1
-416.
+423.
 (pdftex.def)             Requested size: 144.67595pt x 76.31215pt.
 
 
@@ -977,48 +1001,68 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <./images/two-swaps.jpeg, id=215, 2670.97874pt x 2565.585pt>
 File: ./images/two-swaps.jpeg Graphic file (type jpg)
 <use ./images/two-swaps.jpeg>
-Package pdftex.def Info: ./images/two-swaps.jpeg  used on input line 1451.
+Package pdftex.def Info: ./images/two-swaps.jpeg  used on input line 1458.
 (pdftex.def)             Requested size: 106.82095pt x 102.60591pt.
 
 [53 <./images/two-swaps.jpeg>]
-Underfull \hbox (badness 10000) in paragraph at lines 1495--1496
+Underfull \hbox (badness 10000) in paragraph at lines 1503--1504
 
  []
 
 [54] [55] [56] [57] [58]
-Overfull \hbox (8.45052pt too wide) in paragraph at lines 1659--1660
+Overfull \hbox (8.45052pt too wide) in paragraph at lines 1667--1668
 []\OT1/lmr/m/n/10 These sorts of im-plicit lem-mas are ev-ery-where in cat-e-go
 ry the-ory. When-ever a composition-
  []
 
 [59]
-Underfull \hbox (badness 10000) in paragraph at lines 1737--1738
+Underfull \hbox (badness 10000) in paragraph at lines 1746--1747
 
  []
 
-[60] [61] [62] [63] [64] [65] [66] [67]
-Overfull \vbox (143.253pt too high) has occurred while \output is active []
+[60] [61] [62] [63] [64] [65] [66] [67] [68]
+Overfull \vbox (69.42006pt too high) has occurred while \output is active []
 
 
-[68]
-Underfull \hbox (badness 10000) in paragraph at lines 2118--2119
+[69]
+Underfull \hbox (badness 10000) in paragraph at lines 2140--2141
 
  []
 
-[69] [70] [71] [72] (./Algebraic-TQC.bbl [73] [74] [75] [76]) [77]
+[70]
+Underfull \hbox (badness 10000) in paragraph at lines 2173--2174
+
+ []
+
+[71] [72] [73]
+
+LaTeX Font Warning: Font shape `OT1/lmr/bx/sc' undefined
+(Font)              using `OT1/lmr/bx/n' instead on input line 2276.
+
+
+Overfull \hbox (18.46771pt too wide) detected at line 2280
+[] \OT1/lmr/m/n/10 = [] = \[]"\OML/lmm/m/it/10 :
+ []
+
+[74] [75] [76] [77] [78] [79]
+Underfull \hbox (badness 10000) in paragraph at lines 2493--2494
+
+ []
+
+[80] [81] (./Algebraic-TQC.bbl [82] [83] [84] [85] [86] [87]) [88]
 (./Algebraic-TQC.aux)
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 17987 strings out of 492649
- 382876 string characters out of 6129622
- 487410 words of memory out of 5000000
- 21432 multiletter control sequences out of 15000+600000
+ 18606 strings out of 492649
+ 401889 string characters out of 6129622
+ 499283 words of memory out of 5000000
+ 22032 multiletter control sequences out of 15000+600000
  86017 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,26n,84p,1807b,1004s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,26n,86p,1807b,1004s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc}{/usr/loca
 l/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2018
 /texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2018/texmf-dis
@@ -1044,15 +1088,16 @@ texlive/2018/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/20
 ist/fonts/type1/public/lm/lmri7.pfb></usr/local/texlive/2018/texmf-dist/fonts/t
 ype1/public/lm/lmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
 c/lm/lmsy5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy7.
-pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
+pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msa
 m10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols
-/msbm7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.p
-fb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs5.pfb></usr/
-local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb>
-Output written on Algebraic-TQC.pdf (77 pages, 14813887 bytes).
+/msbm10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/sym
+bols/msbm7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs
+10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs5.pfb></
+usr/local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb>
+Output written on Algebraic-TQC.pdf (88 pages, 14853557 bytes).
 PDF statistics:
- 398 PDF objects out of 1000 (max. 8388607)
- 268 compressed objects within 3 object streams
+ 437 PDF objects out of 1000 (max. 8388607)
+ 295 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  88 words of extra memory for PDF output out of 10000 (max. 10000000)
 

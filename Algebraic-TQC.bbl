@@ -22,6 +22,12 @@ James~W Alexander.
 \newblock {\em Transactions of the American Mathematical Society},
   30(2):275--306, 1928.
 
+\bibitem[Ali10]{alicea2010majorana}
+Jason Alicea.
+\newblock Majorana fermions in a tunable semiconductor device.
+\newblock {\em Physical Review B—Condensed Matter and Materials Physics},
+  81(12):125318, 2010.
+
 \bibitem[AMV18]{armitage2018weyl}
 NP~Armitage, EJ~Mele, and Ashvin Vishwanath.
 \newblock Weyl and dirac semimetals in three-dimensional solids.
@@ -72,6 +78,34 @@ Bojko Bakalov, Alexander~A Kirillov, et~al.
 \newblock {\em Lectures on tensor categories and modular functors}, volume~21.
 \newblock American Mathematical Society Providence, RI, 2001.
 
+\bibitem[BK05]{bravyi2005universal}
+Sergey Bravyi and Alexei Kitaev.
+\newblock Universal quantum computation with ideal clifford gates and noisy
+  ancillas.
+\newblock {\em Physical Review A—Atomic, Molecular, and Optical Physics},
+  71(2):022316, 2005.
+
+\bibitem[BMD06]{bombin2006topological}
+Hector Bombin and Miguel~Angel Martin-Delgado.
+\newblock Topological quantum distillation.
+\newblock {\em Physical review letters}, 97(18):180501, 2006.
+
+\bibitem[BMD11]{bombin2011nested}
+H~Bombin and MA~Martin-Delgado.
+\newblock Nested topological order.
+\newblock {\em New Journal of Physics}, 13(12):125001, 2011.
+
+\bibitem[BMP{\etalchar{+}}99]{boykin1999universal}
+P~Oscar Boykin, Tal Mor, Matthew Pulver, Vwani Roychowdhury, and Farrokh Vatan.
+\newblock On universal and fault-tolerant quantum computing.
+\newblock {\em arXiv preprint quant-ph/9906054}, 1999.
+
+\bibitem[Bom15]{bombin2015gauge}
+H{\'e}ctor Bomb{\'\i}n.
+\newblock Gauge color codes: optimal transversal gates and gauge fixing in
+  topological stabilizer codes.
+\newblock {\em New Journal of Physics}, 17(8):083002, 2015.
+
 \bibitem[BPZ84]{belavin1984infinite}
 Alexander~A Belavin, Alexander~M Polyakov, and Alexander~B Zamolodchikov.
 \newblock Infinite conformal symmetry in two-dimensional quantum field theory.
@@ -89,6 +123,11 @@ Bob Coecke and Aleks Kissinger.
 Ching-Kit Chan, Netanel~H Lindner, Gil Refael, and Patrick~A Lee.
 \newblock Photocurrents in weyl semimetals.
 \newblock {\em Physical Review B}, 95(4):041104, 2017.
+
+\bibitem[Cop97]{copeland1997church}
+B~Jack Copeland.
+\newblock The church-turing thesis.
+\newblock 1997.
 
 \bibitem[Dir31]{dirac1931quantised}
 Paul Adrien~Maurice Dirac.
@@ -120,6 +159,18 @@ Michael~S Fuhrer, Mark~T Edmonds, Dimitrie Culcer, Muhammad Nadeem, Xiaolin
 \newblock In {\em 2021 IEEE International Electron Devices Meeting (IEDM)},
   pages 38--2. IEEE, 2021.
 
+\bibitem[FK08]{fu2008superconducting}
+Liang Fu and Charles~L Kane.
+\newblock Superconducting proximity effect and majorana fermions<? format?> at
+  the surface of a topological insulator.
+\newblock {\em Physical review letters}, 100(9):096407, 2008.
+
+\bibitem[FKLW03]{freedman2003topological}
+Michael Freedman, Alexei Kitaev, Michael Larsen, and Zhenghan Wang.
+\newblock Topological quantum computation.
+\newblock {\em Bulletin of the American Mathematical Society}, 40(1):31--38,
+  2003.
+
 \bibitem[FKW02]{freedman2002simulation}
 Michael~H Freedman, Alexei Kitaev, and Zhenghan Wang.
 \newblock Simulation of topological field theories by quantum computers.
@@ -149,6 +200,11 @@ Brendan Fong and David~I Spivak.
 \newblock {\em An invitation to applied category theory: seven sketches in
   compositionality}.
 \newblock Cambridge University Press, 2019.
+
+\bibitem[Got97]{gottesman1997stabilizer}
+Daniel Gottesman.
+\newblock {\em Stabilizer codes and quantum error correction}.
+\newblock California Institute of Technology, 1997.
 
 \bibitem[Hal83]{haldane1983nonlinear}
 F~Duncan~M Haldane.
@@ -190,6 +246,11 @@ K~v Klitzing, Gerhard Dorda, and Michael Pepper.
 \newblock New method for high-accuracy determination of the fine-structure
   constant based on quantized hall resistance.
 \newblock {\em Physical review letters}, 45(6):494, 1980.
+
+\bibitem[Kit97]{kitaev1997quantum}
+A~Yu Kitaev.
+\newblock Quantum computations: algorithms and error correction.
+\newblock {\em Russian Mathematical Surveys}, 52(6):1191, 1997.
 
 \bibitem[Kit03]{kitaev2003fault}
 A~Yu Kitaev.
@@ -283,6 +344,12 @@ Michael~A Nielsen and Isaac~L Chuang.
 \newblock {\em Quantum computation and quantum information}.
 \newblock Cambridge university press, 2010.
 
+\bibitem[NSS{\etalchar{+}}08]{nayak2008non}
+Chetan Nayak, Steven~H Simon, Ady Stern, Michael Freedman, and Sankar
+  Das~Sarma.
+\newblock Non-abelian anyons and topological quantum computation.
+\newblock {\em Reviews of Modern Physics}, 80(3):1083--1159, 2008.
+
 \bibitem[PBD17]{placke2017model}
 Benedikt Placke, Stefano Bosco, and David~P DiVincenzo.
 \newblock A model study of present-day hall-effect circulators.
@@ -325,6 +392,11 @@ Brian Skinner and Liang Fu.
 \newblock Large, nonsaturating thermopower in a quantizing magnetic field.
 \newblock {\em Science advances}, 4(5):eaat2621, 2018.
 
+\bibitem[SFN15]{sarma2015majorana}
+Sankar~Das Sarma, Michael Freedman, and Chetan Nayak.
+\newblock Majorana zero modes and topological quantum computation.
+\newblock {\em npj Quantum Information}, 1(1):1--13, 2015.
+
 \bibitem[Sha12]{shankar2012principles}
 Ramamurti Shankar.
 \newblock {\em Principles of quantum mechanics}.
@@ -352,16 +424,34 @@ Libor {\v{S}}mejkal, Yuriy Mokrousov, Binghai Yan, and Allan~H MacDonald.
 \newblock Topological antiferromagnetic spintronics.
 \newblock {\em Nature physics}, 14(3):242--251, 2018.
 
+\bibitem[STL{\etalchar{+}}10]{sau2010non}
+Jay~D Sau, Sumanta Tewari, Roman~M Lutchyn, Tudor~D Stanescu, and S~Das~Sarma.
+\newblock Non-abelian quantum order in spin-orbit-coupled semiconductors:
+  Search for topological majorana particles in solid-state systems.
+\newblock {\em Physical Review B—Condensed Matter and Materials Physics},
+  82(21):214509, 2010.
+
 \bibitem[SZBV22]{schotte2022quantum}
 Alexis Schotte, Guanyu Zhu, Lander Burgelman, and Frank Verstraete.
 \newblock Quantum error correction thresholds for the universal fibonacci
   turaev-viro code.
 \newblock {\em Physical Review X}, 12(2):021012, 2022.
 
+\bibitem[Ter15]{terhal2015quantum}
+Barbara~M Terhal.
+\newblock Quantum error correction for quantum memories.
+\newblock {\em Reviews of Modern Physics}, 87(2):307--346, 2015.
+
 \bibitem[TSG82]{tsui1982two}
 Daniel~C Tsui, Horst~L Stormer, and Arthur~C Gossard.
 \newblock Two-dimensional magnetotransport in the extreme quantum limit.
 \newblock {\em Physical Review Letters}, 48(22):1559, 1982.
+
+\bibitem[Tur39]{turing1939systems}
+Alan~Mathison Turing.
+\newblock Systems of logic based on ordinals.
+\newblock {\em Proceedings of the London Mathematical Society, Series 2},
+  45:161--228, 1939.
 
 \bibitem[Tur92]{turaev1992modular}
 Vladimir~G Turaev.

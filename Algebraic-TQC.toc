@@ -49,64 +49,68 @@
 \contentsline {subsubsection}{\numberline {5.2.3}States in MTCs and unitarity}{66}
 \contentsline {subsubsection}{\numberline {5.2.4}Topological charge measurement}{67}
 \contentsline {subsection}{\numberline {5.3}The MTC toolkit}{68}
-\contentsline {subsubsection}{\numberline {5.3.1}Twist}{68}
-\contentsline {subsubsection}{\numberline {5.3.2}Quantum dimension}{68}
-\contentsline {subsubsection}{\numberline {5.3.3}Trace}{68}
-\contentsline {subsubsection}{\numberline {5.3.4}Duality}{68}
-\contentsline {subsubsection}{\numberline {5.3.5}Verlinde formula}{68}
-\contentsline {subsubsection}{\numberline {5.3.6}Functors, natural transformations, and equivalence}{68}
-\contentsline {subsubsection}{\numberline {5.3.7}Deligne tensor product}{68}
-\contentsline {subsection}{\numberline {5.4}Quantum double MTCs}{68}
-\contentsline {subsubsection}{\numberline {5.4.1}The Drinfeld center}{68}
-\contentsline {subsubsection}{\numberline {5.4.2}Muger's theorem}{68}
-\contentsline {subsubsection}{\numberline {5.4.3}Levin-Wen model}{68}
-\contentsline {subsubsection}{\numberline {5.4.4}Mortia equivalence}{68}
-\contentsline {subsubsection}{\numberline {5.4.5}Factorizability}{68}
-\contentsline {subsubsection}{\numberline {5.4.6}Quantum doubles of finite groups}{68}
-\contentsline {subsection}{\numberline {5.5}The modular representation}{68}
-\contentsline {subsubsection}{\numberline {5.5.1}Definition}{68}
-\contentsline {subsubsection}{\numberline {5.5.2}Torus perspective}{68}
-\contentsline {subsubsection}{\numberline {5.5.3}Proof of modularity}{68}
-\contentsline {subsubsection}{\numberline {5.5.4}Proof of unitarity}{68}
-\contentsline {subsubsection}{\numberline {5.5.5}Bruguieres's modularity theorem}{68}
-\contentsline {subsubsection}{\numberline {5.5.6}Schauenberg-Ng theorem}{68}
-\contentsline {subsection}{\numberline {5.6}The Yoneda perspective}{68}
-\contentsline {subsubsection}{\numberline {5.6.1}Principle}{68}
-\contentsline {subsubsection}{\numberline {5.6.2}$F$-symbols}{68}
-\contentsline {subsubsection}{\numberline {5.6.3}$R$-symbols}{68}
-\contentsline {subsubsection}{\numberline {5.6.4}$\theta $-symbols}{68}
-\contentsline {subsubsection}{\numberline {5.6.5}Reconstruction theorem}{68}
-\contentsline {subsection}{\numberline {5.7}Unitarity}{68}
-\contentsline {subsubsection}{\numberline {5.7.1}Characterization of unitarizable MTCs}{68}
-\contentsline {subsubsection}{\numberline {5.7.2}Uniqueness of unitary structure}{68}
-\contentsline {subsubsection}{\numberline {5.7.3}Yoneda perspective on unitarity}{68}
-\contentsline {subsection}{\numberline {5.8}Number theory in MTCs}{68}
-\contentsline {subsubsection}{\numberline {5.8.1}.[prerequisites and introduction]}{68}
-\contentsline {subsubsection}{\numberline {5.8.2}Galois conjugation}{68}
-\contentsline {subsubsection}{\numberline {5.8.3}Ocneanu rigidity}{68}
-\contentsline {subsubsection}{\numberline {5.8.4}Rank-finiteness theorem}{68}
-\contentsline {subsubsection}{\numberline {5.8.5}Vafa's theorem}{68}
-\contentsline {subsection}{\numberline {5.9}Adjectives in MTCs}{69}
-\contentsline {subsubsection}{\numberline {5.9.1}Solvability}{69}
-\contentsline {subsubsection}{\numberline {5.9.2}Nilpotence}{69}
-\contentsline {section}{\numberline {6}Further structure}{70}
-\contentsline {subsection}{\numberline {6.1}Overview}{70}
-\contentsline {subsection}{\numberline {6.2}Domain walls}{70}
-\contentsline {subsection}{\numberline {6.3}Symmetry enriched topological order}{70}
-\contentsline {subsection}{\numberline {6.4}Fermionic topological order}{70}
-\contentsline {section}{\numberline {7}Topological quantum computation}{70}
-\contentsline {subsection}{\numberline {7.1}Overview}{70}
-\contentsline {subsection}{\numberline {7.2}Computational complexity}{70}
-\contentsline {subsubsection}{\numberline {7.2.1}Classical computation}{70}
-\contentsline {subsubsection}{\numberline {7.2.2}Probabilistic computation}{71}
-\contentsline {subsubsection}{\numberline {7.2.3}Quantum computation}{71}
-\contentsline {subsection}{\numberline {7.3}Computation with Fibonacci anyons}{71}
-\contentsline {subsection}{\numberline {7.4}Computation with doubles of finite groups}{71}
-\contentsline {subsection}{\numberline {7.5}Computation with the toric code}{71}
-\contentsline {subsection}{\numberline {7.6}Computation with Ising anyons}{71}
-\contentsline {section}{\numberline {A}Odds and ends}{71}
-\contentsline {subsection}{\numberline {A.1}Topological quantum field theories}{71}
-\contentsline {subsection}{\numberline {A.2}Quasitriangular weak Hopf algebras}{73}
-\contentsline {subsection}{\numberline {A.3}Quantum groups}{73}
-\contentsline {subsection}{\numberline {A.4}Subfactors}{73}
-\contentsline {subsection}{\numberline {A.5}Vertex operator algebras}{73}
+\contentsline {subsubsection}{\numberline {5.3.1}Trace}{68}
+\contentsline {subsubsection}{\numberline {5.3.2}Duality}{68}
+\contentsline {subsubsection}{\numberline {5.3.3}Quantum dimension}{68}
+\contentsline {subsubsection}{\numberline {5.3.4}Twist}{69}
+\contentsline {subsubsection}{\numberline {5.3.5}Verlinde formula}{69}
+\contentsline {subsubsection}{\numberline {5.3.6}Functors, natural transformations, and equivalence}{69}
+\contentsline {subsubsection}{\numberline {5.3.7}Deligne tensor product}{69}
+\contentsline {subsection}{\numberline {5.4}Quantum double MTCs}{69}
+\contentsline {subsubsection}{\numberline {5.4.1}The Drinfeld center}{69}
+\contentsline {subsubsection}{\numberline {5.4.2}Muger's theorem}{69}
+\contentsline {subsubsection}{\numberline {5.4.3}Levin-Wen model}{69}
+\contentsline {subsubsection}{\numberline {5.4.4}Mortia equivalence}{69}
+\contentsline {subsubsection}{\numberline {5.4.5}Factorizability}{69}
+\contentsline {subsubsection}{\numberline {5.4.6}Quantum doubles of finite groups}{69}
+\contentsline {subsection}{\numberline {5.5}The modular representation}{69}
+\contentsline {subsubsection}{\numberline {5.5.1}Definition}{69}
+\contentsline {subsubsection}{\numberline {5.5.2}Torus perspective}{69}
+\contentsline {subsubsection}{\numberline {5.5.3}Proof of modularity}{69}
+\contentsline {subsubsection}{\numberline {5.5.4}Proof of unitarity}{69}
+\contentsline {subsubsection}{\numberline {5.5.5}Bruguieres's modularity theorem}{69}
+\contentsline {subsubsection}{\numberline {5.5.6}Schauenberg-Ng theorem}{69}
+\contentsline {subsection}{\numberline {5.6}The Yoneda perspective}{69}
+\contentsline {subsubsection}{\numberline {5.6.1}Principle}{69}
+\contentsline {subsubsection}{\numberline {5.6.2}$F$-symbols}{69}
+\contentsline {subsubsection}{\numberline {5.6.3}$R$-symbols}{69}
+\contentsline {subsubsection}{\numberline {5.6.4}$\theta $-symbols}{69}
+\contentsline {subsubsection}{\numberline {5.6.5}Reconstruction theorem}{69}
+\contentsline {subsection}{\numberline {5.7}Unitarity}{69}
+\contentsline {subsubsection}{\numberline {5.7.1}Characterization of unitarizable MTCs}{69}
+\contentsline {subsubsection}{\numberline {5.7.2}Uniqueness of unitary structure}{69}
+\contentsline {subsubsection}{\numberline {5.7.3}Yoneda perspective on unitarity}{69}
+\contentsline {subsection}{\numberline {5.8}Number theory in MTCs}{69}
+\contentsline {subsubsection}{\numberline {5.8.1}.[prerequisites and introduction]}{69}
+\contentsline {subsubsection}{\numberline {5.8.2}Galois conjugation}{69}
+\contentsline {subsubsection}{\numberline {5.8.3}Ocneanu rigidity}{69}
+\contentsline {subsubsection}{\numberline {5.8.4}Rank-finiteness theorem}{69}
+\contentsline {subsubsection}{\numberline {5.8.5}Vafa's theorem}{69}
+\contentsline {subsection}{\numberline {5.9}Adjectives in MTCs}{70}
+\contentsline {subsubsection}{\numberline {5.9.1}Solvability}{70}
+\contentsline {subsubsection}{\numberline {5.9.2}Nilpotence}{70}
+\contentsline {section}{\numberline {6}Further structure}{71}
+\contentsline {subsection}{\numberline {6.1}Overview}{71}
+\contentsline {subsection}{\numberline {6.2}Domain walls}{71}
+\contentsline {subsection}{\numberline {6.3}Symmetry enriched topological order}{71}
+\contentsline {subsection}{\numberline {6.4}Fermionic topological order}{71}
+\contentsline {section}{\numberline {7}Topological quantum computation}{71}
+\contentsline {subsection}{\numberline {7.1}Overview}{71}
+\contentsline {subsubsection}{\numberline {7.1.1}Introduction}{71}
+\contentsline {subsubsection}{\numberline {7.1.2}Universality}{72}
+\contentsline {subsection}{\numberline {7.2}Computational complexity}{74}
+\contentsline {subsubsection}{\numberline {7.2.1}Principles}{74}
+\contentsline {subsubsection}{\numberline {7.2.2}Classical computation}{75}
+\contentsline {subsubsection}{\numberline {7.2.3}Probabilistic computation}{76}
+\contentsline {subsubsection}{\numberline {7.2.4}Quantum computation}{77}
+\contentsline {subsection}{\numberline {7.3}Computation with Fibonacci anyons}{79}
+\contentsline {subsection}{\numberline {7.4}Computation with doubles of finite groups}{79}
+\contentsline {subsection}{\numberline {7.5}Computation with Majorana fermions}{79}
+\contentsline {subsection}{\numberline {7.6}Computation with the toric code}{79}
+\contentsline {subsection}{\numberline {7.7}Computation with Ising anyons}{79}
+\contentsline {section}{\numberline {A}Odds and ends}{80}
+\contentsline {subsection}{\numberline {A.1}Topological quantum field theories}{80}
+\contentsline {subsection}{\numberline {A.2}Quasitriangular weak Hopf algebras}{82}
+\contentsline {subsection}{\numberline {A.3}Quantum groups}{82}
+\contentsline {subsection}{\numberline {A.4}Subfactors}{82}
+\contentsline {subsection}{\numberline {A.5}Vertex operator algebras}{82}
