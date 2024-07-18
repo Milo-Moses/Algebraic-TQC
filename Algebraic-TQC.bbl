@@ -6,6 +6,11 @@ Marcia Ascher and Robert Ascher.
 \newblock Code of the quipu.
 \newblock {\em Ann Arbor: University of Michigan Press}, pages 56--74, 1981.
 
+\bibitem[AA11]{aharonov2011bqp}
+Dorit Aharonov and Itai Arad.
+\newblock The bqp-hardness of approximating the jones polynomial.
+\newblock {\em New Journal of Physics}, 13(3):035019, 2011.
+
 \bibitem[Aar13]{aaronson2013quantum}
 Scott Aaronson.
 \newblock {\em Quantum computing since Democritus}.
@@ -55,11 +60,6 @@ David Aasen, Zhenghan Wang, and Matthew~B Hastings.
   automorphism codes.
 \newblock {\em Physical Review B}, 106(8):085122, 2022.
 
-\bibitem[Bar05]{bartlett2005categorical}
-Bruce~H Bartlett.
-\newblock Categorical aspects of topological quantum field theories.
-\newblock {\em arXiv preprint math/0512103}, 2005.
-
 \bibitem[BDSPV15]{bartlett2015modular}
 Bruce Bartlett, Christopher~L Douglas, Christopher~J Schommer-Pries, and Jamie
   Vicary.
@@ -94,11 +94,6 @@ Hector Bombin and Miguel~Angel Martin-Delgado.
 H~Bombin and MA~Martin-Delgado.
 \newblock Nested topological order.
 \newblock {\em New Journal of Physics}, 13(12):125001, 2011.
-
-\bibitem[BMP{\etalchar{+}}99]{boykin1999universal}
-P~Oscar Boykin, Tal Mor, Matthew Pulver, Vwani Roychowdhury, and Farrokh Vatan.
-\newblock On universal and fault-tolerant quantum computing.
-\newblock {\em arXiv preprint quant-ph/9906054}, 1999.
 
 \bibitem[Bom15]{bombin2015gauge}
 H{\'e}ctor Bomb{\'\i}n.
@@ -505,6 +500,13 @@ Edward Witten.
 Edward Witten.
 \newblock Quantum field theory and the jones polynomial.
 \newblock {\em Communications in Mathematical Physics}, 121(3):351--399, 1989.
+
+\bibitem[XSW{\etalchar{+}}24]{xu2024non}
+Shibo Xu, Zheng-Zhi Sun, Ke~Wang, Hekang Li, Zitian Zhu, Hang Dong, Jinfeng
+  Deng, Xu~Zhang, Jiachen Chen, Yaozu Wu, et~al.
+\newblock Non-abelian braiding of fibonacci anyons with a superconducting
+  processor.
+\newblock {\em Nature Physics}, pages 1--7, 2024.
 
 \bibitem[ZGHS15]{zhu2015fractional}
 W~Zhu, SS~Gong, FDM Haldane, and DN~Sheng.

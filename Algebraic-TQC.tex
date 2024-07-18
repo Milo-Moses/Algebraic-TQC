@@ -27,33 +27,15 @@
 \theoremstyle{definition}
 \newtheorem*{definition}{Definition}
 
-
-\graphicspath{ {./images/} }
-\numberwithin{figure}{section}
-\setcounter{section}{-1}
-
-
-
-\title{The Algebraic Theory\\ of \\ Topological Quantum Information}
-\author{by Milo Moses}
-
-\date{\textit{California Institute of Technology} \\ [2ex] \today}
-
-
-\begin{document}
-
-
-\maketitle
-
-\newcommand{\wind}{\mathrm{wind}}
-\newcommand{\Free}{\mathrm{Free}}
-\newcommand{\Sym}{\mathrm{Sym}}
-\newcommand{\Hom}{\mathrm{Hom}}
-\newcommand{\swap}{\mathrm{swap}}
-\newcommand{\id}{\mathrm{id}}
-\newcommand{\SO}{\mathrm{SO}}
-\newcommand{\GL}{\mathrm{GL}}
-\newcommand{\End}{\mathrm{End}}
+\DeclareMathOperator{\wind}{wind}
+\DeclareMathOperator{\Free}{Free}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\swap}{swap}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\End}{End}
 
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\ZZ}{\mathbb{Z}}
@@ -64,6 +46,7 @@
 \newcommand{\Cc}{\mathcal{C}}
 \newcommand{\C}{\mathscr{C}}
 \newcommand{\LL}{\mathcal{L}}
+\newcommand{\DD}{\mathfrak{D}}
 
 \newcommand{\0}{\left|0\right>}
 \newcommand{\1}{\left|1\right>}
@@ -83,8 +66,27 @@
 \renewcommand{\Vec}{\mathbf{Vec}}
 
 
+
+\graphicspath{ {./images/} }
+\numberwithin{figure}{section}
+\setcounter{section}{-1}
+
+
+
+\title{The Algebraic Theory\\ of \\ Topological Quantum Information}
+\author{by Milo Moses}
+
+\date{\textit{California Institute of Technology} \\ [2ex] \today}
+
+
+\begin{document}
+
+
+\maketitle
+
+
 \begin{abstract}
-This book aims to give a comprehensive account of the algebraic theory of topological quantum information. It is intended to be accessible both to mathematicians unfamiliar with quantum mechanics and theoretical physicists unfamiliar with category theory. Additionally, this text should make a good reference for working researchers in the field. A primary focus of this text is the balancing of powerful algebraic generalities with concrete examples, principles, and applications.
+This book aims to give a comprehensive account of the algebraic theory of topological quantum information. It is intended to be accessible both to mathematicians unfamiliar with quantum mechanics and theoretical physicists unfamiliar with category theory. Additionally, this text should make a good reference for working researchers in the field. A primary focus of this text is balancing powerful algebraic generalities with concrete examples, principles, and applications.
 \end{abstract}
 
 
@@ -100,20 +102,12 @@ This book aims to give a comprehensive account of the algebraic theory of topolo
 
 This book is a mathematical treatment of topological quantum information, with a focus on formal algebraic aspects and a special eye towards topological quantum computation. This manuscript began as an extended set of notes from a course on topological quantum field theory given by Zhenghan Wang in the winter of 2022 at UC Santa Barbara. Through his courses, his private tutoring, and his reccomendations, Zhenghan took me from a state of almost complete ignorance of mathematical physics to being a young researcher in the field. I am greatly emdebted to him for this, and it is certain that this book would not have existed without his guidance - he richly deserves of my apple.
 
-Great pains have been taken to make this book as pedagogical and accessable as possible. The hope is that it should be readable by both mathematicians unfamilar with quantum mechanics as well as theoretical physicists unfamiliar with category theory. A primary focus of this text is the balancing of powerful algebraic generalities with concrete examples, principles, and applications. The prerequisites for this book are a undergraduate-level understanding of topology, abstract algebra, as well as a popular-science level of familarity with quantum mechanics.
+Great pains have been taken to make this book as pedagogical and accessable as possible. The hope is that it should be readable by both mathematicians unfamilar with quantum mechanics as well as theoretical physicists unfamiliar with category theory. A primary focus of this text is balancing powerful algebraic generalities with concrete examples, principles, and applications. The prerequisites for this book are a undergraduate-level understanding of topology, linear algebra, and group theory, as well as a popular-science level of familarity with quantum mechanics.
 
-There are already many great references to learn aspects of the material covered in this book. An excellently written and relatively complete book on topological quantum information from the perspective of a physicist is Steven Simon's text \cite{simon2023topological}. Simon's book is very algebraic, but does \textit{not} include any category theory. The main references for the relevant category theory are Bakalov-Kirillov \cite{bakalov2001lectures} and Etingof-Gelaki-Nikshych-Ostrik \cite{etingof2016tensor}. While both excellent texts, they both have notable shortcomings for learning topological quantum information. Bakalov-Kirillov was written in 2001, making it very outdated. Etingof-Gelaki-Nikshych-Ostrik is modern, but makes no connections to physics and does not use the language of string diagrams. The manuscript most similar to this one is Kong-Zhang's preprint \cite{kong2022invitation}. We distinguish ourself from Kong-Zhang by our different choice of topics, our different choice of treatment, and our extended scope. Other relevant books and review articles include Wang's monograph \cite{wang2010topological}, Kauffman-Lomonaco's quantum topology themed review \cite{kauffman2009topological}, and Bartlett's topological quantum field theory PhD thesis \cite{bartlett2005categorical}.
+There are already many great references to learn aspects of the material covered in this book. An excellently written and relatively complete book on topological quantum information from the perspective of a physicist is Steven Simon's text \cite{simon2023topological}. Simon's book is algebraic, but does \textit{not} include any category theory. The main references for the relevant category theory are Bakalov-Kirillov \cite{bakalov2001lectures} and Etingof-Gelaki-Nikshych-Ostrik \cite{etingof2016tensor}. While both excellent texts, they suffer notable shortcomings for learning topological quantum information. Bakalov-Kirillov was written in 2001, making it outdated. Etingof-Gelaki-Nikshych-Ostrik is modern, but makes no connections to physics and does not use the language of string diagrams. The manuscript most similar to this one is Kong-Zhang's preprint \cite{kong2022invitation}. We distinguish ourself from Kong-Zhang by our different choice of topics, our different choice of treatment, and our extended scope. Other relevant books and review articles include Wang's monograph \cite{wang2010topological} and Kauffman-Lomonaco's quantum topology themed review \cite{kauffman2009topological}.
 
-The structure of this book is as follows.
+[WORK: I will add a section detailing the structure of this book, and how it should be read. I have not written enough for this to be useful yet.]
 
-\begin{enumerate}
-\item Chapter \ref{overview} (Overview): This chapter gives an overview of the subject, and aquaints the reader with the important principles of topological quantum computation. Section \ref{conceptual introduction} gives a non-technical primer on the subject, including motivation, applications, and history. Section \ref{technical introduction} covers topological \text{classical} information, as a playing ground in which to highlight the important principles of the field. This includes a crash-course on the relevant toplogy, which may be unfamilar to some readers.
-
-\end{enumerate}
-
-[WORK: make it clear that this is NOT a topology textbook. The topology will be extremely handwaivy. This is an algebra textbook.]
-
-[WORK: to add on to the above point - maybe I should add something like $\text{Theorem}^{ph}$ for ``physical theorem"? Use it only for topology stuff, never for algebra stuff.]
 \newpage
 
 \section{Overview}
@@ -126,18 +120,19 @@ The structure of this book is as follows.
 
 I will take as a definition \textit{topological quantum information} to be the study of information in topological quantum systems. A topological quantum system is some mathematical or physical system which is in a fundamental sense described by the mathematics of both quantum mechanics and topology. The term \textit{quantum system} here is used in contrast to \textit{classical system}. The flow of current through a conducting copper wire is described perfectly well by classical electromagnetism, whereas the flow of current through a superconducting niobium-titanium wire necessarily requires quantum mechanics for its description.
 
-The term \textit{topological system} is used in contrast to \textit{geometric systems}, though the term “geometric system” is a nonstandard one. In a geometric system, measurable quantities and phenomena depend on quantitative local aspects of the system - the distance between wires, the exact shape of some sample, or the curvature of some component. In a topological system, measurable quantities and phenomena depend only on qualitative global aspects of the system - whether two wires cross or not, whether a sample is connected or not, whether a component curves into a ball or has a boundary.
+The term \textit{topological system} is used in contrast to \textit{geometric systems}, though the term “geometric system” is a nonstandard one. In a geometric system measurable quantities and phenomena depend on quantitative local aspects of the system - the distance between wires, the exact shape of some sample, or the curvature of some component. In a topological system measurable quantities and phenomena depend only on qualitative global aspects of the system - whether two wires cross or not, whether a sample is connected or not, whether a component curves into a ball or has a boundary.
 
-I say that this book is about “topological quantum information” and not “topological quantum systems” for two reasons. The first is to highlight the fact that topological quantum systems \textit{do} have local geometric descriptions, which we will mostly be ignoring them in favor of focusing on their global topological properties. The beauty of topological systems lies exactly in the fact that this global perspective retains all the essential information in the system. The second reason I use the term \textit{information} is to highlight this book’s eye towards topological quantum computing. 
+I say that this book is about “topological quantum information” and not “topological quantum systems” for two reasons. The first is to highlight the fact that there is more to a topological quantum systems than its global topological properties. Topological quantum systems also have local geometric descriptions which are important for understanding many phenomina. However, we will mostly be ignoring these local effects in favor of focusing on global topological properties. The beauty of topological quantum systems lies exactly in the fact that this global perspective retains all the essential information in the system. The second reason is to highlight this book’s eye towards topological quantum computing, the idea of making computers using topological quantum systems. 
 
 Since Peter Shor’s 1994 discovery of an efficient factoring algorithm on quantum computers \cite{shor1994algorithms}, the primary goal of quantum information theorists has been to harness quantum information sufficiently well so that it can be used to make an efficient scalable quantum computer. One of the major hurdles in achieving this goal is that quantum information is \textit{fragile}. Small amounts of noise coming from nearby electromagnetic fields or imperfections in experimental devices are often enough to affect the information being stored, resulting in \textit{errors} in the computation. In the early days of quantum computing it was not clear whether there was any way around this problem. Perhaps the inherent fragility of quantum information would make quantum computation impossible. This turned out to be false.
 
-The beautiful observation is that errors are not nearly as catastrophic in \textit{topological} quantum systems. Errors are typically local, and by definition the information topological systems does not depend on local properties. Hence, under suitable conditions, topological systems are naturally error resistant! In the same way that invariants of topological spaces are supposed to be invariant under deformations in pure mathematics, information in topological systems is invariant under errors in mathematical physics. Hence, to solve the problem of noise all one has to do is make a \textit{topological} quantum computer! This observation was made in 1997 and is due independently to Alexei Kitaev and Michael Freedman \cite{kitaev2003fault, freedman1998p}. Since then topological quantum computing has grown and evolved, finding its way into almost every modern proposal for fault-tolerant quantum computing.
+The beautiful observation is that errors are not nearly as catastrophic in \textit{topological} quantum systems. Errors are typically local. By definition the information topological systems does not depend on local properties, and hence is not affected by local changes. Hence, under suitable conditions, topological systems are naturally error resistant! In the same way that invariants of topological spaces are supposed to be invariant under deformations in pure mathematics, information in topological systems is invariant under errors in mathematical physics. Hence, to solve the problem of noise all one has to do is make a \textit{topological} quantum computer! This observation was made in 1997 and is due independently to Alexei Kitaev and Michael Freedman \cite{kitaev2003fault, freedman1998p}. Since then topological quantum computing has grown and evolved, finding its way into almost every modern proposal for fault-tolerant quantum computing.
 
 The first approach to topological quantum computing is to use a physical material, some literal condensed collection of atoms, which naturally behaves as a topological quantum system. These exist and have been studied for a long time. For instance, a two dimensional sheet of graphene behaves topologically when it is subjected to low temperatures ($\approx$5 degrees Kelvin) and large magnetic fields ($\approx$15 Teslas) \cite{bolotin2009observation}. Topological quantum materials which can be used to make scalable quantum computers require intricate experiments to operate, which has been the most prominent roadblock in this approach.
 
-The second approach to topological quantum computing is to artificially construct a topological system within a geometric one. The function of a quantum computer, almost by definition, is to simulate quantum systems. In particular, it can simulate \textit{topological} quantum systems. Since topological systems are resistant to local errors, this means that the original computer which is simulating the topological system will itself become resistant to local noise! This works exactly as described as long as the simulation itself is local, that is, local effects in the original system correspond to local effects in the simulated system. This technique of simulating a topological system to inherit its error-resistant properties is known as \textit{topological quantum error correction}. The advantage of this approach is that it works on any hardware available. The disadvantage is that to perform useful computations one must pass through the topological quantum error correction. The additional layer adds a hefty amount of overhead, which can eat up the majority of runtime and resources. It is for this reason that \textit{efficient} topological quantum error correction is an important and active area of research.
+The second approach to topological quantum computing is to artificially construct a topological system within a geometric one. The function of a quantum computer, almost by definition, is to simulate quantum systems. In particular, it can simulate \textit{topological} quantum systems. Since topological systems are resistant to local errors, this means that the original computer which is simulating the topological system will itself become resistant to local noise! This works exactly as described as long as the simulation itself is local, that is, local effects in the original system correspond to local effects in the simulated system. This technique of simulating topological systems to inherit their error-resistant properties is known as \textit{topological quantum error correction}. The advantage of this approach is that it works on any hardware available. The disadvantage is that to perform useful computations one must pass through simulation involved the topological quantum error correction. This additional layer adds a hefty amount of overhead, which can eat up the majority of runtime and resources. It is for this reason that \textit{efficient} topological quantum error correction is an important and active area of research.
 
+\begin{figure}
 \[\begin{tikzcd}
 	& \begin{array}{c} \substack{\text{topological}\\ \text{quantum}\\\text{materials}} \end{array} \\
 	\begin{array}{c} \substack{\text{topological} \\ \text{quantum} \\ \text{information}} \end{array} \\
@@ -145,6 +140,8 @@ The second approach to topological quantum computing is to artificially construc
 	\arrow["\begin{array}{c} \substack{\text{intrinsic}\\\text{realization}} \end{array}", from=2-1, to=1-2]
 	\arrow["\begin{array}{c} \substack{\text{local}\\\text{simulation}} \end{array}"', from=2-1, to=3-2]
 \end{tikzcd}\]
+\caption{The two major branches of topological quantum information.}
+\end{figure}
 
 Of course, the above discussion presents only one motivation for topological quantum information and only one example of an application. Topological quantum materials open a whole world of potential applications, and it seems they may play an important role in the techonologies of the future \cite{ramirez2020dawn}. Some proposed applications include processing classical information using topological defects in magnetic devices (with the end goal of making high-speed low-energy transmissions) \cite{marrows2021perspective, vsmejkal2018topological}, creating highly sensitive photodetectors (with the end goal of making night-vision goggles or sensors) \cite{chan2017photocurrents}, creating technolgies with high thermoelectric effect (with the end goal of making efficient fridges or electric generators) \cite{skinner2018large}, creating highly-efficient transistors \cite{fuhrer2021proposal}, and engineering tiny electrical components \cite{viola2014hall, placke2017model}. 
 
@@ -158,55 +155,50 @@ The term \textit{topological quantum system} is broad. To get a rigorous mathema
 \fbox{All systems in this book are two-dimensional unless stated otherwise.}
 \end{center}
 
-The naive mathematical description of topological order is \textit{topological quantum field theory}. In a sense, we can \textit{define} a topologically ordered system to be a system which admits a description in terms of topological quantum field theory. Geometric quantum systems require non-topological quantum field theory to describe.
-
-While they are useful in many contexts, topological quantum field theories do have several difficulties associated with them. The most prominent of which is that their definition requires a large amount of essentially redundant data. This makes them hard to construct, inaccessible to computational methods, and opaque in their realizations of important phenomena. One solution to this problem is to dig down to the core algebraic data lying within topological quantum field theories. This algebraic data contains far less redundancy than the original topological quantum field theory. This makes the algebraic data thus easier to construct, more accessible to computational methods, and more clear in its realization of important phenomena. The algebraic structure which houses the algebraic data of a (2+1)D topological quantum field theory is known as a \textit{modular tensor category}. These algebraic structures are the main mathematical object of this text, and it is because of this focus that this book is called the \textit{algebraic theory} of topological quantum information. Once one has a modular tensor category it is easy to manipulate the stored information to perform computations. This gives us the overall schema of our mathematical discussion, as illustrated visually below:
-
-This schema is part of a more general pattern in the field of topological mathematical physics, illustrated below:
+Topological quantum systems can be described in many different ways. In this book we will take an \textit{algebraic} approach. [WORK: what does it mean to take an algebraic approach to something?]. The algebraic structure which houses the algebraic data of a (2+1)D topologically ordered system is known as a \textit{modular tensor category}. These algebraic structures are the main mathematical object of this text. Once one has a modular tensor category it is easy to manipulate the stored information to perform computations. This gives us the overall schema of our mathematical discussion, illustrated visually below:
 
 \begin{equation*}
-\tikzfig{mathematical-outline-simplified}
+\tikzfig{mathematical-outline}
 \end{equation*}
 
-In Chapter [ref] we describe topological order. In Chapter [ref] we will axiomatize topological order in terms of topological quantum field theory. In Chapter [ref] we will construct the theory of modular tensor categories. In Chapter [ref] we will use the tools we have established to detail several algorithms and procedures for topological quantum computaiton. To conclude, in chapter [ref] we describe further structures in topologically ordered systems which lie beyond plain modular tensor categories. Two introductory chapters are also included: Chapter [ref] which establishes the basic theory of finite dimensional quantum systems and Chapter [ref] which establishes basic category theory.
-
-[WORK: I removed TQFTs from the book. The mathematical outline needs to change, and comments about this outline need to change throughout the rest of the book.]
+In Chapter [ref] we describe topological order. In Chapter [ref] we describe topological order algebraically in terms of modular tensor categories. In Chapter [ref] we describe further algebraic structures which lie beyond plain modular tensor categories, which allow us to describe more complex behaviors in topological order. Finally, in Chapter [ref] we will use the tools we have established to detail several algorithms and procedures for topological quantum computaiton. Two introductory chapters are also included: Chapter [ref] which establishes the theory of finite dimensional quantum systems and Chapter [ref] which establishes category theory.
 
 \subsubsection{History of the subject}
 
-Like with any sufficiently rich subject, the history of topological quantum information can be traced back as far as one wants. So let me do exactly that. The first use of topology in information science was roughly 2600 BCE, with the South American \textit{Quipu} \cite{ascher1981code}. Quipu are intricate knotted strings typically made out of cotton fibers. The knots in the string are used to store various types of information, typically numbers. The Quipu store their information in knot invariants, and hence hold \textit{topological} information.
+Like with any sufficiently rich subject, the history of topological quantum information can be traced back as far as one wants. So let us do exactly that. The first use of topology in information science was roughly 2600 BCE, with the South American \textit{Quipu} \cite{ascher1981code}. Quipu are intricate knotted strings typically made out of cotton fibers. The knots in the string are used to store various types of information, typically numbers. Mathematically we say that Quipu store their information in knot invariants, and hence hold \textit{topological} information.
 
 Quipu were so successful that they remained the primary method of information processing in much of South America for thousands of years. They reached their peak of usage in the 15th century via the Inca empire. The Inca empire was the largest pre-Columbian empire in the western hemisphere, with over ten million subjects and spanning over two million square kilometers. Despite their intricate government, the Incas had \textit{no written language}. This distinguished them from their contemporary empires, such as the Mali, Mongolian, or Chinese empires, which all relied on the written word. The success of the Inca empire can be seen as a testament to the versatility and power of knot invariants. The difference between the Inca and modern proposals for topological quantum computers is that instead of the strings being made out of cotton fibers they are made out of the spacetime trajectories of quasiparticles in topological systems.
 
-Similarly, the history of topological methods in quantum mechanics can be traced back to the origins of quantum mechanics. There is a 1931 paper of Paul Dirac \cite{dirac1931quantised} which introduces many of the ideas which would become foundational to topological quantum mechanics. In the 1950s, explicitly topological ideas such as the Aharanov-Bohm effect \cite{aharonov1959significance} and the theory of point defects by Tony Skyrme \cite{skyrme1962unified} were beginning to emerge. In the 1970s nontrivial abstract topological considerations were leading to novel contributions to contemporary physics, such as the theoretical description of the A-phase of superfluid Helium-3 \cite{anderson1977phase} and the theory of phase transitions in the xy model proposed by Kosterlitz-Thouless \cite{kosterlitz1973ordering}. These results were associated with the 1996 and 2016 Nobel prize respectively.
+Just like the history of topology in information science can be traced back to the origin of information science, the history of topology in quantum mechanics can be traced back to the origins of quantum mechanics. There is a 1931 paper of Paul Dirac \cite{dirac1931quantised} which introduces many of the ideas which would become foundational to topological quantum mechanics. In the 1950s, explicitly topological ideas such as the Aharanov-Bohm effect \cite{aharonov1959significance} and the theory of point defects by Tony Skyrme \cite{skyrme1962unified} were beginning to emerge. By the 1970s nontrivial abstract topological considerations were leading to novel contributions to contemporary physics, such as the theoretical description of the A-phase of superfluid Helium-3 \cite{anderson1977phase} and the theory of phase transitions in the xy model proposed by Kosterlitz-Thouless \cite{kosterlitz1973ordering}. These results were associated with the 1996 and 2016 Nobel prize respectively.
 
-It was in the 1980s, however, that topology established itself as one of the leading themes in condensed matter physics. The discovery of the quantum Hall effect in 1980 \cite{klitzing1980new} and the subsequent discovery of the fractional quantum Hall effect in 1982 \cite{tsui1982two} gave the first examples of topologically ordered systems in our modern sense of the word, and resulted in the 1985 and 1998 Nobel prizes respectively. These systems, along with their nontrivial algebraic descriptions, gave theorists the license to dream big about what possibilities could lie ahead. This led to major work by theorists such as Frank Wilczek \cite{wilczek1982quantum, arovas1985statistical}, Duncan Haldane \cite{haldane1983nonlinear, haldane1988model}, and others.
+It was in the 1980s, however, that topology established itself as one of the leading themes in condensed matter physics. The discovery of the quantum Hall effect in 1980 \cite{klitzing1980new} and the subsequent discovery of the fractional quantum Hall effect in 1982 \cite{tsui1982two} gave the first examples of topologically ordered systems in our modern sense of the word, and resulted in the 1985 and 1998 Nobel prizes respectively. These systems gave theorists the license to dream big about what possibilities could lie ahead. This led to major work by theorists such as Frank Wilczek \cite{wilczek1982quantum, arovas1985statistical}, Duncan Haldane \cite{haldane1983nonlinear, haldane1988model}, and others on the theory of topological quantum systems.
 
-The most notable of these theorists for our present story is Edward Witten, with his introduction of \textit{topological quantum field theory} in 1988 \cite{witten1988topological}. This work not only put the modern experiments within a larger context, but it also connected these developments to a parallel story which had been developing within pure mathematics. Namely, knot theory. In 1984 Vaughn Jones discovered his landmark knot invariant, which was powerful in its ability to distinguish between non-equivalent knots \cite{jones1997polynomial}. This marked the first major progress in the field since Alexander's invariant in 1928 \cite{alexander1928topological}. However, Jones’ construction was steeped in opaque subfactor theory, so much so that the fact that it resulted in knot invariant felt almost like a happy accident. Hence, a widespread topic on the mind of contemporary mathematicians was how to properly interpret the Jones invariant, and how to construct other invariants like it. Witten seemed to answer both. After defining topological quantum field theory, he showed how the Jones invariant could be obtained as an observable quantity within a certain theory \cite{witten1989quantum}! This shocking result gave a new interpretation of the Jones invariant in terms of mathematical physics which was appealing to experts. Seeing as the Jones invariant was constructed from a topological quantum field theory, it was natural to expect that other theories might give new invariants which could distinguish between even more knots. This vision of invariants in low-dimensional topology constructed using topological quantum field theory became known as \textit{quantum topology}, and evolved into its own discipline in the following years.
+The most notable of these theorists for our present story is Edward Witten, with his introduction of \textit{topological quantum field theory} in 1988 \cite{witten1988topological}. This work not only put the modern experiments within a larger context, but it also connected these developments to a parallel story which had been developing within pure mathematics. Namely, knot theory. In 1984 Vaughn Jones discovered his landmark knot invariant, which was powerful in its ability to distinguish between non-equivalent knots \cite{jones1997polynomial}. This marked the first major progress in the field since Alexander's invariant in 1928 \cite{alexander1928topological}. However, Jones’ construction was steeped in opaque subfactor theory, so much so that the fact that it resulted in knot invariant felt almost like a happy accident. Hence, a widespread topic on the mind of contemporary mathematicians was how to properly interpret the Jones invariant, and how to construct other invariants like it. Witten seemed to answer both. After defining topological quantum field theory, he showed how the Jones invariant could be obtained as an observable quantity within a certain field theory \cite{witten1989quantum}! This shocking result gave a new interpretation of the Jones invariant in terms of mathematical physics which was appealing to experts. Seeing as the Jones invariant was constructed from a topological quantum field theory, it was natural to expect that other field theories might give new invariants which could distinguish between even more knots. This vision of invariants in low-dimensional topology constructed using topological quantum field theory became known as \textit{quantum topology}, and evolved into its own discipline in the following years.
 
-This brings us to 1997. Quantum topology is a well developed area in pure mathematics, and topological themes in condensed matter physics are at the forefront of the field. The open problem is how to construct a fault tolerant quantum computer. Peter Shor had recently discovered his factoring algorithm \cite{shor1994algorithms}, and there was debate about whether scalable quantum error correction was possible \cite{landauer1995quantum}. This led to two independent proposals for topological quantum computation in the same year. One was by the mathematician Michael Freedman \cite{freedman1998p}. His vision was clear. A recent paper had shown that computing the Jones invariant of knots was in general an NP-hard problem \cite{jaeger1990computational}. However, by the work of Witten, the Jones invariants of knots were observables in certain topological quantum field theories. Hence, if one could construct physically a topologically ordered system which was described by Witten’s topological quantum field theory then the Jones polynomial of knots could be computed efficiently by making measurements on the system. Hence, one would obtain a very powerful computer. This was Freedman’s proposal.
+This brings us to 1997. Quantum topology is an active area in pure mathematics, and topological themes in condensed matter physics are at the forefront of the field. The open problem is how to construct a fault tolerant quantum computer. Peter Shor had recently discovered his factoring algorithm \cite{shor1994algorithms}, and there was debate about whether scalable quantum error correction was possible \cite{landauer1995quantum}. This led to two independent proposals for topological quantum computation in the same year. One was by the mathematician Michael Freedman \cite{freedman1998p}. His vision was clear. A recent paper had shown that computing the Jones invariant of knots was in general an NP-hard problem \cite{jaeger1990computational}. However, by the work of Witten, the Jones invariants of knots were observables in certain topological quantum field theories. Hence, if one could construct physically a topologically ordered system which was described by Witten’s topological quantum field theory then the Jones polynomial of knots could be computed efficiently by making measurements on the system. Hence, one would obtain a very powerful computer! This was Freedman’s proposal.
 
-The other proposal was made by theoretical physicist Alexei Kitaev \cite{kitaev2003fault}. His proposal was much more precise. He gave a toy model for a certain family of topologically ordered systems. He then outlined a technique for storing and manipulating information within these systems. The powerful observation was that every quantum algorithm could be performed using the technique he had outlined \cite{mochon2003anyons}.
+The other proposal was made by theoretical physicist Alexei Kitaev \cite{kitaev2003fault}. His proposal was much more precise. He gave a toy model for a certain family of topologically ordered systems. He then outlined a technique for storing and manipulating information within these systems. The deep observation was that these systems were intricate enough that they could be used to make a powerful quantum computer \cite{mochon2003anyons}.
 
-In the subsequent years Freedman and Kitaev teamed up with collaborators Zhenghan Wang, Michael Larsen, and others to study the new field of topological quantum information and the possibility of constructing a topological quantum computer. One of the first major results was that no topological quantum computer could be more powerful than a standard quantum computer \cite{freedman2002simulation}. This went against Freedman’s original hope to solve NP-hard problems using topological quantum computers. Freedman’s mistake was in asserting that topological quantum computers could compute the Jones polynomial. The nmeasurements which give the Jones invariant in topological quantum field theory will always be \textit{approximate}. Approximating the Jones invariant in this way is strictly computationally easier than evaluating the Jones invariant exactly. In fact, this way of approximating the Jones invariant is \textit{not} NP-hard - it can only be used to solve problems which could efficiently be solved using standard quantum computers.
+In the subsequent years Freedman and Kitaev teamed up with collaborators Zhenghan Wang, Michael Larsen, and others to study the new field of topological quantum information and the possibility of constructing a topological quantum computer. One of the first major results was that no topological quantum computer could be more powerful than a standard quantum computer \cite{freedman2002simulation}. This went against Freedman’s original hope to solve NP-hard problems using topological quantum computers. Freedman’s mistake was in asserting that topological quantum computers could compute the Jones polynomial. The measurements which give the Jones invariant in topological quantum field theory will always be \textit{approximate}. Approximating the Jones invariant in this way is computationally easier than evaluating the Jones invariant exactly. In fact, this way of approximating the Jones invariant is \textit{not} NP-hard - it can only be used to solve problems which could efficiently be solved using standard quantum computers.
 
-The second major result of Freedman, Kitaev, Wang, and Larsen was the converse of their first result \cite{freedman2002modular}. Namely, they showed that every quantum algorithm can be efficiently run on a topological quantum computer. They do this by showing that every quantum algorithm can be efficiently reinterpreted in terms of computing the Jones invariant of some knot. In this way, computing the Jones invariant is a \textit{universal problem} for quantum computation. They then formalize Freedman’s ideas about topological quantum field theory, and show directly that realistic operations on a topologically ordered quantum system described by Witten’s quantum field theory can be used to compute the Jones invariants of knots.
+The second major result of Freedman, Kitaev, Wang, and Larsen was the converse of their first result \cite{freedman2002modular}. Namely, they showed that every quantum algorithm can be efficiently run on a topological quantum computer. They do this by showing that every quantum algorithm can be efficiently reinterpreted in terms of computing the Jones invariant of some knot. In this way computing the Jones invariant is not NP-hard, but it is a \textit{universal problem} for quantum computation. They then formalize Freedman’s ideas about topological quantum field theory, and show directly that realistic operations on a topologically ordered quantum system described by Witten’s quantum field theory can be used to compute the Jones invariants of knots.
 
-Together, these two results show that in a real sense topological quantum computing is equally powerful as standard quantum computing with quantum circuits. This laid the groundwork for fruitful studies of fault-tolerant topological quantum computing, both using error correcting codes and physical materials. This has resulted in a great number of important results, which we will discuss at length throughout the rest of this manuscript.
+Together, these two results show in a real sense that topological quantum computing is equally powerful as standard quantum computing with quantum circuits. This laid the groundwork for fruitful studies of fault-tolerant topological quantum computing, both using error correcting codes and physical materials. This has resulted in a great number of important results, which we will discuss at length throughout the rest of this manuscript.
 
 \subsection{Technical introduction}
 \label{technical introduction}
 
 \subsubsection{Principles of topological quantum information}
 
-In this section I will lay out the general principles of topological quantum information. As an organizational tool, I will introduce these principles one by one as I construct a sample topological system. This example is meant to be representative of the systems we will encounter throughout this text, and within the broader field of topological quantum information. As a further organization tool, I will construct this example with the stated goal of obtaining a topological quantum computer.
+In this section we will lay out the general principles of topological quantum information. As an organizational tool, these principles are introduced one by one as we construct a sample topological system. This example is meant to be representative of the systems we will encounter throughout this text, and within the broader field of topological quantum information. As a further organization tool, this example is constructed with the stated goal of obtaining a topological quantum computer.
 
-Our system will be flat, containing only \textit{two spatial dimensions}. Our system will be mostly homogenous, essentially identical everywhere, at the exception of finitely many localized regions. These regions will differ substantially from the top-dimensional homogeneous bulk. These localized regions are called \textit{quasiparticles}. The beauty of systems like these is that they behave as though homogeneous bulk were empty, and the quasiparticles were fundamental particles within the bulk. In fact, in its algebraic description, these topological systems are \textit{identical} to ones in which the homogenous bulk is empty and the quasiparticles are fundamental particles. This is where the term quasiparticle arises. It is important however to remember that in most relevant applications the bulk is \textit{not} empty and the quasiparticles are \textit{not} fundamental particles. The bulk will typically be some highly entangled wavefunction, and the quasiparticles will be emergent phenomena made up of smaller microscopic degrees of freedom.
+Our system will be flat, containing only two spatial dimensions. Our system will be mostly homogenous, essentially identical everywhere, at the exception of finitely many localized regions. These regions will differ substantially from the top-dimensional homogeneous bulk. These localized regions are called \textit{quasiparticles}. The beauty of systems like these is that they behave as though the homogeneous bulk were empty, and the quasiparticles were fundamental particles within the bulk. In fact, in its algebraic description, these topological systems are \textit{identical} to ones in which the homogenous bulk is empty and the quasiparticles are fundamental particles. This is where the term quasiparticle arises. It is important however to remember that in most relevant applications the bulk is \textit{not} empty and the quasiparticles are \textit{not} fundamental particles. The bulk is typically some highly entangled quantum wavefunction, and the quasiparticles are emergent phenomena made up of smaller microscopic degrees of freedom.
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[scale=.04]{quasiparticle}
 \end{center}
+\caption{A quasiparticle in a two dimensional system}
 \end{figure}
 
 Our aim is to build a computer. In general this requires three components:
@@ -217,11 +209,13 @@ Our aim is to build a computer. In general this requires three components:
 \item A method of reading out information.
 \end{enumerate}
 
-Information is stored in the state of the system - the bulk is described by some parameters, and the details of those parameters encodes information. Our method for manipulating information is \textit{braiding}. Braiding is the process whereby quasiparticles are moved along continuous paths around one another. There are two important points about braiding to keep in mind. The first is that braiding changes the state of the system. Even though the quasiparticle content of the system may be identical before and after the braid, the details of the system will change - there is more to the state of the system than just the positions of the quasiparticles. The second point is that the way that the state of the system changes depends \textit{only depends on the topology of the braid}, and not the geometry. Small deformations in the path taken by the quasiparticles do not affect the result - only global changes, like whether a path is taken clockwise or counterclockwise, makes a difference. This invariance is due to the fact that our system is topological. In geometric systems we expect the exact path taken by quasiparticles matters a great deal. The independence of the details of the paths is extremely specific to topological systems, and in the present setting is the \textit{defining topological feature}.
+Information is stored in the state of the system - the bulk is described by some parameters, and the details of those parameters encodes information. Our method for manipulating information is \textit{braiding}. Braiding is the process whereby quasiparticles are moved along continuous paths around one another. There are two important points about braiding to keep in mind. The first is that braiding changes the state of the system. Even though the quasiparticles might be in identical places before and after the braid, the details of the system will change - there is more to the state of the system than just the positions of the quasiparticles. The second point is that the way that the state of the system changes depends \textit{only depends on the topology of the braid}, and not the geometry. Small deformations in the path taken by the quasiparticles do not affect the result - only global changes, like whether a path is taken clockwise or counterclockwise, makes a difference. This invariance is due to the fact that our system is topological. In geometric systems we expect the exact path taken by quasiparticles matters a great deal. The independence of the details of the paths is extremely specific to topological systems, and in the present setting is the \textit{defining topological feature}.
 
-It is at this point that we can already see we have succeeded in our goal of making our computations fault-tolerant. Noise in the system will correspond to uncontrolled perturbations in the trajectories of the quasiparticles. This uncontrolled movement won’t change global properties of paths taken, and hence will not change the action of the braids on the system. That is, small errors will not affect computation! Of course, large enough errors could unintentionally make one quasiparticle wind around another. This would change the topology of the braid and hence ruin the computation. These errors are controllable, however, by moving the quasiparticles far apart and limiting the magnitude of the noise.
+[WORK: add braid diagrams; two equivalent, two nonequivalent]
 
-The final step in making our computer is to introduce a method for reading out information. This is done using \textit{fusion}. Fusion is the process whereby two quasiparticles are brought together, resulting in a single quasiparticle. In sufficiently complicated topological systems the result of fusion depends on the details of the state of the overall system. That is, the result of fusion can be used as a way of reading out information about the state. In its most basic form, when two quasiparticles fuse they can either result in a localized region which is identical to the homogenous bulk or is different from the homogenous bulk. If they result in a localized region identical to the bulk we say that the two quasiparticles have \textit{annihilated} each other. In a real sense this can be seen as the difference between constructive and destructive interference. Two waves can either have destructive interference and annihilate each other, or they can constructively interfere and result a new wave. Measuring whether or not two quasiparticles annihilate upon fusion gives a method for reading out information.
+At this point we can already see we have succeeded in our goal of making our computations fault-tolerant. Noise in the system will correspond to uncontrolled perturbations in the trajectories of the quasiparticles. This uncontrolled movement won’t change global properties of paths taken, and hence will not change the action of the braids on the system. That is, small errors won't affect computation! Of course, large enough errors could unintentionally make one quasiparticle wind around another. This would change the topology of the braid and hence ruin the computation. These errors are controllable, however, by moving the quasiparticles far apart and limiting the magnitude of the noise.
+
+The final step in making our computer is to introduce a method for reading out information. This is done using \textit{fusion}. Fusion is the process whereby two quasiparticles are brought together, resulting in a single quasiparticle. In sufficiently complicated topological systems the result of fusion depends on the details of the state of the overall system. That is, the result of fusion can be used as a way of reading out information about the state! In its most basic form, when two quasiparticles fuse they can either result in a localized region which is identical to the homogenous bulk or is different from the homogenous bulk. If they result in a localized region identical to the bulk we say that the two quasiparticles have \textit{annihilated} each other. This can be seen as the difference between constructive and destructive interference. Two waves can either have destructive interference and annihilate each other when they meet, or they can have constructive inteference and result in a new wave. Measuring whether or not two quasiparticles annihilate upon fusion gives a method for reading out information.
 
 In some situations, the result of fusion can even be nondeterministic. In this case the fusion can be repeated multiple times, which allows one to measure the \textit{probability} that two quasiparticles will annihilate each other. These probabilities are a rich source of data, and will serve as our way of reading out information in the current setting. The fact that our system is topological implies that the result of fusion does not depend on the specifics of the path taken, and hence this method of readout preserves the invariance of our computation to noise. This gives us a full picture of topological quantum computation, as seen in figure \ref{fig:TQC-outline}.
 
@@ -235,291 +229,202 @@ In some situations, the result of fusion can even be nondeterministic. In this c
 
 To make the above discussion more concrete, we will give a worked example. In this example we use a specific topological order known as the \textit{Fibonacci particle theory} to run Shor’s efficient quantum factorization algorithm \cite{shor1994algorithms}. The input of Shor’s algorithm is a positive integer. The output of Shor’s algorithm is the factorization of that integer. Shor’s algorithm is \textit{efficient} in the sense that it uses polynomially many quantum logic gates to arrive at its answer relative to the size of the input. Throughout this passage we will use \textit{efficient} and \textit{polynomially sized} interchangeably. The Fibonacci particle theory is a specific topological order, which describes in an algebraic fashion how the overall state changes when quasiparticles are braided and fused.
 
-The first step in running Shor’s algorithm on a Fibonacci quantum computer is to translate the positive integer input into a certain braid. This is done using an efficient classical algorithm. The second step is to run this braid on a Fibonacci quantum computer. This is done by initializing some prescribed state and then braiding its quasiparticles. This initialization and braiding is performed repeatedly, and after every time two of the quasiparticles are fused. This gives us a real number, which is the probability that the two quasiparticles annihilate after the braiding. An efficient classical algorithm is then used to take this real number and obtain from it the factorization of the original input. Since all of these steps are efficient, it gives a topological quantum algorithm for factoring integers. The schematic for this process is shown below:
+The first step in running Shor’s algorithm on a Fibonacci quantum computer is to translate the positive integer input into a certain braid. This is done using an efficient classical algorithm. The second step is to run this braid on a Fibonacci quantum computer. This is done by initializing some prescribed state and then braiding its quasiparticles. This initialization and braiding is performed repeatedly, and after every time two of the quasiparticles are fused. This lets us record a real number between 0 and 1, which is the probability that the two quasiparticles annihilate after the braiding. An efficient classical algorithm is then used to take this real number and obtain from it the factorization of the original input. Since all of these steps are efficient, it gives a topological quantum algorithm for factoring integers. The schematic for this process is shown below:
 
 \begin{equation*}
 \tikzfig{shor-fibonacci}
 \end{equation*}
 
-The magic in the above procedure is the existence of these two classical algorithms: a first one for encoding integers into braids and a second one for decoding real numbers into factorizations. These algorithms are nontrivial. They are due to Freedman-Larsen-Kitaev-Wang \cite{freedman2002modular}. In fact, Freedman-Larsen-Kitaev-Wang showed that any problem which can be efficiently solved using a quantum circuit can also be solved using the Fibonacci particle theory, via a similar method of efficient classical preprocessing and postprocessing. It is in this sense that the Fibonacci theory is \textit{universal} for quantum computation.
+The magic in the above procedure is the existence of these two efficient classical algorithms: a first one for encoding integers into braids and a second one for decoding real numbers into factorizations. These algorithms are nontrivial. They are due to Freedman-Larsen-Kitaev-Wang \cite{freedman2002modular}. In fact, Freedman-Larsen-Kitaev-Wang showed that any problem which can be efficiently solved using a quantum circuit can also be solved using the Fibonacci particle theory, via a similar method of efficient classical preprocessing and postprocessing. It is in this sense that the Fibonacci theory is \textit{universal} for quantum computation.
 
-The final step of this process would be to create a physical topological system which is described by the Fibonacci theory, which would serve as our quantum computer. In the realm of materials, the most promising approach seems to be to use specially tuned versions of the fractional quantum Hall system \cite{zhu2015fractional}. While these materials are theorized to host quasiparticles described by the Fibonacci theory, the difficulty of the experiment makes them inaccessible to current technology. There has been progress made on topological quantum error correcting codes which work by simulating the Fibonacci theory \cite{schotte2022quantum, schotte2022fault}. However these codes at the current moment have structural issues and require an unbearable amount of overhead to run, making them unfeasible to use on modern computers.
+The final step of this process would be to create a physical topological system which is described by the Fibonacci theory, which would serve as our quantum computer. In the realm of materials, the most promising approach seems to be to use specially tuned versions of the fractional quantum Hall system \cite{zhu2015fractional}. While these materials are theorized to host quasiparticles described by the Fibonacci theory, the difficulty of the experiment makes them inaccessible to current technology. There has been progress made on topological quantum error correcting codes which work by simulating the Fibonacci theory \cite{schotte2022quantum, schotte2022fault, xu2024non}. However these codes at the current moment have structural issues and require an unbearable amount of overhead to run, making them unfeasible to use on modern computers.
 
-Progress on topological quantum computing has thus been focused on realizing topological particle theories other than the Fibonacci theory. These other theories can be constructed in more workable materials, and can be simulated as topological quantum error correcting codes with less overhead. The drawback of these other theories is that they are typically less computationally powerful, meaning that they require more tricks and techniques to achieve universal quantum computing. There are a great number of different proposals for how to achieve universal topological quantum computing, based on different particle theories, different methods of encoding information, different methods of manipulating information, and different methods of reading out information. It is an exciting time to be a theorist in the field of topological quantum information.
+Progress on topological quantum computing has thus been focused on realizing topological particle theories other than the Fibonacci theory. These other theories can be constructed in more workable materials, and can be simulated as topological quantum error correcting codes with less overhead. The drawback of these other theories is that they are typically less computationally powerful, meaning that they require more tricks and techniques to achieve universal quantum computing. There are a great number of different proposals for how to achieve universal topological quantum computing, based on different particle theories, different methods of encoding information, different methods of manipulating information, and different methods of reading out information. It is an exciting time to be a theorist in the field of topological quantum information!
 
 \subsubsection{Defects in ordered media}
 
-We will now work through a complete mathematical example of a family of topological systems. Our examples will be \textit{classical} topological systems. Many of the important subtlties of topological quantum information are already present in the classical case. Topological classical information is a smaller subject than topological quantum information - the reader should have a relatively complete grasp of the subject by the end of the chapter. Much of the discussion in this chapter is taken from an excellent review article by Mermin \cite{mermin1979topological}. The goal of this chapter is both to give a family of relevant examples to the reader, as well as to give a crash-course on the relevant topology.
+We will now work through a complete mathematical example of a family of topological systems. Seeing as we don't assume that the reader is familiar with quantum mechanics, our examples will be \textit{classical} topological systems. Many of the important subtlties of topological quantum information are already present in the classical case. However, topological classical information is a smaller domain than topological quantum information - the reader should have a relatively complete grasp of the subject by the end of the chapter. Much of the discussion in this chapter is taken from an excellent review article by Mermin \cite{mermin1979topological}.
 
-The family of systems we will describe goes by many names. In communities of experimentally focused physicists it goes by the name \textit{ordered media}. In mathematical physics communities it goes by the name \textit{classical gauge theory} [WORK: is ``classical gauge theory" really a thing, or is this ``classical field theory"? I should ask a physicist to make sure I've got my terminology right.]. In pure mathematics it would be described as \textit{homotopy theory}. We will construct a system based on every topological space $M$. We will call $M$ the order space of our theory.
+The family of systems we will describe goes by many names. In communities of experimentally focused physicists it goes by the name \textit{ordered media}. In mathematical physics communities it goes by the name \textit{classical field theory}. In pure mathematics it would be described as \textit{homotopy theory}. We will construct a system based on every topological space $M$. We will call $M$ the order space of our theory. We will assume throughout this chapter that $M$ is path connected.
 
-To describe a system in physics, the first step is to define the space of possible states of the system. In this case, states will correspond to \textit{continuous maps $\phi: \RR^2\to M$}. We now give physical intuition for this choice of state space. The choice of $\RR^2$ as a source represents the underlying material. We are working on an infinite flat plane. Describing a function $\phi: \RR^2\to M$ amounts to choosing a value $\phi(x)$ for every point $x\in \RR^2$. In this way we imagine our system as being made up of infinitely many objects, one placed at each point in $\RR^2$, each of which has an internal state space $M$. The fact that $\phi$ must be continuous is a compatibility condition between the states of the objects at nearby points. It says that nearby objects must have similar states. We now list some examples:
+To describe a system in physics, the first step is to define the space of possible states of the system. In this case, states will correspond to \textit{continuous maps $\phi: \RR^2\to M$}. We now give physical intuition for this choice of state space. The choice of $\RR^2$ as a source represents the underlying material. We are working on an infinite flat plane. Describing a function $\phi: \RR^2\to M$ amounts to choosing a value $\phi(x)$ for every point $x\in \RR^2$. In this way we imagine our system as being made up of infinitely many objects, one placed at each point in $\RR^2$, each of which has an internal state space $M$. Choosing the state of the overall system amounts to choosing the state of each individual object, that is, a value in $M$ for every point in the plane. The fact that $\phi$ must be continuous is a compatibility condition between the states of the objects at nearby points. It says that nearby objects must have similar states. We now list some examples which are described by this model:
 
 \begin{itemize}
-\item \textbf{Classical XY model of a 2D electron gas}. In this example, $M$ is the circle. An electron can be modeled as a point particle with a magnetic dipole pointing in some direction. This magnetic dipole is known as the \textit{spin} of the election, and can point in any direction in the plane. The topological space of all possible directions in the plane is a circle. The fact that nearby electrons must have similar spins is known as Hund’s rule, and is the most fundamental incarnation of ferromagnetism. It is physically derived as a consequence of the Pauli exclusion principle.
+\item \textbf{Classical xy model of a 2D electron gas}. This model describes a possible behavior electrons in a flat 2D plane. An electron can be modeled as a point particle with a magnetic dipole pointing in some direction. This magnetic dipole is known as the \textit{spin} of the election, and can point in any direction in the plane. The topological space of all possible directions in the plane is a circle. Hence, in this system, the order space $M$ is the circle. The fact that nearby electrons must have similar spins is known as Hund’s rule, and is the most fundamental incarnation of ferromagnetism. It is physically derived as a consequence of the Pauli exclusion principle.
 
 \item \textbf{A-phase of superfluid Helium-3}.  [WORK: fill in example]
 
-\item \textbf{Biaxial nematics}. In this example, $M$ is a certain quotient of the special orthogonal group $\SO(3)$ of rotations in three dimensional space. The objects at every point in the biaxial nematic should be thought of as small rectangles with unequal side lengths. These rectangles can be oriented in any direction in three dimensional space. In practice these objects will often be molecular compounds. They will not be exactly rectangular, but have the same symmetry group as a rectangle which is enough for the model to be accurate. To compute the space of possible orientations of a small rectangle, we work by the method of symmetries. Choosing some reference orientation to start with, every rotation in three dimensional space brings the rectangles to new orientations. The space of orientations of the rectangle is hence equal to $\SO(3)$ modulo the rotations which fix the rectangle. That is, $M$ is equal to $\SO(3)$ modulo the symmetry group of a rectangle. [WORK: Talk to someone who knows about biaxial nematics. What's with the continuity condition? How does this work, really?]
+\item \textbf{Biaxial nematics}. The objects at every point in the biaxial nematic should be thought of as small rectangles with unequal side lengths. These rectangles can be oriented in any direction in three dimensional space. In practice these objects will often be molecular compounds. They will not be exactly rectangular, but have the same symmetry group as a rectangle which is enough for the model to be accurate. To compute the space of possible orientations of a small rectangle, we work by the method of symmetries. Choosing some reference orientation to start with, every rotation in three dimensional space brings the rectangles to new orientations. The space of orientations of the rectangle is hence equal to $\SO(3)$ modulo the rotations which fix the rectangle. That is, $M$ is equal to $\SO(3)$ modulo the symmetry group of a rectangle. [WORK: Talk to someone who knows about biaxial nematics. What's with the continuity condition? How does this work, really?]
 \end{itemize}
 
-We will now analyze these systems. In doing this analysis we will want to use the ideas of \textit{deformation} and \textit{topological equivalence}. Of course, these ideas are vague and require rigorous notions to make precise. We define these notions now.
+[WORK: add diagrams for all three models]
 
-\begin{definition}
-Let $X,Y$ be topological spaces, and let $f,g: X\to Y$ be continuous maps. A \textbf{homotopy} between $f$ and $g$ is a map $H: X\times [0,1] \to Y$ such that $H(x, 0)=f(x)$ and $H(x,1)=g(x)$ for all $x\in X$.
-\end{definition}
+We will now analyze these systems. In doing this analysis we will want to use the ideas of \textit{deformation} and \textit{topological equivalence}. Of course, these ideas are vague and require rigorous notions to make precise. We define these notions now. [WORK: this need to be reworded, with a proper caveat about rigor. Maybe bring up Jordan curve theorem for a laugh. Need to figure out what the policy on statements is.]
 
-The idea is that the maps $H(\cdot,t):X\to $Y for $t\in [0,1]$ are a continuously deforming family. The first map $H(\cdot, 0)$ is equal to $f$, and as $t$ moves forward the maps $H(\cdot,t)$ slowly change until at $t=1$ they become $H(\cdot,1)=g$. If there exists a homotopy between two maps, then we say those maps are \textit{homotopic}. It is straightforward to verify that homotopy is an equivalence relation (see Exercise [ref]). More colloquially, if $f$ and $g$ are homotopic we say that $f$ can be deformed into $g$. This is our relevant notation of topological equivalence.
+We now add a picture of \textit{dynamics} into our model - how it will be changing through time. In particular, we image that as time passes the system changes continuously. Let $\phi_t:\RR^2\to M$ be the state of the system at time $t$. We image that if $t_0$, $t_1$ are similar times then $\phi_{t_0}(x)$ and $\phi_{t_1}(x)$ will be close. Formally, this means that the maps $\RR_{\geq 0}to M$ assigning $t$ to $\phi_t(x)$ is continuous for all $x\in \RR^2$. This captures our intuitive notion of \textit{deformation}. We will image that the state of the system is constantly changing by deformations.
 
-We can use homotopies to get a picture of dynamics in our system. We call continuous maps $H: \RR^2 \times \RR_{\geq 0}\to M$ \textit{time evolutions} of the system. The map $\phi_t=H(\cdot,t): \RR^2\to M$ is called \textit{the state of the system at time $t$}. For every $T>0$, the map $H_T:\RR^2\times [0,1]\to M$ given by $H_T(x,t)=H(x,t\cdot T)$ gives a homotopy between $\phi_0$ and $\phi_T$. Hence, the states of the system at various times are all homotopic. In this sense the system is \textit{evolving by homotopies}. The following proposition is an important part of understanding the nature of the system:
+The first thing to notice about our system is that it is not storing any topologically-invariant information. In particular, every state can be continuously deformed to every other state. This is a general fact from topology: every pair of maps $\phi_0,\phi_1: \RR^2\to M$ can be continuously deformed from one to the other.
 
-\begin{proposition}
-Let $M$ be a path connected topological space. Every pair of continuous maps $\phi_0,\phi_1:\RR^2\to M$ is homotopic.
-\end{proposition}
-\begin{proof}
-Consider the map $H_0: \RR^2\times [0,1]\to M$ given by $H_0(x,t)=\phi_0(tx)$. Since multiplication in $\RR^2$ is continuous, $H_0$ is continuous. Hence, $H_0$ gives a homotopy between the constant map $H_0(\cdot,0)=\phi_0(0)$ and $H_0(\cdot,1)=\phi_0(x)$. Similarly, the map $H_1:\RR^2\times [0,1]\to M$  given by $H_1(x,t)=\phi_1(tx)$ gives a homotopy between the constant map $H_1(\cdot,0)=\phi_1(0)$ and $H_1(\cdot,1)=\phi_1(x)$.
+Clearly, this means that our system is not complicated enough to build a computer yet because it cannot store information. We rectify the situation by introducing quasiparticles. These quasiparticles go by many names. In the theory of ordered media they are known as defects. In field theory they are known as particles. In homotopy theory they are known as point singularities. For the sake of brevity, we will use the term defect.
 
-Now, since $M$ is path connected, there exists a continuous map $\ell: [0,1]\to M$ such that $\ell(0)=\phi_0(0)$ and $\ell(1)=\phi_1(0)$. Thus, the map $H_\ell:\RR^2\times [0,1]\to M$ given by $H_\ell(x,t)=\ell(t)$ establishes a homotopy between the constant maps $H_\ell(\cdot,0)=\phi_0(0)$ and $H_\ell(\cdot,1)=\phi_1(0)$. Composing the homotopies from $\phi_0(x)$ to $\phi_0(0)$, $\phi_0(0)$ to $\phi_1(0)$, and $\phi_1(0)$ to $\phi_1(x)$, we arrive at a homotopy between $\phi_0(x)$ and $\phi_1(x)$ as desired.
-\end{proof}
+A defect is a point at which we will drop our condition that the state $\phi:\RR^2\to M$ be continuous. This is done by making $\phi$ \textit{undefined} at certain points. Our new system is called \textit{ordered media with finitely many defects}. The state space consists of pairs $(S,\phi)$, where $S\subset \RR^2$ is a finite set and $\phi: \RR^2\\ S\to M$ is a continuous map.
 
-The above proposition can be interpreted as saying that as our system evolves in time, we can expect it to go from any state to any other state. In other words, all of the possible states of our system are topologically equivalent and hence it contains \textit{no topologically invariant information}. This means that we will need to add more complexity to the system before we can study topological information.
+[WORK: add picture of defects in ordered media]
 
-This complexity will come from introducing quasiparticles. These quasiparticles go by many names. In the theory of ordered media they are known as defects. In gauge theory they are known as particles. In homotopy theory they are known as point singularities. For the sake of brevity, we will use the term defect. A defect is a point at which we will drop our condition that the state $\phi:\RR^2\to M$ be continuous. This is done by making $\phi$ \textit{undefined} at certain points. Our new system is called \textit{ordered media with finitely many defects}. The state space consists of pairs $(S,\phi)$, where $S\subset \RR^2$ is a finite set and $\phi: \RR^2\\ S\to M$ is a continuous map.
+Dynamics in our new system still correspond to continuous deformations. The subtelty now is that the defects can move as the state is deformed. We call these \textit{defect-mobile deformations}.
 
-Dynamics in our new system can involve the movement of defects. Let $\gamma_1… \gamma_n: \RR_{\geq 0} \to \RR^2$ be continuous maps, with $ \gamma_i(t)\neq \gamma_j(t)$ for all $i\neq j$, $t\in [0,1]$. These maps represent the trajectories of the defects, subject to the condition that no two defects collide. Continuous maps
+The vision for building our computer is that the experimenter should have control of the trajectories of the defects. This means that the system will trasform under defect-mobile deformations with definite paths chosen by the epxerimenter, but the details of the rest of the deformation is arbitarily and uncontrollable.
 
-$$H:\RR^2\times \RR_{\geq 0} \backslash \bigcup_{t\geq 0}\bigcup_{i=1}^{n}(\gamma_i(t),t)\to M$$
+We can now outline the big idea of how the computer will work. We will arrange $n$ defects on a line in the plane. We keep these defects still, so that the system is changing only by deformations which keep the defects in place. We call these \textit{defect-fixed deformations}. We store our information in the possible configurations of this system:
 
-represent dynamics in our system. We call such maps \textit{defect-mobile homotopies}. At every time $t\geq 0$, the system is in the $n$-defect state
+[WORK: information storage space = (states with n defects arranged in a line)/ (defect-fixed deformation)]
 
-$$\phi_t=H(\cdot,t): \RR^2\backslash \bigcup_{i=1}^{n}\gamma_i(t)\to M.$$
+The way we act on this information is by moving the defects around each other. This movement of defects induces some defect-mobile deformation. The space we are storing our information in is invariant under defect-fixed deformation, but not defect-mobile deformations. Hence, moving the defects around non-trivial paths will have non-trivial action on the stored information. This action on stored information is exaclty how we perform our computations.
 
-. If the trajectories $\gamma_i$ are constant with respect to $t$ for all $i$, we will call $H$ a \textit{defect-fixed homotopy}. This now leads us to two immediate questions:
+Finally, we must introduce a method for reading out information. This is done via fusion. Two defects can be brought together and fused. The result of this fusion is a topologically invariant quantity, and we will assume that it can be measured by an experimenter. In its most simple form, this amounts to detecting whether two defects annhilated or not.  This gives us some information about the state, which is the output of our computation.
 
-\begin{enumerate}
-\item What information is invariant under defect-mobie homotopy?
-\item What information is invariant under defect-fixed homotopy?
-\end{enumerate}
+[WORK: add schematic for this process]
 
-After answering these questions, we will move on to building a computer based on defects in ordered media. The idea is that our computer will store its information within attributes of the state which are invariant under defect-fixed homotopy. These attributes, typically, will \textit{not} be invariant under defect-mobile homotopy. This means that if defects are braided around eaech other, the values of these defect-fixed attributes will change. This change in information is a \textit{computation}. This leads to two more central questions:
-
-\begin{enumerate}
-\setcounter{enumi}{2}
-\item How does braiding affect defect-fixed information?
-\item Which choices of order  space $M$ make for effective computers?
-\end{enumerate}
-
-Answering these questions requires a detailed analyis of our model using techniques from homotopy theory.
+In the rest of this chapter we will describe exactly what the space we are storing our information in looks like, how braids act on that information, and how this can be used to make a functioning computer. This will give a detailed picture of how topological computation works.
 
 \subsubsection{The fundamental group}
 
-In this subsection we analyse defects in ordered media using the \textit{fundamental group} from homotopy theory. Readers familiar with homotopy theory should familiarize themselves with the statement of Proposition [ref] before moving on to the next subsection. We begin with some terminology and basic results - we will return to ordered media breifly.
+To understand topological computation in ordered media we will need to put in some real work in analysing the system, and make some non-trivial observations. The structure of this analysis will be largely the same as the analysis which will be taking place throughout the rest of this book. We recall the overall outline of this text, which goes as follows:
 
-\begin{definition} Let $X$ be a topological space.
-\begin{itemize}
-\item A continuous map $\gamma:[0,1]\to X$ is called a \textbf{path} in $X$ from $\gamma(0)$ to $\gamma(1)$;
-\item Given two paths $\gamma_0,\gamma_1$ with the same start and end points, a \textbf{path homotopy} from $\gamma_0$ to $\gamma_1$ is a map $H:[0,1]\times [0,1]\to X$ such that $H(\cdot,0)=\gamma_0$, $H(\cdot,1)=\gamma_1$, $H(0,t)=\gamma_0(0)=\gamma_1(0)$, and $H(1,t)=\gamma_0(1)=\gamma_1(1)$ for all $t\in [0,1]$.
-\item A \textbf{loop} is a path with the same start and end point. This common start and end point is called the \textbf{base point} of the loop.
-\item Given a point $x\in X$, the \textbf{fundamental group of $X$ based at $x$} is defined as a set to be the collection of equivalence classes of loops in $X$ based at $x$ up to path homotopy. It is denoted $\pi_1(X,x)$.
-\end{itemize}
-\end{definition}
+[WORK: add outline.]
 
-The term fundamental \textit{group} is justified by the following proposition:
+In this section we will do a very similar thing. We will take our physical model, ordered media, and take its algebraic description. That algebraic description can then be used for making a computer. Luckily for us, the algebraic theory underlying ordered media is much simpler than the algebraic theory underlying topological order: it's group theory. In particular, we will even assume that all relevant groups are \textit{finite}. In this way, modular tensor categories can be seen as vast quantum generalizations of finite groups. The schematic in our case is shown below:
 
-\begin{proposition} Let $X$ be a topological space, and let $x\in X$ be a point. We define a binary operation on the space of loops in $X$ based at $x$ by the formula 
+[WORK: add outline w/ group theory instead of MTC.]
 
-$$(\alpha_0\cdot \alpha_1)(t)=
+The way we go from defects in ordered media to group theory is by using a construction known as the \textit{fundamental group} from homotopy theory.
+
+The fundamental group is derived from a careful analysis of loops in topological spaces. We first clairfy what we mean by \textit{loop}. Loops, for our purposes, are always \textit{oriented} and are allowed arbitrary self intersections. Examples of loops around a point are shown below:
+
+[WORK: add pictures of loops.]
+
+Formally, we define a loop in a topological space $M$ to be a continuous map $\alpha:[0,1]\to M$ such that $\phi(0)=\phi(1)$. Our main goal us to understand topological information. Topological information is stored in properties which are invariant under deformations. Hence, we are naturally interested in the space of loops up to deformation.
+
+In the plane $\RR^2$ with a point removed, points up to deformation are classified by their \textit{winding number}. This winding number is an integer which says how many times the loop went around the point. This windingn number is an integer in $\ZZ$, with positive numbers corresponding to counterclockwise rotations and negative numbers corresponding to clockwise rotations. The loops in figure [ref] have their winding numbers given as an illustration of the concept.
+
+The key ingredient we are missing is the \textit{group structure}. We want to get groups out of topological spaces, but so far all we have is a set. The group structure comes from composition. Given two loops we can compose them by first following one loop and then following the othe. In this language, we see the topologists' winding-number version of $1+1=2$ below:
+
+[WORK: add 1+1=2 with winding numbers.]
+
+This definition has a big problem though. To compose, we need to choice a point to start and stop two two loops being composed at. This special starting/stopping point is known as a \textit{basepoint}. This deal of choosing basepoints is very important for the theory. Formally, a loop in $M$ based at $m\in M$ is a map $\alpha:[0,1]\to M$ such that $\phi(0)=\phi(1)=m$. We define the composition of two loops $\alpha_0,\alpha_1$ in $M$ based at $m\in M$ to be
+
+$$
+(\alpha_1 \circ \alpha_0)(t)=
 \begin{cases}
-\alpha_0(2t) & 0\leq t < 1/2\\
-\alpha_1(2t-1) & 1/2\leq t \leq 1
+\alpha_0(2t) & 0\leq t \leq 1/2 \\
+\alpha_1(2(t-1/2)) & 1/2 < t \leq 1.
 \end{cases}$$
 
-for all loops $\alpha_0,\alpha_1$ based at $x$. This binary operation induces a well-defined map path homotopy equivalence classes, yielding a binary operation on $\pi_1(X,x)$. This binary operation endows $\pi_1(X,x)$ with the structure of a group.
-\end{proposition}
-\begin{proof}.[WORK: do proof]
-\end{proof}
+The reason we need to add the factors of $2$ is to ensure that the domain of the loop is still the unit interval $[0,1]$. Intuitively, to fit two loops in the same amount of time we had to speed-up both loops by a factor of 2.
 
-We now prove some basic results about the fundamental group:
+We are now almost ready to define the fundamental group: we have defined based loops, and we have defined a rule for their composition. The last subtelty is in discussing what it means to deform based loops. In particular, should deformations be allowed to move the basepoint? The issue that we want to be able to compose our loops. To compose loops they need to have the same basepoint. If the basepoint moves then we will lose out composition structure. Hence, for the time being, we should only work with deformations which preserve the basepoint. With this subtelty out of the way, we can finally define the fundamental group. Given any connected topological space $M$ and any point $m\in M$, we define the \textit{fundamental group of $M$ based at $m$} to be the group
 
-\begin{proposition} Let $X$ be a topological space, and let $x\in X$ be a point.
-\begin{enumerate}[(a)]
-\item Let $\gamma:[0,1]\to X$ be a path. Given every loop $\alpha$ in $X$ based at $\gamma(0)$, define the map
+$$\pi_1(M,m)\coloneqq \left(\text{loops in $M$ based at $m$}\right)/\left(\text{basepoint preserving deformations}\right)$$
 
-$$i_\gamma(\alpha)(t)=
-\begin{cases}
-\gamma(1-3t) & 0\leq t < 1/3 \\
-\alpha(3t-1) & 1/3 \leq t <2/3 \\
-\gamma(3t-2) & 2/3 \leq t \leq 1
-\end{cases}$$
+whose group structure is given by the composition of based loops. As an example, our earlier comments about loops around points can be summarized as the statement that $\pi_1(\RR^2\backslash\{p\},b)\cong \ZZ$ for any distinct points $b,p\in \RR^2$.
 
-to be a loop based at $\gamma(1)$. This assignment induces a well defined map on path homotopy equivalence classes. Moreover, the induced map
+We can now start to use the fundamental group to analyse defects in ordered media. The first major insight is that loops in physical space yield loops in order space. Let $S$ be a finite set of defects and let $\phi: \RR^2 \backslash S \to M$ be a state. Given any loop $\alpha$ in $\RR^2\backslash S$ based at $b\not\in S$, postcomposing with $\phi$ gives a loop in $M$:
 
-\begin{equation*}
-i_\gamma: \pi_1(X,\gamma(0))\xrightarrow{}\pi_1(X,\gamma(1))
-\end{equation*}
+$$(\phi \circ \alpha): [0,1]\xrightarrow{\alpha} \RR^2 \backslash S \xrightarrow{\phi} M.$$
 
-is an isomorphism of groups.
+This loop has basepoint $(\phi \circ \alpha)(0)=(\phi\circ \alpha)(1)=\phi(b)$. This gives an element of $\pi_1(M,\phi(b))$. Given any state $\phi$ and given any loop $\alpha$ based at $b$, we call the corresponding element of $\pi_1(M,\phi(b))$ the \textit{winding number of $\phi$ along $\alpha$}. This sort of winding number generalizes the standard notion of a winding number of a loop around a point discussed before.
 
-\item Let $S^1$ be the circle, which we define as the interval $[0,1]$ with $0$ and $1$ identified. Every loop in $X$ induces a map from the circle to $X$, by gluing $0$ and $1$. This natural map induces a \textbf{bijection} between conjugacy classes in the fundamental group and homotopy classes of maps from the circle to $X$.
+Now, consider the system with $n$ defects arranged in a line. We can choose a basepoint $b$ above all of the defects. We add loops $\alpha_i$ based at $b$ for each $1\leq i \leq n$, each of which go directly around defect $i$ counterclockwise exactly once. This is depicted visually below:
 
-\end{enumerate}
-\end{proposition}
-\begin{proof}. [WORK: do proof]
-\end{proof}
+[WORK: add picture.]
 
-The fundamental group of the order space $M$ will play an important role in our analysis of the system. Hence, we will now compute the fundamental groups of the order spaces corresponding to the xy model of an electron gas, the A-phase of superfluid helium, and biaxial nematics:
+Given any ordered state $\phi$ on this system, we can take the winding numbers of each loop $\{\alpha_i\}_{i=1}^n$. These winding numbers all live in $\pi_1(M,\phi(b))$. Hence, to each state we can assign an element in the $n$-fold Cartesian product $\pi_1(M,\phi(b))^n$.
 
-\begin{proposition}$\,$
-\label{fundamental-group-computations}
-\begin{enumerate}[(a)]
-\item $\pi_1(S^1,x)\cong \ZZ$ for all $x\in S^1$;
-\item $\pi_1(\RR^2\backslash S,x)\cong\Free(S)$ for all finite sets $S\subset \RR^2$ and $x\in \RR^2\backslash S$, where $\Free(S)$ denotes the free group with generators corresponding to elements of $S$.
-\item .[WORK: compute superfluid helium example];
-\item .[WORK: compure biaxial nematics example];
-\item For all groups $G$, there exists a topological space $X$ such that $\pi_1(X,x)\cong G$ for all $x\in X$.
-\end{enumerate}
-\end{proposition}
-\begin{proof}.[WORK: do proof]
-\end{proof}
+Fantastically, the values in $\pi_1(M,\phi(b))^n$ change in a well-behaved way under braids. We use a $2$-defect system to illustrate the principle.
 
-As a consequence of proposition \ref{fundamental-group-computations}(a), we can define the notion of \textit{winding number}.
+[WORK: add good pictures to show why making $g_1$ go under $g_2$ maps $(g_1,g_2)$ to $(g_2,g_1)$. Talk a bit about it in words too]
 
-\begin{corollary} Choose $b,x\in \RR^2$. We have a canonical isomorphism of groups $\pi_1(\RR^2\backslash \{x\},b)\cong \ZZ$. Given a loop $\alpha:[0,1]\to U\backslash \{x\}$ based at $b$, the integer corresponding to the element $[\alpha]\in \pi_1(U\backslash \{x\},b)$ is called the \textbf{winding number of $\alpha$ around $x$}. It is denoted $\wind(\alpha,x)$.
-\end{corollary}
-\begin{proof}.[WORK: do proof]
-\end{proof}
+This gives us a picture for how our computer works: information is stored in the winding numbers of the defects, and braiding acts by conjugating the winding numbers by each other.
 
-We are now ready to return to our analysis of defects in ordered media. Let $(S,\phi)$ be a state in an ordered media with order space $M$. Suppose $S=\{x_1, ...x_n\}$, and choose a basepoint $b\in \RR^2\backslash S$. For all $1\leq i\leq n$, define loops $\alpha_i$ based at $b$ which go around $x_i$ exactly once counterclockwise, and do not wind around any of the other $x_j$. Formally, this amounts to choosing $\alpha_i$ so that
+There are a still a few lingering points that need to be sorted out before we can start building our computer. The first is the issue of whether our information being stored is actually invariant under defect-fixed deformations. Unfortunately, it is \textit{not}. The problem is that deformations in general have no reason to preserve the value of $\phi(b)$. The deformations will hence change the basepoints. However, elements of the fundamental group are only defined up to basepoint-preserving deformations! Hence, deformations of the state will change its winding numbers. In general we have the following key relation:
 
-$$\wind(\alpha_i,x_j)=
-\begin{cases}
-1 & i=j\\
-0 & \text{otherwise}.
-\end{cases}$$
+$$\left(\text{loops in $M$ based at $m$}\right)/\left(\text{basepoint preserving deformations}\right)= \pi_1(M,m)$$
 
-Each map $\alpha_i$ can be postcomposed with $\phi$ to give a map $(\phi\circ \alpha_i): [0,1]\to M$. In this way, every loop in phtsical space can be pushed forward to a loop in order space. The important feature to notice is that as $\phi$ changes by homotopies, the map $\phi\circ \alpha_i$ changes by homotopies. Additionally, as $\alpha_i$ changes by homotopies, the map $\phi\circ \alpha_i$ changes by homotopies. In this way, the homotopy class of $\phi\circ \alpha_i$ as a map from the circle to $M$ is an invariant of $\phi$ which is invariant under defect-mobile homotopy. Moreover, Proposition [ref](b) implies that all maps which wind exactly once around $\alpha_i$ and wind zero times around the other $\alpha_j$ are homotopic [WORK: this is false]. Hence, the value of the invaraint does not depend on the choice of $\alpha_i$. By Proposition [ref](b), homotopy classes of loops in order space correspond to conjugacy classes in $\pi_1(M,m)$ for any fixed $m\in M$. Hence, we conclude that associated to every defect in $\phi$, there is a corresponding conjugacy class in $\pi_1(M,m)$ for any fixed $m\in M$. This conjugacy class is an invariant under defect-mobile homotopy.
+$$\left(\text{loops in $M$ based at $m$}\right)/\left(\text{arbitrary deformations}\right)= \left(\text{conjugacy classes in }\pi_1(M,m)\right).$$
 
-All of the path homotopy classes of maps $\phi\circ \alpha_i$ give elements of $\pi_1(M,\phi(b))$. It is natural to ask why these elements are not invariants under defect-mobile homotopies, but only their conjugacy class. The answer is twofold:
+The intution for this above fact is as follows. Let $\alpha$ be a loop based at $b$. Let $\alpha'$ be the same loop but with a different choice of basepoint $b'$. Let $\epsilon$ be the portion of the loop between $b$ and $b'$. Going along $\alpha$ is the same as first going along $\epsilon$ to get to $b'$, then going along $\alpha'$, and then going along $\epsilon^{-1}$ to get back to $b$. Hence, we have $\alpha = \epsilon^{-1}\circ \alpha' \circ \epsilon$. Hence, choosing different basepoints amounts to conjugation. This is illustrated below:
 
-\begin{enumerate}
-\item As $\phi$ changes by homotopies, $\phi(b)$ can change. This movement of basepoint will affect the path homotopy class of $\phi\circ \alpha_i$.
-\item As the state changes under defect mobile homotopy, another defect $x_j$ could pass through $\alpha_i$. At this point, the composition $\phi\circ \alpha_i$ becomes \textit{undefined}. The homotopy classes of $\phi\circ \alpha_i$ before and after $x_j$ moves through it could be different. Choosing $\alpha_i$ smaller so that $x_j$ does not pass through it is possible, but this might neccecarily involve changing the basepoint of $\alpha_i$. This change in basepoint. will affect the path homotopy class of $\phi\circ \alpha_i$. [WORK: add picture]
-\end{enumerate}
+[WORK: add diagram]
 
-Under defect-fixed homotopy, the concern (2) dissapears. Moreover, if we add the technical condition that $\phi(b)$ cannot change during the defect-fixed homotopy then the concern (1) will dissapear as well. Hence, the elements $\pi_1(M,\phi(b))$ are invariants under basepoint-preserving defect-fixed homotopies. If the basepoint is allowed to vary it will change all of the path homotopy classes at once. This brings us to our main result of the subsection, which gives a full classification of information stored within defects in ordered media:
+All this is to say that the winding numebrs in an $n$-defect ordered media state $\phi$ are not preserved up to defect-fixed deformations. Properly dealing deformations requires properly keeping track of conjugacy classes versus group elements. This sort of effort, however, is unnececary because it does not change any of the key takeways or any of the important concepts. Hence, \textit{we will assume that all of our deformations do not change the value of $\phi(b)$}. We will choose some element $m\in M$ and assume $\phi(b)=m$ is fixed. For physical motivation, one can imagine moving the basepoint far away towards infinity. Since all of our physics is local we can imagine that the magnitute of the deformations go to zero away from the origin and hence the point at infinity is preserved by all local nosie.
 
-\begin{proposition} Let $M$ be a path connected topological space. Let $S=\{x_1...x_n\}$ be a finite set, and let $\phi:\RR^2 \backslash S\to M$ be a continuous map. Let $\alpha_i$ be loops in $\RR^2\backslash S$ based at $b\in \RR^2\backslash S$ such that
+Our last subtelty to discuss is reading out information. As we have just discussed, the values of the winding numbers in $\pi_1(M,m)$ are very dependent on the choice of basepoint. This means that the information encoded in this winding number is spread out over the whole region between the defect and the basepoint. This nonlocal nature makes it hard to measure, especially when the basepoint is taken away towards infinity. The readily measurable local information is the non basepoint-preserving winding number of the loop around defects. That is, the conjugacy classes in $\pi_1(M,m)$ associated to the defects. These conjugacy classes should be measurable in a reasonable experimental setup.
 
-$$\wind(\alpha_i,x_j)=
-\begin{cases}
-1 & i=j\\
-0 & \text{otherwise}.
-\end{cases}$$
+However, as we braid, these conjugacy classes do not change, and hence the outcomes of our measurments won't be affected. In a way, this is the point - braiding can change the spread-out global topological information, but will not change local quantities, like the conjugacy class in $\pi_1(M,m)$. In this way we can think of the conjugacy class as a well-defined \textit{type} of the defect, whereas the exact value in $\pi_1(M,m)$ is a global quantity which depends on the choice of basepoint
 
-\begin{enumerate}[(a)]
-\item The homotopy classes $[\phi\circ \alpha_i]$ of maps $S^1\to M$ do not depend on the choice of $\alpha_i$. These homotopy classes are invariants under defect-mobile homotopy.
-\item The path homotopy classes of $[\phi\circ \alpha_i]\in \pi_1(M,\phi(b))$ do not depend on the choice of $\alpha_i$. These path homotopy classes are invariant under defect-fixed homotpies which preserve the value of $\phi(b)$. These invariants establish a bijection
+The way to get around this issue is to fuse the defects before braiding. Fusing defects together amounts to bringing them close together until they act like a single defect. If the defects have winding number $g_1,g_2$, then their fused defect will have winding number $g_1g_2$ as illustrated by the below diagram:
 
-$$\left(\substack{\text{states $(S,\phi)$ up to} \\ \text{basepoint-preserving defect-fixed homotopy}}\right)\xrightarrow{\sim} \prod_{i=1}^n\pi_1(M,\phi(b))$$
+[WORK: add diagram.]
 
-\item The element $\left([\phi\circ\alpha_i]\right)_{i=1}^n \in \prod_{i=1}^n\pi_1(M,\phi(b))$ does not depend on the choice of $\alpha_i$. This establishes a bijection [WORK: state this correctly - it should be simultanous conjugation by an element of $\pi_1(M,\phi(b))$]
+Hence, given a state $(g_1,g_2... g_n)$, the measurable quantities are the conjugacy classes of products of adjacent defects. For instance, fusing all of the defects one-by-one to the left would allow one to measure the conjugacy classes of $g_1$, $g_1g_2$, $g_1g_2g_3$, all the way up to $g_1g_2g_3...g_n$.
 
-$$\left(\substack{\text{states $(S,\phi)$ up to} \\ \text{defect-fixed homotopy}}\right)\xrightarrow{\sim} \left(\text{conjugacy classes in }\prod_{i=1}^n\pi_1(M,\phi(b))\right)$$
-\end{enumerate}
-\end{proposition}
-\begin{proof}.[WORK: do proof]
-\end{proof}
-
-[WORK: there IS some dependence on the $\alpha_i$]
+This completes our analysis of defects in ordered media based on the fundamental group.
 
 \subsubsection{Topological classical computation}
 
-Our goal in this section is to make a topological computer. Throughout this section we will fix some notation. We let $M$ be a path connected topological space, we let $S=\{x_1, ...x_n\}$ be a finite set, we let $\phi:\RR^2\backslash S\to M$ be a state, and we let $b\in \RR^2\backslash S$, $m\in M$ be basepoints. Throughout this section we will assume that $\phi(b)=m$ is \textit{fixed}. This is mainly a matter of convenience - allowing it to move would require a tedious amount of digressions about conjugacy classes. Physically, this can be justified by pushing the basepoint away towards infinity where it cannot be disturbed.
+We are now ready to describe the theory of topological classical computation. In the previous section, we showed how all of the topological information of defects in ordered media is controlled by the fundamental group $G=\pi_1(M,m)$ of the order space $M$ relative to some basepoint $m\in M$. This is the heart of the algebraic theory of topological computing. Even though our physical model is complicated, the algebraic data can be succicntly summarized as a single group $G=\pi_1(M,m)$. In this way, we will formulate our discussion of topological classical computation in a way which does not make reference to the order space at all. We will choose an abstract group $G$ and make a computer using it.
 
-Proposition [ref] tells us that basepoint-preserving defect-fixed homotopy classes of states correspond to elements of $\prod_{i=1}^n\pi_1(M,m)$. It is in this product that we will store our information. For example, if $\pi_1(M,m)\cong \ZZ_2$ then $\prod_{i=1}^n\pi_1(M,m)=\prod_{i=1}^n\ZZ_2$ is an $n$-bit string. More generally, one will need to outline some encoding method for converting standard information storage formats into elements of $\prod_{i=1}^n\pi_1(M,m)$.
+On a purely mathematical level we don't need to make any restrictions on the group $G$. It is a theorem from homotopy theory that every group is the fundamental group of some topological space. However, we will make restrictions on our choice of group coming from physical concerns. We will ask that our group be \textit{finite}. A first reason for this is error protection. Suppose that $G$ were some continuous group, like $G=\RR$. If the stored information was $\pi=3.1415...$, it would be difficult for this information to not drift to $3.1416...$. Even though there aren't any continuous deformations which would change a winding number, small non-continuous deformations could still make this sort of jump. For this reason it is preferable to work with \textit{discrete} groups - groups whose natural topology is discrete. Discreteness implies a degree of seperation, which means that winding numbers will not spontaneously jump from one element to the next. This gives the system error resistance.
 
-The general picture to have in mind is that of an experimenter who has control over the trajectories of defects, but no control over the specifics of the map $\phi$ in the bulk. The goal is to engineer a protocol by which every map $f:\prod_{i=1}^n\pi_1(M,m)\to\prod_{i=1}^n\pi_1(M,m)$ can be realized by braiding defects around each other.
+The choice to make the group finite is more subtle. For instance, $G=\ZZ$ appears in many physically reasonable contexts. Our choice mainly steps from the practical consideration that finite groups are simpler to work with than infinite ones, and the general physical principle that symmetry groups should be compact. Any compact discrete group must be finite. This compactness argument will become especially relevant once we pass to quantum mechanics.
 
-Let $S'=\{x_1', ...x_n'\}$ be another finite set. Let $\gamma_1..\gamma_n$ be paths in $\RR^2$ such that $\gamma_i(0)=x_i$, $\gamma_i(1)=x_i'$, $\gamma_i(t)\neq b$, and $\gamma_i(t)\neq \gamma_j(t)$ for all $i\neq j$, and $t\in [0,1]$.
+In summary, the algebraic theory of topological classical information we present is really just a special case of finite group theory, which is a well understood subject.
 
-As the defects in $S$ move along the paths $(\gamma_i)_{i=1}^n$, the overall state of the system will change. This will allow us to perform computations. An important feature is that the way the state of the system will change will not depend on the specifics of the trajectories $(\gamma_i)_{i=1}^n$ that are picked. If collection of paths $(\gamma_i)_{i=1}^n$ is distored a small amount this will not change the computation. Of course, what it means for the collection of paths to be distored is a technical mathematical notion. We will define it now:
+Our systems will consist of $n$ defects on a straight line. These defects will be labeled with group elements $g_i\in G$, for $1\leq i \leq n$. We recall that these labels correspond to winding numbers around loops:
 
-\begin{definition} Let $X$ and $Y$ be topological spaces. Let $f_0,f_1: X\to Y$ be continuous injective functions. An \textbf{ambient isotopy} from $f_0$ to $f_1$ is a map $H: Y\times [0,1]\to Y$ such that $H(\cdot,t)$ is a homeomorphism for all $t\in [0,1]$, $H(\cdot,0)$ is the identity map, and $H(\cdot,1)\circ f_0=f_1$.
-\end{definition}
+[WORK: add diagram.]
 
-We say that two collections of paths $(\gamma_i)_{i=1}^n$ are ambient isotopic if their corresponding maps
+Braiding $g_i$ under $g_{i+1}$ amounts to replacing $g_i$ with $g_{i+1}$, and replacing $g_{i+1}$ with $g_{i+1}^{-1}g_i g_{i+1}$. Fusing the defects $g_{i}$ and $g_{i+1}$ amounts to replacing them with a single defect labeled $g_{i}g_{i+1}$. The \textit{type} of a defect is the conjugacy class of its label in $G$. These types are local observables which can be measured by the experimenter.
+
+
+[WORK: add little pictures summarizing these rules]
+
+This leads to the very natural question: \textit{for which groups $G$ can I make a full classical computer?} This is a design problem in finite group theory.
+
+Our first step towards answering it is making a closer analysis of how braiding works. We define the braid group as our main tool:
+
+[WORK: Bn = ways of braiding n points around each other/endpoint-preserving deformations. Define Pn too. Also give examples. Maybe this is where to introduce the graphical language, things going thru time?]
+
+Every braid can be made up piece-by-piece using indivudal swaps. Let $\sigma_{i}$ denote the swap which sends the point at positoin $i$ under the point at position $i+1$. The group $B_n$ is generated by the $\sigma_i$, for $1\leq i \leq n-1$. We observe that the following two braids can be deformed from one to the other:
+
+[WORK: add Yang-Baxter braid]
+
+Algebraically, this is the identity $\sigma_{i}\sigma_{i+1}\sigma_{i}=\sigma_{i+1}\sigma_{i}\sigma_{i+1}$. Additionally, if $i$ and $j$ are not adjacent, that is $|i-j|\geq 2$, then $\sigma_{i}\sigma{j}=\sigma_j\sigma_i$ as seen in the below picture:
+
+[WORK: far-commutivity picture.]
+
+This yields the algebraic fact that
+
+$$B_n=\left<\left.\sigma_1,\sigma_2,...\sigma_{n-1}\right| \substack{\sigma_{i}\sigma_{i+1}\sigma_{i}=\sigma_{i+1}\sigma_{i}\sigma_{i+1}, \\ \sigma_i\sigma_j=\sigma_j\sigma_i}\,\,\,\,\forall 1\leq i,j \leq n-1,\,\, |i-j|\geq 2\right>.$$
+
+It is at this point that we can move past our non-rigorous topological considerations. The lack of rigor in our treatment of braid groups and our lack of rigor in our treatment of defect trajectories cancels, giving us our first well-formed mathematical proposition. It encodes the fact that moving defects by braids acts on the stored information:
+
+\begin{proposition} Let $G$ be a finite group, and let $n\geq 1$ be an integer. The map
 
 \begin{align*}
-\{1...n\}\times [0,1]&\to \RR^2 \times [0,1]\\
-(i,t)&\mapsto (\gamma_i(t),t)
+\rho_n: B_n &\xrightarrow{} \Sym\left(G^n\right)\\
+\sigma_i &\mapsto \left((g_1... g_i, g_{i+1} ... g_n)\mapsto (g_1... g_{i+1}, g_{i+1}^{-1}g_i g_{i+1} ... g_n) \right)
 \end{align*}
 
-are ambient isotopic [WORK: this is wrong - this definition doesnt preserve the endpoints of the braids]. The following proposition gives us a description of what happens when the defects are moved along the paths $\gamma_i$:
-
-\begin{proposition} Let $S,S',(\gamma_i)_{i=1}^n$ be as above. Let $\phi:\RR^2\backslash S \to M$ be a continuous map. There exists a basepoint-preserving defect-mobie homotopy
-
-$$H:\RR^2\times \RR_{\geq 0} \backslash \bigcup_{t\geq 0}\bigcup_{i=1}^{n}(\gamma_i(t),t)\to M$$
-
-such that $H(\cdot,0)=\phi$. The basepoint-preserving defect-fixed homotopy class of $H(\cdot,1)$ depends only on the choice of $(\gamma_i)_{i=1}^n$, and not on the choice of $H$. Moreover, the basepoint-preserving defect-fixed homotopy class of $H(\cdot,1)$ depends only on the choice of $(\gamma_i)_{i=1}^n$ up to ambient isotopy.
-
+defines a homomorphism of groups between the braid group $B_n$ and the group of set-wise permutations of the Cartesian product $G^n$, $\Sym(G^n)$.
 \end{proposition}
 \begin{proof}.[WORK: do proof]
 \end{proof}
 
-The above proposition motivates the fact that the space of collections of paths $(\gamma_i)_{i=1}^n$ up to ambient isotopy will be important for computation. We introduce notation to make our discussion simpler:
 
-\begin{definition} Let $S=\{x_1...x_n\} \subset \RR^2$ be a finite set. The space of all collections of paths $(\gamma_i)_{i=1}^n$ in $\RR^2$ such that $\{\gamma_i(0)\}_{i=1}^n=\{\gamma_i(1)\}_{i=1}^n$ as sets and $\gamma_i(t)\neq \gamma_j(t)$ for all $i\neq j$ and $t\in [0,1]$ up to ambient isotopy is known as the \textbf{braid group} of $S$. It is denoted $B_S$. Elements of the braid group are known as \textbf{braids}. The paths $\gamma_i$ are known as the \textbf{strands} of the braid. If $\gamma_i(0)=\gamma_i(1)$ for all $1\leq i\leq n$, then we say that $\left[(\gamma_i)_{i=1}^n\right]$ is \textbf{pure braid}. The set of pure braids on $S$ is called the pure braid group, and is denoted $P_S$.
-\end{definition}
+.[WORK: I don't have a good enough grasp on Mochon's papers to write the rest. Do I have to introduce creating particle/antiparticle pairs immediately? Can I state a first proposition without them? What does Mochon's theorem say about the image of this braid group map?]
 
-As promised by the nomenclature, the braid group and the pure braid group are both groups:
-
-\begin{proposition} Let $S\subset \RR^2$ be a finite set. Let $\beta=\left[(\gamma_i)_{i=1}^n\right]$ and $\beta'=\left[(\gamma_i')_{i=1}^n\right]$ be two braids in $B_S$. Define a permutation $\sigma: \{1...n\}\to \{1...n\}$ by the property that
-
-$$\gamma_i(1)=\gamma_{\sigma(i)}(0).$$
-
-Define a binary operation on $B_S$ by the formula
-
-$$\beta \cdot \beta' = \left[\left(\gamma_i \cdot \gamma_{\sigma(i)}'\right)_{i=1}^n\right].$$
-
-This is a well defined binary operation, and induces a group structure on $B_S$. The above assignment of braids to permutations induces a surjective homomorphism of groups $B_S\to \Sym_n$, where $\Sym_n$ is the $n$-letter symmetric group. The kernel of this homomorphism is the pure braid group $P_S$. This gives a short exact sequence
-
-$$0\to P_n\to B_n\to \Sym_n\to 0$$
-\end{proposition}
-\begin{proof}.[WORK: do proof]
-\end{proof}
-
-For the sake of convenience, we will assume that none of the trajectories in any of our braids pass through our base point $b\in \RR^2$. We can now reinterpret Proposition [ref] in the language of algebra:
-
-\begin{proposition} Let $\beta\in B_S$ be braid. Define a map
-
-$$\rho_S:B_S\to \Sym\left(\prod_{i=1}^n\pi_1(M,m)\right)$$
-
- as follows. Let $\phi:\RR^2\backslash S\to M$ be a state. Let $H$ be a defect-mobile homotopy whose defects move along some representative of $\beta$, and satisfies the initial condition $H(\cdot,0)=\phi$. We set $\rho_S([\phi])=[H(\cdot,1)]$, where the basepoint-preserving defect-mobile homotopy classes $[\phi]$ and $[H(\cdot,1)]$ are identified with elements of $\prod_{i=1}^n\pi_1(M,m)$ by Proposition [ref]. This is a well-defined homomorphism of groups.
-\end{proposition}
-\begin{proof}.[WORK: do proof]
-\end{proof}
-
-Understanding topological classical computation amounts to understanding the structure of the braid groups, and the structure of the homomorphisms $\rho$ of Proposition [ref]. Performing this analysis is much simpler when all of the defects are in a standard position. Hence, throughout the rest of this subsection we will let $S=\{(0,1), (0,2)...(0,n)\}$. In this case we denote $B_S$ by $B_n$, and refer to it as the \textit{$n$-strand braid group}. We will denote the corresponding $\rho_S$ by $\rho_n$. [WORK: where is $b$? What choices of $\alpha_i$ do we make?]
-
-The most basic braid arrises by swapping adjacent defects. Explicitely, for $1\leq i\leq n-1$, we denote by $\sigma_i$ the braid which acts by the identity on all $(0,j)$ with $j\neq i, i+1$ and swaps $(0,i)$ and $(0,i+1)$, with $(0,i)$ going below $(0,i+1)$. This can be paramaterized by making $\gamma_i$ a unit semicircle in the lowerhalf plane and $\gamma_{i+1}$ a unit semicirlce in the upperhalf plane. These swaps form the basic logical gates which will build up all our computations. The following proposition describes their algebraic properties, and how they act under $\rho$:
-
-\begin{proposition} The following facts about the braid group are true:
-
-\begin{enumerate}
-\item The braids $\sigma_1...\sigma_{n-1}$ generate $B_n$;
-\item The relations $\sigma_i\sigma_{i+1}\sigma_i=\sigma_{i+1}\sigma_{i}\sigma_{i+1}$ and $\sigma_{i}\sigma_{j}=\sigma_{j}\sigma_{i}$ hold for all $1\leq i,j \leq n-1$, $|i-j|\geq 2$. Moreover, these relations are sufficient to generate all relations on the braid group;
-\item $\rho_n(\sigma_i)$ is the map $\prod_{i=1}^n\pi_1(M,m)\to\prod_{i=1}^n\pi_1(M,m)$ which sends $(g_1...g_n)$ to 
-
-$$(g_1,g_2... g_{i+1},g_{i+1}^{-1}g_ig_{i+1} ... g_n)$$
-\end{enumerate}
-
-\end{proposition}
-\begin{proof}.[WORK: do proof]
-\end{proof}
-
-With this algebraic description of the braid group,
-
-[WORK: BIG PROBLEM!!!!!! We still need to introduce creating defect/antidefect pairs. I think that I might need to rethink this rigorous approach.... ]
+.[WORK: add a table of abelian/nilpotnent/solvable/non-solvable]
 
 $\newline\newline$
 
@@ -1138,6 +1043,8 @@ In particular, we observed in Chapter [ref] section [ref] we observed the import
 \subsubsection{Kitaev quantum double model}
 
 [WORK: not sure if this is readable to someone who skipped the first two sections, but it should be. Something to keep an eye on.]
+
+[WORK: Use $\DD(G)$ as notation for the doubled quantum order associated to $G$.]
 
 In this section we will give the Hamiltonian formulation of lattice gauge theory. Seeing as we have moved passed ordered media, we will no longer be working with order spaces and base points. Instead, we will choose an abstract finite group $G$ which replaces $\pi_1(M,m)$. The general picture for creating our Hamiltonian is simple, and follows a very general pattern in quantum theory: instead of enforcing properties rigidly as conditions, we will enforce them enforce properties energetically as terms in a Hamiltonian. The formulation we give below is known as the \textit{Kitaev quantum double model of lattice gauge theory}. It was introduced in Kitaev's seminimal paper on topological quantum information [ref]. It has been studied extensively in the literature by many authors [add more refs].
 
@@ -2258,216 +2165,64 @@ Freedman-Church-Turing thesis: ``All sufficiently powerful computational models 
 
 The goal, then, is to make a \textit{universal} topological quantum computer. In a sense this makes designing a scheme for topological quantum computation difficult. It gives constraints, and forces a certain amount of computation power. In another sense, it is liberating. The existence of universal quantum computation means that once we have implemendent a certain amount of computational power into our proposal, we are done. There is no need to search for clever ways to add more power because or system is already universal, and hence finding more techniques in unnececary. It gives an end goal to building a quantum computer - a bell to ring when we are done.
 
+Formally, a universal quantum computer will be one which can approximate and unitary transformation. This means that for every $n\geq 0$, the a universal quantum computer can be prepared in such a way that its information is stored in a Hilbert space $V$ of dimension greater or equal to $n$. The space of possible computations on the computer should form a dense subgroup of the projective unitary group $PU(V)$.
+
+One important question is whether a computer which is universal in the sense above can \textit{efficiently} simulate any other computer is an important question. This is generically true by to Solovay-Kitaev theorem \cite{kitaev1997quantum, nielsen2010quantum}. However, a finer discussion of these points and other notions in computaional complexity is beyond the scope of this book and is unnececary for understanding the topics at hand.
+
 [WORK: there is the general corrolation between computational power, difficulty of implimentation, and non-abelian flavor. Give the nice table and talk about it.]
 
-
-
-
-
-\subsection{Computational complexity}
-
-\subsubsection{Principles}
-
-The revised Church-Turing and Freedman-Church-Turing theses state that there is one theory of classical computation and one theory of quantum computation. This leads to a very natural question: \textit{what are those theories?} These theories are mathematically codified as computational complexity classes. They are named as follows:
-
-\begin{align*}
-\text{(Efficient clasical computation)} &= \P = ``\text{polynomial time}",\\ 
-\text{(Efficient quantum computaiton)} & = \BQP = ``\text{bounded-error quantum polynomial time}."
-\end{align*}
-
-The computational class $\BQP$ inherently has randomness built into it, because quantum mechanics inherently has randomness built into it. The ``bounded-error" in $\BQP$ refers to the fact that quantum computations will have some probability of error because they are probabilistic. A tool we will use to help define and understand $\BQP$ is the intermediary computational class associated with classical computers that have randomness built into their architecture:
-
-$$\text{(Efficient probabilistic computaiton)}  = \BPP = ``\text{bounded-error probabilistic polynomial time}".$$
-
-As a first application of these complexity classes, we can start to make more precise statements about the nature of quantum computaion. For instance, we may ask the following question: \textit{does the power of quantum computation come from its ability to harness randomness?} The answer is \textbf{no}, conjecturally. We formalize this as follows. We first observe that give more recourses to a computer can only expand the number of efficient algorithms:
-
-\begin{proposition} $\P \subseteq \BPP \subseteq \BQP$.
-\end{proposition}
-
-We will prove this later, once we have formally defined $\P$, $\BPP$, and $\BQP$. We now state two widely belived conjectures:
-
-\begin{conjecture}$\,$
-\begin{enumerate}
-\item $\P=\BPP$;
-\item $\BPP \subsetneq \BQP.$
-\end{enumerate}
-\end{conjecture}
-
-
-As a particular case, we can consider factoring. Shor proved that $(\text{factoring})\in \BQP$. Conjecturally, there are no efficient classical algorithms for factoring:
-
-\begin{conjecture} $(\text{factoring})\not\in \P$.
-\end{conjecture}
-
-Proving conjectures [ref] is already quite difficult. In particular, it would resolve a millinium prize problem! The problem of factoring is known to live in a certain computational complexity class called $\NP$. Hence, we we know that factoring was in $\NP$ but factoring was not in $\P$ then we could conclude that $\P\neq \NP$. However, $\P\neq \NP$ is a millinium prize problem, and is very much unsolved. The general theme is that it is quite difficult to show that computaional complexity classes are distinct.
-
-Every method for topological quantum computation induces a computational complexity class. It neccecitates a way of storing, manipulating, and reading out information. The ultimate goal of every chapter will be to prove that the method described is equivalent to $\BQP$, and hence gives a universal quantum computing scheme.
-
-\subsubsection{Classical computation}
-
-We will now formalize the theory of classical computation, with the end goal of defining the computational complexity class $\P$ of polynomial time algorithms. Of course, there are many different equivalent ways of formulating the theory of classical computation.The Church-Turing thesis says that all of these different ways will give the same final answer. The method we will use for formalizing information theory is the method of circuits.
-
-
-We will store our information in \textit{bits}. These are classical objects with two element state spaces. We denote a bit abstractly as $\ZZ_2=\{0,1\}$. Computations are functions
-
-$$f:\ZZ_2^n\to \ZZ_2^m$$
-
-for some $n,m\geq 1$. The basic computations are \textit{logic gates}. We will work with the logic gates $\NOT$, $\AND$, and $\OR$. They are defined as follows:
-
-\begin{align*}
-\NOT: \ZZ_2&\xrightarrow{}\ZZ_2 && \AND: \ZZ_2^2\xrightarrow{}\ZZ_2 && \OR:\ZZ_2^2\xrightarrow{}\ZZ_2\\
-0&\mapsto 1 && (1,1) \mapsto 1 && (1,1)\mapsto 1\\
-1&\mapsto 0 && (1,0)\mapsto 0 && (1,0)\mapsto 1\\
-& && (0,1)\mapsto 0 && (0,1)\mapsto 1\\
-& && (0,0)\mapsto 0 && (0,0)\mapsto 0\\
-\end{align*}
-
-A depth-1 circuit is a map $f:\ZZ_2^n\to \ZZ_2^m$ such that each component of the output is either a constant, the same as one of the input components, or one of the basic logic gates $\NOT$, $\AND$, and $\OR$. For example, the map
-
-\begin{align*}
-f:\ZZ_2^4&\xrightarrow{} \ZZ_2^4\\
-(b_1,b_2,b_3,b_4)&\mapsto (\AND(b_2,b_4), 0, b_1, \OR(b_1,b_3))
-\end{align*}
-
-is a depth-1 circuit. A depth-$k$ circuit is a map $f:\ZZ_2^n\to \ZZ_2^m$ which can be written as a composition on $k$ depth-1 circuits. Our intuitive notion of computational complexity is that a computation $f:\ZZ_2^n\to \ZZ_2^m$ is \textit{efficient} if it can be represented as a circuit which uses few logic gates. That is, the sum of the number of logic gates used in each of its layers is small. The most important feature of these circuits is that every computation can be expressed in terms of them:
-
-\begin{proposition} Every function $f:\ZZ_2^n\to \ZZ_2^m$ for any $n,m\geq 1$ can be written as a circuit of some finite depth.
-\end{proposition}
-\begin{proof}.[WORK: add reference for proof]
-\end{proof}
-
-
-We define a \textit{classical decision problem} $F$ to be a sequence of functions
-
-$$F=\left\{f_n: \ZZ_2^{n}\to \ZZ_2\right\}_{n=1}^{\infty}.$$
-
-An \textit{algorithm} for a classical computation problem $F$ is a well-definiteness rule for writing circuits which equal each $f_n$.
-
-\begin{definition}
-We define $\P$ to be the set of all classical decision problems $F$ for which there exists a classical algorithm for $F$ such that there exists a polynomial $p(n)$ for which
-
-$$\left(\substack{\text{\# of logic gates } \\ \text{in circuit for $f_n$}}\right)\leq p(n).$$
-
-\raggedleft\qedsymbol{}
-\end{definition}
-
-This definition of $\P$ is not rigorous, because in the definition of algorithm we used the intuitive notion of a \textit{well-defined} process. Formalizing exactly what one means by a well-defined rule is subtle, and it is typically done using the language of Turing machines.
-
-\subsubsection{Probabilistic computation}
-
-We now formalize probabilistic computation in analogy to classical computaion. Bits can now be indeterminate - they have a probability of being 0 and a probability of being 1. Abstractly, this probabilistic bit is the real vector space $\RR[\ZZ_2]$. Computations are functions
-
-$$f:\RR[\ZZ_2^n]\to \RR[\ZZ_2^m]$$
-
-for some $n,m\geq 1$ which send normalized vectors to normalized vectors. Using the canonical isomorphism $\RR[S\times T]\cong \RR[S]\otimes \RR[T]$, we may also think of computations as maps
-
-$$f:\RR[\ZZ_2]^{\otimes n}\to \RR[\ZZ_2]^{\otimes m}.$$
-
-All of the classical logic gates $\NOT$, $\AND$, and $\OR$ naturally yield probabilistic logic gates by acing on the distinugished basis. A depth-1 circuit is defined exactly as before. It is a map $f:\RR[\ZZ_2^n]\to \RR[\ZZ_2^m]$ such that each component of the output is either constant, the same as one of the input components, or one of the basic logic codes $\NOT$, $\AND$, or $\OR$. The key difference is that in probabilistic computation there are more constants. For instance, the element $\frac{1}{4}\ket{0}+\frac{3}{4}\ket{1}$ is a constant in $\RR[\ZZ_2]$. The map
-
-\begin{align*}
-f:\RR[\ZZ_2]^{\otimes 3}&\xrightarrow{} \RR[\ZZ_2]^{\otimes 5}\\
-b_1\otimes b_2\otimes b_3&\mapsto b_2\otimes \AND(b_1,b_2)\otimes \left(\frac{1}{2}\ket{0}+\frac{1}{2}\ket{1}\right)\otimes \NOT(b_3)\otimes b_1
-\end{align*}
-
-is an example of a depth-1 circuit. A depth-$k$ circuit is a map $f:\RR[\ZZ_2]^{\otimes n}\to \RR[\ZZ_2]^{\otimes m}$ which can be written as a composition of $k$ depth-1 cirucits. Again, this definition is well-chosen because it captures all possible computations:
-
-\begin{proposition}. [WORK: not sure exactly what the correct statemenet is here.]
-\end{proposition}
-
-The subtelty in defining the computational class $\BPP$ is that it will \textit{not} have to do with probabilistic decision problems. $\BPP$ will consists of classical decision problems which have efficient probabilistic algorithms. Let $F=\{f_n\}_{n=1}^{\infty}$ be a classical decision problem. A probabilistic algorithm for $F$ is a well-defined rule for writing circuits $\tilde{f}_n:\RR[\ZZ_2]^{\otimes n}\to \RR[\ZZ_2]$ for each $n\geq 1$ such that for all $x\in \ZZ_2^n$
-
-$$(\text{Probability that $\tilde{f}_n(\ket{x})=1$})=
-\begin{cases}
-\geq 2/3 & \text{if } f_n(x)=1,\\
-\leq 1/3 & \text{if } f_n(x)=0.\\
-\end{cases}$$
-
-\begin{definition}
-We define $\BPP$ to be the set of all classical decision problems $F$ for which there exists a probabilistic algorithm for $F$ such that there exists a polynomial $p(n)$ for which
-
-$$\left(\substack{\text{\# of logic gates } \\ \text{in circuit for $\tilde{f}_i$}}\right)\leq p(n).$$
-
-\raggedleft\qedsymbol{}
-\end{definition}
-
-The key point in this definition is that the probabilistic algorithm does not have to recover $f_n(x)$ exactly. It only has to do so approximately. The numbers $2/3$ and $1/3$ are chosen somewhat arbitrarily. The important point is that $2/3$ is strictly larger than $1/2$ and $1/3$ is strictly less than $1/2$. In this way, running the algorithm gives strictly better information than guessing randomly would. To get more accuracy, $\tilde{f}_n$ can be ran polynomially many times. The output of the computation can then be taken to be the majority outcome of the results of $\tilde{f}_n(\ket{x})$. Running $\tilde{f}_n$ increasingly many times gives an increasingly high probability of getting the right answer.
-
-\subsubsection{Quantum computation}
-
-We now formalize quantum computation in analogy to classical and probabilistic computation. Bits are now replaced with two level quantum systems. Abstractly, this quantum bit is the quantum system $\CC[\ZZ_2]$. We identity $\CC[\ZZ_2]$ with $\CC^2$ for convenience. We refer to the quantum bit as a \textit{qubit} - it is the unit of quantum information. Quantum computations are unitary operators
-
-$$f:(\CC_2)^{\otimes n}\to (\CC_2)^{\otimes m}$$
-
-for some $n,m\geq 1$. The $\NOT$ gate induces a well defined map $\CC^2\to \CC^2$ by acting on a basis, given by
-
-\begin{align*}
-\NOT:\CC^2&\to \CC^2.\\
-\ket{0}&\mapsto \ket{1}\\
-\ket{1}&\mapsto \ket{0}
-\end{align*}
-
-The $\NOT$ gate is the same as the Pauli-$X$ operator $\sigma_X$ introduced in section [ref]. The classical logic gates $\AND$ and $\OR$ induce maps $\CC_2^{\otimes 2}\to \CC_2$, but these induces maps are \textit{not} unitary. In particular, they are not invertible. A whole new set of gates is needed for quantum computation. We choose the following gates:
-
-\begin{align*}
-H: \CC^2&\xrightarrow{}\CC^2 && \CNOT: (\CC_2)^{\otimes 2}\xrightarrow{}(\CC_2)^{\otimes 2}&& T:\CC^2 \xrightarrow{}\CC^2.\\
-\ket{0}&\mapsto \frac{1}{\sqrt{2}}\ket{0}+\frac{1}{\sqrt{2}}\ket{1} && \ket{0,0} \mapsto \ket{0,0} && \ket{0}\mapsto \ket{0}\\
-\ket{1}&\mapsto \frac{1}{\sqrt{2}}\ket{0}-\frac{1}{\sqrt{2}}\ket{1} && \ket{0,1}\mapsto \ket{0,1} && \ket{1}\mapsto e^{\frac{\pi i}{4}}\ket{1}\\
-& && \ket{1,0}\mapsto \ket{1,1} && \\
-& && \ket{1,1}\mapsto \ket{1,0} && \\
-\end{align*}
-
-The gate $H$ is known as the \textit{Hadamard gate}. It serves the purpose of creating non-trivial superpositions realtive to the standard basis. The gate $\CNOT$ is known as the \textit{controlled-not gate}. It serves the purpose of creating non-trivial entanglement between different qubits. The gate $T$ is known simply as the T-gate. It serves the purpose of introducing phases which allow for subtle interference effects.
-
-A depth-1 quantum circuit is a unitary map $f:(\CC_2)^{\otimes n}\to (\CC_2)^{\otimes n}$ such that each component of the output is either the same as one of the input components or is one of the basic logic gates $H$, $\CNOT$, or $T$. For example, the map
-
-\begin{align*}
-f: (\CC_2)^4&\xrightarrow{} (\CC_2)^4\\
-b_1\otimes b_2\otimes b_3\otimes b_4 & \mapsto H(b_1) \otimes \CNOT(b_4,b_3) \otimes b_2
-\end{align*}
-
-is a depth-1 quantum circuit.  A depth-$k$ quantum circuit is a map $f:(\CC_2)^{\otimes n}\to (\CC_2)^{\otimes n}$ which can be written as a composition of $k$ depth-1 circuits. This definition is shown to be well chosen by the following fact:
-
-\begin{proposition} For any $n\geq 0$, the set of maps $f:(\CC_2)^{\otimes n}\to (\CC_2)^{\otimes n}$ which can be written as circuits form a dense subgroup of the projective unitary group $PU(n)$.
-\end{proposition}
-\begin{proof} The original proof is due to Boykin et al. \cite{boykin1999universal}, inspired by an earlier universality result by Kitaev \cite{kitaev1997quantum}.
-\end{proof}
-
-Since all unitary maps are required to be unitary there is no good notion of a quantum decision problem, since the output must be the same size as the input. We can still define a good notion of a quantum algorithm for a classical decision problem as follows. Let $F=\{f_n\}_{n=1}^{\infty}$ be a classical decision problem. A probabilistic algorithm for $F$ is a well-defined rule for writing quantum circuits $\tilde{f}_n: (\CC^2)^{\otimes n}\to (\CC^2)^{\otimes n}$ such that for all $x\in \ZZ_2^n$,
-
-$$(\substack{\text{Probability that the first bit of $\tilde{f}_n(\ket{x})$ is $1$}\\ \text{when measured in the standard basis}} )=
-\begin{cases}
-\geq 2/3 & \text{if } f_n(x)=1,\\
-\leq 1/3 & \text{if } f_n(x)=0.\\
-\end{cases}$$
-
-
-\begin{definition}
-We define $\BQP$ to be the set of all classical decision problems $F$ for which there exists a quantum algorithm for $F$ such that there exists a polynomial $p(n)$ for which
-
-$$\left(\substack{\text{\# of logic gates } \\ \text{in circuit for $\tilde{f}_n$}}\right)\leq p(n).$$
-
-\raggedleft\qedsymbol{}
-\end{definition}
-
-
-.[WORK: I'm not sure about this section at all. These formal ideas about efficients are quite subtle, and really aren't used at all. The only point I use is that a universal computer should be able to implement any unitary. Clever wording with a solid grounding in big-picture ideas should allow me to remove this chapter entirely.]
+[WORK: boson fermion - easy to simulate. Needs to exploit the weird, compliacated (non-abelian) nature of brading. Hence needs to be sufficiently non-abelian, hence the above picture.]
 
 \subsection{Computation with Fibonacci anyons}
 
+\subsubsection{Methodology}
+
+.[WORK: I'm realizing that I don't know enough about Fibonacci anyons to write this. What's the deal with the ``golden chain"? How does the relationship with $SU(2)$ work again? What's the history? What does the density of braid group reps say, exactly, and how does the proof go?]
+
+\subsubsection{The Jones invariant}
+
+.[WORK: here we can connect things to the Jones invariant. The first step is the definition via the Kauffman braket. The key part is to observe that the Skein relation can be enforced physically by finding an anyon (i.e. Fibonacci) which satisfies the Skein relation as operators on a Hilbert space! Such a Skein relation \textit{must} exist, and hence this also explains in a fundamental way why there is a good Skein relation which gives a knot invariant. Also motivates quantum topology in a way, so maybe say a few works about quanutm topology? A good reference is \cite{aharonov2011bqp} which gives a self-contained elementary proof of BQP completeness of Jones invariant.]
+
+\subsubsection{Proof of universality}
+
+.[WORK: prove that the braid group representations are dense in the appropriate sense.]
+
 \subsection{Computation with doubles of finite groups}
 
-\subsection{Computation with Majorana fermions}
+.[WORK: need to read Mochon's papers and Zhenghan's clarifications again to write this section. Maybe have two sections, one for non-solvable and one for solvable non-nilpotent?]
 
-\subsection{Computation with the toric code}
+.[WORK: Maybe add a little word about the idea of having $\ZZ_2$ bulk and then interfacing with $S_3$ islands?]
 
 .[WORK: using gapped boundaries. This is the surface code.]
+
+.[WORK: maybe bring up universal TQC with gapped boundaries in $\DD(\ZZ_3)$ and projective charge measurement somehow? It would be nice to include somewhere. Maybe have an intro about how hard you have to try to get unversal TQC with different groups, and how you can get universal TQC even with abelian groups if you try hard enough.]
+
+]
+\subsection{Computation with the toric code}
 
 
 \subsection{Computation with Ising anyons}
 
 .[WORK: universal TQC with Ising twsit defects]
 
+\subsection{Computation with Majorana zero modes}
+
+.[WORK: Theory of Majoranas, as $\ZZ_2$-crossed extensions of sVec.]
+
+.[WORK: This section requires a real discussion of physics. There are three key systems to discuss.
+
+\begin{enumerate}
+\item $\nu=5/2$ FQH. This system is described by a supermodular category, up to the typical caveat that it is only quasi-topological order and not pure topological order so some phases might not be protected. This supermodular category has Ising as a subcategory. However, the simple object which makes the nonabelian anyon in the Ising MTC is \textit{not} ``fundamental" in the system. It is composite, made out of two physically creatable anyons. In this sense $\nu =5/2$ doesn't really have fundamental Ising anyons, only composite ones.
+
+\item The ends of nanowires. Kitaev has his famous paper introducing this idea. These are Majorana zero modes in their purest form. This is NOT ising. It is a $\ZZ_2$-crossed extension of sVec which is algebraically essentially the same as Ising, but the distinction is that some of the phases which are well-defined in Ising are unphysical in the $\ZZ_2$-crossed extension.
+
+\item Superconductor/topologial insulator heterostructures. If you have a sample of topological insulator and you make its boundary conditions oscillate between magnet and superconductor you get Majoranas at the interface between those boundaries. The online course on topology in condensed matter has a good section on this, and there is a lot of literature on the subject. Algebraically, this should be the $\ZZ_2$-crossed extension of sVec as well.
+\end{enumerate}
+
+Pointing out the key subtle differences between these models is of utmost importance. There should be sections summarizing each experiment and describing its algebraic theory.
+]
+
+[WORK: This could become a lot of work. It is very relevant to physicists (perhaps the most relevant part of this book), but unnececary and cumbersome for mathematial thinkers. Maybe this should be its own chapter?]
 
 $\newline$
 \fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{
