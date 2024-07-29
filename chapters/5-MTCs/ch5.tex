@@ -1,0 +1,403 @@
+
+\section{Modular tensor categories}
+
+\subsection{Overview}
+
+\subsubsection{Introduction}
+
+In this chapter we will be giving a detailed analysis of modular tensor categories, the abstract algebraic structures used to describe anyons in topological order. We recall below how this fits into the general framework of this book:
+
+\begin{equation*}
+\tikzfig{mathematical-outline-MTC}
+\end{equation*}
+
+Describing exactly what an anyon and how it can transform in terms of states and unitary operators on a Hilbert space can be difficult. However, describing abstractly how these transformations compose with one another can be done realtively simply. Hence we take a composition-first category-theoretic approach to anyons. We will make heavy use of the diagramatic language of braided monoidal categories established in Chapter [ref]. More concretely, we will think of a modular tensor category as being the category with the following data:
+
+\begin{equation*}
+\left(\substack{
+\mathbf{objects:}\text{ finite collections of anyons}\\
+\mathbf{morphisms:}\text{ motions/behaviors of anyons}
+}\right)
+\end{equation*}
+
+Up to topological equivalence, there are not that many things that a collection of anyons can do. The most basic thing is to move anyons around each other - this is known as braiding. If the anyons touch each other then they can congeal into a single composite anyon - this is known as fusion. Even if there are no anyons in a system, however, there is always something possible. Anyons can be spontaneously created, so long as every anyon which is created comes along with its corresponding antiparticle. This is known as \textit{pair-creation}. These three operations are the fundamental structures which we will building into modular tensor categories:
+
+\begin{enumerate}
+\item braiding;
+\item fusion;
+\item pair-creation.
+\end{enumerate}
+
+One potentially useful way of thinking about modular tensor categories comes from analogy with classical physics. We saw in Chapter [ref] that topological classical systems have an algebraic description in terms of finite groups. Namely, quasiparticles in the system of ordered media with order space $M$ is algebraically characterized by the fundamental group $\pi_1(M,m)$ of $M$ relative to some basepoint $m\in M$. Seeing as topological order is a vast quantum generalization of classical ordered media, we can think of modular tensor categories as being a vast quantum generalization of finite groups. Every finite group induces a modular tensor category, by first constructing the Kitaev quantum double model based on that finite group and then describing its anyons. Most modular tensor categories, however, lie beyond this description.
+
+Due to the frequency of our use of the term, we will abbreviate modular tensor category to \textit{MTC}.
+
+\subsubsection{Using the final product}
+
+Before developping the theory of modular tensor categories (MTCs), it is good to get a feel for what using the final product is like. An MTC itself will be a big infinite thing, with infinitely many objects and infinitely many morphisms between those objects. However, all MTCs are in a real sense \textit{finitely generated}. What we mean by this is that plugging in a finite number of objects and morphisms, the rest of the obejcts and morphisms can be recovered by the abstract rules encoded in the formalism. For example, consider the 3-strand braid group $B_3$. This group has ininitely many elements and the group operation $\cdot: B_3\times B_3\to B_3$ takes a-priori an infinite amount of data to describe. However, the presentation
+
+$$B_3=\Braket{\sigma_1, \sigma_2 | \sigma_1 \sigma_2 \sigma_1 = \sigma_2 \sigma_1 \sigma_2}$$
+
+gives  completely finite description of $B_3$. It is important to note, however, that this presentation would \textit{not} have been enough to recover $B_3$ if we had just been told that $B_3$ is a monoid. The fact that $B_3$ is a group implied the existence of elements $\sigma_1^{-1}$, $\sigma_{2}^{-1}$, and defined how they interacted with $\sigma_1,\sigma_2$. We see in this way that the axioms of a group not only serve as a restriction on what mathematical objects are allowed to be groups, but they also serve as a compression technique. They give the rules by which a minimal collection of data can be used to generate the rest.
+
+In a similar way, the axioms of MTCs are not only neccecary by the fact that they restrict which categories can be MTCs, but they are also vital in the fact that they allow us to generate a full description of anyons from a minimal collection of data. For practically-minded readers, this can be viewed as the main motivation for defining MTCs at all, instead of just working with important examples.
+
+The final challenge in going from MTCs to their description in terms of a finite set of data is in comming up with an efficient standard way of descrbing morphisms in an MTC. This is done using the Yoneda perspective, as discussed in section [ref].
+
+In the end, the data of an MTC will look like what we have below for the toric code:
+
+[WORK: add toric code MTC data]
+
+Or, for a more complicated example, we can consider the data for $G=S_3$:
+
+[WORK: add $G=S_3$ MTC data]
+
+A large table of these descriptions are found in Chapter [ref]. We now give a worked example of how this data is used to compute observable quantities.
+
+[WORK: add good example, computing some probability of annhilation]
+
+\subsection{First properties}
+
+\subsubsection{Definition}
+
+In this section we finally define modular tensor categories (MTCs), which are the main mathematical content of this book. Seeing as lots of data is involved, we spread out the definition over a series of steps as to not overload the senses. These intermediate definitions are also important in their own right, because they will be used in other places in the algebraic theory of topological phases.
+
+
+\begin{definition}[Fusion category] A fusion category is the following data:
+
+\begin{enumerate}
+\item A category $\C$;
+\item The structure of a right-rigid monoidal category on $\C$;
+\item The structure of a $\CC$-linear category on $\C$.
+\end{enumerate}
+
+Such that:
+
+\begin{enumerate}
+\item The tensor product functor $\otimes: \C\times \C\to \C$ induces bilinear maps hom-spaces;
+\item There is an equivalence $\C \cong \Vec_\CC^n$ as $\CC$-linear categories;
+\item $\End_\C(\one)\cong \CC$ as $\CC$-vector spaces
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+A fusion category is part of the way towards having all of the requisite structures of a modular tensor category: it has a method for fusion inherited from the tensor product, and it has half of a method for pair-creation coming from right-rigidity. The $\CC$-linearity allows us to think of hom-spaces as vector spaces, which allows us to treat hom-spaces as quantum systems. The condition (1) is a comptability between the $\CC$-linear structure and the monoidal structure. The conditions (2)-(3) are strong niceness and finiteness conditions - we will explain them in detail later. We now move one step closer to our definition of modular tensor category:
+
+\begin{definition}[Spherical fusion category] A spherical fusion category is the following data:
+
+\begin{enumerate}
+\item A fusion category $\C$;
+\item A left-rigid structure on $\C$.
+\end{enumerate}
+
+Such that:
+
+\begin{enumerate}
+\item The left-rigid and right-rigid structures on $\C$ satisfy the axioms of a pivotal structure on $\C$;
+\item For every object $A\in \C$ and for every morphism $f: A \to A$, we have
+
+[WORK: add spherical diagram.]
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+A spherical fusion category now has a structure for fusion, and a full structure for pair-creation. The 2nd condition is known as the \textit{spherical axiom}. We will explain this axiom in more detail later.
+
+Adding on a braiding, we can get all of the structures of a modular tensor category. However, adding this structure still misses one key structure of being a modular tensor category. Hence, we call it \textit{pre-modular}:
+
+\begin{definition}[Pre-modular tensor category] A pre-modular tensor category is the following data:
+
+\begin{enumerate}
+\item A spherical fusion category $\C$;
+\item A braided structure on $\C$;
+\end{enumerate}
+
+Such that:
+
+\begin{enumerate}
+\item .[WORK: compatibility between braiding + $\CC$-linearity, or compatibility between braiding and rigidity?]
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+This definition now has all of the structure we wanted it to have: fusion, pair-creation, and braiding. The final axiom is a non-degeneracy condition. It is subtle in its interpretation, and we will explain it several different ways throughout this chapter:
+
+
+\begin{definition}[Modular tensor category] A modular tensor category is a pre-modular tensor category satisfying the following condition. Let $A\in \C$ be an object. If
+
+\begin{equation*}
+\tikzfig{non-degeneracy}
+\end{equation*}
+
+for all $B\in \C$, then $A\cong \one$.
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+
+\subsubsection{Anyons in MTCs}
+
+Modular tensor categories (MTCs) are supposed to be theories of anyons in topological order. So, now that we have the definition of MTC, it is natural to ask: what do anyons mathematically correspond to, in MTCs? The answer lies within the condition in a fusion category $\C$ that there is an equivalence $\C\cong \Vec_\CC^n$ as $\CC$-linear categories. We explore the importance of this condition.
+
+Suppose we are given an object $V=(V_1,V_2...V_n)\in \Vec_\CC^n$. For all $1\leq i\leq n$, let  $\CC_i\in \Vec_\CC^n$ denote the object which has dimension zero in every index $j\neq i$ and is equal to $\CC$ in index $i$. We observe the isomorphism
+
+\begin{align*}
+V& \cong \bigoplus_{i=1}^n (0... V_i ... 0)\\
+& \cong \bigoplus_{i=1}^n (0... \CC^{\dim (V_i)}.. 0)\\
+& \cong \bigoplus_{i=1}^n \dim(V_i)\cdot \CC_i
+\end{align*}
+
+where $\dim(V_i)\cdot (\CC_i)=\CC_i\oplus \CC_i...\oplus \CC_i$, $\dim(V_i)$ many times. This computation shows that any object in $\Vec_\CC^n$ can be decomposed into irriducible components $\CC_i$. These objects $\CC_i$ are in a real sense the building blocks of $\Vec_\CC^n$. They will correspond physically to anyons. More concretely, we make the following definition:
+
+\begin{definition} A \textit{simple object} $A$ in a fusion category $\C$ is an object which has no direct sum decomposition into smaller objects. That is, $A\ncong B\oplus C$ for any non-zero objects $B,C\in \C$ where $\oplus$ denotes the biproduct in $\C$.
+\end{definition}
+
+Our physics-math dictionary is that anyon types correspond to isomorphism classes of simple objects.
+
+We now state the basic proposition which ensures that the neccecary properties from $\Vec_\CC^n$ follow through the equivalence of categories.
+
+\begin{proposition} Let $\C$ be a fusion category. The biproduct of any two elements in $\C$ exists. Let $\LL$ denote the set of isomorphism classes of simple objects in $\C$. The set $\LL$ is finite. Choose an object $X\in \C$. There exist unique nonnegative integers $c_{[A]}$, $[A]\in \LL$ such that 
+
+$$X\cong \bigoplus_{[A]\in \LL}N_{[A]}\cdot A.$$
+\end{proposition}
+\begin{proof}.[WORK: do proof.]
+\end{proof}
+
+The set of simple objects has an alternative description, known as Schur's lemma:
+
+\begin{proposition}[Schur's Lemma] Let $\C$ be a fusion category. An object $A\in \C$ is simple if and only if its endomorphism ring $\End(A)$ is one-dimensional. Additionally, if $A,B\in \C$ are nonisomorphic simple objects then $\Hom(A,B)=0$.
+\end{proposition}
+\begin{proof}.[WORK: do proof.]
+\end{proof}
+
+As an immediate application of Schur's lemma, we observe that the monoidal unit $\one$ is a simple object in every fusion category. By our physics-math dictionary, this means that $\one$ corresponds to an anyon type. This type is the \textit{vaccuum} type - empty space. The anyon $\one$ is the trivial no-anyon type.
+
+Another application of Schur's lemma is to make a first verification that simple objects are a good choice of mathematical characterization of anyons. If $A,B$ are distinct anyon types, then there should not be any physical process which goes from one to another. There is no physical mechanism for locally turning one anyon type into another. This is captured by the formula $\Hom(A,B)=0$. Similarly, given an anyon $A$, there is no nontrivial action that can be locally performed on $A$. This comes from the fact that information is topologically protected, and thus cannot be changed by acting on a single particle - topological information processing requires global braiding between multiple particles. This is encoded in the fact that $\Hom(A,A)\cong \CC$ is one dimensional and hence consists only of trivial phase gates.
+
+Expanding our physics-math dictionary, we say that for every anyon $A$ its \textit{antiparticle} is the dual $A^*$ which comes from right-rigidity. This gives a valid anyon type by the following computation:
+
+\begin{proposition} Let $\C$ be a fusion category. If $A\in \C$ is a simple object, then so is $A^*$.
+\end{proposition}
+\begin{proof}. [WORK: do proof]
+\end{proof}
+
+An important part of of understanding simple objects in MTCs is making sense of the direct sum decompositions coming from Proposition [ref]. Let $\C$ be a fusion category with simple objects $A,B\in \C$. Consider the decomposition
+
+$$A\otimes B \cong \bigoplus_{[C]\in \LL}N^{A,B}_{C}\cdot C$$
+
+where $N^{A,B}_{C}\geq 0$ are nonnegative integers, and $\LL$ is the set of isomorphism classes of simple objects. The integers $\{N^{A,B}_C\}_{[C]\in \LL}$ are known as fusion coefficents, because they specify the behavior of $A$ and $B$ when they fuse.
+
+The tensor product $\otimes$ physically corresponds to joining anyons, forming a composite anyon configuration. The object $A\otimes B$ corresponds to the configuration with one $A$-type anyon and one $B$-type anyon. The direct sum decomposition is physically interpreted as saying that when $A\otimes B$ are fused, the possible results of that fusion are all of the anyon types $[C]\in \LL$ for which $N^{A,B}_{C}\neq 0$.
+
+[WORK: add nontrivial example from Kitaev quantum double model]
+
+A more detailed understanding of the physical meaning of the direct sum will have to wait for later.
+
+This concludes our basic picture of anyons in fusion categories.
+
+\subsubsection{States in MTCs and unitarity}
+
+It is now worth reflecting on what exactly states correspond to in MTCs. In particular, objects in MTCs are \textit{not} quantum systems. They don't have vector space structure. The spaces with vector space structure are the hom-spaces, by $\CC$-linearity. Objects will correspond to anyon configurations. States will correspond to normalized vectors in certain hom-spaces. In particular:
+
+\begin{equation*}
+\left(\substack{\text{space of states of topological order $\C$} \\ \text{on the infinite plane $\RR^2$} \\ \text{with anyon configuraiton $A_1,A_2...A _n$}}\right)
+=
+\left(
+\substack{
+\text{normalized vectors in the Hilbert space}\\
+\Hom_\C(\one, A_1\otimes A_2... \otimes A_n)
+}
+\right)
+\end{equation*}
+
+where by ``anyon configuration $A_1,A_2...A_n$" we mean that the state has anyons present in $n$ sites, arranged left to right on a one dimensional subspace of $\RR^2$, with corresponding anyon type $A_1,A_2...A_n$. For the sake of concreteness, one can imagine that at the point $(i,0)\in \RR^2$ thee state has an anyon of type $A_i$.
+
+The remainder of this subsection is a series of loosely-related observations about this choice of state space:
+
+$\newline$
+\textbf{Observation 1:} \textit{In the definition of an MTC hom-spaces are vector spaces and not Hilbert spaces, so this choice of physics-math correspondance is incorrect as literally written}.
+
+To make this definition work, all of the hom-spaces of the MTC $\C$ should be equipped with Hilbert space structures. Furthermore, the natural operators we wish to perform like braiding should all be unitary with respect to these inner products. This amounts to adding a large number of compatibility conditions on the Hilbert space structures. An MTC with this choice of structure is known as a \textit{unitary} MTC. We give the formal definition below:
+
+\begin{definition}[Unitary modular tensor category] A unitary modular tensor category is the following data:
+
+\begin{enumerate}
+\item An MTC $\C$.
+\item (Conjugation) A linear map $\dagger: \Hom(A,B)\to \Hom(B,A)$ for all $A,B\in \C$.
+\end{enumerate}
+
+Additionally, a unitary Modular Tensor Category is required to satisfy the following properties:
+
+\begin{enumerate}
+\item .[WORK: add properties]
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+For this reason, the correct algebraic structure to underlie the theory of topological order is not MTC, but unitary MTC. We have chosen to not emphasize this before because the difference between unitary MTCs and non-unitary MTCs is very small. [WORK: talk about uniqueness + positive q.d. criterion this will make more sense once we write the actual section about unitarity. A good thing to emphaize is that unitary MTCs don't let you use less data in your definition, and you can still do essentially everything you want to do. It's just way more cumbersome. They're all equivalent but you still have to choose, c.f. the fact that the category of vector spaces and Hilbert spaces with linear maps as morphisms are equivallent].
+
+$\newline$
+\textbf{Observation 2:} \textit{The physical space is assumed to be an infinitely large flat plane.}
+
+The reason that the physical space is the infinitely large flat plane is that it has a unique ground state, and does not have boundaries. Finite contractible regions would have boundaries to worry about, and spaces with topology like the torus would have non-equivalent ground states. The formula $\Hom(\one,\one)\cong \CC$ implies that there is a unique ground state, whence the conclusion.
+
+Describing anyons on spaces with non-trivial topology is a more difficult question, and requires more machinery [WORK: reference something later? Will I talk about this? Seems important.] 
+
+$\newline$
+\textbf{Observation 3:} \textit{The anyons are always assumed to be arranged in a line.}
+
+The anyon configurations are always assumed to be linear. The main reason to do this is because it makes the mathematics much simpler. If we kept track of the positions of each of the anyons in two dimensional space it would add more pieces of data and structures to keep track of. Seeing as every anyon configuration can be pushed onto a one-dimensional space, only working with a one-dimensional configuration does not affect the generality of the answers and hence it is very much prefered.
+
+$\newline$
+\textbf{Observation 4:} \textit{The formula $\Hom_{\C}(\one, A_1\otimes A_2...\otimes A_n)$ encodes the fact that states can be specified by their history.}
+
+A good first question to ask when seeing the Hilbert space $\Hom_\C(\one, A_1\otimes A_2... A_n)$ is \textit{why} this should describe a state with anyon configuration $A_1$... $A_n$. The answer is that states can be described their history. [WORK: give good example of making a state by specifying its history; argue why it has to be this way in general].
+
+\subsubsection{Topological charge measurement}
+
+When two anyons are fused together, they will form a superposition of other anyon types. Measuring the result of the fusion will collapse the answer into a specific anyon type. The outcome of this measurment is an observable quantity, which allows for the measurement of topological quantum information. In many cases this is the \textit{only} local observable quanitity. We give the formalism behind computing these probabilities now.
+
+[WORK: do this right - I don't know it well but it shouln't be hard to learn. Don't introduce anything too general, like trace or whatnot. Just quantum dimension, which should already have been introduced in previous chapter.]
+
+[WORK: The correct reference for this subsection is \cite{bonderson2021measuring}. The paper \cite{cong2017universal} claims to introduce the term topological charge measurement and gives a nice formal treatmenet. Clarifying the situation seems important.]
+ 
+
+
+\subsection{The MTC toolkit}
+
+\subsubsection{Trace}
+
+In this section, we will introduce and prove the basic facts about the most important structures in the theory of modular tensor categories (MTCs). These facts and structures can be viewed as tools, which are used for solving problems about the algebraic theory of anyons. 
+
+ -
+\subsubsection{Duality}
+
+\subsubsection{Quantum dimension}
+
+Our next tool to discuss is the \textit{quantum dimension}. Given any fusion category $\C$ and any simple object $A\in \C$, we define its quantum dimension using the following formula:
+
+[WORK: define $d_A$.]
+
+Upon first definition, $d_A$ is a morphism $\one\to \one$ in $\C$. By the axioms of a fusion category, $\End_\C(\one)\cong \CC$. Moreover, this isomorphism is canonical. That is, we can identity these two spaces via the unique linear map
+$\End_\C(\one)\to \CC$ which sends $\id_{\one}\in \End_{\C}(\one)$ to $1\in \CC$. In this way, we can identity $d_A$ with a complex number.
+
+\subsubsection{Twist}
+
+\subsubsection{Verlinde formula}
+
+\subsubsection{Functors, natural transformations, and equivalence}
+
+\subsubsection{Deligne tensor product}
+
+
+
+\subsection{Quantum double MTCs}
+
+\subsubsection{The Drinfeld center}
+
+\subsubsection{Muger's theorem}
+
+\subsubsection{Levin-Wen model}
+
+\subsubsection{Mortia equivalence}
+
+\subsubsection{Factorizability}
+
+\subsubsection{Quantum doubles of finite groups}
+
+
+
+\subsection{The modular representation}
+
+\subsubsection{Definition}
+
+\subsubsection{Torus perspective}
+
+\subsubsection{Proof of modularity}
+
+\subsubsection{Proof of unitarity}
+
+\subsubsection{Bruguieres's modularity theorem}
+
+\subsubsection{Schauenberg-Ng theorem}
+
+
+
+\subsection{The Yoneda perspective}
+
+\subsubsection{Principle}
+
+\subsubsection{$F$-symbols}
+
+\subsubsection{$R$-symbols}
+
+\subsubsection{$\theta$-symbols}
+
+\subsubsection{Reconstruction theorem}
+
+
+
+\subsection{Unitarity}
+
+\subsubsection{Characterization of unitarizable MTCs}
+
+\subsubsection{Uniqueness of unitary structure}
+
+\subsubsection{Yoneda perspective on unitarity}
+
+
+
+
+\subsection{Number theory in MTCs}
+
+\subsubsection{.[prerequisites and introduction]}
+
+\subsubsection{Galois conjugation}
+
+\subsubsection{Ocneanu rigidity}
+
+\subsubsection{Rank-finiteness theorem}
+
+\subsubsection{Vafa's theorem}
+
+.[WORK: this section is going to host a lot more theorems]
+
+
+
+
+\subsection{Adjectives in MTCs}
+
+\subsubsection{Solvability}
+
+\subsubsection{Nilpotence}
+
+.[WORK: surely more adjectives will be hosted here.]
+
+
+$\newline$
+\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{
+
+\begin{center}
+\textbf{History and further reading:}\\
+\end{center}
+
+Modular tensor categories were born from conformal field theory in the late 1980s. In a series of papers, Moore and Seiberg analysed deeply the underlying content within conformal field theory to find what essential algebraic data lied within it \cite{moore1988polynomial, moore1989classical}. They wrote out the axioms of this essential algebraic data in their subsequent notes on conformal field theory \cite{moore1990lectures}. They used the name modular tensor category to describe their data, as suggested by Igor Frenkel. This definition was then refined and re-introduced by Turaev \cite{turaev1992modular}. The first major application of modular tensor categories was the Reshetikhin-Turaev construction \cite{reshetikhin1991invariants, turaev2010quantum}. Prior to this result nobody had succeed in constructing topological quantum field theories. In this way, modular tensor categories and the Reshetikhin-Turaev construction completed Witten's programme of quantizing Chern-Simons theory.
+
+$\newline$
+By the early 2000s, the proposal of topological quantum computing was attracting a lot of interest in anyons and their algebraic properties. Seeing as topological order can be described by topological quantum field theory and topological quantum field theory is essentially equivalent to modular tensor categories, it was understood that modular tensor categories could be used to understand topological order. This latent description of anyons in terms of modular tensor categories was made explicit in an appendix in the seminal 2006 paper of Kitaev \cite{kitaev2006anyons}. This approach to anyons in terms of modular tensor categories was popularized by Wang's early monograph \cite{wang2010topological}. This has since become the standard approach towards the algebraic theory of topological quantum information.
+}}
+
+
+$\newline\newline$
+
+\large \textbf{Exercises}:\normalsize
+
+\begin{enumerate}[\thesection .1.]
+
+\item .[WORK: apply Verlinde formula to group-theoretical MTCs to recover classical theorem by Burnside]
+
+\end{enumerate}

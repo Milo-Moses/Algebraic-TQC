@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-3.5, 2) {};
+		\node [style=none] (1) at (2.925, 2.075) {};
+		\node [style=none] (2) at (-6.4, 3) {};
+		\node [style=none] (3) at (-4, 2.75) {};
+		\node [style=none] (4) at (-6.5, 2.5) {you are here};
+		\node [style=none] (5) at (-4.25, 0) {$\left(\substack{\text{topologically} \\ \text{ ordered systems}}\right)$};
+		\node [style=none] (6) at (3.75, 0) {$\left(\substack{\text{topological quantum} \\ \text{computing}}\right)$};
+		\node [style=none] (7) at (-0.25, 2) {$\left(\substack{\text{modular tensor} \\ \text{categories}}\right)$};
+		\node [style=none] (8) at (-4.25, 0.75) {};
+		\node [style=none] (9) at (-3, 1.5) {};
+		\node [style=none] (10) at (2.5, 1.5) {};
+		\node [style=none] (11) at (3.75, 0.75) {};
+		\node [style=none] (12) at (-0.75, 0) {};
+		\node [style=none] (13) at (0.25, 0) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend left=90, looseness=0.75] (0.center) to (1.center);
+		\draw [bend right=90, looseness=0.75] (0.center) to (1.center);
+		\draw [style=arrow, bend left=60] (2.center) to (3.center);
+		\draw [style=arrow] (8.center) to (9.center);
+		\draw [style=arrow] (10.center) to (11.center);
+		\draw [style=arrow] (12.center) to (13.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

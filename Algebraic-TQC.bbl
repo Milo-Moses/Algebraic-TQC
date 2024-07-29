@@ -60,6 +60,12 @@ David Aasen, Zhenghan Wang, and Matthew~B Hastings.
   automorphism codes.
 \newblock {\em Physical Review B}, 106(8):085122, 2022.
 
+\bibitem[BCG{\etalchar{+}}24]{bravyi2024high}
+Sergey Bravyi, Andrew~W Cross, Jay~M Gambetta, Dmitri Maslov, Patrick Rall, and
+  Theodore~J Yoder.
+\newblock High-threshold and low-overhead fault-tolerant quantum memory.
+\newblock {\em Nature}, 627(8005):778--782, 2024.
+
 \bibitem[BDSPV15]{bartlett2015modular}
 Bruce Bartlett, Christopher~L Douglas, Christopher~J Schommer-Pries, and Jamie
   Vicary.
@@ -67,11 +73,27 @@ Bruce Bartlett, Christopher~L Douglas, Christopher~J Schommer-Pries, and Jamie
   2-category.
 \newblock {\em arXiv preprint arXiv:1509.06811}, 2015.
 
+\bibitem[Ben73]{bennett1973logical}
+Charles~H Bennett.
+\newblock Logical reversibility of computation.
+\newblock {\em IBM journal of Research and Development}, 17(6):525--532, 1973.
+
 \bibitem[BGS{\etalchar{+}}09]{bolotin2009observation}
 Kirill~I Bolotin, Fereshte Ghahari, Michael~D Shulman, Horst~L Stormer, and
   Philip Kim.
 \newblock Observation of the fractional quantum hall effect in graphene.
 \newblock {\em Nature}, 462(7270):196--199, 2009.
+
+\bibitem[BH11]{bravyi2011short}
+Sergey Bravyi and Matthew~B Hastings.
+\newblock A short proof of stability of topological order under local
+  perturbations.
+\newblock {\em Communications in mathematical physics}, 307:609--627, 2011.
+
+\bibitem[BHM10]{bravyi2010topological}
+Sergey Bravyi, Matthew~B Hastings, and Spyridon Michalakis.
+\newblock Topological quantum order: stability under local perturbations.
+\newblock {\em Journal of mathematical physics}, 51(9), 2010.
 
 \bibitem[BK{\etalchar{+}}01]{bakalov2001lectures}
 Bojko Bakalov, Alexander~A Kirillov, et~al.
@@ -84,6 +106,23 @@ Sergey Bravyi and Alexei Kitaev.
   ancillas.
 \newblock {\em Physical Review A—Atomic, Molecular, and Optical Physics},
   71(2):022316, 2005.
+
+\bibitem[BK13]{bravyi2013classification}
+Sergey Bravyi and Robert K{\"o}nig.
+\newblock Classification of topologically protected gates for local stabilizer
+  codes.
+\newblock {\em Physical review letters}, 110(17):170503, 2013.
+
+\bibitem[BKK{\etalchar{+}}24]{balewski2024engineering}
+Jan Balewski, Milan Kornjaca, Katherine Klymko, Siva Darbha, Mark~R
+  Hirsbrunner, Pedro Lopes, Fangli Liu, and Daan Camps.
+\newblock Engineering quantum states with neutral atoms.
+\newblock {\em arXiv preprint arXiv:2404.04411}, 2024.
+
+\bibitem[BKKK22]{bravyi2022adaptive}
+Sergey Bravyi, Isaac Kim, Alexander Kliesch, and Robert Koenig.
+\newblock Adaptive constant-depth circuits for manipulating non-abelian anyons.
+\newblock {\em arXiv preprint arXiv:2205.01933}, 2022.
 
 \bibitem[BMD06]{bombin2006topological}
 Hector Bombin and Miguel~Angel Martin-Delgado.
@@ -101,10 +140,26 @@ H{\'e}ctor Bomb{\'\i}n.
   topological stabilizer codes.
 \newblock {\em New Journal of Physics}, 17(8):083002, 2015.
 
+\bibitem[Bon21]{bonderson2021measuring}
+Parsa Bonderson.
+\newblock Measuring topological order.
+\newblock {\em Physical Review Research}, 3(3):033110, 2021.
+
 \bibitem[BPZ84]{belavin1984infinite}
 Alexander~A Belavin, Alexander~M Polyakov, and Alexander~B Zamolodchikov.
 \newblock Infinite conformal symmetry in two-dimensional quantum field theory.
 \newblock {\em Nuclear Physics B}, 241(2):333--380, 1984.
+
+\bibitem[CCW17]{cong2017universal}
+Iris Cong, Meng Cheng, and Zhenghan Wang.
+\newblock Universal quantum computation with gapped boundaries.
+\newblock {\em Physical Review Letters}, 119(17):170504, 2017.
+
+\bibitem[CDH{\etalchar{+}}20]{cui2020kitaev}
+Shawn~X Cui, Dawei Ding, Xizhi Han, Geoffrey Penington, Daniel Ranard,
+  Brandon~C Rayhaun, and Zhou Shangnan.
+\newblock Kitaev's quantum double model as an error correcting code.
+\newblock {\em Quantum}, 4:331, 2020.
 
 \bibitem[CK18]{coecke2018picturing}
 Bob Coecke and Aleks Kissinger.
@@ -139,6 +194,11 @@ Vladimir~Gershonovich Drinfeld.
 Pavel Etingof, Shlomo Gelaki, Dmitri Nikshych, and Victor Ostrik.
 \newblock {\em Tensor categories}, volume 205.
 \newblock American Mathematical Soc., 2016.
+
+\bibitem[EK09]{eastin2009restrictions}
+Bryan Eastin and Emanuel Knill.
+\newblock Restrictions on transversal encoded quantum gate sets.
+\newblock {\em Physical review letters}, 102(11):110502, 2009.
 
 \bibitem[EM45]{eilenberg1945general}
 Samuel Eilenberg and Saunders MacLane.
@@ -196,6 +256,10 @@ Brendan Fong and David~I Spivak.
   compositionality}.
 \newblock Cambridge University Press, 2019.
 
+\bibitem[goo23]{google2023suppressing}
+Suppressing quantum errors by scaling a surface code logical qubit.
+\newblock {\em Nature}, 614(7949):676--681, 2023.
+
 \bibitem[Got97]{gottesman1997stabilizer}
 Daniel Gottesman.
 \newblock {\em Stabilizer codes and quantum error correction}.
@@ -219,10 +283,22 @@ Brian~C Hall.
 \newblock {\em Quantum theory for mathematicians}, volume 267.
 \newblock Springer Science \& Business Media, 2013.
 
+\bibitem[HDSHL24]{hong2024entangling}
+Yifan Hong, Elijah Durso-Sabina, David Hayes, and Andrew Lucas.
+\newblock Entangling four logical qubits beyond break-even in a nonlocal code.
+\newblock {\em arXiv preprint arXiv:2406.02666}, 2024.
+
 \bibitem[HK10]{hasan2010colloquium}
 M~Zahid Hasan and Charles~L Kane.
 \newblock Colloquium: topological insulators.
 \newblock {\em Reviews of modern physics}, 82(4):3045--3067, 2010.
+
+\bibitem[ITV{\etalchar{+}}24]{iqbal2024non}
+Mohsin Iqbal, Nathanan Tantivasadakarn, Ruben Verresen, Sara~L Campbell, Joan~M
+  Dreiling, Caroline Figgatt, John~P Gaebler, Jacob Johansen, Michael Mills,
+  Steven~A Moses, et~al.
+\newblock Non-abelian topological order and anyons on a trapped-ion processor.
+\newblock {\em Nature}, 626(7999):505--511, 2024.
 
 \bibitem[Jon97]{jones1997polynomial}
 Vaughan~FR Jones.
@@ -312,6 +388,11 @@ Carlos Mochon.
 \newblock Anyons from nonsolvable finite groups are sufficient for universal
   quantum computation.
 \newblock {\em Physical Review A}, 67(2):022315, 2003.
+
+\bibitem[Moc04]{mochon2004anyon}
+Carlos Mochon.
+\newblock Anyon computers with smaller groups.
+\newblock {\em Physical Review A}, 69(3):032306, 2004.
 
 \bibitem[MS88]{moore1988polynomial}
 Gregory Moore and Nathan Seiberg.
@@ -458,6 +539,12 @@ Vladimir~G Turaev.
 Vladimir~G Turaev.
 \newblock {\em Quantum invariants of knots and 3-manifolds}.
 \newblock de Gruyter, 2010.
+
+\bibitem[TVV23]{tantivasadakarn2023hierarchy}
+Nathanan Tantivasadakarn, Ashvin Vishwanath, and Ruben Verresen.
+\newblock Hierarchy of topological order from finite-depth unitaries,
+  measurement, and feedforward.
+\newblock {\em PRX Quantum}, 4(2):020339, 2023.
 
 \bibitem[VD14]{viola2014hall}
 Giovanni Viola and David~P DiVincenzo.

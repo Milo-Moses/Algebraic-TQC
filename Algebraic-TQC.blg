@@ -1,54 +1,61 @@
 This is BibTeX, Version 0.99d (TeX Live 2018)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Algebraic-TQC.aux
+A level-1 auxiliary file: ./chapters/0-preface/ch0.aux
+A level-1 auxiliary file: ./chapters/1-overview/ch1.aux
+A level-1 auxiliary file: ./chapters/2-QM/ch2.aux
+A level-1 auxiliary file: ./chapters/3-TQO/ch3.aux
+A level-1 auxiliary file: ./chapters/4-category-theory/ch4.aux
+A level-1 auxiliary file: ./chapters/5-MTCs/ch5.aux
+A level-1 auxiliary file: ./chapters/6-further-structure/ch6.aux
+A level-1 auxiliary file: ./chapters/7-TQC/ch7.aux
+A level-1 auxiliary file: ./chapters/A-odds-and-ends/appA.aux
 The style file: alpha.bst
 Database file #1: ref.bib
-Repeated entry---line 542 of file ref.bib
- : @article{wilczek1982quantum
- :                            ,
-I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in google2023suppressing
 Warning--empty journal in copeland1997church
+Warning--empty author in google2023suppressing
 Warning--can't use both volume and number fields in jaeger1990computational
 Warning--there's a number but no series in wang2010topological
-You've used 92 entries,
+You've used 108 entries,
             2543 wiz_defined-function locations,
-            1091 strings with 17935 characters,
-and the built_in function-call counts, 36706 in all, are:
-= -- 3681
-> -- 1686
-< -- 55
-+ -- 574
-- -- 563
-* -- 2742
-:= -- 6064
-add.period$ -- 286
-call.type$ -- 92
-change.case$ -- 562
-chr.to.int$ -- 91
-cite$ -- 95
-duplicate$ -- 1451
-empty$ -- 2683
-format.name$ -- 684
-if$ -- 7429
+            1181 strings with 20935 characters,
+and the built_in function-call counts, 43546 in all, are:
+= -- 4341
+> -- 2105
+< -- 58
++ -- 726
+- -- 714
+* -- 3321
+:= -- 7241
+add.period$ -- 333
+call.type$ -- 108
+change.case$ -- 683
+chr.to.int$ -- 107
+cite$ -- 114
+duplicate$ -- 1674
+empty$ -- 3114
+format.name$ -- 849
+if$ -- 8755
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 104
-newline$ -- 464
-num.names$ -- 276
-pop$ -- 462
+missing$ -- 120
+newline$ -- 543
+num.names$ -- 321
+pop$ -- 545
 preamble$ -- 1
-purify$ -- 666
+purify$ -- 803
 quote$ -- 0
-skip$ -- 1186
+skip$ -- 1375
 stack$ -- 0
-substring$ -- 2176
-swap$ -- 190
-text.length$ -- 55
-text.prefix$ -- 36
+substring$ -- 2532
+swap$ -- 206
+text.length$ -- 58
+text.prefix$ -- 39
 top$ -- 0
-type$ -- 688
-warning$ -- 3
-while$ -- 367
-width$ -- 95
-write$ -- 1197
-(There was 1 error message)
+type$ -- 816
+warning$ -- 5
+while$ -- 426
+width$ -- 111
+write$ -- 1400
+(There were 5 warnings)

@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-5, 1) {$\left(\substack{\text{nilpotent} \\ \text{non-abelian}}\right)$};
+		\node [style=none] (2) at (0, 1) {$\left(\substack{\text{solvable} \\ \text{non-nilpotent}}\right)$};
+		\node [style=none] (3) at (5, 1) {$(\text{\small non-solvable})$};
+		\node [style=none] (4) at (-9, 0) {};
+		\node [style=none] (5) at (5, 0) {};
+		\node [style=none] (6) at (-10.25, 0) {$\substack{\text{more}\\ \text{abelian}}$};
+		\node [style=none] (8) at (6.25, 0) {$\substack{\text{less}\\ \text{abelian}}$};
+		\node [style=none] (9) at (-9, 1) {$(\text{\small abelian})$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=arrow] (4.center) to (5.center);
+		\draw [style=arrow] (5.center) to (4.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

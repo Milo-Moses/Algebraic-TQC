@@ -1,0 +1,45 @@
+\section{Odds and ends}
+
+\subsection{Topological quantum field theories}
+
+In this chapter we will be exploring topological quantum field theory, a particular way of mathematically formalizing topological order. We recall below how this fits into the general framework of this book:
+
+[WORK: add pretty picture.]
+
+Topological quantum field theory is not our primary approach for understanding topological order - we will mainly be performing our anlysis of topological order using modular tensor categories. For this reason, the present chapter is essentially auxillary to the rest of the book. This chapter is primarily included for the following reasons:
+
+\begin{enumerate}
+\item To help give a comprehensive picture of the algebraic theory of topological quantum information. Much of the work in the field is written in the language of topological quantum field theory. Not knowing topological quantum field theory can make existing in the world of topological quantum information more painful than it needs to be.
+
+\item Topological quantum field theory makes some important ideas clear which are opaque in the language of modular tensor cateogories. For instance, the proper way of interpreting the modular representation of a modular tensor category is to use concepts of topological quantum field theory.
+
+\item In contrast to modular tensor categories, the definition of a topological quantum field theory is very concise. This means that the fact that topological quantum field theories and modular tensor categories are equivalent is a strong indication that the definition of modular tensor category is well-chosen. As we will discuss in Chapter [ref], the definition of modular tensor category was explicitely chosen to be the way it so that they would be equivalent to topological quantum field theories.
+\end{enumerate}
+
+For brevity, we will use the accronym \textit{TQFT} to abbreviate Topological Quantum Field Theory. We will now move on to describing the big idea of TQFT. We will do this by starting with an abstract topological order $\C$. Of course, we haven't defined what an abstract topological order is yet. The point is that we will image that $\C$ is some family of gapped Hamiltonians which has topologically protected ground spaces. All the different gapped Hamiltonians should be related in the sense that they have the same underlying algebraic theory, though we haven't described what that theory is yet. That underlying algebraic theory will exactly be a TQFT. Because they are the only examples we have given, we will always image that $\C$ is the Kitaev quantum double model based on some finite group $G$, or even more specifically the toric code.
+
+The first step in definining TQFT is to think about $\C$ is a machine which takes in topological spaces and spits out quantum systems, by taking the space and putting the topological order $\C$ on it. For instance, if $\C$ is the Kitaev quantum double model based on a finite group $G$ and the input space is a torus, then the corresponding system is the Hamiltonian $H=\sum_{v}(1-A_v)+\sum_{p}(1-B_p)$ defined by choosing a lattice structure on the torus and collecting flatness and gauge invaraince conditions, as pictured below:
+
+[WORK: add picture.]
+
+The Hilbert space $\NN=\bigotimes_{\text{edges}}\CC[G]$ of this system clearly depends on the choice of lattice on the torus. However, as demonstrated in proposition [ref] the ground states of $\NN$ are $\Cc=\CC[\Hom(\pi_1(T^2,v), G)/\left(\substack{\text{simultaneous} \\ \text{conjugation}}\right)]$. Since the fundamental group is a topological invariant, we see thus that this Hilbert space does not depend on our choice of lattice - its dimension is fixed by the topology of the torus.
+
+More generally, this is what we should expect when putting a topological order on space. The excited states will depend on the details of the gapped Hamiltonian we choose, but the ground states are a topological invariant of the space. The fact that the ground states are topologically invariant is the \textit{defining feature} of topological order. Hence, the topological order $\C$ gives a well-defined assignement from topological spaces to quantum systems.
+
+Not every topological space can host topological order, however. We recall that our definition of topological order required physical space to be \textit{two dimensional}. Of course, there can be global curvature like in the torus. What's important is that locally the system is flat. Hence, the topological spaces on which we can apply our topological order are subspaces of $\RR^3$ which locally look like $\RR^2$. Topological spaces of this type are called \textit{surfaces}. The most important examples are the $g$-holed surfaces, for any $g\geq 0$, called $\Sigma_g$:
+
+[WORK: add $\Sigma_g$ picture]
+
+Hence, we find that every topological $\C$ induces an assignment
+
+[WORK: add formula - surfaces get assigned to the Hilbert space of ground statees of $\C$ on that surface.]
+
+This is the general picture for TQFT. A TQFT is an assignment from surfaces to vector spaces, with extra restrictioons which are required to get a reasonable theory. This sort of approach to quantum field theory can be generalized beyond TQFT. In these generalized cases, however, the assignment won't taken surfaces as inputs. Instead, it will take surfaces with detailed geometric structure which encodes the fact that the resulting quantum system will depend on distances and local geometric information. This approach is feasable in some cases but is quite technical \cite{segal1988definition}. Typically in non-topological cases people opt for other techniques.
+
+\subsection{Quasitriangular weak Hopf algebras}
+
+\subsection{Quantum groups}
+
+\subsection{Subfactors}
+
+\subsection{Vertex operator algebras}

@@ -1,0 +1,36 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-8, 1) {};
+		\node [style=none] (1) at (-8, 5) {};
+		\node [style=none] (2) at (-6, 3) {$=$};
+		\node [style=none] (3) at (-4, 1) {};
+		\node [style=none] (4) at (-4, 3) {};
+		\node [style=none] (5) at (-3, 3) {};
+		\node [style=none] (6) at (-2, 3) {};
+		\node [style=none] (7) at (-2, 5) {};
+		\node [style=none] (8) at (-8, 0.5) {$A^{**}$};
+		\node [style=none] (9) at (-8, 5.5) {$A$};
+		\node [style=none] (10) at (-8.5, 3.5) {};
+		\node [style=none] (11) at (-7.5, 3.5) {};
+		\node [style=none] (12) at (-7.5, 2.5) {};
+		\node [style=none] (13) at (-8.5, 2.5) {};
+		\node [style=none] (14) at (-8, 3.5) {};
+		\node [style=none] (15) at (-8, 2.5) {};
+		\node [style=none] (16) at (-8, 2.925) {$i$};
+		\node [style=none] (17) at (-4, 0.5) {$A^{**}$};
+		\node [style=none] (18) at (-2, 5.5) {$A$};
+		\node [style=none] (19) at (-2.5, 3.425) {$A^{*}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3.center) to (4.center);
+		\draw [bend left=90, looseness=2.00] (4.center) to (5.center);
+		\draw [bend right=90, looseness=2.00] (5.center) to (6.center);
+		\draw (6.center) to (7.center);
+		\draw (13.center) to (10.center);
+		\draw (10.center) to (11.center);
+		\draw (11.center) to (12.center);
+		\draw (12.center) to (13.center);
+		\draw (14.center) to (1.center);
+		\draw (15.center) to (0.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

@@ -1,0 +1,167 @@
+\section{Topological quantum computation}
+
+\subsection{Overview}
+
+\subsubsection{Introduction}
+
+In this section we will discuss topological quantum computing, the concept of making a computer based on topological quantum systems. We recall now ow this fits into the overall framework of this book:
+
+[WORK: add diagram]
+
+We recall some general principles and motivations for topological quantum computing, most of which were outlined in Chapter [ref]. Seeing as we will be making repeated use of the term, we abbreviate topological quantum computing to \textit{TQC}.
+
+The most important idea in the subject is that TQC is inherently \textit{fault tolerant}. Noise in the environment of a quantum computer, when properly controlled, can be made small in magniude and local in effect. By the definition of a topological system, the information in the topological computer is invariant under small local changes. Hence, the information remains invariant under noise and the computation can proceed as intended without errors. If there are errors, which is always possible with some small probability, topological quantum systems typically have mechanisms whereby the experimenter can remove the error and restore the information how it was. This is the general picture for fault tolerance in TQC. We will make this picture more precise as we give examples of methods for TQC.
+
+We additionally recall that TQC splits into two major branches. The first is the method of finding physical materials that naturally exhibit topological quantum behavior. These systems can then be used to make a computer. The second approach is to simulate a topological quantum system on a quantum computer. This simulation is used to inheret the fault-tolerant properties of the topological quantum systems on the original quantum computer. So long as the simulation is efficient and local noise on the physical system corresponds to local noise on the simulated system, this method works as described. This gives the following diagram for TQC:
+
+[WORK: add diagram - its already used somewhere else!]
+
+In this chapter, we will talk about lots of different approaches to TQC. Some of them are naturally ammenable to the approach of topological quantum materials, and some of them are naturally ammenable to the approach of topological quantum error correction. We will flag these differences and the status of experimental progress as we go along.
+
+Before moving on with our discussion of TQC, it is good to be aware of the limitations of the algebraic approach.
+
+\begin{enumerate}
+\item Introducing the algebraic theory is a lot of overhead for not very many examples. Overwhelmingly, proposals for TQC center around just a few algebraic models. Topological quantum error correction is mostly centered around the toric code (see section [ref]), and topological quantum materials are mostly centered around Majorana fermions (see section [ref]). The vast majority of algebraic models have no serious proposals for TQC associated with them. It is for this reason that much of the literature is focused on working out the details of small models and examples, instead of the development of general theory which is largely useless in this lens.
+
+\item The algebraic structures fail to capture a lot of important details about proposals for TQC. It only captures the high-level information flow, and none of the microscopic features. For example, a breakthrough in the field of topological quantum error correction come with the introduction of \textit{color codes} in 2006 \cite{bombin2006topological}. These color codes have very nice properties, and have been an important player in the field of TQC. However, algebraically the color code is equivalent to bilayer toric code:
+
+$$(\text{color code})\cong (\text{toric code})\boxtimes (\text{toric code}).$$
+
+The entirely of the novelty of the color code comes in its specific choice of Hamiltonian and microscopic details - there is no new algebra involved.
+
+\end{enumerate}
+
+All this is not to say that the algebraic theory of topological quantum information is useless. It has been an important guide in the subject, and has provided footing and motivation for the continued development of TQC. Large-scale fault-tolerant quantum computation is one of the defining technological challenges of the 21st century. It seems very likely that topological methods will be part of its realization!
+
+\subsubsection{Universality}
+
+An important concept for understanding TQC methodology is \textit{universality}. To illustrate this concept we begin with an example.
+
+In 1994, Peter Shor developped an efficient quantum algorithm for factoring integers \cite{shor1994algorithms}. This algorithm is important because much of modern cryptography is based on the hardness of factoring integers and similar problems. Hence, an efficient factoring algorithm could jeapordize internet security.
+
+However, we must pose ourselves the question: what does it mean, really, for Shor to have found an efficient quantum factoring algorithm? A quantum computer is a computer whose information processing is fundamentally described by quantum mechanics. A priori there are lots of different quantum computers one could make. Which one did Shor find a factoring algorithm for? Maybe when we finally make a quantum computer it will be the type of quantum computer which cannot run Shor's algorithm so internet security will be safe.
+
+The key in understanding this situation is the concept of universality. There are certainly quantum computers which cannot run Shor's algorithm. For instance, if a quantum computer has only a finite number of degrees of freedom to store information then it certainly cannot run large cases of Shor's algorithm because it can't even record the input! Even if a quantum computer can store arbitrarily large inputs, that doesn't mean it will have the capabilities to run Shor's algorithm because it might just not have a physical method for running the algorithm.
+
+However, every \textit{sufficiently powerful} quantum computer can run Shor's algorithm. Moreover, every algorithm you can run efficiently can run efficiently on one quantum computer can then be run on every other sufficiently powerful quantum computer.
+
+Here is the explination for this phenominon. Computers can be viewed as simulation devices. Quantum computers are simultation devices which can simulate quantum systems. Suppose that you are given two quantum computers $\text{QC}1$ and $\text{QC}2$. If $\text{QC}1$ is sufficiently powerful, it should be able to efficienlty simulate the behavior of $\text{QC}2$. If $\text{QC}2$ is sufficiently powerful, it should be able to efficiently simulate the behavior of $\text{QC}1$, as illustrate below:
+
+\[\begin{tikzcd}
+	{\text{QC}1} && {\text{QC}2}
+	\arrow["{\text{efficient simulation}}", curve={height=-12pt}, from=1-1, to=1-3]
+	\arrow["{\text{efficient simulation}}", curve={height=-12pt}, from=1-3, to=1-1]
+\end{tikzcd}\]
+
+This gives an easy way to turn any efficient algorithm on $\text{QC}1$ into an efficient algorithm on $\text{QC}2$. First you simulate $\text{QC}1$, and then you run the algorithm on $\text{QC}1$! This means that any problem solved on one of the computers can be efficiently solved on the other. In this way these two computers are \textit{computationally equivalent}. The non-trivial inisght is that every sufficiently powerful quantum computer is able to efficiently simulate every other sufficiently powerful quantum computer. These powerful quantum computers which can simulate every other computer are known as \textit{universal} quantum computers. The existence of universal quantum computers is the heart of universality. What Shor did was make a factoring algorithm which could be run on any universal quantum computer.
+
+This sort of universality has been known for a long time. It was first proposed by pioneers of computation Alan Turing and Alonzo Church \cite{turing1939systems, copeland1997church}:
+
+\begin{quote}
+Church-Turing thesis: ``All sufficiently powerful computational models yield efficiently intersimulable classes - there is one theory of computation".
+\end{quote}
+
+Of course, this thesis does not account for the possibility of quantum computation. Classical and quantum computation seem to be turly distinct theories of computation, violating Church-Turing's intention. This leads to a modern revised version of the Church-Turing thesis:
+
+\begin{quote}
+Revised Church-Turing thesis: ``All sufficiently powerful classical computational models yield efficiently intersimulable classes - there is one theory of classical computation".
+\end{quote}
+
+A quantum version of the Church-Turing thesis was introduced in an early review article on topological quantum computation by Michael Freedman, Alexei Kitaev, Michael Larsen, and Zhenghan Wang \cite{freedman2003topological}. It goes as follows:
+
+\begin{quote}
+Freedman-Church-Turing thesis: ``All sufficiently powerful computational models which add the resources of quantum mechanics to classical computation yield efficiently intersimulable classes - there is one theory of quantum computation".
+\end{quote}
+
+
+The goal, then, is to make a \textit{universal} topological quantum computer. In a sense this makes designing a scheme for topological quantum computation difficult. It gives constraints, and forces a certain amount of computation power. In another sense, it is liberating. The existence of universal quantum computation means that once we have implemendent a certain amount of computational power into our proposal, we are done. There is no need to search for clever ways to add more power because or system is already universal, and hence finding more techniques in unnececary. It gives an end goal to building a quantum computer - a bell to ring when we are done.
+
+Formally, a universal quantum computer will be one which can approximate and unitary transformation. This means that for every $n\geq 0$, the a universal quantum computer can be prepared in such a way that its information is stored in a Hilbert space $V$ of dimension greater or equal to $n$. The space of possible computations on the computer should form a dense subgroup of the projective unitary group $PU(V)$.
+
+One important question is whether a computer which is universal in the sense above can \textit{efficiently} simulate any other computer is an important question. This is generically true by to Solovay-Kitaev theorem \cite{kitaev1997quantum, nielsen2010quantum}. However, a finer discussion of these points and other notions in computaional complexity is beyond the scope of this book and is unnececary for understanding the topics at hand.
+
+[WORK: there is the general corrolation between computational power, difficulty of implimentation, and non-abelian flavor. Give the nice table and talk about it.]
+
+[WORK: boson fermion - easy to simulate. Needs to exploit the weird, compliacated (non-abelian) nature of brading. Hence needs to be sufficiently non-abelian, hence the above picture.]
+
+\subsection{Computation with Fibonacci anyons}
+
+\subsubsection{Methodology}
+
+.[WORK: I'm realizing that I don't know enough about Fibonacci anyons to write this. What's the deal with the ``golden chain"? How does the relationship with $SU(2)$ work again? What's the history? What does the density of braid group reps say, exactly, and how does the proof go?]
+
+\subsubsection{The Jones invariant}
+
+.[WORK: here we can connect things to the Jones invariant. The first step is the definition via the Kauffman braket. The key part is to observe that the Skein relation can be enforced physically by finding an anyon (i.e. Fibonacci) which satisfies the Skein relation as operators on a Hilbert space! Such a Skein relation \textit{must} exist, and hence this also explains in a fundamental way why there is a good Skein relation which gives a knot invariant. Also motivates quantum topology in a way, so maybe say a few works about quanutm topology? A good reference is \cite{aharonov2011bqp} which gives a self-contained elementary proof of BQP completeness of Jones invariant.]
+
+\subsubsection{Proof of universality}
+
+.[WORK: prove that the braid group representations are dense in the appropriate sense.]
+
+\subsection{Computation with doubles of finite groups}
+
+.[WORK: need to read Mochon's papers and Zhenghan's clarifications again to write this section. Maybe have two sections, one for non-solvable and one for solvable non-nilpotent?]
+
+.[WORK: Maybe add a little word about the idea of having $\ZZ_2$ bulk and then interfacing with $S_3$ islands?]
+
+.[WORK: using gapped boundaries. This is the surface code.]
+
+.[WORK: maybe bring up universal TQC with gapped boundaries in $\D(\ZZ_3)$ and projective charge measurement somehow? It would be nice to include somewhere. Maybe have an intro about how hard you have to try to get unversal TQC with different groups, and how you can get universal TQC even with abelian groups if you try hard enough.]
+
+]
+\subsection{Computation with the toric code}
+
+
+\subsection{Computation with Ising anyons}
+
+.[WORK: universal TQC with Ising twsit defects]
+
+\subsection{Computation with Majorana zero modes}
+
+.[WORK: Theory of Majoranas, as $\ZZ_2$-crossed extensions of sVec.]
+
+.[WORK: This section requires a real discussion of physics. There are three key systems to discuss.
+
+\begin{enumerate}
+\item $\nu=5/2$ FQH. This system is described by a supermodular category, up to the typical caveat that it is only quasi-topological order and not pure topological order so some phases might not be protected. This supermodular category has Ising as a subcategory. However, the simple object which makes the nonabelian anyon in the Ising MTC is \textit{not} ``fundamental" in the system. It is composite, made out of two physically creatable anyons. In this sense $\nu =5/2$ doesn't really have fundamental Ising anyons, only composite ones.
+
+\item The ends of nanowires. Kitaev has his famous paper introducing this idea. These are Majorana zero modes in their purest form. This is NOT ising. It is a $\ZZ_2$-crossed extension of sVec which is algebraically essentially the same as Ising, but the distinction is that some of the phases which are well-defined in Ising are unphysical in the $\ZZ_2$-crossed extension.
+
+\item Superconductor/topologial insulator heterostructures. If you have a sample of topological insulator and you make its boundary conditions oscillate between magnet and superconductor you get Majoranas at the interface between those boundaries. The online course on topology in condensed matter has a good section on this, and there is a lot of literature on the subject. Algebraically, this should be the $\ZZ_2$-crossed extension of sVec as well.
+\end{enumerate}
+
+Pointing out the key subtle differences between these models is of utmost importance. There should be sections summarizing each experiment and describing its algebraic theory.
+]
+
+[WORK: This could become a lot of work. It is very relevant to physicists (perhaps the most relevant part of this book), but unnececary and cumbersome for mathematial thinkers. Maybe this should be its own chapter?]
+
+$\newline$
+\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{
+
+\begin{center}
+\textbf{History and further reading:}\\
+\end{center}
+
+The idea of topological quantum computing was first introduced by 1997 by Kitaev and Freedman \cite{kitaev2003fault, freedman1998p}. Soon, Freedman, Kitaev, Wang, and Larsen wrote a review article about topological quantum computing which formally started the field in 2002 \cite{freedman2003topological}. In these early years, these authors and others introduced a number of techniques for universal topological quantum computation \cite{freedman2002modular, mochon2003anyons, bravyi2005universal}. From here, the goal of research became the task of acheiving universal topologial quantum computation in the simplest possible experimental setup.
+
+$\newline$
+In the world of quantum materials, this has mostly taken the form of hunting for \textit{Majorana bound states}. Majorana bound states are topological quasiparticles which are bound to defects in materials. Some theories suggest that these Majorana bound states could be braided in a fashion which allows for topological quantum computing. Algebraically, Majorana bound states behave as [WORK: what do they behave as?]. Theorists have engineered increasingly simple materials which are predicted to host Majoranas \cite{fu2008superconducting, sau2010non, alicea2010majorana}. Braiding Majorana bound states does not allow for universal topological quantum computation, so most proposals for Majorana quantum computing include some non-topological gates.
+
+$\newline$
+In the world of quantum error correction, the search for simple experimental setups has centered around the surface code. The surface code on its own is not univeral, and requires a single extra gate to be made universal. There have been a large number of proposals for how to do this final extra gate, which are more or less feasable depending on the architecture of the underlying quantum computer \cite{bravyi2005universal, bombin2011nested, bombin2015gauge}.
+
+$\newline$
+There are many good references for topological quantum computing. From the perspective of materials, there are several excellent review articles by Freedman, Nayak, Das Sarma, and others \cite{nayak2008non, sarma2015majorana}. From the perspetive of topological quantum error correcting codes, the best approach to learn more is to delve into the general theory of quantum error correction. A good place to start is the chapter in Nielsen-Chuang \cite{nielsen2010quantum}. After this there are several review articles \cite{terhal2015quantum, gottesman1997stabilizer}.
+
+}}
+
+
+$\newline\newline$
+
+\large \textbf{Exercises}:\normalsize
+
+\begin{enumerate}[\thesection .1.]
+
+\item .[WORK: make exercises]
+
+\end{enumerate}
