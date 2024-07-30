@@ -217,6 +217,11 @@ Pavel Etingof, Dmitri Nikshych, and Viktor Ostrik.
 \newblock On fusion categories.
 \newblock {\em Annals of mathematics}, pages 581--642, 2005.
 
+\bibitem[Fal94]{faltings1994proof}
+Gerd Faltings.
+\newblock A proof for the verlinde formula.
+\newblock {\em Journal of Algebraic Geometry}, 3(2):347, 1994.
+
 \bibitem[FEC{\etalchar{+}}21]{fuhrer2021proposal}
 Michael~S Fuhrer, Mark~T Edmonds, Dimitrie Culcer, Muhammad Nadeem, Xiaolin
   Wang, Nikhil Medhekar, Yuefeng Yin, and Jared~H Cole.
@@ -310,6 +315,12 @@ Seung-Moon Hong, Eric Rowell, and Zhenghan Wang.
 \newblock {\em Communications in Contemporary Mathematics},
   10(supp01):1049--1074, 2008.
 
+\bibitem[Hua08]{huang2008vertex}
+Yi-Zhi Huang.
+\newblock Vertex operator algebras and the verlinde conjecture.
+\newblock {\em Communications in Contemporary Mathematics}, 10(01):103--154,
+  2008.
+
 \bibitem[ITV{\etalchar{+}}24]{iqbal2024non}
 Mohsin Iqbal, Nathanan Tantivasadakarn, Ruben Verresen, Sara~L Campbell, Joan~M
   Dreiling, Caroline Figgatt, John~P Gaebler, Jacob Johansen, Michael Mills,
@@ -389,6 +400,12 @@ JM~Leinaas and J~Myrheim.
 Jacob Lurie.
 \newblock On the classification of topological field theories.
 \newblock {\em Current developments in mathematics}, 2008(1):129--280, 2008.
+
+\bibitem[Lyu95]{lyubashenko1995invariants}
+Volodymyr~V Lyubashenko.
+\newblock Invariants of 3-manifolds and projective representations of mapping
+  class groups via quantum groups at roots of unity.
+\newblock {\em Communications in mathematical physics}, 172:467--516, 1995.
 
 \bibitem[Mer79]{mermin1979topological}
 N~David Mermin.
@@ -567,6 +584,12 @@ Nathanan Tantivasadakarn, Ashvin Vishwanath, and Ruben Verresen.
 Giovanni Viola and David~P DiVincenzo.
 \newblock Hall effect gyrators and circulators.
 \newblock {\em Physical Review X}, 4(2):021019, 2014.
+
+\bibitem[Ver88]{verlinde1988fusion}
+Erik Verlinde.
+\newblock Fusion rules and modular transformations in 2d conformal field
+  theory.
+\newblock {\em Nuclear Physics B}, 300:360--376, 1988.
 
 \bibitem[vKCK{\etalchar{+}}20]{von202040}
 Klaus von Klitzing, Tapash Chakraborty, Philip Kim, Vidya Madhavan, Xi~Dai,
