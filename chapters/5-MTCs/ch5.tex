@@ -222,7 +222,42 @@ $\newline$
 
 To make this definition work, all of the hom-spaces of the MTC $\C$ should be equipped with Hilbert space structures. Furthermore, the natural operators we wish to perform like braiding should all be unitary with respect to these inner products. This amounts to adding a large number of compatibility conditions on the Hilbert space structures. An MTC with this choice of structure is known as a \textit{unitary} MTC. We give the formal definition below:
 
-\begin{definition}[Unitary modular tensor category] A unitary modular tensor category is the following data:
+
+\begin{definition}[Unitary fusion category] A unitary fusion category is the following data:
+
+\begin{enumerate}
+\item An fusion category $\C$.
+\item (Conjugation) A linear map $\dagger: \Hom(A,B)\to \Hom(B,A)$ for all $A,B\in \C$.
+\end{enumerate}
+
+Additionally, a unitary fusion category is required to satisfy the following properties:
+
+\begin{enumerate}
+\item (Unitarity) Given $f:A\to A$ an endomorphism of $A\in \C$, define
+
+
+$$\tr(f)=\ev_A \circ (\id_{A^*}\otimes f)\circ \left(\ev_A\right)^{\dagger}.$$
+
+The map $\left<\cdot|\cdot\right>:\Hom(A,B)\times \Hom(A,B)\to \CC$ defined by $\left<f|g\right>=\tr(f\circ g^{\dagger})$ is an inner product, endowing $\Hom(A,B)$ with the structure of a Hilbert space.
+\item $\left(f^{\dagger}\right)^{\dagger}=f$ for all $f\in \Hom(A,B)$, $A,B\in \C$.
+\item $(f\circ g)^{\dagger}=g^{\dagger}\circ f^{\dagger}$ for all $f\in \Hom(B,C)$,$g\in \Hom(A,B)$, $A,B,C\in \C$.
+\item $(f\otimes g)^{\dagger}=f^{\dagger}\otimes g^{\dagger}$ for all $f\in \Hom(A,B)$,$g\in \Hom(C,D)$, $A,B,C,D\in \C$.
+\item $\left(\coev_A\right)^{\dagger}\circ (f \otimes \id_{A^*})\circ \coev_A=\tr(f)$ for all $A\in \C$
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
+
+Unitary fusion categories make for a pleasant object of study because the distinguished maps $(\ev_A)^{\dagger}:1\to A^{*}\otimes A$ and $(\coev_A)^{\dagger}:A\otimes A^{*}\to 1$ induce a pivotal structure:
+
+\begin{proposition} All unitary fusion categories are spherical fusion categories. [WORK: reword this to make it an actual mathematical statemenet]
+\end{proposition}
+\begin{proof}.[WORK: Should be easy.]
+\end{proof}
+
+We can now define unitary MTCs. The compatibility conditions for the twist are chosen so that the definition of trace as an MTC and the definition of trace as a unitary fusion category coincide. [WORK: The definition below is outdated. It uses the twist-theoretic definition of MTCs. Should be re-done.]
+
+\begin{definition}[Unitary Modular Tensor Category] A unitary Modular Tensor Category is the following data:
 
 \begin{enumerate}
 \item An MTC $\C$.
@@ -232,7 +267,11 @@ To make this definition work, all of the hom-spaces of the MTC $\C$ should be eq
 Additionally, a unitary Modular Tensor Category is required to satisfy the following properties:
 
 \begin{enumerate}
-\item .[WORK: add properties]
+\item Forgetting the twist and braiding, $\left(\C,\dagger\right)$ forms a unitary fusion category.
+\item $\left(\beta_{A,B}\right)^{\dagger}=\beta_{A,B}^{-1}$ for all $A,B\in \C$.
+\item $\left(\theta_A\right)^{\dagger}=\left(\theta_A\right)^{-1}$ for all $A\in \C$.
+\item $\left(\ev_{A}\right)^{\dagger}= \left(\id_{A^*}\otimes \theta_A^{-1}\right)\circ \beta_{A^*,A}^{-1}\circ \coev_A$ for all $A\in \C$
+\item $\left(\coev_{A}\right)^{\dagger}= \ev_{A}\circ\beta_{A,A^*}\circ\left(\theta_A \otimes \id_{A^*}\right)$ for all $A\in \C$
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
@@ -269,46 +308,372 @@ When two anyons are fused together, they will form a superposition of other anyo
 
 \subsection{The MTC toolkit}
 
+In this section, we will introduce and prove the basic facts about the most important structures in the theory of modular tensor categories (MTCs). These facts and structures are the tools used for solving problems about the algebraic theory of anyons. 
+
 \subsubsection{Trace}
 
-In this section, we will introduce and prove the basic facts about the most important structures in the theory of modular tensor categories (MTCs). These facts and structures can be viewed as tools, which are used for solving problems about the algebraic theory of anyons. 
+The first structure to define in the theory of MTCs is the \textit{trace}. Let $\C$ be a spherical fusion category. Given any object $A\in \C$ and any endomorphism $f:A\to A$, we define the \textit{trace of $f$} by the following formula:
 
- -
+\begin{equation*}
+\tikzfig{trace}
+\end{equation*}
+
+Initially, the trace is a morphism,  $\tr(f):\one\to\one$. However, we will choose to think of the trace of a morphism as a \textit{complex number}, $\tr(f)\in \CC$. This can be done because the definition of a fusion category $\End(\one)\cong \CC$. This isomorphism can be made canonical by identifying an endomorphism $g\in \End(\one)$ with the unique $\lambda\in \CC$ such that $g = \lambda \cdot \id_{\one}$.
+
+The trace is used mainly as a tool for linearization. Morphisms and objects are hard to describe, but the trace is a complex number.
+
+\begin{proposition}\label{trace} Let $\C$ be a spherical fusion category. For all $A,B\in \C$, $f\in \End(A)$ the following claims are all true:
+
+\begin{enumerate}
+\item $\tr: \End(A)\to \CC$ is a linear map of vector spaces,
+\item $\tr(f^{*})=\tr(f)$,
+\item $\tr(f\circ g)=\tr(g\circ f)$ for all $g\in \End(A)$,
+\item $\tr(f\oplus g)=\tr(f)+\tr(g)$ for all $g\in \End(B)$,
+\item $\tr(f\otimes g)=\tr(f)\cdot \tr(g)$ for all $g\in \End(B)$,
+\item $\tr(g\circ f\circ g^{-1})$ for any isomorphism $g:A\xrightarrow{\sim}B$,
+\item Trace is preserved by functors. That is, let $\C,\Dcat$ be spherical categories with traces $\tr_{\C},\tr_{\Dcat}$ respectively. Let $F:\C\to \Dcat$ be a pivotal functor. We have that $\tr_{\C}(f)=\tr_{\Dcat}(F(f))$;
+\end{enumerate}
+
+\end{proposition}
+\begin{proof} We prove the claims one by one.
+
+\begin{enumerate}
+\item This follows immediately from the bilinearity of composition.
+
+\item This is a straightforward computation.
+
+\item Using Proposition \ref{pivotal-alternative} part (3), we find that
+
+\begin{equation*}
+\tikzfig{composition-commutes}
+\end{equation*}
+
+\item From the explicit definition of evaluation and coevaluation for $A\oplus B$ given in the proof of Proposition \label{rigidity}, we find that $\tr(f\oplus g)$ as a morphism is
+
+$$1\to 1\oplus 1 \xrightarrow{\tr(f)\oplus \tr(g)}1\oplus 1\to 1$$
+
+where $1\to 1\oplus 1$ is the sum of the right and left inclusion maps and $1\oplus 1\to 1$ is the sum of the right and left projection maps. Seeing as composition is linear and inclusion composed with projection is the identity, we get that this map is $\tr(f)+\tr(g)$ times the identity as desired.
+
+\item Using Proposition \ref{pivotal-alternative}, we compute
+
+\begin{equation*}
+\tikzfig{trace-tensor}
+\end{equation*}
+
+\item To begin, we observe that $F(A^*)$ can be canonically given the structure of a dual for $F(A)$, by the maps $\coev_{F(A)}=F(\coev_A)$, $\ev_{F(A)}=F(\ev_A)$. Since $F$ is a pivotal functor, we find that
+
+\begin{equation*}
+\tikzfig{pivotal-functor}
+\end{equation*}
+
+Now, the fact that $F$ is $\CC$-linear on hom spaces and $F(\id_{1_{\C}})=\id_{\Dcat}$ implies that $\tr_{\C}(f)=F(\tr_{\C}(f))$ as complex numbers. Passing trough $F$, the desired conclusion is immediate.
+
+\end{enumerate}
+
+This completes the proof.
+\end{proof}
+
+With these properties in hand, we can explicitely compute the trace using a straightforward procedure:
+
+\begin{corollary}\label{explicit-trace} Let $f:A\to A$ be an endomorphism in a fusion category $\C$. Fix a decomposition $A\cong \bigoplus_{i\in I}A_i$ of $A$ into simple objects $A_i$. Moreover, we take the decomposition such that if $A_i\cong A_j$ then $A_i=A_j$. We can decompose
+
+$$\Hom(A,A)\cong \Hom(\bigoplus_{i\in I} A_i,\bigoplus_{i\in I}A_i)=\bigoplus_{i\in I, j\in I}\Hom(A_i,A_j).$$
+
+Let $M$ be the matrix whose collums and rows are labeled by $I$, and whose $(i,j)$ entry is $0$ if $A_i\not\cong A_j$ and $\lambda \cdot d_{A_i}$ if $A_i=A_j$, where $\lambda\in \CC$ is the unique value such that the $\Hom(A_i,A_j)$ component of $f$ is $\lambda\cdot \id_{A_i}$. We have that
+
+$$\tr_{\C}(f)=\tr_{\Vec}(M).$$
+
+\end{corollary}
+\begin{proof} Since $\tr_{\Vec}$ adds over direct sums, verifying this construction immediately reduces to the case that $A$ is a simple object by Proposition \ref{trace} (4). Now, linearity of $\tr_{\C}$ and the definition of quantum dimension completes the proof.
+\end{proof}
+
 \subsubsection{Duality}
 
-\subsubsection{Quantum dimension}
+Duality is baken into our definition of MTCs as a fundamental part of the structure.
 
-Our next tool to discuss is the \textit{quantum dimension}. Given any fusion category $\C$ and any simple object $A\in \C$, we define its quantum dimension using the following formula:
+
+The dual of an object $A$ can be identified from its fusion coeffients.
+
+\begin{proposition} Let $\C$ be a fusion category. Let $A,B\in \C$ be simple objects. The following are equivalent:
+
+\begin{enumerate}[(i)]
+\item $B\cong A^*$;
+\item $N^{B,A^*}_{\one}>0$;
+\item $N^{A^*,B}_{\one}>0$;
+\item $N^{A,A^*}_{\one}=N^{A^*,A}_{\one}=1$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}. [WORK: do proof.]
+\end{proof}
+
+In particular, we conclude the following:
+
+\begin{corollary} If $\C$ is a fusion category, then $A\cong A^{**}$ for all $A\in \C$.
+\end{corollary}
+\begin{proof} .[WORK: do proof.]
+\end{proof}
+
+However, despite this corollary, we \textit{cannot} conclude that every fusion category admits a pivotal structure. The isomorphism $A\cong A^{**}$ may fail to form a monoidal natural transformation. It is an open problem whether or not every fusion category admits a pivotal structure, and it is furthermore an open problem whether every pivotal fusion category admits a spherical structure \cite{etingof2005fusion}.
+
+Duality acts a controlled way on fusion coefficients:
+
+\begin{proposition}Let $\C$ be a fusion category and let $A,B,C\in \C$ be simple objects. We have the following:
+
+\begin{enumerate}[(i)]
+\item (Anti-involution) $N^{A,B}_C=N^{B^*,A^*}_{C^*}$;
+\item (Frobenius reciprocity) $N^{A,B}_C = N^{A^*,C}_B = N^{C, B^*}_{A}$.
+\end{enumerate}
+
+\end{proposition}
+\begin{proof} . [WORK: do proof.]
+\end{proof}
+
+
+\subsubsection{Quantum dimension and Frobenius-Perron dimension}
+
+.[WORK: include something about global quantum dimension $D$.]
+
+Our next tool to discuss is the \textit{quantum dimension}. Given any spherical fusion category $\C$ and any object $A\in \C$, we define its quantum dimension using the following formula:
 
 [WORK: define $d_A$.]
 
-Upon first definition, $d_A$ is a morphism $\one\to \one$ in $\C$. By the axioms of a fusion category, $\End_\C(\one)\cong \CC$. Moreover, this isomorphism is canonical. That is, we can identity these two spaces via the unique linear map
-$\End_\C(\one)\to \CC$ which sends $\id_{\one}\in \End_{\C}(\one)$ to $1\in \CC$. In this way, we can identity $d_A$ with a complex number.
+As usual, we identitfy $d_A$ with a complex number via the canonical isomorphism $\End(\one)\cong \CC$. The quantum dimension is clearly equal to the trace of the identity map on $A$, $d_A=\tr(\id_A)$. The first properties of quantum dimension follow from our general analysis of trace:
+
+\begin{proposition} For every spherical fusion category $\C$ and any objects $A,B\in \C$, we have the following formulas:
+
+\begin{enumerate}[(i)]
+\item If $A\cong B$, then $d_A=d_B$;
+\item $d_{A\oplus B}=d_{A}+d_B$;
+\item $d_{A\otimes B}=d_{A}\cdot d_{B}$;
+\item $d_{A^*}=d_A$.
+\item $d_A\neq 0$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}.[WORK: do proof]
+\end{proof}
+
+The above propositions tell us that the values $d_A$ as $A$ ranges over isomorphism classes of simple objects determs all the other values of $d_A$. Moreover, proposition [ref] tells us that the quantum dimensions of simple objects determines the trace of \textit{every} endomorphism! Hence, computing $d_{A}$ for each isomorphism class $[A]\in \LL$ is an important step in analysing an MTC. The following formula and its linear-algebraic reformulaion are the primary insight in performing the computation:
+
+\begin{proposition} Let $\C$ be a spherical fusion category.
+
+\begin{enumerate}[(i)]
+\item Let $A,B\in \C$ be simple objects. We have that
+
+$$d_Ad_B=\sum_{[C]\in \LL}N^{A,B}_C d_C.$$
+
+\item Let $A\in \C$ be a simple object. Define an operator
+
+ \begin{align*}
+N^{A}:\CC[\LL]&\xrightarrow{} \CC[\LL].\\
+\ket{[B]}&\mapsto \sum_{[C]\in \LL} N^{A,B}_C \ket{[C]}
+\end{align*}
+
+Define $\bold{d} = \sum_{[B]\in \LL} d_{B}\ket{[B]}\in \CC[\LL]$. We have that
+
+$$N^{A}\bold{d}=d_{A}\bold{d}.$$
+
+\end{enumerate}
+
+\end{proposition}
+\begin{proof}.[WORK: do proof]
+\end{proof}
+
+We now make commentary about the above proposition. It tells us that $d_A$ is an eigenvalue of $N^A$. Since $N^A$ is an operator with integer coefficients, this immediately tells us that $d_A$ is the root of polynomial with integer coeffients. Namely, the characteristic polynomial of $N^A$. We can even be more precise about the nature of $d_A$:
+
+\begin{corollary} Let $\C$ be a spherical fusion category. The quantum dimensions of all simple objects in $\C$ are real numbers.
+\end{corollary}
+\begin{proof}.[WORK: do proof.]
+\end{proof}
+
+The question is whether or not the quantum dimensions are \textit{positive} real numbers. We recall that we defined a unitarizable spherical fusion category to be one in which the quantum dimensions are all positive. It is at this point that this becomes relevant. In particular, if $\C$ is unitarizable then its quantum dimensions are eigenvalues of $N^A$, and their corresponding eigenvector $\bold{d}$ has positive real entries. There is a theorem about eigenalues of non-negative matrices with positive eigenvectors:
+
+\begin{theorem}[Frobenius-Perron theorem] .[WORK: state version which suffices for our case]
+\end{theorem}
+
+We call the largest positive real eigenvalue of a matrix with non-negative entries its \textit{Frobenius-Perron eigenvalue}. The above theorem tells us the following:
+
+\begin{corollary} Let $\C$ be a unitarizable spherical fusion category. Let $A\in \C$ be a simple object. The quantum dimension $d_A$ is equal to the Frobenius-Perron eigenvalue of $N^A$.
+\end{corollary}
+\begin{proof}.[WORK: do proof]
+\end{proof}
+
+In this chapter we will mostly work with generic spherical fusion categories with no conditions on unitarizability. Hence, it is useful to make the following definition. Let $A\in\C$ be a simple object in a spherical fusion category. We define
+
+$$\FPdim(A)=(\text{Frobenius-Perron eigenvalue of $N^A$}).$$
+
+When $\C$ is unitarizable, $\FPdim(A)=d_A$. Many formulas about quantum dimension in the unitary world apply to the Frobenius-Perron dimension in the non-unitary world. An interesting observation is that the definition of quantum dimension strongly uses the spherical structure on $\C$. However, the Frobenius-Perron dimension only uses the fusion coeffients, and those are well-defined in any fusion category. Hence, the Frobenius-Perron dimension also derives utility from being applicable in a broader set of situations than the quantum dimension.
+
+We now give an alternate interpretation of the Frobenius-Perron dimension in terms of growth in tensor powers. This sort of alternate perspective of dimension applies to several types of objects outside the scope of tensor category theory \cite{coulembier2024growth}.
+
+\begin{proposition} Let $\C$ be a fusion category, and let $A\in \C$ be a simple object.
+
+\begin{enumerate}[(i)]
+\item $\FPdim(A)=\lim_{n\to\infty}\dim(\Hom(A^{\otimes n},A^{\otimes n}))^{1/(2n)}$
+\item $\FPdim(A)=\lim_{n\to\infty}\dim(\Hom(\one,A^{\otimes n}))^{1/n}$
+\item $\,$
+
+$$\FPdim(A)=\lim_{n\to\infty}(\text{\# of simple objects in the direct sum decomposition of $A^{\otimes n}$})^{1/n}.$$
+\end{enumerate}
+\end{proposition}
+\begin{proof}.[WORK: do proof]
+\end{proof}
+
+This proposition can be interpreted as saying that the simple object $A$ has $\FPdim(A)$ internal degrees of freedom ``on average". Elements of the vector space $\Hom(\one,A^{\otimes n})$ correspond to states in the system with $n$ anyons of type $A$ arranged in a line. If the internal configuration space of each anyon was $\FPdim(A)$-dimensional, then the overall dimension would be $\FPdim(A)^n$. By Proposition [ref], $\FPdim(A)^n$ is approximately $\Hom(\one,A^{\otimes n})$ for large $n$. Hence, each anyon has approximately $\FPdim(A)$ internal degrees of freedom. Of course, $\FPdim(A)$ has no reason to be an integer! In the Fibonacci theory $\FPdim(\tau)=\phi=1.61...$. Frobenius-Perron dimension just gives an average amount for large values.
+
+[WORK: re-do this explanation way better + add diagram for it.]
 
 \subsubsection{Twist}
 
-\subsubsection{Verlinde formula}
+In this section we will discuss \textit{twists}. The twist is a subtle concept, which we have not explicitely mentioned up to now. The idea is that anyons can \textit{rotate in place}. Since the space of endomorphisms of an anyon is one dimensional, this rotation must act by a phase. This phase is physically relevant, and can be measured in experiment.
+
+For example, consider the $Y$-type on the toric code. It consists of the fusion of an $X$-type anyon and a $Z$-type anyon, as shown below:
+
+[WORK: add figure of Y as a thick X and Z together.]
+
+Twisting $Y$ in place will correspond to twisting $X$ and $Z$ around each other. This twsiting thus results in a phase of $-1$. In general, we can imagine anyons as having some thickness to them. Anyons are not localized at points - they are localized at small regions. Twisting this region all the way around can be viewed visually as
+
+[WORK: twisted anyon.]
+
+This is the twist. One way of working with the twist is to work with thickened diagrams, where strings are replaced with ribbons. While popular in some parts of the literature, we will continue to work with string diagrams for simplicity. The key observation is that the twist can be constructed using string diagramatic structures we already have as follows:
+
+[WORK: twist as a swirl diagram.]
+
+Hence, letting $\C$ be a pre-modular fusion category, we \textit{define} the twist $\theta_{A}$ of an object $A\in \C$ to be
+
+[WORK: define $\theta_A$ in terms of a swirl.]
+
+For every simple object $A\in \C$, the map $\theta_A\in \End(A)$ can be identified with the unique complex number $\lambda$ such that $\theta_A=\lambda\cdot \id_A$. Equivilantly, we can identify $\theta_A$ with the complex number $\lambda=\tr(\theta_A)/d_A$ which gives the graphical formula
+
+[WORK: $\theta_A=\frac{1}{d_A}$ times a nice diagram.]
+
+We now characterize the key properties of the twist:
+
+\begin{proposition} Let $\C$ be a pre-modular fusion category. The twists $\theta$ induce a monoidal natural isomorphism $\id_{\C}\xrightarrow{\sim}\id_{\C}$. Additionally, $\theta$ satisfies the identity
+
+$$\theta_{A\otimes B}=\beta_{B,A}\circ \beta_{A,B}\circ (\theta_{A}\otimes \theta_{B})$$
+
+for all $A,B\in \C$, and $\theta_{A^*}=(\theta_A)^*$.
+\end{proposition}
+\begin{proof}. [WORK: do proof]
+\end{proof}
+
+The naive reason to care about twists is that they descrbe a physically relevant quantity and hence should be studied. The more subtle reason to care about twists is that they are the most efficient way of encoding the spherical structure on $\C$. A spherical structure is first and foremost a pivotal structure, meaning that it has a right and left rigid structure which are compatible. Given a spherical structure one can always obtain twists. Conversely, given a right-rigid structure and twists one can recover the left-rigid structure via the formulas
+
+\begin{equation*}
+\tikzfig{co-dual}
+\end{equation*}
+
+In this way, giving a spherical structure on a right-rigid monoidal category is the \textit{same} as giving a twist structure. This is codified in the following lemma:
+
+\begin{proposition}[Deligne's twisting lemma, \cite{yetter1992framed}] Let $\C$ be a right-rigid braided monoidal category. Every pivotal structure on $\C$ naturally gives a twist natural transformation $\theta:\id_\C\to\id_\C$. This assignment induces a canonical bijection between the set of pivotal structures on $\C$ and the set of natural isomorphism $\theta:\id_\C\to\id_\C$ satisfying $\theta_{A\otimes B}=\beta_{B,A}\circ \beta_{A,B}\circ (\theta_A\otimes \theta_B)$ for all $A,B\in \C$.
+
+Moreover, restricting the assignment to the space of spherical structures on $\C$ induces a canonical bijection between the set of spherical structures on $\C$ and the set of isomorphisms $\theta:\id_\C\to\id_\C$ satisfying $\theta_{A\otimes B}=\beta_{B,A}\circ \beta_{A,B}\circ (\theta_A\otimes \theta_B)$ for all $A,B\in \C$ and $\theta_{A^*}=(\theta_A)^*$.
+\end{proposition}
+\begin{proof} We show that the distinuished morphisms defined satisfy the axioms of Proposition \ref{pivotal-alternative}.
+
+\begin{enumerate}
+\item Rigidity is immediate.
+
+\item We compute as follows:
+
+\begin{equation*}
+\tikzfig{something-property-proof}
+\end{equation*}
+
+yielding the desired result.
+
+\item By the naturality of $\theta_A$, we have that $\theta_A\circ f \circ \theta^{-1}_B=f$ for all $f:B\to A$. Hence,
+
+\begin{equation*}
+\tikzfig{morphism-duals-agree-proof}
+\end{equation*}
+
+as desired.
+\end{enumerate}
+
+Conversely, that we are given a pivotal structure on $\C$. Define $\theta_A$ by
+
+\begin{equation*}
+\tikzfig{graphical-twist-reverse}
+\end{equation*}
+
+The arguments above for parts (1)-(3) apply equally well in reverse, and allow us to deduce that $\theta_A$ is natural and satisfies the twist condition. Additionally, we find by
+
+\begin{equation*}
+\tikzfig{deligne-lemma-proof}
+\end{equation*}
+
+that this serves as an inverse to our stated bijection, so we are done. [WORK: do spherical part]
+\end{proof}
 
 \subsubsection{Functors, natural transformations, and equivalence}
 
+.[WORK: this subsection isn't very sexy but I really think it should be included. Questions to answer:
+
+\begin{enumerate}
+\item What is the appropriate notion of functor between fusion cats/ spherical fusion cats / MTCs?
+\item What is the appropriate notion of natural transformation?
+\item What is the appropriate notion of equivalence of categories?
+\end{enumerate}
+
+
+Then, I should talk about how the things we want to be preserved under equivalence really are preserved. For instance, number of isomorphism classes of simple objects, fusion coefficients. A more in-depth discussion of this is going to be in the Yoneda-perspective section so no need to harp on it too much.
+
+Maybe this is a good time for strict vs. skeletal, but that could also wait for the Yoneda perspective section.
+
+This answers to the questions in this section might inform my definition-writing in the previous sections.
+]
+
 \subsubsection{Deligne tensor product}
 
+In the theory of any class of mathematical object, an important consideration is the ways in which examples can be put together to give new examples. In the case of fusion categories, this basic operation is known as the \textit{Deligne tensor product}. Given any fusion categories $\C$, $\Dcat$, their Deligne tensor product $\C\boxtimes \Dcat$ is a new fusion category. The Deligne tensor product of spherical fusion categories will be equipped with the structure of a spherical fusion category, and the Deligne tensor product of (pre-)modular tensor categories will be equipped with the structure of a (pre-)modular tensor category.
+
+Physically, the Deligne tensor product corresponds to \textit{stacking}. Consider two sheets of material. We choose two MTCs $\C$, $\Dcat$. We enodow the top sheet with the structure of a topologically ordered quantum system described by $\C$ and we endow the bottome with the structure of a topologically ordered quantum system described by $\Dcat$. The algebraic description of this bilayer system is $\C\boxtimes \Dcat$. This can be viewed as the physical definition of $\C\boxtimes \Dcat$.
+
+[WORK: add bilayer system diagram]
+
+We now mathematically define the Deligne tensor product.
+
+[WORK: this is subtle. There's a definition in general, but we're in a special case where things could be a whole lot simpler. Is there a completely explicit definition in terms of object and morphisms? I do not really want to define right-exact functor if I don't have to.]
 
 
-\subsection{Quantum double MTCs}
+[WORK: after the basic definition, I have to define it for fusion/spherical/modular categories. This could take up some room.]
 
-\subsubsection{The Drinfeld center}
+[WORK: show that morphisms between box products of simple objects corresponds to the tensor product of the hom-spaces. Conclude that simple objects in the box product are box products of simple objects.]
 
-\subsubsection{Muger's theorem}
+\subsection{The category of $G$-graded $G$-representations}
 
-\subsubsection{Levin-Wen model}
+\subsubsection{Overview}
 
-\subsubsection{Mortia equivalence}
+We've talked about a lot of general theory of MTCs. It's time for us to focus on our main family of \textit{examples}. Namely, the categories $\D(G)$ of $G$-graded $G$-representations. These categories describe discrete gauge theory based on the finite group $G$.
 
-\subsubsection{Factorizability}
+Before we can prove that $\D(G)$ is a modular tensor category, we need to endow $\D(G)$ with the neccecary structures. In particular, we will endow $\D(G)$ with $\CC$-linear, monoidal, braided, right-rigid, and left-rigid structures. We will need to show that all of these structures are comptabile with each other in the neccecary ways, and that $\D(G)$ satisfies the non-degeneracy axiom. We will use this as an oppurtunity to introduce tools of general use for proving that categories satisfy the axioms of a modular tensor category.
 
-\subsubsection{Quantum doubles of finite groups}
+Additionally, we will also study two categories similar to $\D(G)$ which will serve as extra examples to get our grip on definitions. These categories will also appear later as relevant in and of themselves. The first is $\Vec_G$, the category of $G$-graded vector spaces. It is defined as follows:
 
+[WORK: define $\Vec_G$ in terms of objects and composition.]
+
+Our second structure of interest is $\Rep(G)$, the category of $G$-representations. It is defined as follows:
+
+[WORK: define $\Rep(G)$ in terms of objects and composition.]
+
+We will show that both $\Vec_G$ and $\Rep(G)$ can be naturally equipped with the structures of spherical fusion categories. We then show that $\Rep(G)$ admits a braiding which turns it into a pre-modular tensor category. This braiding is symmetric in the sense that $\beta_{B,A}\circ \beta_{A,B}=\id_{A}\otimes \id_{B}$ for all $A,B\in \C$, and hence $\Rep(G)$ is not an MTC. The category $\Vec_G$ is shown to not admit a braiding whenever $G$ is non-abelian.
+
+
+\subsubsection{Higher linear algebra}
+
+.[WORK: In this section we define the $\CC$-linear structures on $\Vec_G$, $\Rep(G)$, and $\D(G)$. Our goal is to show that they are all equivalent to $\Vec_\CC^n$ for some $n\geq 1$.
+
+It seems like the best approach is through higher linear algebra. Namely, we show that if $\C$ is abelian, $\CC$-linear, semisimple, and has finitely many isomorphism classes of simple obejcts then it must be isomorphism to $\Vec_{\CC}^n$. Its a good time to wax philosophical about higher linear algebra and 2-vector spaces. However, its not clear that this approach actually helps at all. It might be easier to immediately note that everybody is the direct sum of irriducibles, prove a Schur's lemma, and call it a day. Of course these approaches are all equivalent but its not clear what's best.
+]
+
+\subsubsection{Spherical fusion structures}
+
+.[WORK: show that the categories have duals and monoidal structure. This should be pretty easy and painless. Pentagon identity should follow from the pentangon identity on $\Vec_{\CC}$.]
+
+\subsubsection{Braiding and modularity}
+
+.[WORK: Introduce braidings. Show that $\Rep(G)$ is symmetric. Show that $\Vec_G$ does not admit a braiding if $G$ is not abelian and does admit a symmetric braiding if $G$ is abelian. Show that $\D(G)$ admits a non-degenerate braiding.]
 
 
 \subsection{The modular representation}
@@ -317,11 +682,13 @@ $\End_\C(\one)\to \CC$ which sends $\id_{\one}\in \End_{\C}(\one)$ to $1\in \CC$
 
 \subsubsection{Torus perspective}
 
+\subsubsection{Bruguieres's modularity theorem}
+
+\subsubsection{Verlinde formula}
+
 \subsubsection{Proof of modularity}
 
 \subsubsection{Proof of unitarity}
-
-\subsubsection{Bruguieres's modularity theorem}
 
 \subsubsection{Schauenberg-Ng theorem}
 
@@ -341,9 +708,27 @@ $\End_\C(\one)\to \CC$ which sends $\id_{\one}\in \End_{\C}(\one)$ to $1\in \CC$
 
 
 
+\subsection{Quantum double MTCs}
+
+\subsubsection{The Drinfeld center}
+
+\subsubsection{Muger's theorem}
+
+\subsubsection{Levin-Wen model}
+
+\subsubsection{Discrete gauge theory as a quantum double and Morita equivalence}
+
+\subsubsection{Factorizability and time reversal symmetry}
+
+
+
 \subsection{Unitarity}
 
 \subsubsection{Characterization of unitarizable MTCs}
+
+[WORK: the main theorem of this section is that an MTC is unitarizable if and only if it has positive quantum dimensions]
+
+[WORK: there also needs to be mention of the fact that braiding is automatically unitary in a unitary category]
 
 \subsubsection{Uniqueness of unitary structure}
 
@@ -375,7 +760,7 @@ $\End_\C(\one)\to \CC$ which sends $\id_{\one}\in \End_{\C}(\one)$ to $1\in \CC$
 
 \subsubsection{Nilpotence}
 
-.[WORK: surely more adjectives will be hosted here.]
+.[WORK: surely more adjectives will be hosted here. Not sure if this section is neccecary, we'll see.]
 
 
 $\newline$

@@ -179,6 +179,12 @@ B~Jack Copeland.
 \newblock The church-turing thesis.
 \newblock 1997.
 
+\bibitem[COT24]{coulembier2024growth}
+Kevin Coulembier, Victor Ostrik, and Daniel Tubbenhauer.
+\newblock Growth rates of the number of indecomposable summands in tensor
+  powers.
+\newblock {\em Algebras and Representation Theory}, 27(2):1033--1062, 2024.
+
 \bibitem[Dir31]{dirac1931quantised}
 Paul Adrien~Maurice Dirac.
 \newblock Quantised singularities in the electromagnetic field.
@@ -205,6 +211,11 @@ Samuel Eilenberg and Saunders MacLane.
 \newblock General theory of natural equivalences.
 \newblock {\em Transactions of the American Mathematical Society},
   58(2):231--294, 1945.
+
+\bibitem[ENO05]{etingof2005fusion}
+Pavel Etingof, Dmitri Nikshych, and Viktor Ostrik.
+\newblock On fusion categories.
+\newblock {\em Annals of mathematics}, pages 581--642, 2005.
 
 \bibitem[FEC{\etalchar{+}}21]{fuhrer2021proposal}
 Michael~S Fuhrer, Mark~T Edmonds, Dimitrie Culcer, Muhammad Nadeem, Xiaolin
@@ -292,6 +303,12 @@ Yifan Hong, Elijah Durso-Sabina, David Hayes, and Andrew Lucas.
 M~Zahid Hasan and Charles~L Kane.
 \newblock Colloquium: topological insulators.
 \newblock {\em Reviews of modern physics}, 82(4):3045--3067, 2010.
+
+\bibitem[HRW08]{hong2008exotic}
+Seung-Moon Hong, Eric Rowell, and Zhenghan Wang.
+\newblock On exotic modular tensor categories.
+\newblock {\em Communications in Contemporary Mathematics},
+  10(supp01):1049--1074, 2008.
 
 \bibitem[ITV{\etalchar{+}}24]{iqbal2024non}
 Mohsin Iqbal, Nathanan Tantivasadakarn, Ruben Verresen, Sara~L Campbell, Joan~M
@@ -594,6 +611,12 @@ Shibo Xu, Zheng-Zhi Sun, Ke~Wang, Hekang Li, Zitian Zhu, Hang Dong, Jinfeng
 \newblock Non-abelian braiding of fibonacci anyons with a superconducting
   processor.
 \newblock {\em Nature Physics}, pages 1--7, 2024.
+
+\bibitem[Yet92]{yetter1992framed}
+David~N Yetter.
+\newblock Framed tangles and a theorem of deligne on braided deformations of
+  tannakian categories.
+\newblock {\em Contemp. Math}, 134:325--350, 1992.
 
 \bibitem[ZGHS15]{zhu2015fractional}
 W~Zhu, SS~Gong, FDM Haldane, and DN~Sheng.
