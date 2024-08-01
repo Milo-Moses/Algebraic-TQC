@@ -210,7 +210,7 @@ This Hilbert space $\Cc$ stores the information in our gauge theory.
 
 So far our system is relatively trivial - it is just a Hilbert space, with no Hamiltonian. We connect it back to our original picture of topological order. The space $\Cc$ is the collection of ground states in a topologically ordered system. Above it there is a whole spectrum of other states. This fuller picture with a Hamiltonian adds all of the subtlety and intrigue to the system.
 
-In particular, we observed in Chapter [ref] section [ref] we observed the importants of quasiparticles in ordered media. These formed the heart of our information processing. Similarly, in gauge theory there will be quasiparticles as well, which appear as anyons higher up in the spectrum of the Hamiltonian. Some of these anyons correspond to the classical quasiparticles in ordered media, but other anyons are entirely new features of the system which did not exist before. We will analyse all this in more in the subsection that follows.
+In particular, we observed in Chapter [ref] section [ref] we observed the importants of quasiparticles in ordered media. These formed the heart of our information processing. Similarly, in gauge theory there will be quasiparticles as well which appear higher up in the spectrum of the Hamiltonian. Some of these quasiparticles will correspond to the classical quasiparticles in ordered media, but others are entirely new features of the system which did not exist before. We will analyse all this in more in the subsection that follows.
 
 \subsubsection{Kitaev quantum double model}
 
@@ -289,7 +289,7 @@ $$\Cc \xrightarrow{}\CC[\Hom(\pi_1(T^2,v), G)/\left(\substack{\text{simultaneous
 
 given by taking winding numbers.
 \end{proposition}
-\begin{proof}.[WORK: give proof]
+\begin{proof}.[WORK: give proof. I'm scared this could be too hard. It's already]
 \end{proof}
 
 The final step in using the above formula is to compute the fundamental group of the torus:
@@ -315,19 +315,29 @@ One last observation to make about this ground space is that its ground states r
 
 In particular, if we choose the square lattice on the torus, then the length $L$ of the shortest non-contractible loop is obvioulsy a good measure of linear system size. Proposition [ref] tells us that the number of local changes requires to go from one ground state to another is on the order of $L$. This is exactly the sort of condition we needed in Section [ref] to conclude topological protection in the ground states. Of course, the smallest non-zero eigenvalue of $H$ is at least $1$, which is bounded away from zero and hence there is a system-size independent gap between the ground states and the other states. Hence, we see that $H$ is a good topologically ordered Hamiltonian. 
 
-The excited states of $H$ will be described localized excitations with quasiparticle behavior. Given a state $\ket{\psi}\in \NN$, we will say that a state has an \textit{anyon at vertex $v$} if $A_v\ket{\psi}=0$ and we will say that is \textit{unnoccupied at $p$} if $A_v\ket{\psi}=1$. We say that $\ket{\psi}$ has an \textit{anyon at plaquette $p$} if $B_p\ket{\psi}=0$ and that it is \textit{unnocupied at $p$} if $B_p\ket{\psi}=1$. By Proposition [ref], every energy eigensate is either occupied or unoccupied at every vertex/plaquette. The regions in which $\ket{\psi}$ is unnoccupied are all essentially identical, leading to a homogenous bulk. The sites at which $\ket{\psi}$ is occupied are different, and behave as quasiparticles. We will define operators which move these excitations around.
-
-We think of these anyons as being localized within faces or within arbitrarily small regions around vertices depending on whether they are vertex-type or plaquette-type. We will find that the states of $H$ can be almost entirely described by anyons and their behavior .
+The excited states of $H$ will be described localized excitations with quasiparticle behavior. Given a state $\ket{\psi}\in \NN$, we will say that a state has an \textit{excitation at vertex $v$} if $A_v\ket{\psi}=0$ and we will say that is \textit{unnoccupied at $p$} if $A_v\ket{\psi}=1$. We say that $\ket{\psi}$ has an \textit{excitation at plaquette $p$} if $B_p\ket{\psi}=0$ and that it is \textit{unnocupied at $p$} if $B_p\ket{\psi}=1$. By Proposition [ref], every energy eigensate is either occupied or unoccupied at every vertex/plaquette. The regions in which $\ket{\psi}$ is unnoccupied are all essentially identical, leading to a homogenous bulk. The sites at which $\ket{\psi}$ is occupied are different, and behave as quasiparticles. We will define operators which move these excitations around.
 
 [WORK: Add something about local indistinguishability of ground states - reinforce this ``homogenous bulk" idea.
 
-More than this, it is important to note that earlier we are giving a rigorous definition of topological order. It is not immediately obvious that the KQDM satisfies this definition. This is the main content of the paper \cite{cui2020kitaev}. Should I include a proof? At the very least there should be some mention of how this fits into the definition.]
+More than this, it is important to note that earlier we are giving a rigorous definition of topological order. It is not immediately obvious that the KQDM satisfies this definition. This is the main content of the paper \cite{cui2020kitaev}. Should I include a proof? At the very least there should be some mention of how this fits into the definition. In fact, this should be a big point. The KQDM is being introduced with the main goal of giving an example of TO. Needs to talk about how it is topological.]
 
 [WORK: Maybe also reinforce that this could be done on \textit{any manifold}, and the gound states would be the same? ]
 
 \subsection{The toric code}
 
-\subsubsection{Exact solution}
+[WORK: Maybe this section can be re-done. We know that the total space $\NN$ can be decomposed as a direct sum
+
+$$\NN=\bigoplus_{\lambda}\NN_\lambda$$
+
+as a direct sum over syndromes, by general principles of diagonalizable matrices. To prove that all of the $\NN_\lambda$  have an even $\#$ of excited terms in $H$ of both $A_v$ and $B_p$ type is easy. Proving that they all have the same dimension involves the simple observation that applying $\sigma_X$ and $\sigma_Z$ between two excited terms will make them both ground states. Simple counting recovers the fact that the ground state is $4$-dimensional.
+
+The beauty of this approach is that it is immediately grounded. We have a Hamiltonian, we want to solve it - i.e. we want to compute the dimensions of the $\NN_\lambda$, and explicitely have a way of creating those basis states. The proof in a real sense is using the quasiparticle nature of the $A_v$ and $B_p$ excitations. Namely they are being moved along paths to annhilate with one another.
+
+Every operator can be decomposed as a sum of Pauli operators. Hence, unerstanding how Paulis act on $\NN$ lets understand how every operator acts on $\NN$. Paulis act on $\NN$ by creating/moving/fusing vertex/plaquette excitations. Hence, understanding vertex/plaquette excitations tells you everything you need to know about the toric code. Saying it this way makes everything feel very grounded, and it doesn't bring in anyons unnececarily early into the picture. We can talk about anyons after. Highlight the fact that they behave like quasiparticles and that they will become objects of independent interest, but that isn't the point yet.
+
+]
+
+\subsubsection{Simplified Hamiltonian}
 
 In this section we move on to analyzing the Kitaev quantum double model for $G=\ZZ_2$, which is known as the \textit{toric code}. The name toric code comes from the fact that the toric code was first introduced as an error correcting code, and was only later recast as a topologically ordered system [refs]. The toric code is still the basis for many of the most popular error correcting codes [refs]. In a real sense the toric code is the simplest nontrivial topological order. It is a fantastic example which demonstrates almost all of the phenomina of topological order with relatively little work involved. The toric code, and more generally $\ZZ_2$ discrete gauge theories, can be found in all sorts of systems such as [WORK: give examples]. 
 
@@ -430,16 +440,71 @@ for $C\in H^1(T^2,\ZZ_2)$.
 \begin{proof}.[WORK: do proof]
 \end{proof}
 
-\subsubsection{Anyons in the toric code}
+\subsubsection{Exact solution of the toric code}
 
-We now turn to analysing anyons in the toric code - localized excitations which behave as quasiparticles. Keeping in line with general principles about the Kitaev quantum double model, given a state $\ket{\psi}\in \NN$ we say that there is an anyon at vertex $v$ if $A_v\ket{\phi}=0$, and we say that vertex $v$ is unnoccupied if $A_v\ket{\phi}=\ket{\psi}$. Similarly, we say that there is a quasiparticle at plaquette $p$ if $B_p\ket{\psi}=0$ and that plaquette $p$ is unoccupied if $B_p\ket{\psi}=\ket{\psi}$. In summary,
+When given a quantum system, the first thing to do with it is to \textit{solve it}. This means diagonalizing the Hamiltonian. In this case of the toric code, the diagonalization of $\NN$ is the direct sum decomposition
+
+$$\NN = \bigoplus_{E\in \RR}\NN_{E}$$
+
+where $\NN_{E}$ is the energy $E$ eigenspace,
+
+$$\NN_{E}=\{\ket{\psi} | ,\, H\ket{\psi}= E \ket{\psi}\}.$$
+
+Solving the toric code amounts to explicitely describing $\NN_E$ for each $E$. In particular, this means computing the dimension of each space. The Hamiltonian for the toric code is 
+
+$$H=\sum_{v}(1-A_v)+\sum_{p}(1-B_p).$$
+
+Since the $A_v$ and $B_p$ all commute with each other, they are \textit{simultaneously diagonalizable}. This is a huge help in our analysis. We introduce some notation to take advantage of this insight. We define a \textit{syndrome} on the toric code to be a map
+
+$$\lambda: (\text{faces})\sqcup (\text{vertices})\xrightarrow{}\{\pm 1\}.$$
+
+We define the syndrome $\lambda$ subspace of $\NN$ to be
+
+$$\NN_{\lambda}=\{\ket{\psi}\in \NN | \,\, A_{v,1}\ket{\psi}=\lambda(v)\ket{\psi},\,\, B_{p,1}\ket{\psi}=\lambda(p)\ket{\psi}    \forall v,p\}$$
+
+We define the energy $E_{\lambda}$ of a syndrome $\lambda$ by the formula
+
+$$E_{\lambda}=\sum_{v}\frac{1}{2}(1-\lambda(v))+\sum_{p}\frac{1}{2}(1-\lambda(p)).$$
+
+The fact that the operators $A_v$, $B_p$, and $H$ are simultaneously diagonalizable is codified in the following observations:
+
+\begin{proposition} We have that
 
 \begin{align*}
-\text{$\ket{\psi}$ has anyon at $v$}\iff A_v\ket{\psi}&=0 \iff A_{v,1}\ket{\psi}=-\ket{\psi}\\
-\text{$\ket{\psi}$ has anyon at $p$}\iff B_p\ket{\psi}&=0 \iff B_{p,1}\ket{\psi}=-\ket{\psi}.
+\NN = \bigoplus_{\text{syndromes $\lambda$}} \NN_{\lambda}, && \NN_{E}=\bigoplus_{\substack{\text{syndromes $\lambda$}  \\ E_\lambda = E }  } \NN_{\lambda}.
 \end{align*}
 
-We call the anyons at vertices \textit{vertex type} or \textit{$Z$-type} anyons, and we call the anyons at faces \textit{plaquette type} or \textit{$X$-type} anyons. Our key observation is that applying $\sigma_X$ and $\sigma_Z$ gives total control over the behavior of anyons. Namely, applying $\sigma_X$ or $\sigma_Z$ in the correct circumstates corresponds to creating, moving, and fusing anyons. This comes from the following computation. Given an edge $e$ in the lattice and an operator $U:\CC^2\to \CC^2$, denote by $(U)_e:\NN\to\NN$ the operator which applies $U$ on the tnesor factor of $\CC^2$ at edge $e$. We compute the following:
+\end{proposition}
+\begin{proof} This follows immediately from the above discussion.
+\end{proof}
+
+
+We can now solve the toric code:
+
+\begin{proposition} We have that
+
+\begin{equation*}
+\dim(\NN_{\lambda}) = 
+\begin{cases}
+4 & \text{if }\prod_{v}\lambda(v) = \prod_{p}\lambda(p) = 1\\
+0 & \text{otherwise.}
+\end{cases}
+\end{equation*}
+
+\end{proposition}
+\begin{proof}.[WORK: do proof]
+\end{proof}
+
+\begin{corollary} We have that
+
+$$\dim (N_{E})=[WORK: write\,\, formula]$$
+\end{corollary}
+\begin{proof} . [WORK: do proof]
+\end{proof}
+
+[WORK: this section will have some commentary about how Pauli operators are being used to fuse $X$-type and $Z$-type excitations. The way this commentary sounds should depend on the way the proof looks. I might want to include this lemma before the proof:
+
+Given an edge $e$ in the lattice and an operator $U:\CC^2\to \CC^2$, denote by $(U)_e:\NN\to\NN$ the operator which applies $U$ on the tensor factor of $\CC^2$ at edge $e$. We compute the following:
 
 \begin{lemma} For any vertex $v$, edge $e$, plaquette $p$, we have
 
@@ -467,98 +532,129 @@ B_p (\sigma_X)_e=
 
 
 \end{lemma}
-\begin{proof}.[WORK: do proof]
-\end{proof}
 
-Suppose that $\ket{\psi}$ is a state with no anyons -that is, a ground state. Given any edge $e$, the state $(\sigma_X)_e \ket{\psi}$ will not be a ground state. In particular, it will no longer commute with $B_p$ at the two plaquettes touching $e$. In this way, applying $\sigma_X$ to the edge $e$ spontanously created a pair of $X$-type anyons around it. Similarly, the staet $(\sigma_Z)_e\ket{\psi}$ will no longer commute with the $A_v$ operators at the two vertices touching $e$. Hence applying $\sigma_Z$ to the edge $e$ spontaneously created a pair of $Z$-type anyons around it. Applying further $\sigma_Z$ and $\sigma_X$ operators has the effect of chaning the quasiparticle content of the state further. If both the adjacent sites are unnoccupied then applying the operator will create a pair of anyons, if one of the sites is occupied then applying the operator will move the anyon from the occupied site to the unoccupied site, and if both of the sites are occupied then applying the operator will annhilate the anyons. We demonstrate this in some examples below
+]
 
-\begin{figure}[h]
-\begin{center}
-\includegraphics[scale=.04]{anyon-examples}
-\end{center}
-\end{figure}
+\subsubsection{Toric code as a topologically ordered system}
 
-We can use this idea of anyons to fully solve the toric code. We introduce some terminology and notation. Given an energy eigenstate $\ket{\psi}$, there is an associated map $\lambda: (\text{vertices})\sqcup (\text{plaquettes})\to \{\pm 1\}$ defined by the relation $A_{v,1}\ket{\psi}=\lambda(v)\ket{\psi}$, $B_{p,1}\ket{\psi}=\lambda(p)\ket{\psi}$. We call maps $\lambda: (\text{vertices})\sqcup (\text{plaquettes})\to \{\pm 1\}$ \textit{syndromes}, and the map associated to $\ket{\psi}$ is the \textit{syndrome of $\ket{\psi}$}. These syndromes allow us to speak intelligently about the locations of anyons within a state. For any syndrome $\lambda$, define
+.[WORK: prove that toric code satisfies axioms of TO.]
 
-$$\NN_\lambda=\left\{\ket{\psi}\left| \text{syndrome of $\ket{\psi}$ is $\lambda$}\right.\right\}.$$
+[WORK: This section will really dig into how the Pauli algebra acts on states]
 
-It is clear that
+[WORK: this section can also show that \textit{global} errors (e.g. $\sigma_X$ all the way around a torus) acts non-trivially. Maybe give a proof? Make a little quantum computer? If I do, I should reformulate it in in the ``adiabatically changing Hamiltonian" way to tie it into the way I talked about it in the introduction.]
 
-$$\NN=\bigoplus_{\text{syndromes $\lambda$}}\NN_\lambda$$
 
-and
 
-$$\C=\NN_{\sigma(v)=\sigma(p)=1 \,\, \forall v,p}$$
+\subsection{Anyons}
 
-The following proposition and its proof give a complete description of the eigenstates and eigenvalues
+\subsubsection{Topological quantum information in excited states}
 
-\begin{proposition}The dimension of $\NN_{\lambda}$ is $4$ if the number of vertices $v$ and plaquettes $p$ for which $\lambda(v)=-1$ and $\lambda(p)=-1$ are both even, and the dimension of $\NN_{\lambda}$ is zero otherwise. The eigenvalue of every vector in $\NN_{\lambda}$ is equal to the total number of anyons in the system.
-\end{proposition}
-\begin{proof}.[WORK: do proof]
-\end{proof}
+Let us recap our current picture of topological quantum information. We introduced topological order, and argued as a general principle that its ground states are invariant under local deformations. That is, if we start with a ground state in a topologically ordered system, apply some local operator, and then project back onto ground states, then we will get back to the state we started with up to some phase. This lets us store information in ground states. This information can be used as a place to store stable information, and can be acted on by global operators to perform computations such as in proposition [ref].
 
-The anyons in the toric code are interesting objects in their own right. For example, we can analyse what happens when we braid anyons. Suppose that $\ket{\psi}$ is a state with one $X$-type anyon and one $Z$-type anyon at adjacent sites. That is, the $X$-type anyon is at a vertex $v$ touching a plaquette $p$. Moving the $Z$-type anyon around the $X$-type anyon corresponds to applying $\sigma_Z$ to the edges around the $X$-type anyone one by one. In other words, the operator required to move the $Z$-type anyon is the tensor product of $\sigma_Z$ along the edges bounding $p$. However, by definition, this operator is exactly $B_{p,1}$. We know that $B_{p,1}\ket{\psi}=-\ket{\psi}$ by the definition of having an anyon at plaquette $p$. Hence, we conclude that \textit{moving a $Z$-type anyon around an $X$-type anyon results in a phase of $-1$}. Similarly, we oberve that moving a $Z$-type anyon around an $X$-type anyon also results in a phase of $-1$, as shown below:
+We now take this perspective to its logical extreme. The dimension of the ground state space depends only on the topological order of the system and the global topology of the physical space. For instance, toric code topological order on a torus will always have a four dimensional ground space, independent of system size or choice of microscopic lattice.
 
-\begin{figure}[h]
-\begin{center}
-\includegraphics[scale=.04]{mutual-anyon-stats}
-\end{center}
-\end{figure}
+To make a computer, however, we need to be able to store arbitrarily large amounts of information. This means that either we will need to work with increasingly complex topological orders or increasingly complex surfaces. There are only a handful of topological orders known to be physically realizable, so working with increasinlgy complex topological orders is out of the question. Hence, once needs to work with increasingly complex surfaces. By working on high-genus surfaces, the ground state space can be made as large as possible. This gives the following picture for a topological quantum computer:
 
-We codify this in a proposition. However, seeing as we have not defined what it means for one anyon to move ``around" another, we can only state it on the physical level of rigor:
+[WORK: add picture, a-la Freedman et al.]
 
-\begin{propositionph} Moving $X$-type anyons around $Z$-type anyons results in a phase of $-1$. Similarly, moving $Z$-type anyons around $X$-type anyons results in a phase of $-1$.
-\end{propositionph}
-\begin{proof}.[WORK: do proof]
-\end{proof}
+This approach is potentially possible, and we will explore it more in section [ref]. However, no matter the implimentation it adds a great deal of complexity. Adding genus onto a computer chip is hard work. It would be much better to work with a state with the least complex topology possible, preferably a plane, sphere, or torus.
 
-There is also an interesting action of anyons on the ground states of the toric code. This action is performed by starting with a ground state, creating anyon pairs, and then moving one of the anyons in that pair around a non-trivial loop around the torus, and then annhilating it back with its partner. This process is shown below:
+It is for this reason that we turn to a key idea in the theory of topological order: \textit{being careful, it is possible to store topologically protected information in the excited states of a topologically ordered system}.
 
-[WORK: include diagram]
+[WORK: picture of spectrum diagram, with excited states boxed. ``Use these to store information!"]
 
-We can describe this action completely as fllows:
+Using the excited states of a topologically ordered system to store information comes with several obstacles:
 
-[WORK: give the picture of TQC by moving anyons around in proposition-format]
+\begin{enumerate}
+\item It requires careful study. This isn't a fundamental problem, but it is relevant to us since we are about to embark on that study;
+\item It requires a more powerful control over the topologically ordered system than working only with ground states. This can make the approach impossible in some physical systems;
+\item It introduces non-topological local degrees of freedom. This non-topological information needs to be worked around so that proper fault-tolerant computations can be performed.
+\end{enumerate}
 
-This concludes our picture of anyons in the toric code.
+We now recall our procedure for storing information in ground states. The key point is that we have a projector $\PP:\NN\xrightarrow{}\NN_{g.s.}$. This projector satisfies the relation that $\PP \OO \PP = \lambda\cdot \PP$ for any local operator $\OO$, for some $\lambda\in \CC$. Our physical picture for topological quantum computing is that we are continually measuring with respect to $\PP$, and hence constantly projecting into the ground space. The formula $\PP \OO \PP$ says that even if noise is applied between rounds of projection it is okay because our state will only change by a phase and hence will still store the same information.
 
-\subsection{Non-abelian anyons}
+[WORK: try $\PP_{E}$ onto states of a fixed energy. Problem: drift. Solution: constrain drift. Anyons!]
+
+
+
+
+\subsubsection{Definition}
+
+We haven't mentioned them by name yet, but \textit{anyons} are one of the key concepts in the theory of topological quantum information. This is so much true that our algebraic theory of topological quantum information is in reality a theory of anyons. It is a nontrivial fact that describing anyon behavior is enough to recover the rest of topological quantum information. So, before going to the algebraic picture, it behooves us to get very clear on what anyons are, how they behave, and why they are important.
+
+\begin{definition} An \textit{anyon} is a localized excitation in a topologically ordered system.
+\end{definition}
+
+Let's unpack this definition. To be concrete we work first in the Kitaev quantum double model based on a finite group $G$.
+
+For our first picture of anyons we will ignore global topology. This means either working on an infinite plat plane or on a small region in some large sphere or torus. By definition our anyon must be \textit{localized}. In physics, we say that a phenominon is localized if it is constrained to some compact domain which is small relative to system size.
+
+An excited state is by definition a state which has high energy, that is, a state which is not a ground state. A state hosts a localized excitation within a region if it is a ground state outside of that region, and only has high energy within the region. This gives the below picture of an anyon:
+
+[WORK: add picture.]
+
+Formally, given a compact region $R$, we say that a state $\ket{\psi}$ of the Kitaev quantum double model \textit{hosts an anyon} in $U$ if $A_v\ket{\psi}=B_p\ket{\psi}=\ket{\psi}$ for all $v,p\not\in U$.
+
+More generally, a state could host multiple anyons. Given a finite set $R_1.... R_n$ of compact connected regions, we say that $\ket{\psi}$ hosts $n$ anyons at $R_1$, $R_2$,... $R_{n-1}$ and $R_n$ if $A_v\ket{\psi}=B_p\ket{\psi}=\ket{\psi}$ for all $v,p\not\in \bigcup_{i=1}^nR_i$.
+
+[WORK: add picture of three anyons on the torus.]
+
+Of course, with this definition it is not impossible for the physical space to be entirely covered with anyons, as shown below:
+
+[WORK: open cover on the torus.]
+
+In this case the anyon picture is not very useful. Every state $\ket{\psi}$ can be viewed as a ground state covered uniformly with anyons. The idea is that at low temperatures the anyon picture will become more useful. At low temperuatres the energy $E$ of the system will be bounded above indenpendent of system size. This means that $A_v\ket{\psi}\neq \ket{\psi}$ and $B_p\ket{\psi}\neq \ket{\psi}$ at a bounded number of different sites $v,p$. Hence, at low temperatures and large system sizes all realistic states $\ket{\psi}$ can be modeled as a large homogenous bulk with a small number of anyons.
+
+Clearly, anyons are localized regions of differences in a homogenous bulk. Moreover, we see that some operators can create and move anyons. For instanece, let $\OO:\NN\to\NN$ be linear operator. Given any state $\ket{\psi}$, the operator $\O$ can change the anyon content of $\ket{\psi}$:
+
+[WORK: write out the three cases
+
+\begin{itemize}
+\item Move anyon;
+\item Create anyons;
+\item Annhilate anyons;
+\end{itemize}
+
+This is also a good place to introduce the term \textit{local operator}. It is clear that local operators can only change anyon content in a bounded region, and only by a bounded amount. This means that local operators work well with the anyon picture.
+
+This above observation makes anyons behave as \textit{quasiparticles}. Manipulating these anyonic quasiparticles allows for topological quantum computing in a style similar to what was described in section [ref]. I should say a few words about this.
+]
+
+[WORK:
+
+Talk about this in the toric code. Vertex and plaquette failiures give anyons. $\sigma_X$ and $\sigma_Z$ can act as operators to move, create, and annhilate anyons. I should mention and include this in this section, before going any further.
+]
+
+
+
+[WORK: So far I haven't defined what an anyon is for topological orders other than the KQDM. One easy way to do this is by putting some set $L$ of sites, choosing $d>0$, defining $\NN=\bigotimes_{\ell \in L}\CC^d$. Then we have $H=\sum_{i}H_i$, $[H_i,H_j]=0$, $H_i^2=1$, $H_i$ localized to some region $U_i$. This is a commuting local projector Hamiltonian. It is easy to define anyons in a model like this one. I'm not sure if this would be informative or distracting.]
+
 
 \subsubsection{Principles of anyons}
 
-We recall that \textit{anyons} are localized excitations in topologically ordered systems. They behave as quasiparticles. In the previous section we analysed the toric code, and explored the behavior of anyons in the toric code. There were two types of anyons : $X$-type and $Z$-type. Each anyon type was its own antiparticle. The anyons braided trivially with themselves, but bothing any type of anyon around the other results in a $-1$ phase. In this subsection we will discuss the general theory of anyons which the toric code is part of.
+Now that we have defined anyons, its good to take the time to talk about the general principles which guide them. The most important of these principles is their \textit{braiding}. We demonstrate this with anyons in the toric code. Suppose that we move an $Z$-type anyon around a $X$-type anyon, in some state $\ket{\psi}$. This amounts to applying $\sigma_Z$ operators in a square around a plauqette:
 
-To begin, we will recall some broader themes in particle physics. The modern world of particle physics is dominated by the \textit{standard model}. This model is a quantum field theory which describes the fundamental particles of the universe and how they interact. There are 61 different elementary particle types, each taking part in a broad explanation of the fundamental forces of the unvierse. An important feature of the standard model is a dichotemy between \textit{bosons} and \textit{fermions}. When bosons are exchanged it does not affect their underlying wave function, and when fermions are exchanged it results in a phase of $-1$.
+[WORK: add picture.]
 
-Put more concretely, consider some particle type $A$. Let $V_2$ denote the Hilbert space of a system containing $2$ identical $A$-type particles. We can consider a unitary operator $\swap:V_2\to V_2$, which encodes the action on $V_2$ induces by taking the two particles and swapping their positions. It is a feature of the standard model that the details of how this swap doesn't change the action on $V_2$ - there is a well-defined $\swap$ map which only depends on the topology of the swap. It is a fact from the standard model that either $\swap$ is the identity map or $\swap$ is the unitary which multiples phases by $-1$. If $\swap=I$ then we call $A$ a boson, and if $\swap=-I$ we call $A$ a fermion.
+Here we observe something amazing. The operator used to move the $Z$-type anyon around the $X$-type anyon is $\bigotimes_{\text{edges touching $p$}}\sigma_Z$. This operator is exactly $B_{p,1}$! Hence, by the fact that there is a $X$-type anyon at $p$, we conclude that $B_{p,1}\ket{\psi}=-\ket{\psi}$ and thus moving the $Z$-type anyon around the $X$-type anyon resulted in a phase of $-1$.
 
-We now explain why all of the particles in the standard model are bosons or fermions. The general idea is as follos. If we swap twice, then the particles go back to their original position. Hence, $\swap^2=I$. Hence, $\swap=I$ or $\swap=-1$. This general arguments works well for the standard model, but it has several subtleties which are important to highlight. Firstly, just because $\swap^2$ brings the particles got back where they started doesn't mean that the path they took has trivial topology. In space time it looks like the following:
+Suppose that we performed a similar experiment in three dimensional space. We got two particles, and moved one around the other. Clearly, this trajectory can be continuously deformed into the trajectory of doing nothing:
 
-\begin{figure}[h]
-\begin{center}
-\includegraphics[scale=.04]{two-swaps}
-\end{center}
-\end{figure}
+[WORK: add picture.]
 
-If physical space had two dimensions, then this is a topologically nontrivial braid. The important feature of the standard model is that it has three space dimensions. In three space dimensions, the double swap has trivial topology: the two strands can be moved smoothly past each other without intersected by pushing them into different parts of the third dimension. In general, the possible ways that $n$ particles can move around each other in two dimensions is the braid group $B_n$ we defined in section [ref], whereas the ways that particles can move around each other in three dimensions degenerates to the symmetric group $S_n$. Let $V_n$ denote the $n$ particle system of $n$ identical particles of type $A$. In two dimensions, moving the $n$ particles around in braids gives a representation
+Hence, moving two particles around each other must act by the identity. Formally, the state-space of a two particle system will be some vector space $V_2$. The action of moving one particle around the other is some unitary operator $V_2\to V_2$. In three dimensional space, this opearator must be the identity.
 
-$$B_n\xrightarrow{}U(V_n)$$
+Hence, we have found something fantastic. The behavior of anyons in (2+1)D space is fundamentally different than the behavior of particles in (3+1)D space.
 
-whereas in three dimensions it gives a representation
+The fact that there could theoretically be quasiaprticles in (2+1)D space in which moving one particle around another acts nontrivially was first theorized in [ref]. It was later in [ref] that Wilczek discovered that the FQHE could host anyons, and thus these exotic particles could be realized in the laboratory.
 
-$$S_n\xrightarrow{}U(V_n).$$
+The possibility for anyons in (2+1)D space is especially exciting when it is contrasted with how constrained braiding statstics are in (3+1)D space. Consider some particle in (3+1)D space. We consider the swap map, exchaning two copies of the particle. When this swap map is repeated twice, we get a braid identitcal to moving one particle around the other. Hence, swapping twice gives the identity. Denoting the Hilbert space of the two particle system by $V_2$, a-priori the swap map $\swap:V_2\to V_2$ could be any operator which squares to one. However, subtle topological and algebraic considerations revealt that $\swap$ must act by some phase, $\swap = \lambda \cdot \id_{V_2}$, $\lambda \in \CC$ [WORK: refs]. A particle in which $\swap = \id$ is called a boson, and a particle in which $\swap = - \id $ is a fermion. All particles in (3+1)D space are bosons or fermions.
 
-This difference between $B_n$ and $S_n$ causes a huge change between what is possible in three dimensions versus two dimensions. For instance, suppose that our braids only act by phases. That is, the image of the particle statistics maps lie in $U(1)\hookrightarrow{}U(V_n)$. In $B_n$, there is such a representation corresponding to any phase $\omega\in U(1)$. In this representation, exchanging two identical particles results in a phase $\omega$. In $S_n$, there are only two such representations: the trivial representation and the sign representation, corresponding to the phases $+1$ and $-1$ accordingly. These two representations correspond to bosons and fermions.
+In (2+1)D, many more particles are possible. For instance, $\swap = \lambda \cdot \id_{V_2}$ is possible for many values of $\lambda\in \CC$ other than $\pm 1$. The fact that they can have \textit{any} phase $\lambda$ is where they get the name anyon. In fact, there are many anyonic models in which $\swap$ acts by some higher-dimensional linear map which is not a scalar. In particular, this happens in the Kitaev quantum double model for every non-abelian finite group $G$.
 
-The last part of the explanation of why all particles in the standard model are fermions and bosons is more subtle. From our above discussion, it is clearly a-priori possible that there could be particles in 3 spacial dimensions which act by non-trivial higher dimensional representations of $S_n$. It turns out that this doesn't happen, and in fact it \textit{can't} happen in any (3+1)D quantum field theory, but this is for much more subtle reasons [WORK: add refs]. This doesn't mean that there aren't any models in 3 dimensions with quasiparticles that aren't bosons or fermions - these certainly exist [WORK: add refs]. It just means that these models are more rare and require some amount of trickery. The fact that all fundamental particles in (3+1)D quantum field theories are fermions or bosons is one of the main reasons we are working with (2+1)D systems in this book.
+These exotic statastics are the basis of many proposals for topological quantum computing. Choose some topological order. Let $V_n$ denote the Hilbert space of possible states on the torus with $n$ identical anyons. Braiding anyons around each other acts by non-trivial operators $V_n\to V_n$. Choosing $n$ to be large, the space $V_n$ can store a large amount of information and the operators $V_n\to V_n$ can perform a large amount of computations. These computations make a quantum computer.
 
-The toric code already demonstrates how particles can behave in ways in (2+1)D which are impossible in (3+1)D. When an $X$-type particle is moved all the way around a $Z$-type particle it results in a phase of $-1$. Of course, in (3+1)D moving one particle all the way around another is topologically trivial and hence would have to result in a phase of $+1$.
 
-It is from this discussion that the name \textit{anyon} arrises. Bosons have $+1$ exchange phases, fermions have $-1$ exchange phases. Anyons, excitations in topolgoically ordered systems, can have \textit{any} exchange phase. Hence, \textit{any}on. Additionally, there are many natural systems which exhibit anyons whose exchange statistics results in higher dimensional representations of the braid group. These are known as \textit{non-abelian} anyons. Anyons which act by phases are known as \textit{abelian} anyons.
-
-One intuition for the name abelian versus non-abelian comes from the Kitaev quantum double model. We will see that the Kitaev quantum double model based on a finite group $G$ hosts non-abelian anyons if and only if $G$ is non-abelian. Alternatively, you could motivate the name by noticing that an anyon is abelian if and only if the image of its associated braid group representation is abelian.
-
-The algebraic theory of anyons is the heart and soul of topological order. This is quantified by the fact that our algebraic description of topological order will really be an algebraic description of anyons, and we will be asserting implicitely that describing the behavior of the anyons is enough to describe the topological order.
 
 \subsubsection{The algebraic structure of discrete gauge theory}
 
