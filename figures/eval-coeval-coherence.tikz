@@ -1,0 +1,38 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-2, 0.5) {};
+		\node [style=none] (1) at (-1, 0.5) {};
+		\node [style=none] (2) at (0.75, 0) {$=$};
+		\node [style=none] (3) at (-2, -1.5) {$A$};
+		\node [style=none] (5) at (2, 0) {$\id_{A},$};
+		\node [style=none] (12) at (-1, -0.5) {};
+		\node [style=none] (13) at (0, -0.5) {};
+		\node [style=none] (14) at (-0.5, 0) {$A^*$};
+		\node [style=none] (15) at (0, 1.5) {$A$};
+		\node [style=none] (20) at (0, 1) {};
+		\node [style=none] (21) at (-2, -1) {};
+		\node [style=none] (22) at (8, 0.5) {};
+		\node [style=none] (23) at (7, 0.5) {};
+		\node [style=none] (24) at (8.75, 0) {$=$};
+		\node [style=none] (25) at (8, -1.5) {$A^*$};
+		\node [style=none] (26) at (10, 0) {$\id_{A^*}$};
+		\node [style=none] (27) at (7, -0.5) {};
+		\node [style=none] (28) at (6, -0.5) {};
+		\node [style=none] (29) at (7.325, 0) {$A$};
+		\node [style=none] (30) at (6, 1.5) {$A^*$};
+		\node [style=none] (31) at (6, 1) {};
+		\node [style=none] (32) at (8, -1) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend left=90, looseness=2.00] (0.center) to (1.center);
+		\draw [bend right=90, looseness=2.00] (12.center) to (13.center);
+		\draw (1.center) to (12.center);
+		\draw (13.center) to (20.center);
+		\draw (0.center) to (21.center);
+		\draw [bend right=90, looseness=2.00] (22.center) to (23.center);
+		\draw [bend left=90, looseness=2.00] (27.center) to (28.center);
+		\draw (23.center) to (27.center);
+		\draw (28.center) to (31.center);
+		\draw (22.center) to (32.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

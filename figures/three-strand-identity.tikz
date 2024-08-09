@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-5, 3) {};
+		\node [style=none] (1) at (-5, 1) {};
+		\node [style=none] (2) at (-4, 1) {};
+		\node [style=none] (3) at (-4, 3) {};
+		\node [style=none] (4) at (-3, 1) {};
+		\node [style=none] (5) at (-3, 3) {};
+		\node [style=none] (6) at (-2, 2) {$=$};
+		\node [style=none] (7) at (0, 2) {$\id_{A\otimes B \otimes C}$};
+		\node [style=none] (8) at (-5, 0.5) {$A$};
+		\node [style=none] (9) at (-4, 0.5) {$B$};
+		\node [style=none] (10) at (-3, 0.5) {$C$};
+		\node [style=none] (11) at (-5, 3.5) {$A$};
+		\node [style=none] (12) at (-4, 3.5) {$B$};
+		\node [style=none] (13) at (-3, 3.5) {$C$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (1.center) to (0.center);
+		\draw (2.center) to (3.center);
+		\draw (4.center) to (5.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

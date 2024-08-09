@@ -1,17 +1,17 @@
 
-\section{Modular tensor categories}
+\section{Modular categories}
 
 \subsection{Overview}
 
 \subsubsection{Introduction}
 
-In this chapter we will be giving a detailed analysis of modular tensor categories, the abstract algebraic structures used to describe anyons in topological order. We recall below how this fits into the general framework of this book:
+In this chapter we will be giving a detailed analysis of modular categories, the abstract algebraic structures used to describe anyons in topological order. We recall below how this fits into the general framework of this book:
 
 \begin{equation*}
 \tikzfig{mathematical-outline-MTC}
 \end{equation*}
 
-Describing exactly what an anyon and how it can transform in terms of states and unitary operators on a Hilbert space can be difficult. However, describing abstractly how these transformations compose with one another can be done realtively simply. Hence we take a composition-first category-theoretic approach to anyons. We will make heavy use of the diagramatic language of braided monoidal categories established in Chapter [ref]. More concretely, we will think of a modular tensor category as being the category with the following data:
+Describing exactly what an anyon and how it can transform in terms of states and unitary operators on a Hilbert space can be difficult. However, describing abstractly how these transformations compose with one another can be done realtively simply. Hence we take a composition-first category-theoretic approach to anyons. We will make heavy use of the diagramatic language of braided monoidal categories established in Chapter [ref]. Concretely, we will think of a modular category as being the category with the following data:
 
 \begin{equation*}
 \left(\substack{
@@ -20,7 +20,7 @@ Describing exactly what an anyon and how it can transform in terms of states and
 }\right)
 \end{equation*}
 
-Up to topological equivalence, there are not that many things that a collection of anyons can do. The most basic thing is to move anyons around each other - this is known as braiding. If the anyons touch each other then they can congeal into a single composite anyon - this is known as fusion. Even if there are no anyons in a system, however, there is always something possible. Anyons can be spontaneously created, so long as every anyon which is created comes along with its corresponding antiparticle. This is known as \textit{pair-creation}. These three operations are the fundamental structures which we will building into modular tensor categories:
+Up to topological equivalence, there are not that many things that a collection of anyons can do. The most basic thing is to move anyons around each other - this is known as braiding. If the anyons touch each other then they can congeal into a single composite anyon - this is known as fusion. Even if there are no anyons in a system, however, there is always something possible. Anyons can be spontaneously created, so long as every anyon which is created comes along with its corresponding antiparticle. This is known as \textit{pair-creation}. These three operations are the fundamental structures which we will building into modular categories:
 
 \begin{enumerate}
 \item braiding;
@@ -28,29 +28,29 @@ Up to topological equivalence, there are not that many things that a collection 
 \item pair-creation.
 \end{enumerate}
 
-One potentially useful way of thinking about modular tensor categories comes from analogy with classical physics. We saw in Chapter [ref] that topological classical systems have an algebraic description in terms of finite groups. Namely, quasiparticles in the system of ordered media with order space $M$ is algebraically characterized by the fundamental group $\pi_1(M,m)$ of $M$ relative to some basepoint $m\in M$. Seeing as topological order is a vast quantum generalization of classical ordered media, we can think of modular tensor categories as being a vast quantum generalization of finite groups. Every finite group induces a modular tensor category, by first constructing the Kitaev quantum double model based on that finite group and then describing its anyons. Most modular tensor categories, however, lie beyond this description.
+One potentially useful way of thinking about modular categories comes from analogy with classical physics. We saw in Chapter [ref] that topological classical systems have an algebraic description in terms of finite groups. Namely, quasiparticles in the system of ordered media with order space $M$ is algebraically characterized by the fundamental group $\pi_1(M,m)$ of $M$ relative to some basepoint $m\in M$. Seeing as topological order is a vast quantum generalization of classical ordered media, we can think of modular categories as being a vast quantum generalization of finite groups. Every finite group induces a modular category, by first constructing the Kitaev quantum double model based on that finite group and then describing its anyons. Most modular categories, however, lie beyond this description.
 
-Due to the frequency of our use of the term, we will abbreviate modular tensor category to \textit{MTC}.
+[WORK: There's an issue in this treatment. There is one piece of data beyond the scope of an modular categories - the chiral central charge. This is a remnant of the fact that the bulk-to-boundary correspondane is not exact because the boundary can have stacked $E_8$ phases, see \cite{bonderson2021measuring}. Of course this is not something to dive into now. However, I want to be maximally honest - point out that there is a unique piece of topologically invariant information beyond the scope of modular categories. Maybe include somewhere (as an exercise?) the treatment of chiral central charge mod 8? I think this would make for a good footnote.] 
 
 \subsubsection{Using the final product}
 
-Before developping the theory of modular tensor categories (MTCs), it is good to get a feel for what using the final product is like. An MTC itself will be a big infinite thing, with infinitely many objects and infinitely many morphisms between those objects. However, all MTCs are in a real sense \textit{finitely generated}. What we mean by this is that plugging in a finite number of objects and morphisms, the rest of the obejcts and morphisms can be recovered by the abstract rules encoded in the formalism. For example, consider the 3-strand braid group $B_3$. This group has ininitely many elements and the group operation $\cdot: B_3\times B_3\to B_3$ takes a-priori an infinite amount of data to describe. However, the presentation
+Before developping the theory of modular categories, it is good to get a feel for what using the final product is like. A modular category itself will be a big infinite thing, with infinitely many objects and infinitely many morphisms between those objects. However, all modular categories are in a real sense \textit{finitely generated}. What we mean by this is that plugging in a finite number of objects and morphisms, the rest of the obejcts and morphisms can be recovered by the abstract rules encoded in the formalism. For example, consider the 3-strand braid group $B_3$. This group has ininitely many elements and the group operation $\cdot: B_3\times B_3\to B_3$ takes a-priori an infinite amount of data to describe. However, the presentation
 
 $$B_3=\Braket{\sigma_1, \sigma_2 | \sigma_1 \sigma_2 \sigma_1 = \sigma_2 \sigma_1 \sigma_2}$$
 
 gives  completely finite description of $B_3$. It is important to note, however, that this presentation would \textit{not} have been enough to recover $B_3$ if we had just been told that $B_3$ is a monoid. The fact that $B_3$ is a group implied the existence of elements $\sigma_1^{-1}$, $\sigma_{2}^{-1}$, and defined how they interacted with $\sigma_1,\sigma_2$. We see in this way that the axioms of a group not only serve as a restriction on what mathematical objects are allowed to be groups, but they also serve as a compression technique. They give the rules by which a minimal collection of data can be used to generate the rest.
 
-In a similar way, the axioms of MTCs are not only neccecary by the fact that they restrict which categories can be MTCs, but they are also vital in the fact that they allow us to generate a full description of anyons from a minimal collection of data. For practically-minded readers, this can be viewed as the main motivation for defining MTCs at all, instead of just working with important examples.
+In a similar way, the axioms of modular categories are not only neccecary by the fact that they restrict which categories can be modular categories, but they are also vital in the fact that they allow us to generate a full description of anyons from a minimal collection of data. For practically-minded readers, this can be viewed as the main motivation for defining modular categories at all, instead of just working with important examples.
 
-The final challenge in going from MTCs to their description in terms of a finite set of data is in comming up with an efficient standard way of descrbing morphisms in an MTC. This is done using the Yoneda perspective, as discussed in section [ref].
+The final challenge in going from modular categories to their description in terms of a finite set of data is in comming up with an efficient standard way of descrbing morphisms in a modular category. This is done using skeletonization, as discussed in section [ref].
 
-In the end, the data of an MTC will look like what we have below for the toric code:
+In the end, the data of a modular category will look like what we have below for the toric code:
 
-[WORK: add toric code MTC data]
+[WORK: add toric code modular category data]
 
 Or, for a more complicated example, we can consider the data for $G=S_3$:
 
-[WORK: add $G=S_3$ MTC data]
+[WORK: add $G=S_3$ modular category data]
 
 A large table of these descriptions are found in Chapter [ref]. We now give a worked example of how this data is used to compute observable quantities.
 
@@ -60,7 +60,7 @@ A large table of these descriptions are found in Chapter [ref]. We now give a wo
 
 \subsubsection{Definition}
 
-In this section we finally define modular tensor categories (MTCs), which are the main mathematical content of this book. Seeing as lots of data is involved, we spread out the definition over a series of steps as to not overload the senses. These intermediate definitions are also important in their own right, because they will be used in other places in the algebraic theory of topological phases.
+In this section we finally define modular categories, which are the main mathematical content of this book. Seeing as lots of data is involved, we spread out the definition over a series of steps as to not overload the senses. These intermediate definitions are also important in their own right, because they will be used in other places in the algebraic theory of topological phases.
 
 
 \begin{definition}[Fusion category] A fusion category is the following data:
@@ -82,7 +82,7 @@ Such that:
 \raggedleft\qedsymbol{}
 \end{definition}
 
-A fusion category is part of the way towards having all of the requisite structures of a modular tensor category: it has a method for fusion inherited from the tensor product, and it has half of a method for pair-creation coming from right-rigidity. The $\CC$-linearity allows us to think of hom-spaces as vector spaces, which allows us to treat hom-spaces as quantum systems. The condition (1) is a comptability between the $\CC$-linear structure and the monoidal structure. The conditions (2)-(3) are strong niceness and finiteness conditions - we will explain them in detail later. We now move one step closer to our definition of modular tensor category:
+A fusion category is part of the way towards having all of the requisite structures of a modular category: it has a method for fusion inherited from the tensor product, and it has half of a method for pair-creation coming from right-rigidity. The $\CC$-linearity allows us to think of hom-spaces as vector spaces, which allows us to treat hom-spaces as quantum systems. The condition (1) is a comptability between the $\CC$-linear structure and the monoidal structure. The conditions (2)-(3) are strong niceness and finiteness conditions - we will explain them in detail later. We now move one step closer to our definition of modular category:
 
 \begin{definition}[Spherical fusion category] A spherical fusion category is the following data:
 
@@ -97,7 +97,9 @@ Such that:
 \item The left-rigid and right-rigid structures on $\C$ satisfy the axioms of a pivotal structure on $\C$;
 \item For every object $A\in \C$ and for every morphism $f: A \to A$, we have
 
-[WORK: add spherical diagram.]
+\begin{equation*}
+\tikzfig{spherical-category}
+\end{equation*}
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
@@ -105,20 +107,16 @@ Such that:
 
 A spherical fusion category now has a structure for fusion, and a full structure for pair-creation. The 2nd condition is known as the \textit{spherical axiom}. We will explain this axiom in more detail later.
 
-Adding on a braiding, we can get all of the structures of a modular tensor category. However, adding this structure still misses one key structure of being a modular tensor category. Hence, we call it \textit{pre-modular}:
+Adding on a braiding, we can get all of the structures of a modular category. However, adding this structure still misses one key structure of being a modular category. Hence, we call it \textit{pre-modular}:
 
-\begin{definition}[Pre-modular tensor category] A pre-modular tensor category is the following data:
+\begin{definition}[Pre-modular category] A pre-modular category is the following data:
 
 \begin{enumerate}
 \item A spherical fusion category $\C$;
-\item A braided structure on $\C$;
+\item A braided structure on $\C$.
 \end{enumerate}
 
-Such that:
-
-\begin{enumerate}
-\item .[WORK: compatibility between braiding + $\CC$-linearity, or compatibility between braiding and rigidity?]
-\end{enumerate}
+No extra compatibility conditions are required.
 
 \raggedleft\qedsymbol{}
 \end{definition}
@@ -126,7 +124,7 @@ Such that:
 This definition now has all of the structure we wanted it to have: fusion, pair-creation, and braiding. The final axiom is a non-degeneracy condition. It is subtle in its interpretation, and we will explain it several different ways throughout this chapter:
 
 
-\begin{definition}[Modular tensor category] A modular tensor category is a pre-modular tensor category satisfying the following condition. Let $A\in \C$ be an object. If
+\begin{definition}[Modular category] A modular category is a pre-modular category satisfying the following condition. Let $A\in \C$ be an object. If
 
 \begin{equation*}
 \tikzfig{non-degeneracy}
@@ -138,9 +136,9 @@ for all $B\in \C$, then $A\cong \one$.
 \end{definition}
 
 
-\subsubsection{Anyons in MTCs}
+\subsubsection{Anyons in modular categories}
 
-Modular tensor categories (MTCs) are supposed to be theories of anyons in topological order. So, now that we have the definition of MTC, it is natural to ask: what do anyons mathematically correspond to, in MTCs? The answer lies within the condition in a fusion category $\C$ that there is an equivalence $\C\cong \Vec_\CC^n$ as $\CC$-linear categories. We explore the importance of this condition.
+Modular categories are supposed to be theories of anyons in topological order. So, now that we have the definition of modular category, it is natural to ask: what do anyons mathematically correspond to, in modular categories? The answer lies within the condition in a fusion category $\C$ that there is an equivalence $\C\cong \Vec_\CC^n$ as $\CC$-linear categories. We explore the importance of this condition.
 
 Suppose we are given an object $V=(V_1,V_2...V_n)\in \Vec_\CC^n$. For all $1\leq i\leq n$, let  $\CC_i\in \Vec_\CC^n$ denote the object which has dimension zero in every index $j\neq i$ and is equal to $\CC$ in index $i$. We observe the isomorphism
 
@@ -159,18 +157,28 @@ Our physics-math dictionary is that anyon types correspond to isomorphism classe
 
 We now state the basic proposition which ensures that the neccecary properties from $\Vec_\CC^n$ follow through the equivalence of categories.
 
-\begin{proposition} Let $\C$ be a fusion category. The biproduct of any two elements in $\C$ exists. Let $\LL$ denote the set of isomorphism classes of simple objects in $\C$. The set $\LL$ is finite. Choose an object $X\in \C$. There exist unique nonnegative integers $c_{[A]}$, $[A]\in \LL$ such that 
+\begin{proposition} Let $\C$ be a fusion category. The biproduct of any two elements in $\C$ exists, and $\C$ has a zero object. Let $\LL$ denote the set of isomorphism classes of simple objects in $\C$. The set $\LL$ is finite. Choose an object $X\in \C$. There exist unique nonnegative integers $c_{[A]}$, $[A]\in \LL$ such that 
 
 $$X\cong \bigoplus_{[A]\in \LL}N_{[A]}\cdot A.$$
 \end{proposition}
-\begin{proof}.[WORK: do proof.]
+\begin{proof} We first show that $\C$ has biproducts. Let $F:\C\to \Vec_{\CC}^n$, $G:\Vec_{\CC}^n\to \C$ be a pair of functors which induces an equivalence of categories, for some $n\geq 1$ Let $A,B\in \C$ be objects. Since $G$ and $F$ are fully faithfull, the universal property of the direct sum $F(A)\oplus F(B)$ guarantees that $G(F(A)\oplus F(B))$ will be a direct sum of $G(F(A))$ and $G(F(B))$. Since $G(F(A))\cong A$ and $G(F(B))\cong B$, we conclude that $\C$ has biproducts. The object $G(0)$ is a zero object for $\C$.
+
+We now prove that $\C$ has finitely many isomorphism classes of simple objects. It is clear that an object $A\in \C$ is simple if and only fi $F(A)\in \Vec_{\CC}^n$ is simple. Thus, since $G$ serves as an inverse, $F$ establishes a bijection between isomorphism classes of simple obejcts in $\C$ and isomorphism classes of simple objects in $\Vec_{\CC}^n$. Every simple obejct in $\Vec_{\CC}^n$ will be isomorphic to $\CC_i$ for some $1\leq i \leq n$. Hence, there are $n$ simple objects in $\Vec_{\CC}^n$. Hence, there are $n$ simple objects in $\C$, which is finite.
+
+The unique direct sum decomposition is clearly true in $\Vec_{\CC}^n$. It is immediate that it passes to a unique direct sum decomposition in $\C$.
 \end{proof}
 
 The set of simple objects has an alternative description, known as Schur's lemma:
 
 \begin{proposition}[Schur's Lemma] Let $\C$ be a fusion category. An object $A\in \C$ is simple if and only if its endomorphism ring $\End(A)$ is one-dimensional. Additionally, if $A,B\in \C$ are nonisomorphic simple objects then $\Hom(A,B)=0$.
 \end{proposition}
-\begin{proof}.[WORK: do proof.]
+\begin{proof} Let $F:\C\to \Vec_{\CC}^n$, $G:\Vec_{\CC}^n\to \C$ be a pair of $\CC$-linear functors which establishes an equivalence between $\C$ and $\Vec_{\CC}^n$ as $\CC$-linear categories. The simple objects in $\Vec_{\CC}^n$ are all isomorphic to $\CC_i$ for some $1\leq i \leq n$. We compute that
+
+$$\dim\left(\Hom_{\Vec_{\CC}^n}\left(\bigoplus_{i=1}^n n_i \CC_i , \bigoplus_{i=1}^n m_i \CC_i\right)\right)=\sum_{i=1}^n n_im_i.$$
+
+As a corrolary of this formula, we find that if $A=\bigoplus_{i=1}^n n_i\CC_i$ then $\dim(\End_{\Vec_{\CC}^n}(A))=\sum_{i=1}^nn_i^2$. Clearly, this dimension is equal to one if $A=\CC_i$ for some $1\leq i\leq n$, and is greater than one otherwise. As a second corrolary, we compute that $\Hom(\CC_i,\CC_j)=0$ whenever $i\neq j$.
+
+The functor $G$ induces a bijection between isomorphism classes of simple objects in $\Vec_{\CC}^n$ and isomorphism classes of simple objects in $\Vec_{\CC}^n$, and it induces vector space isomorphisms on hom spaces. This means that the results for $\Vec_{\CC}^n$ translate to the desired result on $\C$.
 \end{proof}
 
 As an immediate application of Schur's lemma, we observe that the monoidal unit $\one$ is a simple object in every fusion category. By our physics-math dictionary, this means that $\one$ corresponds to an anyon type. This type is the \textit{vaccuum} type - empty space. The anyon $\one$ is the trivial no-anyon type.
@@ -181,10 +189,10 @@ Expanding our physics-math dictionary, we say that for every anyon $A$ its \text
 
 \begin{proposition} Let $\C$ be a fusion category. If $A\in \C$ is a simple object, then so is $A^*$.
 \end{proposition}
-\begin{proof}. [WORK: do proof]
+\begin{proof} By Proposition [ref] duality induces a bijection on hom-spaces. Since composition is bilinear, this bijection is an isomorphism of vector spaces. Hence, for all $A\in \C$ there is an isomorphism $\Hom(A,A)\cong \Hom(A^*,A^*)$.  Hence, $\dim \Hom(A,A)= 1$ if and only if $\dim \Hom(A^*,A^*)=1$ so the result follows by Schur's lemma.
 \end{proof}
 
-An important part of of understanding simple objects in MTCs is making sense of the direct sum decompositions coming from Proposition [ref]. Let $\C$ be a fusion category with simple objects $A,B\in \C$. Consider the decomposition
+An important part of of understanding simple objects in modular categories is making sense of the direct sum decompositions coming from Proposition [ref]. Let $\C$ be a fusion category with simple objects $A,B\in \C$. Consider the decomposition
 
 $$A\otimes B \cong \bigoplus_{[C]\in \LL}N^{A,B}_{C}\cdot C$$
 
@@ -198,19 +206,12 @@ A more detailed understanding of the physical meaning of the direct sum will hav
 
 This concludes our basic picture of anyons in fusion categories.
 
-\subsubsection{States in MTCs and unitarity}
+\subsubsection{States in modular categories and unitarity}
 
-[WORK: What I have here is NOT states on the infinite flat plane. This is states on the sphere, because there is the requirement that the total charge is $\one$. The states on the infinite plane are
-
-$$\Hom\left(\bigoplus_{[B]\in \LL}B, A_1\otimes A_2 ... \otimes A_n \right).$$
-
-This is a subtle point. I'm not sure if I want to bring it up in this section, but it would also be weird not to. Something to introspect about and include once the time is right.
-]
-
-It is now worth reflecting on what exactly states correspond to in MTCs. In particular, objects in MTCs are \textit{not} quantum systems. They don't have vector space structure. The spaces with vector space structure are the hom-spaces, by $\CC$-linearity. Objects will correspond to anyon configurations. States will correspond to normalized vectors in certain hom-spaces. In particular:
+It is now worth reflecting on what exactly states correspond to in modular categories. In particular, objects in modular categories are \textit{not} quantum systems. They don't have vector space structure. The spaces with vector space structure are the hom-spaces, by $\CC$-linearity. Objects will correspond to anyon configurations. States will correspond to normalized vectors in certain hom-spaces. In particular:
 
 \begin{equation*}
-\left(\substack{\text{space of states of topological order $\C$} \\ \text{on the infinite plane $\RR^2$} \\ \text{with anyon configuraiton $A_1,A_2...A _n$}}\right)
+\left(\substack{\text{states of topological order $\C$} \\ \text{on the sphere} \\ \text{with anyon configuraiton $A_1,A_2...A _n$}}\right)
 =
 \left(
 \substack{
@@ -225,9 +226,61 @@ where by ``anyon configuration $A_1,A_2...A_n$" we mean that the state has anyon
 The remainder of this subsection is a series of loosely-related observations about this choice of state space:
 
 $\newline$
-\textbf{Observation 1:} \textit{In the definition of an MTC hom-spaces are vector spaces and not Hilbert spaces, so this choice of physics-math correspondance is incorrect as literally written}.
 
-To make this definition work, all of the hom-spaces of the MTC $\C$ should be equipped with Hilbert space structures. Furthermore, the natural operators we wish to perform like braiding should all be unitary with respect to these inner products. This amounts to adding a large number of compatibility conditions on the Hilbert space structures. An MTC with this choice of structure is known as a \textit{unitary} MTC. We give the formal definition below:
+\textbf{Observation 1:} \textit{The physical space is a sphere.}
+
+It is not immediately clear where in the formula $\Hom(\one, A_1\otimes A_2... \otimes A_n)$ we chose the sphere as the physical space. To make it make sense, we observe as a special case of the general formula that
+
+\begin{equation*}
+\dim\left(\substack{\text{Hilbert space of topological order $\C$} \\ \text{on the sphere $S^2$} \\ \text{with exactly one anyon of type $A$}}\right)
+=
+\dim \Hom(\one, A)
+=
+\begin{cases}
+1 & A=\one \\ 
+0 & \text{otherwise}.
+\end{cases}
+\end{equation*}
+
+Hence, the state formula tells us that if the sphere has exactly one anyon on it then that anyon type must be trivial. Moreover, there is unique state on the sphere with no anyons.
+
+This is consistent with our general principles about topological order on the sphere.
+
+[WORK: sketch nice argument for why there is a unique ground state on the sphere. What I'm struggling with here is why an anyon type in a region must neccecarily be detectable by its surrounding region.]
+
+This gives us a framework for extending our state-space/hom-space correspondances to physical spaces other than the sphere. In particular, we find the following:
+
+\begin{equation*}
+\left(\substack{\text{states of topological order $\C$} \\ \text{on the infinite flat plane $\RR^2$} \\ \text{with anyon configuraiton $A_1,A_2...A _n$}}\right)
+=
+\left(
+\substack{
+\text{normalized vectors in the Hilbert space}\\
+\Hom_\C\left(\bigoplus_{[B]\in \LL}B, A_1\otimes A_2... \otimes A_n\right)
+}
+\right)
+\end{equation*}
+
+where $\LL$ is the set of isomorphism classes of simple objects in $\C$. Replacing $\one$ with $\bigoplus_{[B]\in \LL} B$ reflects the differences between the sphere and the infinite flat plane.
+
+[WORK: sketch nice argument for why states on infinite flat plane are determined by their overall charge. The subtelty here is exactly the same as the one for the sphere. Think about it then put it down.]
+
+[WORK: What happens for higher genus surfaces? I should add a few words about them. Zhenghan says all of this is contained in Turaev's book about the Reshetikhin-Turaev construction.]
+
+$\newline$
+\textbf{Observation 2:} \textit{The anyons are always assumed to be arranged in a line.}
+
+The anyon configurations are always assumed to be linear. The main reason to do this is because it makes the mathematics much simpler. If we kept track of the positions of each of the anyons in two dimensional space it would add more pieces of data and structures to keep track of. Seeing as every anyon configuration can be pushed onto a one-dimensional space, only working with a one-dimensional configuration does not affect the generality of the answers and hence it is very much prefered.
+
+$\newline$
+\textbf{Observation 3:} \textit{The formula $\Hom_{\C}(\one, A_1\otimes A_2...\otimes A_n)$ encodes the fact that states can be specified by their history.}
+
+A good first question to ask when seeing the Hilbert space $\Hom_\C(\one, A_1\otimes A_2... A_n)$ is \textit{why} this should describe a state with anyon configuration $A_1$... $A_n$. The answer is that states can be described their history. [WORK: give good example of making a state by specifying its history; argue why it has to be this way in general.].
+
+$\newline$
+\textbf{Observation 4:} \textit{In the definition of an modular category hom-spaces are vector spaces and not Hilbert spaces, so this choice of physics-math correspondance is incorrect as literally written}.
+
+To make this definition work, all of the hom-spaces of the modular category $\C$ should be equipped with Hilbert space structures. Furthermore, the natural operators we wish to perform like braiding should all be unitary with respect to these inner products. This amounts to adding a large number of compatibility conditions on the Hilbert space structures. A modular category with this choice of structure is known as a \textit{unitary} modular category. We give the formal definition below:
 
 
 \begin{definition}[Unitary fusion category] A unitary fusion category is the following data:
@@ -237,7 +290,7 @@ To make this definition work, all of the hom-spaces of the MTC $\C$ should be eq
 \item (Conjugation) A linear map $\dagger: \Hom(A,B)\to \Hom(B,A)$ for all $A,B\in \C$.
 \end{enumerate}
 
-Additionally, a unitary fusion category is required to satisfy the following properties:
+Such that:
 
 \begin{enumerate}
 \item (Unitarity) Given $f:A\to A$ an endomorphism of $A\in \C$, define
@@ -245,9 +298,11 @@ Additionally, a unitary fusion category is required to satisfy the following pro
 
 $$\tr(f)=\ev_A \circ (\id_{A^*}\otimes f)\circ \left(\ev_A\right)^{\dagger}.$$
 
-The map $\left<\cdot|\cdot\right>:\Hom(A,B)\times \Hom(A,B)\to \CC$ defined by $\left<f|g\right>=\tr(f\circ g^{\dagger})$ is an inner product, endowing $\Hom(A,B)$ with the structure of a Hilbert space.
+The map $\left<\cdot|\cdot\right>:\Hom(A,B)\times \Hom(A,B)\to \CC$ defined by $\left<f|g\right>=\tr(f^{\dagger}\circ g)$ is an inner product, endowing $\Hom(A,B)$ with the structure of a Hilbert space.
 \item $\left(f^{\dagger}\right)^{\dagger}=f$ for all $f\in \Hom(A,B)$, $A,B\in \C$.
+
 \item $(f\circ g)^{\dagger}=g^{\dagger}\circ f^{\dagger}$ for all $f\in \Hom(B,C)$,$g\in \Hom(A,B)$, $A,B,C\in \C$.
+
 \item $(f\otimes g)^{\dagger}=f^{\dagger}\otimes g^{\dagger}$ for all $f\in \Hom(A,B)$,$g\in \Hom(C,D)$, $A,B,C,D\in \C$.
 \item $\left(\coev_A\right)^{\dagger}\circ (f \otimes \id_{A^*})\circ \coev_A=\tr(f)$ for all $A\in \C$
 \end{enumerate}
@@ -257,51 +312,36 @@ The map $\left<\cdot|\cdot\right>:\Hom(A,B)\times \Hom(A,B)\to \CC$ defined by $
 
 Unitary fusion categories make for a pleasant object of study because the distinguished maps $(\ev_A)^{\dagger}:1\to A^{*}\otimes A$ and $(\coev_A)^{\dagger}:A\otimes A^{*}\to 1$ induce a pivotal structure:
 
-\begin{proposition} All unitary fusion categories are spherical fusion categories. [WORK: reword this to make it an actual mathematical statemenet]
+\begin{proposition} Let $\C$ be a unitary fusion category. The maps $\ev_{A}^L = (\coev_{A})^{\dagger}$ and $\coev^L_{A}=(\ev_A)^{\dagger}$ give a left-rigid structure on $\C$. This left-rigidity endows $\C$ with the structure of a spherical fusion category.
 \end{proposition}
-\begin{proof}.[WORK: Should be easy.]
+\begin{proof}.[WORK: This is actually subtler than I expected. Either give a proof here, or postpone it to the unitarity section.]
 \end{proof}
 
-We can now define unitary MTCs. The compatibility conditions for the twist are chosen so that the definition of trace as an MTC and the definition of trace as a unitary fusion category coincide. [WORK: The definition below is outdated. It uses the twist-theoretic definition of MTCs. Should be re-done.]
+We can now define unitary modular categories. The compatibility conditions for the twist are chosen so that the definition of trace as a modular category and the definition of trace as a unitary fusion category coincide. [WORK: The definition below is outdated. It uses the twist-theoretic definition of modular categories. Should be re-done.]
 
-\begin{definition}[Unitary Modular Tensor Category] A unitary Modular Tensor Category is the following data:
+\begin{definition}[Unitary pre-modular category] A unitary modular category is the following data:
 
 \begin{enumerate}
-\item An MTC $\C$.
+\item A modular category $\C$;
 \item (Conjugation) A linear map $\dagger: \Hom(A,B)\to \Hom(B,A)$ for all $A,B\in \C$.
 \end{enumerate}
 
-Additionally, a unitary Modular Tensor Category is required to satisfy the following properties:
+Such that:
 
 \begin{enumerate}
-\item Forgetting the twist and braiding, $\left(\C,\dagger\right)$ forms a unitary fusion category.
-\item $\left(\beta_{A,B}\right)^{\dagger}=\beta_{A,B}^{-1}$ for all $A,B\in \C$.
-\item $\left(\theta_A\right)^{\dagger}=\left(\theta_A\right)^{-1}$ for all $A\in \C$.
-\item $\left(\ev_{A}\right)^{\dagger}= \left(\id_{A^*}\otimes \theta_A^{-1}\right)\circ \beta_{A^*,A}^{-1}\circ \coev_A$ for all $A\in \C$
-\item $\left(\coev_{A}\right)^{\dagger}= \ev_{A}\circ\beta_{A,A^*}\circ\left(\theta_A \otimes \id_{A^*}\right)$ for all $A\in \C$
+\item Forgetting the left-rigid structure and braiding, $\left(\C,\dagger\right)$ forms a unitary fusion category.
+\item $\left(\ev_{A}^R\right)^{\dagger}=\coev_{A}^L$;
+\item $\left(\coev_{A}^R\right)^{\dagger}=\ev_{A}^L$;
+\item $\left(\beta_{A,B}\right)^{\dagger}=\beta_{B,A}^{-1}$.
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
 \end{definition}
 
-For this reason, the correct algebraic structure to underlie the theory of topological order is not MTC, but unitary MTC. We have chosen to not emphasize this before because the difference between unitary MTCs and non-unitary MTCs is very small. [WORK: talk about uniqueness + positive q.d. criterion this will make more sense once we write the actual section about unitarity. A good thing to emphaize is that unitary MTCs don't let you use less data in your definition, and you can still do essentially everything you want to do. It's just way more cumbersome. They're all equivalent but you still have to choose, c.f. the fact that the category of vector spaces and Hilbert spaces with linear maps as morphisms are equivallent].
+\begin{definition}[Unitary modular category] A unitary modular category is a unitary pre-modular category which satisfies the non-degeneracy axiom of a modular category.
+\end{definition}
 
-$\newline$
-\textbf{Observation 2:} \textit{The physical space is assumed to be an infinitely large flat plane.}
-
-The reason that the physical space is the infinitely large flat plane is that it has a unique ground state, and does not have boundaries. Finite contractible regions would have boundaries to worry about, and spaces with topology like the torus would have non-equivalent ground states. The formula $\Hom(\one,\one)\cong \CC$ implies that there is a unique ground state, whence the conclusion.
-
-Describing anyons on spaces with non-trivial topology is a more difficult question, and requires more machinery [WORK: reference something later? Will I talk about this? Seems important.] 
-
-$\newline$
-\textbf{Observation 3:} \textit{The anyons are always assumed to be arranged in a line.}
-
-The anyon configurations are always assumed to be linear. The main reason to do this is because it makes the mathematics much simpler. If we kept track of the positions of each of the anyons in two dimensional space it would add more pieces of data and structures to keep track of. Seeing as every anyon configuration can be pushed onto a one-dimensional space, only working with a one-dimensional configuration does not affect the generality of the answers and hence it is very much prefered.
-
-$\newline$
-\textbf{Observation 4:} \textit{The formula $\Hom_{\C}(\one, A_1\otimes A_2...\otimes A_n)$ encodes the fact that states can be specified by their history.}
-
-A good first question to ask when seeing the Hilbert space $\Hom_\C(\one, A_1\otimes A_2... A_n)$ is \textit{why} this should describe a state with anyon configuration $A_1$... $A_n$. The answer is that states can be described their history. [WORK: give good example of making a state by specifying its history; argue why it has to be this way in general].
+For this reason, the correct algebraic structure to underlie the theory of topological order is not a modular category, but a unitary modular category. We have chosen to not emphasize this before because the difference between unitary modular categories and non-unitary modular categories is very small. [WORK: talk about uniqueness + positive q.d. criterion this will make more sense once we write the actual section about unitarity. A good thing to emphaize is that unitary modular categories don't let you use less data in your definition, and you can still do essentially everything you want to do. It's just way more cumbersome. They're all equivalent but you still have to choose, c.f. the fact that the category of vector spaces and Hilbert spaces with linear maps as morphisms are equivallent].
 
 \subsubsection{Topological charge measurement}
 
@@ -313,13 +353,15 @@ When two anyons are fused together, they will form a superposition of other anyo
  
 
 
-\subsection{The MTC toolkit}
+\subsection{The modular category toolkit}
 
-In this section, we will introduce and prove the basic facts about the most important structures in the theory of modular tensor categories (MTCs). These facts and structures are the tools used for solving problems about the algebraic theory of anyons. 
+In this section, we will introduce and prove the basic facts about the most important structures in the theory of modular categories. These facts and structures are the tools used for solving problems about the algebraic theory of anyons. 
+
+[WORK: I don't have a section on fusion coefficients yet. I guess this isn't a problem, because there isn't that much to say. I would like to have the associativity of fusion cooficients and the fact that braiding $\implies$ commutative said somewhere explicitely, though. Find a place?]
 
 \subsubsection{Trace}
 
-The first structure to define in the theory of MTCs is the \textit{trace}. Let $\C$ be a spherical fusion category. Given any object $A\in \C$ and any endomorphism $f:A\to A$, we define the \textit{trace of $f$} by the following formula:
+The first structure to define in the theory of modular categories is the \textit{trace}. Let $\C$ be a spherical fusion category. Given any object $A\in \C$ and any endomorphism $f:A\to A$, we define the \textit{trace of $f$} by the following formula:
 
 \begin{equation*}
 \tikzfig{trace}
@@ -329,15 +371,14 @@ Initially, the trace is a morphism,  $\tr(f):\one\to\one$. However, we will choo
 
 The trace is used mainly as a tool for linearization. Morphisms and objects are hard to describe, but the trace is a complex number.
 
-\begin{proposition}\label{trace} Let $\C$ be a spherical fusion category. For all $A,B\in \C$, $f\in \End(A)$ the following claims are all true:
+\begin{proposition} Let $\C$ be a spherical fusion category. For all $A,B\in \C$, $f\in \End(A)$ the following claims are all true:
 
 \begin{enumerate}
 \item $\tr: \End(A)\to \CC$ is a linear map of vector spaces,
 \item $\tr(f^{*})=\tr(f)$,
-\item $\tr(f\circ g)=\tr(g\circ f)$ for all $g\in \End(A)$,
 \item $\tr(f\oplus g)=\tr(f)+\tr(g)$ for all $g\in \End(B)$,
 \item $\tr(f\otimes g)=\tr(f)\cdot \tr(g)$ for all $g\in \End(B)$,
-\item $\tr(g\circ f\circ g^{-1})$ for any isomorphism $g:A\xrightarrow{\sim}B$,
+\item $\tr(h\circ g)=\tr(g\circ h)$ for all $g:A\to B$, $h:B\to A$.
 \item Trace is preserved by functors. That is, let $\C,\Dcat$ be spherical categories with traces $\tr_{\C},\tr_{\Dcat}$ respectively. Let $F:\C\to \Dcat$ be a pivotal functor. We have that $\tr_{\C}(f)=\tr_{\Dcat}(F(f))$;
 \end{enumerate}
 
@@ -349,31 +390,21 @@ The trace is used mainly as a tool for linearization. Morphisms and objects are 
 
 \item This is a straightforward computation.
 
-\item Using Proposition \ref{pivotal-alternative} part (3), we find that
+\item .[WORK: do proof. This uses facts about the direct sum we haven't established yet.]
 
-\begin{equation*}
-\tikzfig{composition-commutes}
-\end{equation*}
-
-\item From the explicit definition of evaluation and coevaluation for $A\oplus B$ given in the proof of Proposition \label{rigidity}, we find that $\tr(f\oplus g)$ as a morphism is
-
-$$1\to 1\oplus 1 \xrightarrow{\tr(f)\oplus \tr(g)}1\oplus 1\to 1$$
-
-where $1\to 1\oplus 1$ is the sum of the right and left inclusion maps and $1\oplus 1\to 1$ is the sum of the right and left projection maps. Seeing as composition is linear and inclusion composed with projection is the identity, we get that this map is $\tr(f)+\tr(g)$ times the identity as desired.
-
-\item Using Proposition \ref{pivotal-alternative}, we compute
+\item Using Proposition [ref] we compute
 
 \begin{equation*}
 \tikzfig{trace-tensor}
 \end{equation*}
 
-\item To begin, we observe that $F(A^*)$ can be canonically given the structure of a dual for $F(A)$, by the maps $\coev_{F(A)}=F(\coev_A)$, $\ev_{F(A)}=F(\ev_A)$. Since $F$ is a pivotal functor, we find that
+\item Using Proposition [ref] we find that
 
 \begin{equation*}
-\tikzfig{pivotal-functor}
+\tikzfig{composition-commutes}
 \end{equation*}
 
-Now, the fact that $F$ is $\CC$-linear on hom spaces and $F(\id_{1_{\C}})=\id_{\Dcat}$ implies that $\tr_{\C}(f)=F(\tr_{\C}(f))$ as complex numbers. Passing trough $F$, the desired conclusion is immediate.
+\item .[WORK: do the proof. It's not very hard, but involves a diagram and uses pivotality of the functor.]
 
 \end{enumerate}
 
@@ -382,7 +413,7 @@ This completes the proof.
 
 With these properties in hand, we can explicitely compute the trace using a straightforward procedure:
 
-\begin{corollary}\label{explicit-trace} Let $f:A\to A$ be an endomorphism in a fusion category $\C$. Fix a decomposition $A\cong \bigoplus_{i\in I}A_i$ of $A$ into simple objects $A_i$. Moreover, we take the decomposition such that if $A_i\cong A_j$ then $A_i=A_j$. We can decompose
+\begin{corollary} Let $f:A\to A$ be an endomorphism in a fusion category $\C$. Fix a decomposition $A\cong \bigoplus_{i\in I}A_i$ of $A$ into simple objects $A_i$. Moreover, we take the decomposition such that if $A_i\cong A_j$ then $A_i=A_j$. We can decompose
 
 $$\Hom(A,A)\cong \Hom(\bigoplus_{i\in I} A_i,\bigoplus_{i\in I}A_i)=\bigoplus_{i\in I, j\in I}\Hom(A_i,A_j).$$
 
@@ -391,38 +422,20 @@ Let $M$ be the matrix whose collums and rows are labeled by $I$, and whose $(i,j
 $$\tr_{\C}(f)=\tr_{\Vec}(M).$$
 
 \end{corollary}
-\begin{proof} Since $\tr_{\Vec}$ adds over direct sums, verifying this construction immediately reduces to the case that $A$ is a simple object by Proposition \ref{trace} (4). Now, linearity of $\tr_{\C}$ and the definition of quantum dimension completes the proof.
+\begin{proof} Suppose that $A=A_0\oplus A_1$ is the direct sum of two objects, not neccecarily simple. By proposition [ref] we have a canonical decomposition
+
+$$(A_0\oplus A_1)\otimes (A_0\oplus A_1)^*\cong (A_0\otimes A_0^*) \oplus (A_0\otimes A_1^*) \oplus (A_1\otimes A_0^{*})\oplus (A_1\otimes A_1^*).$$
+
+Suppose that $h:A\to A$ is an endomorphism. We can decompose $h=h_{A_0,A_0}+h_{A_0,A_1}+h_{A_1,A_0}+h_{A_0,A_1}$ as a sum of morphisms which restrict to maps $A_i\to A_j$. We find that $\coev_{A\oplus B}$ restricts to a map whose codomain is  $(A_0\otimes A_0^*) \oplus (A_1\otimes A_0)^*$ and similarly $\ev$ restricts to a map whose domain is $(A_0\otimes A_0^*) \oplus (A_1\otimes A_0)^*$, since $\coev_{A\oplus B}=\coev_{A}\oplus \coev_{B}$ and $\ev_{A\oplus B}=\ev_{A}\oplus \ev_{B}$.
+
+Hence, in the definition of trace, we find that the cross terms $h_{A_0,A_1}+h_{A_1,A_0}$ act by zero since they send the codomain of $\coev_{A\oplus B}$ to elements with no effect on the map $\ev_{A\oplus B}$. Moreover, we compute in this way that $\tr(h)=\tr(h_{A_0,A_0})+\tr(h_{A_1,A_1})$.
+
+In this way, the trace splits over direct sums and only picks out diagonal elements. Applying this result inductively reduces the proof to the case that $A$ is a simple object. This follows directly from the definition of quantum dimension.
 \end{proof}
 
 \subsubsection{Duality}
 
-Duality is baken into our definition of MTCs as a fundamental part of the structure.
-
-
-The dual of an object $A$ can be identified from its fusion coeffients.
-
-\begin{proposition} Let $\C$ be a fusion category. Let $A,B\in \C$ be simple objects. The following are equivalent:
-
-\begin{enumerate}[(i)]
-\item $B\cong A^*$;
-\item $N^{B,A^*}_{\one}>0$;
-\item $N^{A^*,B}_{\one}>0$;
-\item $N^{A,A^*}_{\one}=N^{A^*,A}_{\one}=1$.
-\end{enumerate}
-\end{proposition}
-\begin{proof}. [WORK: do proof.]
-\end{proof}
-
-In particular, we conclude the following:
-
-\begin{corollary} If $\C$ is a fusion category, then $A\cong A^{**}$ for all $A\in \C$.
-\end{corollary}
-\begin{proof} .[WORK: do proof.]
-\end{proof}
-
-However, despite this corollary, we \textit{cannot} conclude that every fusion category admits a pivotal structure. The isomorphism $A\cong A^{**}$ may fail to form a monoidal natural transformation. It is an open problem whether or not every fusion category admits a pivotal structure, and it is furthermore an open problem whether every pivotal fusion category admits a spherical structure \cite{etingof2005fusion}.
-
-Duality acts a controlled way on fusion coefficients:
+Duality is baken into our definition of modular categories as a fundamental part of the structure. It acts in a very controlled way on fusion cooefficients:
 
 \begin{proposition}Let $\C$ be a fusion category and let $A,B,C\in \C$ be simple objects. We have the following:
 
@@ -432,8 +445,57 @@ Duality acts a controlled way on fusion coefficients:
 \end{enumerate}
 
 \end{proposition}
-\begin{proof} . [WORK: do proof.]
+\begin{proof} Part (i) follows from the fact that the duality functor is fully faithful and monoidal from propositon [ref], so
+
+$$N^{A,B}_{C}=\dim \Hom(C,A\otimes B)=\dim \Hom(A^*\otimes B^*,C^*)=N^{B^*,A^*}_{C^*}.$$
+
+Part (ii) follows from the following computation. Consider the map
+
+\begin{equation*}
+\tikzfig{fusion-coof-is-one}
+\end{equation*}
+
+Since composition is bilinear, $i$ is a linear map. The map
+
+\begin{equation*}
+\tikzfig{fusion-coof-proof}
+\end{equation*}
+
+serves as an inverse for $i$ by rigidity. Hence, we conclude that
+
+$$N^{A,B}_{C}=\dim \Hom(C,A\otimes B) = \dim \Hom( A^*\otimes C, B) = N^{A^*,C}_{B}.$$
+
+The third equality in Frobenius reciprocity follows from an identical argument, and hence we conclude the proof.
 \end{proof}
+
+In particular, we can describe the fusion rules of a simple object with its dual:
+
+\begin{corollary} Let $\C$ be a fusion category. Let $A,B\in \C$ be simple objects. We find that
+
+$$
+N^{A,B}_{\one}=N^{B,A}_{\one}=
+\begin{cases}
+1 & B\cong A^*\\
+0 & \text{otherwise}.
+\end{cases}$$
+\end{corollary}
+\begin{proof} This follows from Frobenius reciprocity and Schur's lemma:
+
+$$N^{A,B}_{\one}=N^{A^*,\one}_{A}=\dim(\Hom(A,A^*))=
+\begin{cases}
+1 & B\cong A^*\\
+0 & \text{otherwise}.
+\end{cases}$$
+\end{proof}
+
+Specializing even more, we get the following corollary:
+
+\begin{corollary} If $\C$ is a fusion category, then $A\cong A^{**}$ for all $A\in \C$.
+\end{corollary}
+\begin{proof} Since $N^{A^*,A^{**}}_{\one}>0$, we conclude that $A^{**}\cong A$ by the $(iii)\implies (i)$ implication in proposition [ref].
+\end{proof}
+
+However, despite this corollary, we \textit{cannot} conclude that every fusion category admits a pivotal structure. The isomorphism $A\cong A^{**}$ may fail to form a monoidal natural transformation. It is an open problem whether or not every fusion category admits a pivotal structure, and it is furthermore an open problem whether every pivotal fusion category admits a spherical structure \cite{etingof2005fusion}.
 
 
 \subsubsection{Quantum dimension and Frobenius-Perron dimension}
@@ -442,7 +504,9 @@ Duality acts a controlled way on fusion coefficients:
 
 Our next tool to discuss is the \textit{quantum dimension}. Given any spherical fusion category $\C$ and any object $A\in \C$, we define its quantum dimension using the following formula:
 
-[WORK: define $d_A$.]
+\begin{equation*}
+\tikzfig{quantum-dimension}
+\end{equation*}
 
 As usual, we identitfy $d_A$ with a complex number via the canonical isomorphism $\End(\one)\cong \CC$. The quantum dimension is clearly equal to the trace of the identity map on $A$, $d_A=\tr(\id_A)$. The first properties of quantum dimension follow from our general analysis of trace:
 
@@ -456,10 +520,20 @@ As usual, we identitfy $d_A$ with a complex number via the canonical isomorphism
 \item $d_A\neq 0$.
 \end{enumerate}
 \end{proposition}
-\begin{proof}.[WORK: do proof]
+\begin{proof}$\,$
+\begin{enumerate}[(i)]
+\item Let $f:A\cong B$ be an isomorphism. Using Proposition [ref] we find
+
+$$d_A=\tr(\id_{A})=\tr(f^{-1}\circ f)=\tr(f\circ f^{-1})=\tr(\id_{B})=d_B.$$
+
+\item This follows from proposition [ref].
+\item This follows from proposition [ref].
+\item This follows from proposition [ref].
+\item From proposition [ref], we know that $A\otimes A^* \cong \one \oplus X$ for some $X\in \C$ which does not have any factors of $\one$ in its direct sum decomposition. The map $\coev^R_A: \one \to A\otimes A^*$ is thus a non-zero scalar times the inclusion $\one \hookrightarrow{} \one\oplus X$, and the map $\ev^L_A: A\otimes A^*\to \one$ is a non-zer scalar times the projection $\one \oplus X \xrightarrow{}\one$. Since inclusion composed with projection is the identity, we find that $\ev^{L}_{A}\circ \coev^R_{A}$ is a non-zero scalar times the identity, as desired.
+\end{enumerate}
 \end{proof}
 
-The above propositions tell us that the values $d_A$ as $A$ ranges over isomorphism classes of simple objects determs all the other values of $d_A$. Moreover, proposition [ref] tells us that the quantum dimensions of simple objects determines the trace of \textit{every} endomorphism! Hence, computing $d_{A}$ for each isomorphism class $[A]\in \LL$ is an important step in analysing an MTC. The following formula and its linear-algebraic reformulaion are the primary insight in performing the computation:
+The above propositions tell us that the values $d_A$ as $A$ ranges over isomorphism classes of simple objects determs all the other values of $d_A$. Moreover, proposition [ref] tells us that the quantum dimensions of simple objects determines the trace of \textit{every} endomorphism! Hence, computing $d_{A}$ for each isomorphism class $[A]\in \LL$ is an important step in analysing an modular category. The following formula and its linear-algebraic reformulaion are the primary insight in performing the computation:
 
 \begin{proposition} Let $\C$ be a spherical fusion category.
 
@@ -482,10 +556,20 @@ $$N^{A}\bold{d}=d_{A}\bold{d}.$$
 \end{enumerate}
 
 \end{proposition}
-\begin{proof}.[WORK: do proof]
+\begin{proof} From proposition [ref], we have an isomorphism
+
+$$A\otimes B \cong \bigoplus_{[C]\in \LL}N^{A,B}_{C}\cdot C$$
+
+and thus
+
+$$\tr(\id_{A\otimes B})=\tr(\id_{\bigoplus_{[C]\in \LL}N^{A,B}_{C}\cdot C}).$$
+
+Expanding using the rules in proposition [ref] gives part (i). Part (ii) follows from expanding the definition of the linear operator and applying part (i).
 \end{proof}
 
 We now make commentary about the above proposition. It tells us that $d_A$ is an eigenvalue of $N^A$. Since $N^A$ is an operator with integer coefficients, this immediately tells us that $d_A$ is the root of polynomial with integer coeffients. Namely, the characteristic polynomial of $N^A$. We can even be more precise about the nature of $d_A$:
+
+[WORK: On the MathOverflow question ``Modular Tensor Categories: Reasoning behind the axioms", a commentator said ``You also have to assume that the categorical dimensions arising from the pivotal structure are all real. This is called the spherical axiom". Why is this the same thing as the spherical axiom? What is the motivation? I should include this as a remark on the below proposition.]
 
 \begin{corollary} Let $\C$ be a spherical fusion category. The quantum dimensions of all simple objects in $\C$ are real numbers.
 \end{corollary}
@@ -494,14 +578,22 @@ We now make commentary about the above proposition. It tells us that $d_A$ is an
 
 The question is whether or not the quantum dimensions are \textit{positive} real numbers. We recall that we defined a unitarizable spherical fusion category to be one in which the quantum dimensions are all positive. It is at this point that this becomes relevant. In particular, if $\C$ is unitarizable then its quantum dimensions are eigenvalues of $N^A$, and their corresponding eigenvector $\bold{d}$ has positive real entries. There is a theorem about eigenalues of non-negative matrices with positive eigenvectors:
 
-\begin{theorem}[Frobenius-Perron theorem] .[WORK: state version which suffices for our case]
+\begin{theorem}[Frobenius-Perron theorem, \cite{etingof2016tensor}] Let $B$ be a square matrix with nonnegative real entries.
+
+\begin{enumerate}[(i)]
+\item $B$ has a non-negative real eigenvalue. The largest non-negative real eigenvalue $\lambda(B)$ of $B$ dominates the absolute values of all other eigenvalues $\mu$ of $B$: $|\mu|\leq \lambda(B)$. Moreover, there is an eigenvector of B with non-negative entries
+and eigenvalue $\lambda(B)$.
+\item If $B$ has strictly positive entries then $\lambda(B)$ is a simple positive eigenvalue, and the corresponding eigenvector can be normalized to have strictly positive entries. Moreover, $|\mu| < \lambda(B)$ for any other eigenvalue $\mu$ of $B$.
+\item If a matrix $B$ with non-negative entries has an eigenvector $v$ with strictly
+positive entries, then the corresponding eigenvalue is $\lambda(B)$.
+\end{enumerate}
 \end{theorem}
 
-We call the largest positive real eigenvalue of a matrix with non-negative entries its \textit{Frobenius-Perron eigenvalue}. The above theorem tells us the following:
+We call the largest positive real eigenvalue of a matrix its \textit{Frobenius-Perron eigenvalue}. The Frobenius-Perron theorem tells us the following:
 
 \begin{corollary} Let $\C$ be a unitarizable spherical fusion category. Let $A\in \C$ be a simple object. The quantum dimension $d_A$ is equal to the Frobenius-Perron eigenvalue of $N^A$.
 \end{corollary}
-\begin{proof}.[WORK: do proof]
+\begin{proof} Since $\C$  is unitarizable, the vector $\bold{d} = \sum_{[B]\in \LL} d_{B}\ket{[B]}\in \CC[\LL]$ has positive entries and has eigenvalue $d_A$. Hence, $d_A$ is the Frobenius-Perron eigenvalue of $N^A$ as desired.
 \end{proof}
 
 In this chapter we will mostly work with generic spherical fusion categories with no conditions on unitarizability. Hence, it is useful to make the following definition. Let $A\in\C$ be a simple object in a spherical fusion category. We define
@@ -522,7 +614,7 @@ We now give an alternate interpretation of the Frobenius-Perron dimension in ter
 $$\FPdim(A)=\lim_{n\to\infty}(\text{\# of simple objects in the direct sum decomposition of $A^{\otimes n}$})^{1/n}.$$
 \end{enumerate}
 \end{proposition}
-\begin{proof}.[WORK: do proof]
+\begin{proof}.[WORK: I can do a good part of this when $\C$ is unitarizable, so that its largest eigenvalue is strictly larger than all of the others. When there are multiple large eigenvalues all of the same size then the proofs go wrong. Is there something about the structure of $N^A$ I can exploit? Are these theorems true for fusion categories, or do I need to pass to unitarizable fusion categories?]
 \end{proof}
 
 This proposition can be interpreted as saying that the simple object $A$ has $\FPdim(A)$ internal degrees of freedom ``on average". Elements of the vector space $\Hom(\one,A^{\otimes n})$ correspond to states in the system with $n$ anyons of type $A$ arranged in a line. If the internal configuration space of each anyon was $\FPdim(A)$-dimensional, then the overall dimension would be $\FPdim(A)^n$. By Proposition [ref], $\FPdim(A)^n$ is approximately $\Hom(\one,A^{\otimes n})$ for large $n$. Hence, each anyon has approximately $\FPdim(A)$ internal degrees of freedom. Of course, $\FPdim(A)$ has no reason to be an integer! In the Fibonacci theory $\FPdim(\tau)=\phi=1.61...$. Frobenius-Perron dimension just gives an average amount for large values.
@@ -535,7 +627,7 @@ In this section we will discuss \textit{twists}. The twist is a subtle concept, 
 
 For example, consider the $Y$-type on the toric code. It consists of the fusion of an $X$-type anyon and a $Z$-type anyon, as shown below:
 
-[WORK: add figure of Y as a thick X and Z together.]
+[WORK: add figure of Y as a thick X and Z together; could be hard to draw these nice]
 
 Twisting $Y$ in place will correspond to twisting $X$ and $Z$ around each other. This twsiting thus results in a phase of $-1$. In general, we can imagine anyons as having some thickness to them. Anyons are not localized at points - they are localized at small regions. Twisting this region all the way around can be viewed visually as
 
@@ -543,15 +635,39 @@ Twisting $Y$ in place will correspond to twisting $X$ and $Z$ around each other.
 
 This is the twist. One way of working with the twist is to work with thickened diagrams, where strings are replaced with ribbons. While popular in some parts of the literature, we will continue to work with string diagrams for simplicity. The key observation is that the twist can be constructed using string diagramatic structures we already have as follows:
 
-[WORK: twist as a swirl diagram.]
+[WORK: twist as a swirl diagram, compared with ribbon.]
 
 Hence, letting $\C$ be a pre-modular fusion category, we \textit{define} the twist $\theta_{A}$ of an object $A\in \C$ to be
 
-[WORK: define $\theta_A$ in terms of a swirl.]
+\begin{equation*}
+\tikzfig{graphical-twist}
+\end{equation*}
 
 For every simple object $A\in \C$, the map $\theta_A\in \End(A)$ can be identified with the unique complex number $\lambda$ such that $\theta_A=\lambda\cdot \id_A$. Equivilantly, we can identify $\theta_A$ with the complex number $\lambda=\tr(\theta_A)/d_A$ which gives the graphical formula
 
-[WORK: $\theta_A=\frac{1}{d_A}$ times a nice diagram.]
+\begin{equation*}
+\tikzfig{twist}
+\end{equation*}
+
+We can reinterpret all other twist-like maps in terms of $\theta$:
+
+\begin{lemma} Let $\C$ be a pre-modular fusion category. We have that
+
+\begin{equation*}
+\tikzfig{twist-alternatives}
+\end{equation*}
+
+\end{lemma}
+\begin{proof} To begin we show that
+
+\begin{equation*}
+\tikzfig{twist-equality}
+\end{equation*}
+
+When $A$ is simple, this follows from the spherical axiom. Taking the trace of both sides gives the same formula for $\theta_A$ as a figure-eight. Additionally, pushing through duals it is clear that both sides in the above proposed equality are natural isomorphisms. Natural isomorphisms are determined by their action on simple objects because they commute with direct sums. Hence, we conclude that the sides are equal for all objects.
+
+To get that the two reversed formulas are equal to $\theta_{A}^{-1}$, it suffices to compose with $\theta_A$ and use string-diagram manipulations to show that it results in the identity. This is a simple exercise and is left as an exercise to the reader.
+\end{proof}
 
 We now characterize the key properties of the twist:
 
@@ -561,7 +677,20 @@ $$\theta_{A\otimes B}=\beta_{B,A}\circ \beta_{A,B}\circ (\theta_{A}\otimes \thet
 
 for all $A,B\in \C$, and $\theta_{A^*}=(\theta_A)^*$.
 \end{proposition}
-\begin{proof}. [WORK: do proof]
+\begin{proof} Naturality of $\theta$ follows from pushing through duals. The formula $\theta_{A\otimes B}=\beta_{B,A}\circ \beta_{A,B}\circ (\theta_{A}\otimes \theta_{B})$ comes from manipulating string diagrams to get the equation
+
+\begin{equation*}
+\tikzfig{twist-naturality}
+\end{equation*}
+
+
+Finally, $\theta_{A^*}=(\theta_A)^*$ comes from the string-diagram manipulation and proposition [ref]:
+
+\begin{equation*}
+\tikzfig{twist-duality}
+\end{equation*}
+
+as desired.
 \end{proof}
 
 The naive reason to care about twists is that they descrbe a physically relevant quantity and hence should be studied. The more subtle reason to care about twists is that they are the most efficient way of encoding the spherical structure on $\C$. A spherical structure is first and foremost a pivotal structure, meaning that it has a right and left rigid structure which are compatible. Given a spherical structure one can always obtain twists. Conversely, given a right-rigid structure and twists one can recover the left-rigid structure via the formulas
@@ -576,85 +705,151 @@ In this way, giving a spherical structure on a right-rigid monoidal category is 
 
 Moreover, restricting the assignment to the space of spherical structures on $\C$ induces a canonical bijection between the set of spherical structures on $\C$ and the set of isomorphisms $\theta:\id_\C\to\id_\C$ satisfying $\theta_{A\otimes B}=\beta_{B,A}\circ \beta_{A,B}\circ (\theta_A\otimes \theta_B)$ for all $A,B\in \C$ and $\theta_{A^*}=(\theta_A)^*$.
 \end{proposition}
-\begin{proof} We show that the distinuished morphisms defined satisfy the axioms of Proposition \ref{pivotal-alternative}.
-
-\begin{enumerate}
-\item Rigidity is immediate.
-
-\item We compute as follows:
-
-\begin{equation*}
-\tikzfig{something-property-proof}
-\end{equation*}
-
-yielding the desired result.
-
-\item By the naturality of $\theta_A$, we have that $\theta_A\circ f \circ \theta^{-1}_B=f$ for all $f:B\to A$. Hence,
-
-\begin{equation*}
-\tikzfig{morphism-duals-agree-proof}
-\end{equation*}
-
-as desired.
-\end{enumerate}
-
-Conversely, that we are given a pivotal structure on $\C$. Define $\theta_A$ by
+\begin{proof} We already showed in proposition [ref] that every spherical category gives a twist natural transformation satisfying the desired axioms. Restriciting the proof to only a possibly non-spherical pivotal category still gives a twist natural transformation satisfying $\theta_{A\otimes B}=\beta_{B,A}\circ \beta_{A,B}\circ (\theta_A\otimes \theta_B)$ for all $A,B\in \C$. The heart of the proof is showing that the formulas [ref] induce pivotal and spherical structures with the twist satisfies the right axioms. The process of inducing a pivotal structure and inducing a twist are inverses to one another because
 
 \begin{equation*}
 \tikzfig{graphical-twist-reverse}
 \end{equation*}
 
-The arguments above for parts (1)-(3) apply equally well in reverse, and allow us to deduce that $\theta_A$ is natural and satisfies the twist condition. Additionally, we find by
+To begin, we assume that $\theta_{A\otimes B}=\beta_{B,A}\circ \beta_{A,B}\circ (\theta_A\otimes \theta_B)$ and we seek to prove that the corresponding $\ev^{L}$, $\coev^L$ maps induce a pivotal structure. We first axiom of pivotality follows from use of the axiom $\theta_{A\otimes B}=\beta_{B,A}\circ \beta_{A,B}\circ (\theta_A\otimes \theta_B)$:
 
 \begin{equation*}
-\tikzfig{deligne-lemma-proof}
+\tikzfig{something-property-proof}
 \end{equation*}
 
-that this serves as an inverse to our stated bijection, so we are done. [WORK: do spherical part]
+The second axiom of pivotality follows from the use of the naturality of $\theta$:
+
+\begin{equation*}
+\tikzfig{morphism-duals-agree-proof}
+\end{equation*}
+
+Finally, we assume that $(\theta_A)^*=\theta_{A^*}$ and we seek to prove the spherical axiom. Taking the dual of theta we can get all of the equalities in Lemma [ref]. Applying them we get that
+
+\begin{equation*}
+\tikzfig{spherical-proof}
+\end{equation*}
+
+as desired.
 \end{proof}
 
 \subsubsection{Functors, natural transformations, and equivalence}
 
-.[WORK: this subsection isn't very sexy but I really think it should be included. Questions to answer:
+In this section, we will talk about functors, natural transformations, and equivalences between fusion, spherical, pre-modular, and modular categories. Given a topological order, there is \textit{not} a unique modular category describing it. There is a unique modular category \textit{up to equivalence}. Hence, the notion of equivalence of categories is baked into our physics-math correspondance so it is important that we state it explicitely.
 
-\begin{enumerate}
-\item What is the appropriate notion of functor between fusion cats/ spherical fusion cats / MTCs?
-\item What is the appropriate notion of natural transformation?
-\item What is the appropriate notion of equivalence of categories?
-\end{enumerate}
+Functors which do not induce equivalences of categories are also physically relevant. In certain contexts, a functor $F:\C\to \D$ is used to model a \textit{phase transition} from $\C$ to $\D$. We will see a lot more functors and natural transformations between modular categories throughout the book, especially in chapter [ref].
+
+Even though structures in categories require a lot of compatibility conditions, the conditions on the functors do not. This means that we have the following:
+
+\begin{itemize}
+\item The correct notion of functor between fusion categories is $\CC$-linear monoidal functor. There is no compatibility condition required between the $\CC$-linear structure and the monoidal structure. The correct notion of natural transformation between $\CC$-linear monoidal functors is a monoidal natural transformation.
+
+\item The correct notion of functor between spherical fusion categories is $\CC$-linear pivotal monoidal functor. There is no compatibility condition required between the $\CC$-linear structure and the pivotal monoidal structure. The correct notion of natural trasnformation is monoidal natural transformation.
+
+\item The correct notion of functor between pre-modular categories is $\CC$-linear pivotal braided monoidal functor. There is no compatibility condition required between the $\CC$-linear structure, pivotal monoidal structure, or braided monoidal structure. The correct notion of natural transformation is monoidal natural transformation.
+
+\item The correct notions of functors/natural transformations for modular categories are the same as for pre-modular categories.
+
+\end{itemize}
 
 
-Then, I should talk about how the things we want to be preserved under equivalence really are preserved. For instance, number of isomorphism classes of simple objects, fusion coefficients. A more in-depth discussion of this is going to be in the Yoneda-perspective section so no need to harp on it too much.
-
-Maybe this is a good time for strict vs. skeletal, but that could also wait for the Yoneda perspective section.
-
-This answers to the questions in this section might inform my definition-writing in the previous sections.
-]
+[WORK: this section is very short. I don't have much to say, actually. Should this be moved? Maybe I keep a very short section? I don't know.]
 
 \subsubsection{Deligne tensor product}
 
-In the theory of any class of mathematical object, an important consideration is the ways in which examples can be put together to give new examples. In the case of fusion categories, this basic operation is known as the \textit{Deligne tensor product}. Given any fusion categories $\C$, $\Dcat$, their Deligne tensor product $\C\boxtimes \Dcat$ is a new fusion category. The Deligne tensor product of spherical fusion categories will be equipped with the structure of a spherical fusion category, and the Deligne tensor product of (pre-)modular tensor categories will be equipped with the structure of a (pre-)modular tensor category.
+In the theory of any class of mathematical object, an important consideration is the ways in which examples can be put together to give new examples. In the case of fusion categories, this basic operation is known as the \textit{Deligne tensor product}. Given any fusion categories $\C$, $\Dcat$, their Deligne tensor product $\C\boxtimes \Dcat$ is a new fusion category. The Deligne tensor product of spherical fusion categories will be equipped with the structure of a spherical fusion category, and the Deligne tensor product of (pre-)modular categories will be equipped with the structure of a (pre-)modular category.
 
-Physically, the Deligne tensor product corresponds to \textit{stacking}. Consider two sheets of material. We choose two MTCs $\C$, $\Dcat$. We enodow the top sheet with the structure of a topologically ordered quantum system described by $\C$ and we endow the bottome with the structure of a topologically ordered quantum system described by $\Dcat$. The algebraic description of this bilayer system is $\C\boxtimes \Dcat$. This can be viewed as the physical definition of $\C\boxtimes \Dcat$.
+Physically, the Deligne tensor product corresponds to \textit{stacking}. Consider two sheets of material. We choose two modular categories $\C$, $\Dcat$. We enodow the top sheet with the structure of a topologically ordered quantum system described by $\C$ and we endow the bottome with the structure of a topologically ordered quantum system described by $\Dcat$. The algebraic description of this bilayer system is $\C\boxtimes \Dcat$. This can be viewed as the physical definition of $\C\boxtimes \Dcat$.
 
 [WORK: add bilayer system diagram]
 
 We now mathematically define the Deligne tensor product.
 
-[WORK: this is subtle. There's a definition in general, but we're in a special case where things could be a whole lot simpler. Is there a completely explicit definition in terms of object and morphisms? I do not really want to define right-exact functor if I don't have to.]
+\begin{definition} Let $\C,\Dcat$ be a $\CC$-linear categories, isomorphic as a $\CC$-linear categories to $\Vec_{\CC}^{n}$, $\Vec_{\CC}^m$ respectively. We define a Deligne tensor product of $\C$ and $\Dcat$ to be be the following data:
 
+\begin{enumerate}
+\item A $\CC$-linear category $\C\boxtimes \Dcat$;
+\item A $\CC$-linear functor $\C\times\Dcat \xrightarrow{} \C\boxtimes \Dcat$.
+\end{enumerate}
 
-[WORK: after the basic definition, I have to define it for fusion/spherical/modular categories. This could take up some room.]
+Such that:
 
-[WORK: show that morphisms between box products of simple objects corresponds to the tensor product of the hom-spaces. Conclude that simple objects in the box product are box products of simple objects.]
+\begin{enumerate}
+\item Every object $X\in \C\boxtimes \Dcat$ has a direct sum decomposition
+
+$$X\cong \bigoplus_{i=1}^n A_i\boxtimes B_i$$
+
+for some $n\geq 1$, $A_i\in \C$, $B_i\in \Dcat$.
+
+\item There is an equality of vector spaces
+
+$$\Hom_{\C\boxtimes\Dcat}(A\boxtimes B,A'\boxtimes B')=\Hom_{\C}(A,A')\otimes \Hom_{\Dcat}(B,B').$$
+
+\item Given any $A,A',A''\in \C$, $B,B',B''\in \Dcat$, $f:A\to A'$, $f':A'\to A''$, $g:B\to B'$, $g':B'\to B''$, the diagram
+
+% https://q.uiver.app/#q=WzAsMyxbMCwwLCJBXFxib3h0aW1lcyBCIl0sWzEsMCwiQSdcXGJveHRpbWVzIEInIl0sWzIsMCwiQScnXFxib3h0aW1lcyBCJyciXSxbMCwxLCJmXFxib3h0aW1lcyBnIl0sWzEsMiwiZidcXGJveHRpbWVzIGcnIl0sWzAsMiwiKGYnXFxjaXJjIGYpXFxib3h0aW1lcyAoZydcXGNpcmMgZikiLDIseyJjdXJ2ZSI6M31dXQ==
+\[\begin{tikzcd}
+	{A\boxtimes B} & {A'\boxtimes B'} & {A''\boxtimes B''}
+	\arrow["{f\boxtimes g}", from=1-1, to=1-2]
+	\arrow["{(f'\circ f)\boxtimes (g'\circ f)}"', curve={height=18pt}, from=1-1, to=1-3]
+	\arrow["{f'\boxtimes g'}", from=1-2, to=1-3]
+\end{tikzcd}\]
+
+commutes.
+\end{enumerate}
+
+\end{definition}
+
+We know state the main existence/uniqueness result about the Deligne tensor product:
+
+\begin{proposition} Let $\C,\Dcat$ be $\CC$-linear categories isomorphic as $\CC$-linear categories to $\Vec_{\CC}^n$ and $\Vec_{\CC}^m$ respectively. There exists a Deligne product $\C\boxtimes \Dcat$ for $\C$ and $\Dcat$. Moreover, given any other deligne tensor product $\C\boxtimes' \Dcat$ of $\C$ and $\Dcat$ there exists a unique functor $F: \C\boxtimes \Dcat\xrightarrow{} \C\boxtimes' \Dcat$ making the diagram
+
+% https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXENcXHRpbWVzXFxEY2F0Il0sWzEsMCwiXFxDXFxib3h0aW1lcyBcXERjYXQiXSxbMSwxLCJcXENcXGJveHRpbWVzJyBcXERjYXQiXSxbMCwxXSxbMCwyXSxbMSwyLCJGIl1d
+\[\begin{tikzcd}
+	{\C\times\Dcat} & {\C\boxtimes \Dcat} \\
+	& {\C\boxtimes' \Dcat}
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-1, to=2-2]
+	\arrow["F", from=1-2, to=2-2]
+\end{tikzcd}\]
+
+commute. This functor is an equivalence of categories.
+\end{proposition}
+\begin{proof} It is clear that $\Vec_{\CC}^n\boxtimes \Vec_{\CC}^m = \Vec_{\CC}^{nm}$. Every equivalence of categories $\C \to \C'$ induces an equivalence of categories $\C\boxtimes \Dcat\to\C'\boxtimes \Dcat$. Hence, since $\D$ and $\D$ are equivalent to $\Vec_{\CC}^n$ and $\Vec_{\CC}^m$ respectively, their Deligne tensor product exists and is equivalent to $\Vec_{\CC}^{nm}$.
+
+Any functor making the diagram commute must send $A\boxtimes B$ to $A\boxtimes' B$. The definition of Deligne tensor produce tells us this is enough to conclude that the map is an equivalence of categories, since axiom 3 this map is always a functor, axiom 2 implies it is fully faithful, and axiom 1 implies it is essentially surjective, and hence we can apply proposition [ref].
+\end{proof}
+
+Now that we have defined the Deligne tensor product of $\CC$-linear categories equivalent to $\Vec_{\CC}^n$, we move on to defining the Deligne tensor product of fusion categories, spherical fusion categories, pre-modular categories, and modular categories.
+
+\begin{proposition} The following claims are all true.
+
+\begin{enumerate}[(i)]
+\item Let $\C$, $\Dcat$ be fusion categories. On the level of objects, define a monoidal structure $\C\boxtimes \Dcat$ by the formula
+
+$$(A\boxtimes B)\otimes (A'\boxtimes B')= (A\otimes A')\boxtimes (B\otimes B').$$
+
+Along with a natural choice of action of the tensor product on morphisms, unit $\one_{\C\boxtimes \Dcat}=\one_{\C}\boxtimes \one_{\Dcat}$, and a natural choice of associator and unitors, this induces the structure of a monoidal category on $\C$.
+
+Define a right-rigid structure on $\C\boxtimes \Dcat$ as follows. The dual of an object $A\boxtimes B$ is $A^*\boxtimes B^*$. Define $\ev_{A\boxtimes B}=\ev_{A}\boxtimes \ev_{B}$, $\coev_{A\boxtimes B}= \coev_{A}\boxtimes \coev_{B}$. This induces a well-defined right-rigid structure on $\C\boxtimes \Dcat$.
+
+The above definitions induce the structure of a fusion category on $\C\boxtimes \Dcat$. 
+
+\item Let $\C,\Dcat$ be spherical fusion categories. The evaluation and coevaluation maps $\ev^{L}_{A\boxtimes B} = \ev^{L}_{A}\boxtimes \ev^{L}_B$ and $\coev^{L}_{A\boxtimes B}=\coev^{L}_{A}\boxtimes \coev^{L}_{B}$ induce a left-rigid structure on $\C\boxtimes \Dcat$. Along with the canonial structure of a fusion category on $\C\boxtimes \Dcat$, this induces the structure of a spherical fusion category on $\C\boxtimes \Dcat$.
+
+\item Let $\C,\Dcat$ be pre-modular categories. The braiding map $\beta_{\C\boxtimes \Dcat}=\beta_{\C}\boxtimes \beta_{\Dcat}$ induces the structure of a pre-modular category on $\C\boxtimes \Dcat$. The product $\C\boxtimes \Dcat$ is modular if and only if $\C,\Dcat$ are both modular.
+\end{enumerate}
+\end{proposition}
+\begin{proof} Given any of the above structures, all of the axioms on $\C\boxtimes \Dcat$ immediately follow from their respective axioms on $\C$ and $\Dcat$. Hence, the proof is an exercise is recalling definitons which we omit.
+\end{proof}
+
 
 \subsection{The category of $G$-graded $G$-representations}
 
 \subsubsection{Overview}
 
-We've talked about a lot of general theory of MTCs. It's time for us to focus on our main family of \textit{examples}. Namely, the categories $\D(G)$ of $G$-graded $G$-representations. These categories describe discrete gauge theory based on the finite group $G$.
+We've talked about a lot of general theory of modular categories. It's time for us to focus on our main family of \textit{examples}. Namely, the categories $\D(G)$ of $G$-graded $G$-representations. These categories describe discrete gauge theory based on the finite group $G$.
 
-Before we can prove that $\D(G)$ is a modular tensor category, we need to endow $\D(G)$ with the neccecary structures. In particular, we will endow $\D(G)$ with $\CC$-linear, monoidal, braided, right-rigid, and left-rigid structures. We will need to show that all of these structures are comptabile with each other in the neccecary ways, and that $\D(G)$ satisfies the non-degeneracy axiom. We will use this as an oppurtunity to introduce tools of general use for proving that categories satisfy the axioms of a modular tensor category.
+Before we can prove that $\D(G)$ is a modular category, we need to endow $\D(G)$ with the neccecary structures. In particular, we will endow $\D(G)$ with $\CC$-linear, monoidal, braided, right-rigid, and left-rigid structures. We will need to show that all of these structures are comptabile with each other in the neccecary ways, and that $\D(G)$ satisfies the non-degeneracy axiom. We will use this as an oppurtunity to introduce tools of general use for proving that categories satisfy the axioms of a modular category.
 
 Additionally, we will also study two categories similar to $\D(G)$ which will serve as extra examples to get our grip on definitions. These categories will also appear later as relevant in and of themselves. The first is $\Vec_G$, the category of $G$-graded vector spaces. It is defined as follows:
 
@@ -664,7 +859,7 @@ Our second structure of interest is $\Rep(G)$, the category of $G$-representatio
 
 [WORK: define $\Rep(G)$ in terms of objects and composition.]
 
-We will show that both $\Vec_G$ and $\Rep(G)$ can be naturally equipped with the structures of spherical fusion categories. We then show that $\Rep(G)$ admits a braiding which turns it into a pre-modular tensor category. This braiding is symmetric in the sense that $\beta_{B,A}\circ \beta_{A,B}=\id_{A}\otimes \id_{B}$ for all $A,B\in \C$, and hence $\Rep(G)$ is not an MTC. The category $\Vec_G$ is shown to not admit a braiding whenever $G$ is non-abelian.
+We will show that both $\Vec_G$ and $\Rep(G)$ can be naturally equipped with the structures of spherical fusion categories. We then show that $\Rep(G)$ admits a braiding which turns it into a pre-modular category. This braiding is symmetric in the sense that $\beta_{B,A}\circ \beta_{A,B}=\id_{A}\otimes \id_{B}$ for all $A,B\in \C$, and hence $\Rep(G)$ is not a modular category. The category $\Vec_G$ is shown to not admit a braiding whenever $G$ is non-abelian.
 
 
 \subsubsection{Higher linear algebra}
@@ -687,7 +882,7 @@ It seems like the best approach is through higher linear algebra. Namely, we sho
 
 \subsubsection{Definition}
 
-In this chapter we are going to talk about the \textit{modular representations} of modular categories. Here's the point. Let $\C$ be an MTC. Let $\LL$ be the set of isomorphism classes of simple objects of $\C$. We will define a group homomorphism
+In this chapter we are going to talk about the \textit{modular representations} of modular categories. Here's the point. Let $\C$ be a modular category. Let $\LL$ be the set of isomorphism classes of simple objects of $\C$. We will define a group homomorphism
 
 $$\rho_{\C}:\SL_2(\ZZ)\xrightarrow{}\Aut(\CC[\LL])$$
 
@@ -717,7 +912,7 @@ These two matrices satisfy the relations $s^2=-1$ and $(st)^3=-1$, where $1$ is 
 
 $$\SL_2(\ZZ)=\Braket{s,t | s^4=1,\,\, (st)^3=s^2}.$$
 \end{proposition}
-\begin{proof}.[WORK: don't do proof - push it away into a citation.]
+\begin{proof} This is a standard fact about $\SL_2(\ZZ)$. Se for instance [WORK: ref].
 \end{proof}
 
 Hence, to define a homomorphism $\rho_{\C}:\SL_2(\ZZ)\to \Aut(\CC[\LL])$ it suffices to choose automorphisms $\rho_{\C}(s)$, $\rho_{\C}(t)$ of $\CC[\LL]$, and show that they satisfy the relations $\rho_{\C}(s)^4=1$ and $(\rho_{\C}(s)\rho_{\C}(t))^3=\rho_{\C}(s)^2$. Since $\CC[\LL]$ has a canonical basis, we can think of its automorphisms as being matrices with rows and collumns labeled by $\LL$. We define an operator $S:\CC[\LL]\to \CC[\LL]$ via the matrix coeffients
@@ -732,7 +927,7 @@ $$p^{\pm}_{\C}=\sum_{[A]\in \LL}\theta_A^{\pm 1}d_A^2.$$
 
 We can now state the main theorem of this chapter:
 
-\begin{theorem}[?] Let $\C$ be an MTC. The map
+\begin{theorem} Let $\C$ be a modular category. The map
 
 \begin{align*}
 \rho_{\C}:\SL_2(\ZZ)&\xrightarrow{}\Aut(\CC[\LL])\\
@@ -747,13 +942,13 @@ We will prove this theorem and motivate why it should be true over the course of
 
 \subsubsection{Torus perspective}
 
-It's good to reflect on why MCs have $\SL_2(\ZZ)$ representations assocated with them in the first place. Not only does the representation exist, but it is so fundamental to the MTC that it is chosen as the namesake. This begs the question. What's going on?
+It's good to reflect on why MCs have $\SL_2(\ZZ)$ representations assocated with them in the first place. Not only does the representation exist, but it is so fundamental to the modular category that it is chosen as the namesake. This begs the question. What's going on?
 
 The answer has to do with topological phases on the torus.
 
 [WORK: add torus]
 
-Every MTC $\C$ is supposed to describe a topological order. Up to now we have only considered what happens when this topological order is applied to an infnitely large flat sheet. We have not examined what happens when this topological order is put on a space with nontrivial topology. For instance, the torus. Suppose we analyse the system of $\C$ applied to the torus. This amounts to breaking up the torus into some microscopic lattice and applying some Hamiltonian. This Hamiltonian will have group states $V_{\text{g.s.}}^{T^2}$, which are independent of the choice of microscopic realization of $\C$.
+Every modular category $\C$ is supposed to describe a topological order. Up to now we have only considered what happens when this topological order is applied to an infnitely large flat sheet. We have not examined what happens when this topological order is put on a space with nontrivial topology. For instance, the torus. Suppose we analyse the system of $\C$ applied to the torus. This amounts to breaking up the torus into some microscopic lattice and applying some Hamiltonian. This Hamiltonian will have group states $V_{\text{g.s.}}^{T^2}$, which are independent of the choice of microscopic realization of $\C$.
 
 Suppose we start with a torus, cut it across, twist one of its legs, then glue it back together, as shown below:
 
@@ -781,7 +976,7 @@ This homomorphism connects back to our modular representation as follows:
 \item \textbf{Claim 3:} $\rho_{\C}^{T^2}\cong \rho_{\C}$, passing through the identifications in claims 1 and 2.
 \end{itemize}
 
-In general, we see that associated to every MTC $\C$ there should not only be a modular representation, but also a representation of $\MCG(\Sigma)$ for many other choices of topological space $\Sigma$. For instance, if $\Sigma=\Sigma_g$ is the $g$-holed torus then putting $\C$ on $\Sigma_g$ we get a map
+In general, we see that associated to every modular category $\C$ there should not only be a modular representation, but also a representation of $\MCG(\Sigma)$ for many other choices of topological space $\Sigma$. For instance, if $\Sigma=\Sigma_g$ is the $g$-holed torus then putting $\C$ on $\Sigma_g$ we get a map
 
 $$\rho_{\C}^{\Sigma_g}:\MCG(\Sigma_g)\xrightarrow{}\Aut(V_{\text{g.s.}}^{\Sigma_g}).$$
 
@@ -812,6 +1007,67 @@ We now examine and motivate claims 1-3.
 
 \subsubsection{Bruguieres's modularity theorem}
 
+In this section we prove Bruguieres's modularity theorem. This theorem asserts that, given a pre-modular category $\C$, the $S$-matrix $S$ is invertible if and only if $\C$ is modular. Historically, this theorem is backwards. The original definition of modular category included that the $S$-matrix should be invertible. This was the only definition of modular category, until Bruguieres proved in [ref] that the invertability of the $S$-matrix is equivalent to $\C$ having the non-degenerate braiding property
+
+\begin{equation*}
+\tikzfig{non-degeneracy}
+\end{equation*}
+
+We are thus starting a historically incorrect definition of modular category, and Bruguieres's modularity theorem tells us that this is equivalent to the original definition. The proof of the modularity theorem relies on the \textit{Verlinde algebra} of $\C$. This algebra will be of use for us in proving other theorems in the future, in particular the Verlinde formula in section [ref].
+
+We define an \textit{algebra} over $\CC$ to a vector space $V$ paired with a bilinear map $\cdot: V\times V\to V$ called multiplication, such that multiplication is associative and has a unit. An algebra is called \textit{commutative} if its multiplication is commutative.
+
+We define the Verlinde algebra $K_{\CC}(\C)$ of $\C$ as follows:
+
+$$K_{\CC}(\C)=
+\left\{
+\CC[\LL] \text{ with algebra structure }
+\ket{[A]}\cdot \ket{[B]}=\sum_{[C]\in \LL}N^{A,B}_{C}\ket{[C]}
+\right\}.$$
+
+We additionally define the function algebra
+
+$$
+\Cfunc=
+\left\{
+\CC[\LL] \text{ with algebra structure }
+\left(\sum_{[A]\in \LL}c_A \ket{[A]}\right)\cdot \left(\sum_{[A]\in \LL}c_A' \ket{[A]}\right)= \sum_{[A]\in \LL}c_A c_A' \ket{[A]}
+\right\}.
+$$
+
+\begin{lemma} Both $K_{\CC}(\C)$ and $\Cfunc$ are commutative algebras.
+\end{lemma}
+\begin{proof} The fact that $K_{\CC}(\C)$ is associative follows from the associativity of the tensor product. Its unit is $\ket{[\one]}$. It is commutative because $\C$ is braided. The fact that $\Cfunc$ is a commutative algebra is a standard exercise in algebra. Its unit is $\sum_{[A]\in \LL}\ket{[A]}$.
+\end{proof}
+
+
+We now state and prove the core theorem which underlies the core properties of the $S$ matrix:
+
+\begin{proposition} The map
+
+\begin{align*}
+\SS:K_{\CC}(\C)&\xrightarrow{} \Cfunc\\
+\ket{[A]}&\mapsto \sum_{[B]\in \LL}\frac{1}{d_B}S_{A,B}\ket{[B]}
+\end{align*}
+
+is a morphism of $\CC$-algebras.
+\end{proposition}
+\begin{proof} Since it was defined on a basis, $\SS$ is clearly a linear map. We now verify that $\SS$ preserves multiplication. In the below computation, we identity endomorphisms of simple objects with the unique scalar they are times the identity. We let $A,B,D$ be simple objects.
+
+\begin{equation*}
+\tikzfig{verlinde-algebra-proof}
+\end{equation*}
+
+Note our key use of the fact that
+
+[WORK: circles split over direct sums.]
+
+This concludes the proof
+\end{proof}
+
+
+
+
 [WORK: Prove Bruguieres's modularity theorem, which states that a pre-modular category is modular if and only if its S-matrix is nondegenerate. Obviously a neccecary first step in proving the main theorem. The way that this exposition goes really depends on what the proof of Bruguieres's theorem is like. I've never seen it before, so this is something to learn.]
 
 
@@ -819,7 +1075,7 @@ We now examine and motivate claims 1-3.
 
 [WORK: this subsection was copy-pasted essentially verbatim from a previous draft. Does not follow the format I want now, needs to be redone]
 
-One of the most powerful equations in the theory of modular tensor categories (MTCs) is the so-called \textit{Verlinde formula}. This formula was first conjectured by Verlinde \cite{verlinde1988fusion}, and proven the following year by Moore-Seiberg \cite{moore1989classical}. There are now many Verlinde-type formulas. Most imporantly, there is one for vertex operator algebras \cite{huang2008vertex} and one in algebraic geometry \cite{faltings1994proof}. The Verlinde formula allows one to express the fusion coefficients in terms of the $S$-matrix entries:
+One of the most powerful equations in the theory of modular categories is the so-called \textit{Verlinde formula}. This formula was first conjectured by Verlinde \cite{verlinde1988fusion}, and proven the following year by Moore-Seiberg \cite{moore1989classical}. There are now many Verlinde-type formulas. Most imporantly, there is one for vertex operator algebras \cite{huang2008vertex} and one in algebraic geometry \cite{faltings1994proof}. The Verlinde formula allows one to express the fusion coefficients in terms of the $S$-matrix entries:
 
 \begin{equation}
 N^{a,b}_{c}=\sum_{e\in \LL} \frac{S_{a,e} S_{b,e}(S^{-1})_{c,e}}{d_e}.\tag{\textasteriskcentered}
@@ -861,7 +1117,7 @@ We now verify $\mu$ is an isomorphism. Choosing a simple object $\left| a\right>
 
 $$\mu(\left| a\right>)=\sum_{b\in \LL}\frac{s_{a,b}}{d_b}\left| b\right>.$$
 
-Thus, $\mu$ is given on the level of vector spaces by a scaled $S$-matrix. Since $S$ is invertible we get that $\mu$ is bijective as desired. Note the key use of the fact that quantum dimensions are non-zero in MTCs. The definition of $K_{\CC}(\C)$ exactly says that left multiplication is represted by the fusion matrix $N^a$. The computation
+Thus, $\mu$ is given on the level of vector spaces by a scaled $S$-matrix. Since $S$ is invertible we get that $\mu$ is bijective as desired. Note the key use of the fact that quantum dimensions are non-zero in modular categories. The definition of $K_{\CC}(\C)$ exactly says that left multiplication is represted by the fusion matrix $N^a$. The computation
 
 \begin{align*}
 [a]\cdot \mu^{-1}(\left| b\right>)&=\mu^{-1}\left(\left(\sum_{c\in \LL}\frac{s_{a,c}}{d_c}\left| c\right>\right)\cdot  \left| b\right>\right)\\
@@ -888,11 +1144,11 @@ with $D^a$ the diagonal matrix whose $(b,b)$ entry is $s_{a,b}/d_b$, as desired.
 .[WORK: Go through Schauenberg-Ng's original paper and understand the proof.]
 
 
-\subsection{The Yoneda perspective}
+\subsection{Skeletonization}
 
 \subsubsection{Principle}
 
-.[WORK: lots of big choices need to be made here. Do I call this the Yoneda perspective, or do I call it something else? Do I work with multiplicity-free categories, or do I allow multiplicity? I don't know what the correct statements are or what the proofs look like so this section might be a tough one.]
+.[WORK: lots of big choices need to be made here. Do I call this the skeletonization, or do I call it something else? Do I work with multiplicity-free categories, or do I allow multiplicity? I don't know what the correct statements are or what the proofs look like so this section might be a tough one.]
 
 \subsubsection{$F$-symbols}
 
@@ -904,11 +1160,11 @@ with $D^a$ the diagonal matrix whose $(b,b)$ entry is $s_{a,b}/d_b$, as desired.
 
 
 
-\subsection{Quantum double MTCs}
+\subsection{Quantum double modular categories}
 
 \subsubsection{The Drinfeld center}
 
-A quantum double MTC is a special type of MTC. They are particularly important because many of the constructions of topological order only deal with quantum double MTCs. For instance, there are constructions of MTCs/topological order coming from the theory of tensor networks [ref], subfactors [ref], vertex operator algebras [ref], [WORK: add more sources]. All of these constructions only give quantum double MTCs. Hence, understanding quantum doubles is key to understanding how topological order work in practice.
+A quantum double modular category is a special type of modular category. They are particularly important because many of the constructions of topological order only deal with quantum double modular categories. For instance, there are constructions of modular categories/topological order coming from the theory of tensor networks [ref], subfactors [ref], vertex operator algebras [ref], [WORK: add more sources]. All of these constructions only give quantum double modular categories. Hence, understanding quantum doubles is key to understanding how topological order work in practice.
 
 At the heart of quantum doubles is a construction known as the \textit{Drinfeld center}. In its most basic form the Drinfeld center induces an assignment
 
@@ -918,7 +1174,7 @@ In our context, we care about a more structured version of the Drinfeld center. 
 
 $$\Z: (\text{spherical fusion categories})\xrightarrow{}(\text{modular categories}).$$
 
-This theorem is fantastic because it allows one to construct modular categories using much less data than would otherwise be neccecary. Without needing a braiding, non-degenerate or otherwise, the Drinfeld center allows one to construct a modular category. This makaes the Drinfeld center an abundant source of MTCs. We call an MTC $\C$ a quantum double if it is of the form $\Z(\C_0)$ for some spherical fusion category $\C_0$. A a major goal of this chapter is to set up and prove Muger's theorem
+This theorem is fantastic because it allows one to construct modular categories using much less data than would otherwise be neccecary. Without needing a braiding, non-degenerate or otherwise, the Drinfeld center allows one to construct a modular category. This makaes the Drinfeld center an abundant source of modular categories. We call an modular category $\C$ a quantum double if it is of the form $\Z(\C_0)$ for some spherical fusion category $\C_0$. A a major goal of this chapter is to set up and prove Muger's theorem
 
 We now define the Drinfeld center. The Drinfeld center is a somewhat direct categorification of the usual notion of center for finite groups. If $G$ is a finite group, its center is defined as follows:
 
@@ -967,20 +1223,20 @@ This condition makes the second hexagon identity tautological. Similarly, the de
 
 \subsubsection{Discrete gauge theory as a quantum double and Morita equivalence}
 
-We saw in chapter [ref] that $\Vec_G$ anad $\Rep(G)$ are both naturally spherical fusion categories. Thus, Muger's theorem tells us that $\Z(\Vec_G)$ and $\Z(\Rep(G))$ are both MTCs. Hence, given a finite group $G$ we have three different MTCs we can associate to it: $\D(G)$, $\Z(\Vec_G)$, $\Z(\Rep(G))$. The amazing fact is that these are all the same category:
+We saw in chapter [ref] that $\Vec_G$ anad $\Rep(G)$ are both naturally spherical fusion categories. Thus, Muger's theorem tells us that $\Z(\Vec_G)$ and $\Z(\Rep(G))$ are both modular categories. Hence, given a finite group $G$ we have three different modular categories we can associate to it: $\D(G)$, $\Z(\Vec_G)$, $\Z(\Rep(G))$. The amazing fact is that these are all the same category:
 
 \begin{proposition} Let $G$ be a finite group. There are equivalences of modular categories $\D(G)\cong \Z(\Vec_G)\cong \Z(\Rep(G))$.
 \end{proposition}
 \begin{proof}.[WORK: do proof. Shouldn't be too hard.]
 \end{proof}
 
-We now make a few comments about this theorem. The first is that it proves that $\D(G)$ is a quantum double MTC. Secondly, it gives a second proof that $\D(G)$ has a non-degenearte braiding, using Muger's theorem. Thirdly, it demonstrates the concept of \textit{Morita equivalence}.
+We now make a few comments about this theorem. The first is that it proves that $\D(G)$ is a quantum double modular category. Secondly, it gives a second proof that $\D(G)$ has a non-degenearte braiding, using Muger's theorem. Thirdly, it demonstrates the concept of \textit{Morita equivalence}.
 
 [WORK: introduce Morita equivalence. I know that there's some important basic facts to tell - I should include those.]
 
 \subsubsection{Factorizability and time reversal symmetry}
 
-Given an MTC $\C$, we can forget the braiding on $\C$ and only remember its structure as a spherical fusion category. Hence, Muger's theorem tells us that $\Z(\C)$ is canonically an MTC. It is a fantastic fact that in this case $\Z(\C)$ can be explicitely computed in terms of $\C$. We describe this computation now.
+Given a modular category $\C$, we can forget the braiding on $\C$ and only remember its structure as a spherical fusion category. Hence, Muger's theorem tells us that $\Z(\C)$ is canonically a modular category. It is a fantastic fact that in this case $\Z(\C)$ can be explicitely computed in terms of $\C$. We describe this computation now.
 
 [WORK: Define the time-reversal conjugate $\overline{\C}$. Setup the map $\C\boxtimes \overline{\C}\xrightarrow{}\Z(\C)$]
 
@@ -1002,20 +1258,20 @@ I think that this model is fantastic because it shows how all of the ideas of te
 
 \subsection{Unitarity}
 
-\subsubsection{Characterization of unitarizable MTCs}
+\subsubsection{Characterization of unitarizable modular categories}
 
-[WORK: the main theorem of this section is that an MTC is unitarizable if and only if it has positive quantum dimensions]
+[WORK: the main theorem of this section is that a modular category is unitarizable if and only if it has positive quantum dimensions]
 
 [WORK: there also needs to be mention of the fact that braiding is automatically unitary in a unitary category]
 
 \subsubsection{Uniqueness of unitary structure}
 
-\subsubsection{Yoneda perspective on unitarity}
+\subsubsection{Skeletonization of unitarity}
 
 
 
 
-\subsection{Number theory in MTCs}
+\subsection{Number theory in modular categories}
 
 \subsubsection{.[prerequisites and introduction]}
 
@@ -1038,10 +1294,10 @@ $\newline$
 \textbf{History and further reading:}\\
 \end{center}
 
-Modular tensor categories were born from conformal field theory in the late 1980s. In a series of papers, Moore and Seiberg analysed deeply the underlying content within conformal field theory to find what essential algebraic data lied within it \cite{moore1988polynomial, moore1989classical}. They wrote out the axioms of this essential algebraic data in their subsequent notes on conformal field theory \cite{moore1990lectures}. They used the name modular tensor category to describe their data, as suggested by Igor Frenkel. This definition was then refined and re-introduced by Turaev \cite{turaev1992modular}. The first major application of modular tensor categories was the Reshetikhin-Turaev construction \cite{reshetikhin1991invariants, turaev2010quantum}. Prior to this result nobody had succeed in constructing topological quantum field theories. In this way, modular tensor categories and the Reshetikhin-Turaev construction completed Witten's programme of quantizing Chern-Simons theory.
+Modular categories were born from conformal field theory in the late 1980s. In a series of papers, Moore and Seiberg analysed deeply the underlying content within conformal field theory to find what essential algebraic data lied within it \cite{moore1988polynomial, moore1989classical}. They wrote out the axioms of this essential algebraic data in their subsequent notes on conformal field theory \cite{moore1990lectures}. They used the name modular category to describe their data, as suggested by Igor Frenkel. This definition was then refined and re-introduced by Turaev \cite{turaev1992modular}. The first major application of modular categories was the Reshetikhin-Turaev construction \cite{reshetikhin1991invariants, turaev2010quantum}. Prior to this result nobody had succeed in constructing topological quantum field theories. In this way, modular categories and the Reshetikhin-Turaev construction completed Witten's programme of quantizing Chern-Simons theory.
 
 $\newline$
-By the early 2000s, the proposal of topological quantum computing was attracting a lot of interest in anyons and their algebraic properties. Seeing as topological order can be described by topological quantum field theory and topological quantum field theory is essentially equivalent to modular tensor categories, it was understood that modular tensor categories could be used to understand topological order. This latent description of anyons in terms of modular tensor categories was made explicit in an appendix in the seminal 2006 paper of Kitaev \cite{kitaev2006anyons}. This approach to anyons in terms of modular tensor categories was popularized by Wang's early monograph \cite{wang2010topological}. This has since become the standard approach towards the algebraic theory of topological quantum information.
+By the early 2000s, the proposal of topological quantum computing was attracting a lot of interest in anyons and their algebraic properties. Seeing as topological order can be described by topological quantum field theory and topological quantum field theory is essentially equivalent to modular categories, it was understood that modular categories could be used to understand topological order. This latent description of anyons in terms of modular categories was made explicit in an appendix in the seminal 2006 paper of Kitaev \cite{kitaev2006anyons}. This approach to anyons in terms of modular categories was popularized by Wang's early monograph \cite{wang2010topological}. This has since become the standard approach towards the algebraic theory of topological quantum information.
 }}
 
 
@@ -1051,7 +1307,7 @@ $\newline\newline$
 
 \begin{enumerate}[\thesection .1.]
 
-\item .[WORK: apply Verlinde formula to group-theoretical MTCs to recover classical theorem by Burnside]
+\item .[WORK: apply Verlinde formula to group-theoretical modular categories to recover classical theorem by Burnside]
 
 \item .[WORK: show that irriducible $G$-graded $G$-reps are equivalent to irriducible reps of centralizers of conjugacy classes]
 

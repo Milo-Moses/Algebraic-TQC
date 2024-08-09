@@ -1,25 +1,24 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=none] (0) at (-7, 4) {};
-		\node [style=none] (1) at (-5, 4) {};
-		\node [style=none] (2) at (-5, 2) {};
-		\node [style=none] (3) at (-7, 2) {};
-		\node [style=none] (4) at (-7, 0) {};
-		\node [style=none] (5) at (-5, 0) {};
-		\node [style=none] (6) at (-4, 2) {$=$};
-		\node [style=none] (7) at (-3, 4) {};
-		\node [style=none] (8) at (-3, 0) {};
-		\node [style=none] (9) at (-2, 4) {};
-		\node [style=none] (10) at (-2, 0) {};
-		\node [style=none] (11) at (1, 2) {$\forall b \implies a=1.$};
-		\node [style=none] (12) at (-3, 4.5) {$a$};
-		\node [style=none] (13) at (-2, 4.5) {$b$};
-		\node [style=none] (14) at (-3, -0.5) {$a$};
-		\node [style=none] (15) at (-2, -0.5) {$b$};
-		\node [style=none] (16) at (-7, 4.5) {$a$};
-		\node [style=none] (17) at (-5, 4.5) {$b$};
-		\node [style=none] (18) at (-7, -0.5) {$a$};
-		\node [style=none] (19) at (-5, -0.5) {$b$};
+		\node [style=none] (0) at (-5, 2) {};
+		\node [style=none] (1) at (-4, 2) {};
+		\node [style=none] (2) at (-4, 1) {};
+		\node [style=none] (3) at (-5, 1) {};
+		\node [style=none] (4) at (-5, 0) {};
+		\node [style=none] (5) at (-4, 0) {};
+		\node [style=none] (6) at (-3, 1) {$=$};
+		\node [style=none] (7) at (-2, 2) {};
+		\node [style=none] (8) at (-2, 0) {};
+		\node [style=none] (9) at (-1, 2) {};
+		\node [style=none] (10) at (-1, 0) {};
+		\node [style=none] (12) at (-2, 2.5) {$A$};
+		\node [style=none] (13) at (-1, 2.5) {$B$};
+		\node [style=none] (14) at (-2, -0.5) {$A$};
+		\node [style=none] (15) at (-1, -0.5) {$B$};
+		\node [style=none] (16) at (-5, 2.5) {$A$};
+		\node [style=none] (17) at (-4, 2.5) {$B$};
+		\node [style=none] (18) at (-5, -0.5) {$A$};
+		\node [style=none] (19) at (-4, -0.5) {$B$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (7.center) to (8.center);

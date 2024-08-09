@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-6, 5) {$\left(\frac{1}{d_D}S_{D,A}\right)\left(\frac{1}{d_D}S_{D,B}\right)$};
+		\node [style=none] (1) at (-1.75, 5) {$=$};
+		\node [style=none] (2) at (1, 4) {};
+		\node [style=none] (3) at (1, 6) {};
+		\node [style=none] (5) at (0.5, 5) {};
+		\node [style=none] (6) at (1.5, 5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3.center) to (2.center);
+		\draw [bend left=90, looseness=1.50] (5.center) to (6.center);
+		\draw [bend right=90, looseness=1.50] (5.center) to (6.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

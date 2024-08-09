@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (6) at (1, -1) {};
+		\node [style=none] (8) at (1, 2) {};
+		\node [style=none] (9) at (1, -1.5) {$A$};
+		\node [style=none] (10) at (1, 2.5) {$A$};
+		\node [style=none] (11) at (2, 0.5) {$=$};
+		\node [style=none] (12) at (4.75, 0.5) {$\left(\id_{A}:A\xrightarrow{}A\right)$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (6.center) to (8.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

@@ -1,0 +1,65 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-4, 2) {};
+		\node [style=none] (2) at (-4, 0.75) {};
+		\node [style=none] (3) at (-0.75, 0.75) {};
+		\node [style=none] (4) at (-0.75, 2) {};
+		\node [style=none] (5) at (-3.25, 2) {};
+		\node [style=none] (6) at (-2, 2) {};
+		\node [style=none] (7) at (-1.25, 2) {};
+		\node [style=none] (8) at (-3.25, 3) {};
+		\node [style=none] (9) at (-0.25, 2) {};
+		\node [style=none] (10) at (1, 2.75) {};
+		\node [style=none] (11) at (-0.25, 0) {};
+		\node [style=none] (12) at (1, 0) {};
+		\node [style=none] (13) at (-2.325, 1.25) {$\coev^R_{A\otimes B}$};
+		\node [style=none] (14) at (-3.125, 3.5) {$(A\otimes B)^*$};
+		\node [style=none] (15) at (-0.25, -0.5) {$B^*$};
+		\node [style=none] (16) at (0.75, -0.5) {$A^*$};
+		\node [style=none] (17) at (0.25, 2.75) {$\ev^R_{B}$};
+		\node [style=none] (18) at (1.5, 3.75) {$\ev^R_{A}$};
+		\node [style=none] (19) at (-2, 2.75) {};
+		\node [style=none] (20) at (11.5, 2) {};
+		\node [style=none] (21) at (11.5, 0.75) {};
+		\node [style=none] (22) at (8.25, 0.75) {};
+		\node [style=none] (23) at (8.25, 2) {};
+		\node [style=none] (24) at (10.75, 2) {};
+		\node [style=none] (25) at (9.5, 2) {};
+		\node [style=none] (26) at (8.75, 2) {};
+		\node [style=none] (27) at (10.75, 3) {};
+		\node [style=none] (28) at (7.75, 2) {};
+		\node [style=none] (29) at (6.5, 2.75) {};
+		\node [style=none] (30) at (7.75, 0) {};
+		\node [style=none] (31) at (6.5, 0) {};
+		\node [style=none] (32) at (9.925, 1.25) {$\coev^L_{A\otimes B}$};
+		\node [style=none] (33) at (10.9, 3.5) {$(A\otimes B)^*$};
+		\node [style=none] (34) at (6.5, -0.5) {$B^*$};
+		\node [style=none] (35) at (7.75, -0.5) {$A^*$};
+		\node [style=none] (36) at (7.25, 2.75) {$\ev^L_{A}$};
+		\node [style=none] (37) at (6, 3.75) {$\ev^L_{B}$};
+		\node [style=none] (38) at (9.5, 2.75) {};
+		\node [style=none] (39) at (3.5, 1.5) {$=$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (4.center) to (3.center);
+		\draw (3.center) to (2.center);
+		\draw (2.center) to (0.center);
+		\draw (0.center) to (4.center);
+		\draw (5.center) to (8.center);
+		\draw [bend left=90, looseness=2.00] (7.center) to (9.center);
+		\draw (9.center) to (11.center);
+		\draw (10.center) to (12.center);
+		\draw [bend left=90, looseness=1.25] (19.center) to (10.center);
+		\draw (19.center) to (6.center);
+		\draw (23.center) to (22.center);
+		\draw (22.center) to (21.center);
+		\draw (21.center) to (20.center);
+		\draw (20.center) to (23.center);
+		\draw (24.center) to (27.center);
+		\draw [bend right=90, looseness=2.00] (26.center) to (28.center);
+		\draw (28.center) to (30.center);
+		\draw (29.center) to (31.center);
+		\draw [bend right=90, looseness=1.25] (38.center) to (29.center);
+		\draw (38.center) to (25.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

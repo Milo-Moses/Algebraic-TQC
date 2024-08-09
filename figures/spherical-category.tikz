@@ -1,0 +1,43 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-1.5, 1) {};
+		\node [style=none] (1) at (-1.5, 2) {};
+		\node [style=none] (2) at (-0.5, 2) {};
+		\node [style=none] (3) at (-0.5, 1) {};
+		\node [style=none] (4) at (-1, 2) {};
+		\node [style=none] (5) at (-1, 1) {};
+		\node [style=none] (6) at (0, 2) {};
+		\node [style=none] (7) at (0, 1) {};
+		\node [style=none] (8) at (-1, 1.5) {$f$};
+		\node [style=none] (9) at (-1.25, 0.25) {$A$};
+		\node [style=none] (10) at (-1.25, 2.5) {$B$};
+		\node [style=none] (11) at (1, 1.5) {$=$};
+		\node [style=none] (12) at (3.5, 1) {};
+		\node [style=none] (13) at (3.5, 2) {};
+		\node [style=none] (14) at (2.5, 2) {};
+		\node [style=none] (15) at (2.5, 1) {};
+		\node [style=none] (16) at (3, 2) {};
+		\node [style=none] (17) at (3, 1) {};
+		\node [style=none] (18) at (2, 2) {};
+		\node [style=none] (19) at (2, 1) {};
+		\node [style=none] (20) at (3, 1.5) {$f$};
+		\node [style=none] (21) at (3.25, 0.25) {$A$};
+		\node [style=none] (22) at (3.25, 2.5) {$B$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0.center) to (3.center);
+		\draw (3.center) to (2.center);
+		\draw (2.center) to (1.center);
+		\draw (1.center) to (0.center);
+		\draw [bend left=90, looseness=2.00] (4.center) to (6.center);
+		\draw [bend right=90, looseness=2.00] (5.center) to (7.center);
+		\draw (6.center) to (7.center);
+		\draw (12.center) to (15.center);
+		\draw (15.center) to (14.center);
+		\draw (14.center) to (13.center);
+		\draw (13.center) to (12.center);
+		\draw [bend right=90, looseness=2.00] (16.center) to (18.center);
+		\draw [bend left=90, looseness=2.00] (17.center) to (19.center);
+		\draw (18.center) to (19.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

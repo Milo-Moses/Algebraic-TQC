@@ -1,0 +1,33 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (0.5, 2) {};
+		\node [style=none] (1) at (0.5, 1) {};
+		\node [style=none] (2) at (3.75, 1) {};
+		\node [style=none] (3) at (3.75, 2) {};
+		\node [style=none] (4) at (1.25, 2) {};
+		\node [style=none] (5) at (2.5, 2) {};
+		\node [style=none] (6) at (3.25, 2) {};
+		\node [style=none] (7) at (1.25, 3) {};
+		\node [style=none] (8) at (4.25, 2) {};
+		\node [style=none] (9) at (5.25, 2.25) {};
+		\node [style=none] (10) at (4.25, 0) {};
+		\node [style=none] (11) at (5.25, 0) {};
+		\node [style=none] (12) at (2.175, 1.5) {$\coev_{A\otimes B}$};
+		\node [style=none] (13) at (1.375, 3.5) {$(A\otimes B)^*$};
+		\node [style=none] (14) at (4.25, -0.5) {$B^*$};
+		\node [style=none] (15) at (5.25, -0.5) {$A^*$};
+		\node [style=none] (18) at (2.5, 2.25) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3.center) to (2.center);
+		\draw (2.center) to (1.center);
+		\draw (1.center) to (0.center);
+		\draw (0.center) to (3.center);
+		\draw (4.center) to (7.center);
+		\draw [bend left=90, looseness=2.00] (6.center) to (8.center);
+		\draw (8.center) to (10.center);
+		\draw (9.center) to (11.center);
+		\draw [bend left=90, looseness=1.25] (18.center) to (9.center);
+		\draw (18.center) to (5.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

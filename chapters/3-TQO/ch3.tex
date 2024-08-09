@@ -4,6 +4,8 @@
 
 \subsubsection{Introduction}
 
+[WORK: balance generality and concreteness. I'll want to work with the definition of TO given by Bravyi and Hastings. This has the problem that it doesn't include the most physically realistic TO Hamiltonian, the honeycomb model! The honeycomb model only gives TC in its 4-th order perturbation theory. Something to deal with in the treatment - the big ideas are more important than the details. However, without the details thinigs can easily get way off track.]
+
 In this chapter we will be giving a detailed analysis of topological quantum order, a particular type of topological quantum system. We recall below how this fits into the general framework of this book:
 
 \begin{equation*}
@@ -26,7 +28,9 @@ So, in practice, how do we make sure that the perturbations being applied to $\k
 \tikzfig{TQO-spectrum-2}
 \end{equation*}
 
-So long as the temperature is much smaller than the energy gap ($T\ll \Delta$), then our system will remain in the ground state. We say that the system $(V,H)$ \textit{becomes topological at low temerature}. 
+So long as the temperature is much smaller than the energy gap ($T\ll \Delta$), then our system will remain in the ground state. We say that the system $(V,H)$ \textit{becomes topologically ordered at low temerature}. 
+
+[WORK: here is where I should introduce TO properly]
 
 Of course, there's a big problem in our above discussion. \textit{Every} finite dimensional quantum system is gapped. The Hamiltonian has finitely many eigenvalues, so its spectrum is neccecarily discrete. What we should really be imagnining is an infinite family of systems, paramaterized by some real number $L>0$ called the \textit{linear system size}. Working in a two dimensional system, this will look like the below picture:
 
@@ -571,94 +575,145 @@ Using the excited states of a topologically ordered system to store information 
 \item It introduces non-topological local degrees of freedom. This non-topological information needs to be worked around so that proper fault-tolerant computations can be performed.
 \end{enumerate}
 
-We now recall our procedure for storing information in ground states. The key point is that we have a projector $\PP:\NN\xrightarrow{}\NN_{g.s.}$. This projector satisfies the relation that $\PP \OO \PP = \lambda\cdot \PP$ for any local operator $\OO$, for some $\lambda\in \CC$. Our physical picture for topological quantum computing is that we are continually measuring with respect to $\PP$, and hence constantly projecting into the ground space. The formula $\PP \OO \PP$ says that even if noise is applied between rounds of projection it is okay because our state will only change by a phase and hence will still store the same information.
+We now recall our procedure for storing information in ground states. The key point is that we have a projector $\PP:\NN\xrightarrow{}\NN_{g.s.}$. This projector satisfies the relation that $\PP \OO \PP = \lambda\cdot \PP$ for any local operator $\OO$, for some $\lambda\in \CC$. Our physical picture for topological quantum computing is that we are continually measuring with respect to $\PP$, and hence constantly projecting into the ground space. The formula $\PP \OO \PP = \lambda \cdot \PP$ says that even if noise is applied between rounds of projection it is okay because our state will only change by a phase and hence will still store the same information.
 
-[WORK: try $\PP_{E}$ onto states of a fixed energy. Problem: drift. Solution: constrain drift. Anyons!]
+As we leave the ground states, this protocol breaks down. We cannot continually project into ground states because that would destroy any information we are storing in excited states! If we don't have any sort of projector, however, errors will accumulate and we will lose all of the fault-tolerance of topological quantum computing. The answer is to find a new subspace $\NN' \subset \NN$ to store our information in, so that the orthogonal projector $\PP_{N'}: \NN \xrightarrow{} \NN'$ satisfies a formula similar to $\PP_{N'}\OO \PP_{N'}=\lambda\cdot \PP_{N'}$.
+
+A first guess might to constantly measure with respect to the Hamiltonian, as before, and then project into a different energy eigenspace. We have a decomposition of $\NN$ by diagonalizing the Hamiltonian, $\NN=\bigoplus_{E\in \RR}\NN_{E}$. We can try storing our information in $\NN_{E}$, for some fixed $E>0$ independent of system size.
+
+We demonstrate how this fails using the toric code, working with $E=4$. A generic state $\ket{\psi}$ in $\NN_{E=4}$ might look like this one:
+
+[WORK: add picture, two sites with $X$-excitations, two sites with $Z$-excitations.]
+
+The fact that there are exactly four terms in the Hamilotian that are violated corresponds exactly to the fact that the energy of the state is $E=4$. We now consider applying $\sigma_{X}$ to $\ket{\psi}$ at an edge adjacent to one of the $X$-excitations:
+
+[WORK: add picture. Applying $(\sigma_X)_e$ moves the $X$-excitation.]
+
+This new state with the $X$-excitation moved still has the same number of anyons, and hence $(\sigma_X)_e\ket{\psi}$ still leaves in $\NN_{E}$. Hence, $\PP_{E}(\sigma_X)_e\PP_{E}\ket{\psi}=(\sigma_X)_e\ket{\psi}$ does \textit{not} differ by a scalar. Even worse, despite the consant application of the projector $\PP_{E}$, local errors can accumate to become global errors. If we keep applying $\sigma_X$ on edges around some loop then this will never be detected by $\PP_{E}$, and this will be the same as acting by some non-trivial global operator. 
+
+[WORK: add picture of local noise accumulating to be a global error.]
+
+In summary, storing information in an excited energy level of a topologically ordered system does not result in information which is resistant to local noise. The problem is that the terms which violate the ground-state condition in the Hamiltonian can \textit{drift}, moving around the physical space in an uncrolled fashion without changing the energy of the system.
+
+The solution to this problem is to \textit{constrain the drift}. This works as follows. We work in the Kitaev quantum double model based on some finite group $G$. Define a \textit{region} in a space to be a compact connected subset of it. Choose $n$ disjoint regions $R_1...R_n$ on the torus $T^2$. We define the space
 
 
+$$\NN_{R_1,R_2... R_N}=\left\{\ket{\psi}\in \NN | \,\, A_v\ket{\psi}=B_p\ket{\psi}=\ket{\psi},\,\, \forall v,p\not\in \bigcup_{i=1}^n R_i \right\}.$$
+
+This space consists of states which satisfy the condition to be in the ground state of $H=\sum_{v}(1-A_v)+\sum_p(1-B_p)$ outside of the regions  $R_1...R_n$, but is allowed to do whatever it wants within the regions. This is shown visually below:
+
+[WORK: add picture]
+
+The space $\NN_{R_1,R_2... R_N}$ contains all ground states, but also a large amount of excited states. The regions $R_1... R_n$ constrain the drift of excitations. To illustrate the power of this space, consider the example of the toric code. Suppose we have our same state $\ket{\psi}$ as below with energy $E=4$, but we consider it instead as a subspace of $\NN_{R_1,R_2,R_3,R_4}$ for some regions $R_1,...R_4$ containing the four excited operators. Applying $\sigma_X$ to an edge can still change the state, and so we don't have the formula $\PP_{N'}\OO \PP_{N'}=\lambda\cdot \PP_{N'}$, but local errors \textit{cannot} accumlate to become global errors! If the excited term starts to drift, it will eventually leave the region in started in and hence will no longer be in the subspace $\NN_{R_1,R_2,R_3,R_4}$, so projecting back into it will fix the error. This is shown pictorally below:
+
+[WORK: add picture]
+
+In this way, local operators can change the information stored in the system but it can only change it to a controlled degree. There is still global information within $\NN_{R_1,R_2... R_n}$ which is roughly invariant under local operators. Getting this global information out in such a way that the answer does not depend on whatever local operators are applied to the system is non-insurmountable challenge. This is the heart of point (3) in the obstacts of working with excited states: it introduces non-topological degrees of freedom which need to be worked around.
+
+[WORK: notation is a bit junky because I'm working with $R_1,R_2... R_n$ all the time. It would be nicer in some ways if I worked with just one region $R$, and I dropped the condition that it be connected. This makes the definition of ``anyon" a bit more janky though. Not sure what to do.]
+
+[WORK: So far I haven't defined what an anyon is for topological orders other than the KQDM. One easy way to do this is by putting some set $L$ of sites, choosing $d>0$, defining $\NN=\bigotimes_{\ell \in L}\CC^d$. Then we have $H=\sum_{i}H_i$, $[H_i,H_j]=0$, $H_i^2=1$, $H_i$ localized to some region $U_i$. This is a commuting local projector Hamiltonian. It is easy to define anyons in a model like this one. I'm not sure if this would be informative or distracting.
+
+Actually, on second thought, something like this might actually be neccecary for the definition of TO. Hence, we might have it ready-to-use for this section.
+]
 
 
-\subsubsection{Definition}
+\subsubsection{Definition and principles of anyons}
 
-We haven't mentioned them by name yet, but \textit{anyons} are one of the key concepts in the theory of topological quantum information. This is so much true that our algebraic theory of topological quantum information is in reality a theory of anyons. It is a nontrivial fact that describing anyon behavior is enough to recover the rest of topological quantum information. So, before going to the algebraic picture, it behooves us to get very clear on what anyons are, how they behave, and why they are important.
+With the discussion in the previous section, we can start to see how our picture for topological quantum computing is similar to the picture for topological classcial computing described in chapter [ref]. The regions $R_1,R_2... R_n$ are localized regions of difference within a homogenous bulk. The bulk is homogenous because the wavefunction is groundstate of the Hamiltonian in those regions, and TQO-2 implies that all of these ground states are locally indistinugishable. The regions $R_1,R_2... R_n$ are different because they are allowed to be excited. Hence, the regions $R_1... R_n$ behave as \textit{quasiparticles}. We will show that these quasiparticles can be pair-created, braided, and fused, just like in topological classical computing. The major difference between our scheme for topological quantum computing and topological classical computing is that instead of our quasiparticles being defects in ordered media, they are localized excitations in a topological order. This leads us to the following definition:
 
 \begin{definition} An \textit{anyon} is a localized excitation in a topologically ordered system.
 \end{definition}
 
-Let's unpack this definition. To be concrete we work first in the Kitaev quantum double model based on a finite group $G$.
+In our present context, this localization is best viewed not as an unavoidable physical reality but as a design decision for building a topological quantum computer. States $\ket{\psi}$ in topologically ordered systems have terms in the Hamiltonian that the violate and ones they don't. By circling regions around the terms they don't and constraining the excitation to those regions by repeatedly applying the projector $\PP_{\NN_{R_1,R_2... R_n}}$, we localize the excitation.
 
-For our first picture of anyons we will ignore global topology. This means either working on an infinite plat plane or on a small region in some large sphere or torus. By definition our anyon must be \textit{localized}. In physics, we say that a phenominon is localized if it is constrained to some compact domain which is small relative to system size.
+To store cohrent topological quantum information in anyons, there are a few key principles one must follow. The first principle is straightforward:
 
-An excited state is by definition a state which has high energy, that is, a state which is not a ground state. A state hosts a localized excitation within a region if it is a ground state outside of that region, and only has high energy within the region. This gives the below picture of an anyon:
+\begin{center}
+\fbox{Anyons should be kept far apart}
+\end{center}
 
-[WORK: add picture.]
+This is motivated as follows. Suppose that the anyons were kept in close proximity to one another. Then local noise could affect two anyons at once:
 
-Formally, given a compact region $R$, we say that a state $\ket{\psi}$ of the Kitaev quantum double model \textit{hosts an anyon} in $U$ if $A_v\ket{\psi}=B_p\ket{\psi}=\ket{\psi}$ for all $v,p\not\in U$.
+[WORK: add picture of $R_1,R_2$ with some local noise operator $\OO$ touching both]
 
-More generally, a state could host multiple anyons. Given a finite set $R_1.... R_n$ of compact connected regions, we say that $\ket{\psi}$ hosts $n$ anyons at $R_1$, $R_2$,... $R_{n-1}$ and $R_n$ if $A_v\ket{\psi}=B_p\ket{\psi}=\ket{\psi}$ for all $v,p\not\in \bigcup_{i=1}^nR_i$.
+Our picture of our system is that there is contantly local noise being applied, and that we are contantly projecting into the space $\NN_{R_1,R_2... R_n}$. The fault-tolerant information we want to get at is exactly the information which is invariant under this noisy picture. That is, information which does not change when local operators from $\NN_{R_1,R_2... R_n}$ to itself is applied. We call this topological information.
 
-[WORK: add picture of three anyons on the torus.]
+Some of this topological information can be measured using local observables. Because physics is local, any realistic observable should be local. Suppose we have a local Hermitian operator $\pi: \NN_{R_1,R_2... R_n}\to \NN_{R_1,R_2... R_n}$ which commutes with every noise operator $\NN_{R_1,R_2... R_n}\to \NN_{R_1,R_2... R_n}$. Then $\pi$ can be physically measured \textit{and} the result of that measurement is invariant under noise. Hence, it gives topological information. We all such observables $\pi$ which are locally supported and commute with every noise operator \textit{local topological observables}. We image that the outcomes of local topological measurements are readily available to experimenters - they can be measured with physical devices in a way that does not depend on noise.
 
-Of course, with this definition it is not impossible for the physical space to be entirely covered with anyons, as shown below:
-
-[WORK: open cover on the torus.]
-
-In this case the anyon picture is not very useful. Every state $\ket{\psi}$ can be viewed as a ground state covered uniformly with anyons. The idea is that at low temperatures the anyon picture will become more useful. At low temperuatres the energy $E$ of the system will be bounded above indenpendent of system size. This means that $A_v\ket{\psi}\neq \ket{\psi}$ and $B_p\ket{\psi}\neq \ket{\psi}$ at a bounded number of different sites $v,p$. Hence, at low temperatures and large system sizes all realistic states $\ket{\psi}$ can be modeled as a large homogenous bulk with a small number of anyons.
-
-Clearly, anyons are localized regions of differences in a homogenous bulk. Moreover, we see that some operators can create and move anyons. For instanece, let $\OO:\NN\to\NN$ be linear operator. Given any state $\ket{\psi}$, the operator $\O$ can change the anyon content of $\ket{\psi}$:
-
-[WORK: write out the three cases
-
-\begin{itemize}
-\item Move anyon;
-\item Create anyons;
-\item Annhilate anyons;
-\end{itemize}
-
-This is also a good place to introduce the term \textit{local operator}. It is clear that local operators can only change anyon content in a bounded region, and only by a bounded amount. This means that local operators work well with the anyon picture.
-
-This above observation makes anyons behave as \textit{quasiparticles}. Manipulating these anyonic quasiparticles allows for topological quantum computing in a style similar to what was described in section [ref]. I should say a few words about this.
-]
+This allows us to break-down the information in our system:
 
 [WORK:
 
-Talk about this in the toric code. Vertex and plaquette failiures give anyons. $\sigma_X$ and $\sigma_Z$ can act as operators to move, create, and annhilate anyons. I should mention and include this in this section, before going any further.
+Four-square diagram for information in $\NN_{R_1,R_2... R_n}$.
+
+Collumns: measurable by local topological observables. (yes/no)
+
+Rows: invariant under local noise. (yes/no)
+
+C-yes R-no: Impossible.
+
+C-no R-no: Non-topological information.
+
+C-yes R-yes: Classical information / local topological information
+
+C-no R-no: Topological quantum information / global information 
+
+Add little arrows going to each box explaining it.
 ]
 
 
+[WORK:
 
-[WORK: So far I haven't defined what an anyon is for topological orders other than the KQDM. One easy way to do this is by putting some set $L$ of sites, choosing $d>0$, defining $\NN=\bigotimes_{\ell \in L}\CC^d$. Then we have $H=\sum_{i}H_i$, $[H_i,H_j]=0$, $H_i^2=1$, $H_i$ localized to some region $U_i$. This is a commuting local projector Hamiltonian. It is easy to define anyons in a model like this one. I'm not sure if this would be informative or distracting.]
+Measuring under all topological observables should be called a ``topological charge measurement". This leads to harmony with the language used in the MTC section.
 
+]
+We now break down this general picture into exact mathematical statements.
 
-\subsubsection{Principles of anyons}
+[WORK: at this point I need to read Kitaev's arguement in more detail.
 
-Now that we have defined anyons, its good to take the time to talk about the general principles which guide them. The most important of these principles is their \textit{braiding}. We demonstrate this with anyons in the toric code. Suppose that we move an $Z$-type anyon around a $X$-type anyon, in some state $\ket{\psi}$. This amounts to applying $\sigma_Z$ operators in a square around a plauqette:
+The first step is to go $\NN_{R_1,... R_n}=\bigoplus_{i=1}^{N}\NN_{i}$ where $\NN_i$ indexes over classical information. This is easy. The non-trivial step is to observe that there exists some finite set $\LL$ such that the terms $\NN_i$ can be rearranged as 
 
-[WORK: add picture.]
+$\NN_{R_1,... R_n}=\bigoplus_{(A_i)_{i=1}^n\in \LL^n}\NN_{A_1,A_2... A_n}.$
 
-Here we observe something amazing. The operator used to move the $Z$-type anyon around the $X$-type anyon is $\bigotimes_{\text{edges touching $p$}}\sigma_Z$. This operator is exactly $B_{p,1}$! Hence, by the fact that there is a $X$-type anyon at $p$, we conclude that $B_{p,1}\ket{\psi}=-\ket{\psi}$ and thus moving the $Z$-type anyon around the $X$-type anyon resulted in a phase of $-1$.
+Each $A_i$ is the result of a measurement localized around $R_i$. The set $\LL$ is the set of anyon types, and given some state $\ket{\psi}\in \NN_{A_1,A_2... A_n}$, we call $A_i$ the type of the anyon at $R_i$. Anyon types = topological classical information.
 
-Suppose that we performed a similar experiment in three dimensional space. We got two particles, and moved one around the other. Clearly, this trajectory can be continuously deformed into the trajectory of doing nothing:
-
-[WORK: add picture.]
-
-Hence, moving two particles around each other must act by the identity. Formally, the state-space of a two particle system will be some vector space $V_2$. The action of moving one particle around the other is some unitary operator $V_2\to V_2$. In three dimensional space, this opearator must be the identity.
-
-Hence, we have found something fantastic. The behavior of anyons in (2+1)D space is fundamentally different than the behavior of particles in (3+1)D space.
-
-The fact that there could theoretically be quasiaprticles in (2+1)D space in which moving one particle around another acts nontrivially was first theorized in [ref]. It was later in [ref] that Wilczek discovered that the FQHE could host anyons, and thus these exotic particles could be realized in the laboratory.
-
-The possibility for anyons in (2+1)D space is especially exciting when it is contrasted with how constrained braiding statstics are in (3+1)D space. Consider some particle in (3+1)D space. We consider the swap map, exchaning two copies of the particle. When this swap map is repeated twice, we get a braid identitcal to moving one particle around the other. Hence, swapping twice gives the identity. Denoting the Hilbert space of the two particle system by $V_2$, a-priori the swap map $\swap:V_2\to V_2$ could be any operator which squares to one. However, subtle topological and algebraic considerations revealt that $\swap$ must act by some phase, $\swap = \lambda \cdot \id_{V_2}$, $\lambda \in \CC$ [WORK: refs]. A particle in which $\swap = \id$ is called a boson, and a particle in which $\swap = - \id $ is a fermion. All particles in (3+1)D space are bosons or fermions.
-
-In (2+1)D, many more particles are possible. For instance, $\swap = \lambda \cdot \id_{V_2}$ is possible for many values of $\lambda\in \CC$ other than $\pm 1$. The fact that they can have \textit{any} phase $\lambda$ is where they get the name anyon. In fact, there are many anyonic models in which $\swap$ acts by some higher-dimensional linear map which is not a scalar. In particular, this happens in the Kitaev quantum double model for every non-abelian finite group $G$.
-
-These exotic statastics are the basis of many proposals for topological quantum computing. Choose some topological order. Let $V_n$ denote the Hilbert space of possible states on the torus with $n$ identical anyons. Braiding anyons around each other acts by non-trivial operators $V_n\to V_n$. Choosing $n$ to be large, the space $V_n$ can store a large amount of information and the operators $V_n\to V_n$ can perform a large amount of computations. These computations make a quantum computer.
+Now, the next step is to observe that there is a non-canonical tensor decomposition
 
 
+$$
+\NN_{A_1,A_2... A_n}=\NN^{loc}_{A_1,A_2... A_n}\otimes \NN^{top}_{A_1,A_2... A_n}
+$$
 
-\subsubsection{The algebraic structure of discrete gauge theory}
+of $\NN_{A_1,A_2... A_n}$ into a local part and a topological part. It satisfies the condition that every local noise operator $\OO$ on $\NN_{A_1,A_2... A_n}$ can be decomposed as $\OO=\OO'\otimes \id$, and hence the information in the topological part remains unchanged. Moreover, it is maximal subject to this condition. Moreover, we have a splitting
 
-.[WORK: go from KQDM to $G$-crossed $G$-representations. Doing this in the most painless way is subtle, and will probably require two subsections. By the end we should have the category $\D(G)$ as a set, with morphisms motivated.]
+$$\NN^{loc}_{A_1,A_2... A_n}=\NN^{loc}_{A_1}\otimes \NN^{loc}_{A_2}...\otimes \NN^{loc}_{A_n}.$$
+
+
+Information of which direct summand I'm in = topological classical information
+
+Information left over = tensor product of local and topological. Cannot be distinguished by the non-canonical nature of this tensor decomposition. Needs subtle techniques (i.e. fusion of anyons) to be measured. It would be fantastic if all of this could be written up correctly and codified into propositions.
+]
+
+
+[WORK: I want to get to the fact that anyons are moved by unique operators, and hence we can ignore the specific choice of operator and just move the anyons.]
+
+\subsubsection{Anyons in the toric code}
+
+[WORK: do it first with toric code. Everything is painfully simple and obvious here.
+
+The problem is that adding more anyons does not encode more information, so its hard to get the points of TQC across.
+
+Hopefully this is a very short subsection.]
+
+\subsubsection{Anyons in discrete gauge theory}
+
+[WORK:
+
+Here we go from KQDM to $G$-crossed $G$-representations. By the end we should have the category $\D(G)$ as a set, with morphisms motivated.
+
+A lot of the intricate setup has been done in the previous sections, so I think this can be relatively contained. It would be nice to have proofs. Even if this section is more intricate that should be included in most lectures series, I'd say its nice to have nonetheless as a reference.
+]
 
 $\newline$
 \fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{

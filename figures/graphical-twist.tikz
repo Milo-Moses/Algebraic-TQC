@@ -1,0 +1,37 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-9, 4) {};
+		\node [style=none] (1) at (-9, 0) {};
+		\node [style=none] (2) at (-9, -0.5) {$A$};
+		\node [style=none] (3) at (-9, 4.5) {$A$};
+		\node [style=none] (4) at (-7.375, 2) {$=$};
+		\node [style=none] (5) at (-5.25, 0) {};
+		\node [style=none] (6) at (-5.25, 4) {};
+		\node [style=none] (7) at (-5.25, 4.5) {$A$};
+		\node [style=none] (8) at (-5.25, -0.5) {$A$};
+		\node [style=none] (9) at (-5.25, 2.5) {};
+		\node [style=none] (10) at (-5.25, 1.5) {};
+		\node [style=none] (11) at (-6, 2.5) {};
+		\node [style=none] (12) at (-6, 1.5) {};
+		\node [style=none] (13) at (-9.5, 2.75) {};
+		\node [style=none] (14) at (-8.5, 2.75) {};
+		\node [style=none] (15) at (-8.5, 1.5) {};
+		\node [style=none] (16) at (-9.5, 1.5) {};
+		\node [style=none] (17) at (-9, 2.75) {};
+		\node [style=none] (18) at (-9, 1.5) {};
+		\node [style=none] (19) at (-8.975, 2.075) {$\theta_A$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (6.center) to (9.center);
+		\draw (5.center) to (10.center);
+		\draw [in=-180, out=-180, looseness=1.25] (11.center) to (12.center);
+		\draw (13.center) to (14.center);
+		\draw (14.center) to (15.center);
+		\draw (15.center) to (16.center);
+		\draw (16.center) to (13.center);
+		\draw (1.center) to (18.center);
+		\draw (17.center) to (0.center);
+		\draw [in=90, out=0, looseness=0.75] (11.center) to (10.center);
+		\draw [style=overlap, in=0, out=-90, looseness=0.75] (9.center) to (12.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

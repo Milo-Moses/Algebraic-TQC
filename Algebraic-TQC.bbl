@@ -140,6 +140,11 @@ H{\'e}ctor Bomb{\'\i}n.
   topological stabilizer codes.
 \newblock {\em New Journal of Physics}, 17(8):083002, 2015.
 
+\bibitem[Bon12]{bonderson2012non}
+Parsa~Hassan Bonderson.
+\newblock {\em Non-Abelian anyons and interferometry}.
+\newblock California Institute of Technology, 2012.
+
 \bibitem[Bon21]{bonderson2021measuring}
 Parsa Bonderson.
 \newblock Measuring topological order.
@@ -485,6 +490,12 @@ Masatoshi Sato and Yoichi Ando.
 \newblock Topological superconductors: a review.
 \newblock {\em Reports on Progress in Physics}, 80(7):076501, 2017.
 
+\bibitem[SA19]{son2019commuting}
+Jun~Ho Son and Jason Alicea.
+\newblock Commuting-projector hamiltonians for two-dimensional topological
+  insulators: Edge physics and many-body invariants.
+\newblock {\em Physical Review B}, 100(15):155107, 2019.
+
 \bibitem[SBZ22]{schotte2022fault}
 Alexis Schotte, Lander Burgelman, and Guanyu Zhu.
 \newblock Fault-tolerant error correction for a universal non-abelian
@@ -602,6 +613,11 @@ Klaus von Klitzing, Tapash Chakraborty, Philip Kim, Vidya Madhavan, Xi~Dai,
 Zhenghan Wang.
 \newblock {\em Topological quantum computation}.
 \newblock Number 112. American Mathematical Soc., 2010.
+
+\bibitem[WBMF23]{wei2023thermal}
+Zezhu Wei, Navketan Batra, VF~Mitrovi{\'c}, and DE~Feldman.
+\newblock Thermal interferometry of anyons.
+\newblock {\em Physical Review B}, 107(10):104406, 2023.
 
 \bibitem[Wen89]{wen1989vacuum}
 Xiao-Gang Wen.
