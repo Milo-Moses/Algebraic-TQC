@@ -1,0 +1,43 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-3, 2) {$h_{X,Y}$};
+		\node [style=none] (1) at (-1.5, 2) {$=$};
+		\node [style=none] (2) at (-0.25, 2) {$p_{\C}^{+}\cdot$};
+		\node [style=none] (3) at (1, 2) {tr};
+		\node [style=none] (4) at (2.75, 3.5) {};
+		\node [style=none] (5) at (2.75, 1) {};
+		\node [style=none] (10) at (2.75, 0.5) {$X$};
+		\node [style=none] (11) at (2.75, 4) {$X$};
+		\node [style=none] (12) at (3.75, 3.5) {};
+		\node [style=none] (14) at (3.75, 1) {};
+		\node [style=none] (15) at (3.75, 4) {$Y$};
+		\node [style=none] (16) at (3.75, 0.5) {$Y$};
+		\node [style=none] (17) at (1.75, 3.5) {};
+		\node [style=none] (18) at (1.75, 0.75) {};
+		\node [style=none] (19) at (4.75, 3.5) {};
+		\node [style=none] (20) at (4.75, 0.75) {};
+		\node [style=none] (21) at (2.25, 2.75) {};
+		\node [style=none] (22) at (4.25, 2.75) {};
+		\node [style=none] (23) at (4.25, 1.75) {};
+		\node [style=none] (24) at (2.25, 1.75) {};
+		\node [style=none] (25) at (2.75, 2.75) {};
+		\node [style=none] (26) at (3.75, 2.75) {};
+		\node [style=none] (27) at (2.75, 1.75) {};
+		\node [style=none] (28) at (3.75, 1.75) {};
+		\node [style=none] (29) at (3.25, 2.25) {$\theta_{X\otimes Y}^{-1}$};
+		\node [style=none] (30) at (5.75, 2) {$=$};
+		\node [style=none] (31) at (8.5, 2) {$p_{\C}^{+}\theta_{X}\theta_{Y}S_{X^*,Y}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [in=180, out=180, looseness=0.25] (18.center) to (17.center);
+		\draw [in=0, out=0, looseness=0.25] (20.center) to (19.center);
+		\draw (24.center) to (21.center);
+		\draw (21.center) to (22.center);
+		\draw (22.center) to (23.center);
+		\draw (23.center) to (24.center);
+		\draw (26.center) to (12.center);
+		\draw (25.center) to (4.center);
+		\draw (27.center) to (5.center);
+		\draw (28.center) to (14.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

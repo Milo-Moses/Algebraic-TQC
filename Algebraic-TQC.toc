@@ -70,58 +70,57 @@
 \contentsline {subsection}{\numberline {5.5}The modular representation}{115}
 \contentsline {subsubsection}{\numberline {5.5.1}Definition}{115}
 \contentsline {subsubsection}{\numberline {5.5.2}Torus perspective}{116}
-\contentsline {subsubsection}{\numberline {5.5.3}Bruguieres's modularity theorem}{117}
-\contentsline {subsubsection}{\numberline {5.5.4}Verlinde formula}{119}
-\contentsline {subsubsection}{\numberline {5.5.5}Proof of modularity}{120}
-\contentsline {subsubsection}{\numberline {5.5.6}Proof of unitarity}{121}
-\contentsline {subsubsection}{\numberline {5.5.7}Schauenberg-Ng theorem}{121}
-\contentsline {subsection}{\numberline {5.6}Skeletonization}{121}
-\contentsline {subsubsection}{\numberline {5.6.1}Principle}{121}
-\contentsline {subsubsection}{\numberline {5.6.2}$F$-symbols}{121}
-\contentsline {subsubsection}{\numberline {5.6.3}$R$-symbols}{121}
-\contentsline {subsubsection}{\numberline {5.6.4}$\theta $-symbols}{121}
-\contentsline {subsubsection}{\numberline {5.6.5}Reconstruction theorem}{121}
-\contentsline {subsection}{\numberline {5.7}Quantum double modular categories}{121}
-\contentsline {subsubsection}{\numberline {5.7.1}The Drinfeld center}{121}
-\contentsline {subsubsection}{\numberline {5.7.2}Muger's theorem}{123}
-\contentsline {subsubsection}{\numberline {5.7.3}Discrete gauge theory as a quantum double and Morita equivalence}{123}
-\contentsline {subsubsection}{\numberline {5.7.4}Factorizability and time reversal symmetry}{123}
-\contentsline {subsubsection}{\numberline {5.7.5}Levin-Wen model}{124}
-\contentsline {subsection}{\numberline {5.8}Unitarity}{124}
-\contentsline {subsubsection}{\numberline {5.8.1}Characterization of unitarizable modular categories}{124}
-\contentsline {subsubsection}{\numberline {5.8.2}Uniqueness of unitary structure}{124}
-\contentsline {subsubsection}{\numberline {5.8.3}Skeletonization of unitarity}{124}
-\contentsline {subsection}{\numberline {5.9}Number theory in modular categories}{124}
-\contentsline {subsubsection}{\numberline {5.9.1}.[prerequisites and introduction]}{124}
-\contentsline {subsubsection}{\numberline {5.9.2}Galois conjugation}{124}
-\contentsline {subsubsection}{\numberline {5.9.3}Ocneanu rigidity}{124}
-\contentsline {subsubsection}{\numberline {5.9.4}Rank-finiteness theorem}{124}
-\contentsline {subsubsection}{\numberline {5.9.5}Vafa's theorem}{124}
-\contentsline {section}{\numberline {6}Further structure}{127}
-\contentsline {subsection}{\numberline {6.1}Overview}{127}
-\contentsline {subsection}{\numberline {6.2}Domain walls}{127}
-\contentsline {subsection}{\numberline {6.3}Symmetry enriched topological order}{127}
-\contentsline {subsection}{\numberline {6.4}Fermionic topological order}{127}
-\contentsline {section}{\numberline {7}Topological quantum computation}{129}
-\contentsline {subsection}{\numberline {7.1}Overview}{129}
-\contentsline {subsubsection}{\numberline {7.1.1}Introduction}{129}
-\contentsline {subsubsection}{\numberline {7.1.2}Universality}{130}
-\contentsline {subsection}{\numberline {7.2}Computation with Fibonacci anyons}{132}
-\contentsline {subsubsection}{\numberline {7.2.1}Methodology}{132}
-\contentsline {subsubsection}{\numberline {7.2.2}The Jones invariant}{132}
-\contentsline {subsubsection}{\numberline {7.2.3}Proof of universality}{132}
-\contentsline {subsection}{\numberline {7.3}Computation with doubles of finite groups}{132}
-\contentsline {subsection}{\numberline {7.4}Computation with the toric code}{133}
-\contentsline {subsection}{\numberline {7.5}Computation with Ising anyons}{133}
-\contentsline {subsection}{\numberline {7.6}Computation with Majorana zero modes}{133}
-\contentsline {section}{\numberline {A}Odds and ends}{136}
-\contentsline {subsection}{\numberline {A.1}Topological quantum field theories}{136}
-\contentsline {subsection}{\numberline {A.2}Quasitriangular weak Hopf algebras}{137}
-\contentsline {subsection}{\numberline {A.3}Quantum groups}{137}
-\contentsline {subsection}{\numberline {A.4}Subfactors}{137}
-\contentsline {subsection}{\numberline {A.5}Vertex operator algebras}{137}
-\contentsline {section}{\numberline {B}Anyon data}{139}
-\contentsline {subsection}{\numberline {B.1}Low-rank MTCs}{139}
-\contentsline {subsection}{\numberline {B.2}Abelian MTCs}{139}
-\contentsline {subsection}{\numberline {B.3}Group-theoretical MTCs}{139}
-\contentsline {subsection}{\numberline {B.4}Miscellaneous examples}{139}
+\contentsline {subsubsection}{\numberline {5.5.3}Bruguieres's modularity theorem and the Verlinde formula}{117}
+\contentsline {subsubsection}{\numberline {5.5.4}Verlinde formula}{122}
+\contentsline {subsubsection}{\numberline {5.5.5}Proof of modularity}{123}
+\contentsline {subsubsection}{\numberline {5.5.6}Vafa's theorem, unitarity of $S$-matrix, and the Chiral central charge}{126}
+\contentsline {subsection}{\numberline {5.6}Skeletonization}{129}
+\contentsline {subsubsection}{\numberline {5.6.1}Principle}{129}
+\contentsline {subsubsection}{\numberline {5.6.2}$F$-symbols}{129}
+\contentsline {subsubsection}{\numberline {5.6.3}$R$-symbols}{129}
+\contentsline {subsubsection}{\numberline {5.6.4}$\theta $-symbols}{129}
+\contentsline {subsubsection}{\numberline {5.6.5}Reconstruction theorem}{129}
+\contentsline {subsection}{\numberline {5.7}Quantum double modular categories}{129}
+\contentsline {subsubsection}{\numberline {5.7.1}The Drinfeld center}{129}
+\contentsline {subsubsection}{\numberline {5.7.2}Muger's theorem}{131}
+\contentsline {subsubsection}{\numberline {5.7.3}Discrete gauge theory as a quantum double and Morita equivalence}{131}
+\contentsline {subsubsection}{\numberline {5.7.4}Factorizability and time reversal symmetry}{132}
+\contentsline {subsubsection}{\numberline {5.7.5}Levin-Wen model}{132}
+\contentsline {subsection}{\numberline {5.8}Unitarity}{132}
+\contentsline {subsubsection}{\numberline {5.8.1}Characterization of unitarizable modular categories}{132}
+\contentsline {subsubsection}{\numberline {5.8.2}Uniqueness of unitary structure}{132}
+\contentsline {subsubsection}{\numberline {5.8.3}Skeletonization of unitarity}{132}
+\contentsline {subsection}{\numberline {5.9}Number theory in modular categories}{132}
+\contentsline {subsubsection}{\numberline {5.9.1}.[prerequisites and introduction]}{132}
+\contentsline {subsubsection}{\numberline {5.9.2}Galois conjugation}{132}
+\contentsline {subsubsection}{\numberline {5.9.3}Ocneanu rigidity}{132}
+\contentsline {subsubsection}{\numberline {5.9.4}Rank-finiteness theorem}{132}
+\contentsline {subsubsection}{\numberline {5.9.5}Schauenberg-Ng theorem}{132}
+\contentsline {section}{\numberline {6}Further structure}{135}
+\contentsline {subsection}{\numberline {6.1}Overview}{135}
+\contentsline {subsection}{\numberline {6.2}Domain walls}{135}
+\contentsline {subsection}{\numberline {6.3}Symmetry enriched topological order}{135}
+\contentsline {subsection}{\numberline {6.4}Fermionic topological order}{135}
+\contentsline {section}{\numberline {7}Topological quantum computation}{137}
+\contentsline {subsection}{\numberline {7.1}Overview}{137}
+\contentsline {subsubsection}{\numberline {7.1.1}Introduction}{137}
+\contentsline {subsubsection}{\numberline {7.1.2}Universality}{138}
+\contentsline {subsection}{\numberline {7.2}Computation with Fibonacci anyons}{140}
+\contentsline {subsubsection}{\numberline {7.2.1}Methodology}{140}
+\contentsline {subsubsection}{\numberline {7.2.2}The Jones invariant}{140}
+\contentsline {subsubsection}{\numberline {7.2.3}Proof of universality}{140}
+\contentsline {subsection}{\numberline {7.3}Computation with doubles of finite groups}{140}
+\contentsline {subsection}{\numberline {7.4}Computation with the toric code}{141}
+\contentsline {subsection}{\numberline {7.5}Computation with Ising anyons}{141}
+\contentsline {subsection}{\numberline {7.6}Computation with Majorana zero modes}{141}
+\contentsline {section}{\numberline {A}Odds and ends}{144}
+\contentsline {subsection}{\numberline {A.1}Topological quantum field theories}{144}
+\contentsline {subsection}{\numberline {A.2}Quasitriangular weak Hopf algebras}{145}
+\contentsline {subsection}{\numberline {A.3}Quantum groups}{145}
+\contentsline {subsection}{\numberline {A.4}Subfactors}{145}
+\contentsline {subsection}{\numberline {A.5}Vertex operator algebras}{145}
+\contentsline {section}{\numberline {B}Anyon data}{147}
+\contentsline {subsection}{\numberline {B.1}Low-rank MTCs}{147}
+\contentsline {subsection}{\numberline {B.2}Abelian MTCs}{147}
+\contentsline {subsection}{\numberline {B.3}Group-theoretical MTCs}{147}
+\contentsline {subsection}{\numberline {B.4}Miscellaneous examples}{147}

@@ -30,7 +30,7 @@ Up to topological equivalence, there are not that many things that a collection 
 
 One potentially useful way of thinking about modular categories comes from analogy with classical physics. We saw in Chapter [ref] that topological classical systems have an algebraic description in terms of finite groups. Namely, quasiparticles in the system of ordered media with order space $M$ is algebraically characterized by the fundamental group $\pi_1(M,m)$ of $M$ relative to some basepoint $m\in M$. Seeing as topological order is a vast quantum generalization of classical ordered media, we can think of modular categories as being a vast quantum generalization of finite groups. Every finite group induces a modular category, by first constructing the Kitaev quantum double model based on that finite group and then describing its anyons. Most modular categories, however, lie beyond this description.
 
-[WORK: There's an issue in this treatment. There is one piece of data beyond the scope of an modular categories - the chiral central charge. This is a remnant of the fact that the bulk-to-boundary correspondane is not exact because the boundary can have stacked $E_8$ phases, see \cite{bonderson2021measuring}. Of course this is not something to dive into now. However, I want to be maximally honest - point out that there is a unique piece of topologically invariant information beyond the scope of modular categories. Maybe include somewhere (as an exercise?) the treatment of chiral central charge mod 8? I think this would make for a good footnote.] 
+[WORK: There's an issue in this treatment. There is one piece of data beyond the scope of an modular categories - the chiral central charge. This is a remnant of the fact that the bulk-to-boundary correspondane is not exact because the boundary can have stacked $E_8$ phases, see \cite{bonderson2021measuring}. Of course this is not something to dive into now. However, I want to be maximally honest - point out that there is a unique piece of topologically invariant information beyond the scope of modular categories. Maybe include somewhere (as an exercise?) the treatment of chiral central charge mod 8? I think this would make for a good footnote. I'm realizing now that the fact that the chiral central charge is a root of unity is part of Vafa's theorem. So, it makes the most sense for this to be in the number theory section.] 
 
 \subsubsection{Using the final product}
 
@@ -500,7 +500,7 @@ However, despite this corollary, we \textit{cannot} conclude that every fusion c
 
 \subsubsection{Quantum dimension and Frobenius-Perron dimension}
 
-.[WORK: include something about global quantum dimension $D$.]
+.[WORK: include something about global quantum dimension $\DD$.]
 
 Our next tool to discuss is the \textit{quantum dimension}. Given any spherical fusion category $\C$ and any object $A\in \C$, we define its quantum dimension using the following formula:
 
@@ -917,7 +917,9 @@ $$\SL_2(\ZZ)=\Braket{s,t | s^4=1,\,\, (st)^3=s^2}.$$
 
 Hence, to define a homomorphism $\rho_{\C}:\SL_2(\ZZ)\to \Aut(\CC[\LL])$ it suffices to choose automorphisms $\rho_{\C}(s)$, $\rho_{\C}(t)$ of $\CC[\LL]$, and show that they satisfy the relations $\rho_{\C}(s)^4=1$ and $(\rho_{\C}(s)\rho_{\C}(t))^3=\rho_{\C}(s)^2$. Since $\CC[\LL]$ has a canonical basis, we can think of its automorphisms as being matrices with rows and collumns labeled by $\LL$. We define an operator $S:\CC[\LL]\to \CC[\LL]$ via the matrix coeffients
 
-[WORK: add formula.]
+\begin{equation*}
+\tikzfig{S-matrix}
+\end{equation*}
 
 We next define the matrix $T:\CC[\LL]\to\CC[\LL]$ to be the diagonal matrix with $([A],[A])$-entry $\theta_{A}$, for all $[A]\in \LL$.
 
@@ -927,12 +929,12 @@ $$p^{\pm}_{\C}=\sum_{[A]\in \LL}\theta_A^{\pm 1}d_A^2.$$
 
 We can now state the main theorem of this chapter:
 
-\begin{theorem} Let $\C$ be a modular category. The map
+\begin{theorem} Let $\C$ be a modular category. The values $p_{\C}^{+}$ and $p_{\C}^{-}$ are nonzero, and the map
 
 \begin{align*}
 \rho_{\C}:\SL_2(\ZZ)&\xrightarrow{}\Aut(\CC[\LL])\\
-s & \mapsto \frac{1}{\sqrt{\dim \C}}\cdot S\\ 
-t & \mapsto \frac{\sqrt[3]{p_{\C}^{+}}}{\sqrt[6]{\dim \C}}\cdot T
+s & \mapsto \frac{1}{\DD}\cdot S\\ 
+t & \mapsto \left(p_{\C}^{-}/p_{\C}^+\right)^{1/6}\cdot T
 \end{align*}
 
 is a group homomorphism.
@@ -1005,15 +1007,15 @@ We now examine and motivate claims 1-3.
 
 [WORK: Finish by saying this is something like TQFTs. TQFT = bundled collection of mapping class group representations. Link this to TQFT appendix.]
 
-\subsubsection{Bruguieres's modularity theorem}
+\subsubsection{Bruguieres's modularity theorem and the Verlinde formula}
 
-In this section we prove Bruguieres's modularity theorem. This theorem asserts that, given a pre-modular category $\C$, the $S$-matrix $S$ is invertible if and only if $\C$ is modular. Historically, this theorem is backwards. The original definition of modular category included that the $S$-matrix should be invertible. This was the only definition of modular category, until Bruguieres proved in [ref] that the invertability of the $S$-matrix is equivalent to $\C$ having the non-degenerate braiding property
+In this section we prove Bruguieres's modularity theorem. This theorem asserts that, given a pre-modular category $\C$, the $S$-matrix $S$ is invertible if and only if $\C$ is modular. Historically, this theorem is backwards. The original definition of modular category included that the $S$-matrix should be invertible. This was the only definition of modular category, until Bruguieres proved in [ref] that the invertability of the $S$-matrix is equivalent to $\C$ having the non-degenerate braiding property that if
 
 \begin{equation*}
 \tikzfig{non-degeneracy}
 \end{equation*}
 
-We are thus starting a historically incorrect definition of modular category, and Bruguieres's modularity theorem tells us that this is equivalent to the original definition. The proof of the modularity theorem relies on the \textit{Verlinde algebra} of $\C$. This algebra will be of use for us in proving other theorems in the future, in particular the Verlinde formula in section [ref].
+for all $B\in \C$ then $A\cong \one$. We are thus stating a historically incorrect definition of modular category, and Bruguieres's modularity theorem tells us that this is equivalent to the original definition. The proof of the modularity theorem relies on the \textit{Verlinde algebra} of $\C$. This algebra will be of use for us in proving other theorems in the future, in particular the Verlinde formula in section [ref].
 
 We define an \textit{algebra} over $\CC$ to a vector space $V$ paired with a bilinear map $\cdot: V\times V\to V$ called multiplication, such that multiplication is associative and has a unit. An algebra is called \textit{commutative} if its multiplication is commutative.
 
@@ -1047,10 +1049,10 @@ We now state and prove the core theorem which underlies the core properties of t
 
 \begin{align*}
 \SS:K_{\CC}(\C)&\xrightarrow{} \Cfunc\\
-\ket{[A]}&\mapsto \sum_{[B]\in \LL}\frac{1}{d_B}S_{A,B}\ket{[B]}
+\ket{[A]}&\mapsto \sum_{[B]\in \LL}\frac{1}{d_B}S_{B,A}\ket{[B]}
 \end{align*}
 
-is a morphism of $\CC$-algebras.
+is a morphism of algebras.
 \end{proposition}
 \begin{proof} Since it was defined on a basis, $\SS$ is clearly a linear map. We now verify that $\SS$ preserves multiplication. In the below computation, we identity endomorphisms of simple objects with the unique scalar they are times the identity. We let $A,B,D$ be simple objects.
 
@@ -1060,89 +1062,394 @@ is a morphism of $\CC$-algebras.
 
 Note our key use of the fact that
 
-[WORK: circles split over direct sums.]
+\begin{equation*}
+\tikzfig{circles-split}
+\end{equation*}
 
-This concludes the proof
+which follows from the facts that $\id_{B\oplus C}$ can be decomposed as projection onto $B$ plus projection onto $C$, and composition is bilinear. We now conclude that
+
+\begin{align*}
+\SS\left(\ket{[A]}\right)\cdot \SS\left(\ket{[B]}\right) &= \sum_{[D]\in\LL} \left(\frac{1}{d_D}S_{D,A}\right)\left(\frac{1}{d_D}S_{D,B}\right) \ket{[D]}\\
+&= \sum_{[D]\in \LL} \left(\sum_{[C]\in \LL}N^{A,B}_{C} \left(\frac{1}{d_D}S_{D,C}\right)\right)\ket{[D]}\\
+&= \SS\left(\ket{[A]}\cdot \ket{[B]}\right)
+\end{align*}
+
+as desired.
 \end{proof}
 
 
+By Proposition [ref], we have constructed a map of algebras $\SS:K_{\CC}(\C)\to \Cfunc$. As a map of vector spacces, $\SS$ is equal to the $S$-matrix up to a rescaling of rows by nonzero factors. Hence, it is clear that the $S$-matrix is invertible if and only if the algebra map $\SS$ is invertible. We now use special properties of the map $\SS$ to prove the main theorem of the section:
 
+\begin{theorem}[Bruguieres's modularity theorem] Let $\C$ be a pre-modular category. The braiding on $\C$ satisfies the non-degenerate braiding axiom if and only if the $S$-matrix is invertible.
+\end{theorem}
+\begin{proof} We observe that $\C$ has a degenerate braiding if and only if there exists some $A\not\cong \one$ such that
 
-[WORK: Prove Bruguieres's modularity theorem, which states that a pre-modular category is modular if and only if its S-matrix is nondegenerate. Obviously a neccecary first step in proving the main theorem. The way that this exposition goes really depends on what the proof of Bruguieres's theorem is like. I've never seen it before, so this is something to learn.]
+\begin{equation*}
+\tikzfig{degenerate-braiding}
+\end{equation*}
+
+for all $D\in \Dcat$. If such an element $A$ exists, then clearly $\SS(\ket{[A]})=d_{A}\SS(\ket{[1]})$. Hence, two linearly independent vectors map to linearly dependent vectors and thus $\SS$ is not invertible. Thus, the invertibilty of the $\SS$-matrix implies that the braiding is non-degenerate.
+
+We now prove the converse, and hence we suppose that $\C$ has nondegenerate braiding. The proof is in two main steps.  First, we prove that $\ket{[\one]}$ is in the image of $\SS$. Then, we use the fact that $\ket{[\one]}$ is in the image of $\SS$ to construct the rest of the image, which proves that $\SS$ is surjective hence invertible.
+
+\textbf{Part 1: $\ket{[\one]}$ is in the image of $\SS$.} Since $\C$ has nondegenerate braiding, for all simple objects $A\not\cong \one$ there exists some simple object $\tilde{A}$ such that
+
+\begin{equation*}
+\tikzfig{braiding-non-degeneracy}
+\end{equation*}
+
+Thus, the vector $\SS(\ket{[\tilde{A}]})-\frac{S_{A,\tilde{A}}}{d_{A}}\SS(\ket{[\one]})$ has a cooficient zero of for $\ket{[A]}$ but a non-zero cooficient for $\ket{[\one]}$. Thus, using the product structure on $\Cfunc$, we find that the vector
+
+$$\prod_{\substack{[A]\in \LL \\ A\not\cong \one}}\left(\SS(\ket{[\tilde{A}]})-\frac{S_{A,\tilde{A}}}{d_{A}}\SS(\ket{[\one]})\right)$$
+
+has a cooficient of zero for all $\ket{[A]}$, $A\not\cong \one$, but a non-zero cooficient of $\ket{[\one]}$. Hence, it is a scalar multiple of $\ket{[\one]}$. Since $\SS$ is a morphism of algebras, it is in the image of $\SS$. Hence, $\ket{[\one]}$ is in the image of $\SS$.
+
+This completes the first part of the proof. We now use the fact that $\ket{[\one]}$ is in the image of $\SS$ to construct the rest of the vectors.
+
+\textbf{Part 2: $\SS$ is surjective.} Let $\omega = \sum_{[A]\in \LL}\omega_{A}\ket{[A]}\in K_{\CC}(\C)$ be a vector such that $\SS (\omega)= \ket{[\one]}$, which exists by part 1 of the proof. We now compute the quantity
+
+\begin{equation*}
+\tikzfig{null-vector-proof}
+\end{equation*}
+
+two ways, for all simple objects $X,Y\in \C$. The first way folllows by expanding $X\otimes Y$ as a direct sum and using the fact that $\SS(\omega)=\ket{[\one]}$:
+
+\begin{equation*}
+\tikzfig{null-vector-one}
+\end{equation*}
+
+In our second way of computing $h_{X,Y}$, we relate the string diagram trace to $S$-matrix values:
+
+\begin{equation*}
+\tikzfig{null-vector-two}
+\end{equation*}
+
+and thus, combining our two computations, we find
+
+$$h_{X,Y}=\sum_{[A]\in \LL}\frac{\omega_{A}}{d_A}S_{X,A}S_{Y,A}=
+\begin{cases}
+1 & X\cong Y^*\\
+0 & \text{otherwise}.
+\end{cases}$$
+
+We now define the vector
+
+$$\omega^{(X)}=\sum_{[A]\in \LL}\frac{\omega_{A}}{d_A}S_{A,X^*}\ket{[A]}$$
+
+for all simple objects $X\in \C$. We compute
+
+\begin{align*}
+\SS(\omega^{(X)}) &= \sum_{[A]\in\LL}\frac{\omega_{A}}{d_A}S_{A,X^*}\left(\sum_{[Y]\in \LL}\frac{1}{d_Y}S_{A,Y}\ket{[Y]}\right)\\
+&=\sum_{[Y]\in \LL}\frac{1}{d_Y}\left(\sum_{[A]\in\LL}\frac{\omega_{A}}{d_A}S_{A,X^*}S_{A,Y}\right)\ket{[Y]}\\
+&= \sum_{[Y]\in \LL}\frac{h_{X^*,Y}}{d_Y}\ket{[Y]}=\frac{1}{d_X}\ket{[X]}.
+\end{align*}
+
+Hence $\ket{[X]}$ is in the image of $\SS$ for $[X]\in \LL$, as desired.
+
+\end{proof}
 
 
 \subsubsection{Verlinde formula}
 
-[WORK: this subsection was copy-pasted essentially verbatim from a previous draft. Does not follow the format I want now, needs to be redone]
+In this section, we prove the \textit{Verlinde formula}. This formula was first conjectured by Verlinde \cite{verlinde1988fusion}, and proven the following year by Moore-Seiberg \cite{moore1989classical}. There are now many Verlinde-type formulas. Most imporantly, there is one for vertex operator algebras \cite{huang2008vertex} and one in algebraic geometry \cite{faltings1994proof}. With proposition [ref] in hand, the proof is very quick:
 
-One of the most powerful equations in the theory of modular categories is the so-called \textit{Verlinde formula}. This formula was first conjectured by Verlinde \cite{verlinde1988fusion}, and proven the following year by Moore-Seiberg \cite{moore1989classical}. There are now many Verlinde-type formulas. Most imporantly, there is one for vertex operator algebras \cite{huang2008vertex} and one in algebraic geometry \cite{faltings1994proof}. The Verlinde formula allows one to express the fusion coefficients in terms of the $S$-matrix entries:
+\begin{theorem}[Verlinde formula] Let $\C$ be a modular category.
 
-\begin{equation}
-N^{a,b}_{c}=\sum_{e\in \LL} \frac{S_{a,e} S_{b,e}(S^{-1})_{c,e}}{d_e}.\tag{\textasteriskcentered}
-\end{equation}
+\begin{enumerate}[(i)]
+\item For all simple objects $A,B,C\in \C$,
 
-This can be restated as saying that the $S$-matrix diagonalizes the fusion coefficents in the sense that if we let
+$$N^{A,B}_C=\sum_{[E]\in \LL}\frac{S_{A,E}S_{B,E}\left(S^{-1}\right)_{C,E}}{d_E}$$
 
-$$N^{a}=(N^{a,b}_c)_{(b,c)\in \LL^2}$$
+where $(S^{-1})_{C,E}$ denotes the $(C,E)$-coefficeint of the inverse of the $S$ matrix.
 
-be the ``fusion matrix" corresponding to $a\in \LL$, then $SN^aS^{-1}$ is diagonal and its entries are normalized $S$-matrix values. That is,
+\item For all simple objects $A\in \C$, the matrix
 
-$$D^a=SN^{a}S^{-1}$$
+$$D^A=S N^{A}S^{-1}$$
 
-is diagonal and its $(b,b)$ entry is $s_{a,b}/d_b$. From this, (\textasteriskcentered) follows by expanding the equality $N^{a}=S^{-1} D^{a}S$.
-
-We now give a proof. Let $\CC[\LL]$ be the vector space freely generated by $\LL$. Let $K_{\CC}(\C)$ be algebra structure on $\CC[\LL]$ given by
-
-$$\left| a\right>\cdot \left| b\right>=\left| a\otimes b \right>=\sum_{c\in\LL}N^{a,b}_c\left| c\right>.$$
-
-This is the (complexified) Grothendieck ring of $\C$. Let $\CC[\LL]^{\func}$ be the $\CC$-algebra obtained by endowing $\CC[\LL]$ with pointwise multiplication. We claim that the map $\mu: K_{\CC}(\C)\to\CC[\LL]^{\func}$ sending $\left| a\right>\in K_{\CC}(\C)$ to
-
-\begin{equation*}
-\tikzfig{grothendieck-ring-iso}
-\end{equation*}
-
-is an isomorphism of $\CC$-algebras. Here, we use Schur's lemma to identify morphisms $f:B\to B$ with the unique number $\lambda\in \CC$ such that $f=\lambda\cdot \id_B$. Taking trace, we have
-
-\begin{equation*}
-\tikzfig{mu-iso-formula}
-\end{equation*}
-
-It is a general category theoretic fact that natural transformations commute with direct sums, so it is clear from expanding that $\mu$ adds over directs sums, making it a group homomorphism. To verify that $\mu$ is a morphism of algebras, we compute as follows:
-
-\begin{equation*}
-\tikzfig{algebra-morphism}
-\end{equation*}
-
-We now verify $\mu$ is an isomorphism. Choosing a simple object $\left| a\right>\in K_{\CC}(\C)$ it is clear that
-
-$$\mu(\left| a\right>)=\sum_{b\in \LL}\frac{s_{a,b}}{d_b}\left| b\right>.$$
-
-Thus, $\mu$ is given on the level of vector spaces by a scaled $S$-matrix. Since $S$ is invertible we get that $\mu$ is bijective as desired. Note the key use of the fact that quantum dimensions are non-zero in modular categories. The definition of $K_{\CC}(\C)$ exactly says that left multiplication is represted by the fusion matrix $N^a$. The computation
+is diagonal with $([B],[B])$-entry $S_{A,B}/d_B$, where $N^{A}=(N^{A,B}_C)_{([B],[C])\in \LL^2}$ is the fusion matrix of $A$.
+\end{enumerate}
+\end{theorem}
+\begin{proof} We begin by proving part $(ii)$. The main observation of the proof is that that the operator $N^{A}:\CC[\LL]\to\CC[\LL]$ is exactly left multiplication by $A$ in $K_{\CC}(\C)$. Proposition [ref] says that $\SS$ is a morphism of algebras, and hence we can commute $N^{A}$ past $\SS$, and turn it into multiplication by $A$ in $\Cfunc$. Hence, using the appropriate multiplication in the appropriate algebra, we find
 
 \begin{align*}
-[a]\cdot \mu^{-1}(\left| b\right>)&=\mu^{-1}\left(\left(\sum_{c\in \LL}\frac{s_{a,c}}{d_c}\left| c\right>\right)\cdot  \left| b\right>\right)\\
-&=\mu^{-1}\left(\frac{s_{a,b}}{d_b}\left|b\right>\right)=\frac{s_{a,b}}{d_b}\cdot \mu^{-1}\left(\left|b\right>\right).
+(\SS N^{A}\SS^{-1}) \ket{[B]} & = \SS \left(\ket{[A]} \cdot_{K_{\CC}(\C)} \SS^{-1}(\ket{[B]})\right)\\
+& = \SS(\ket{A}) \cdot_{\Cfunc} \ket{[B]}\\
+& = \frac{S_{A,B}}{d_B}\ket{[B]}.
 \end{align*}
 
-shows $\mu^{-1}\left(\left|b\right>\right)$ is an eigenvector for $N^a$ with eigenvalue $s_{a,b}/d_b$. Since $\{\mu^{-1}(\left| b\right>)\}_{b\in\LL}$ is a basis for $K_{\CC}(\C)$ this gives a diagonalization of $N^a$. Moreover, the formula for $\mu$ on simple objects tells us that after re-scaling collumns the change of basis matrix  is exactly $S$. Hence,
+Thus, $\SS N^{A}\SS^{-1}$ is diagonal with $([B],[B])$ entry $S_{A,B}/d_B$. Scaling rows of $\SS$ does not change the effect of diagonalizition. Hence, we conclude that $S N^{A}S^{-1}$ is diagonal as well, with the same entries, and thus our proof of $(ii)$ is complete.
 
-$$S N^a S^{-1}=D^a$$
+We now move on to proving part $(i)$. Expanding the formula $N^{A}=S^{-1}D^{A}S$, we find
 
-with $D^a$ the diagonal matrix whose $(b,b)$ entry is $s_{a,b}/d_b$, as desired.
+\begin{align*}
+N^{A}\ket{[B]} &= S^{-1}D^{A}S \ket{[B]}\\
+&=S^{-1}\left(\sum_{[E]\in\LL}\frac{S_{A,E} S_{B,E}}{d_E}\ket{[E]}\right)\\
+&=\sum_{[E]\in\LL}\frac{S_{A,E} S_{B,E}}{d_E}\left(\sum_{[C]\in \LL}(S^{-1})_{C,E}\ket{[C]}\right).\\
+\end{align*}
+
+Comparing coeffients with the definition of $N^{A}$, we conclude the result.
+
+\end{proof}
 
 
 \subsubsection{Proof of modularity}
 
-.[WORK: I vaguely remember this proof in Bakalov-Kirilov. Should go through it again and include it. Probably lots of steps]
+In this section we prove that the $S$-matrix and $T$-matrix indeed give a representation of the modular group. That is, we will prove Theorem [ref]. At its heart, the fact that the modular representation of modular category is a homomorphisms comes down to proving a series of relations between the coeffients of the $S$-matrix and the coeffients of the $T$-matrix. That is, we are proving a series of relations between braiding and twisting. The general method is to take traces of certain diagrams, and then compute those traces in two ways. One way will involve more twists and the other will involve more braiding. This will give some algebraic relation, and choosing the right diagrams we will get enough algebraic relations to deduce Theorem [ref].
 
-\subsubsection{Proof of unitarity}
+We begin with the most fundamental relationship between $S$-matrix and $T$-matrix entries:
 
-.[WORK: go through ``On fusion categories" and digest proof.]
 
-\subsubsection{Schauenberg-Ng theorem}
+\begin{lemma} Let $\C$ be a pre-modular category. We have that
 
-.[WORK: Go through Schauenberg-Ng's original paper and understand the proof.]
+$$S_{A,B}=\theta_A^{-1}\theta_{B}^{-1}\sum_{[C]\in \LL}N^{A,B}_{C}\theta_{C}d_C$$
 
+and
+
+$$S_{A^*,B}=\theta_A\theta_{B}\sum_{[C]\in \LL}N^{A,B}_{C}\theta^{-1}_{C}d_C.$$
+\end{lemma}
+\begin{proof} By Proposition [ref], we have $\beta_{B,A}\circ \beta_{A,B}=(\theta_{A}^{-1}\otimes \theta_{B}^{-1}) \circ \theta_{A\otimes B }$. Taking the trace of this formula we get
+
+$$S_{A,B}=\theta_{A}^{-1}\theta_{B}^{-1}\tr(\theta_{A\otimes B}).$$
+
+Now, since $\theta$ is a natural transformation it splits over direct sums. Traces split over direct sums as well by proposition [ref] and hence $\tr(\theta_{A\otimes B})=\sum_{[C]\in \LL}N^{A,B}_{C}\theta_{C}d_C$. This concludes the proof of the first formula.
+
+For the second formula, we observe that replacing overcrossings with undercrossings in the definition of $S_{A,B}$ has the effect of taking the dual of one of elements, replacing it with $S_{A^*,B}$. Hence $\tr(\beta_{A,B}^{-1}\circ \beta_{B,A}^{-1})=S_{A^*,B}$. Thus, taking the trace of the formula $\beta_{A,B}^{-1}\circ \beta_{B,A}^{-1}=\theta^{-1}_{A\otimes B }\circ (\theta_{A}\otimes \theta_{B})$ yields the desired result.
+\end{proof}
+
+Before continuing to our proof of theorem [ref] we observe a key lemma:
+
+\begin{lemma} Let $\C$ be a pre-modular category. Let $A\in \C$ be a (possibly non-simple) object. We have that
+
+\begin{equation*}
+\tikzfig{kirby-color-lemma}
+\end{equation*}
+
+and
+
+\begin{equation*}
+\tikzfig{kirby-color-second}
+\end{equation*}
+
+\end{lemma}
+\begin{proof} We only prove the first formula - the second follows by a formally dual argument. We restrict to the case that $A$ is simple. Seeing as both sides are linear with respect to direct sums, the case that $A$ is simple will immedaitely imply the general case. Since $A$ is simple, it suffices to prove that the traces of both sides are equal. The trace on the left hand side has the effect of replacing the diagram with $S_{A,B}$. Hence, we compute as follows using Lemma [ref] and the fact that $\sum_{[C]\in \LL}N^{A,B}_C d_B=d_{A}d_C$ from proposition [ref]:
+
+\begin{align*}
+\sum_{[B]\in \LL}d_{B}\theta_{B}S_{A,B}&= \sum_{[B]\in \LL}d_{B}\theta_{B}\left(\theta_A^{-1}\theta_{B}^{-1}\sum_{[C]\in \LL}N^{A,B}_{C}\theta_{C}d_C\right)\\
+&= \theta_A^{-1}\sum_{[C]\in \LL}\theta_{C}d_C\left(\sum_{[B]\in \LL}N^{A,B}_{C}d_{B}\right)\\
+&= \theta_A^{-1}d_A\sum_{[C]\in \LL}\theta_{C}d_C^2=p_{\C}^{+}\theta_{A}^{-1}d_A.
+\end{align*}
+
+This result is exact the trace of the right hand sides of the lemma. Hence, the proof is complete.
+\end{proof}
+
+
+We now give the heart of the proof of theorem [ref]:
+
+\begin{theorem} Let $\C$ be a pre-modular category. Define the charge conjugation operator $\charge: \CC[\LL]\to \CC[\LL]$ to the matrix with $([A],[A^*])$ coefficient $1$ for all $[A]\in \LL$, and all other coefficients zero.
+
+\begin{enumerate}[(i)]
+\item $\charge S = S \charge$, $\charge T = T \charge$, and $\charge ^2 =1$;
+\item $(ST)^3=p^{+}_{\C}S^2$;
+\item $(S T^{-1})^3 = p^{-}_{\C}S^2 \charge$.
+\end{enumerate}
+
+If $\C$ is modular, then
+
+\begin{enumerate}[(iv)]
+\item $S^2= p^{+}_{\C}p^{-}_{\C}\charge$.
+\end{enumerate}
+
+\end{theorem}
+\begin{proof} Part $(i)$ follows from the fact that $S_{A^*,B^*}=S_{A,B}$, $\theta_{A^*}=\theta_A$, and $A^{**}\cong A$. Parts $(ii)$ and $(iii)$ have formally dual proofs, which arise from replacing $\theta$ with $\theta^{-1}$ at every opportunity. Part $(iv)$ follows algebraically from combining formulas $(ii)$ and $(iii)$ whenever $S$ is invertible, which is always the case when $\C$ is modular by theorem [ref].
+
+Hence, it suffices to prove part $(ii)$. The proof comes from comuting the quantity
+
+\begin{equation*}
+\tikzfig{modularity-proof}
+\end{equation*}
+
+two ways.
+
+In the first way of computing $h_{X,Y}$, we use lemma [ref]. We find the following:
+
+\begin{equation*}
+\tikzfig{modularity-computation-1}
+\end{equation*}
+
+In our second way of computing $h_{X,Y}$, we use computation of the trace of two lines through a loop in the proof of Theorem [ref]. We find this way that
+
+$$h_{X,Y}=\sum_{[A]\in \LL}\theta_{A}S_{X,A}S_{Y,A}.$$
+
+Thus, we find that $\sum_{[A]\in \LL}\theta_{A}S_{X,A}S_{Y,A}=p_{\C}^{+}\theta_{X}\theta_{Y}S_{X^*,Y}$. Thinking of these quantites as the $([X],[Y])$ entries in operators $\CC[\LL]\to\CC[\LL]$, we get the equation
+
+$$STS=p_{\C}^+ T S T \charge.$$
+
+.[WORK: This formula is WRONG. It should be 
+
+$$STS=p_{\C}^+ T^{-1} S T^{-1}.$$
+
+From this we get
+
+$$(ST)^3 = p_{\C}^{+}S^2$$
+
+as desired. I'm not sure where I went wrong, but something is off in here.
+]
+\end{proof}
+
+
+We now know that the $S$ and $T$ matrices give a modular representation \textit{up to phase}! We still need to work out the details of the phases. A key part is the following computation:
+
+\begin{corollary} Let $\C$ be a modular category. The quantities $p_{\C}^{+}$ and $p_{\C}^{-}$ are nonzero, and
+
+$$p_{\C}^+p_{\C}^{-}=\DD^2.$$
+
+\end{corollary}
+\begin{proof}The values $p_{\C}^{+}$ and $p_{\C}^{-}$ must be nonzero because $S$ is invertible and $S^2=p_{\C}^{+}p_{\C}^{-}\charge$. The formula $S^2=p_{\C}^{+}p_{\C}^{-}\charge$, when expanded, says that
+
+$$
+\sum_{[C]\in \LL}S_{C,A}S_{C,B}=
+\begin{cases}
+p_{\C}^{+}p_{\C}^- & A\cong B^*\\
+0 & \text{otherwise}.
+\end{cases}
+$$
+
+Applying this formula to $A=B=\one$, we find
+
+$$\sum_{[C]\in \LL}S_{C,\one}S_{C,\one}=\sum_{[C]\in\LL}d_{C}^2=p_{\C}^{+}p_{\C}^-$$
+
+as desired.
+\end{proof}
+
+Now, it is clear that we can normalize the representation appropriately and conclude theorem [ref], as desired.
+
+\subsubsection{Vafa's theorem, unitarity of $S$-matrix, and the Chiral central charge}
+
+In this section we discuss some finer points of the structure of the modular representation. In particular, we will prove that modular representation of every modular category is \textit{unitary}. That is, the $S$ and $T$ matrices are both unitary operators on $\CC[\LL]$ when it is endowed with its canonical inner product coming from its basis
+
+We begin with the matrix $T$. For a diagonal matrix to be unitary, it is neccecary and sufficient for its diagonal entries to have absolute value $1$. We will prove something even stronger: that all of the entries are roots of unity! We recall that a number $z\in \C$ is called a root of unity if $z^n=1$ for some integer $n\geq 1$. We begin with a key topological lemma which will underscore our proof:
+
+\begin{lemma}[Lantern identity] Let $\C$ be a pre-modular category. Let $A,B,C\in \C$ be objects. As maps $A\otimes B\otimes C \to A\otimes B \otimes C$, we have the identity
+
+$$\theta_{A\otimes B}\circ \theta_{A\otimes C}\circ \theta_{B\otimes C} = \theta_{A\otimes B\otimes C}\circ (\theta_{A}\otimes \theta_{B}\otimes \theta_{C}).$$
+\end{lemma}
+\begin{proof} In the language of string diagrams, this formula becomes
+
+[WORK: add diagram.]
+
+It is a matter of elementary manipulations to convince one's self that these two diagrams are equal. An alternate algebraic approach is to expand the relation both sides using the formula $\theta_{X\otimes Y}=(\beta_{Y,X}\circ \beta_{X,Y})\circ (\theta_{X}\otimes \theta_{Y})$, cancel $\theta_{A}^2\otimes \theta_{B}^2\otimes \theta_{C}^2$, and compare the resulting braids using the hexagon and naturality.
+\end{proof}
+
+We state one more linear-algebraic lemma neccecary for the proof:
+
+\begin{lemma} Let $n\geq 1$ be an integer and let $M:\RR^n\to \RR^n$ be a linear operator whose $(a,b)$ entry is $M_{a,b}$. Suppose that all off diagonal entries of $M$ are positive, and that $\sum_{b=1}^n M_{a,b}<0$ for all $1\leq a\leq n$. Then, $M$ is invertible.
+\end{lemma}
+\begin{proof}.[WORK: This follows from the Gershgorin circle theorem, but that's way to general for our purposes. Find a nice proof which is appropriate for the situation.]
+\end{proof}
+
+\begin{theorem}[Vafa] Let $\C$ be a pre-modular category. The values $\theta_{A}$ are roots of unity for all simple object $A\in \C$.
+\end{theorem}
+\begin{remark} This theorem is interesting in part due to its history. [WORK: add history.]
+\end{remark}
+\begin{proof} To begin, we choose a simple obejct $A$. We observe that every endomorphism of $A\otimes A^*\otimes A$ induces a linear map
+
+$$\Hom(A,A\otimes A^*\otimes A) \xrightarrow{} \Hom(A,A\otimes A^*\otimes A)$$
+
+by postcomposition. We now consider the lantern identity (proposition [ref]) on the stands $A$, $A^*$, $A$,
+
+$$\theta_{A\otimes A^*}\circ \theta_{A\otimes A}\circ \theta_{A^*\otimes A} = \theta_{A\otimes A^*\otimes A}\circ (\theta_{A}\otimes \theta_{A^*}\otimes \theta_{A}).$$
+
+viewed as an equality of linear operators on $\Hom(A,A\otimes A^*\otimes A)$. We compute the determinant of both sides. We first compute the determinant of $\theta_{A\otimes A^*}$. The eigenvalues of the operator $\theta_{A\otimes A^*}$ are the twists $\theta_{B}$. The dimension of the $\theta_{B}$ eigenspace is exactly the dimension of the subspace of $\Hom(A,A\otimes A^*\otimes A)$ in which $A\otimes A^*$ fuse to $B$. The dimension of this space is $N^{A,A^*}_{B}N^{B,A}_{A}=(N^{A,A^*}_{B})^2$. The determinant is equal to the product of the eigenvalues counted with multiplicity, and hence
+
+$$\det \theta_{A\otimes A^*}= \prod_{[B]\in \LL}\theta_{B}^{\left(N^{A,A^*}_{B}\right)^2}.$$
+
+Continuing this way for all the other twists and plugging them into the lantern identity we get
+
+$$\prod_{B}\theta_{B}^{2\left(N^{A,A^*}_{B}\right)^2+\left(N^{A,A}_{B}\right)^2}=\theta_{A}^{4\cdot \dim \Hom(A,A\otimes A^*\otimes A)}.$$
+
+We now define the coefficients
+
+$$
+M_{A,B}=
+\begin{cases}
+2\left(N^{A,A^*}_{B}\right)^2+\left(N^{A,A}_{B}\right)^2 & A\not\cong B\\
+2\left(N^{A,A^*}_{B}\right)^2+\left(N^{A,A}_{B}\right)^2 - 4\cdot \dim \Hom(A,A\otimes A^*\otimes A) & A\cong B.
+\end{cases}
+$$
+
+We observe that all of the off-diagonal entries of $M_{A,B}$ are positive and
+
+\begin{align*}
+\sum_{[B]\in \LL}M_{A,B} &=\sum_{[B]\in \LL}2\left(N^{A,A^*}_{B}\right)^2+\left(N^{A,A}_{B}\right)^2 - 4\cdot \dim \Hom(A,A\otimes A^*\otimes A)\\
+&=  -\dim \Hom(A,A\otimes A^*\otimes A)<0.
+\end{align*}
+
+Thus, by lemma [ref], we conclude that the matrix $M=(M_{A,B})_{([A],[B])\in \LL^2}: \CC[\LL]\to\CC[\LL]$ is invertible. Let $\tilde{M}$ be the adjugate of $M$. That is, an integer valued matrix such that $M\cdot \tilde{M}=\tilde{M}\cdot M = n$ where $n=\det M$. We find for all simple objects $A$ that
+
+$$\theta_{A}^n=\prod_{[C]\in \LL}\left(\prod_{[B]\in \LL}\theta_{B}^{M_{C,B}}\right)^{\tilde{M}_{A,C}}=1,$$
+
+and hence $\theta_{A}$ is a root of unity as desired.
+
+\end{proof}
+
+
+We immediately get several corollaries from this theorem. The first is that braiding enough times gets you back where you started:
+
+\begin{corollary} Let $\C$ be a pre-modular category. There exists an integer $n\geq 1$ such that
+
+$$(\beta_{B,A}\circ \beta_{A,B})^{n}=\id_{A\otimes B}$$
+
+for all $A,B\in \C$
+
+\end{corollary}
+\begin{proof} Choose $n\geq 1$ so that $\theta_{C}^n=1$ for all simple objects $C\in \C$, which exists by Vafa's theorem (theorem [ref]). Seeing that $\beta_{B,A}\circ \beta_{A,B}=\theta_{A\otimes B}\circ (\theta_{A}^{-1}\otimes \theta_{B}^{-1})$, in the direc sum decomposition $A\otimes B \cong \bigoplus_{[C]\in \LL}N^{A,B}_{C}\ket{[C]}$ the transformation $\beta_{B,A}\circ \beta_{A,B}$ acts by the scalar $\theta_{C}/(\theta_{A}\theta_{B})$ on every $\ket{[C]}$ summand. Thus, $(\beta_{B,A}\circ \beta_{A,B})^n$ acts by $(\theta_{C}/(\theta_{A}\theta_{B}))^n=1$ and thus $(\beta_{B,A}\circ \beta_{A,B})^n$ is the identity as desired.
+\end{proof}
+
+\begin{corollary} Let $\C$ be a modular category. The quantity $p_{\C}^-/p_{\C}^+$ is a root of unity.
+\end{corollary}
+\begin{proof} We take determinants. From $S^2= p^{+}_{\C}p^{-}_{\C}\charge$ we find that $\det(S)^2=\pm p_{\C}^+p_{\C}^-$, since $\det \charge = \pm 1$. From the formula $(ST)^3=p^{+}_{\C}S^2$ we find that
+
+$$\left(p^{+}_C/\det(S)\right)^2=\det(T)^6$$
+
+so $p^{+}_C/p^{-}_{C}=\pm \det(T)^6$. By Vafa's theorem $\det(T)$ is a root of unity. Hence, we conclude that $p^{+}_C/p^{-}_{C}$ is a root of unity as desired.
+\end{proof}
+
+We take a moment to observe that the quantity $p_{\C}^-/p_{\C}^+$ is of great interest to physicists. It is related to the \textit{chiral central charge} $c_{\text{top}}$ of the theory by the formula
+
+$$p_{\C}^-/p_{\C}^{+}=e^{-\frac{2\pi i c_{\text{top}}}{4}}.$$
+
+[WORK: probably say a bit more? Maybe there will be a better spot somewhere else.]
+
+We now move on to proving that the $S$ matrix is unitary. The main technical ingredient is as follows:
+
+\begin{proposition} Let $\C$ be a modular category. For all simple objects $A,B\in \C$ we have that $S_{A^*,B}=\overline{S_{A,B}}$.
+\end{proposition}
+\begin{proof} By the Verlinde formula [ref], we know that for all simple objects $A$ there exists a vector $\bold{v}_B\in \CC[\LL]$ such that
+
+$$N^{A} \bold{v}_B= \frac{S_{A,B}}{d_B}\bold{v}_B$$
+
+for all simple objects $A$. Namely, $\bold{v}_B$ is the $[B]$-collumn of the $S$ matrix. Let $\bold{v}_B^{*}$ be the row vector which is the Hermitian adjoint to $\bold{v}_B$. We have that
+
+$$\bold{v}_{B}N^{A}\bold{v}_B=\frac{S_{A,B}}{d_B}|\bold{v}_B|^2.$$
+
+Now, we observe that by Frobenius reciprocity (proposition [ref]) $(N^{A})^{\dagger}=N^{A^*}$. Hence,
+
+\begin{align*}
+\bold{v}_{B}N^{A}\bold{v}_B&=\left(N^{A^*}\bold{v}_B\right)^*\bold{v_B}\\
+&=\left(\frac{S_{A^*,B}}{d_B}\bold{v}_B\right)^*\bold{v_B}\\
+&=\frac{\overline{S_{A^*,B}}}{d_B}|\bold{v}_B|^2.
+\end{align*}
+
+Comparing, we get the desired result.
+
+\end{proof}
+
+We now get the following theorem:
+
+\begin{theorem}[Etingof-Nikshych-Ostrik] Every matrix in the image of the modular represention $\SL_2(\ZZ)\to \Aut(\CC[\LL])$ is a unitary operator on $\CC[\LL]$.
+\end{theorem}
+\begin{proof} We already know by theorem [ref] and corollary [ref] that the normalized $T$-matrix is unitary. It thus suffices to show that the modular $S$ matrix is unitary. From theorem [ref] we have that $\left(\frac{1}{\DD}S\right)^{-1} = (\frac{1}{\DD}S) \cdot \charge$. By proposition [ref] $(\frac{1}{\DD}S) \cdot \charge = (\frac{1}{\DD}S)^{\dagger}$ and thus $\frac{1}{\DD}S$ is unitary as desired.
+\end{proof}
 
 \subsection{Skeletonization}
 
@@ -1281,7 +1588,12 @@ I think that this model is fantastic because it shows how all of the ideas of te
 
 \subsubsection{Rank-finiteness theorem}
 
-\subsubsection{Vafa's theorem}
+\subsubsection{Schauenberg-Ng theorem}
+
+.[WORK: Go through Schauenberg-Ng's original paper and understand the proof.
+
+It seems on the face of it like it is a hard theorem. Certainly, it uses strongly the theory of the Drinfeld center as well as the modular representation. It is good to push this proof as far down as possible since it will use a lot of machinery. I think it can be boiled down to something elegant, though, if the machinery has been set up.]
+
 
 .[WORK: this section is going to host a lot more theorems]
 

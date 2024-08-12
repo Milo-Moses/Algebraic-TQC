@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  8 AUG 2024 17:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  12 AUG 2024 14:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -677,19 +677,19 @@ LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
 (./chapters/B-anyon-data/appB.aux))
 \openout1 = `Algebraic-TQC.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 101.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 103.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
@@ -795,41 +795,41 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 104.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 106.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 104
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 106
 .
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 104
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 106
 .
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 104.
+(Font)              <12> on input line 106.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 104.
+(Font)              <8> on input line 106.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 104.
-LaTeX Font Info:    Try loading font information for U+msa on input line 104.
+(Font)              <6> on input line 106.
+LaTeX Font Info:    Try loading font information for U+msa on input line 106.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 104.
+LaTeX Font Info:    Try loading font information for U+msb on input line 106.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 104.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 106.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -1139,42 +1139,36 @@ T1/lmr/m/it/10 be spher-i-cal fu-sion cat-e-gories. The eval-u-a-tion and co-ev
 al-u-a-tion maps $[][] \OT1/lmr/m/n/10 =
  []
 
-[113] [114] [115] [116] (./figures/non-degeneracy.tikz)
-Overfull \hbox (9.79314pt too wide) in paragraph at lines 1016--1017
-[]\OT1/lmr/m/n/10 We are thus start-ing a his-tor-i-cally in-cor-rect def-i-ni-
-tion of mod-u-lar cat-e-gory, and Bruguieres's
- []
-
-[117]
-Overfull \hbox (31.23927pt too wide) detected at line 1036
+[113] [114] (./figures/S-matrix.tikz) [115] [116]
+(./figures/non-degeneracy.tikz) [117]
+Overfull \hbox (31.23927pt too wide) detected at line 1038
 \U/msb/m/n/10 C\OT1/lmr/m/n/10 [\OMS/lmsy/m/n/10 L\OT1/lmr/m/n/10 ][] = [] \OML
 /lmm/m/it/10 :
  []
 
-(./figures/verlinde-algebra-proof.tikz) [118]
-(./figures/grothendieck-ring-iso.tikz) [119] (./figures/mu-iso-formula.tikz)
-(./figures/algebra-morphism.tikz)
-Overfull \hbox (13.51865pt too wide) detected at line 1114
-[]
- []
-
-[120] [121]
-Overfull \hbox (2.30269pt too wide) in paragraph at lines 1190--1191
-[]\OT1/lmr/bx/n/10 Proposition 5.16. []\OT1/lmr/m/it/10 The Drin-feld cen-ter $
+(./figures/verlinde-algebra-proof.tikz) [118] (./figures/circles-split.tikz)
+(./figures/degenerate-braiding.tikz) [119]
+(./figures/braiding-non-degeneracy.tikz) (./figures/null-vector-proof.tikz)
+(./figures/null-vector-one.tikz) [120] (./figures/null-vector-two.tikz)
+[121] [122] [123] (./figures/kirby-color-lemma.tikz)
+(./figures/kirby-color-second.tikz) [124] (./figures/modularity-proof.tikz)
+(./figures/modularity-computation-1.tikz) [125] [126] [127] [128] [129]
+Overfull \hbox (2.30269pt too wide) in paragraph at lines 1497--1498
+[]\OT1/lmr/bx/n/10 Proposition 5.17. []\OT1/lmr/m/it/10 The Drin-feld cen-ter $
 \OMS/lmsy/m/n/10 Z\OT1/lmr/m/n/10 (\U/rsfs/m/n/10 C\OT1/lmr/m/n/10 )$\OT1/lmr/m
 /it/10 of a monoidal cat-e-gory $\U/rsfs/m/n/10 C$ \OT1/lmr/m/it/10 is a braide
 d monoidal
  []
 
 LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 1193.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 1500.
 
-[122] [123] [124]
-Underfull \hbox (badness 10000) in paragraph at lines 1304--1305
+[130] [131] [132]
+Underfull \hbox (badness 10000) in paragraph at lines 1616--1617
 
  []
 
-) [125] [126
+) [133] [134
 
 ]
 \openout2 = `./chapters/6-further-structure/ch6.aux'.
@@ -1184,49 +1178,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
  []
 
-) [127
+) [135
 
-] [128
+] [136
 
 ]
 \openout2 = `./chapters/7-TQC/ch7.aux'.
 
- (./chapters/7-TQC/ch7.tex [129
+ (./chapters/7-TQC/ch7.tex [137
 
-] [130] [131] [132] [133]
+] [138] [139] [140] [141]
 Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
-) [134] [135
+) [142] [143
 
 ]
 \openout2 = `./chapters/A-odds-and-ends/appA.aux'.
 
- (./chapters/A-odds-and-ends/appA.tex [136
+ (./chapters/A-odds-and-ends/appA.tex [144
 
-]) [137] [138
+]) [145] [146
 
 ]
 \openout2 = `./chapters/B-anyon-data/appB.aux'.
 
 
-(./chapters/B-anyon-data/appB.tex) [139
+(./chapters/B-anyon-data/appB.tex) [147
 
-] [140
+] [148
 
-] (./Algebraic-TQC.bbl [141]
-[142] [143] [144] [145] [146] [147]) [148] (./Algebraic-TQC.aux
+] (./Algebraic-TQC.bbl [149]
+[150] [151] [152] [153] [154] [155]) [156] (./Algebraic-TQC.aux
 (./chapters/0-preface/ch0.aux) (./chapters/1-overview/ch1.aux)
 (./chapters/2-QM/ch2.aux) (./chapters/3-TQO/ch3.aux)
 (./chapters/4-category-theory/ch4.aux) (./chapters/5-MTCs/ch5.aux)
 (./chapters/6-further-structure/ch6.aux) (./chapters/7-TQC/ch7.aux)
 (./chapters/A-odds-and-ends/appA.aux) (./chapters/B-anyon-data/appB.aux)) ) 
 Here is how much of TeX's memory you used:
- 20617 strings out of 492649
- 444996 string characters out of 6129622
- 539662 words of memory out of 5000000
- 23798 multiletter control sequences out of 15000+600000
+ 20692 strings out of 492649
+ 447087 string characters out of 6129622
+ 539674 words of memory out of 5000000
+ 23849 multiletter control sequences out of 15000+600000
  81311 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,28n,86p,1855b,1104s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1265,10 +1259,10 @@ ype1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2018/texmf-dist/font
 s/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
 public/rsfs/rsfs5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/rs
 fs/rsfs7.pfb>
-Output written on Algebraic-TQC.pdf (148 pages, 10805084 bytes).
+Output written on Algebraic-TQC.pdf (156 pages, 10842803 bytes).
 PDF statistics:
- 639 PDF objects out of 1000 (max. 8388607)
- 435 compressed objects within 5 object streams
+ 664 PDF objects out of 1000 (max. 8388607)
+ 452 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
  73 words of extra memory for PDF output out of 10000 (max. 10000000)
 

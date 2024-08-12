@@ -1,0 +1,60 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (4.5, -0.25) {$\displaystyle{\sum_{[A]\in \LL}\sum_{[B]\in\LL}\omega_{A}N^{X,Y}_{B}d_B\cdot}$};
+		\node [style=none] (15) at (8.75, 1.375) {};
+		\node [style=none] (16) at (8.75, -1.375) {};
+		\node [style=none] (17) at (11, 1.375) {};
+		\node [style=none] (18) at (11, -1.375) {};
+		\node [style=none] (19) at (-1.5, -0.075) {$h_{X,Y}$};
+		\node [style=none] (20) at (0, 0) {$=$};
+		\node [style=none] (22) at (10, 1.375) {};
+		\node [style=none] (23) at (10, -1.125) {};
+		\node [style=none] (24) at (9.5, 0.125) {};
+		\node [style=none] (25) at (10.5, 0.125) {};
+		\node [style=none] (26) at (10, 0.125) {};
+		\node [style=none] (27) at (9, 0.125) {$A$};
+		\node [style=none] (28) at (10, -1.625) {$B$};
+		\node [style=none] (29) at (10, 1.875) {$B$};
+		\node [style=none] (30) at (4.5, -4.75) {$\displaystyle{\sum_{[B]\in\LL}N^{X,Y}_{B}d_B\sum_{[A]\in\LL}\omega_{A}\cdot}$};
+		\node [style=none] (31) at (8.75, -3.125) {};
+		\node [style=none] (32) at (8.75, -5.875) {};
+		\node [style=none] (33) at (11, -3.125) {};
+		\node [style=none] (34) at (11, -5.875) {};
+		\node [style=none] (35) at (0, -4.5) {$=$};
+		\node [style=none] (36) at (10, -3.125) {};
+		\node [style=none] (37) at (10, -5.625) {};
+		\node [style=none] (38) at (9.5, -4.375) {};
+		\node [style=none] (39) at (10.5, -4.375) {};
+		\node [style=none] (40) at (10, -4.375) {};
+		\node [style=none] (41) at (9, -4.375) {$A$};
+		\node [style=none] (42) at (10, -6.125) {$B$};
+		\node [style=none] (43) at (10, -2.625) {$B$};
+		\node [style=none] (49) at (0, -8) {$=$};
+		\node [style=none] (57) at (10, -6.125) {$B$};
+		\node [style=none] (58) at (2, -7.95) {$N^{X,Y}_{\one}d_{1}$};
+		\node [style=none] (59) at (4, -8) {$=$};
+		\node [style=none] (61) at (4.75, -8) {};
+		\node [style=none] (62) at (5, -7.25) {};
+		\node [style=none] (63) at (5, -8.75) {};
+		\node [style=none] (64) at (5.5, -7.5) {$1,$};
+		\node [style=none] (65) at (5.5, -8.5) {$0,$};
+		\node [style=none] (66) at (7.75, -7.425) {$X\cong Y^{*}$};
+		\node [style=none] (67) at (8, -8.425) {otherwise.};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [in=180, out=180, looseness=0.25] (16.center) to (15.center);
+		\draw [in=0, out=0, looseness=0.25] (18.center) to (17.center);
+		\draw [bend right=90, looseness=1.50] (24.center) to (25.center);
+		\draw (26.center) to (22.center);
+		\draw [style=overlap] (23.center) to (26.center);
+		\draw [style=overlap, bend left=90, looseness=1.50] (24.center) to (25.center);
+		\draw [in=180, out=180, looseness=0.25] (32.center) to (31.center);
+		\draw [in=0, out=0, looseness=0.25] (34.center) to (33.center);
+		\draw [bend right=90, looseness=1.50] (38.center) to (39.center);
+		\draw (40.center) to (36.center);
+		\draw [style=overlap] (37.center) to (40.center);
+		\draw [style=overlap, bend left=90, looseness=1.50] (38.center) to (39.center);
+		\draw [in=180, out=0, looseness=0.75] (61.center) to (62.center);
+		\draw [in=180, out=0, looseness=0.75] (61.center) to (63.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

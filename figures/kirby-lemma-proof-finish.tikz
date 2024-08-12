@@ -1,0 +1,54 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-3.5, 2.75) {};
+		\node [style=none] (1) at (-3.5, 0) {};
+		\node [style=none] (2) at (-4.25, 1.75) {};
+		\node [style=none] (3) at (-3, 1.75) {};
+		\node [style=none] (4) at (-3.5, 1.75) {};
+		\node [style=none] (5) at (-2.375, 1.375) {$B^*$};
+		\node [style=none] (6) at (-3.5, -0.5) {$A$};
+		\node [style=none] (7) at (-3.5, 3.25) {$A$};
+		\node [style=none] (8) at (-4, 1.75) {};
+		\node [style=none] (9) at (-5, 1.75) {};
+		\node [style=none] (10) at (-5, 1) {};
+		\node [style=none] (11) at (-4, 1) {};
+		\node [style=none] (12) at (-4.25, 1) {};
+		\node [style=none] (13) at (-3, 1) {};
+		\node [style=none] (14) at (-4.425, 1.35) {$\theta_{B}$};
+		\node [style=none] (15) at (-6.75, 1) {$\displaystyle{\sum_{[B]\in \LL}d_B \cdot}$};
+		\node [style=none] (16) at (-1.25, 1.175) {$=$};
+		\node [style=none] (17) at (4.75, 1) {$\displaystyle{\sum_{[B]\in \LL}\sum_{[C]\in \LL}d_B \theta_{A}^{-1} N^{A,B}_{C}\theta_{C}d_Cd_{A}^{-1}}$};
+		\node [style=none] (18) at (-1, -2.075) {$=$};
+		\node [style=none] (19) at (2.25, -2.25) {$\displaystyle{\sum_{[C]\in \LL} \theta_{A}^{-1}\theta_{C}d^2_C}$};
+		\node [style=none] (20) at (5.5, -2.075) {$=$};
+		\node [style=none] (22) at (7, -2) {$p^{+}_{\C}\cdot$};
+		\node [style=none] (23) at (8.5, -0.5) {};
+		\node [style=none] (24) at (8.5, -3.25) {};
+		\node [style=none] (25) at (9.25, -1.5) {};
+		\node [style=none] (26) at (7.75, -1.5) {};
+		\node [style=none] (27) at (7.75, -2.5) {};
+		\node [style=none] (28) at (9.25, -2.5) {};
+		\node [style=none] (29) at (8.5, -1.5) {};
+		\node [style=none] (30) at (8.5, -2.5) {};
+		\node [style=none] (31) at (8.5, -2) {$\theta_{A}^{-1}$};
+		\node [style=none] (32) at (8.5, 0) {$A$};
+		\node [style=none] (33) at (8.5, -3.75) {$A$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (4.center) to (0.center);
+		\draw [style=overlap, bend left=90, looseness=1.25] (2.center) to (3.center);
+		\draw (9.center) to (8.center);
+		\draw (8.center) to (11.center);
+		\draw (11.center) to (10.center);
+		\draw (10.center) to (9.center);
+		\draw (3.center) to (13.center);
+		\draw [bend right=90] (12.center) to (13.center);
+		\draw [style=overlap] (4.center) to (1.center);
+		\draw (27.center) to (26.center);
+		\draw (26.center) to (25.center);
+		\draw (25.center) to (28.center);
+		\draw (28.center) to (27.center);
+		\draw (29.center) to (23.center);
+		\draw (30.center) to (24.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
