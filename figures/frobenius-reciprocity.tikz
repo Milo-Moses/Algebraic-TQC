@@ -1,0 +1,65 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (16) at (-5.5, 3.75) {$\Hom_{\M}(N,A\otimes M)$};
+		\node [style=none] (17) at (2.25, 3.75) {$\Hom_{\M}(A^*\otimes N,M)$};
+		\node [style=none] (18) at (-2.25, 3.825) {};
+		\node [style=none] (19) at (-1.25, 3.825) {};
+		\node [style=none] (20) at (-5.5, 2.25) {};
+		\node [style=none] (21) at (-4.5, 2.25) {};
+		\node [style=none] (22) at (-4.5, 1.625) {};
+		\node [style=none] (23) at (-5.5, 1.625) {};
+		\node [style=none] (24) at (-5.25, 2.25) {};
+		\node [style=none] (25) at (-4.75, 2.25) {};
+		\node [style=none] (26) at (-5.25, 2.75) {};
+		\node [style=none] (27) at (-4.75, 2.75) {};
+		\node [style=none] (28) at (-5.3, 3) {$A$};
+		\node [style=none] (29) at (-4.7, 3) {$M$};
+		\node [style=none] (30) at (-2.25, 2) {};
+		\node [style=none] (31) at (-1.25, 2) {};
+		\node [style=none] (32) at (-2.25, 2.125) {};
+		\node [style=none] (33) at (-2.25, 1.875) {};
+		\node [style=none] (34) at (0.75, 2.75) {};
+		\node [style=none] (35) at (1.25, 2.75) {};
+		\node [style=none] (36) at (1.25, 3) {$M$};
+		\node [style=none] (37) at (0, 1) {};
+		\node [style=none] (38) at (0, 2.75) {};
+		\node [style=none] (39) at (0, 0.75) {$A^*$};
+		\node [style=none] (40) at (-5, 1.925) {$\alpha$};
+		\node [style=none] (41) at (-5, 1) {};
+		\node [style=none] (42) at (-5, 1.625) {};
+		\node [style=none] (43) at (-5, 0.75) {$N$};
+		\node [style=none] (44) at (0.5, 2.25) {};
+		\node [style=none] (45) at (1.5, 2.25) {};
+		\node [style=none] (46) at (1.5, 1.625) {};
+		\node [style=none] (47) at (0.5, 1.625) {};
+		\node [style=none] (48) at (0.75, 2.25) {};
+		\node [style=none] (49) at (1.25, 2.25) {};
+		\node [style=none] (50) at (0.75, 2.75) {};
+		\node [style=none] (51) at (1.25, 2.75) {};
+		\node [style=none] (52) at (1, 1.925) {$\alpha$};
+		\node [style=none] (53) at (1, 1) {};
+		\node [style=none] (54) at (1, 1.625) {};
+		\node [style=none] (55) at (1, 0.75) {$N$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=arrow] (18.center) to (19.center);
+		\draw (20.center) to (21.center);
+		\draw (21.center) to (22.center);
+		\draw (22.center) to (23.center);
+		\draw (23.center) to (20.center);
+		\draw (26.center) to (24.center);
+		\draw (25.center) to (27.center);
+		\draw (32.center) to (33.center);
+		\draw [bend left=90, looseness=1.75] (38.center) to (34.center);
+		\draw (38.center) to (37.center);
+		\draw [style=arrow] (30.center) to (31.center);
+		\draw (41.center) to (42.center);
+		\draw (44.center) to (45.center);
+		\draw (45.center) to (46.center);
+		\draw (46.center) to (47.center);
+		\draw (47.center) to (44.center);
+		\draw (50.center) to (48.center);
+		\draw (49.center) to (51.center);
+		\draw (53.center) to (54.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

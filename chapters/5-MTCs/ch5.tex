@@ -317,7 +317,7 @@ Unitary fusion categories make for a pleasant object of study because the distin
 \begin{proof}.[WORK: This is actually subtler than I expected. Either give a proof here, or postpone it to the unitarity section.]
 \end{proof}
 
-We can now define unitary modular categories. The compatibility conditions for the twist are chosen so that the definition of trace as a modular category and the definition of trace as a unitary fusion category coincide. [WORK: The definition below is outdated. It uses the twist-theoretic definition of modular categories. Should be re-done.]
+We can now define unitary modular categories. The compatibility conditions for the twist are chosen so that the definition of trace as a modular category and the definition of trace as a unitary fusion category coincide.
 
 \begin{definition}[Unitary pre-modular category] A unitary modular category is the following data:
 
@@ -867,6 +867,14 @@ We will show that both $\Vec_G$ and $\Rep(G)$ can be naturally equipped with the
 .[WORK: In this section we define the $\CC$-linear structures on $\Vec_G$, $\Rep(G)$, and $\D(G)$. Our goal is to show that they are all equivalent to $\Vec_\CC^n$ for some $n\geq 1$.
 
 It seems like the best approach is through higher linear algebra. Namely, we show that if $\C$ is abelian, $\CC$-linear, semisimple, and has finitely many isomorphism classes of simple obejcts then it must be isomorphism to $\Vec_{\CC}^n$. Its a good time to wax philosophical about higher linear algebra and 2-vector spaces. However, its not clear that this approach actually helps at all. It might be easier to immediately note that everybody is the direct sum of irriducibles, prove a Schur's lemma, and call it a day. Of course these approaches are all equivalent but its not clear what's best.
+
+
+Here's a lemma I would like to use. Since $\times$ and $\boxtimes$ look too similar, I should use $\boxplus$ to denote the Cartesian product and call it the direct sum. I should then prove this:
+
+\begin{lemma} Consider the category $\mathrm{\textbf{2Vec}}$ whose objects are $\CC$-linear categories equivalent to $\Vec_{\CC}^n$ for sme $n\geq 0$, and whose morphisms are $\CC$-linear functors. The direct sum $\boxplus$ is a biproduct in $\mathrm{\textbf{2Vec}}$
+\end{lemma}
+\begin{proof} .[WORK: do proof]
+\end{proof}
 ]
 
 \subsubsection{Spherical fusion structures}
@@ -1526,7 +1534,10 @@ This condition makes the second hexagon identity tautological. Similarly, the de
 
 \subsubsection{Muger's theorem}
 
-[WORK: through Mueger's theorem. The exposition will greatly differ based on what the proof looks like, which I haven't done before.]
+[WORK: through Mueger's theorem. The exposition will greatly differ based on what the proof looks like, which I haven't done before.
+
+The standard proof people use is completeley steeped in the language of module categories. The original proof uses the tube algebra, and is ``elementary" in the sense that you don't need tube algebras but it is heineous, and I would very much like to avoid it. I'll figure out what to write hence once I've done the module category section and I've digested the proof. Maybe there's a way to de-module-ify it, but maybe not. Maybe I don't want to do that if it'll lose its essence.
+]
 
 \subsubsection{Discrete gauge theory as a quantum double and Morita equivalence}
 
@@ -1565,22 +1576,60 @@ I think that this model is fantastic because it shows how all of the ideas of te
 
 \subsection{Unitarity}
 
-\subsubsection{Characterization of unitarizable modular categories}
+\subsubsection{Characterization of unitarizability}
 
-[WORK: the main theorem of this section is that a modular category is unitarizable if and only if it has positive quantum dimensions]
+As we've mentioned beofre, the algebraic theory of topological order is not modular category theory but \textit{unitary} modular category theory because hom-spaces need Hilbert space structure to define valid quantum systems. We define unitary fusion categories and unitary modular categories in section [ref].
 
-[WORK: there also needs to be mention of the fact that braiding is automatically unitary in a unitary category]
+We've mostly ignored unitary fusion categories for the following reasons: their additional structure is a large semantic burden, and is in a way inessential. We mean this in the following sense:
+
+\begin{enumerate}
+\item Given a spherical fusion category, $\C$ every unitary structure on $\C$ is equivalent. That is, all the unitary fusion categories obtained by enriching $\C$ with unitary structure are equivalent to one another as unitary fusion categories;
+
+\item All braidings on unitary fusion categories are automattically unitary so there is no subtelty in passing to unitary modular categories;
+
+\item A spherical fusion category admits a unitary structure if and only if its quantum dimensions are all positive.
+\end{enumerate}
+
+Still, it is worthwhile to study unitary fusion categories. They are the correct algebraic structure to describe topological order, so understanding \textit{why} points (1-3) above are true gives insight into unitarity in practice. There is also a characterization of unitary fusion categories in the skeletized perspective which is of much utility in practice. Namely, a fusion category admits a unitary structure if and only if its $F$-matrices and $R$-matrices can all be made unitary. We discuss this more and offer a proof in section [ref].
+
+We now prove the first main result of the section:
+
+\begin{proposition} Let $\C$ be a spherical fusion category. There is a compatible unitary structure on $\C$ if and only if  the quanutum dimensions $d_A$ are positive for all simple objects $A\in \C$. 
+\end{proposition}
+\begin{proof} Suppose first that $\C$ admits a unitary structure. Then, for all simple objects $A\in \C$,
+
+$$d_A=\tr(\id_{A})=\Braket{\id_{A} | \id_{A}}>0$$
+
+because the inner product is positive definite. Conversely, suppose that all of the quantum dimensions of $\C$ are positive. We will suppose for simplicity that $\C$ is skeletal, which is possible by proposition [ref]. Suppose that $f:A\to B$ is a morphism between objects $A,B\in \C$. We know that there are direct sum decompositions $A=\bigoplus_{i}A_i$ and $B=\bigoplus_{j}B_j$. Writing $f$ as an element of $\bigoplus_{i,j}\Hom(A_i,B_j)$, we find that $f$ acts by some scalar $f_{i,j}$ on each homspace $\Hom(A_i,B_j)$, where $f_{i,j}=0$ if $A\not\cong B$. We define $f^{\dagger}: B\to A$ to be the map whose $\Hom(B_j,A_i)$ is $f_{j,i}^{\dagger}=\overline{f_{i,j}}$.
+
+We now prove that this defines a unitary structure on $\C$. Given any two morphism $f:A\to B$, we compute
+
+$$\Braket{f|f}=\tr(f^{\dagger}\circ f)=\sum_{i,j}|f_{i,j}|^2d_{A_i}.$$
+
+Clearly, $\Braket{f|f}=0$ if and only if $f=0$ because all of the quantum dimensions $d_{A_i}$ are positive real numbers. Hence, $\Braket{\cdot|\cdot}$ is positive definition.
+
+It is clear that $(f^{\dagger})^{\dagger}=f$, $(f\circ g)^{\dagger}=g^{\dagger}\circ f^{\dagger}$,  and $(f\otimes g)^{\dagger}=f^{\dagger}\otimes g^{\dagger}$ for appropriate choices of $f,g$. It remains to show that $\left(\ev^R_{A}\right)^{\dagger}=\coev^{L}_A$ and $\left(\coev^{R}_A\right)^{\dagger}=\ev^L_A$.
+
+[WORK: I don't know how to do this part of the proof. It's something to come back to.]
+\end{proof}
+
+\subsubsection{Unitary braidings}
+
+[WORK: Show that every braiding is automatically unitary. This is the content of \cite{galindo2014braided}.]
 
 \subsubsection{Uniqueness of unitary structure}
 
+[WORK: Show that unitary structures are unique. This is the content of \cite{reutter2023uniqueness}.]
+
 \subsubsection{Skeletonization of unitarity}
 
+[WORK: Show that a fusion category admits a unitary structure if and only if its $F$ and $R$ symbols can be made unitary in some basis. There are good references for this in the papers cited above.]
 
 
 
 \subsection{Number theory in modular categories}
 
-\subsubsection{.[prerequisites and introduction]}
+\subsubsection{Techniques and first results}
 
 \subsubsection{Galois conjugation}
 
@@ -1593,6 +1642,9 @@ I think that this model is fantastic because it shows how all of the ideas of te
 .[WORK: Go through Schauenberg-Ng's original paper and understand the proof.
 
 It seems on the face of it like it is a hard theorem. Certainly, it uses strongly the theory of the Drinfeld center as well as the modular representation. It is good to push this proof as far down as possible since it will use a lot of machinery. I think it can be boiled down to something elegant, though, if the machinery has been set up.]
+
+
+.[WORK: I would quite like to show that fusion categories (or at least modular categories) have finitely automorphisms of the identity functor. The proof I know follows from generalities about the universal grading group - \cite{gelaki2008nilpotent}. I wonder if this proof can be done completely without the use of grading. Then, the fact that the universal grading group can be interpreted in terms of grading can be put as an exercise in the ``further structure" section!]
 
 
 .[WORK: this section is going to host a lot more theorems]
@@ -1623,6 +1675,14 @@ $\newline\newline$
 
 \item .[WORK: show that irriducible $G$-graded $G$-reps are equivalent to irriducible reps of centralizers of conjugacy classes]
 
-\item .[WORK: is it too much to include the chiral central charge as an exercise? There's one formula as a ratio of Gauss sums and a second one from Gauss-someone-else. Show that those two are equal, and that they are equal to a root of unity?]
+\item . [WORK: One of the pivotal axioms automatically holds in fusion categories. Namely, the one with the twists going the two different ways. The proof is very standard - reduce to the case $A,B$ are both simple, reduce to case $A=B$, $f=\lambda\cdot \id_{A}$ and hence commutes with everything. This would be a nice exercise.]
+
+\item .[WORK: there's a notion of prime factorization of MTCs. If $\C$ is an MTC, then it can be decomposed as a tensor product
+
+$$\C=\C_1\boxtimes \C_2...\boxtimes \C_n,$$
+
+where $\C_i\neq 0$ all have no proper non-degenerate braided fusion subcategories other than $\Vec_{\CC}$. We call such MTCs \textit{prime MTCs}. Suppose that $\C$ has NO abelian anyons. Then, the decomposition is unique. However, if $\C$ has abelian anyons then the decomposition can fail to be unique. In particular, the color code is equivalent to both bilayer toric code and bilayer 3-fermion (c.f. \cite{kesselring2018boundaries}). The factorization results I asserted come from the (largely ignored?) paper by Muger: \cite{muger2002structure}.
+
+This could make for a very nice exericse. First, prove Muger's double centralizer theorem. Then, prove the factorization into prime MTCs. Then, if $\C$ has no abelian anyon anyons, prove that the decomposition is unique. Then, prove that bilayer toric code is equivalent to bilayer 3-fermion (or maybe just leave that as a comment)! ]
 
 \end{enumerate}

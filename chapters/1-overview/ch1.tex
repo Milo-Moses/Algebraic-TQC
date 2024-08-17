@@ -46,13 +46,13 @@ The term \textit{topological quantum system} is broad. To get a rigorous mathema
 \fbox{All systems in this book are two-dimensional unless stated otherwise.}
 \end{center}
 
-Topological quantum systems can be described in many different ways. In this book we will take an \textit{algebraic} approach. [WORK: what does it mean to take an algebraic approach to something?]. The algebraic structure which houses the algebraic data of a (2+1)D topologically ordered system is known as a \textit{modular tensor category}. These algebraic structures are the main mathematical object of this text. Once one has a modular tensor category it is easy to manipulate the stored information to perform computations. This gives us the overall schema of our mathematical discussion, illustrated visually below:
+Topological quantum systems can be described in many different ways. In this book we will take an \textit{algebraic} approach. [WORK: what does it mean to take an algebraic approach in this context?]. The algebraic structure which houses the algebraic data of a (2+1)D topologically ordered system is known as a \textit{modular category}. These algebraic structures are the main mathematical object of this text. Once one has a modular category it is easy to manipulate the stored information to perform computations. This gives us the overall schema of our mathematical discussion, illustrated visually below:
 
 \begin{equation*}
 \tikzfig{mathematical-outline}
 \end{equation*}
 
-In Chapter [ref] we describe topological order. In Chapter [ref] we describe topological order algebraically in terms of modular tensor categories. In Chapter [ref] we describe further algebraic structures which lie beyond plain modular tensor categories, which allow us to describe more complex behaviors in topological order. Finally, in Chapter [ref] we will use the tools we have established to detail several algorithms and procedures for topological quantum computaiton. Two introductory chapters are also included: Chapter [ref] which establishes the theory of finite dimensional quantum systems and Chapter [ref] which establishes category theory.
+In Chapter [ref] we describe topological order. In Chapter [ref] we describe topological order algebraically in terms of modular categories. In Chapter [ref] we describe further algebraic structures which lie beyond plain modular categories, which allow us to describe more complex behaviors in topological order. Finally, in Chapter [ref] we will use the tools we have established to detail several algorithms and procedures for topological quantum computaiton. Two introductory chapters are also included: Chapter [ref] which establishes the theory of finite dimensional quantum systems and Chapter [ref] which establishes category theory.
 
 \subsubsection{History of the subject}
 
@@ -82,6 +82,8 @@ Together, these two results show in a real sense that topological quantum comput
 \subsubsection{Principles of topological quantum information}
 
 In this section we will lay out the general principles of topological quantum information. As an organizational tool, these principles are introduced one by one as we construct a sample topological system. This example is meant to be representative of the systems we will encounter throughout this text, and within the broader field of topological quantum information. As a further organization tool, this example is constructed with the stated goal of obtaining a topological quantum computer.
+
+[WORK: I'm not sure to what extent this needs to be emphasized, but locality is \textit{subtle}. This is discussed in detail in \cite{hastings2010locality}. The big idea is that under perturbations, things won't be literally local. They will only be local up to exponentially small tails. There are a few papers which are able to succesfully deal with these tails (notably \cite{ranard2022converse}) but most don't. Maybe leave this as a footnote?]
 
 Our system will be flat, containing only two spatial dimensions. Our system will be mostly homogenous, essentially identical everywhere, at the exception of finitely many localized regions. These regions will differ substantially from the top-dimensional homogeneous bulk. These localized regions are called \textit{quasiparticles}. The beauty of systems like these is that they behave as though the homogeneous bulk were empty, and the quasiparticles were fundamental particles within the bulk. In fact, in its algebraic description, these topological systems are \textit{identical} to ones in which the homogenous bulk is empty and the quasiparticles are fundamental particles. This is where the term quasiparticle arises. It is important however to remember that in most relevant applications the bulk is \textit{not} empty and the quasiparticles are \textit{not} fundamental particles. The bulk is typically some highly entangled quantum wavefunction, and the quasiparticles are emergent phenomena made up of smaller microscopic degrees of freedom.
 
@@ -184,7 +186,7 @@ To understand topological computation in ordered media we will need to put in so
 
 [WORK: add outline.]
 
-In this section we will do a very similar thing. We will take our physical model, ordered media, and take its algebraic description. That algebraic description can then be used for making a computer. Luckily for us, the algebraic theory underlying ordered media is much simpler than the algebraic theory underlying topological order: it's group theory. In particular, we will even assume that all relevant groups are \textit{finite}. In this way, modular tensor categories can be seen as vast quantum generalizations of finite groups. The schematic in our case is shown below:
+In this section we will do a very similar thing. We will take our physical model, ordered media, and take its algebraic description. That algebraic description can then be used for making a computer. Luckily for us, the algebraic theory underlying ordered media is much simpler than the algebraic theory underlying topological order: it's group theory. In particular, we will even assume that all relevant groups are \textit{finite}. In this way, modular categories can be seen as vast quantum generalizations of finite groups. The schematic in our case is shown below:
 
 [WORK: add outline w/ group theory instead of MTC.]
 

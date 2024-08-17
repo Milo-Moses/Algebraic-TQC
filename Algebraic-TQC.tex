@@ -14,6 +14,8 @@
 \usepackage{mathtools}
 \usepackage{lmodern}
 \usepackage{upgreek}
+\usepackage{relsize}
+
 
 
 
@@ -48,6 +50,9 @@
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\MCG}{MCG}
 \DeclareMathOperator{\func}{func}
+\DeclareMathOperator{\Fun}{Fun}
+\DeclareMathOperator{\can}{can}
+\DeclareMathOperator*{\bplus}{\tikz[baseline,line width=.05ex]{\node[minimum size=1.3em,draw,anchor=base,inner sep=.1ex]{$   \mathlarger{\mathlarger{ \mathlarger{\mathlarger{+}}}}$};}}
 
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\ZZ}{\mathbb{Z}}
@@ -65,6 +70,10 @@
 \newcommand{\PP}{\mathcal{P}}
 \renewcommand{\SS}{\mathcal{S}}
 \newcommand{\DD}{\mathcal{D}}
+\newcommand{\BB}{\mathcal{B}}
+\newcommand{\K}{\mathscr{K}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\N}{\mathcal{N}}
 \newcommand{\charge}{\check{C}}
 
 \newcommand{\0}{\left|0\right>}
@@ -166,9 +175,19 @@ The point is as follows. Define the space $\NN_{R_1... R_n}=\bigoplus_{\{A_i\}\i
 \item What should the name for the $F$-symbol $R$-symbol $\theta$-symbol description of an MTC be? I called it the Yoneda perspective because I think that's cute. Zhenghan seems to think that somehow this is related to skeletonization? I don't know the truth. This process was introduced in Kitaev's 2006 paper without a name. Time to think about standardizing.
 
 \item I have this very nice picture in my head about TQC in ground state degeneracies. The Hamiltonian is taken on an adiabatic path through the configuration space of possible gapped Hamiltonians. This picture includes anyons for abelian anyons, but not for non-abelian anyons. In general, this doesn't include defects because defect creation/fusion will change the ground state degeneracy and can be non-unitary.  In some sense, creating/fusing defects form \textit{nice} paths in configuration space, even if they are not continuous. Maybe we should define some sort of new topology which allows for these sorts of fault-tolerant but not-continuous paths, and it would allow for more gates. Which gates are allowed this way?
+
 \end{itemize}
 ]
 
+[WORK:
+
+List of things to add:
+
+\begin{itemize}
+\item Add a big ``physics-math dictionary" which allows the translation of everything;
+\item Add a table of notation;
+\end{itemize}
+]
 
 \bibliographystyle{alpha}
 \bibliography{ref}
