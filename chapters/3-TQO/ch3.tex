@@ -1,4 +1,5 @@
 \section{Topological quantum order}
+\label{Topological quantum order}
 
 \subsection{Overview}
 
@@ -32,6 +33,8 @@ So long as the temperature is much smaller than the energy gap ($T\ll \Delta$), 
 
 [WORK: here is where I should introduce TO properly]
 
+[WORK: The issue of topological order at nonzero temperature is actually quite subtle. Seeing as in two dimensions there are no self-correcting codes, we can conclude that all topological order is \textit{unstable} at nonzero temperature - it needs the external probes to drive it into the ground state: \cite{hastings2011topological}. Another good discussion of topological order at nonzero temperature is \cite{nussinov2009symmetry}.]
+
 Of course, there's a big problem in our above discussion. \textit{Every} finite dimensional quantum system is gapped. The Hamiltonian has finitely many eigenvalues, so its spectrum is neccecarily discrete. What we should really be imagnining is an infinite family of systems, paramaterized by some real number $L>0$ called the \textit{linear system size}. Working in a two dimensional system, this will look like the below picture:
 
 \begin{equation*}
@@ -50,7 +53,18 @@ More explicitley, let us choose standard basis $S$ for $V$, inducing an isomorph
 \tikzfig{TQO-basis-distance}
 \end{equation*}
 
-[WORK: this stuff about distance is totally bogus. The real point is that if you differ at a large number of sites then it neccecarily takes a large number of local errors to make a difference! Probability gets exponentially suppressed. Global feature $\implies$ touches $>(\text{const})\cdot L$ sites.]
+[WORK: this stuff about distance is totally bogus. The real point is that if you differ at a large number of sites then it neccecarily takes a large number of local errors to make a difference! Probability gets exponentially suppressed. Global feature $\implies$ touches $>(\text{const})\cdot L$ sites.
+
+Explicitely, this condition says that there exists a basis $\ket{\psi_i}$ such that
+
+$$ \Braket{\psi_i | \OO | \psi_j}=0$$
+
+for all $i\neq j$ and local operators $\OO$. Paired with the error correcting code property, these conditions can be succinctly summarized as 
+
+$$ \Braket{\psi_i | \OO | \psi_j}=\lambda \delta_{i,j}$$
+
+Here's a good reference which talks about when all this stuff is physical possible and is fault tolerant - \cite{knapp2016quickly}.
+]
 
 This allows us to state a full picture of how to store topological information in a gapped system. Suppose we have some gapped system as before with distinguished geometric basis $S$, Hilbert space $V=\CC[S]$, Hamiltonian $H$, temperature $T$, topological energy gap $\Delta$, and linear system size $L$. We suppose $T\ll \Delta$, $L\gg 0$. Suppose further that the information we wish to store is the ground state
 
@@ -343,7 +357,7 @@ Every operator can be decomposed as a sum of Pauli operators. Hence, unerstandin
 
 \subsubsection{Simplified Hamiltonian}
 
-In this section we move on to analyzing the Kitaev quantum double model for $G=\ZZ_2$, which is known as the \textit{toric code}. The name toric code comes from the fact that the toric code was first introduced as an error correcting code, and was only later recast as a topologically ordered system [refs]. The toric code is still the basis for many of the most popular error correcting codes [refs]. In a real sense the toric code is the simplest nontrivial topological order. It is a fantastic example which demonstrates almost all of the phenomina of topological order with relatively little work involved. The toric code, and more generally $\ZZ_2$ discrete gauge theories, can be found in all sorts of systems such as [WORK: give examples]. 
+In this section we move on to analyzing the Kitaev quantum double model for $G=\ZZ_2$, which is known as the \textit{toric code}. The name toric code comes from the fact that the toric code was first introduced as an error correcting code, and was only later recast as a topologically ordered system [refs]. The toric code is still the basis for many of the most popular error correcting codes [refs]. In a real sense the toric code is the simplest nontrivial topological order. It is a fantastic example which demonstrates almost all of the phenomina of topological order with relatively little work involved. The toric code, and more generally $\ZZ_2$ discrete gauge theories, can be found in all sorts of systems such as [WORK: give examples. The ones that jump to mind are dimer models - \cite{moessner2001resonating, misguich2002quantum}]. 
 
 We describe the model now. Because $G=\ZZ_2$ is abelian, we will switch to additive notation for our group operation. We choose a \textit{non-oriented} lattice structure on the torus. This lattice does not need to be oriented because changing the direction of edges in the lattice corresponds to taking inverses, and $g=g^{-1}$ for every element $g\in \ZZ_2$. We define
 
@@ -702,6 +716,11 @@ Information left over = tensor product of local and topological. Cannot be disti
 
 
 [WORK: I want to get to the fact that anyons are moved by unique operators, and hence we can ignore the specific choice of operator and just move the anyons.]
+
+[WORK: The notion of anyon types is explaned well by Kawagoe and Levin \cite{kawagoe2020microscopic}:
+
+quote: We begin with the idea of “anyon types.” ... anyon excitation of type a, type b,
+type c, etc.]
 
 \subsubsection{Anyons in the toric code}
 

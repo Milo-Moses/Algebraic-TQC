@@ -48,6 +48,7 @@
 \DeclareMathOperator{\FPdim}{FPdim}
 \DeclareMathOperator{\Rep}{Rep}
 \DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Pic}{Pic}
 \DeclareMathOperator{\MCG}{MCG}
 \DeclareMathOperator{\func}{func}
 \DeclareMathOperator{\Fun}{Fun}
@@ -123,7 +124,7 @@ This book aims to give a comprehensive account of the algebraic theory of topolo
 
 \topskip0pt
 \vspace*{\fill}
-\large\textit{To my mentors} \normalsize	
+\large\textit{For my mentors} \normalsize	
 \vspace*{\fill}
 
 \newpage
@@ -154,38 +155,13 @@ This book aims to give a comprehensive account of the algebraic theory of topolo
 
 \include{./chapters/B-anyon-data/appB}
 
-
-[WORK: list of questions/comments:
-
-\begin{itemize}
-\item I like the term \textit{modular category}. It's shorter than ``modular tensor category" and has no ambiguity. There's some literature which uses the term modular category instead of modular tensor category. Modular tensor category is especially confusing as a term because I never define what a tensor category is. Maybe this book is a good time to change the culture on these things, and use the term modular category instead of modular tensor category...
-
-\item I'm a bit confused about the stability of topological order. When a constant-size perturbation is applied to a topologically ordered system, this will cause an exponentially small change in the ground state energy of the spectrum, and constant-size spread in the higher energy levels of the spectrum. Moreover, the size of this spread grows linearly with the eigenvalue. Hence, for any constant size perturbation, the higher end of the spectrum will start overlapping. Moreover, this will already start happening with a relatively small ($O(1)$) number of anyons. The authors of \cite{bravyi2010topological} who discovered this result console us with the following line: ``In the case when excitations of $H_0$ are anyons, one can infer all topological invariants such
-as S, R, and F-matrices by evaluating fusion and braiding diagrams with only a few particles
-(for example 4 particles suffice to compute all F matrices)". They then say once again very clearly that their stabiloity result only applies to states with $O(1)$-many anyons. Is this a fundamental problem? We need more than $O(1)$-many anyons to perform TQC!
-
-I think that the answer comes from the fact that we can re-formulate TQC in terms of defects. We can change the Hamiltonian terms so that the ground states of the new Hamitonian are anyonic excitations in the original Hamiltonian. This Hamiltonian can be adiabatically changed to perform computations. These new Hamiltonians should all exhibit the same TO as the original Hamiltonian. They will also have a gapped spectrum. Errors will only bleed into low-energy parts of this spectrum, and this can be safely dealt with by the stability theorem. I think that this is the idea. However, this feels like it will do weird things for non-abelian anyons, and there's a good change that these new Hamiltonians won't satisfy TQO-2. If you do it naively in Kitaev's original approach it won't satisfy the literal version of TQO-1 either.
-
-\item I would like to add the following principle in my discussion of anyons: \textit{Anyons types cannot be held in coherent superpositions}.
-
-This principle is subtle. Important, but subtle. On the face of it, it seems like it outlaws anyon interferometry but it can be done if you put your mind to it \cite{bonderson2012non, wei2023thermal}. At this point one needs to re-define the term anyon. Anyons MUST be of pure type. Otherwise all of our  statements will become discussions of ``pure-type" anyons and not anyons. Also, some people might contest the principle: \cite{bonderson2021measuring}. Not sure if I want to include something controversial like this.
-
-The point is as follows. Define the space $\NN_{R_1... R_n}=\bigoplus_{\{A_i\}\in \LL^n}\NN_{A_1... A_n}$. The operator $\bigoplus_{\{A_i\}\in \LL^n} \lambda_{A_1... A_n}\cdot \id$ is a local operator which commutes with all other local noise operators. Since in our physical picture we should imagine local noise being continually applied, this will have the unavoidable effect of de-phasing the superpositions. How can this be dealt with? Maybe the more robust statement is \textit{Anyons types cannot be held in coherent superpositions in noisy environments}.
-
-\item What should the name for the $F$-symbol $R$-symbol $\theta$-symbol description of an MTC be? I called it the Yoneda perspective because I think that's cute. Zhenghan seems to think that somehow this is related to skeletonization? I don't know the truth. This process was introduced in Kitaev's 2006 paper without a name. Time to think about standardizing.
-
-\item I have this very nice picture in my head about TQC in ground state degeneracies. The Hamiltonian is taken on an adiabatic path through the configuration space of possible gapped Hamiltonians. This picture includes anyons for abelian anyons, but not for non-abelian anyons. In general, this doesn't include defects because defect creation/fusion will change the ground state degeneracy and can be non-unitary.  In some sense, creating/fusing defects form \textit{nice} paths in configuration space, even if they are not continuous. Maybe we should define some sort of new topology which allows for these sorts of fault-tolerant but not-continuous paths, and it would allow for more gates. Which gates are allowed this way?
-
-\end{itemize}
-]
-
 [WORK:
 
 List of things to add:
 
 \begin{itemize}
-\item Add a big ``physics-math dictionary" which allows the translation of everything;
-\item Add a table of notation;
+\item A big ``physics-math dictionary" which allows the translation of everything;
+\item A table of notation;
 \end{itemize}
 ]
 

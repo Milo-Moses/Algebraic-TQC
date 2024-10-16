@@ -1,5 +1,5 @@
-
 \section{Modular categories}
+\label{Modular categories}
 
 \subsection{Overview}
 
@@ -19,6 +19,10 @@ Describing exactly what an anyon and how it can transform in terms of states and
 \mathbf{morphisms:}\text{ motions/behaviors of anyons}
 }\right)
 \end{equation*}
+
+[WORK: is the above picture correct? It's subtle and I should think through it.]
+
+[WORK: I am using nonstandard language. I am using the term ``modular category" to refer to what most authors call ``modular tensor categories". I do this because modular category is shorter than modular tensor category and I want to be succinct. For many people (notably Zhenghan) modular category means potentially non-semsimple modular category. For instance, Turaev's original definition did not include the simisimplicity axiom and he called them modular categories. The term tensor is used to highlight semisimplicity by many authors, so I can highlight semisimplicity with a footnote.]
 
 Up to topological equivalence, there are not that many things that a collection of anyons can do. The most basic thing is to move anyons around each other - this is known as braiding. If the anyons touch each other then they can congeal into a single composite anyon - this is known as fusion. Even if there are no anyons in a system, however, there is always something possible. Anyons can be spontaneously created, so long as every anyon which is created comes along with its corresponding antiparticle. This is known as \textit{pair-creation}. These three operations are the fundamental structures which we will building into modular categories:
 
@@ -207,6 +211,8 @@ A more detailed understanding of the physical meaning of the direct sum will hav
 This concludes our basic picture of anyons in fusion categories.
 
 \subsubsection{States in modular categories and unitarity}
+
+[WORK: This whole section only discusses \textit{pure} states. For a good discussion of mixed states and entropy, see \cite{bonderson2017anyonic}]
 
 It is now worth reflecting on what exactly states correspond to in modular categories. In particular, objects in modular categories are \textit{not} quantum systems. They don't have vector space structure. The spaces with vector space structure are the hom-spaces, by $\CC$-linearity. Objects will correspond to anyon configurations. States will correspond to normalized vectors in certain hom-spaces. In particular:
 
@@ -1463,7 +1469,10 @@ We now get the following theorem:
 
 \subsubsection{Principle}
 
-.[WORK: lots of big choices need to be made here. Do I call this the skeletonization, or do I call it something else? Do I work with multiplicity-free categories, or do I allow multiplicity? I don't know what the correct statements are or what the proofs look like so this section might be a tough one.]
+.[WORK: lots of big choices need to be made here. Do I call this the skeletonization, or do I call it something else? Do I work with multiplicity-free categories, or do I allow multiplicity? I don't know what the correct statements are or what the proofs look like so this section might be a tough one.
+
+A good mathematical reference is \cite{davidovich2013arithmetic}.
+]
 
 \subsubsection{$F$-symbols}
 
@@ -1578,6 +1587,8 @@ I think that this model is fantastic because it shows how all of the ideas of te
 
 \subsubsection{Characterization of unitarizability}
 
+[WORK: An early reference about unitary MTCs is \cite{kirillov1996inner}. I should read this.]
+
 As we've mentioned beofre, the algebraic theory of topological order is not modular category theory but \textit{unitary} modular category theory because hom-spaces need Hilbert space structure to define valid quantum systems. We define unitary fusion categories and unitary modular categories in section [ref].
 
 We've mostly ignored unitary fusion categories for the following reasons: their additional structure is a large semantic burden, and is in a way inessential. We mean this in the following sense:
@@ -1631,11 +1642,27 @@ It is clear that $(f^{\dagger})^{\dagger}=f$, $(f\circ g)^{\dagger}=g^{\dagger}\
 
 \subsubsection{Techniques and first results}
 
+[WORK:
+
+A good general reference about this stuff is \cite{gannon2019algebraic}. To-read, for sure.
+
+There is also interesting work in \cite{morrison2012non} which gives some counterexamples.
+
+Another reference is \cite{davidovich2013arithmetic}.
+]
+
 \subsubsection{Galois conjugation}
+
+[WORK: An early reference is \cite{coste1993remarks}.
+
+Some other papers not to ignore in this area are \cite{plavnik2023modular, buican2022galois}.]
 
 \subsubsection{Ocneanu rigidity}
 
 \subsubsection{Rank-finiteness theorem}
+
+[WORK: Of course there is the original paper on the topic. However, there is also the generaliation for $G$-crossed MTCs and fermionic MTCs - \cite{jones2021rank}. Should I bring this up now or later?]
+
 
 \subsubsection{Schauenberg-Ng theorem}
 

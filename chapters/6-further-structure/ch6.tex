@@ -1,4 +1,5 @@
 \section{Further structure}
+\label{Further structure}
 
 \subsection{Overview}
 
@@ -658,6 +659,8 @@ As a corollary we find the following theorem, which was first proved by Kitaev a
 
 \subsubsection{Physical picture}
 
+[WORK: Two additional good references to read for this stuff are \cite{aasen2016topological, aasen2020topological}]
+
 [WORK:
 
 This section should give an elementary physical picture of what symmetry enriched topological order. The basic idea is that a topological gap might be closable, but maybe closing it has to break some symmetry! This is easy to explain and motivate.
@@ -672,7 +675,10 @@ I think that getting the example of the magnet phase transition across would be 
 
 ]
 
-[WORK: I would like to include the Curie principle - the symmetry of the causes are to be found in the effects! The symmetries $\Aut^{\otimes}(\C)$ are nessecarily interesting objects. Why? Curie principle! The curie principle in this case manifests in the possible defects which can appear. While $\C$ and $\C\otimes \overline{\C}$ might \textit{look} like very similar categories, $\C\otimes \overline{\C}$ may have way more symmetries than $\C$ and hence might look like a better candidate for TQC in this guise.]
+[WORK: I would like to include the Curie principle - the symmetry of the causes are to be found in the effects! The symmetries $\Aut^{\otimes}(\C)$ are nessecarily interesting objects. Why? Curie principle! The curie principle in this case manifests in the possible defects which can appear. While $\C$ and $\C\otimes \overline{\C}$ might \textit{look} like very similar categories, $\C\otimes \overline{\C}$ may have way more symmetries than $\C$ and hence might look like a better candidate for TQC in this guise
+
+The original reference for the Curie principle is \cite{curie1894symetrie}. The theory of magnetic space groups gives a quite nice example.
+]
 
 \subsubsection{Haldane spin chain}
 
@@ -700,6 +706,16 @@ Why categorical $G$-actions? Why $G$-graded categories? It would be great if I c
 $$\C <-- confinement, defectification --> \C^{\times}_{G} $$
 
 If I could even get in the fact that there are obstructions that would be awesome. Of course, I can't really prove much. The hope is that I can state everything trivially, and not have to make any big claims...
+]
+
+
+[WORK: Another good thing to note is that there are generalizations of the notion of symmetry in this context! In particular we have the work of Cui-Zini-Wang \cite{cui2019generalized}. It's not clear that group actions are the only symmetries which could protect defects.]
+
+[WORK:
+
+A really important theorem in this space is EGNO's observation that $\Aut$ and $\Pic$ are isomorphic. Does this come up on its own already, or do I need to add this in? I'm hazy now on the physical significance of this isomorphism, and on what categorical level it holds.
+
+Zhenghan made a point to me that noninvertible defects break the theorem (they aren't in the picard group), but the philosophy is still there. Namely, the category (appropriately defined) $\Pic\left(\mathcal{B}^{\times}_{G}\right)$ should be isomorphic to some endomorphism group. The philosophy holds (though I am hazy on it), but there is no known theorem. This is something to look into!
 ]
 
 \begin{definition}[Categorical group action] A \textit{categorical group action} of a finite group $G$ on a fusion category $\C$ is the following data:
@@ -927,7 +943,8 @@ The principle here is that the data of a $G$-grading is the same as the data of 
 
 Thus, combining the results of this section with the ones from the previous section we get the following picture:
 
-[WORK: add picture.]
+[WORK: add picture; gauging, condensing, defectifying, confining]
+
 
 
 \subsubsection{Obstruction theory, anomalies, and zesting}
@@ -1068,11 +1085,13 @@ $$\M\xrightarrow{}\End(\C).$$
 
 This is a categorical version of the fact that modules and representations are in bijection.]
 
-\item . [WORK: people love the Tambara-Yamagami theorem, and consider it to be very deep. One of the original motivation of the algebraic theory of SET phases, however, is that it gives a quick proof! It would thus be nice to have the Tambara-Yamagmi result here as an exercise. \cite{tambara1998tensor}.]
+\item . [WORK: people love the Tambara-Yamagami theorem, and consider it to be very deep. One of the original motivation of the algebraic theory of SET phases is that it gives a quick proof! It would thus be nice to have the Tambara-Yamagmi result here as an exercise. \cite{tambara1998tensor}.]
 
 
 \item .[WORK: categorical group actions can be reinterpreted in terms of funtors. Namely, a category group action is a monoidal functor from the categorified version of the group. The categorified version of the group is defined so that it has an object for each group element, its only morphisms are the identity, and its monoidal structure is given by the group law.]
 
 
 \item . [WORK: There is the principle of \textit{modularization}. Here, we take the center (which will be some symmetric fusion category) and ``gauge it away". The fact that this is possible comes from our setup of symmetry enriched toplogical order and fermionic topological order. I don't quite see how it is physically relevant. It seems best left here as an exercise.]
+
+\item .[WORK: I think that a SFC is abelian if and only if its Drinfeld center is. This would be a nice exercise to include.]
 \end{enumerate}
