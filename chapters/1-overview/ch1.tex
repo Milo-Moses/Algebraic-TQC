@@ -231,94 +231,120 @@ In the rest of this chapter we will describe exactly what the space we are stori
 
 \subsubsection{The fundamental group}
 
-To understand topological computation in ordered media we will need to put in some real work in analysing the system, and make some non-trivial observations. The structure of this analysis will be largely the same as the analysis which will be taking place throughout the rest of this book. We recall the overall outline of this text, which goes as follows:
+To understand topological computation in ordered media we will need to put in some real work analysing the system. Our main technical ingredient will be a construction from topology known as the \textit{fundamental group}. In this section we will define the fundamental group and apply it to ordered media.
 
-[WORK: add outline.]
+The fundamental group is derived from a careful analysis of loops in topological spaces. We first clairfy what we mean by \textit{loop}. Loops, for our purposes, are always oriented and are allowed arbitrary self intersections. Formally, we define a loop in a topological space $M$ to be a continuous map $\alpha:[0,1]\to M$ such that $\alpha(0)=\alpha(1)$.
 
-In this section we will do a very similar thing. We will take our physical model, ordered media, and take its algebraic description. That algebraic description can then be used for making a computer. Luckily for us, the algebraic theory underlying ordered media is much simpler than the algebraic theory underlying topological order: it's group theory. In particular, we will even assume that all relevant groups are \textit{finite}. In this way, modular categories can be seen as vast quantum generalizations of finite groups. The schematic in our case is shown below:
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.06]{loops}
+\caption{Examples of loops in $\RR^2$.}
+\label{fig:loops}
+\end{center}
+\end{figure}
 
-[WORK: add outline w/ group theory instead of MTC.]
+A clever observation is that the space of loops can be endowed with the structure of a group. A group, by definition, has a group operation. A natural choice of group operation on the space of loops is \textit{composition}. Given two loops we can compose them by first following one loop and then following the other.
 
-The way we go from defects in ordered media to group theory is by using a construction known as the \textit{fundamental group} from homotopy theory.
-
-The fundamental group is derived from a careful analysis of loops in topological spaces. We first clairfy what we mean by \textit{loop}. Loops, for our purposes, are always \textit{oriented} and are allowed arbitrary self intersections. Examples of loops around a point are shown below:
-
-[WORK: add pictures of loops.]
-
-Formally, we define a loop in a topological space $M$ to be a continuous map $\alpha:[0,1]\to M$ such that $\phi(0)=\phi(1)$. Our main goal us to understand topological information. Topological information is stored in properties which are invariant under deformations. Hence, we are naturally interested in the space of loops up to deformation.
-
-In the plane $\RR^2$ with a point removed, points up to deformation are classified by their \textit{winding number}. This winding number is an integer which says how many times the loop went around the point. This windingn number is an integer in $\ZZ$, with positive numbers corresponding to counterclockwise rotations and negative numbers corresponding to clockwise rotations. The loops in figure [ref] have their winding numbers given as an illustration of the concept.
-
-The key ingredient we are missing is the \textit{group structure}. We want to get groups out of topological spaces, but so far all we have is a set. The group structure comes from composition. Given two loops we can compose them by first following one loop and then following the othe. In this language, we see the topologists' winding-number version of $1+1=2$ below:
-
-[WORK: add 1+1=2 with winding numbers.]
-
-This definition has a big problem though. To compose, we need to choice a point to start and stop two two loops being composed at. This special starting/stopping point is known as a \textit{basepoint}. This deal of choosing basepoints is very important for the theory. Formally, a loop in $M$ based at $m\in M$ is a map $\alpha:[0,1]\to M$ such that $\phi(0)=\phi(1)=m$. We define the composition of two loops $\alpha_0,\alpha_1$ in $M$ based at $m\in M$ to be
+Importantly, composing loops has a subtlety. To compose, we glue the endpoint of one loop to the start point of the other. However, loops do not have marked start and end points so this composition rule is not well-defined! To fix this issue, we work with loops that do have a distinguished start and end point. Formally, we define a \textit{based loop} in a topological space $M$ to be a pair $(\alpha,m)$ where $m\in M$ is a point known as the \textit{basepoint} of the loop, and $\alpha:[0,1]\to M$ is a continuous map such that $\alpha(0)=\alpha(1)=m$. The composition of based loops is well-defined. Given two based loops $\alpha_0,\alpha_1$ in $M$ with basepoint $m\in M$, we define their composition to be
 
 $$
-(\alpha_1 \circ \alpha_0)(t)=
+(\alpha_1 \circ \alpha_0)(s)=
 \begin{cases}
-\alpha_0(2t) & 0\leq t \leq 1/2 \\
-\alpha_1(2(t-1/2)) & 1/2 < t \leq 1.
+\alpha_0(2s) & 0\leq t \leq 1/2 \\
+\alpha_1(2(s-1/2)) & 1/2 < t \leq 1.
 \end{cases}$$
 
-The reason we need to add the factors of $2$ is to ensure that the domain of the loop is still the unit interval $[0,1]$. Intuitively, to fit two loops in the same amount of time we had to speed-up both loops by a factor of 2.
+The reason we need to add the factors of two is to ensure that the domain of the loop is still the unit interval $[0,1]$. Intuitively, to fit two loops in the same amount of time we had to speed-up both by a factor of two. This composed map is continuous at $s=1/2$ because the left and right limits of $(\alpha_1 \circ \alpha_0)(s)$ are both equal to $m$.
 
-We are now almost ready to define the fundamental group: we have defined based loops, and we have defined a rule for their composition. The last subtelty is in discussing what it means to deform based loops. In particular, should deformations be allowed to move the basepoint? The issue that we want to be able to compose our loops. To compose loops they need to have the same basepoint. If the basepoint moves then we will lose out composition structure. Hence, for the time being, we should only work with deformations which preserve the basepoint. With this subtelty out of the way, we can finally define the fundamental group. Given any connected topological space $M$ and any point $m\in M$, we define the \textit{fundamental group of $M$ based at $m$} to be the group
+Despite being well-defined, composition does \textit{not} endow the space of based loops in a topological space with the structure of a group. The issue that the axioms of associativity, unit, and inverse all fail to hold. A clever way to fix these problems and to make the resulting group more universal is to only consider equivalence classes of based loops up to deformations which preserve the basepoint. This means that if there is a continuous deformation between two loops which leaves the basepoint fixed along the entire deformation, then two loops are considered to be equivalent. It is not difficult to verify that the composition rule for based loops is well-defined on such equivalence classes, and gives rise to the \textit{fundamental group of a topological space $M$ with basepoint $m\in M$}:
 
-$$\pi_1(M,m)\coloneqq \left(\text{loops in $M$ based at $m$}\right)/\left(\text{basepoint preserving deformations}\right)$$
+$$\pi_1(M,m)\coloneqq \left(\text{loops in $M$ based at $m$}\right)/\left(\text{basepoint preserving deformations}\right).$$
 
-whose group structure is given by the composition of based loops. As an example, our earlier comments about loops around points can be summarized as the statement that $\pi_1(\RR^2\backslash\{p\},b)\cong \ZZ$ for any distinct points $b,p\in \RR^2$. The identity element in the fundamental group is the trivial loop which stays at its basepoint and doesn't move (formally, the constant map $\alpha:[0,1]\to M$), and inverses are given by reversing orientation (formally, the inverse of $\alpha:[0,1]\to M$ is $\alpha^{-1}(t)=\alpha(1-t)$.)
+We denote the equivalence class of the based loop $\alpha$ by $[\alpha]\in \pi_1(M,m)$. The identity element in the fundamental group is the equivalence class of the trivial loop $\alpha(s)=m$ which stays at its basepoint and doesn't move. Inverses are given by reversing orientation. That is, the inverse of $[\alpha]$ is the equivalence class of $\alpha^{-1}(s)=\alpha(1-s)$.
 
-We can now start to use the fundamental group to analyse defects in ordered media. The first major insight is that loops in physical space yield loops in order space. Let $S$ be a finite set of defects and let $\phi: \RR^2 \backslash S \to M$ be a state. Given any loop $\alpha$ in $\RR^2\backslash S$ based at $b\not\in S$, postcomposing with $\phi$ gives a loop in $M$:
+We now compute some basic examples of fundamental groups. The first example is $\pi_1(\RR^2,0)$. Suppose that $\alpha$ is a loop in $\RR^2$ based at $0$. The define $\alpha_t(s)=t\cdot \alpha(s)$ for $0\leq t\leq 1$. The maps $\alpha_t:[0,1]\to \RR^2$ are loops based at $0$ becasue $\alpha_t(0)=t\cdot \alpha(0)=0$ and $\alpha_t(1)=t\cdot \alpha(1)=0$. Hence, the family of loops $\alpha_t$ provides a basepoint preserving deformation from $\alpha_1=\alpha$ to the constant map $\alpha_0=0$. Hence, all loops in $\RR^2$ based at $0$ are equivalent to the constant map in the fundamental group so $\pi_1(\RR^2,0)=0$. Applying translations, we find more generally that $\pi_1(\RR^2,m)=0$ for any $m\in \RR^2$.
 
-$$(\phi \circ \alpha): [0,1]\xrightarrow{\alpha} \RR^2 \backslash S \xrightarrow{\phi} M.$$
+We now consider $\pi_1(\RR^2\backslash\{p\},m)$ for distinct points, $p,m\in \RR^2$. Every loop $\alpha$ in $\RR^2$ goes around $p$ some total number of times, which we call the \textit{winding number} of $\alpha$ around $p$. We count counterclockwise trajectories around $p$ as positive and clockwise trajectories around $p$ as negative, so that the winding number is an integer in $\ZZ$. Composing loops corresponds to adding winding numbers. It can be shown that the winding number provides a complete characterization of loops in $\RR^2\backslash \{p\}$, and thus we arrive at an isomorphism of groups $\pi_1(\RR^2\backslash\{p\},m)\cong \ZZ$. The loops in figure \ref{fig:loops} have their winding numbers given as an illustration of the concept.
 
-This loop has basepoint $(\phi \circ \alpha)(0)=(\phi\circ \alpha)(1)=\phi(b)$. This gives an element of $\pi_1(M,\phi(b))$. Given any state $\phi$ and given any loop $\alpha$ based at $b$, we call the corresponding element of $\pi_1(M,\phi(b))$ the \textit{winding number of $\phi$ along $\alpha$}. This sort of winding number generalizes the standard notion of a winding number of a loop around a point discussed before.
-
-Now, consider the system with $n$ defects arranged in a line. We can choose a basepoint $b$ above all of the defects. We add loops $\alpha_i$ based at $b$ for each $1\leq i \leq n$, each of which go directly around defect $i$ counterclockwise exactly once. This is depicted visually below:
-
-[WORK: add picture.]
-
-Given any ordered state $\phi$ on this system, we can take the winding numbers of each loop $\{\alpha_i\}_{i=1}^n$. These winding numbers all live in $\pi_1(M,\phi(b))$. Hence, to each state we can assign an element in the $n$-fold Cartesian product $\pi_1(M,\phi(b))^n$.
-
-Fantastically, the values in $\pi_1(M,\phi(b))^n$ change in a well-behaved way under braids. We use a $2$-defect system to illustrate the principle.
-
-[WORK: add good pictures to show why making $g_1$ go under $g_2$ maps $(g_1,g_2)$ to $(g_2,g_1)$. Talk a bit about it in words too]
-
-This gives us a picture for how our computer works: information is stored in the winding numbers of the defects, and braiding acts by conjugating the winding numbers by each other.
-
-There are a still a few lingering points that need to be sorted out before we can start building our computer. The first is the issue of whether our information being stored is actually invariant under defect-fixed deformations. Unfortunately, it is \textit{not}. The problem is that deformations in general have no reason to preserve the value of $\phi(b)$. The deformations will hence change the basepoints. However, elements of the fundamental group are only defined up to basepoint-preserving deformations! Hence, deformations of the state will change its winding numbers. In general we have the following key relation:
-
-$$\left(\text{loops in $M$ based at $m$}\right)/\left(\text{basepoint preserving deformations}\right)= \pi_1(M,m)$$
+A point to emphasize is that $\pi_1(M,m)$ does \textit{not} capture the space of loops in $M$ based at $m$ up to arbitrary deformation - it only captures the space of loops in $M$ based at $m$ under basepoint preservind deformations, by definition. It can be that there is a way of deforming continuously between two loops, but such a deformation must neccecarily move the basepoint. The space of loops in $M$ based at $m$ under arbitrary deformations is computed instead by \textit{conjugacy classes}\footnote{Recall that a conjugacy class in a group $G$ is an equivalence class of elements $g\in G$ under the equivalence relation where $g$ is equivalent to $h$ whenver there exists $k$ for which $g=k h k^{-1}$.} in $\pi_1(M,m)$:
 
 $$\left(\text{loops in $M$ based at $m$}\right)/\left(\text{arbitrary deformations}\right)= \left(\text{conjugacy classes in }\pi_1(M,m)\right).$$
 
-The intution for this above fact is as follows. Let $\alpha$ be a loop based at $b$. Let $\alpha'$ be the same loop but with a different choice of basepoint $b'$. Let $\epsilon$ be the portion of the loop between $b$ and $b'$. Going along $\alpha$ is the same as first going along $\epsilon$ to get to $b'$, then going along $\alpha'$, and then going along $\epsilon^{-1}$ to get back to $b$. Hence, we have $\alpha = \epsilon^{-1}\circ \alpha' \circ \epsilon$. Hence, choosing different basepoints amounts to conjugation. This is illustrated below:
+The intuition for this formula is as follows. Let $\alpha$ be a loop based at $m$. Let $\alpha'$ be the same loop but with a different choice of basepoint $m'$. Let $\epsilon$ be the portion of the loop between $b$ and $b'$. Going along $\alpha$ is the same as first going along $\epsilon$ to get to $b'$, then going along $\alpha'$, and then going along $\epsilon^{-1}$ to get back to $b$. Hence we have $\alpha = \epsilon^{-1}\circ \alpha' \circ \epsilon$, as depicted in figure \ref{fig:conjugacy}. Hence, choosing different basepoints amounts to conjugation on the level of loops.
 
-[WORK: add diagram]
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.04]{conjugacy}
+\caption{Illustration of why changing basepoints behaves as conjugation on loops .}
+\label{fig:conjugacy}
+\end{center}
+\end{figure}
 
-All this is to say that the winding numebrs in an $n$-defect ordered media state $\phi$ are not preserved up to defect-fixed deformations. Properly dealing deformations requires properly keeping track of conjugacy classes versus group elements. This sort of effort, however, is unnececary because it does not change any of the key takeways or any of the important concepts. Hence, \textit{we will assume that all of our deformations do not change the value of $\phi(b)$}. We will choose some element $m\in M$ and assume $\phi(b)=m$ is fixed. For physical motivation, one can imagine moving the basepoint far away towards infinity. Since all of our physics is local we can imagine that the magnitute of the deformations go to zero away from the origin and hence the point at infinity is preserved by all local nosie.
+We can now use the fundamental group to analyse defects in ordered media. The first major insight is that loops in physical space yield loops in order space. Let $S\subset \RR$ be a finite set of defects and let $\phi: \RR^2 \backslash S \to M$ be a state. Given any loop $\alpha$ in $\RR^2\backslash S$ based at $b\not\in S$, postcomposing with $\phi$ gives a loop in $M$:
 
-Our last subtelty to discuss is reading out information. As we have just discussed, the values of the winding numbers in $\pi_1(M,m)$ are very dependent on the choice of basepoint. This means that the information encoded in this winding number is spread out over the whole region between the defect and the basepoint. This nonlocal nature makes it hard to measure, especially when the basepoint is taken away towards infinity. The readily measurable local information is the non basepoint-preserving winding number of the loop around defects. That is, the conjugacy classes in $\pi_1(M,m)$ associated to the defects. These conjugacy classes should be measurable in a reasonable experimental setup.
+$$(\phi \circ \alpha): [0,1]\xrightarrow{\alpha} \RR^2 \backslash S \xrightarrow{\phi} M.$$
 
-However, as we braid, these conjugacy classes do not change, and hence the outcomes of our measurments won't be affected. In a way, this is the point - braiding can change the spread-out global topological information, but will not change local quantities, like the conjugacy class in $\pi_1(M,m)$. In this way we can think of the conjugacy class as a well-defined \textit{type} of the defect, whereas the exact value in $\pi_1(M,m)$ is a global quantity which depends on the choice of basepoint
+This loop has basepoint $(\phi \circ \alpha)(0)=(\phi\circ \alpha)(1)=\phi(b)$. The equivalence class of this loop up to basepoint preserving deformation is an element of $\pi_1(M,\phi(b))$. Given any state $\phi$ and given any loop $\alpha$ based at $b$, we denote the corresponding element of $\pi_1(M,\phi(b))$ by $\phi_*(\alpha)$, which we call the \textit{winding number of $\phi$ along $\alpha$}. This sort of winding number generalizes the standard notion of a winding number of a loop around a point discussed before.
 
-The way to get around this issue is to fuse the defects before braiding. Fusing defects together amounts to bringing them close together until they act like a single defect. If the defects have winding number $g_1,g_2$, then their fused defect will have winding number $g_1g_2$ as illustrated by the below diagram:
+Now, consider the system with $n$ defects arranged in a line. We can choose a basepoint $b$ above all of the defects. We add loops $\alpha_i$ based at $b$ for each $1\leq i \leq n$, each of which go directly around defect $i$ counterclockwise exactly once and do not go around any other defects. This setup is depicted in figure \ref{fig:classical-setup}.
 
-[WORK: add diagram.]
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.04]{classical-setup}
+\caption{Defects arranged in a line with distinguished counterclockwise loops around each defect.}
+\label{fig:classical-setup}
+\end{center}
+\end{figure}
 
-Hence, given a state $(g_1,g_2... g_n)$, the measurable quantities are the conjugacy classes of products of adjacent defects. For instance, fusing all of the defects one-by-one to the left would allow one to measure the conjugacy classes of $g_1$, $g_1g_2$, $g_1g_2g_3$, all the way up to $g_1g_2g_3...g_n$.
+Given any ordered media state $\phi$ on this system, we can take the winding numbers $\phi_*(\alpha_i)\in \pi_1(M,\phi(b))$ of each loop $\alpha_i$. Applying a defect-fixed deformation could change the values $(\phi_*(\alpha_i))_{i=1}^n$ by a simultaneous conjugation on each component, because the defect-fixed deformation could change the value $\phi(b)$ assigned to the basepoint. Up to this global conjugation, however, the values $(\phi_*(\alpha_i))_{i=1}^n$ give a complete characterization of the information in $\phi$ which is invariant under defect-fixed deformations.
 
-This completes our analysis of defects in ordered media based on the fundamental group.
+We now consider the behavior of these winding numbers $\phi_*(\alpha_i)$ under defect-mobile deformation. A defect mobile homotopy will have the effect of moving the defects around each other. Suppose that we have winding numbers $\phi_*(\alpha_i)=g_i\in \pi_1(M,\phi(b))$ for each $1\leq i\leq n$. Let $\tilde{\phi}$ be a state which is obtained by performing a defect-mobile deformation which moves defect $i$ above and around defect $i+1$, and which moves defect $i+1$ below and around defect $i$. This swap will result in a new state $\tilde{\phi}$ which is well-defined up to defect-fixed deformation. Denote the winding numbers $\tilde{\phi}_*(\alpha_i)=\tilde{g}_i\in \pi_1(M,\phi(b))$.
+
+At every step along the defect-mobile deformation from $\phi$ to $\tilde{\phi}$ a loop can be drawn around defect $i$ connecting it to the basepoint $b$ so that these loops change continuously and never cross defect $i+1$. This means that the loop $\alpha_i$ at the beginning of the defect-mobile deformation is continuously deformed to the loop $\alpha_{i+1}$ after the deformation, and thus $\tilde{g}_{i+1}=g_i$. We observe additionally that the defect-mobile homotopy made no changes outside of a region localized around the defects $i$ and $i+1$ so the total winding number around defects $i$ and $i+1$ must be preserved. Thus, $\tilde{g}_i\tilde{g}_{i+1}=g_ig_{i+1}$. Combining these formulas, we conclude moving defect $i$ above and around defect $i+1$ has the following effect on winding numbers:
+
+$$\tilde{g}_{i+1}=g_i,\,\,\,\,\,\,\,\,\,\,\,\,\,\, \tilde{g}_i=g_{i}g_{i+1}g_{i}^{-1}.$$ 
+
+The above process is illustrated in figure \ref{fig:braid-action}. If instead defect $i$ moves below and around defect $i+1$, the corresponding change in winding numbers is 
+
+$$\tilde{g}_{i+1}=g_{i+1}^{-1}g_ig_{i+1},\,\,\,\,\,\,\,\,\,\,\,\,\,\, \tilde{g}_{i}=g_{i+1}.$$ 
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.05]{braid-action}
+\caption{Illustration of the effect of exchanging defects on winding numbers.}
+\label{fig:braid-action}
+\end{center}
+\end{figure}
+
+The last ingredient we discuss are the locally measurable quantities in our system. Winding numbers are useful invariants of a state under defect-fixed deformation, but they are dependent on the choice of basepoint used. This means that the information encoded in the winding number is spread out over the whole region between the defect and the basepoint. This nonlocal nature makes it hard or impossible to measure in most reasonable physical implementations. A more readily measurable quantity is the winding number of a defect up to arbitrary deformation. That is, the conjugacy class in $\pi_1(M,\phi(b))$ associated to the defect. This conjugacy class can be computed using loops that are arbitararily close to the defect. Thus, it is a local quantity and can be effectively measured in physical implementations.
+
+It is also desirabe to have a mechanism for reading out some non-local information about states in ordered media. A good way to do this is by fusing defects. Fusing defects is the process where nearby defects are brought close together until they act like a single defect. Fusion must preserve total winding number, and thus if two defects with winding number $g_1,g_2$ are fused then their resulting winding number is $g_1g_2$. The conjugacy classes of $g_1$ and $g_2$ are not enough to determine the conjugacy class of $g_1g_2$, and thus fusing two defects and then measuring the conjugacy class of their winding number gives access to more informaiton. In a sense, it gives access to the non-local information which was being stored between the two defects which are fused.
+
+A sample measurement pattern is as follows.  Suppose that $\phi$ is a state with $n$ defects arranged in a line as before, and let us denote the winding numbers $\phi_*(\alpha_i)=g_i$. Local measurements give us access to the conjugacy classes of all of the elements $g_i$. By fusing the defects into the left-most defect one by one, we can access the conjugacy classes of $g_1$, $g_1g_2$,  $g_1g_2g_3$,... all the way up to $g_1g_2g_3...g_n$. In favorable situations this can give us a large amount of non-local information.
 
 \subsubsection{Topological classical computation}
 
-We are now ready to describe the theory of topological classical computation. In the previous section, we showed how all of the topological information of defects in ordered media is controlled by the fundamental group $G=\pi_1(M,m)$ of the order space $M$ relative to some basepoint $m\in M$. This is the heart of the algebraic theory of topological computing. Even though our physical model is complicated, the algebraic data can be succicntly summarized as a single group $G=\pi_1(M,m)$. In this way, we will formulate our discussion of topological classical computation in a way which does not make reference to the order space at all. We will choose an abstract group $G$ and make a computer using it.
+[WORK: fit this in
 
-On a purely mathematical level we don't need to make any restrictions on the group $G$. It is a theorem from homotopy theory that every group is the fundamental group of some topological space. However, we will make restrictions on our choice of group coming from physical concerns. We will ask that our group be \textit{finite}. A first reason for this is error protection. Suppose that $G$ were some continuous group, like $G=\RR$. If the stored information was $\pi=3.1415...$, it would be difficult for this information to not drift to $3.1416...$. Even though there aren't any continuous deformations which would change a winding number, small non-continuous deformations could still make this sort of jump. For this reason it is preferable to work with \textit{discrete} groups - groups whose natural topology is discrete. Discreteness implies a degree of seperation, which means that winding numbers will not spontaneously jump from one element to the next. This gives the system error resistance.
+This analysis is structurally the same as the analysis which will be taking place throughout the rest of this book. We recall the overall outline of this text:
 
-The choice to make the group finite is more subtle. For instance, $G=\ZZ$ appears in many physically reasonable contexts. Our choice mainly steps from the practical consideration that finite groups are simpler to work with than infinite ones, and the general physical principle that symmetry groups should be compact. Any compact discrete group must be finite. This compactness argument will become especially relevant once we pass to quantum mechanics.
+\begin{equation*}
+\tikzfig{mathematical-outline}
+\end{equation*}
+
+In the classical case we follow a similar approach. We take our physical model, ordered media, and find its algebraic description. That algebraic theory can then be used to describe a computer. Luckily for us, the algebraic theory underlying ordered media is much simpler than the algebraic theory underlying topological order: it's finite group theory theory! In this way, modular categories can be seen as vast quantum generalizations of finite groups. The schematic for the classical case is shown below:
+
+\begin{equation*}
+\tikzfig{mathematical-outline-classical}
+\end{equation*}
+
+]
+
+We are now ready to describe the theory of topological classical computation. In the previous section, we showed how all the topological information of defects in ordered media is controlled by the fundamental group $G=\pi_1(M,m)$ of the order space $M$ relative to some basepoint $m\in M$. This is the heart of the algebraic theory of topological computing. Even though our physical model is complicated, most information theoretic properties can understrood by analysing the group $G=\pi_1(M,m)$. In this way, we can formulate our discussion of topological classical computation in a way which does not make reference to the order space at all. We will choose an abstract group $G$ and make a computer using it.
+
+On a purely mathematical level we don't need to make any restrictions on the group $G$. It is a theorem from topology that every group is the fundamental group of some topological space. However, we will make restrictions on our choice of group coming from physical concerns. We will ask that our group be \textit{finite}. A first reason for this is error protection. Suppose that $G$ is some continuous group, like $G=\RR$. Suppose that $\phi$ is a state in ordered media based on some topological space with fundamental group $G$, and that $\alpha$ is a loop in $\RR^2$ around some defect in $\phi$. Suppose further that the winding number of $\phi$ around $\alpha$ is $\pi=3.1415...$. Even though topologically we know that this winding number should be stable under defect-fixed homotopy, in physical systems it is inevitable that the winding number will not change slightly with time, jumping for instance to $3.1416$. These small uncontrollable changes can compound over time, leading to a phenominon whereby winding numbers will drift as time passes. For this reason it is preferable to work with groups whose natural topology is \textit{discrete}. This means that winding numbers cannot drift, because every continuous change on a discrete space must be constant. This gives the system error resistance.
+
+The choice to make the group finite comes from our eye towards the quantum case. For instance, $G=\ZZ$ appears in many physically reasonable contexts but we choose to exclude it nonetheless. This convenience comes from the practical consideration that finite groups are simpler to work with than infinite ones, and from some general physical principles which make infinite groups fail to generalize well to the quantum case.\footnote{In the quantum case}
 
 In summary, the algebraic theory of topological classical information we present is really just a special case of finite group theory, which is a well understood subject.
 
