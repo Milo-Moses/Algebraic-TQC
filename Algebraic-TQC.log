@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  27 OCT 2024 14:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  29 OCT 2024 09:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1237,17 +1237,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 1695--1696
 
  (./chapters/6-further-structure/ch6.tex [143
 
-] [144] [145]
-[146] [147] [148] [149] [150] (./figures/frobenius-reciprocity.tikz)
+]
+
+LaTeX Warning: Citation `costantino2014quantum' on page 144 undefined on input 
+line 41.
+
+
+LaTeX Warning: Citation `geer2021some' on page 144 undefined on input line 41.
+
+
+LaTeX Warning: Citation `de2022non' on page 144 undefined on input line 41.
+
+[144] [145] [146] [147] [148] [149] [150] (./figures/frobenius-reciprocity.tikz
+) [151]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 439.
+(Font)              <14.4> on input line 447.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 439.
+(Font)              <17.28> on input line 447.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <20.74> on input line 439.
- [151]
-[152] [153] [154]
-Overfull \hbox (2.97655pt too wide) in paragraph at lines 613--614
+(Font)              <20.74> on input line 447.
+ [152] [153] [154]
+Overfull \hbox (2.97655pt too wide) in paragraph at lines 621--622
 []\OT1/lmr/m/it/10 For all triples $\U/rsfs/m/n/10 C$\OT1/lmr/m/it/10 ,$\U/rsfs
 /m/n/10 K$\OT1/lmr/m/it/10 , $\U/rsfs/m/n/10 D$ \OT1/lmr/m/it/10 of fu-sion cat
 -e-gories, $\OT1/lmr/m/n/10 (\U/rsfs/m/n/10 C\OML/lmm/m/it/10 ; \U/rsfs/m/n/10 
@@ -1256,13 +1266,13 @@ t/10 , and $\OT1/lmr/m/n/10 (\U/rsfs/m/n/10 K\OML/lmm/m/it/10 ; \U/rsfs/m/n/10
 D\OT1/lmr/m/n/10 )$\OT1/lmr/m/it/10 -bimodules
  []
 
-[155] [156] [157]
-Overfull \hbox (3.21735pt too wide) detected at line 768
+[155] [156] [157] [158]
+Overfull \hbox (3.21735pt too wide) detected at line 776
 []  \OMS/lmsy/m/n/10 ([])  [] \OML/lmm/m/it/10 :
  []
 
-[158] [159] [160] [161] [162] [163] [164]
-Underfull \hbox (badness 10000) in paragraph at lines 1076--1077
+[159] [160] [161] [162] [163] [164]
+Underfull \hbox (badness 10000) in paragraph at lines 1084--1085
 
  []
 
@@ -1301,7 +1311,7 @@ LaTeX Warning: Reference `bohm1996coassociative' on page 176 undefined on input
 (./Algebraic-TQC.bbl [180
 
 ] [181] [182] [183]
-Underfull \hbox (badness 1253) in paragraph at lines 375--379
+Underfull \hbox (badness 1253) in paragraph at lines 381--385
 \OT1/lmr/m/n/10 u-lar iso-topes and ex-plains their topo-log-i-cal in-vari-ants
 .  \OT1/lmr/m/it/10 arXiv preprint
  []
@@ -1316,12 +1326,15 @@ Underfull \hbox (badness 1253) in paragraph at lines 375--379
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 21395 strings out of 492649
- 463504 string characters out of 6129622
- 549114 words of memory out of 5000000
- 24530 multiletter control sequences out of 15000+600000
+ 21400 strings out of 492649
+ 463591 string characters out of 6129622
+ 549125 words of memory out of 5000000
+ 24535 multiletter control sequences out of 15000+600000
  108103 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,30n,86p,1855b,1104s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1364,7 +1377,7 @@ l/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/l
 ocal/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/tex
 live/2018/texmf-dist/fonts/type1/public/rsfs/rsfs5.pfb></usr/local/texlive/2018
 /texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb>
-Output written on Algebraic-TQC.pdf (193 pages, 24066311 bytes).
+Output written on Algebraic-TQC.pdf (193 pages, 24071762 bytes).
 PDF statistics:
  819 PDF objects out of 1000 (max. 8388607)
  552 compressed objects within 6 object streams

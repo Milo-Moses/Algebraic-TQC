@@ -280,6 +280,12 @@ Sebastiano Carpi, Tiziano Gaudio, and Robin Hillier.
   back.
 \newblock {\em arXiv preprint arXiv:2304.14263}, 2023.
 
+\bibitem[CGPM14]{costantino2014quantum}
+Francesco Costantino, Nathan Geer, and Bertrand Patureau-Mirand.
+\newblock Quantum invariants of 3-manifolds via link surgery presentations and
+  non-semi-simple categories.
+\newblock {\em Journal of Topology}, 7(4):1005--1053, 2014.
+
 \bibitem[CK18]{coecke2018picturing}
 Bob Coecke and Aleks Kissinger.
 \newblock Picturing quantum processes: A first course on quantum theory and
@@ -389,10 +395,22 @@ Alexei Davydov, Michael M{\"u}ger, Dmitri Nikshych, and Victor Ostrik.
 \newblock {\em Journal f{\"u}r die reine und angewandte Mathematik (Crelles
   Journal)}, 2013(677):135--177, 2013.
 
+\bibitem[DR22]{de2022non}
+Marco De~Renzi.
+\newblock {\em Non-semisimple extended topological quantum field theories},
+  volume 277.
+\newblock American Mathematical Society, 2022.
+
 \bibitem[Dri86]{drinfeld1986quantum}
 Vladimir~Gershonovich Drinfeld.
 \newblock Quantum groups.
 \newblock {\em Zapiski Nauchnykh Seminarov POMI}, 155:18--49, 1986.
+
+\bibitem[EC24]{ellison2024towards}
+Tyler Ellison and Meng Cheng.
+\newblock Towards a classification of mixed-state topological orders in two
+  dimensions.
+\newblock {\em arXiv preprint arXiv:2405.02390}, 2024.
 
 \bibitem[EGNO16]{etingof2016tensor}
 Pavel Etingof, Shlomo Gelaki, Dmitri Nikshych, and Victor Ostrik.
@@ -524,6 +542,11 @@ Suppressing quantum errors by scaling a surface code logical qubit.
 Daniel Gottesman.
 \newblock {\em Stabilizer codes and quantum error correction}.
 \newblock California Institute of Technology, 1997.
+
+\bibitem[GPMR21]{geer2021some}
+Nathan Geer, Bertrand Patureau-Mirand, and Matthew Rupert.
+\newblock Some remarks on relative modular categories.
+\newblock {\em arXiv preprint arXiv:2110.15518}, 2021.
 
 \bibitem[GS19]{gannon2019algebraic}
 Terry Gannon and Andrew Schopieray.
@@ -1132,6 +1155,11 @@ Edward Witten.
 Edward Witten.
 \newblock Quantum field theory and the jones polynomial.
 \newblock {\em Communications in Mathematical Physics}, 121(3):351--399, 1989.
+
+\bibitem[WWW]{wang2307intrinsic}
+Z~Wang, Z~Wu, and Z~Wang.
+\newblock Intrinsic mixed-state quantum topological order.
+\newblock {\em arXiv preprint arXiv:2307.13758}.
 
 \bibitem[XSW{\etalchar{+}}24]{xu2024non}
 Shibo Xu, Zheng-Zhi Sun, Ke~Wang, Hekang Li, Zitian Zhu, Hang Dong, Jinfeng

@@ -105,26 +105,26 @@
 \contentsline {subsubsection}{\numberline {6.2.2}Boundaries and domain walls in the toric code}{145}
 \contentsline {subsubsection}{\numberline {6.2.3}The algebraic theory of gapped boundaries}{145}
 \contentsline {subsubsection}{\numberline {6.2.4}Lagrangian algebras and algebra objects}{146}
-\contentsline {subsubsection}{\numberline {6.2.5}Module categories and boundaries in the Levin-Wen model}{146}
+\contentsline {subsubsection}{\numberline {6.2.5}Module categories and boundaries in the Levin-Wen model}{147}
 \contentsline {subsubsection}{\numberline {6.2.6}The Drinfeld center via bimodules}{154}
 \contentsline {subsubsection}{\numberline {6.2.7}Muger's theorem and Lagrange's theorem for fusion categories}{156}
-\contentsline {subsubsection}{\numberline {6.2.8}Skeletonization of gapped boundaries}{156}
-\contentsline {subsection}{\numberline {6.3}Symmetry enriched topological order}{156}
-\contentsline {subsubsection}{\numberline {6.3.1}Physical picture}{156}
+\contentsline {subsubsection}{\numberline {6.2.8}Skeletonization of gapped boundaries}{157}
+\contentsline {subsection}{\numberline {6.3}Symmetry enriched topological order}{157}
+\contentsline {subsubsection}{\numberline {6.3.1}Physical picture}{157}
 \contentsline {subsubsection}{\numberline {6.3.2}Haldane spin chain}{157}
 \contentsline {subsubsection}{\numberline {6.3.3}Twist defects in the toric code}{157}
-\contentsline {subsubsection}{\numberline {6.3.4}The algebraic theory of SET phases}{157}
-\contentsline {subsubsection}{\numberline {6.3.5}Gauging symmetries}{160}
+\contentsline {subsubsection}{\numberline {6.3.4}The algebraic theory of SET phases}{158}
+\contentsline {subsubsection}{\numberline {6.3.5}Gauging symmetries}{161}
 \contentsline {subsubsection}{\numberline {6.3.6}Obstruction theory, anomalies, and zesting}{162}
-\contentsline {subsubsection}{\numberline {6.3.7}$G$-crossed modularity}{162}
-\contentsline {subsubsection}{\numberline {6.3.8}Skeletonization of SET phases}{162}
+\contentsline {subsubsection}{\numberline {6.3.7}$G$-crossed modularity}{163}
+\contentsline {subsubsection}{\numberline {6.3.8}Skeletonization of SET phases}{163}
 \contentsline {subsection}{\numberline {6.4}Fermionic topological order}{163}
 \contentsline {subsubsection}{\numberline {6.4.1}Physical picture}{163}
 \contentsline {subsubsection}{\numberline {6.4.2}Kitaev spin chain}{163}
 \contentsline {subsubsection}{\numberline {6.4.3}The algebraic theory of fermionic topological order}{163}
 \contentsline {subsubsection}{\numberline {6.4.4}The 16-fold way on the trivial fermionic theory}{163}
-\contentsline {subsubsection}{\numberline {6.4.5}Modular representations of fermionic topological order}{163}
-\contentsline {subsubsection}{\numberline {6.4.6}Super-groups and Deligne's theorem}{163}
+\contentsline {subsubsection}{\numberline {6.4.5}Modular representations of fermionic topological order}{164}
+\contentsline {subsubsection}{\numberline {6.4.6}Super-groups and Deligne's theorem}{164}
 \contentsline {section}{\numberline {7}Topological quantum computation}{168}
 \contentsline {subsection}{\numberline {7.1}Overview}{168}
 \contentsline {subsubsection}{\numberline {7.1.1}Introduction}{168}
