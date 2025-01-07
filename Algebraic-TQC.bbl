@@ -96,11 +96,6 @@ Bruce Bartlett, Christopher~L Douglas, Christopher~J Schommer-Pries, and Jamie
   2-category.
 \newblock {\em arXiv preprint arXiv:1509.06811}, 2015.
 
-\bibitem[Ben73]{bennett1973logical}
-Charles~H Bennett.
-\newblock Logical reversibility of computation.
-\newblock {\em IBM journal of Research and Development}, 17(6):525--532, 1973.
-
 \bibitem[BGH{\etalchar{+}}17]{bruillard2017fermionic}
 Paul Bruillard, C{\'e}sar Galindo, Tobias Hagge, Siu-Hung Ng, Julia~Yael
   Plavnik, Eric~C Rowell, and Zhenghan Wang.
@@ -494,6 +489,11 @@ Michael~H Freedman and David~A Meyer.
 \newblock Projective plane and planar quantum codes.
 \newblock {\em Foundations of Computational Mathematics}, 1:325--332, 2001.
 
+\bibitem[FM11]{farb2011primer}
+Benson Farb and Dan Margalit.
+\newblock {\em A primer on mapping class groups (pms-49)}, volume~41.
+\newblock Princeton university press, 2011.
+
 \bibitem[Fre70]{freyd1970homotopy}
 Peter Freyd.
 \newblock Homotopy is not concrete.
@@ -599,6 +599,11 @@ Matthew~B Hastings.
 Yifan Hong, Elijah Durso-Sabina, David Hayes, and Andrew Lucas.
 \newblock Entangling four logical qubits beyond break-even in a nonlocal code.
 \newblock {\em arXiv preprint arXiv:2406.02666}, 2024.
+
+\bibitem[HI19]{hofman2019goldstone}
+Diego~M Hofman and Nabil Iqbal.
+\newblock Goldstone modes and photonization for higher form symmetries.
+\newblock {\em SciPost Physics}, 6(1):006, 2019.
 
 \bibitem[HK10]{hasan2010colloquium}
 M~Zahid Hasan and Charles~L Kane.
@@ -974,12 +979,6 @@ Alexis Schotte, Lander Burgelman, and Guanyu Zhu.
   topological quantum computer at finite temperature.
 \newblock {\em arXiv preprint arXiv:2301.00054}, 2022.
 
-\bibitem[Seg88]{segal1988definition}
-Graeme~B Segal.
-\newblock The definition of conformal field theory.
-\newblock In {\em Differential geometrical methods in theoretical physics},
-  pages 165--171. Springer, 1988.
-
 \bibitem[SF18]{skinner2018large}
 Brian Skinner and Liang Fu.
 \newblock Large, nonsaturating thermopower in a quantizing magnetic field.
@@ -1101,6 +1100,11 @@ Veeravalli~S Varadarajan.
 \newblock {\em Supersymmetry for mathematicians: an introduction: an
   introduction}, volume~11.
 \newblock American Mathematical Soc., 2004.
+
+\bibitem[VD98]{van1998algebraic}
+Alfons Van~Daele.
+\newblock An algebraic framework for group duality.
+\newblock {\em Advances in Mathematics}, 140(2):323--366, 1998.
 
 \bibitem[VD14]{viola2014hall}
 Giovanni Viola and David~P DiVincenzo.

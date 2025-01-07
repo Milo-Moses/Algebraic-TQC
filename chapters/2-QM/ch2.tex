@@ -13,7 +13,7 @@ The first physical principle about quantum mechanics to know is that it is typic
 
 Large scale macroscopic phenomina are emergent from coherent small scale microscopic phenomina. The word \textit{coherent} is used intentionally. It is used to mean ``held together", ``integrated", or ``organized". Sometimes collections of microscopic degrees of freedom fail to form observable macroscopic degrees of freedom. This failiture is known as \textit{decoherence}. It is an empirically observed fact that microscopic quantum degrees of freedom typically decohere.  It is the ubiquity of decoherence which makes are macroscopic world seem classical.
 
-It is exactly for this reason that topological quantum systems are so special. They are essentially unique in the fact that they can cohrently hold quantum information at macroscopic length and time scales. This is because decoherence is caused by repeated noise from the environment, which corrupts fragile quantum information. Topological quantum systems are defined by the property that their stored information is not affected by local changes. Hence, if noise is sufficiently local and sufficiently controlled, the information in topological quantum systems will remain coherent. 
+It is exactly for this reason that topological quantum systems are so special. They are essentially unique in the fact that they can cohrently hold quantum information at macroscopic length and time scales. This is because decoherence is caused by repeated noise from the environment, which corrupts fragile quantum information. Topological quantum systems are defined by the property that their stored information is not affected by small local changes. Hence, if noise is sufficiently local and sufficiently controlled, the information in topological quantum systems will remain coherent. 
 
 This makes topological quantum matter a fantastic place to first learn quantum theory. The mathematics is simple because all spaces involved are finite dimensional, and the quantum effects are more dominant than in almost any other macroscopic phenomina! It is an exciting and rich subject.
 
@@ -28,6 +28,8 @@ Before diving into a formal treatment of quantum mechanics, let us first motivat
 Throughout this introduction to quantum mechanics we will take the lens of comparing quantum mechanics with classical probability theory. Some properties of quantum mechanics, like \textit{superposition} and \textit{entanglement}, are already clearly present in the world of probability. Other properties, like \textit{interference}, are not. To make this clear, we will present a few experiements which demonstrate the proabilistic nature of quantum mechanics, and the ways in which quantum mechanics goes beyond probability theory.
 
 [WORK: which experiments should I chose? Double slit? Polarized light? Pairs of entangled photos? It would be cool to get experiments which are relevant to topological matter if possible. It would also be cool to get experiments which almost immediately motivate the exact form of quantum mechanics. I'm not a physicist though - need to get someone else more knowledgable to give me a lecture.]
+
+[WORK: talk to a physicist who can say why the Schrodinger equation is true. I only have vague waffle.]
 
 \subsection{Axiomatic development}
 
@@ -205,7 +207,23 @@ From our discussion of measurement it is clear that, unlike probibilistic system
 
 This poses some immediate problems however. The first is that vector spaces have no notion of norm. Hence, we cannot speak of normalized vectors, and hence we cannot speak of sates. What's more, measurements are required to use an orthonormal basis. To define orthogonality we used the canonical inner product on $\CC[S]$. Without a basis there is no distinguished choice of inner product. However, in a real sense that is the \textit{only} piece of information we need about our basis - its inner product. This means that we can state the axioms of quantum mechanics for any vector space with a distinguished choice of inner product. We define what it means for a space to have an inner product below:
 
-[WORK: define Hilbert space]
+\begin{definition} A (finite-dimensional) Hilbert space $(V,\Braket{\cdot | \cdot})$ is the following data:
+
+\begin{enumerate}
+\item A finite-dimensional vector space $V$;
+\item A map $\Braket{\cdot | \cdot}:V\times V\to \CC$;
+\end{enumerate}
+
+such that
+
+\begin{enumerate}
+\item $\Braket{\cdot,\cdot}$ is linear in the first argument;
+\item $\Braket{x,y}=\overline{\Braket{y,x}}$ for all $x,y\in V$;
+\item If $x$ is non-zero, then $\Braket{x,x}>0$.
+\end{enumerate}
+
+\raggedleft\qedsymbol{}
+\end{definition}
 
 In any Hilbert space $V$, we can define the 2-norm of a vector $\ket{\psi}\in V$ to be
 
@@ -252,7 +270,7 @@ Now that we have stated our final version of the axioms of quantum mechanics, we
 
 $$\Braket{ U \psi  | \varphi}=\Braket{\psi | U^\dagger \varphi}.$$
 
-It is verified in Exercise [ref] that this formula always specifies a unique well-defined operator, and that this operator is equal to the conjugate tranpose of $V$ relative to any orthonormal basis. Here is our charactarization of maps which send normalized vectors to normalized vectors:
+It is verified in Exercise [ref] that this formula always specifies a unique well-defined operator, and that this operator is equal to the conjugate tranpose of $V$ relative to any orthonormal basis. Seeing as this definition of the conjugate transpose is basis independent, we will henceforth refer to the conjugate transpose of an operator as its \textit{adjoint}. Here is our charactarization of maps which send normalized vectors to normalized vectors:
 
 \begin{proposition}\label{unitary equivilance} Let $V$ be a Hilbert space, and let $U:V\to V$ be a linear transformation. The following are equivalent:
 
@@ -358,8 +376,6 @@ $$\ket{\psi(t)}=e^{-i H t/\hbar}\ket{\psi(0)}$$
 
 where $\hbar$ is the normalized plank constant. In our original statement of the Schrodinger equation we have simply decided to use units in which the normalized plank constant is equal to $1$.
 
-[WORK: talk to a physicist who can say why the Schrodinger equation is true. I only have vague waffle.]
-
 The Schrodinger equation tells us that all we need to do to understand the dynamics of a quantum system is solve the Schrodinger equation. Suppose now that $\ket{\psi(0)}$ is some initial state in a quantum system with extended state space $V$ and Hamiltonian $H$. Suppose that we have a decomposition $\ket{\psi(0)}=\sum_{x\in B}c_x \ket{x}$ where $B$ is the set of energy eigenstates of $H$. Then, the Schrodinger equation would tell us that
 
 $$\ket{\psi(t)}=\sum_{x\in B}e^{- i v(b) t}c_x \ket{x}$$
@@ -389,7 +405,7 @@ $\newline\newline$
 
 \begin{enumerate}[\thesection .1.]
 
-\item .[WORK: show that the adjoint really is the conjugate transpose] [WORK: change verbiage above from ``conjugate transpose" to ``adjoint"]
+\item .[WORK: show that the adjoint really is the conjugate transpose]
 \end{enumerate}
 
-[WORK: need to add somewhere that global phases don't matter, clear up this ambiguity]
+[WORK: I need to add somewhere that global phases don't matter, clear up this ambiguity]

@@ -1,0 +1,31 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (0.5, 0.75) {$\ket{**}=$};
+		\node [style=none] (1) at (3.25, 1) {};
+		\node [style=none] (2) at (3.375, 0.875) {};
+		\node [style=none] (3) at (3.125, 1.125) {};
+		\node [style=none] (4) at (3.375, 1.125) {};
+		\node [style=none] (5) at (3.125, 0.875) {};
+		\node [style=none] (6) at (6.25, 1) {};
+		\node [style=none] (7) at (6.375, 0.875) {};
+		\node [style=none] (8) at (6.125, 1.125) {};
+		\node [style=none] (9) at (6.375, 1.125) {};
+		\node [style=none] (10) at (6.125, 0.875) {};
+		\node [style=none] (11) at (1.75, 2) {};
+		\node [style=none] (12) at (1.75, -0.5) {};
+		\node [style=none] (13) at (8.125, -0.5) {};
+		\node [style=none] (14) at (8.125, 2) {};
+		\node [style=none] (15) at (3.25, 0.25) {$(02431)$};
+		\node [style=none] (16) at (6.5, 0.25) {$(02431)^{-1}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3.center) to (2.center);
+		\draw (5.center) to (4.center);
+		\draw (8.center) to (7.center);
+		\draw (10.center) to (9.center);
+		\draw [style=dashed edge] (11.center) to (14.center);
+		\draw [style=dashed edge] (14.center) to (13.center);
+		\draw [style=dashed edge] (13.center) to (12.center);
+		\draw [style=dashed edge] (12.center) to (11.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

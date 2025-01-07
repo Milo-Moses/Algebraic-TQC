@@ -117,6 +117,89 @@ There's lots of different ways of doing this of course, coming from the work of 
 .[WORK: maybe bring up universal TQC with gapped boundaries in $\D(\ZZ_3)$ and projective charge measurement somehow? It would be nice to include somewhere. Maybe have an intro about how hard you have to try to get unversal TQC with different groups, and how you can get universal TQC even with abelian groups if you try hard enough.]
 
 ]
+
+[WORK: Here's some content which was cut from the classical computing section - 
+
+Now that we know how to make a universal computer, we can analyse how the power of computation changes as $G$ is chosen to be more or less abelian. The general theme is that if a group is more non-abelian then it will have more computaional power. Of course, being ``more" or ``less" abelian is not a well-defined term. We introduce here some formal notions from group theory which measure abelianness.
+
+If a group is very nonabelian it should have a big commutator subgroup. That is, $[G,G]$ should be large in a certain sense. One way for this to be true is for the group to be perfect, that is, $[G,G]=G$. A weaker condition is that $G$ should have a perfect subgroup - a subgroup $H\leq G$ such that $[H,H]=H$. Intuitively, it makes sense that any group with a perfect subgroup should be useable for universal topological computatoin. You can just focus on the perfect subgroup and use Mochon's theorem, and forget about the rest of the group. A group with a perfect subgroup is called \textit{non-solvable}.
+
+There is another useful step to consider between non-solvable and abelian. Some groups $G$ have subgroups $H$ such that $[H,H]$ might be small, but $[H,G]$ is bigger. When $H$ is allowed to take commutators with elements of $G$ you get potentially more elements, so $[H,H]\leq [H,G]$. When $H$ is a normal subgroup, we find that $[H,G]\leq H$ since for all $h\in H$, $g\in G$, the commutator
+
+$$g h g^{-1} h^{-1}= (g h g^{-1}) h \in H$$
+
+since $(g h g^{-1}) \in H$ by the normality of $H$ and $h\in H$ by assumption. If $G$ has a normal subgroup $H$ such that $[H,G]=H$, we call $G$ \textit{non-nilpotent}. Clearly we have the following inclusioins:
+
+$$
+\left(\substack{\text{non-solvable} \\ \text{groups}}\right)\subset
+\left(\substack{\text{non-nilpotent} \\ \text{groups}}\right)\subset
+\left(\substack{\text{non-abelian} \\ \text{groups}}\right).
+$$
+
+This induces a hierarchy of adjectives, from most abelian to least abelian:
+
+\begin{equation*}
+\tikzfig{hierarchy-of-adjectives}
+\end{equation*}
+
+
+The following phenominon presents itself. We find that less abelian a group is the more computational power it has. Additionally, the more computational power it has the harder it is to create topological systems in the lab which are algebraically described that group. It is harder to make systems which make good computers.
+
+This phenominon is especially well developped in the quantum case. Given a finite group $G$, we can describe a classical system of ordered media based on $G$. This system can be \textit{quantized}. This turns it into a topological quantum system whose behavior is still goverened by the group $G$. This quantized system is known as the \textit{quantum double} of $G$, and is denote $\D(G)$. These systems behave very similarly to the ones discussed in this chapter, just made quantum. These quantum doubles and the algebraic theory describing them and their generalizations will be the topic of much of this book.
+
+In the case of quantum doubles we can make a table detailing exactly the relationship between level of abelianness, computational power, and experimental status:
+
+[WORK: need to introduce universality as a concept]
+
+\begin{center}
+\begin{tabular}{|| c | c | c | c ||} 
+
+\hline
+Abelianness & Smallest Example& Computational power of $\D(G)$& Experimental Status \\ [0.5ex] 
+ \hline\hline
+  &  & &\\ 
+ non-solvable & $G=A_5,$ & Straightforwardly universal.& Fundamental limitations\\
+  & alternating group & (Chapter [ref], \cite{mochon2003anyons})& coming from intensive\\ 
+  & with $|A_5|=60$ & & circuit-depth requirements,\\ 
+  &  & & and the size of the.\\ 
+  &  & & smallest example.\\ 
+  &  & & (\cite{bravyi2022adaptive}).\\ 
+  &  & &\\ 
+ \hline
+  &  & &\\ 
+ solvable& $G=S_3,$ & Universal with tricks. & Has yet to be done.\\
+ non-nilpotent& symmetric group& (Chapter [ref], \cite{mochon2004anyon}) & There are some inherent \\ 
+ & with $|S_3|=6$ & & difficulties involved.\\ 
+  &  & & (\cite{tantivasadakarn2023hierarchy})\\ 
+  &  & &\\ 
+ \hline  &  & &\\ 
+ nilpotent& $G=D_4,$ & ? & Preliminary experiments \\
+ non-abelian& dihedral group & & have been successful.  \\ 
+ & with $|D_4|=8$ & & (\cite{iqbal2024non}) \footnote{[WORK: I talked to Zhenghan and he said that this experiment was NOT fault-tolerant. This seems very relevant. How should I phrase this, and what are the details of the experiment?]}   \\ 
+  &  & &\\ 
+ \hline
+  &  & &\\ 
+ abelian & $G=\ZZ_2,$ & Universal schemes seem& Widely used\\ 
+  & cyclic group & to be impossible.& in most applications. \\ 
+  &with $|\ZZ_2|=2$ &  Non-topological methods& (\cite{bravyi2024high, hong2024entangling}\\ 
+  &  & seem to be required.& \cite{balewski2024engineering, google2023suppressing})\\ 
+  &  & (Chapter [ref], \cite{bravyi2013classification, eastin2009restrictions}) &\\ 
+  &  & &\\ 
+ \hline
+\end{tabular}
+\end{center}
+
+We make a few comments about this table.
+
+\begin{enumerate}
+\item We notice that difficulty inherent to experimentally realizing topological phases is \textit{not} completely controlled by the size of that group. The quantum double $\D(D_4$) is simpler to realize than $\D(S_3)$ because it is nilpotent and $S_3$ is not, despite the fact that $|D_4|=8$ is larger than $|S_3|=6$.
+
+\item All of the experimental results cited come from the side of topological quantum error correction and not topological quantum materials. This is because most topological quantum materials are described by algebraic theories which are not doubles of finite groups. Doubles of finite groups are primarily used in topological quantum error correction theory.
+
+\item This table details a general programme. Given an algebraic theory of topological information, there is the question of how to make a universal quantum computer. The culmination of this book is Chapter [ref], where we show describe six different families of algebraic theories and show how to make a universal quantum computer out of all of them.
+
+\end{enumerate}
+]
 \subsection{Computation with the toric code}
 
 [WORK: A good (older) reference which I've never read is \cite{dennis2002topological}]

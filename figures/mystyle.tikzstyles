@@ -1,5 +1,4 @@
-
-\tikzstyle{white node}=[fill=white, tikzit category=nodes, shape=circle]
+\tikzstyle{white node}=[outline=black, fill=white, tikzit category=nodes, shape=circle]
 
 \tikzstyle{default}=[-,tikzit category=edges]
 

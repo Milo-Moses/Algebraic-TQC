@@ -168,7 +168,7 @@ To describe a system in physics, the first step is to define the space of possib
 \end{center}
 \end{figure}
 
-We now seek extend our model of ordered media and perform a detailed analysis of it. To do this, we will need to use notions from topology such as a \textit{continuous deformation} of a system and the \textit{inside} of a loop in $\RR^2$. While these notions are certainly intuitive, they can be shockingly difficult to prove. The fact that every loop in $\RR^2$ partitions space into an \textit{inside} and an \textit{outside} is known as the Jordan curve theorem. The proof of this trivial seeming statement is famously difficult \cite{tverberg1980proof}. Thus, we adopt the following policy:
+We now seek extend our model of ordered media and perform a detailed analysis of it. To do this, we will need to use notions from topology such as a \textit{continuous deformation} of a system and the \textit{inside} of a loop in $\RR^2$. While these notions are certainly intuitive, they can be shockingly hard to prove. The fact that every loop in $\RR^2$ partitions space into an \textit{inside} and an \textit{outside} is known as the Jordan curve theorem. The proof of this trivial seeming statement is famously tricky \cite{tverberg1980proof}. Thus, we adopt the following policy:
 $\newline$
 
 \fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{
@@ -320,62 +320,65 @@ The last ingredient we discuss are the locally measurable quantities in our syst
 
 It is also desirabe to have a mechanism for reading out some non-local information about states in ordered media. A good way to do this is by fusing defects. Fusing defects is the process where nearby defects are brought close together until they act like a single defect. Fusion must preserve total winding number, and thus if two defects with winding number $g_1,g_2$ are fused then their resulting winding number is $g_1g_2$. The conjugacy classes of $g_1$ and $g_2$ are not enough to determine the conjugacy class of $g_1g_2$, and thus fusing two defects and then measuring the conjugacy class of their winding number gives access to more informaiton. In a sense, it gives access to the non-local information which was being stored between the two defects which are fused.
 
-A sample measurement pattern is as follows.  Suppose that $\phi$ is a state with $n$ defects arranged in a line as before, and let us denote the winding numbers $\phi_*(\alpha_i)=g_i$. Local measurements give us access to the conjugacy classes of all of the elements $g_i$. By fusing the defects into the left-most defect one by one, we can access the conjugacy classes of $g_1$, $g_1g_2$,  $g_1g_2g_3$,... all the way up to $g_1g_2g_3...g_n$. In favorable situations this can give us a large amount of non-local information.
+A sample measurement pattern is as follows.  Suppose that $\phi$ is a state with $n$ defects arranged in a line as before, and let us denote the winding numbers $\phi_*(\alpha_i)=g_i$. Local measurements give us access to the conjugacy classes of all of the elements $g_i$. By fusing the defects into the left-most defect one by one, we can access the conjugacy classes of $g_1$, $g_1g_2$,  $g_1g_2g_3$,... all the way up to $g_1g_2g_3...g_n$. In favorable situations these measurements can give a large amount of non-local information.
 
 \subsubsection{Topological classical computation}
 
-[WORK: fit this in
-
-This analysis is structurally the same as the analysis which will be taking place throughout the rest of this book. We recall the overall outline of this text:
-
-\begin{equation*}
-\tikzfig{mathematical-outline}
-\end{equation*}
-
-In the classical case we follow a similar approach. We take our physical model, ordered media, and find its algebraic description. That algebraic theory can then be used to describe a computer. Luckily for us, the algebraic theory underlying ordered media is much simpler than the algebraic theory underlying topological order: it's finite group theory theory! In this way, modular categories can be seen as vast quantum generalizations of finite groups. The schematic for the classical case is shown below:
+We are now ready to describe the theory of topological classical computation. In the previous section, we showed how all the topological information about defects in ordered media is controlled by the fundamental group $G=\pi_1(M,m)$ of the order space $M$ relative to some basepoint $m\in M$. This is the heart of the algebraic theory of topological computing. Even though our physical model is complicated, most information theoretic properties can understrood by analysing the algebraic structure $G$. In fact, we can now formulate our discussion of topological classical computation in a way which does not make reference to the order space at all. We will choose an abstract group $G$ and make a computer using it. This gives the following schematic for our discussion:
 
 \begin{equation*}
 \tikzfig{mathematical-outline-classical}
 \end{equation*}
 
-]
+That is, our construction of topological classical computers from ordered media \textit{factors through} group theory. This schematic is similar to the overall structure of this book, which we said before is summarized by this diagram:
 
-We are now ready to describe the theory of topological classical computation. In the previous section, we showed how all the topological information of defects in ordered media is controlled by the fundamental group $G=\pi_1(M,m)$ of the order space $M$ relative to some basepoint $m\in M$. This is the heart of the algebraic theory of topological computing. Even though our physical model is complicated, most information theoretic properties can understrood by analysing the group $G=\pi_1(M,m)$. In this way, we can formulate our discussion of topological classical computation in a way which does not make reference to the order space at all. We will choose an abstract group $G$ and make a computer using it.
+\begin{equation*}
+\tikzfig{mathematical-outline}
+\end{equation*}
 
-On a purely mathematical level we don't need to make any restrictions on the group $G$. It is a theorem from topology that every group is the fundamental group of some topological space. However, we will make restrictions on our choice of group coming from physical concerns. We will ask that our group be \textit{finite}. A first reason for this is error protection. Suppose that $G$ is some continuous group, like $G=\RR$. Suppose that $\phi$ is a state in ordered media based on some topological space with fundamental group $G$, and that $\alpha$ is a loop in $\RR^2$ around some defect in $\phi$. Suppose further that the winding number of $\phi$ around $\alpha$ is $\pi=3.1415...$. Even though topologically we know that this winding number should be stable under defect-fixed homotopy, in physical systems it is inevitable that the winding number will not change slightly with time, jumping for instance to $3.1416$. These small uncontrollable changes can compound over time, leading to a phenominon whereby winding numbers will drift as time passes. For this reason it is preferable to work with groups whose natural topology is \textit{discrete}. This means that winding numbers cannot drift, because every continuous change on a discrete space must be constant. This gives the system error resistance.
+Just like how groups are the structures which control the algebraic theory of ordered media, modular categories are the structure which control the algebraic theory topologically ordered systems. In fact, this analogy this analogy can be made precise. The idea is that ordered media can be \textit{quantized}, turning it from a classical to a quantum system. This quantized version of ordered media is known as \textit{discrete gauge theory}. This quantization is a subtle procedure, which we will discuss in section [ref]. When the group $G=\pi_1(M,m)$ is infinite the quantization procedure goes wrong, because there are divergences in the formulas. Hence, quantization of ordered media only works for finite groups. The algebraic structure controlling the quantized version of ordered media based on a finite group $G$ is $\D(G)$, where $\D(G)$ is a modular category constructed using the finite group $G$. So, in a real sense, modular categories can be seen as vast quantum generalizations of finite groups. This is often a useful perspective to take.
 
-The choice to make the group finite comes from our eye towards the quantum case. For instance, $G=\ZZ$ appears in many physically reasonable contexts but we choose to exclude it nonetheless. This convenience comes from the practical consideration that finite groups are simpler to work with than infinite ones, and from some general physical principles which make infinite groups fail to generalize well to the quantum case.\footnote{In the quantum case}
-
-In summary, the algebraic theory of topological classical information we present is really just a special case of finite group theory, which is a well understood subject.
-
-Our systems will consist of $n$ defects on a straight line. These defects will be labeled with group elements $g_i\in G$, for $1\leq i \leq n$. We recall that these labels correspond to winding numbers around loops:
+We now set up topological classical computing with ordered media, along the same lines as our abstract setup in subsection [ref]. Our system consists of $n$ defects on a straight line. These defects are labeled with group elements $g_i\in G$, for $1\leq i \leq n$. These labels correspond to winding numbers around loops:
 
 [WORK: add diagram.]
 
-Braiding $g_i$ under $g_{i+1}$ amounts to replacing $g_i$ with $g_{i+1}$, and replacing $g_{i+1}$ with $g_{i+1}^{-1}g_i g_{i+1}$. Fusing the defects $g_{i}$ and $g_{i+1}$ amounts to replacing them with a single defect labeled $g_{i}g_{i+1}$. The \textit{type} of a defect is the conjugacy class of its label in $G$. These types are local observables which can be measured by the experimenter.
-
+Braiding $g_i$ under and around $g_{i+1}$ amounts to replacing $g_i$ with $g_{i+1}$, and replacing $g_{i+1}$ with $g_{i+1}^{-1}g_i g_{i+1}$. Fusing the defects $g_{i}$ and $g_{i+1}$ amounts to replacing them with a single defect labeled $g_{i}g_{i+1}$. The \textit{type} of a defect is the conjugacy class of its label in $G$. The types of the defects are local observables which can be measured by the experimenter.
 
 [WORK: add little pictures summarizing these rules]
 
-This leads to the very natural question: \textit{for which groups $G$ can I make a full classical computer?} This is a design problem in finite group theory.
+Our previous discussion of braiding was heuristic, but we are now ready to put it on firm footing. We first try to capture our intuitive notion of braiding from before. Intutively, we considered a braiding operation to be some way of moving $n$ points arrangened on a line in $\RR^2$ around each so that the end position of each point is equal to the start position of some other point. For example, moving one point under and around another point is a braiding operation. Continuous deformations do not change the effect of braiding operations on topological information, so long as they do not change the initial or final positions of any of the points. Thus, for any integer $n\geq 1$ we define the \textit{braid group on $n$ stands}:
 
-Our first step towards answering it is making a closer analysis of how braiding works. We define the braid group as our main tool:
+$$B_n=(\text{braiding operations on $n$ points})/(\substack{\text{endpoint-preserving} \\ \text{continuous deformations}}).$$
 
-[WORK: Bn = ways of braiding n points around each other/endpoint-preserving deformations. Define Pn too. Also give examples. Maybe this is where to introduce the graphical language, things going thru time?]
+We call elements of $B_n$ \textit{braids}. We call the trajectories of the individual points through time \textit{strands}. We can also define the \textit{pure braid group on $n$ strands} $P_n$ to be the subset of braids such that the final position of every point is equal to its initial position. Elements of $P_n$ are called \textit{pure braids}.
 
-Every braid can be made up piece-by-piece using indivudal swaps. Let $\sigma_{i}$ denote the swap which sends the point at positoin $i$ under the point at position $i+1$. The group $B_n$ is generated by the $\sigma_i$, for $1\leq i \leq n-1$. We observe that the following two braids can be deformed from one to the other:
+To facilitate our discussion of braids, we use a graphical notation which tracks the trajectories of the points through time. For instance, the braiding operation in the two-strand braid group$B_2$ which moves one point above and around the other point is represented through the following diagram:
+
+[WORK: add diagram.]
+
+[WORK: add a big list of examples and non-examples of braids]
+
+The braid group is called a group because it has a natural group structure on it given by \textit{composition}. Given any two braiding operations on $n$ points, composing them will give another braiding operation! This composition is well-defined on equivalence classes under continuous deformation, and thus it gives a well-defined group structure. The unit is the equivalence class of the braiding operation which does not move the points at all, and the inverse of a braid comes from taking a braiding operation and then reversing its direction in time. This turns $B_n$ into a group, and $P_n$ into a normal subgroup.
+
+The key insight in putting the braid group on a rigorous algberaic footing is to observe that every braid can be obtained by repeatedly composing nearest-neighbor swaps between points. This is done by chopping it its spacetime diagram into slices which each contain an individual swap, as shown below:
+
+[WORK: add example of chopping up a braid.]
+
+If two crossings happen at the same time and hence cannot be seperated by chopping, then the braid is first deformed so that the crossings happen at seperate times and then the braid is chopped. This decomposition observation has a quite concrete implication for the group theory of $B_n$. For every $1\leq i\leq n-1$, define the braid $\sigma_{i}$ to be the equivalence class of the braiding operation which moves point $i$ above and around point $i+1$. By chopping braidins into indivudal swaps, we conclude that $B_n$ is generated as a group by the braids $\sigma_i$, $1\leq i\leq n-1$.
+
+These generators $\sigma_i$, $1\leq i\leq n-1$, satisfy several relations in $B_n$. The obvious relations between them is that $\sigma_i$ commutes with $\sigma_j$ whenever $|i-j|\geq 2$. This is because in this case $\sigma_i$ and $\sigma_j$ act on different strands, and hence can be deformed past each other without issues. The subtle relation is what happens when $j=i+1$. In this case, we observe the following equality of braids:
 
 [WORK: add Yang-Baxter braid]
 
-Algebraically, this is the identity $\sigma_{i}\sigma_{i+1}\sigma_{i}=\sigma_{i+1}\sigma_{i}\sigma_{i+1}$. Additionally, if $i$ and $j$ are not adjacent, that is $|i-j|\geq 2$, then $\sigma_{i}\sigma{j}=\sigma_j\sigma_i$ as seen in the below picture:
+Algebraically, this is the identity
 
-[WORK: far-commutivity picture.]
+$$\sigma_{i}\sigma_{i+1}\sigma_{i}=\sigma_{i+1}\sigma_{i}\sigma_{i+1}.$$
 
-This yields the algebraic fact that
+These relations we have obtained on the generators $\sigma_i$ of $B_n$, in fact, generate the space of all relations between the $\sigma_i$. This means that we have the following presentation for the group $B_n$:
 
-$$B_n=\left<\left.\sigma_1,\sigma_2,...\sigma_{n-1}\right| \substack{\sigma_{i}\sigma_{i+1}\sigma_{i}=\sigma_{i+1}\sigma_{i}\sigma_{i+1}, \\ \sigma_i\sigma_j=\sigma_j\sigma_i}\,\,\,\,\forall 1\leq i,j \leq n-1,\,\, |i-j|\geq 2\right>.$$
+$$B_n=\left<\left.\sigma_1,\sigma_2,...\sigma_{n-1}\right| \substack{ \sigma_{i}\sigma_{i+1}\sigma_{i}=\sigma_{i+1}\sigma_{i}\sigma_{i+1}\,\, \forall i, \\ \sigma_i\sigma_j=\sigma_j\sigma_i \,\,\forall |i-j|\geq 2}\right>.$$
 
-It is at this point that we can move past our non-rigorous topological considerations for braiding. The lack of rigor in our treatment of braid groups and our lack of rigor in our treatment of defect trajectories cancel, giving us our first well-formed mathematical proposition. It encodes the fact that moving defects by braids acts on the stored information:
+We do not prove that this presentation of $B_n$ is correct, because our notions from topology are not rigorous enough to allow for such a proof. Instead, we take this presentation as an alternative algebraic definition of the braid group! At this point the lack of rigor in our treatment of braid groups and our lack of rigor in our treatment of defect trajectories cancel, giving us our first well-formed mathematical proposition. It records the fact that moving defects by braids acts on the stored information in the way we expect:
 
 \begin{proposition} Let $G$ be a finite group, and let $n\geq 1$ be an integer. The map
 
@@ -384,124 +387,116 @@ It is at this point that we can move past our non-rigorous topological considera
 \sigma_i &\mapsto \left((g_1... g_i, g_{i+1} ... g_n)\mapsto (g_1... g_{i+1}, g_{i+1}^{-1}g_i g_{i+1} ... g_n) \right)
 \end{align*}
 
-defines a homomorphism of groups between the braid group $B_n$ and the group of set-wise permutations of the Cartesian product $G^n$, $\Sym(G^n)$.
+defines a homomorphism of groups between the braid group $B_n$ and the group $\Sym(G^n)$ of set-wise permutations of the Cartesian product $G^n$.
 \end{proposition}
-\begin{proof}.[WORK: do proof]
+\begin{proof} To prove this proposition we need to check that the group elements $\rho_n(\sigma_i)\in B_n$ satisfy the equations in the presentation of the braid group. The relation $\rho_n(\sigma_i)\rho_n(\sigma_j)=\rho_n(\sigma_j)\rho_n(\sigma_i)$ for $|i-j|\geq 2$ follows from the fact that $\rho_n(\sigma_i)$ and $\rho_n(\sigma_j)$ act on disjoint factors of $G$ in $G^n$.
+
+The relation $\rho_n(\sigma_i)\rho_n(\sigma_{i+1})\rho_n(\sigma_i)=\rho_n(\sigma_{i+1})\rho_n(\sigma_i)\rho_n(\sigma_{i+1})$ follows evaluating both permutations on a sample element $(g_{i})_{i=1}^{n}\in G^n$ and verifying that they give the same result. Namely, we compute that
+
+\begin{align*}
+&\rho_n(\sigma_i)\rho_n(\sigma_{i+1})\rho_n(\sigma_i)(... g_{i}, g_{i+1},g_{i+2}...)\\
+=&\rho_n(\sigma_i)\rho_n(\sigma_{i+1})(... g_{i+1}, (g_{i+1}^{-1}g_{i}g_{i+1}),g_{i+2}...)\\
+=&\rho_n(\sigma_i)(... g_{i+1},g_{i+2}, (g_{i+2}^{-1}g_{i+1}^{-1}g_{i}g_{i+1}g_{i+2})...)\\
+=&(... g_{i+2},(g_{i+2}^{-1}g_{i+1}g_{i+2}), (g_{i+2}^{-1}g_{i+1}^{-1}g_{i}g_{i+1}g_{i+2})...)\\
+\end{align*}
+
+and 
+
+\begin{align*}
+&\rho_n(\sigma_{i+1})\rho_n(\sigma_{i})\rho_n(\sigma_{i+1})(... g_{i}, g_{i+1},g_{i+2}...)\\
+=&\rho_n(\sigma_{i+1})\rho_n(\sigma_{i})(... g_{i}, g_{i+2},g_{i+2}^{-1}g_{i+1}g_{i+2}...)\\
+=&\rho_n(\sigma_{i+1})(... g_{i+2}, (g_{i+2}^{-1}g_{i}g_{i+2}),(g_{i+2}^{-1}g_{i+1}g_{i+2})...)\\
+=&(... g_{i+2}, (g_{i+2}^{-1}g_{i+1}g_{i+2}), (g_{i+2}^{-1}g^{-1}_{i+1}g_{i}g_{i+1}g_{i+2}).
+\end{align*}
+
+Thus, the map $\rho_n$ is a well-defined group homomorphism.
 \end{proof}
 
-The dream would be that braids alone would be enough for universal classical computation. For instance, suppose that $G$ is a finite group with a conjugacy class $C$ that has order $2$. Identifying $C\cong \{0,1\}$ as a set, we can identity $C^n\cong \{0,1\}^{n}$ with $n$-bit strings. Suppose the homomorphism $\rho_n:B_n\to \Sym\left(C^n\right)\cong \Sym(\{0,1\}^n)$ were surjective. This would mean that every element of $\Sym(\{0,1\}^n)$ could be written in terms of braids on $G$. In the language of computer science, maps $\{0,1\}^n\to \{0,1\}^n$ are called \textit{boolean functions}. The surjectivity of the braid group homomorphism would say that every bijective boolean function could be implemented by braiding defects, and hence every bijective computation could be done using braiding. Bijective boolean functions in the world of computation are known as \textit{reversible}. Most problems we care about are not inversible. For instance, adding integers is not reversible because multiple summands could give the same sum as demonstrated in $1 + 3 = 2 + 2 = 4$.
-
-This leads to two problems to deal with:
+The final ingredient we need for our computer is the ability to create pairs of defects. Just like how a pair of defects with winding numbers $g$ and $g^{-1}$ could spontaneously fuse to give a defect with winding number $gg^{-1}=1$, the opposite process could start with a state with no defects and create a pair of defects with winding numbers $g$ and $g^{-1}$. We can now give the full list of operations which we require the experimenter to be able to perform for building a topological classical computer using ordered media:
 
 \begin{enumerate}
-\item Braids can only ever give reversible computations. This is not a major issue because it's known that there is an efficient clever way of turning every non-reversible computation problem into a reversible one \cite{bennett1973logical}. However, reversibility is still cumbersome and annoying.
-
-\item There aren't any groups $G$ which have conjugacy classes $C$ for which the map $\rho_n: B_n \to \Sym\left(C^n\right)$ is surjective.This is because, for instance, choosing some $x\in C^n$ we could have the whole input be a string of all $x$: $(x)_{i=1}^n\in C^n$. Since $x$ commutes by itself and the braid group acts by conjugation, every braid will act trivially on this input. Hence, $\rho_n(\beta)\left((x)_{i=1}^n\right)=(x)_{i=1}^n$ for every braid $\beta\in B_n$. There is no way to make a nontrivial computation from braiding if all inputs commute. 
-
+\item The ability to create an ordered media state with no defects;
+\item The ability to create pairs of defects with specified winding numbers;
+\item The ability to perform defect-mobile deformations with specified defect trajectories;
+\item The ability to measure the conjugacy class of the winding number associated to a defect.
 \end{enumerate}
 
-The way around the problem of commuting inputs is to use pair-creation. Just like how at any time two defects $(g_1,g_2)$ to make the defect $g_1g_2$, at any time this process could reverse and out of nothing the pair of defects $(g,g^{-1})$ could be created. The important part of this process is that $g$ can be chosen so that it does not commute with the inputs.
+Before giving a general prescription of how to make a computer based on finite group $G$, we give a worked example. In this example, we use the group $G=A_5$ of all even permutations on five letters. We recall the basic features of the alternating group. It is a normal subgroup of the group $ \Sym(\{0,1,2,3,4\})$ of permutations on a five-element set. There is a canonical group homomorphism
 
-[WORK: add a bit of explanation about this, introducing all the ingredients we need]
+$$\text{sign}:\Sym(\{0,1,2,3,4\})\xrightarrow{}\ZZ_2$$
 
-We now have all of our ingredients, we can finally state our main results about making computers. Clearly, if $G$ is abelian then it won't be useful for making a computer. Our computer is based on acting by conjugation, and conjugaction is trivial in abelian groups. However, just being nonabelian is not enough. The group needs to be \textit{sufficiently non-abelian} so that conjugation is powerful enough to implement any computation possible.
+which sends a permutation in $\Sym(\{0,1,2,3,4\})$ to its sign, a $\ZZ_2$-valued invariant. The alternating group $A_5$ is defined to be the kernel of this map, $A_5=\ker(\text{sign})$. In our context, the simplest way to define the sign is as follows. We observe that the symmetric group is the group obtained from taking the braid group and only remembering the endpoints of the braids, and not the exact way they bend around each other. Alternatively, the symmetric group is the group obtained from the braid group and identifying overcrossings with undercrossings. It is now a clear topological fact about braids that the number of overcrossings minus the number of undercrossings is an invariant of the braid - this can be also checked algebraically via the presentation we gave before. Thus, once overcrossings and undercrossings have been identifeid, we find that the total number of crossings is a $\ZZ_2$-valued invariant. This is the sign.
 
-We define the subgroup
+The set of all permutations on five letters has $5!=120$ elements. Since $A_5$ is the kernel of a surjective map onto a two-element group, its order is $120/2=60$. We write the elements of $A_5$ using cycle notation. We denote by $(i_0,i_1...i_n)$ the cyclic permutation which sends $i_0$ to $i_1$, $i_1$ to $i_2$, all the way until $i_n$ which sends to $i_0$. The notation $(i_0...i_n)(j_0...j_m)$ refers to the composition of cycles, where first we permute by $(i_0...i_n)$ and then by $(j_0...j_m)$. With this notation in mind, we can move on to making the computer.
 
-$$[G,G]=\{\text{subgroup of $G$ generated by elements of the form }g_{0}g_{1}g_{0}^{-1}g_{1}^{-1}\text{ for }g_0,g_1\in G\}.$$
-
-The subgroup $[G,G]$ is called the \textit{commutator subgroup} of $G$, and the elements $g_{0}g_{1}g_{0}^{-1}g_{1}^{-1}$ are called commutators. Clearly, if $G$ is abelian then all of its commutators are trivial and hence $[G,G]=0$. To make a good computer, we need sufficiently many commutators. In fact, we need the following condition: $[G,G]=G$. For technical reasons it also easiest to assume that $G$ is \textit{simple}. That is, it has no proper nontrivial normal subgroups.
-
-We observe that every non-abelian simple group is automatically perfect. This follows from the fact that the commutator subgroup $[G,G]$ is a normal subgroup of $G$. Since $G$ is nonabelian the commutator subgroup $[G,G]$ is nontrivial, and since the only nontrivial subgroup of $G$ is itself we get that $[G,G]=G$.
-
-In this case we have the following important result:
-
-\begin{theorem}[Mochon] . [WORK: I want a good statement of Mochon's theorem, need to think more about it and read Mochon's paper again. State it as ``for every non-abelian simple group $G$".]
-\end{theorem}
-\begin{proof} . [WORK: do proof.]
-\end{proof}
-
-We can now give a full example of how this works. [WORK: give a full example, using $G=A_5$. Of course, full is a tricky word here. Enough to make what's going on clear to people.]
-
-Now that we know how to make a universal computer, we can analyse how the power of computation changes as $G$ is chosen to be more or less abelian. The general theme is that if a group is more non-abelian then it will have more computaional power. Of course, being ``more" or ``less" abelian is not a well-defined term. We introduce here some formal notions from group theory which measure abelianness.
-
-If a group is very nonabelian it should have a big commutator subgroup. That is, $[G,G]$ should be large in a certain sense. One way for this to be true is for the group to be perfect, that is, $[G,G]=G$. A weaker condition is that $G$ should have a perfect subgroup - a subgroup $H\leq G$ such that $[H,H]=H$. Intuitively, it makes sense that any group with a perfect subgroup should be useable for universal topological computatoin. You can just focus on the perfect subgroup and use Mochon's theorem, and forget about the rest of the group. A group with a perfect subgroup is called \textit{non-solvable}.
-
-There is another useful step to consider between non-solvable and abelian. Some groups $G$ have subgroups $H$ such that $[H,H]$ might be small, but $[H,G]$ is bigger. When $H$ is allowed to take commutators with elements of $G$ you get potentially more elements, so $[H,H]\leq [H,G]$. When $H$ is a normal subgroup, we find that $[H,G]\leq H$ since for all $h\in H$, $g\in G$, the commutator
-
-$$g h g^{-1} h^{-1}= (g h g^{-1}) h \in H$$
-
-since $(g h g^{-1}) \in H$ by the normality of $H$ and $h\in H$ by assumption. If $G$ has a normal subgroup $H$ such that $[H,G]=H$, we call $G$ \textit{non-nilpotent}. Clearly we have the following inclusioins:
-
-$$
-\left(\substack{\text{non-solvable} \\ \text{groups}}\right)\subset
-\left(\substack{\text{non-nilpotent} \\ \text{groups}}\right)\subset
-\left(\substack{\text{non-abelian} \\ \text{groups}}\right).
-$$
-
-This induces a hierarchy of adjectives, from most abelian to least abelian:
+Our information is stored in pairs of defects whose overall winding number is trivial. In particular, we choose the following perscription for our binary zero and one states:
 
 \begin{equation*}
-\tikzfig{hierarchy-of-adjectives}
+\tikzfig{zero-and-one}
+\end{equation*}
+
+To encode $n$ bits of information we thus use $2n$ defects, put into pairs with opposite winding number. The fact that we can create a state with these pairs comes from points (1) and (2) of our assumptions on the experimenter.
+
+We now describe the implementarion of logic gates on our computer. Our basic logic gate is the $\NAND$ gate, defined by the truth table
+
+\begin{centering}
+\[
+\NAND(a,b)=
+\begin{cases}
+0 & a=b=1 \\
+1 & \text{otherwise}.
+\end{cases}
+\]
+\end{centering}
+
+We implement the $\NAND$ gate as follows. We define a new state:
+
+\begin{equation*}
+\tikzfig{nc-state}
+\end{equation*}
+
+By using the relations from Proposition [ref], it is straightforward to verify that the following braid relation:
+
+\begin{equation*}
+\tikzfig{topological-and-gate}
+\end{equation*}
+
+That is, braiding $\ket{a}$ and $\ket{b}$ in the fashion described in the above picture around the non-computational state $\ket{*}$ has the effect of replacing the state $\ket{*}$ with $\ket{\NAND(a,b)}$.
+
+Similarly, one can verify the following protocol for implementing the $\NOT$ gate, which flips the value of a bit from $0$ to $1$ and vice-versa:
+
+\begin{equation*}
+\tikzfig{topological-not-gate}
+\end{equation*}
+
+It is a well-known fact from computer science that the $\NAND$ gate and $\NOT$ gate can be used together to implement any boolean circuit. That is, every function $f:\{0,1\}^n\to \{0,1\}^n$ can be computed by taking the input bits, computing the $\NAND$ or $\NOT$ of these input bits in new registers, and the repeatedly computing more $\NAND$s and $\NOT$s in successive layers. A typical conversion from a standard boolean circuit to a topological circuit using $G=A_5$ woud look like this:
+
+\begin{equation*}
+\tikzfig{big-circuit}
 \end{equation*}
 
 
-The following phenominon presents itself. We find that less abelian a group is the more computational power it has. Additionally, the more computational power it has the harder it is to create topological systems in the lab which are algebraically described that group. It is harder to make systems which make good computers.
+The general method for making a topological classical computer follows in complete analogy from the case of $G=A_5$. To begin, one chooses a conjugacy class $C$ in $G$ with more than one element. This is possible whenever $G$ is non-abelian. Then, we choose two distinct elements $g_0,g_1$ in $G$. We define a computational state $\ket{0}$ to be a pair of defects with winding number $g_0$, $g_0^{-1}$ and we define $\ket{1}$ to be a pair of defects with winding number $g_1$, $g_1^{-1}$. Then, we find a scheme for implementing the $\NAND$ and $\NOT$ gates by braiding around some other defect, possibly including extra defects which are included just for the purpose of imeplementing the gate. We then use the NAND and NOT gates to implement all boolean circuits.
 
-This phenominon is especially well developped in the quantum case. Given a finite group $G$, we can describe a classical system of ordered media based on $G$. This system can be \textit{quantized}. This turns it into a topological quantum system whose behavior is still goverened by the group $G$. This quantized system is known as the \textit{quantum double} of $G$, and is denote $\D(G)$. These systems behave very similarly to the ones discussed in this chapter, just made quantum. These quantum doubles and the algebraic theory describing them and their generalizations will be the topic of much of this book.
 
-In the case of quantum doubles we can make a table detailing exactly the relationship between level of abelianness, computational power, and experimental status:
+Clearly, if $G$ is abelian then the above scheme will not work. Our computer is based on acting by conjugation, and conjugaction is trivial in abelian groups. However, just being nonabelian is not enough. The group needs to be \textit{sufficiently non-abelian} so that conjugation is powerful enough to implement the $\NAND$ gate. It turns out that a sufficient condition is that G is a non-abelian \textit{simple} group. We recall that a simple group is a group with no proper non-zero normal subgroups.
 
-[WORK: need to introduce universality as a concept]
 
-\begin{center}
-\begin{tabular}{|| c | c | c | c ||} 
+In this case we have the following important result:
 
-\hline
-Abelianness & Smallest Example& Computational power of $\D(G)$& Experimental Status \\ [0.5ex] 
- \hline\hline
-  &  & &\\ 
- non-solvable & $G=A_5,$ & Straightforwardly universal.& Fundamental limitations\\
-  & alternating group & (Chapter [ref], \cite{mochon2003anyons})& coming from intensive\\ 
-  & with $|A_5|=60$ & & circuit-depth requirements,\\ 
-  &  & & and the size of the.\\ 
-  &  & & smallest example.\\ 
-  &  & & (\cite{bravyi2022adaptive}).\\ 
-  &  & &\\ 
- \hline
-  &  & &\\ 
- solvable& $G=S_3,$ & Universal with tricks. & Has yet to be done.\\
- non-nilpotent& symmetric group& (Chapter [ref], \cite{mochon2004anyon}) & There are some inherent \\ 
- & with $|S_3|=6$ & & difficulties involved.\\ 
-  &  & & (\cite{tantivasadakarn2023hierarchy})\\ 
-  &  & &\\ 
- \hline  &  & &\\ 
- nilpotent& $G=D_4,$ & ? & Preliminary experiments \\
- non-abelian& dihedral group & & have been successful.  \\ 
- & with $|D_4|=8$ & & (\cite{iqbal2024non}) \footnote{[WORK: I talked to Zhenghan and he said that this experiment was NOT fault-tolerant. This seems very relevant. How should I phrase this, and what are the details of the experiment?]}   \\ 
-  &  & &\\ 
- \hline
-  &  & &\\ 
- abelian & $G=\ZZ_2,$ & Universal schemes seem& Widely used\\ 
-  & cyclic group & to be impossible.& in most applications. \\ 
-  &with $|\ZZ_2|=2$ &  Non-topological methods& (\cite{bravyi2024high, hong2024entangling}\\ 
-  &  & seem to be required.& \cite{balewski2024engineering, google2023suppressing})\\ 
-  &  & (Chapter [ref], \cite{bravyi2013classification, eastin2009restrictions}) &\\ 
-  &  & &\\ 
- \hline
-\end{tabular}
-\end{center}
+\begin{theorem}[Mochon] Let $G$ be a non-abelian simple group. Every function $f(g_1,g_2...g_n):G^n\to G$ can be expressed as the product of the inputs $\{g_i\}$, their inverses $\{g_i^{-1}\}$, and fixed elements of $G$, any of which may appear multiple times in the product.
+\end{theorem}
+\begin{proof} . [WORK: do proof.
 
-We make a few comments about this table.
+Introduce the commutator subgroup
 
-\begin{enumerate}
-\item We notice that difficulty inherent to experimentally realizing topological phases is \textit{not} completely controlled by the size of that group. The quantum double $\D(D_4$) is simpler to realize than $\D(S_3)$ because it is nilpotent and $S_3$ is not, despite the fact that $|D_4|=8$ is larger than $|S_3|=6$.
+$$[G,G]=\{\text{subgroup of $G$ generated by elements of the form }g_{0}g_{1}g_{0}^{-1}g_{1}^{-1}\text{ for }g_0,g_1\in G\}.$$
 
-\item All of the experimental results cited come from the side of topological quantum error correction and not topological quantum materials. This is because most topological quantum materials are described by algebraic theories which are not doubles of finite groups. Doubles of finite groups are primarily used in topological quantum error correction theory.
+Prove that every non-abelian simple group is perfect, i.e., has $G=[G,G]$.
+]
+\end{proof}
 
-\item This table details a general programme. Given an algebraic theory of topological information, there is the question of how to make a universal quantum computer. The culmination of this book is Chapter [ref], where we show describe six different families of algebraic theories and show how to make a universal quantum computer out of all of them.
-
-\end{enumerate}
+[WORK: add some final commentary. For instance, tell readers that $A_5$ is the smallest non-abelian simple group.]
 
 This concludes our overview of the subject!
 
@@ -511,10 +506,22 @@ $\newline\newline$
 
 \begin{enumerate}[\thesection .1.]
 
-\item .[WORK: show that simulability $\implies$ \textit{efficient} simulability. Do the work in the case $G=A_5$]
+\item Verify the protocol for copying the value of a bit using a $G=A_5$ topological classical computer,
+\begin{equation*}
+\tikzfig{cloning-gate}
+\end{equation*}
+
+where
+
+\begin{equation*}
+\tikzfig{NC-state-reprise}
+\end{equation*}
 
 \item .[WORK: show that nilpotent $\implies$ polynomial growth? Can reference the more general picture of size of braid group images.]
 
+\item .[WORK: definition of the braid group as a fundamental group.]
+
+\item. [WORK: It is a theorem that for any non-solvable finite group $G$, there exists a normal subgroup $P$ of $G$ and a normal subgroup $N$ of $P$ such that $P/N$ is simple. Use this to deduce a universal classical computation scheme based on any non-solvable group.]
 \end{enumerate}
 
 

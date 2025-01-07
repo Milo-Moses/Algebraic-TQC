@@ -20,45 +20,45 @@ Warning--empty author in google2023suppressing
 Warning--can't use both volume and number fields in jaeger1990computational
 Warning--there's a number but no series in wang2010topological
 Warning--empty year in wang2307intrinsic
-You've used 212 entries,
+You've used 213 entries,
             2543 wiz_defined-function locations,
-            1681 strings with 35726 characters,
-and the built_in function-call counts, 84023 in all, are:
-= -- 8430
-> -- 4080
-< -- 102
-+ -- 1411
-- -- 1385
-* -- 6411
-:= -- 14074
-add.period$ -- 646
-call.type$ -- 212
-change.case$ -- 1333
-chr.to.int$ -- 209
-cite$ -- 220
-duplicate$ -- 3172
-empty$ -- 5924
-format.name$ -- 1652
-if$ -- 16768
+            1684 strings with 35778 characters,
+and the built_in function-call counts, 84236 in all, are:
+= -- 8441
+> -- 4110
+< -- 101
++ -- 1422
+- -- 1395
+* -- 6435
+:= -- 14129
+add.period$ -- 648
+call.type$ -- 213
+change.case$ -- 1339
+chr.to.int$ -- 210
+cite$ -- 221
+duplicate$ -- 3173
+empty$ -- 5931
+format.name$ -- 1661
+if$ -- 16794
 int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 224
-newline$ -- 1063
-num.names$ -- 633
-pop$ -- 1000
+missing$ -- 226
+newline$ -- 1068
+num.names$ -- 636
+pop$ -- 1002
 preamble$ -- 1
-purify$ -- 1563
+purify$ -- 1571
 quote$ -- 0
-skip$ -- 2637
+skip$ -- 2642
 stack$ -- 0
-substring$ -- 4937
-swap$ -- 342
-text.length$ -- 102
-text.prefix$ -- 72
+substring$ -- 4922
+swap$ -- 335
+text.length$ -- 101
+text.prefix$ -- 70
 top$ -- 0
-type$ -- 1632
+type$ -- 1636
 warning$ -- 7
-while$ -- 830
-width$ -- 215
-write$ -- 2732
+while$ -- 832
+width$ -- 216
+write$ -- 2744
 (There were 7 warnings)

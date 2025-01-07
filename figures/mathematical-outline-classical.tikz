@@ -2,7 +2,7 @@
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=none] (0) at (-4.5, 0) {$\left(\footnotesize\text{ordered media}\right)$};
 		\node [style=none] (1) at (3, 0) {$\left(\substack{\text{topological classical} \\ \text{computing}}\right)$};
-		\node [style=none] (2) at (-0.75, 2) {$\left(\substack{\text{finite} \\ \text{groups}}\right)$};
+		\node [style=none] (2) at (-0.75, 2) {$\left(\text{\footnotesize groups}\right)$};
 		\node [style=none] (3) at (-4.25, 0.75) {};
 		\node [style=none] (4) at (-3, 1.5) {};
 		\node [style=none] (5) at (1.5, 1.5) {};

@@ -1,0 +1,43 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-1.825, 1) {$\ket{a}$};
+		\node [style=none] (1) at (-0.075, 1) {$\ket{**}$};
+		\node [style=none] (2) at (1.675, 1) {$(124)$};
+		\node [style=none] (4) at (-2, 1.5) {};
+		\node [style=none] (6) at (0.1, 1.5) {};
+		\node [style=none] (7) at (-0.2, 1.5) {};
+		\node [style=none] (8) at (-0.25, 4.25) {};
+		\node [style=none] (9) at (0.1, 4.25) {};
+		\node [style=none] (10) at (1.675, 1.5) {};
+		\node [style=none] (11) at (1.675, 3.25) {};
+		\node [style=none] (13) at (-1.65, 1.5) {};
+		\node [style=none] (14) at (-2, 4.25) {};
+		\node [style=none] (18) at (-1.65, 2.5) {};
+		\node [style=none] (19) at (0.55, 2.75) {};
+		\node [style=none] (20) at (-1.65, 3.25) {};
+		\node [style=none] (21) at (0.55, 3) {};
+		\node [style=none] (22) at (-0.7, 3.5) {};
+		\node [style=none] (23) at (-0.7, 3.75) {};
+		\node [style=none] (24) at (1.675, 4) {};
+		\node [style=none] (25) at (1.675, 4.25) {};
+		\node [style=none] (26) at (-1.65, 4.25) {};
+		\node [style=none] (27) at (-1.825, 4.5) {$\ket{a}$};
+		\node [style=none] (28) at (0.05, 4.5) {$\ket{a}$};
+		\node [style=none] (29) at (1.675, 4.5) {$(124)$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (11.center) to (10.center);
+		\draw [in=-90, out=90, looseness=0.25] (21.center) to (20.center);
+		\draw (21.center) to (19.center);
+		\draw [in=-90, out=90, looseness=0.25] (23.center) to (24.center);
+		\draw (22.center) to (23.center);
+		\draw (25.center) to (24.center);
+		\draw (26.center) to (20.center);
+		\draw [style=overlap] (8.center) to (7.center);
+		\draw [style=overlap] (9.center) to (6.center);
+		\draw [style=overlap, in=90, out=-90, looseness=0.25] (22.center) to (11.center);
+		\draw [style=overlap, in=-90, out=75, looseness=0.25] (18.center) to (19.center);
+		\draw [style=overlap] (18.center) to (13.center);
+		\draw [style=overlap] (14.center) to (4.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

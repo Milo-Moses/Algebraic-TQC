@@ -1021,6 +1021,37 @@ We now examine and motivate claims 1-3.
 
 [WORK: Finish by saying this is something like TQFTs. TQFT = bundled collection of mapping class group representations. Link this to TQFT appendix.]
 
+[WORK: I wrote a little extra about this for the Kapustin final, might be useful:
+
+To demonstrate the TQFT perspective in action, we focus on the case of the genus one surface - the torus. As part of the data of every TQFT $(V_g, \rho_g, Z_{g,g'})$ there is a map
+
+$$\rho_1:\MCG(\Sigma_1)\to \Aut(V_1).$$
+
+We seek to understand this map in full detail, and as such gain some level of enlightenment about the behavior of topological order on the torus. On physical groups, the space $V_1$ is easy to describe. We argued before it should be $\CC[\LL]$. The mapping class group $\MCG(\Sigma_1)=\MCG(T^2)$ is also straightforward to describe. We state a classical theorem about $\MCG(T^2)$ below:
+
+\begin{theorem}[\cite{farb2011primer}, Theorem 2.5] There is an isomorphism $\MCG(T^2)\cong \SL_2(\ZZ)$, which sends the element of $\MCG(T^2)$ represented by $\pi/2$-rotation to $s$,
+
+[WORK: add picture]
+
+and which sends the element of $\MCG(T^2)$ represented by a Dehn twist around a handle of the torus to $t$. 
+\end{theorem}
+\begin{remark} For simplicity of notation, we will from now on identify $\MCG(T^2)$ with $\SL_2(\ZZ)$, using the letters $s,t$ to represent both the elements of $\SL_2(\ZZ)$ and their corresponding preimage in $\MCG(T^2)$.
+
+A more elementary way of stating this theorem is that every self-homeomorphism of the torus can be deformed to a composition of Dehn twists and rotations, and that the rotation and Dehn twist satisfy the $\SL_2(\ZZ)$ relations $s^4=1$ and $(st)^3=s^2$.
+
+The Dehn twist is described as follows. [WORK: describe Dehn twist in terms of theta-symbols $\theta_{A}$].
+
+The rotation is described as follows. [WORK: describe the rotation in terms of the $S$-matrix.]
+
+
+
+\end{remark}
+
+Now that we have described $\MCG(T^2)=\SL_2(\ZZ)$ and $V_1=\CC[\LL]$, we are tasked with understanding $\rho_1:\SL_2(\ZZ)\to \CC[\LL]$. That is, we must describe the maps $\rho_1(s),\rho_1(t)\in \Aut(\CC[\LL])$.
+
+
+]
+
 \subsubsection{Bruguieres's modularity theorem and the Verlinde formula}
 
 In this section we prove Bruguieres's modularity theorem. This theorem asserts that, given a pre-modular category $\C$, the $S$-matrix $S$ is invertible if and only if $\C$ is modular. Historically, this theorem is backwards. The original definition of modular category included that the $S$-matrix should be invertible. This was the only definition of modular category, until Bruguieres proved in [ref] that the invertability of the $S$-matrix is equivalent to $\C$ having the non-degenerate braiding property that if
