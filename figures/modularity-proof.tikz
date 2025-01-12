@@ -1,6 +1,6 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=none] (0) at (-1.25, -0.125) {$\displaystyle{\sum_{[A]\in \LL}d_{A}\theta_{A}\cdot}$};
+		\node [style=none] (0) at (-1.25, -0.125) {$\displaystyle{\sum_{[A]\in \cL}d_{A}\theta_{A}\cdot}$};
 		\node [style=none] (1) at (1, 0.25) {tr};
 		\node [style=none] (2) at (3, 1.5) {};
 		\node [style=none] (3) at (3, -1.25) {};

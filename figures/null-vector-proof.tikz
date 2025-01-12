@@ -1,6 +1,6 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=none] (0) at (-3, -0.625) {$\displaystyle{\sum_{[A]\in \LL}\omega_{A}}\cdot$};
+		\node [style=none] (0) at (-3, -0.625) {$\displaystyle{\sum_{[A]\in \cL}\omega_{A}}\cdot$};
 		\node [style=none] (1) at (-0.75, -0.25) {tr};
 		\node [style=none] (2) at (1.25, 1) {};
 		\node [style=none] (3) at (1.25, -1.75) {};

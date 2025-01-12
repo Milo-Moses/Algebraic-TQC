@@ -1,6 +1,6 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=none] (0) at (4.5, -0.25) {$\displaystyle{\sum_{[A]\in \LL}\sum_{[B]\in\LL}\omega_{A}N^{X,Y}_{B}d_B\cdot}$};
+		\node [style=none] (0) at (4.5, -0.25) {$\displaystyle{\sum_{[A]\in \cL}\sum_{[B]\in\cL}\omega_{A}N^{X,Y}_{B}d_B\cdot}$};
 		\node [style=none] (15) at (8.75, 1.375) {};
 		\node [style=none] (16) at (8.75, -1.375) {};
 		\node [style=none] (17) at (11, 1.375) {};
@@ -15,7 +15,7 @@
 		\node [style=none] (27) at (9, 0.125) {$A$};
 		\node [style=none] (28) at (10, -1.625) {$B$};
 		\node [style=none] (29) at (10, 1.875) {$B$};
-		\node [style=none] (30) at (4.5, -4.75) {$\displaystyle{\sum_{[B]\in\LL}N^{X,Y}_{B}d_B\sum_{[A]\in\LL}\omega_{A}\cdot}$};
+		\node [style=none] (30) at (4.5, -4.75) {$\displaystyle{\sum_{[B]\in\cL}N^{X,Y}_{B}d_B\sum_{[A]\in\cL}\omega_{A}\cdot}$};
 		\node [style=none] (31) at (8.75, -3.125) {};
 		\node [style=none] (32) at (8.75, -5.875) {};
 		\node [style=none] (33) at (11, -3.125) {};
@@ -31,7 +31,7 @@
 		\node [style=none] (43) at (10, -2.625) {$B$};
 		\node [style=none] (49) at (0, -8) {$=$};
 		\node [style=none] (57) at (10, -6.125) {$B$};
-		\node [style=none] (58) at (2, -7.95) {$N^{X,Y}_{\one}d_{1}$};
+		\node [style=none] (58) at (2, -7.95) {$N^{X,Y}_{\bone}d_{1}$};
 		\node [style=none] (59) at (4, -8) {$=$};
 		\node [style=none] (61) at (4.75, -8) {};
 		\node [style=none] (62) at (5, -7.25) {};

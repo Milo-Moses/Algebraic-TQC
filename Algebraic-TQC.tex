@@ -1,104 +1,23 @@
 \documentclass{article}
 
-\usepackage{enumerate}
-\usepackage[margin=1.5in]{geometry}
+%import my style
+\usepackage{milostyle}
+%use the quiver package for commutative diagrams
 \usepackage{quiver}
+%use the tikzit package for my graphical diagrams
 \usepackage{tikzit}
-\usepackage{tikz-cd}
-\usepackage{amsthm}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{mathrsfs}  
-\usepackage{braket}
-\usepackage{mathtools}
-\usepackage{lmodern}
-\usepackage{upgreek}
-\usepackage{relsize}
 
-
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{corollary}{Corollary}[section]
-\newtheorem{conjecture}{Conjecture}[section]
-\newtheorem{proposition}{Proposition}[section]
-\newtheorem{propositionph}{$\text{Proposition}^{ph}$}[section]
-
-\theoremstyle{definition}
-\newtheorem*{definition}{Definition}
-\newtheorem*{remark}{Remark}
-
-\DeclareMathOperator{\wind}{wind}
-\DeclareMathOperator{\Free}{Free}
-\DeclareMathOperator{\Sym}{Sym}
-\DeclareMathOperator{\Hom}{Hom}
-\DeclareMathOperator{\swap}{swap}
-\DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\SO}{SO}
-\DeclareMathOperator{\SL}{SL}
-\DeclareMathOperator{\GL}{GL}
-\DeclareMathOperator{\End}{End}
-\DeclareMathOperator{\ev}{ev}
-\DeclareMathOperator{\coev}{coev}
-\DeclareMathOperator{\op}{op}
-\DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\FPdim}{FPdim}
-\DeclareMathOperator{\Rep}{Rep}
-\DeclareMathOperator{\Aut}{Aut}
-\DeclareMathOperator{\Pic}{Pic}
-\DeclareMathOperator{\MCG}{MCG}
-\DeclareMathOperator{\func}{func}
-\DeclareMathOperator{\Fun}{Fun}
-\DeclareMathOperator{\can}{can}
-\DeclareMathOperator*{\bplus}{\tikz[baseline,line width=.05ex]{\node[minimum size=1.3em,draw,anchor=base,inner sep=.1ex]{$   \mathlarger{\mathlarger{ \mathlarger{\mathlarger{+}}}}$};}}
-
-\newcommand{\RR}{\mathbb{R}}
-\newcommand{\ZZ}{\mathbb{Z}}
-\newcommand{\QQ}{\mathbb{Q}}
-\newcommand{\CC}{\mathbb{C}}
-
-\newcommand{\NN}{\mathcal{N}}
-\newcommand{\Cc}{\mathcal{C}}
-\newcommand{\C}{\mathscr{C}}
-\newcommand{\Dcat}{\mathscr{D}}
-\newcommand{\LL}{\mathcal{L}}
-\newcommand{\D}{\mathfrak{D}}
-\newcommand{\Z}{\mathcal{Z}}
-\newcommand{\OO}{\mathcal{O}}
-\newcommand{\PP}{\mathcal{P}}
-\renewcommand{\SS}{\mathcal{S}}
-\newcommand{\DD}{\mathcal{D}}
-\newcommand{\BB}{\mathcal{B}}
-\newcommand{\K}{\mathscr{K}}
-\newcommand{\M}{\mathcal{M}}
-\newcommand{\N}{\mathcal{N}}
-\newcommand{\charge}{\check{C}}
-
-\newcommand{\0}{\left|0\right>}
-\newcommand{\1}{\left|1\right>}
-
-
-\renewcommand{\P}{\textsc{\textbf{P}}}
-\newcommand{\BPP}{\textsc{\textbf{BPP}}}
-\newcommand{\BQP}{\textsc{\textbf{BQP}}}
-\newcommand{\NP}{\textsc{\textbf{P}}}
-\newcommand{\NOT}{\textsc{NOT}}
-\newcommand{\NAND}{\textsc{NAND}}
-\newcommand{\CNOT}{\textsc{CNOT}}
-\newcommand{\AND}{\textsc{AND}}
-\newcommand{\OR}{\textsc{OR}}
-
-\newcommand{\one}{\mathbf{1}}
-\renewcommand{\Set}{\mathbf{Set}}
-\renewcommand{\Vec}{\mathbf{Vec}}
-
-\newcommand{\Cfunc}{\CC[\LL]^{\text{func}}}
-
-
-
+%tell latex where my images are
 \graphicspath{ {./images/} }
-\numberwithin{figure}{section}
+
+% -- formatting of document
+
+%set the margins I want
+\usepackage[margin=1.5in]{geometry}
+%start counting sections from zero
 \setcounter{section}{-1}
+%using "section#.figure#" to count figures
+\numberwithin{figure}{section}
 
 
 
@@ -133,19 +52,19 @@ This book aims to give a comprehensive account of the algebraic theory of topolo
 
 \tableofcontents
 
-\include{./chapters/1-overview/ch1}
+%\include{./chapters/1-overview/ch1}
 
-\include{./chapters/2-QM/ch2}
+%\include{./chapters/2-QM/ch2}
 
-\include{./chapters/3-TQO/ch3}
+%\include{./chapters/3-TQO/ch3}
 
 \include{./chapters/4-category-theory/ch4}
 
-\include{./chapters/5-MTCs/ch5}
+%\include{./chapters/5-MTCs/ch5}
 
-\include{./chapters/6-further-structure/ch6}
+%\include{./chapters/6-further-structure/ch6}
 
-\include{./chapters/7-TQC/ch7}
+%\include{./chapters/7-TQC/ch7}
 
 \appendix
 
@@ -165,7 +84,6 @@ List of things to add:
 
 \bibliographystyle{alpha}
 \bibliography{ref}
-
 
 \end{document}
 

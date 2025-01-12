@@ -1,7 +1,7 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=none] (0) at (4.5, 0.5) {$=$};
-		\node [style=none] (1) at (6.75, 0.5) {$\left( f:\one \to A\right)$};
+		\node [style=none] (1) at (6.75, 0.5) {$\left( f:\bone \to A\right)$};
 		\node [style=none] (2) at (0.5, 0) {};
 		\node [style=none] (3) at (1.5, 0) {};
 		\node [style=none] (4) at (1.5, 1) {};
@@ -11,7 +11,7 @@
 		\node [style=none] (8) at (1, -1) {};
 		\node [style=none] (9) at (1, 1) {};
 		\node [style=none] (10) at (1, 2) {};
-		\node [style=none] (11) at (1, -1.5) {$\one$};
+		\node [style=none] (11) at (1, -1.5) {$\bone$};
 		\node [style=none] (12) at (1, 2.5) {$A$};
 		\node [style=none] (13) at (3, 0) {};
 		\node [style=none] (14) at (4, 0) {};

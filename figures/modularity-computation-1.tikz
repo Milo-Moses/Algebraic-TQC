@@ -2,7 +2,7 @@
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=none] (0) at (-3, 2) {$h_{X,Y}$};
 		\node [style=none] (1) at (-1.5, 2) {$=$};
-		\node [style=none] (2) at (-0.25, 2) {$p_{\C}^{+}\cdot$};
+		\node [style=none] (2) at (-0.25, 2) {$p_{\cC}^{+}\cdot$};
 		\node [style=none] (3) at (1, 2) {tr};
 		\node [style=none] (4) at (2.75, 3.5) {};
 		\node [style=none] (5) at (2.75, 1) {};
@@ -26,7 +26,7 @@
 		\node [style=none] (28) at (3.75, 1.75) {};
 		\node [style=none] (29) at (3.25, 2.25) {$\theta_{X\otimes Y}^{-1}$};
 		\node [style=none] (30) at (5.75, 2) {$=$};
-		\node [style=none] (31) at (8.5, 2) {$p_{\C}^{+}\theta_{X}\theta_{Y}S_{X^*,Y}$};
+		\node [style=none] (31) at (8.5, 2) {$p_{\cC}^{+}\theta_{X}\theta_{Y}S_{X^*,Y}$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw [in=180, out=180, looseness=0.25] (18.center) to (17.center);

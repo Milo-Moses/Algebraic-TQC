@@ -1,0 +1,122 @@
+% -- my packages
+%Many useful features
+\usepackage{amsmath}
+%Many useful fonts
+\usepackage{amsfonts}
+%Many useful symbols
+\usepackage{amssymb}
+%Tikz package for more control over theorem enviornments
+\usepackage{amsthm}
+%Extension of amsmath with more features
+\usepackage{mathtools}
+%Tools for enumeration (in particular, the enumerate environment)
+\usepackage{enumerate}
+%Tikz package for making figures
+\usepackage{tikz-cd}
+%Gives good tools for bra-ket notation
+\usepackage{braket}
+%Provides the \mathscr font
+\usepackage{mathrsfs} 
+%Provides various fonts
+\usepackage{lmodern}
+%Provides the "upgreek" letters (\upalpha, \upbeta...)
+\usepackage{upgreek}
+%Provides tools for changing text size
+\usepackage{relsize}
+
+
+% -- my enivornments
+\newtheorem{thrm}{Theorem}[section]
+\newtheorem{lem}[thrm]{Lemma}
+\newtheorem{cor}[thrm]{Corollary}
+\newtheorem{conj}[thrm]{Conjecture}
+\newtheorem{prop}[thrm]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thrm]{Definition}
+\newtheorem{rem}[thrm]{Remark}
+\newtheorem{ex}[thrm]{Example}
+
+
+% -- my macros
+%math words
+\DeclareMathOperator{\wind}{wind}
+\DeclareMathOperator{\Free}{Free}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\swap}{swap}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\ev}{ev}
+\DeclareMathOperator{\coev}{coev}
+\DeclareMathOperator{\op}{op}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\FPdim}{FPdim}
+\DeclareMathOperator{\Rep}{Rep}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\MCG}{MCG}
+\DeclareMathOperator{\func}{func}
+\DeclareMathOperator{\Fun}{Fun}
+\DeclareMathOperator{\can}{can}
+
+%bold-face letters
+\def\bR{{\mathbb R}}
+\def\bZ{{\mathbb Z}}
+\def\bQ{{\mathbb Q}}
+\def\bC{{\mathbb C}}
+\def\bN{{\mathbf N}}
+\def\bone{{\mathbf 1}}
+
+%caligraphic letters
+\def\cN{{\mathcal N}}
+\def\cC{{\mathcal C}}
+\def\cD{{\mathscr D}}
+\def\cL{{\mathcal L}}
+\def\cZ{{\mathcal Z}}
+\def\cP{{\mathcal P}}
+\def\cB{{\mathcal B}}
+\def\cO{{\mathcal O}}
+\def\cD{{\mathcal D}}
+\def\cK{{\mathscr K}}
+\def\cM{{\mathcal M}}
+\def\cN{{\mathcal N}}
+\def\cS{{\mathcal S}}
+
+%small-caps words
+\def\P{{{\textsc \textbf P}}}
+\def\BPP{{{\textsc \textbf BPP}}}
+\def\BQP{{{\textsc \textbf BQP}}}
+\def\NP{{{\textsc \textbf P}}}
+\def\NOT{{\textsc NOT}}
+\def\NAND{{\textsc NAND}}
+\def\CNOT{{\textsc CNOT}}
+\def\AND{{\textsc AND}}
+\def\OR{{\textsc OR}}
+
+%fraktur letters
+\def\fD{{\mathfrak D}}
+
+%categories
+\def\Set{{\bf Set}}
+\def\Vec{{\bf Vec}}
+\def\Top{{\bf Top}}
+\def\Grp{{\bf Grp}}
+\def\Hilb{{\bf Hilb}}
+
+%miscillaneous
+\def\charge{{\check C}} %charge conjugation matrix
+\def\0{\ket{0}} %the 0 quantum state
+\def\1{\ket{1}} %the 1 quantum state
+\DeclareMathOperator*{\bplus}{\tikz[baseline,line width=.05ex]{\node[minimum size=1.3em,draw,anchor=base,inner sep=.1ex]{$   \mathlarger{\mathlarger{ \mathlarger{\mathlarger{+}}}}$};}} %a big blocky plus sign, for the direct sum of many categories
+\def\cfunc{\bC[\cL]^{\text{func}}}%the function algebra on a finite set
+\def\dash{-}%a placeholder symbol
+
+%commands
+\newcommand{\Note}[1]{\textcolor{red}{WORK: #1}}
+
+
+

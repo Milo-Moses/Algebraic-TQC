@@ -1,8 +1,8 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=none] (16) at (-5.75, 1.25) {$\displaystyle{\sum_{[B]\in \LL}d_B\theta_{B} \cdot}$};
+		\node [style=none] (16) at (-5.75, 1.25) {$\displaystyle{\sum_{[B]\in \cL}d_B\theta_{B} \cdot}$};
 		\node [style=none] (17) at (0, 1.425) {$=$};
-		\node [style=none] (18) at (1.25, 1.5) {$p^{+}_{\C}\cdot$};
+		\node [style=none] (18) at (1.25, 1.5) {$p^{+}_{\cC}\cdot$};
 		\node [style=none] (19) at (2.75, 3) {};
 		\node [style=none] (20) at (2.75, 0.25) {};
 		\node [style=none] (22) at (3.5, 2) {};

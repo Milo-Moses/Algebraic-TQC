@@ -1,6 +1,6 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=none] (17) at (2.5, 1.25) {$p^{-}_{\C}\cdot$};
+		\node [style=none] (17) at (2.5, 1.25) {$p^{-}_{\cC}\cdot$};
 		\node [style=none] (18) at (4, 3) {};
 		\node [style=none] (19) at (4, -0.15) {};
 		\node [style=none] (20) at (4.75, 1.75) {};
@@ -12,7 +12,7 @@
 		\node [style=none] (26) at (4, 1.25) {$\theta_{A}$};
 		\node [style=none] (27) at (4, 3.5) {$A$};
 		\node [style=none] (28) at (4, -0.65) {$A$};
-		\node [style=none] (29) at (-4.5, 1) {$\displaystyle{\sum_{[B]\in \LL}d_B\theta_{B}^{-1} \cdot}$};
+		\node [style=none] (29) at (-4.5, 1) {$\displaystyle{\sum_{[B]\in \cL}d_B\theta_{B}^{-1} \cdot}$};
 		\node [style=none] (30) at (1.25, 1.175) {$=$};
 		\node [style=none] (43) at (-2, 2.625) {};
 		\node [style=none] (44) at (-2, -0.125) {};

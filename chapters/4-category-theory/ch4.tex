@@ -5,72 +5,58 @@
 
 \subsubsection{Introduction}
 
-There is a lot of math in the world. The development of the subject has spanned thousands of years, and has enjoyed a large uptick in the last two hundred or so. This has given ample time for the most important ideas to rise to the top. Among these important concepts there is one which is the focus of chapter: \textbf{composition}.
+There is a lot of math in the world. The development of the subject has spanned thousands of years, and has enjoyed a large uptick in progress the last two hundred or so. This has given ample time for the most important ideas to rise to the top. Among these important concepts there is one which is the focus of chapter: \textbf{composition}.
 
-Let $A,B,C$ be sets. Let $f:A\to B$ and $g:B\to C$ be functions. The \textit{composition} of $f$ and $g$ is the function $g\circ f: A\to C$ defined by the formula $(g\circ f)(x)=g(f(x))$ for all $x\in A$. More generally, composition is the act of doing one process followed by a second process. Composition is distinguished in its importance for two reasons:
+Let $A,B,C$ be sets. Let $f:A\to B$ and $g:B\to C$ be functions. The {\em composition} of $f$ and $g$ is the function $g\circ f: A\to C$ defined by the formula $(g\circ f)(x)=g(f(x))$ for all $x\in A$. More generally, composition is the act of performing one process followed by performing a second process. Composition is distinguished in its importance for two reasons:
 
 \begin{enumerate}
 \item Composition is ubiquitous;
-\item A very large number of more complicated structures can be described in terms of composition.
+\item Many complicated structures can be described in terms of composition.
 \end{enumerate}
 
-These two primary reasons of importance lead to several emergent applications of composition:
+These two primary sources of importance lead to several emergent applications of composition:
 
 \begin{enumerate}
 \item It's a good organization principle - thinking in terms of composition gives a unifed approach to disperate subjects, which highlights the universality latent within mathematics;
-\item It's a good compression technique - in a composition-forward approach there's no need to remember details about objects or functions between them, only the way that those functions compose is used;
-\item Sometimes composition rules are the only data we have, making a composition-forward technique the only approach possible.
+\item It's a good compression technique - in a composition-first approach there's no need to remember details about objects or functions between them, only the way that those functions compose is used;
+\item Sometimes composition rules are the only data we have about an object of study, making a composition-first technique the only approach possible.
 \end{enumerate}
 
-This third point is the situation we find ourselves in with tthe algebraic theory of topological quantum information. We're trying to give a usable mathematical description of topologically ordered systems. The way that we find ourselves doing this is by focusing on anyons (the local quasiparticle excitations in topological order). Doing this we run into three important ponts:
+This third point is the situation we find ourselves in with the algebraic theory of topological quantum information. We're trying to give a usable mathematical description of topologically ordered systems. The way we do this is by focusing on anyons (local quasiparticle excitations in topological order). In doing so we run into three important ponts:
 
 \begin{enumerate}
-\item Describing anyons exactly is hard. They are emergent phenomina, found within highly-entangled energy eigenstates of arbitrarily complicated gapped Hamiltonians.
-\item Describing the possible ways that anyons can transform is hard. This involved specifying intricate unitary operators on high-dimensional Hilbert spaces.
-\item Describing the ways that these transformations compose with one another is always relatively simple. It can be done using explicit-to-describe rules, which are independent of system size or choice of gapped Hamiltonian.
+\item Describing anyons exactly is hard. They are emergent phenomina, found within highly-entangled energy eigenstates of arbitrarily complicated gapped Hamiltonians;
+\item Describing the ways anyons can transform is hard. This involves specifying intricate unitary operators on high-dimensional Hilbert spaces.
+\item Describing how these transformations compose with one another is relatively simple. It can be done using explicit-to-describe rules, which are independent of the system size or choice of gapped Hamiltonian.
 \end{enumerate}
 
-What to do in this situation is clear: we will take a composition-first approach to anyons.
-
-We give some examples to demonstrate our point. Suppose we want to discuss braiding anyons in the toric code. We can abstractly talk about a syndrome of the toric code in which there is one $X$-type particle and one $Z$-type particle:
-
-[WORK: write out state.]
-
-On these states we can talk about braiding. We use the same sorts of spactime diagrams as before to represent these transformations:
-
-[WORK: write out state.]
-
-Without talking about the fact that transformations of this type are realized explicitely using Pauli operators, we can still abstractly discuss the way they compose with each other:
-
-[WORK: write out composition line]
-
-[WORK: add more complicated example coming from whatever case of Kitaev quantum double I describe explicitely in the TO chapter]
-
-The mathematical objects which allows one to speak intelligently about composition-first appraoches is known as a \textit{category}. The composition-first approach to mathematics is known as \textit{category theory}. Of course, to describe anyons we will need more than just the structure of composition. We will also need a way to encode what happens we we put anyons together, braid them, and fuse them. There structures are all completely compatible with the compostion-first approach, and correspond to adding extra structures onto the category. The categories describing anyons will all their extra structures is known as a \textit{modular tensor category}, and will be the subject of much of this book. This chapter deals with introducing category theory, as well as some of the structures which will be important for discussing anyons and modular tensor categories.
+What to do in this situation is clear: we will take a composition-first approach to anyons. The mathematical structure which allows for an intelligent discussion of composition is known as a {\em category}. The composition-first approach to mathematics is known as {\em category theory}. Of course, to describe anyons we will need more than just the structure of composition. We will also need a way to encode what happens we we put anyons together, braid them, and fuse them. There structures are all completely compatible with the compostion-first approach, and correspond to adding extra structures onto the category. The type of category which fully describes anyons is known as a {\em modular tensor category}, and these categories will be the subject of much of this book. This chapter deals with introducing category theory, as well as some of the structures which will be important for discussing anyons and modular tensor categories.
 
 \subsubsection{Definition and important obervations}
 
-As discussed before, a category is the structure which allows for a composition-first approach to map. Before going forward lets give a formal definition of category:
+As discussed before, a category is the structure which allows for a composition-first approach to mathematics. Before going forward lets define what a category is:
 
-\begin{definition}[Category] A category is the following data:
+\begin{defn}[Category]\label{category-def} A category is the following data:
 
 \begin{enumerate}
-\item (Objects) A set $\C$.
-\item (Morphisms) A set $\Hom(A,B)$ for all $A,B\in \C$
+\item (Objects) A set $\cC$;
+\item (Morphisms) A set $\Hom(A,B)$ for all $A,B\in \cC$;
 \item (Composition) Functions
 
 $$\circ: \Hom(B,C)\times \Hom(A,B)\to \Hom(A,C)$$
 
-for all $A,B,C\in \C$.
+for all $A,B,C\in \cC$;
 \end{enumerate}
 
 Such that:
 
 \begin{enumerate}
 
-\item $(h\circ g)\circ f = h\circ (g\circ f)$, for all morphisms $f\in \Hom(A,B)$, $g\in \Hom(B,C)$, $h\in\Hom(C,D)$,  and objects $A,B,C,D\in \C$.
+\item  For all morphisms $f\in \Hom(A,B)$, $g\in \Hom(B,C)$, $h\in\Hom(C,D)$,  and objects $A,B,C,D\in \cC$,
 
-\item (Identity) For all objects $A\in \C$ there exists a morphism $\id_{A}: A\to A$ such that for all $B\in \C$, $f\in \Hom(A,B)$, and $g\in \Hom(B,A)$,
+$$(h\circ g)\circ f = h\circ (g\circ f).$$
+
+\item (Identity) For all objects $A\in \cC$ there exists a morphism $\id_{A}: A\to A$ such that for all $B\in \cC$, $f\in \Hom(A,B)$, and $g\in \Hom(B,A)$,
 
 \begin{align*}
 f\circ \id_{A}=f, && \id_{A}\circ g = g.
@@ -79,85 +65,77 @@ f\circ \id_{A}=f, && \id_{A}\circ g = g.
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
-The rest of this section will contain a loosely-related series of five observations about this definition:
+\begin{rem} The structure of definition \ref{category-def} is very typical of algebra. Roughly, algebra is defined to be the study of algebraic structures. An algebraic structure is some collection operations on some space, with rules outlining how these operations interact with each other. The general way of definding an algebraic structure is to first list its operations, and then list the axioms of how these operations inteact with each other. We will see many definitions of this sort throughout the rest of the book, so it is good to get used to it now.
+\end{rem}
 
-$\newline$
-\textbf{Observation 1:} \textit{The structure of this definition is very typical of algebra.}
-
-Roughly, algebra is defined to be the study of algebraic structures. An algebraic structure, roughly, is defined to be some collection structures on some space, with rules outlining how the structures interact with each other. The general way of definding algebraic structures is to first list the structures, and then list the axioms of how these structures inteact with each other. We will see many definitions of this sort throughout the rest of the book, so it is good to get used to it now.
-
-$\newline$
-\textbf{Observation 2:} \textit{In this text we have already seen many examples of categories.}
-
-We list some of them below:
+\begin{ex}\label{category-examples} In this text we have already seen many examples of categories. We list some of them here:
 
 \begin{itemize}
 \item $\Set$, the category of sets. The objects are sets and the morphisms are functions.
 
-\item $\mathbf{Top}$, the category of topological spaces. The objects are topological spaces and the morphisms are continuous functions.
+\item $\Top$, the category of topological spaces. The objects are topological spaces and the morphisms are continuous functions.
 
-\item $\mathbf{Vec}_k$, the category of finite dimensional vector spaces over a field $k$. The objects are finite dimensional vector spaces over $k$ and the morphisms are linear operators.
+\item $\Vec_k$, the category of finite dimensional vector spaces over a field $k$. The objects are finite dimensional vector spaces over $k$ and the morphisms are linear operators.
 
-\item $\mathbf{Grp}$, the category of finite groups. The objects are finite groups and the morphisms are group homomorphisms.
+\item $\Grp$, the category of finite groups. The objects are finite groups and the morphisms are group homomorphisms.
 
-\item $\mathbf{Hilb}$, the category of quantum systems. The objects are finite dimensional Hilbert spaces and the morphisms are unitary operators.
+\item $\Hilb$, the category of quantum systems. The objects are finite dimensional Hilbert spaces and the morphisms are unitary operators.
 
-\item $\mathbf{Prob}$, the category of probability spaces. The objects are finite dimensional real vector spaces with distinguished bases and the morphisms are operators which send normalized vectors to normalized vectors.
+\item ${\bf Prob}$, the category of probability spaces. The objects are finite dimensional real vector spaces with distinguished bases and the morphisms are operators which send normalized vectors to normalized vectors.
 
-\item $\mathbf{Ord}_M$, the category associated with ordered media with order space $M$. The objects are continuous maps $\phi: \RR^2\to M$ and the morphisms are continuous deformations.
+\item ${\bf Ord}_M$, the category associated with ordered media with order space $M$. The objects are continuous maps $\phi: \bR^2\to M$ and the morphisms are continuous deformations.
 
-\item $\D(G)$, the category associated with discrete gauge theory based on the finite group $G$. The objects are $G$-graded $G$-representations and the morphisms are linear maps which respect both the $G$-grading and the $G$-action.
+\item $\fD(G)$, the category associated with discrete gauge theory based on the finite group $G$. The objects are $G$-graded $G$-representations and the morphisms are linear maps which respect both the $G$-grading and the $G$-action.
 
 \end{itemize}
+\end{ex}
 
-$\newline$
-\textbf{Observation 3:} \textit{The objects and morphisms of a category do not have much complexity implicit to them.  All of the interesting structure is encoded within the composition structure.}
+\begin{rem}The objects and morphisms of a category do not have much complexity implicit to them.  All of the interesting structure is encoded within the composition structure. This is despite the fact that when we listed our examples in example \ref{category-examples} we only described the objects and morphisms, and not the composition structure. The reason for this is that the composition structure between morphisms in all of our examples is clear. In all our examples the objects are sets with extra strcture, and the morphisms are maps of sets. The composition structure is inhereted from the composition structure on functions between sets. Going further, we remark that objects in abstract categories are {\em not} required to be sets and the morphisms are {\em not} required to be functions of sets. It is important to be aware of the fact that there are some categories for which there is no interpreation of morphisms as functions between sets \cite{freyd1970homotopy}.
+\end{rem}
 
-This is despite the fact that when we listed our examples in Observation 2 we only described the objects and morphisms, and not the compositoin structure. The reason for this is that the composition structure between morphisms in all of our examples is clear. In all our examples the objects are sets with extra strcture, and the morphisms are maps of sets. The composition structure is inhereted from the composition structure on functions between sets.
+\begin{rem} A category isn't just a space with a good notion of composition - it also has identity maps. These identity maps are important, and we include them in the definition purposefully. There are two primary reasons: firstly that all of the relevant examples of categories will have identity maps, and secondly that most interesting properties of categories only make sense because of the identity maps. Hence if we didn't require identity maps then we would find ourselves constantly requiring them as a condition, which is a waste of space.
 
-Going further, however, we observe that objects in abstract categories are \textit{not} required to be sets and the morphisms are \textit{not} required to be functions of sets. Most of our examples of categories will have objects which are sets and morphisms which are functions of sets, but there will be notable counterexamples. It is important to remember that there are some categories for which there is no interpreation of morphisms as functions between sets \cite{freyd1970homotopy}.
+It is important to take a closer look at what the identity map means, though. The identity map is trying to capture a very general phenominon about transformations: there is always the trivial transformation which results from doing nothing. This do-nothing map is the identity. In the category of sets, the identity maps on the set $A$ is given by the formula $\id_A(x)=x$ for all $x\in A$ by lemma \ref{identity-lemma}. The fact that these maps are the identities in the category of sets is the reason that the identity axiom for categories is defined like it is.
+\end{rem}
 
-$\newline$
-\textbf{Observation 4:} \textit{A category isn't just a space with a good notion of composition - it also has identity maps.}
-
-These identity maps are important, and we include them in the definition purposefully. There are two primary reasons: firstly that all of the relevant examples of categories will have identity maps, and secondly that most interesting properties of categories only make sense because of the identity maps. Hence if we didn't require identity maps then we would find ourselves constantly requiring them as a condition, which is a waste of space.
-
-It is important to take a closer look at what the identity map means, though. The identity map is trying to capture a very general phenominon about transformations: \textit{there is always the trivial transformation which results from doing nothing}. This do-nothing map is the identity. In the category of sets, the identity maps on the set $A$ is given by the formula $\id_A(x)=x$ for all $x\in A$. The fact that these maps are the identities in the category of sets is the reason that the identity axiom for categories is defined like it is. Really, there is an implicit lemma hidden in the definition of category:
-
-\begin{lemma} Let $A$ be a set. For all sets $B$ and for all $f:A\to B$, $g:B\to A$ we have
+\begin{lem}\label{identity-lemma} Let $A$ be a set. For all sets $B$ and for all $f:A\to B$, $g:B\to A$ we have
 
 \begin{align*}
 f\circ \id_{A}=f, && \id_{A}\circ g = g.
 \end{align*}
 
 In particular, $\id_A$ satisfies the axiom of an identity in the category of sets, and hence $\Set$ forms a category.
-\end{lemma}
-\begin{proof}.[WORK: do proof]
+\end{lem}
+\begin{proof} The associativity axiom is satisfied because composition of set functions is associative, and for all $f:A\to B$, $g:B\to A$,
+
+$$(f\circ \id_{A})(x)=f(\id_{A}(x))=f(x),$$
+
+$$(\id_{A}\circ g)(x)=\id_{A}(g(x))=g(x),$$
+
+so the identity axiom is satisfied.
 \end{proof}
 
-These sorts of implicit lemmas are everywhere in category theory. Whenever a composition-forward definition is given in category theory, there is the assumption that it agrees with the standard definition at least in the category of sets. For instance, we make the following definition:
-
-\begin{definition}[Isomorphism] Let $\C$ be a category, let $A,B\in C$ be objects, and let $f:A\to B$ be a morphism. We say that $f$ is an \textit{isomorphism} if there exists a morphism $f^{-1}:B\to A$ such that $f^{-1}\circ f= \id_A$ and $f\circ f^{-1}=\id_B$. We call $f^{-1}$ the \textit{inverse} of $f$. In this case, we say that $A$ and $B$ are \textit{isomorphic objects}.
+\begin{defn}[Isomorphism] Let $\cC$ be a category, let $A,B\in C$ be objects, and let $f:A\to B$ be a morphism. We say that $f$ is an {\em isomorphism} if there exists a morphism $f^{-1}:B\to A$ such that $f^{-1}\circ f= \id_A$ and $f\circ f^{-1}=\id_B$. We call $f^{-1}$ the {\em inverse} of $f$. In this case, we say that $A$ and $B$ are {\em isomorphic objects}.
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
-The implicit lemma in this definition is as follows:
+\begin{lem} Let $A,B$ be sets, and let $f:A\to B$ be a function. The map $f$ is a bijection if and only if there exists a function $f^{-1}: B\to A$ such that $f^{-1}\circ f= \id_A$ and $f\circ f^{-1}=\id_B$. In particular, a function $f$ in the category $\Set$ is an isomorphism if and only it is a bijection.
+\end{lem}
+\begin{proof} Suppose that $f$ is a bijection. Then, we can define a map $f^{-1}:B\to A$ which sends $b\in B$ to the unique element $f^{-1}(b)$ such that $f(f^{-1}(b))=b$, which exists since $f$ is surjective and is unique because $f$ is injective. By definition of $f^{-1}$, $f\circ f^{-1}=\id_{B}$. To show that the composition the other direction is the identity, we observe that for all $a\in A$
 
-\begin{lemma} Let $A,B$ be sets, and let $f:A\to B$ be a function. The map $f$ is a bijection if and only if there exists a function $f^{-1}: B\to A$ such that $f^{-1}\circ f= \id_A$ and $f\circ f^{-1}=\id_B$. In particular, a function $f$ in the category $\Set$ is an isomorphism if and only it is a bijection.
-\end{lemma}
-\begin{proof}.[WORK: do proof]
+$$f(f^{-1}(f(a))=f(a),$$
+
+so $f^{-1}(f(a))=a$ by the injectivity of $f$. Thus, $f$ has an inverse. Conversely, suppose that $f$ has an inverse $f^{-1}$. Then, $f(a)=f(a')$ implies $a=f^{-1}(f(a))=f^{-1}(f(a'))=a'$ so $f$ is injective. Additionally, for all $b\in B$ we have $b=f(f^{-1}(b))$ so $f$ is surjective. Thus, $f$ is a bijection. We have proved both directions, so our proof is complete.
 \end{proof}
 
-$\newline$
-\textbf{Observation 5:} \textit{Statements in category theory can be very broadly applied.}
+\begin{rem} Just like how the category-theoretic definitions of identity maps and isomorphisms are modeled after the abstract properties of identity maps and isomorphisms in the category of sets, many other definitions will be implicitely modeled after the abstract properties of the category of sets or vector spaces. Accompanied with most definitions, there is often an implicit lemma that the usual examples satisfy the axioms of the definition. Going forward, we will rarely remark on these implicit lemmas.
+\end{rem}
 
-This is in some sense obvious by the fact that there are so many different examples of categories, but it's good to state the observation explicitely. Here's a good example:
-
-\begin{proposition} Let $\C$ be a category. Identities in $\C$ are unique. Explicitely, let $A\in \C$ be an object and let $\id_A,\tilde{\id}_A:A\to A$ be morphisms satisfying the identity axiom. We have that $\id_A=\tilde{\id}_A$.
-\end{proposition}
+\begin{prop}\label{identity-unique} Let $\cC$ be a category. Identities in $\cC$ are unique. Explicitely, let $A\in \cC$ be an object and let $\id_A,\tilde{\id}_A:A\to A$ be morphisms satisfying the identity axiom. We have that $\id_A=\tilde{\id}_A$.
+\end{prop}
 \begin{proof}. Using the fact that $\id_A \circ f = f$ and $f\circ \tilde{\id}_A=f$ for any $f:A\to A$, we compute that
 
 $$\id_A= \id_A \circ \tilde{\id}_A = \tilde{\id}_A$$
@@ -165,12 +143,10 @@ $$\id_A= \id_A \circ \tilde{\id}_A = \tilde{\id}_A$$
 as desired.
 \end{proof}
 
-This has broad application. For instance: why are identity elements in groups unique? Le $G$ be a group and let $1,1'\in G$ be identity elements. We find that $1=1\cdot 1' = 1'$ as desired. Going further, here is another proposition in category theory:
-
-\begin{proposition}
+\begin{prop}
 \label{inverse-unique}
-Let $\C$ be a category. Let $A,B$ be objects and let $f:A\to B$ be an isomorphism. The inverse of $f$ is unique. That is, let $f^{-1},\tilde{f}^{-1}$ be morphisms satisfying the definition of the inverse of $f$. We have that $f^{-1}=\tilde{f}^{-1}$.
-\end{proposition}
+Let $\cC$ be a category. Let $A,B$ be objects and let $f:A\to B$ be an isomorphism. The inverse of $f$ is unique. That is, let $f^{-1},\tilde{f}^{-1}$ be morphisms satisfying the definition of the inverse of $f$. We have that $f^{-1}=\tilde{f}^{-1}$.
+\end{prop}
 \begin{proof} Using the associativity axiom, we compute
 
 $$f^{-1}=f^{-1}\circ \id _{B} = f^{-1}\circ (f \circ \tilde{f}^{-1})=(f^{-1}\circ f)\circ \tilde{f}^{-1}=\id_A \circ \tilde{f}^{-1}=\tilde{f}^{-1}$$
@@ -178,31 +154,129 @@ $$f^{-1}=f^{-1}\circ \id _{B} = f^{-1}\circ (f \circ \tilde{f}^{-1})=(f^{-1}\cir
 as desired.
 \end{proof}
 
-This is very general. Why are inverses unique in groups? Why are inverses of matrices unique? Abstractly, why should the inverse of any reversible process be unique? Proposition \ref{inverse-unique} gives the answer.
+\begin{rem} Statements in category theory can be very broadly applied. This is in some sense obvious by the fact that there are so many different examples of categories, but it's good to state the observation explicitely. For instance, look at proposition \ref{inverse-unique}. It applied equally well for showing that inverse elements in groups are unique and for showing that inverses of matrices are unique. Abstractly, proposition \ref{inverse-unique} demonstrates why the inverse of any reversible process is unique.
+\end{rem}
 
 \subsection{Structures in category theory}
 
+\subsubsection{Universal properties}
+
+In this section we will work on defining important structures in category, with a focus on the broadly applicable principles behind the definitions. Here is our first definition:
+
+\begin{defn}[Product]\label{product-definition} Let $A,B\in \cC$ be objects in a category. A {\em product} of $A$ and $B$ is the following data:
+
+\begin{enumerate}
+\item An item $A\times B\in \cC$;
+\item A morphism $\pi_A:A\times B\to A$;
+\item A morphism $\pi_B:A\times B\to B$;
+\end{enumerate}
+
+such that for all other objects $C\in \cC$ with morphisms $f_A:C\to A$, $f_B:C\to B$, there exists a unique morphism $f:C\to A\times B$ such that the diagram
+
+% https://q.uiver.app/#q=WzAsNCxbMSwxLCJBXFx0aW1lcyBCIl0sWzAsMiwiQSJdLFsxLDAsIkMiXSxbMiwyLCJCIl0sWzAsMSwiXFxwaV9BIl0sWzAsMywiXFxwaV9CIiwyXSxbMiwxLCJmX0EiLDJdLFsyLDMsImZfQiJdLFsyLDAsImYiLDFdXQ==
+\[\begin{tikzcd}
+	& C \\
+	& {A\times B} \\
+	A && B
+	\arrow["f"{description}, from=1-2, to=2-2]
+	\arrow["{f_A}"', from=1-2, to=3-1]
+	\arrow["{f_B}", from=1-2, to=3-3]
+	\arrow["{\pi_A}", from=2-2, to=3-1]
+	\arrow["{\pi_B}"', from=2-2, to=3-3]
+\end{tikzcd}\]
+
+commutes.
+
+\raggedleft\qedsymbol{}
+\end{defn}
+
+\begin{rem} At first glance, the categorical definition of a product may look strange. For a first level of comfort, one should observe that the categorical notion of product agrees with the usual notion of Cartesian product in the category $\Set$, by proposition \ref{product-in-set}. More generally, the same argument as in proposition \ref{product-in-set} can be used to show that the Cartesian product endowed with the product topology is a product in the category $\Top$, the direct sum of vector spaces is a product in the category $\Vec_k$ for all fields $k$,  the Cartesian product endowed with component-wise multiplication is a product in the category $\Grp$, and so on.
+\end{rem}
+
+\begin{prop}\label{product-in-set} For all pairs of sets $A,B$, the triple $(A\times B,\pi_A,\pi_B)$ is a product of $A,B$ in the category $\Set$, where $\pi_A$ is the projection of $A\times B$ onto the $A$ component and $\pi_B$ is the projection of $A\times B$ onto the $B$ component.
+\end{prop}
+\begin{proof} Consider a set $C$ and functions $f_A:C\to A$, $f_B:C\to B$. We can define a function $f:C\to A\times B$ by $f(c)=(f_A(c),f_B(c))$. Clearly, this morphism $f$ satisfies $f_A=\pi_A\circ f$ and $f_B=\pi_B\circ f$. Moreover, suppose $f:C\to A\times B$ is any function with $f_A=\pi_A\circ f$ and $f_B=\pi_B\circ f$. Then, the $A$ component of $f(c)$ is $f_A(c)$ and the $B$ component of $f(c)$ is $f_B(c)$. Thus, $f(c)=(f_A(c),f_B(c))$. Thus, we conclude that there is a unique map $f:C\to A\times B$ making the relevant diagram commute, and since $C$, $f_A$, $f_B$ were chosen arbitrarily we conclude the result.
+\end{proof}
+
+\begin{rem} Even though the Cartesian product is a product in the category of sets, it is {\em not} true that every categorical product of two sets $A,B$ in $\Set$ is equal to the Carteisan product. In particular, suppose that $D$ is a set and $i:D\xrightarrow{\sim}A\times B$ is a bijection from $D$ to $A\times B$. Define $g_A=\pi_A\circ i$ and $g_B=\pi_B\circ i$. Then, $(D,g_A,g_B)$ is also a product of $A$ and $B$. This fact can be seen as follows. Suppose $C$ is set, and $f_A:C\to A$, $f_B:C\to B$ are functions. We can define $f:C\to D$ by $f(c)=i^{-1}((f_A(c),f_B(c)))$. This map satisfies $f_A=g_A\circ f$ and $f_B=g_B\circ f$ since
+
+$$g_A\circ f =(\pi_A\circ i)\circ (i^{-1}(f_A(c),f_B(c)))=f_A(c).$$
+
+This is, however, the only freedom we have for choosing products. Every product of $A,B$ in $\Set$ will be obtained by starting with $(A\times B,\pi_A,\pi_B)$ and composing with a bijection. To summarize this situation, we say that categorical products are not unique but they are {\em unique up to isomorphism}. Moreover, given another product $(D,g_A,g_B)$, there is a {\em unique} isomorphism $i:D\to A\times B$ such that $f_A=\pi_A\circ f$ and$g_B=\pi_B\circ i$. For this reason we say that products are {\em unique up to unique isomorphism}. The proof for the category of sets is no easier than the general case, which is given in proposition \ref{product-unique}
+\end{rem}
+
+\begin{prop}\label{product-unique} Let $A,B\in\cC$ be objects in a category. Let $(C,f_A,f_B)$, $(D,g_A,g_B)$ be products of $A$ and $B$. There exists a unique isomorphism $i:C\to D$ such that $f_A= g_A\circ i$ and $f_B=g_B\circ i$.
+\end{prop}
+\begin{proof}\Note{Do proof.}
+\end{proof}
+
+\begin{rem} Definition \ref{product-definition} is our first example of a definition by a {\em universal property}. The property that the triple $(A\times B,\pi_A,\pi_B)$ is asked to satisfy in the definition is the universal property. In words, we will sometimes say that the product of $A,B$ is universal with respect to the property of having morphisms into $A$ and $B$. In light of proposition \ref{product-unique}, the categorical definition of product is unique up to isomorphism, and in light of proposition \ref{product-in-set} this unique product is isomorphic to the usual Cartesian product. Thus, at least for the category of sets, definition \ref{product-definition} is a more-complicated and less-precise way of defining the Cartesian product. There are several general reasons why one might prefer definitions by universal property:
+
+\begin{enumerate}
+\item \Note{Add reasons!}
+\end{enumerate}
+\end{rem}
+
+\begin{defn}[Coproduct]\label{coproduct-definition} Let $A,B\in \cC$ be objects in a category. A {\em coproduct} of $A$ and $B$ is the following data:
+
+\begin{enumerate}
+\item An item $A\sqcup B\in \cC$;
+\item A morphism $i_A:A\to A\sqcup B$;
+\item A morphism $i_B:B\times A\sqcup B$;
+\end{enumerate}
+
+such that for all other objects $C\in \cC$ with morphisms $f_A:A\to A\sqcup B$, $f_B:B\to A\sqcup B$, there exists a unique morphism $f:A\sqcup B\to C$ such that the diagram
+
+% https://q.uiver.app/#q=WzAsNCxbMSwxLCJBXFxzcWN1cCBCIl0sWzAsMiwiQSJdLFsxLDAsIkMiXSxbMiwyLCJCIl0sWzAsMywiaV9CIiwyXSxbMCwyLCJmIiwxXSxbMSwyLCJmX0EiXSxbMywyLCJmX0IiLDJdLFsxLDAsImlfQSIsMl1d
+\[\begin{tikzcd}
+	& C \\
+	& {A\sqcup B} \\
+	A && B
+	\arrow["f"{description}, from=2-2, to=1-2]
+	\arrow["{i_B}"', from=2-2, to=3-3]
+	\arrow["{f_A}", from=3-1, to=1-2]
+	\arrow["{i_A}"', from=3-1, to=2-2]
+	\arrow["{f_B}"', from=3-3, to=1-2]
+\end{tikzcd}\]
+
+commutes.
+
+\raggedleft\qedsymbol{}
+\end{defn}
+
+\begin{rem} Definition \ref{coproduct-definition} of the coproduct is another definition by universal property. The universal property, of course, is very similar to the universal property of the product. In a formal sense it is the same universal property but with all of the arrows reversed. In particular, proposition \ref{product-coproduct-duality} shows that products and coproducts are formally dual in the sense that products (resp. coproducts) in a category $\cC$ correspond to coproducts (resp. products) in the opposite category $\cC^{\op}$. This is a common theme in category. Many notions have corresponding dual notions, and the general terminology for the dual notion is to add the prefix ``co-".
+\end{rem}
+
+\begin{prop}\label{product-coproduct-duality} Let $A,B\in \cC$ be objects in a category. Let $(A\times B,\pi_A,\pi_B)$ be a product of $A,B$ in $\cC$. The triple $((A\times B)^{\op},\pi_A^{\op},\pi_B^{\op})$ is a coproduct of $A^{\op},B^{\op}$ in $\cC^{\op}$. Similarly, if $(A\sqcup B,i_A,i_B)$ is a coproduct of $A,B$ in $\cC$ then $((A\sqcup B)^{\op},i_A^{\op},i_B^{\op})$ is a product in $A^{\op},B^{\op}$ in $\cC^{\op}$.
+\end{prop}
+\begin{proof}\Note{do proof}
+\end{proof}
+
+\begin{rem}
+\end{rem}
+
+\begin{prop} The \Note{contrast Set, Top, Vec, Grp. Very different coproducts.}
+\end{prop}
 
 
-[WORK: this section should include all of the structures which are neccecary for the rest of the book,
+
+\Note{ this section should include all of the structures which are neccecary for the rest of the book,
 and are too cumbersome to define on-site. It should also read as an introducting to how to think in the language of categories. Here is the running list of neccecary topics
-
 \begin{itemize}
 \item Products/coproducts/biproducts;
 \item zero objects;
-\item $\CC$-linear structure;
+\item $\bC$-linear structure;
 \item Functors, natural equivalence, equivalence of categories, NOT Yoneda lemma;
-\item Opposite category. This is relevant for the discussions of time-reversal which will be at play during the book. Namely, given an MTC I want to define $\overline{\C}$ so that $Z(\C)\cong \C \boxtimes \overline{\C}$. Also, when talking about module categories, the category $\mathcal{M}^{op}$ is going to show up when we reverse the direction of the boundary.
-\end{itemize}
-]
+\item Opposite category. This is relevant for the discussions of time-reversal which will be at play during the book. Namely, given an MTC I want to define $\overline{\cC}$ so that $Z(\cC)\cong \cC \boxtimes \overline{\cC}$. Also, when talking about module categories, the category $\mathcal{M}^{op}$ is going to show up when we reverse the direction of the boundary.
+\end{itemize}}
 
-[WORK: maybe use homotopy theory as a reccuring motivating example?]
+\Note{maybe use homotopy theory as a reccuring motivating example?}
 
-\begin{definition}[$\CC$-linear category] A $\CC$-linear category is the following data:
+\begin{defn}[$\bC$-linear category] A $\bC$-linear category is the following data:
 
 \begin{enumerate}
-\item A category $\C$;
-\item The structure of a $\CC$-vector space on $\Hom(A,B)$ for all $A,B\in \C$.
+\item A category $\cC$;
+\item The structure of a $\bC$-vector space on $\Hom(A,B)$ for all $A,B\in \cC$.
 
 \end{enumerate}
 
@@ -210,27 +284,27 @@ Such that:
 
 \begin{enumerate}
 
-\item The composition maps $\circ:\Hom(B,C)\times \Hom(A,B)\to \Hom(A,C)$ are bilinear maps of vector spaces for all $A,B,C\in \C$.
+\item The composition maps $\cC:\Hom(B,C)\times \Hom(A,B)\to \Hom(A,C)$ are bilinear maps of vector spaces for all $A,B,C\in \cC$.
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
 
 
-\begin{definition}[$\CC$-linear functor] A $\CC$-linear functor between $\CC$-linear categories $\C,\Dcat$ is a functor $F:\C\to\Dcat$ such that $F:\Hom_\C(A,B)\to\Hom_\Dcat(F(A),F(B))$ is a linear map of vector spaces for all $A,B\in\C$.
+\begin{defn}[$\bC$-linear functor] A $\bC$-linear functor between $\bC$-linear categories $\cC,\cD$ is a functor $F:\cC\to\cD$ such that $F:\Hom_\cC(A,B)\to\Hom_\cD(F(A),F(B))$ is a linear map of vector spaces for all $A,B\in\cC$.
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
 
-[WORK: do I need to define $\CC$-linear natural transformation?]
+\Note{do I need to define $\bC$-linear natural transformation?}
 
 \subsection{Monoidal categories}
 
 \subsubsection{Motivation, definition, and string diagrams}
 
-[WORK: an early reference for string diagrams is \cite{moussouris1984quantum}. Maybe I should cite it?]
+\Note{ an early reference for string diagrams is \cite{moussouris1984quantum}. Maybe I should cite it?}
 
 The goal of this sectio is to introduce the language neccecary for a proper detailed discussion of modular tensor categories. Despite the fact that the language of composition is very useful for MTCs, there are still many concepts in MTC theory which require more structure than just composition. In the sections that follow we will introduce these structures one-by-one, giving motivation and proving basic properties along the way.
 
@@ -240,12 +314,12 @@ By the end of our discussion, we will be able to discuss situations like these, 
 \tikzfig{category-theory-motivating-example}
 \end{equation*}
 
-This sort of diagram will take place in some category $\C$. The labeles $A,B,A^*,B^*$ represent objects in $\C$. The objects $(A,A^*)$ form a particle/antiparticle pair, and the objects $(B,B^*)$ form a particle/antiparticle pair. Naively, we could interpret this diagram as follows. To begin, there are no particles. Then, we have creation maps $\text{create}_{A,A^*}$ and $\text{create}_{B^*,B}$ which pairs of particles and their antiparticles. Then we have three different braids, $\text{braid}_{A^*,B^*}$, $\text{braid}_{A,B^*}$, and $\text{braid}_{A^*,B}$. The overall process is the composition of these:
+This sort of diagram will take place in some category $\cC$. The labeles $A,B,A^*,B^*$ represent objects in $\cC$. The objects $(A,A^*)$ form a particle/antiparticle pair, and the objects $(B,B^*)$ form a particle/antiparticle pair. Naively, we could interpret this diagram as follows. To begin, there are no particles. Then, we have creation maps $\text{create}_{A,A^*}$ and $\text{create}_{B^*,B}$ which pairs of particles and their antiparticles. Then we have three different braids, $\text{braid}_{A^*,B^*}$, $\text{braid}_{A,B^*}$, and $\text{braid}_{A^*,B}$. The overall process is the composition of these:
 
-$$(\text{braid}_{A^*,B})\circ (\text{braid}_{A,B^*})\circ (\text{braid}_{A^*,B^*}) \circ (\text{create}_{B^*,B})\circ (\text{create}_{A,A^*}).$$
+$$(\text{braid}_{A^*,B})\cC (\text{braid}_{A,B^*})\cC (\text{braid}_{A^*,B^*}) \cC (\text{create}_{B^*,B})\cC (\text{create}_{A,A^*}).$$
 
 
-These creation maps and braiding maps are exactly the sort of maps which we will be introducing as extra structures on our category during this chapter. One lingering problem, however, is that the naive approach to formalising these diagrams in category theory results in long chains of composition. These long chains of composition hide the real structure of the problem, and make processes like the one in diagram [ref] much harder to parse. It is for this reason that we introduce a \textit{graphical language for category theory}. This graphical language makes the diagrams like [ref] rigorous mathematical notion which describe well-defined morphisms. These diagrams are known as \textit{string diagrams}.
+These creation maps and braiding maps are exactly the sort of maps which we will be introducing as extra structures on our category during this chapter. One lingering problem, however, is that the naive approach to formalising these diagrams in category theory results in long chains of composition. These long chains of composition hide the real structure of the problem, and make processes like the one in diagram [ref] much harder to parse. It is for this reason that we introduce a {\em graphical language for category theory}. This graphical language makes the diagrams like [ref] rigorous mathematical notion which describe well-defined morphisms. These diagrams are known as {\em string diagrams}.
 
 The main principle of string diagrams is that morphisms are represented as follows:
 
@@ -265,7 +339,7 @@ Accordingly, the identity map has a simple implementation:
 \tikzfig{identity-string-diagram}
 \end{equation*}
 
-We now give our first major example of adding structure, and how that structure can be interpreted in terms of string diagrams. This structure is that of a \textit{monoidal category}. For technical reasons we only define \textit{strict} monoidal categories for now - we will come back to the general definition later. Monoidal categories give a way to put objects together. For instance, in diagram [ref] we had four particles all together. We need to way to discuss composite-particle systems. In quantum mechanics, forming a composite system is done by taking the tensor product. Hence, we will use the notation $\otimes$ for joining particles in our current setting. We will even use the term ``tensor product" to discuss it. In general, joining two systems is one way of going from pairs of systems to individual systems:
+We now give our first major example of adding structure, and how that structure can be interpreted in terms of string diagrams. This structure is that of a {\em monoidal category}. For technical reasons we only define {\em strict} monoidal categories for now - we will come back to the general definition later. Monoidal categories give a way to put objects together. For instance, in diagram [ref] we had four particles all together. We need to way to discuss composite-particle systems. In quantum mechanics, forming a composite system is done by taking the tensor product. Hence, we will use the notation $\otimes$ for joining particles in our current setting. We will even use the term ``tensor product" to discuss it. In general, joining two systems is one way of going from pairs of systems to individual systems:
 
 \begin{align*}
 (\text{systems})\times (\text{systems})&\xrightarrow{}(\text{systems}).\\
@@ -274,24 +348,24 @@ We now give our first major example of adding structure, and how that structure 
 
 In the world of category theory, we only require some basic properties of this joining. Namely, it should be functorial and satisfy some simple conditions: 
 
-\begin{definition}[Strict monoidal category] A strict monoidal category is the following data:
+\begin{defn}[Strict monoidal category] A strict monoidal category is the following data:
 
 \begin{enumerate}
-\item A category $\C$;
-\item (Tensor product) A functor $\otimes: \C \times \C \to \C$;
-\item (Unit) A distinguished element $\one\in \C$;
+\item A category $\cC$;
+\item (Tensor product) A functor $\otimes: \cC \times \cC \to \cC$;
+\item (Unit) A distinguished element $\bone\in \cC$;
 \end{enumerate}
 
 Such that:
 
 \begin{enumerate}
-\item (Unit axiom) Let $A,A'\in \C$ be objects and let $f:A\to A'$ be a morphism. We have
+\item (Unit axiom) Let $A,A'\in \cC$ be objects and let $f:A\to A'$ be a morphism. We have
 
 \begin{align*}
-A\otimes \one = \one \otimes A =A, && f\otimes \id_{\one} = \id_{\one}\otimes f = f.
+A\otimes \bone = \bone \otimes A =A, && f\otimes \id_{\bone} = \id_{\bone}\otimes f = f.
 \end{align*}
 
-\item (Associativity) Let $A,B,C,A',B',C'\in\C$ be objects, and let $f:A\to A'$, $g:B\to B'$, $h:C\to C'$ be morphisms. We have
+\item (Associativity) Let $A,B,C,A',B',C'\in\cC$ be objects, and let $f:A\to A'$, $g:B\to B'$, $h:C\to C'$ be morphisms. We have
 
 \begin{align*}
 (A\otimes B)\otimes C = A\otimes (B\otimes C), && (f\otimes g)\otimes h = f\otimes (g\otimes h).
@@ -299,23 +373,23 @@ A\otimes \one = \one \otimes A =A, && f\otimes \id_{\one} = \id_{\one}\otimes f 
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
-The object $\one\in \C$ is important. Just like how groups of symmetries always include the ``do-nothing" symmetry, strict monoidal categories should always include the unit. In this case, $\one\in \C$ represents the empty particle - no particle at all. In every particle theory there should be the possibility of not having any particles. Joining the empty particle with any other particle should obviously do nothing, hence the axiom $1\otimes A = A\otimes 1 = A$.
+The object $\bone\in \cC$ is important. Just like how groups of symmetries always include the ``do-nothing" symmetry, strict monoidal categories should always include the unit. In this case, $\bone\in \cC$ represents the empty particle - no particle at all. In every particle theory there should be the possibility of not having any particles. Joining the empty particle with any other particle should obviously do nothing, hence the axiom $1\otimes A = A\otimes 1 = A$.
 
-We can now work strict monoidal categories into our graphical language. The tensor product of two objects is represented by putting two lines adjacent to one another. For instance, let $\C$ be a strict monoidal category, let $A,B,C,D\in \C$ be four objects, and let $f:A\to C$, $g:B\to D$ be morphisms. We have
+We can now work strict monoidal categories into our graphical language. The tensor product of two objects is represented by putting two lines adjacent to one another. For instance, let $\cC$ be a strict monoidal category, let $A,B,C,D\in \cC$ be four objects, and let $f:A\to C$, $g:B\to D$ be morphisms. We have
 
 \begin{equation*}
 \tikzfig{monoidal-string-diagram}
 \end{equation*}
 
-The monoidal unit $\one$ is distinguished in monoidal categories, and hence is represented with a special line. We will either use a dotted line, or no line at all:
+The monoidal unit $\bone$ is distinguished in monoidal categories, and hence is represented with a special line. We will either use a dotted line, or no line at all:
 
 \begin{equation*}
 \tikzfig{monoidal-unit-string-diagram}
 \end{equation*}
 
-We \textit{do not} require that the lines drawn in string diagrams be straight. They can curve any amount so long as it is clear that they are directly connecting an output to an input. The lines cannot cross each other or double back. Additionally, when it is clear from context, we \textit{do not} require ourselves to include every label. For example, the following is a valid diagram in all strict monoidal categories $\C$, where $A,B,C,D,E,F,G,H\in \C$ are objects, and $f:A\otimes B\otimes C \to E\times F$, $g: E \to I\otimes G$, $h: F\otimes D\to H$, and $k:G\otimes H \to \one$ are morphisms:
+We {\em do not} require that the lines drawn in string diagrams be straight. They can curve any amount so long as it is clear that they are directly connecting an output to an input. The lines cannot cross each other or double back. Additionally, when it is clear from context, we {\em do not} require ourselves to include every label. For example, the following is a valid diagram in all strict monoidal categories $\cC$, where $A,B,C,D,E,F,G,H\in \cC$ are objects, and $f:A\otimes B\otimes C \to E\times F$, $g: E \to I\otimes G$, $h: F\otimes D\to H$, and $k:G\otimes H \to \bone$ are morphisms:
 
 \begin{equation*}
 \tikzfig{big-example-string-diagram}
@@ -324,17 +398,17 @@ We \textit{do not} require that the lines drawn in string diagrams be straight. 
 
 \subsubsection{Braided monoidal categories}
 
-We continue our definitions of structures on monoidal categories, and their expression in the language of string diagrams. Our next definition is that of a strict \textit{braided} monoidal category:
+We continue our definitions of structures on monoidal categories, and their expression in the language of string diagrams. Our next definition is that of a strict {\em braided} monoidal category:
 
 
-\begin{definition}[Strict braided monoidal category] A strict braided monoidal category is the following data:
+\begin{defn}[Strict braided monoidal category] A strict braided monoidal category is the following data:
 
 \begin{enumerate}
-\item A strict monoidal category $\C$;
-\item (Braiding) Isomorphisms $\beta_{A,B}: A\otimes B \xrightarrow{} B\otimes A$ for all $A,B\in \C$ which form a natural isomorphism between the functors $\C\times \C\to \C$ given by $(A,B)\mapsto A\otimes B$ and $(A,B)\mapsto B\otimes A$.
+\item A strict monoidal category $\cC$;
+\item (Braiding) Isomorphisms $\beta_{A,B}: A\otimes B \xrightarrow{} B\otimes A$ for all $A,B\in \cC$ which form a natural isomorphism between the functors $\cC\times \cC\to \cC$ given by $(A,B)\mapsto A\otimes B$ and $(A,B)\mapsto B\otimes A$.
 \end{enumerate}
 
-Such that for all $A,B,C\in \C$, the diagrams
+Such that for all $A,B,C\in \cC$, the diagrams
 
 % https://q.uiver.app/#q=WzAsMyxbMCwyLCJCXFxvdGltZXMgQ1xcb3RpbWVzIEEiXSxbMSwxLCJCXFxvdGltZXMgQVxcb3RpbWVzIEMiXSxbMCwwLCJBXFxvdGltZXMgQlxcb3RpbWVzIEMiXSxbMSwwLCJcXGlkX3tCfVxcb3RpbWVzIFxcYmV0YV97QSxDfSJdLFsyLDEsIlxcYmV0YV97QSxCfVxcb3RpbWVzIFxcaWRfe0N9Il0sWzIsMCwiXFxiZXRhX3tBLEJcXG90aW1lcyBDfSIsMl1d
 \[\begin{tikzcd}
@@ -361,7 +435,7 @@ and
 commute.
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
 The idea for how to implement braided monoidal categories in the language of string diagrams is to introduce a special symbol for the braiding map $\beta_{A,B}$. Namely, we define graphically overcrossing and undercrossing as follows:
 
@@ -378,15 +452,15 @@ The fact that overcrossing and undercrossing are related by an inverse encodes t
 
 We can now describe the conditions on a strict braided monoidal category in a graphical way. The fact that $\beta$ is a natural transformation can be reinterpreted as follows:
 
-\begin{lemma} Let $\C$ be a strict braided monoidal category. For all $A,B,C,D\in \C$ and $f:A\to C$, $g:B\to D$, we have the following equality of string diagrams:
+\begin{lem} Let $\cC$ be a strict braided monoidal category. For all $A,B,C,D\in \cC$ and $f:A\to C$, $g:B\to D$, we have the following equality of string diagrams:
 
 \begin{equation*}
 \tikzfig{braiding-naturality-string-diagram}
 \end{equation*}
 
 The same formula holds replacing overcrossing with undercrossing on both sides.
-\end{lemma}
-\begin{proof} Consider the morphism $(f,g):(A,B)\xrightarrow{}(C,D)$ in $\C\times \C$. The naturality of $\beta$ implies the following commutative square:
+\end{lem}
+\begin{proof} Consider the morphism $(f,g):(A,B)\xrightarrow{}(C,D)$ in $\cC\times \cC$. The naturality of $\beta$ implies the following commutative square:
 
 
 % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBXFxvdGltZXMgQiJdLFsxLDAsIkNcXG90aW1lcyBEIl0sWzEsMSwiRFxcb3RpbWVzIEMiXSxbMCwxLCJCXFxvdGltZXMgQSJdLFswLDMsIlxcYmV0YV97QSxCfSJdLFsxLDIsIlxcYmV0YV97QyxEfSJdLFswLDEsImZcXG90aW1lcyBnIl0sWzMsMiwiZ1xcb3RpbWVzIGYiXV0=
@@ -409,17 +483,17 @@ The coherence axiom can be stated diagrammatically as follows,
 \tikzfig{braiding-coherence-string-diagram}
 \end{equation*}
 
-and similarly with replacing overcrossing with undercrossing. The importance of this axiom is that it means that our graphical langauge can express braid diagrams without other ambiguity. We can safely deform strings behind braids and not need to worry about whether we are applying $\beta_{A,B\otimes C}$ or $(\id{B}\otimes \beta_{A,C})\circ (\beta_{A,B}\otimes \id_{C})$.
+and similarly with replacing overcrossing with undercrossing. The importance of this axiom is that it means that our graphical langauge can express braid diagrams without other ambiguity. We can safely deform strings behind braids and not need to worry about whether we are applying $\beta_{A,B\otimes C}$ or $(\id{B}\otimes \beta_{A,C})\cC (\beta_{A,B}\otimes \id_{C})$.
 
 A fundamental result about braided monoidal categories is that the coherence condition given is enough to rearrange braids at will. In particular, we have the following key proposition:
 
-\begin{proposition}[Yang-Baxter equation] Let $\C$ be a strict braided monoidal category. Let $A,B,C\in \C$ be objects. We have
+\begin{prop}[Yang-Baxter equation] Let $\cC$ be a strict braided monoidal category. Let $A,B,C\in \cC$ be objects. We have
 
 \begin{equation*}
 \tikzfig{Yang-Baxter}
 \end{equation*}
 
-\end{proposition} 
+\end{prop} 
 \begin{proof} We offer a graphical proof, using first the coherence condition and then naturality:
 
 
@@ -431,7 +505,7 @@ A fundamental result about braided monoidal categories is that the coherence con
 
 We get the following corrolary:
 
-\begin{corollary} Let $\C$ be a strict braided monoidal category. Let $A\in \C$ be an object. The map
+\begin{cor} Let $\cC$ be a strict braided monoidal category. Let $A\in \cC$ be an object. The map
 
 \begin{align*}
 B_n &\xrightarrow{} \Aut(A^{\otimes n})\\
@@ -439,7 +513,7 @@ B_n &\xrightarrow{} \Aut(A^{\otimes n})\\
 \end{align*}
 
 is a homomorphism of groups.
-\end{corollary}
+\end{cor}
 \begin{proof} We saw in Proposition [ref] that the relations on $B_n$ are generated by the conditons $\sigma_{i+1}\sigma_{i}\sigma_{i+1}=\sigma_{i}\sigma_{i+1}\sigma_{i}$. These conditions are satisfied by the braiding by Proposition [ref]. Hence, the map is a homomorphism of groups.
 \end{proof}
 
@@ -447,7 +521,7 @@ is a homomorphism of groups.
 
 In this section we will give concrete examples of monoidal categories and braided monoidal categories. What we will find, however, is that these examples will all demonstrate the same subtle problem. For example, here is a category which we would want to give as an example of a monoidal category:
 
-$$\C=\Set,\,\, \otimes = \text{Cartesian product}.$$
+$$\cC=\Set,\,\, \otimes = \text{Cartesian product}.$$
 
 The Cartesian product is certainly functorial. Namely, given morphisms $f:A\to C$ and $g:B\to D$ we get a morphism
 
@@ -463,7 +537,7 @@ However we get a key issue $(A\times B)\times C \neq A\times (B\times C)$. We ha
 ((a,b),c)&\mapsto (a,(b,c))
 \end{align*}
 
-but this isomorphism is \textit{not} an equality. This means that $\Set$ does not satisfy the definiton of a strict monoidal category! In general, all the examples we would want to give of monoidal categories fail to be strict monoidal categories. In this section we discuss a method for loosening the definition of monoidal category so that $\Set$ and other examples can be included in the definition.
+but this isomorphism is {\em not} an equality. This means that $\Set$ does not satisfy the definiton of a strict monoidal category! In general, all the examples we would want to give of monoidal categories fail to be strict monoidal categories. In this section we discuss a method for loosening the definition of monoidal category so that $\Set$ and other examples can be included in the definition.
 
 For this reason, we give the following warning: \textbf{This section is not neccecary for a conceptual understanding of the subject matter. It is material of technical importance, and thus of interest to those who want a correct formal understanding of the mathematics at play.}
 
@@ -477,19 +551,19 @@ The fact that this does not cause issues is a corrollary of MacLane's coherence 
 
 The most naive way of loosening the definition of monoidal category is to only enforce the condition $(A\otimes B)\otimes C\cong A\otimes (B\otimes C)$ instead of equality. However, this leads to a problem. The associativity axiom on morphisms $(f\otimes g)\otimes h = f\otimes (g\otimes h)$  no longer makes sense because there is no way of comparing morphisms on $(A\otimes B)\otimes C$ and $A\otimes (B\otimes )C$. In general category theory fashion, we should choose specific isomorphisms $\alpha_{A,B,C}:(A\otimes B)\otimes C\xrightarrow{\sim} A\otimes (B\otimes C)$ and require that  those isomorphisms satisfy certain coherence conditions. This leads us to our definition of a non-strict monoidal category:
 
-\begin{definition}[Monoidal category] A monoidal category is the following data:
+\begin{defn}[Monoidal category] A monoidal category is the following data:
 
 \begin{enumerate}
-\item A category $\C$.
-\item (Tensor product) A functor $\otimes: \C \times \C \to \C$.
-\item (Unit) A distinguished element $\one\in \C.$
+\item A category $\cC$.
+\item (Tensor product) A functor $\otimes: \cC \times \cC \to \cC$.
+\item (Unit) A distinguished element $\bone\in \cC.$
 \item (Associator) A natural isomorphism
 
 $$\alpha: \--\otimes (\-- \otimes \--) \xrightarrow{\sim} (\--\otimes \--)\otimes \-- , $$
 
-where $\-- \otimes (\--\otimes \--)$ denotes the functor $\C\times \C\times \C\to\C$ sending $(A,B,C)$ to $A\otimes (B\otimes C)$, and similarly for $(\-- \otimes \-- )\otimes\--$.
-\item (Left unitor) A natural isomorphism $\lambda: \one\otimes \-- \xrightarrow{\sim} \--$, where $\one\otimes \--$ denotes the functor $\C\to \C$ sending $A$ to $\one\otimes A$, and $\--$ denotes the identity.
-\item (Right unitor) A natural isomorphism $\rho: \--\otimes \one \xrightarrow{\sim} \--$, where $\--\otimes \one$ is the functor $\C\to \C$ sending $A$ to $A\otimes \one$.
+where $\-- \otimes (\--\otimes \--)$ denotes the functor $\cC\times \cC\times \cC\to\cC$ sending $(A,B,C)$ to $A\otimes (B\otimes C)$, and similarly for $(\-- \otimes \-- )\otimes\--$.
+\item (Left unitor) A natural isomorphism $\lambda: \bone\otimes \-- \xrightarrow{\sim} \--$, where $\bone\otimes \--$ denotes the functor $\cC\to \cC$ sending $A$ to $\bone\otimes A$, and $\--$ denotes the identity.
+\item (Right unitor) A natural isomorphism $\rho: \--\otimes \bone \xrightarrow{\sim} \--$, where $\--\otimes \bone$ is the functor $\cC\to \cC$ sending $A$ to $A\otimes \bone$.
 \end{enumerate}
 
 Additionally, a monoidal category is required to satisfy the following properties:
@@ -498,7 +572,7 @@ Additionally, a monoidal category is required to satisfy the following propertie
 \item (Triangle identity) The diagram
 
 \[\begin{tikzcd}
-	{} & {} & {\left(A\otimes \one\right)\otimes B} & {} & {A\otimes (\one\otimes B)} \\
+	{} & {} & {\left(A\otimes \bone\right)\otimes B} & {} & {A\otimes (\bone\otimes B)} \\
 	&& {} & {A\otimes B} \\
 	&&&& {}
 	\arrow["{\alpha_{A,1,B}}", from=1-3, to=1-5]
@@ -506,7 +580,7 @@ Additionally, a monoidal category is required to satisfy the following propertie
 	\arrow["{\id_A\otimes \lambda_B}", from=1-5, to=2-4]
 \end{tikzcd}\]
 
-commutes for all $A,B\in \C$.
+commutes for all $A,B\in \cC$.
 
 \item (Pentagon identity) The diagram
 
@@ -521,18 +595,18 @@ commutes for all $A,B\in \C$.
 	\arrow["{\alpha_{A,B\otimes C,D}}"', from=3-1, to=3-3]
 \end{tikzcd}\]
 
-commutes for all $A,B,C,D\in \C$.
+commutes for all $A,B,C,D\in \cC$.
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
 With this more general definition, we now have many examples of monoidal categories:
 
-\begin{proposition} The following collections of data form monoidal categories
+\begin{prop} The following collections of data form monoidal categories
 
 \begin{enumerate}[(i)]
-\item The category $\C=\Set$, with tensor product $\otimes = \text{Cartesian product}$, monoidal unit $\one =\{*\}$, associator
+\item The category $\cC=\Set$, with tensor product $\otimes = \text{Cartesian product}$, monoidal unit $\bone =\{*\}$, associator
 
 \begin{align*}
 \alpha_{A,B,C}: A\times (B\times C) &\xrightarrow{\sim}(A\times B)\times C,\\
@@ -542,11 +616,11 @@ With this more general definition, we now have many examples of monoidal categor
 and unitors 
 
 \begin{align*}
-\lambda: \one \otimes A &\to A && \rho:  A\otimes \one \to A.\\
+\lambda: \bone \otimes A &\to A && \rho:  A\otimes \bone \to A.\\
 (*, a)&\mapsto a && (a,*)\mapsto a
 \end{align*}
 
-\item The plain category $\C=\Vec_{\CC}$, with its standard tensor product, monoidal unit $\one =\CC$, associator
+\item The plain category $\cC=\Vec_{\bC}$, with its standard tensor product, monoidal unit $\bone =\bC$, associator
 
 \begin{align*}
 \alpha_{A,B,C}: A\times (B\times C) &\xrightarrow{\sim}(A\times B)\times C,\\
@@ -556,17 +630,17 @@ a\otimes (b\otimes c ) & \mapsto (a\otimes b)\otimes c
 and unitors 
 
 \begin{align*}
-\lambda: \one \otimes A &\to A && \rho:  A\otimes \one \to A.\\
+\lambda: \bone \otimes A &\to A && \rho:  A\otimes \bone \to A.\\
 1\otimes a &\mapsto  a && a\otimes 1 \mapsto a
 \end{align*}
 
-\item The category $\C=\Set$ with tensor product $\otimes=\text{Disjoint union}$ and $\one=\{\}$, with a standard choice of associators and unitors;
+\item The category $\cC=\Set$ with tensor product $\otimes=\text{Disjoint union}$ and $\bone=\{\}$, with a standard choice of associators and unitors;
 
-\item The category $\C=\Vec_{\CC}$ with tensor product $\otimes = \text{Direct sum}$, and $\one = 0$, with a standard choice of assoicators and unitors.
+\item The category $\cC=\Vec_{\bC}$ with tensor product $\otimes = \text{Direct sum}$, and $\bone = 0$, with a standard choice of assoicators and unitors.
 \end{enumerate}
 
 
-\end{proposition}
+\end{prop}
 \begin{proof} These facts are staightforward to verify, and are left as an exercise to the reader.
 \end{proof}
 
@@ -586,28 +660,28 @@ All string diagrams would now need $\alpha$ maps thrown in at key points to make
 
 This means that we haven't really gotten anywhere. We defined the notion of a non-strict monoidal category so that we could include our favorite examples, but then we observed that string diagrams still fail to describe those examples!  This seemingly bad situation is rectified by the following theorem, which we first state informally.
 
-MacLane's cohrence theorem: \textit{every monoidal category is equvialent to a strict monoidal category}.
+MacLane's cohrence theorem: {\em every monoidal category is equvialent to a strict monoidal category}.
 
 This gives us a workflow for the book. We will frame our discussion so that it applies to arbitrary monoidal categories. That way, all our usual examples are included. Then, when we want to use string diagrams, we use MacLane's coherence theorem to pass to an equivalent strict category, in which our diagrams make sense. Then, when we are done using the diagram, we pass the conclusion of the argument through the equivalence! We will be using this subtle technique repeatedly throughout the book. To save time and energy, we won't explicitely mention it. We will implicitely pass to an equivalent strict category without making any special note.
 
-Sometimes we will want to pass to a strict monoidal category even before string diagrams come into play. For instance, in Proposition [ref] we proved that every strict braided monoidal category $\C $ comes paired with a group homomorphism
+Sometimes we will want to pass to a strict monoidal category even before string diagrams come into play. For instance, in Proposition [ref] we proved that every strict braided monoidal category $\cC $ comes paired with a group homomorphism
 
 $$B_n \xrightarrow{} \Aut\left(A^{\otimes n}\right)$$
 
-for all $A\in \C$, $n\geq 1$. Once we generalize strict braided monoidal categories to possibly non-strict braided monoidal categories, this proposition will become false. The object $A^{\otimes n}$ does not exist - a choice of parenthesization needs to be made. Every time that an element of the braid group acts on $A^{\otimes n}$, the parentheses need to be re-arranged using associators, then the braiding map $\beta$ can be applied, and then the parentheses need to be re-arranged back into their original position using associators again.
+for all $A\in \cC$, $n\geq 1$. Once we generalize strict braided monoidal categories to possibly non-strict braided monoidal categories, this proposition will become false. The object $A^{\otimes n}$ does not exist - a choice of parenthesization needs to be made. Every time that an element of the braid group acts on $A^{\otimes n}$, the parentheses need to be re-arranged using associators, then the braiding map $\beta$ can be applied, and then the parentheses need to be re-arranged back into their original position using associators again.
 
 Not only does this non-strict version of Proposition [ref] take more time and space to set-up, but it also leads to potential thorny issues. There are multiple ways to rearange parentheses from one starting point to the other. How do we know that they will all give the same map, and hence into a well-defined homomorphism from $B_n$? It follows from general combinatorial principles and a repeated application of the pentagon identity.
 
 This is indicative of the general feeling of working with non-strict monoidal categories. Statements and proofs which were obvious for strict monoidal categories become needlessly unintuitive for non-strict monoidal categories. Hence, it is much better to pass to a strict monoidal category using MacLane's coherence theorem at our first convenience.
 
-Of course, all of this discussion rests on the notion of \textit{equivalent} in MacLane's coherence theorem being well defined, so that we can pass information back and forth through the equivalence. Our notation of equivalence is modeled after the more general notation of equivalence of categories - a pair of functors whose compositions are both naturally isomorphic to the identity. To translate to the present setting, we need a good notion of monoidal functor and monoidal natural transformation so that the equivalence can pass through information about the monoidal structure.
+Of course, all of this discussion rests on the notion of {\em equivalent} in MacLane's coherence theorem being well defined, so that we can pass information back and forth through the equivalence. Our notation of equivalence is modeled after the more general notation of equivalence of categories - a pair of functors whose compositions are both naturally isomorphic to the identity. To translate to the present setting, we need a good notion of monoidal functor and monoidal natural transformation so that the equivalence can pass through information about the monoidal structure.
 
-\begin{definition}[Monoidal functor] A monoidal functor between monoidal categories $(\C,\otimes_{\C}, \alpha_{\C},\lambda_{\C},\rho_{\C},\one_{\C})$ and $(\Dcat,\otimes_{\Dcat},\alpha_{\Dcat},\lambda_{\Dcat},\rho_{\Dcat},1_{\Dcat})$ is the following data:
+\begin{defn}[Monoidal functor] A monoidal functor between monoidal categories $(\cC,\otimes_{\cC}, \alpha_{\cC},\lambda_{\cC},\rho_{\cC},\bone_{\cC})$ and $(\cD,\otimes_{\cD},\alpha_{\cD},\lambda_{\cD},\rho_{\cD},1_{\cD})$ is the following data:
 
 \begin{enumerate}
-\item A functor $F: \C\to \Dcat$.
-\item A morphism $\epsilon:1_{\Dcat}\to F(1_{\C})$.
-\item A natural isomorphism $\mu: F(\--)\otimes_{\Dcat}F(\--)\xrightarrow{\sim}F(\--\otimes_{\C}\--)$.
+\item A functor $F: \cC\to \cD$.
+\item A morphism $\epsilon:1_{\cD}\to F(1_{\cC})$.
+\item A natural isomorphism $\mu: F(\--)\otimes_{\cD}F(\--)\xrightarrow{\sim}F(\--\otimes_{\cC}\--)$.
 \end{enumerate}
 
 Additionally, a monoidal functor is required to satisfy the following properties:
@@ -616,56 +690,56 @@ Additionally, a monoidal functor is required to satisfy the following properties
 \item (Associativity) The diagram
 
 \[\begin{tikzcd}
-	{(F(A)\otimes_{\Dcat}F(B))\otimes_{\Dcat}F(C)} &&& {F(A)\otimes_{\Dcat}(F(B)\otimes_{\Dcat}F(C))} \\
-	{F(A\otimes_{\C}B)\otimes_{\Dcat}F(C)} &&& {F(A)\otimes_{\Dcat}F(B\otimes_{\C}C)} \\
-	{F((A\otimes_{\C} B)\otimes_{\C}C)} && {} & {F(A\otimes_{\C}(B\otimes_{\C}C))}
+	{(F(A)\otimes_{\cD}F(B))\otimes_{\cD}F(C)} &&& {F(A)\otimes_{\cD}(F(B)\otimes_{\cD}F(C))} \\
+	{F(A\otimes_{\cC}B)\otimes_{\cD}F(C)} &&& {F(A)\otimes_{\cD}F(B\otimes_{\cC}C)} \\
+	{F((A\otimes_{\cC} B)\otimes_{\cC}C)} && {} & {F(A\otimes_{\cC}(B\otimes_{\cC}C))}
 	\arrow["{\mu_{A,B}\otimes \id_{F(C)}}", from=1-1, to=2-1]
-	\arrow["{\mu_{A\otimes_{\C}B,C}}", from=2-1, to=3-1]
-	\arrow["{\mu_{A,B\otimes_{\C}C}}", from=2-4, to=3-4]
+	\arrow["{\mu_{A\otimes_{\cC}B,C}}", from=2-1, to=3-1]
+	\arrow["{\mu_{A,B\otimes_{\cC}C}}", from=2-4, to=3-4]
 	\arrow["{\id_{F(A)}\otimes\mu_{B,C}}", from=1-4, to=2-4]
-	\arrow["{F(\alpha_{\C;A,B,C})}"{description}, from=3-1, to=3-4]
-	\arrow["{\alpha_{\Dcat;F(A),F(B),F(C)}}"{description}, from=1-1, to=1-4]
+	\arrow["{F(\alpha_{\cC;A,B,C})}"{description}, from=3-1, to=3-4]
+	\arrow["{\alpha_{\cD;F(A),F(B),F(C)}}"{description}, from=1-1, to=1-4]
 \end{tikzcd}\]
 
-commutes for all $A,B,C\in \C$.
+commutes for all $A,B,C\in \cC$.
 
 \item (Unitality) The diagrams
 
 \[\begin{tikzcd}
-	{1_{\Dcat}\otimes_{\Dcat}F(A)} && {F(1_{\C})\otimes F(A)} \\
-	{F(A)} && {F(1_{\C}\otimes A)}
-	\arrow["{\lambda_{\C;F(A)}}", from=1-1, to=2-1]
-	\arrow["{F(\lambda_{\C;A})}"', from=2-3, to=2-1]
-	\arrow["{\mu_{1_{\C},A}}"', from=1-3, to=2-3]
+	{1_{\cD}\otimes_{\cD}F(A)} && {F(1_{\cC})\otimes F(A)} \\
+	{F(A)} && {F(1_{\cC}\otimes A)}
+	\arrow["{\lambda_{\cC;F(A)}}", from=1-1, to=2-1]
+	\arrow["{F(\lambda_{\cC;A})}"', from=2-3, to=2-1]
+	\arrow["{\mu_{1_{\cC},A}}"', from=1-3, to=2-3]
 	\arrow["{\epsilon\otimes \id_{F(A)}}"', from=1-1, to=1-3]
 \end{tikzcd}\]
 
 and
 
 \[\begin{tikzcd}
-	{F(A)\otimes_{\Dcat}1_{\Dcat}} && {F(A)\otimes_{\Dcat}F(1_{\C})} \\
-	{F(A)} && {F(1_{\C}\otimes A)}
-	\arrow["{\rho_{\C;F(A)}}", from=1-1, to=2-1]
-	\arrow["{F(\rho_{\C;A})}"', from=2-3, to=2-1]
-	\arrow["{\mu_{A,1_{\C}}}"', from=1-3, to=2-3]
+	{F(A)\otimes_{\cD}1_{\cD}} && {F(A)\otimes_{\cD}F(1_{\cC})} \\
+	{F(A)} && {F(1_{\cC}\otimes A)}
+	\arrow["{\rho_{\cC;F(A)}}", from=1-1, to=2-1]
+	\arrow["{F(\rho_{\cC;A})}"', from=2-3, to=2-1]
+	\arrow["{\mu_{A,1_{\cC}}}"', from=1-3, to=2-3]
 	\arrow["{\id_{F(A)}\otimes\epsilon}"', from=1-1, to=1-3]
 \end{tikzcd}\]
 
-commute for all $A\in \C$.
+commute for all $A\in \cC$.
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
 
-\begin{definition}[Monoidal natural transformation] A monoidal natural transformation between two monoidal functors $(F_0,\mu_0,\epsilon_0)$ and $(F_1,\mu_1,\epsilon_1)$ between monoidal categories $(\C,\otimes_{\C},\one_{\C})$ and $(\Dcat,\otimes_{\Dcat},1_{\Dcat})$ is a natural transformation $\eta$ between the underlying functors $F_0,F_1$. Additionally, a monoidal natural transformation is required to satisfy the following properties:
+\begin{defn}[Monoidal natural transformation] A monoidal natural transformation between two monoidal functors $(F_0,\mu_0,\epsilon_0)$ and $(F_1,\mu_1,\epsilon_1)$ between monoidal categories $(\cC,\otimes_{\cC},\bone_{\cC})$ and $(\cD,\otimes_{\cD},1_{\cD})$ is a natural transformation $\eta$ between the underlying functors $F_0,F_1$. Additionally, a monoidal natural transformation is required to satisfy the following properties:
 
 \begin{enumerate}
-\item (Compatibility with tensor product) For all objects $A,B\in \C$, the diagram
+\item (Compatibility with tensor product) For all objects $A,B\in \cC$, the diagram
 
 \[\begin{tikzcd}
-	{F_0(A)\otimes_{\Dcat}F_1(B)} & {F_1(A)\otimes_{\Dcat}F_1(B)} \\
-	{F_0(A\otimes_{\C} B)} & {F_1(A\otimes_{\C} B)}
+	{F_0(A)\otimes_{\cD}F_1(B)} & {F_1(A)\otimes_{\cD}F_1(B)} \\
+	{F_0(A\otimes_{\cC} B)} & {F_1(A\otimes_{\cC} B)}
 	\arrow["{\mu_{0;A,B}}", from=1-1, to=2-1]
 	\arrow["{\mu_{1;A,B}}", from=1-2, to=2-2]
 	\arrow["{\eta_A\otimes \eta_B}", from=1-1, to=1-2]
@@ -677,9 +751,9 @@ commutes.
 \item (Compatibility with unit) The diagram
 
 \[\begin{tikzcd}
-	& {1_{\Dcat}} \\
-	{F_0(1_{\C})} && {F_1(1_{\C})}
-	\arrow["{\eta_{1_{\C}}}", from=2-1, to=2-3]
+	& {1_{\cD}} \\
+	{F_0(1_{\cC})} && {F_1(1_{\cC})}
+	\arrow["{\eta_{1_{\cC}}}", from=2-1, to=2-3]
 	\arrow["{\epsilon_0}"', from=1-2, to=2-1]
 	\arrow["{\epsilon_1}", from=1-2, to=2-3]
 \end{tikzcd}\]
@@ -687,21 +761,21 @@ commutes.
 commutes.
 \end{enumerate}
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
 
-We can now define monoidal equivalence. A \textit{monoidal equivalence} between two monoidal categories $\C,\Dcat$ is a pair of monoidal functors $F:\C\to \Dcat$, $G:\Dcat\to \C$ such that $G\circ F$ is monoidally naturally isomorphic to $\id_{\C}$ and $F\circ G$ is monoidally naturally isomorphic to $\id_{\Dcat}$. We say two categories are monoidally equivalent if there is a monoidal equivalence between them. We can now state MacLane's coherence theorem:
+We can now define monoidal equivalence. A {\em monoidal equivalence} between two monoidal categories $\cC,\cD$ is a pair of monoidal functors $F:\cC\to \cD$, $G:\cD\to \cC$ such that $G\cC F$ is monoidally naturally isomorphic to $\id_{\cC}$ and $F\cC G$ is monoidally naturally isomorphic to $\id_{\cD}$. We say two categories are monoidally equivalent if there is a monoidal equivalence between them. We can now state MacLane's coherence theorem:
 
-\begin{theorem}[MacLane's coherence theorem, ] Every monoidal category is monoidally equivalent to a strict monoidal category.
-\end{theorem}
+\begin{thrm}[MacLane's coherence theorem, ] Every monoidal category is monoidally equivalent to a strict monoidal category.
+\end{thrm}
 
 As we add more structure, it will be a non-trivial task to verify that we can still apply MacLane's coherence theorem. In particular, we will need to strengthen our notion of equivalence to make sure it is strong enough to pass through information about our additional structures. We can see this in the case of braidings already.
 
-\begin{definition}[Braided monoidal category] A braided monoidal category is the following data:
+\begin{defn}[Braided monoidal category] A braided monoidal category is the following data:
 
 \begin{enumerate}
-\item A monoidal category $(\C,\otimes,\alpha, \one)$.
-\item (Braiding) A natural isomorphism $\beta$ between the functor $\C\times \C\to \C$ sending $(A,B)$ to $A\otimes B$, and the functor sending $(A,B)$ to $B\otimes A$.
+\item A monoidal category $(\cC,\otimes,\alpha, \bone)$.
+\item (Braiding) A natural isomorphism $\beta$ between the functor $\cC\times \cC\to \cC$ sending $(A,B)$ to $A\otimes B$, and the functor sending $(A,B)$ to $B\otimes A$.
 \end{enumerate}
 
 Additionally, a braided monoidal category is required to satisfy the following properties:
@@ -733,56 +807,56 @@ and
 	\arrow["{\id_B\otimes \beta_{A,C}}"', from=2-3, to=2-5]
 \end{tikzcd}\]
 
-commute for all $A,B,C\in \C$.
+commute for all $A,B,C\in \cC$.
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
-\begin{definition}[Braided monoidal functor] A braided monoidal functor between braided monoidal categories $(\C,\otimes_{\C},\beta_{\C})$, $(\Dcat,\otimes_{\Dcat},\beta_{\Dcat})$ is a monoidal functor $(F,\mu):\C\to \Dcat$ such that the diagram
+\begin{defn}[Braided monoidal functor] A braided monoidal functor between braided monoidal categories $(\cC,\otimes_{\cC},\beta_{\cC})$, $(\cD,\otimes_{\cD},\beta_{\cD})$ is a monoidal functor $(F,\mu):\cC\to \cD$ such that the diagram
 
 \[\begin{tikzcd}
-	{F(A)\otimes_{\Dcat}F(B)} && {F(B)\otimes_{\Dcat}F(A)} \\
+	{F(A)\otimes_{\cD}F(B)} && {F(B)\otimes_{\cD}F(A)} \\
 	\\
-	{F(A\otimes_{\C}B)} && {F(B\otimes_{\C}A)}
+	{F(A\otimes_{\cC}B)} && {F(B\otimes_{\cC}A)}
 	\arrow["{\mu_{A,B}}", from=1-1, to=3-1]
-	\arrow["{\beta_{\Dcat;F(A),F(B)}}"', from=1-1, to=1-3]
+	\arrow["{\beta_{\cD;F(A),F(B)}}"', from=1-1, to=1-3]
 	\arrow["{\mu_{B,A}}"', from=1-3, to=3-3]
-	\arrow["{F(\beta_{\C;F(A),F(B)})}", from=3-1, to=3-3]
+	\arrow["{F(\beta_{\cC;F(A),F(B)})}", from=3-1, to=3-3]
 \end{tikzcd}\]
 
-commutes for all $A,B\in \C$.
+commutes for all $A,B\in \cC$.
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
 Thankfully, there is no notion of braided monoidal natural transformation - any monoidal natural transformation will automatically repsect the braiding. Hence, we can define two braided monoidal categories to be equivalent if there are braided monoidal functors between them which have compositions which are naturally isomorphic to the identity. Hence we can state a braided MacLane coherence theorem:
 
-\begin{theorem}[Braided MacLane coherence theorem] Every braided monoidal equivalent is equivalent as a braided monoidal category to a strict braided monoidal category.
-\end{theorem}
-\begin{proof}.[WORK: I bet the proof is not that bad. Include it if so.]
+\begin{thrm}[Braided MacLane coherence theorem] Every braided monoidal equivalent is equivalent as a braided monoidal category to a strict braided monoidal category.
+\end{thrm}
+\begin{proof}\Note{ I bet the proof is not that bad. Include it if so.}
 \end{proof}
 
-As we go through this text, we will define increasingly more structure on monoidal categories. We will be implicitely assuming theorems which assert that every structured monoidal categories is equivalent to a structure monoidal category whose underlying monoidal category is strict. Importantly, we will assume that this equivalence respects the relevant structure. We will not state these theorems as we go along the way, but they are true and neccecary for our discussion. [WORK: Is this accurate? What is a good reference for this sort of coherence theorem? Will I talk about it more in the ``Yoneda perspective" chapter?]
+As we go through this text, we will define increasingly more structure on monoidal categories. We will be implicitely assuming theorems which assert that every structured monoidal categories is equivalent to a structure monoidal category whose underlying monoidal category is strict. Importantly, we will assume that this equivalence respects the relevant structure. We will not state these theorems as we go along the way, but they are true and neccecary for our discussion. \Note{ Is this accurate? What is a good reference for this sort of coherence theorem? Will I talk about it more in the ``Yoneda perspective" chapter?}
 
 \subsubsection{Pivotal monoidal categories}
 
-So far we have defined a language for putting particles together and braiding them. The next frontier is to introduce a langauge for creating and fusing particles/antiparticles. Categories with a mechanism for creating and fusing particles/antiparticles is known as a \textit{pivotal monoidal category}.
+So far we have defined a language for putting particles together and braiding them. The next frontier is to introduce a langauge for creating and fusing particles/antiparticles. Categories with a mechanism for creating and fusing particles/antiparticles is known as a {\em pivotal monoidal category}.
 
-In any realistic system, every particle will have a dual \textit{antiparticle}. Particle/antiparticle pairs can always spontaneously be created from the vaccuum. Often, particles/antiparticles can annhilate each other to go back to the vaccum. This process of annhilation is much more subtle however, because a particle/antiparticle pair could also fuse to make a particle which is \textit{not} the vacuum. We delay the subtleties of fusion to our chapter on modular tensor categories. In a category with duals, every object $A\in \C$ will have a dual object which we denote $A^*\in \C$. For now, we introduce categories with maps for annhilation/creation which we call \textit{evaluation} and \textit{coevaluation} respectively:
+In any realistic system, every particle will have a dual {\em antiparticle}. Particle/antiparticle pairs can always spontaneously be created from the vaccuum. Often, particles/antiparticles can annhilate each other to go back to the vaccum. This process of annhilation is much more subtle however, because a particle/antiparticle pair could also fuse to make a particle which is {\em not} the vacuum. We delay the subtleties of fusion to our chapter on modular tensor categories. In a category with duals, every object $A\in \cC$ will have a dual object which we denote $A^*\in \cC$. For now, we introduce categories with maps for annhilation/creation which we call {\em evaluation} and {\em coevaluation} respectively:
 
-\begin{definition}[Right-rigid monoidal category] A right-rigid monoidal category is the following data:
+\begin{defn}[Right-rigid monoidal category] A right-rigid monoidal category is the following data:
 
 \begin{enumerate}
-\item A monoidal category $\C$.
-\item Objects $A^*$ for all $A\in \C$.
-\item Morphisms $\ev_{A}: A\otimes A^*\to 1$, and $\coev_{A}: 1\to A^*\otimes A$ for all $A\in \C$.
+\item A monoidal category $\cC$.
+\item Objects $A^*$ for all $A\in \cC$.
+\item Morphisms $\ev_{A}: A\otimes A^*\to 1$, and $\coev_{A}: 1\to A^*\otimes A$ for all $A\in \cC$.
 \end{enumerate}
 
-Such that $(\ev_A \otimes \id_A)\circ (\id_A\otimes \coev_A)=\id_A$ and $(\id_{A^*}\otimes \ev_A)\circ (\coev_{A}\otimes \id_{A^*})=\id_{A^*}$ for all $A\in \C$. 
+Such that $(\ev_A \otimes \id_A)\circ (\id_A\otimes \coev_A)=\id_A$ and $(\id_{A^*}\otimes \ev_A)\circ (\coev_{A}\otimes \id_{A^*})=\id_{A^*}$ for all $A\in \cC$. 
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
 We implement right-rigid monoidal categories in string diagrams as follows. We denote evaluation and coevaluation as follows:
 
@@ -798,42 +872,42 @@ The compatibility conditions are stated graphically as follows:
 
 We now note that particle/antiparticle pairs could also be created on the other side. This gives a \text{left}-rigid monoidal category, defined similarly:
 
-\begin{definition}[Left-rigid monoidal category] A left-rigid monoidal category is the following data:
+\begin{defn}[Left-rigid monoidal category] A left-rigid monoidal category is the following data:
 
 \begin{enumerate}
-\item A monoidal category $\C$.
-\item Objects $A^*$ for all $A\in \C$.
-\item Morphisms $\ev_{A}: A^*\otimes A\to 1$, and $\coev_{A}: 1\to A\otimes A^*$ for all $A\in \C$.
+\item A monoidal category $\cC$.
+\item Objects $A^*$ for all $A\in \cC$.
+\item Morphisms $\ev_{A}: A^*\otimes A\to 1$, and $\coev_{A}: 1\to A\otimes A^*$ for all $A\in \cC$.
 \end{enumerate}
 
-Additionally, a rigid category is required to satisfy the property that $(\id_A\otimes\ev_A)\circ (\coev_A\otimes \id_A)=\id_A$ and $(\ev_A\otimes \id_{A^*})\circ (\id_{A^*}\otimes \coev_{A})=\id_{A^*}$ for all $A\in \C$. 
+Additionally, a rigid category is required to satisfy the property that $(\id_A\otimes\ev_A)\circ (\coev_A\otimes \id_A)=\id_A$ and $(\ev_A\otimes \id_{A^*})\circ (\id_{A^*}\otimes \coev_{A})=\id_{A^*}$ for all $A\in \cC$. 
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
 In a left-rigid monoidal category, graphical cups and caps can be defined just like in right-rigid monoidal categories.
 
-This leads us to our main definition of the section. We want to discuss categories which have a full theory of particles/antiparticles. This means that they should be able to create particle/antiparticle pairs on both sides, leading to a left-rigid and right-rigid structure on $\C$. As per usual, there should be some compatibility conditions between these two rigid structures. We give this full definition now:
+This leads us to our main definition of the section. We want to discuss categories which have a full theory of particles/antiparticles. This means that they should be able to create particle/antiparticle pairs on both sides, leading to a left-rigid and right-rigid structure on $\cC$. As per usual, there should be some compatibility conditions between these two rigid structures. We give this full definition now:
 
-\begin{definition}[Pivotal monoidal category] A pivotal monoidal category is the following data:
+\begin{defn}[Pivotal monoidal category] A pivotal monoidal category is the following data:
 
 \begin{enumerate}
-\item A monoidal category $\C$;
-\item A right-rigid structure $(\ev^R, \coev^R)$ on $\C$;
-\item A left-rigid structure $(\ev^L, \coev^L)$ on $\C$.
+\item A monoidal category $\cC$;
+\item A right-rigid structure $(\ev^R, \coev^R)$ on $\cC$;
+\item A left-rigid structure $(\ev^L, \coev^L)$ on $\cC$.
 \end{enumerate}
 
 Such that:
 
 \begin{enumerate}
 \item The right-duals and left-duals of all objects are equal;
-\item For all $A,B\in \C$, we have an equality of morphisms $B^*\otimes A^*\xrightarrow{} (A\otimes B)^*$,
+\item For all $A,B\in \cC$, we have an equality of morphisms $B^*\otimes A^*\xrightarrow{} (A\otimes B)^*$,
 
 \begin{equation*}
 \tikzfig{pivotal-coherence-1}
 \end{equation*}
 
-\item For all $A,B\in \C$ and $f:A\to B$,
+\item For all $A,B\in \cC$ and $f:A\to B$,
 
 \begin{equation*}
 \tikzfig{morphism-duals-agree}
@@ -841,13 +915,13 @@ Such that:
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
 Now that we have given our main definitions, we prove some basic properties of rigid and pivotal categories.
 
 The first thing to observe is that even though there is a lot of structure involved in the definition of a rigid monoidal category, most of it is in a real sense innessential. That is, we could have chosen different duals and the result would have been essentially the same:
 
-\begin{proposition}\label{rigidity} Let $\C$ be right (resp. left) rigid monoidal category. Let $A\in \C$ be an object, and let $(\tilde{A}^*, \tilde{\ev}_{A}, \tilde{\coev}_{A})$ be another triple satisfying the axioms of rigidity. There is a unique morphism $i: A^*\xrightarrow{} \tilde{A}^*$ making the diagram
+\begin{prop}\label{rigidity} Let $\cC$ be right (resp. left) rigid monoidal category. Let $A\in \cC$ be an object, and let $(\tilde{A}^*, \tilde{\ev}_{A}, \tilde{\coev}_{A})$ be another triple satisfying the axioms of rigidity. There is a unique morphism $i: A^*\xrightarrow{} \tilde{A}^*$ making the diagram
 
 \[\begin{tikzcd}
 	& {A^{*}\otimes A}\\
@@ -865,9 +939,9 @@ commute (resp. reverse order of tensor factors). This unique morphism is an isom
 \end{equation*}
 
 
-\end{proposition}
-\begin{remark} This proposition can be summarized by saying that \textit{duals are unique up to unique isomorphism}.
-\end{remark}
+\end{prop}
+\begin{rem} This proposition can be summarized by saying that {\em duals are unique up to unique isomorphism}.
+\end{rem}
 \begin{proof} By the computation
 
 \begin{equation*}
@@ -883,24 +957,24 @@ we find that $i$ is unique, and it has the desired formula. To prove that $i$ is
 serves as an inverse. This gives a proof of the result.
 \end{proof}
 
-We now discuss the correct notion of functors between rigid and pivotal categories. Let $F:\C\to \D$ be a functor between pivotal categories. Given an object $A\in \C$, the evaluation and coevaluation maps naturally extend through the functor to endow $F(A^*)$ with the structure of a dual for $A$. Thus, by Proposition [ref], we have a canonical isomorphism $F(A^*)\cong F(A)^*$. This isomorphism exists without needing to add any extra conditions on $F$. In this way, the correct notion of functor between right/left rigid categories is just functor! There is, however, extra an compatibility condition needed for pivotal category. Both the left-rigid \textit{and} right-rigid structures induce isomorphisms $F(A^*)\cong F(A)^*$. These induced isomorphisms should be the same. This is known as a pivotal functor.
+We now discuss the correct notion of functors between rigid and pivotal categories. Let $F:\cC\to \cD$ be a functor between pivotal categories. Given an object $A\in \cC$, the evaluation and coevaluation maps naturally extend through the functor to endow $F(A^*)$ with the structure of a dual for $A$. Thus, by Proposition [ref], we have a canonical isomorphism $F(A^*)\cong F(A)^*$. This isomorphism exists without needing to add any extra conditions on $F$. In this way, the correct notion of functor between right/left rigid categories is just functor! There is, however, extra an compatibility condition needed for pivotal category. Both the left-rigid {\em and} right-rigid structures induce isomorphisms $F(A^*)\cong F(A)^*$. These induced isomorphisms should be the same. This is known as a pivotal functor.
 
-Another important thing to know about rigid monoidal categories is that duality is \textit{functorial}. That is, the duals of objects induce functors:
+Another important thing to know about rigid monoidal categories is that duality is {\em functorial}. That is, the duals of objects induce functors:
 
-\begin{proposition} Let $\C$ be right (resp. left) rigid monoidal category. Define a monoidal category $\overline{\C}$ as follows. The underlying category on $\overline{\C}$ is the opposite category for $\C$. The tensor product is given by $A\overline{\otimes} B = B\otimes A$, and the monoidal unit is $\one \in \C$. This gives a well-defined monoidal category.
+\begin{prop} Let $\cC$ be right (resp. left) rigid monoidal category. Define a monoidal category $\overline{\cC}$ as follows. The underlying category on $\overline{\cC}$ is the opposite category for $\cC$. The tensor product is given by $A\overline{\otimes} B = B\otimes A$, and the monoidal unit is $\bone \in \cC$. This gives a well-defined monoidal category.
 
 \begin{enumerate}[(i)]
-\item The right (resp.left) rigid structure on $\C$ induces a left (resp. right) rigid structure on $\overline{\C}$;
+\item The right (resp.left) rigid structure on $\cC$ induces a left (resp. right) rigid structure on $\overline{\cC}$;
 
-\item Given any morphism $f: A\to B$ in $\C$, define
+\item Given any morphism $f: A\to B$ in $\cC$, define
 
 \begin{equation*}
 \tikzfig{rigidity-functor}
 \end{equation*}
 
-to be the dual for $f$ (resp. same diagram using left rigidity). The assignment $A\mapsto A^*$, $f\mapsto f^*$ induces a functor from $\C$ to $\overline{\C}$ which we denote $(\--)^{*}$.
+to be the dual for $f$ (resp. same diagram using left rigidity). The assignment $A\mapsto A^*$, $f\mapsto f^*$ induces a functor from $\cC$ to $\overline{\cC}$ which we denote $(\--)^{*}$.
 
-\item Given any objects $A,B\in \C$, define the map
+\item Given any objects $A,B\in \cC$, define the map
 
 \begin{equation*}
 \tikzfig{rigidity-functor-monoidal}
@@ -908,18 +982,18 @@ to be the dual for $f$ (resp. same diagram using left rigidity). The assignment 
 
 from $B^*\otimes A^*$ to $(A\otimes B)^*$ (resp. same diagram using left rigidity). These maps endows $(\--)^{*}$ with the structure of a monoidal functor.
 
-\item The functor $(\--)^*$ is fully faithful. If $\C$ is a pivotal category, then then functor above is an equivalence of monoidal categories between $\C$ and $\overline{\C}$.
+\item The functor $(\--)^*$ is fully faithful. If $\cC$ is a pivotal category, then then functor above is an equivalence of monoidal categories between $\cC$ and $\overline{\cC}$.
 
 \end{enumerate}
-\end{proposition}
-\begin{remark} This proposition can be used to motivate the axioms of a pivotal category. Both the right and left rigid structures in a pivotal category induce functors $\C\to \overline{\C}$. The coherence condition is that these two functors should be equal.
-\end{remark}
+\end{prop}
+\begin{rem} This proposition can be used to motivate the axioms of a pivotal category. Both the right and left rigid structures in a pivotal category induce functors $\cC\to \overline{\cC}$. The coherence condition is that these two functors should be equal.
+\end{rem}
 \begin{proof} We do only  the proofs for right-rigid categories. The left-rigid proof is identitical.
 
 \begin{enumerate}[(i)]
 \item This follows immediately from the definitions;
 
-\item Functoriality is the condition that $(f\circ g)^{*}=g^{*}\circ f^{*}$. The follows from the following argument:
+\item Functoriality is the condition that $(f\cC g)^{*}=g^{*}\cC f^{*}$. The follows from the following argument:
 
 \begin{equation*}
 \tikzfig{rigidity-functor-proof}
@@ -927,13 +1001,13 @@ from $B^*\otimes A^*$ to $(A\otimes B)^*$ (resp. same diagram using left rigidit
 
 \item This is an unlightening and straightforward computation;
 
-\item  We first prove that $(\--)^*$ is fully faithful. Given any objects $A,B\in \C$ and any morphism $g:B^*\to A^*$, the morphism
+\item  We first prove that $(\--)^*$ is fully faithful. Given any objects $A,B\in \cC$ and any morphism $g:B^*\to A^*$, the morphism
 
-[WORK: add formula.]
+\Note{add formula.}
 
 has the property that $f^*=g$. Hence, $(\--)^*$ is bijective on hom-spaces as desired.
 
-We now show that $(\--)^*$ is an equivalence of categories with $\C$ is pivotal.  By part $(i)$, $\overline{\C}$ is a pivotal monoidal category. Hence duality once again induces a monoidal functor, this time $\overline{\C}\to\overline{\overline{\C}}$. Clearly, by our definition of $\overline{\C}$, $\overline{\overline{\C}}=\C$. Hence we have a pair of functors $\C\to \overline{\C}$ and $\overline{\C}\to\C$, each given by duality. Proving this proposition hence amounts to showing that the double dual map is monoidally naturally isomorphic to the identity.
+We now show that $(\--)^*$ is an equivalence of categories with $\cC$ is pivotal.  By part $(i)$, $\overline{\cC}$ is a pivotal monoidal category. Hence duality once again induces a monoidal functor, this time $\overline{\cC}\to\overline{\overline{\cC}}$. Clearly, by our definition of $\overline{\cC}$, $\overline{\overline{\cC}}=\cC$. Hence we have a pair of functors $\cC\to \overline{\cC}$ and $\overline{\cC}\to\cC$, each given by duality. Proving this proposition hence amounts to showing that the double dual map is monoidally naturally isomorphic to the identity.
 
 To do this, we define a natural isomorphism explicitely by the isomorphisms $i:A\xrightarrow{\sim}A^{**}$
 
@@ -941,27 +1015,27 @@ To do this, we define a natural isomorphism explicitely by the isomorphisms $i:A
 \tikzfig{double-dual-natural-isomorphism}
 \end{equation*}
 
-for all $A\in \C$. To show that these morphisms induce a natural transformation, we observe that for all $f:A\to B$
+for all $A\in \cC$. To show that these morphisms induce a natural transformation, we observe that for all $f:A\to B$
 
 \begin{equation*}
 \tikzfig{pivotal-naturality}
 \end{equation*}
 
-The fact that $\C$ is compatible with the tensor product is a straightforward computation, using the fact that computing the tensor product using right-rigidity and left-rigidity gives the same answer, and compatibility of $\C$ with the unit is immediate.
+The fact that $\cC$ is compatible with the tensor product is a straightforward computation, using the fact that computing the tensor product using right-rigidity and left-rigidity gives the same answer, and compatibility of $\cC$ with the unit is immediate.
 
 \end{enumerate}
 \end{proof}
 
 As a key part of Proposition [ref], we showed that every pivotal structure on a right-rigid monoidal category induces a natural isomorphism between the identity functor and the double dual functor. This gives an alternate description of pivotal categories which is useful in some applications:
 
-\begin{corollary} Let $\C$ be a right-rigid monoidal category. Let $i:\id_{\C}\xrightarrow{\sim}(\--)^{**}$ be a monoidal natural isomorphisms between the identity functor and the double dual functor. The maps
+\begin{cor} Let $\cC$ be a right-rigid monoidal category. Let $i:\id_{\cC}\xrightarrow{\sim}(\--)^{**}$ be a monoidal natural isomorphisms between the identity functor and the double dual functor. The maps
 
 \begin{equation*}
 \tikzfig{pivotality-condition-maps}
 \end{equation*}
 
-induce a pivotal structure on $\C$. Moreover, this assignement induces a bijection between pivotal structures on $\C$ and monoidal natural isomorphisms $\id_{\C}\xrightarrow{\sim}(\id_{\C})^{**}$.
-\end{corollary}
+induce a pivotal structure on $\cC$. Moreover, this assignement induces a bijection between pivotal structures on $\cC$ and monoidal natural isomorphisms $\id_{\cC}\xrightarrow{\sim}(\id_{\cC})^{**}$.
+\end{cor}
 \begin{proof} Proving that the maps provided satisfy the axioms of a left-rigid structure is immediate. Proving that they satisfy the axioms of a pivotal structure comes from running the arguments in the proof of proposition [ref] in reverse. The operations of inducing a monoidal natural isomorphism from a pivotal structure and inducing a pivotal structure from a monoidal natural isomorphism are inverses of one another. Hence, they induce a bijection between the two types of structures as desired.
 \end{proof}
 
@@ -972,7 +1046,7 @@ $\newline$
 \textbf{History and further reading:}\\
 \end{center}
 
-Category theory was first introduced and formalized by Saunders Mac Lane and Samuel Eilenberg in 1945 \cite{eilenberg1945general}. Of course, the ideas underlying category theory were present earlier and can be traced back arbitrarily far. In the subsequent decades the formalism of category theory spread far and wide, bringing with it the discovery of many deep theorems. The first major explicit appearance of category theory in physics was Vladimir Drinfeld's work on so-called \textit{quantum groups} in the early 1980s \cite{drinfeld1986quantum}. Quantum groups are certain kinds of mathematical objects righly related to content in this book. They were introduced as tools to help generate exactly-solvable models in condensed matter physics. Very quickly quantum groups were absorbed into the theory of the ideas of string theory of topological quantum field theory, which were both new at the time \cite{belavin1984infinite, witten1988topological}. The physics in this area has since become and remained extremely categorical in nature \cite{lurie2008classification, bartlett2015modular}.
+Category theory was first introduced and formalized by Saunders Mac Lane and Samuel Eilenberg in 1945 \cite{eilenberg1945general}. Of course, the ideas underlying category theory were present earlier and can be traced back arbitrarily far. In the subsequent decades the formalism of category theory spread far and wide, bringing with it the discovery of many deep theorems. The first major explicit appearance of category theory in physics was Vladimir Drinfeld's work on so-called {\em quantum groups} in the early 1980s \cite{drinfeld1986quantum}. Quantum groups are certain kinds of mathematical objects righly related to content in this book. They were introduced as tools to help generate exactly-solvable models in condensed matter physics. Very quickly quantum groups were absorbed into the theory of the ideas of string theory of topological quantum field theory, which were both new at the time \cite{belavin1984infinite, witten1988topological}. The physics in this area has since become and remained extremely categorical in nature \cite{lurie2008classification, bartlett2015modular}.
 
 $\newline$
 There are many excellent introductory texts to category theory. Some authors find it fruitful to reformulate all of quantum mechanics, and especially quantum information, in terms of category theory. A good source outlining this approach and introducing category theory through it is Coecke-Kissinger's textbook \cite{coecke2018picturing}. The Kong-Zhang textbook \cite{kong2022invitation} gives an introduction to category theory in the context of topological order. A good general-purpose textbook on category theory is Fong-Spivak \cite{fong2019invitation}, and a classical but slightly dated reference is \cite{mac2013categories}.
@@ -985,11 +1059,11 @@ $\newline\newline$
 
 \begin{enumerate}[\thesection .1.]
 
-\item .[WORK: If $\C$ is a category with products, then the product forms a monoidal structure (with a good $\one$ given of course), and same for coproducts.]
+\item \Note{ If $\cC$ is a category with products, then the product forms a monoidal structure (with a good $\bone$ given of course), and same for coproducts.}
 
-\item .[WORK: Show that endofunctors form a \textit{strict} monoidal category.]
+\item \Note{ Show that endofunctors form a {\em strict} monoidal category.}
 
-\item .[WORK: Add an exercise giving some compatibility conditions between monoidal/rigid structures and direct sums. Namely, they distribute nicely.]
+\item \Note{ Add an exercise giving some compatibility conditions between monoidal/rigid structures and direct sums. Namely, they distribute nicely.}
 
 
 \end{enumerate}

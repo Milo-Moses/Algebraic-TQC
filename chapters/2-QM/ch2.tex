@@ -5,13 +5,13 @@
 
 \subsubsection{Introduction}
 
-In this chapter we will give an introduction to quantum mechanics. The goal of this book is to give an exposition of topological quantum information. So far we have described topological \textit{classical} information - all that's missing now is quantum mechanics!
+In this chapter we will give an introduction to quantum mechanics. The goal of this book is to give an exposition of topological quantum information. So far we have described topological {\em classical} information - all that's missing now is quantum mechanics!
 
 One of the difficulties of quantum mechanics is that it is physically unintuitive to most unitiated learners. Conversely, one of the advantages of quantum mechanics is that it is mathematically basic. Quantum mechanics is mathematically linear algebra. The mathematical intricacies of quantum mechanics often arrise from complications from working in infintie dimensional spaces. In topological quanum information, however, all of the spaces of interest are finite dimensional and hence the mathematics involved is quite straightforward: finite dimensional linear algebra is largely a solved subject. In this chapter we will give a dictionary between the physical language of quantum mechanics and the mathematical language of linear algebra.
 
-The first physical principle about quantum mechanics to know is that it is typically used to describe small objects. A natural question is \textit{why}. If quantum mechanics is correct, then it should equally well apply to small and large objects. The answer to this question is subtle, and brings us to back to the thesis of this book.
+The first physical principle about quantum mechanics to know is that it is typically used to describe small objects. A natural question is {\em why}. If quantum mechanics is correct, then it should equally well apply to small and large objects. The answer to this question is subtle, and brings us to back to the thesis of this book.
 
-Large scale macroscopic phenomina are emergent from coherent small scale microscopic phenomina. The word \textit{coherent} is used intentionally. It is used to mean ``held together", ``integrated", or ``organized". Sometimes collections of microscopic degrees of freedom fail to form observable macroscopic degrees of freedom. This failiture is known as \textit{decoherence}. It is an empirically observed fact that microscopic quantum degrees of freedom typically decohere.  It is the ubiquity of decoherence which makes are macroscopic world seem classical.
+Large scale macroscopic phenomina are emergent from coherent small scale microscopic phenomina. The word {\em coherent} is used intentionally. It is used to mean ``held together", ``integrated", or ``organized". Sometimes collections of microscopic degrees of freedom fail to form observable macroscopic degrees of freedom. This failiture is known as {\em decoherence}. It is an empirically observed fact that microscopic quantum degrees of freedom typically decohere.  It is the ubiquity of decoherence which makes are macroscopic world seem classical.
 
 It is exactly for this reason that topological quantum systems are so special. They are essentially unique in the fact that they can cohrently hold quantum information at macroscopic length and time scales. This is because decoherence is caused by repeated noise from the environment, which corrupts fragile quantum information. Topological quantum systems are defined by the property that their stored information is not affected by small local changes. Hence, if noise is sufficiently local and sufficiently controlled, the information in topological quantum systems will remain coherent. 
 
@@ -19,17 +19,17 @@ This makes topological quantum matter a fantastic place to first learn quantum t
 
 \subsubsection{Experimental motivation}
 
-Before diving into a formal treatment of quantum mechanics, let us first motivate why quantum mechanics has to be like it is. The most famous aspect of quantum mechanics is its probabilistic nature. As Einstein famously said, \textit{``God does not play dice"}. If quantum mechanics was just probabilistic, however, it wouldn't bother physicists nearly as much at it does. Quantum mechanics is a sort of twisted probability theory:
+Before diving into a formal treatment of quantum mechanics, let us first motivate why quantum mechanics has to be like it is. The most famous aspect of quantum mechanics is its probabilistic nature. As Einstein famously said, {\em ``God does not play dice"}. If quantum mechanics was just probabilistic, however, it wouldn't bother physicists nearly as much at it does. Quantum mechanics is a sort of twisted probability theory:
 
 \begin{quote}
-``What happens if you try to come up with a theory that's \textit{like} probability theory, but based on the $2$-norm instead of the $1$-norm?... Quantum mechanics is what inevitably results." - Scott Aaronson\footnote{Page 112 of Aaronson's ``Quantum Computing since Democritus" \cite{aaronson2013quantum}}
+``What happens if you try to come up with a theory that's {\lem ike} probability theory, but based on the $2$-norm instead of the $1$-norm?... Quantum mechanics is what inevitably results." - Scott Aaronson\footnote{Page 112 of Aaronson's ``Quantum Computing since Democritus" \cite{aaronson2013quantum}}
 \end{quote}
 
-Throughout this introduction to quantum mechanics we will take the lens of comparing quantum mechanics with classical probability theory. Some properties of quantum mechanics, like \textit{superposition} and \textit{entanglement}, are already clearly present in the world of probability. Other properties, like \textit{interference}, are not. To make this clear, we will present a few experiements which demonstrate the proabilistic nature of quantum mechanics, and the ways in which quantum mechanics goes beyond probability theory.
+Throughout this introduction to quantum mechanics we will take the lens of comparing quantum mechanics with classical probability theory. Some properties of quantum mechanics, like {\em superposition} and {\em entanglement}, are already clearly present in the world of probability. Other properties, like {\em interference}, are not. To make this clear, we will present a few experiements which demonstrate the proabilistic nature of quantum mechanics, and the ways in which quantum mechanics goes beyond probability theory.
 
-[WORK: which experiments should I chose? Double slit? Polarized light? Pairs of entangled photos? It would be cool to get experiments which are relevant to topological matter if possible. It would also be cool to get experiments which almost immediately motivate the exact form of quantum mechanics. I'm not a physicist though - need to get someone else more knowledgable to give me a lecture.]
+\Note{which experiments should I chose? Double slit? Polarized light? Pairs of entangled photos? It would be cool to get experiments which are relevant to topological matter if possible. It would also be cool to get experiments which almost immediately motivate the exact form of quantum mechanics. I'm not a physicist though - need to get someone else more knowledgable to give me a lecture.}
 
-[WORK: talk to a physicist who can say why the Schrodinger equation is true. I only have vague waffle.]
+\Note{talk to a physicist who can say why the Schrodinger equation is true. I only have vague waffle.}
 
 \subsection{Axiomatic development}
 
@@ -37,27 +37,33 @@ Throughout this introduction to quantum mechanics we will take the lens of compa
 
 Seeing as quantum mechanics is a modified probability theory, before axiomatizing quantum mechanics we will first axiomatize probability theory in terms of linear algebra. The goal is to highlight what an axiomatization of a physical theory should look like, so that the jump to quantum mechanics is as predictable as possible.
 
-Intuitively, we all know what probability theory is. We start with some set $S$ which represents the possible outcomes of our probability theory. States in the probabilistic system are probability distributions on $S$. That is, assignments of probabilities (positive real numbers) to each elements of $S$ such that the total probability is $1$. We will focus entirely on \textit{finite} probability spaces. This greatly simplifies our analysis. Finite probability spaces require only basic linear algebra to describe, wheras infinite probability spaces requires measure theory.
+Intuitively, we all know what probability theory is. We start with some set $S$ which represents the possible outcomes of our probability theory. States in the probabilistic system are probability distributions on $S$. That is, assignments of probabilities (positive real numbers) to each elements of $S$ such that the total probability is $1$. We will focus entirely on {\em finite} probability spaces. This greatly simplifies our analysis. Finite probability spaces require only basic linear algebra to describe, wheras infinite probability spaces requires measure theory. Thus, we fix the notation throughout this section:
 
-For example, suppose we are flipping a coin. The space of possible outcomes is $S=\{\text{head},\text{tails}\}$. A fair coin flip would have $50\%=1/2$ probability of giving heads, and $50\%=1/2$ probability of giving tails.
+$$S\text{ is a finite set.}$$
 
-A convement notation for proability distribution is the language of weighted sums. The state $\sum_{x\in S}p_x\ket{x}$ denotes the state with probability $p_x\geq 0$ of having outcome $\ket{x}$, where $\sum_{x\in S}p_x=1$. In the case of heads and tais, we would write
+A convement notation for proability distribution is the language of weighted sums. The state $\sum_{x\in S}p_x\ket{x}$ denotes the state with probability $p_x\geq 0$ of having outcome $\ket{x}$, where $\sum_{x\in S}p_x=1$. The notation $\ket{\dash}$ for states is known as a {\em ket}. This is part of so-called {\em Dirac notation} (or {\em bra-ket notation}), which is widespread in quantum theory. We use it here to help ease our transition from probability theory to quantum mechancis.
+
+\begin{ex}
+Suppose we are flipping a coin. The space of possible outcomes is $S=\{\text{head},\text{tails}\}$. A fair coin flip would have $50\%=1/2$ probability of giving heads, and $50\%=1/2$ probability of giving tails. In Dirac notation, we would write
 
 $$\ket{\text{fair flip}}\coloneqq\frac{1}{2}\ket{\text{heads}}+\frac{1}{2}\ket{\text{tails}}.$$
 
-The notation $\ket{\cdot}$ for states is known as a \textit{ket}. This is part of so-called \textit{Dirac notation}, which is widespread in quantum theory. We use it here to help ease our transition from probability theory to quantum mechancis.
+\end{ex}
 
-Mathematically a formal sum is an element of a vector space. That is, the weighted sums corresponding to probability distributions are elements of the vector space
+Mathematically a formal sum is an element of a vector space. That is, the weighted sums corresponding to probability distributions can be considered as elements of the vector space
 
-$$\RR[S]\coloneqq \text{span} \left\{\left.\ket{x}\right| x\in S\right\}.$$
+$$\bR[S]\coloneqq \text{span} \left\{\left.\ket{x}\right| x\in S\right\}.$$
 
-For convenience we will refer to elements of $\RR[S]$ of the form $\sum_{x\in S}p_x \ket{x}$ with $p_x\geq 0$, $\sum_{x\in S}p_x=1$ as \textit{normalized vectors}. Our disucssion can be summarized as saying that probability distributions on $S$ correspond to normalized vectors in $\RR[S]$.
+For convenience we will refer to elements of $\bR[S]$ of the form $\sum_{x\in S}p_x \ket{x}$ with $p_x\geq 0$, $\sum_{x\in S}p_x=1$ as {\em normalized vectors}. Our disucssion can be summarized as saying that probability distributions on $S$ correspond to normalized vectors in $\bR[S]$.
 
 We now move on to discussing the way that probability spaces can evolve, or be related to one another. Certainly, a relation between a probability space with outcomes $S$ and a probability space with outcomes $S'$ will be some function
 
-$$\left(\text{normalized vectors in }\RR[S]\right)\xrightarrow{}\left(\text{normalized vectors in }\RR[S']\right)$$
+$$\left(\text{normalized vectors in }\bR[S]\right)\xrightarrow{}\left(\text{normalized vectors in }\bR[S']\right)$$
 
-which gives a rule for going from proability distrubutions on $S$ to probability distributions on $S'$. However, not every function will give a valid assignment. For example, suppose we are studying the outcomes of lottery tickets. Ticket 1 has an $80\%$ chance of being a winner, and Ticket 2 has a $40\%$ of being a winner. You haven't scratched your ticket yet, so you know you have a $50\%$ chance of having Ticket 1 and a $50\%$ chance of having Ticket 2. What is the probability that you win the lottery? The standard way of computing it would be as follows:
+which gives a rule for going from proability distrubutions on $S$ to probability distributions on $S'$. However, not every function will give a valid assignment. They ket insight is that probabilistic processes are {\em linear}. That is, valid assignments of distributions on $S$ to distributions on $S'$ coming form probability theory will all be restrictions of linear mapas $\bR[S]\to\bR[S']$.
+
+\begin{ex}
+Suppose we are studying the outcomes of lottery tickets. Ticket 1 has an $80\%$ chance of being a winner, and Ticket 2 has a $40\%$ of being a winner. You haven't scratched your ticket yet, so you know you have a $50\%$ chance of having Ticket 1 and a $50\%$ chance of having Ticket 2. What is the probability that you win the lottery? The standard way of computing it would be as follows:
 
 \begin{align*}
 \text{result}(\ket{\text{your ticket}})&=\text{result}\left(\frac{1}{2}\ket{\text{Ticket 1}}+\frac{1}{2}\ket{\text{Ticket 2}})\right)\\
@@ -66,56 +72,59 @@ which gives a rule for going from proability distrubutions on $S$ to probability
 &=\frac{3}{5}\ket{\text{win}}+\frac{2}{5}\ket{\text{lose}}.
 \end{align*}
 
-Hence, you have a $3/5=60\%$ chance of winning. The key insight in this computation was that probabilistic processes are \textit{linear}. That is, ``$\text{result}$" induces a linear map from $\RR[\{\text{Ticket 1}, \text{Ticket 2}\}]$ to $\RR[\text{win},\text{lose}]$. More generally, given finite sets $S,S'$ any linear map $\RR[S]\to\RR[S']$ which sends normalized vectors to normalized vectors could represent some valid probabilistic process.
+Hence, you have a $3/5=60\%$ chance of winning. In this computation, we used the fact that there is a {\em linear map} $\text{result}:\bR[\{\text{Ticket 1}, \text{Ticket 2}\}]\to \bR[\text{win},\text{lose}]$. More generally, given finite sets $S,S'$ any linear map $\bR[S]\to\bR[S']$ which sends normalized vectors to normalized vectors could represent some valid probabilistic process.
+\end{ex}
 
-The final topic to tackle before giving the full axiomatization is the question of \textit{joining} probabilitstic systems. In this book we will mostly be constructing systems out of a lot of smaller consitutent parts, so the question of fitting together smaller systems to make one larger system is of utmost importance. Suppose we have two smaller systems with possible outcomes $S$, $S'$. To describe a state in the joined system, it is neccecary and sufficient to describe how that state restricts to each subsystem. In this way, possible outcomes of the joined system will correspond to pairs $(x,x')$ where $x\in S$ is the portion of the overall state in $S$ and $x'\in S'$ is the portion of the overall state in $S'$. This means the space out outcomes in the joined system is the Cartesian product $S\times S'$.
+The final topic to tackle before giving the full axiomatization is the question of {\em joining} probabilitstic systems. In this book we will mostly be constructing systems out of a lot of smaller consitutent parts, so the question of fitting together smaller systems to make one larger system is of utmost importance. Suppose we have two smaller systems with possible outcomes $S$, $S'$. To describe a state in the joined system, it is neccecary and sufficient to describe how that state restricts to each subsystem. In this way, possible outcomes of the joined system will correspond to pairs $(x,x')$ where $x\in S$ is the portion of the overall state in $S$ and $x'\in S'$ is the portion of the overall state in $S'$. This means the space out outcomes in the joined system is the Cartesian product $S\times S'$.
 
 We are now ready to state the full axioms of probability theory:
 
-\begin{definition}[Axioms of probability theory] $\,$
+\begin{defn}[Axioms of probability theory] $\,$
 
 \begin{enumerate}
-\item (Systems) A probabilistic system is a real vector space of the form $\RR[S]$, where $S$ is a finite set. Valid states are normalized vectors in $\RR[S]$, which we call probability distributions on $S$.
-\item (Processes) A probabilistic process going from a system $S$ to a system $S'$ is a linear map $\RR[S]\to \RR[S']$ which sends normalized vectors to normalized vectors.
-\item (Joining systems) If $S$ and $S'$ are two finite sets, the system obtained by joining $\RR[S]$ and $\RR[S']$ is $\RR[S\times S']$.
-\item (Measuring systems) Given a normalized vector $\sum_{x\in S}p_x \left |x\right>\in \RR[S]$, measurement corresponds to collapsing onto an outcome, where we collapse into each $x\in S$ with probability $p_x$.
+\item (Systems) A probabilistic system is a real vector space of the form $\bR[S]$, where $S$ is a finite set. Valid states are normalized vectors in $\bR[S]$, which we call probability distributions on $S$.
+\item (Processes) A probabilistic process going from a system $S$ to a system $S'$ is a linear map $\bR[S]\to \bR[S']$ which sends normalized vectors to normalized vectors.
+\item (Joining systems) If $S$ and $S'$ are two finite sets, the system obtained by joining $\bR[S]$ and $\bR[S']$ is $\bR[S\times S']$.
+\item (Measuring systems) Given a normalized vector $\sum_{x\in S}p_x \left |x\right>\in \bR[S]$, measurement corresponds to collapsing onto an outcome, where we collapse into each $x\in S$ with probability $p_x$.
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
 \subsubsection{Basis-dependent quantum mechanics}
 
-The basis-dependent version of quantum mechanics can be estblished by copying the axioms of probability theory almost verbatim, replacing the 1-norm with the 2-norm.
+The basis-dependent version of quantum mechanics can be estblished by copying the axioms of probability theory almost verbatim, replacing the 1-norm with the 2-norm. Given a finite set $S$, a normalized vector in $\bR[S]$ is one of the form $\sum_{x\in S}p_x \ket{x}$, where $p_x\geq 0$ and $\sum_{x\in S}p_x=1$.  This quantity $\sum_{x\in S}p_x$ is known as the {\em 1-norm} of the vector $p=(p_x)_{x\in S}$.
 
-Given a finite set $S$, a normalized vector in $\RR[S]$ is one of the form $\sum_{x\in S}p_x \ket{x}$, where $p_x\geq 0$ and $\sum_{x\in S}p_x=1$.  This quantity $\sum_{x\in S}p_x$ is known as the \textit{1-norm} of the vector $p=(p_x)_{x\in S}$.
+In quantum mechanics we re-define the notation of normalized vector. A normalized vector in quantum mechanics is a state $\sum_{x\in S}c_x \ket{x}$, where $c_x\in \bC$ are arbitary complex numbers and $\sum_{x\in S}|c_x|^2=1$. The root of the sum of norm-squares $\sqrt{\sum_{x\in S}|c_x|^2}$ is known as the {\em 2-norm} of the vector $c=(c_x)_{x\in S}$. In this way, the norm-squares $|c_x|^2$ form a probility distrubution on $S$.
 
-In quantum mechanics we re-define the notation of normalized vector. A normalized vector in quantum mechanics is a state $\sum_{x\in S}c_x \ket{x}$, where $c_x\in \CC$ are arbitary complex numbers and $\sum_{x\in S}|c_x|^2=1$. The root of the sum of norm-squares $\sqrt{\sum_{x\in S}|c_x|^2}$ is known as the \textit{2-norm} of the vector $c=(c_x)_{x\in S}$. In this way, the norm-squares $|c_x|^2$ form a probility distrubution on $S$.
+Thus, given some finite set $S$, states in the quantum system based on $S$ correspond to normalized vectors in $\bC[S]$. As a matter of convention, normalized vectors in $\bR[S]$ will always refer to the 1-norm definition and normalized vectors in $\bC[S]$ will always refer to the 2-norm definition. We are now ready to state the basic axioms of quantum theory, with the caveat that it does not give the full picture of measurement:
 
-Thus, given some finite set $S$, states in the quantum system based on $S$ correspond to normalized vectors in $\CC[S]$. As a matter of convention, normalized vectors in $\RR[S]$ will always refer to the 1-norm definition and normalized vectors in $\CC[S]$ will always refer to the 2-norm definition. We are now ready to state the basic axioms of quantum theory, with the caveat that it does not give the full picture of measurement:
-
-\begin{definition}[Axioms of quantum mechanics, basis dependent version] $\,$
+\begin{defn}[Axioms of quantum mechanics, basis dependent version] $\,$
 
 \begin{enumerate}
-\item (Systems) A quantum system is a complex vector space of the form $\CC[S]$, where $S$ is a finite set. The normalized vectors in $\CC[S]$ correspond to quantum states on $S$. Here, a \textit{normalized} vector $v=\sum_{x\in S}c_x\left|x\right>$ is one for which $\sum_{x\in S}|c_x|^2=1$, where $|c_x|^2$ denotes the norm square.
-\item (Processes) A quantum process going from a system $S$ to a system $S'$ is a linear map $\CC[S]\to \CC[S']$ which sends normalized vectors to normalized vectors.
-\item (Joining systems) If $S$ and $S'$ are two finite sets, the system obtained by joining $\CC[S]$ and $\CC[S']$ is $\CC[S\times S']$.
-\item (Measuring systems) Given a normalized vector $\sum_{x\in S}c_x \left |x\right>\in \CC[S]$, measurement corresponds to collapsing into a pure state, where we collapse into each $x\in S$ with probability $|c_x|^2$.
+\item (Systems) A quantum system is a complex vector space of the form $\bC[S]$, where $S$ is a finite set. The normalized vectors in $\bC[S]$ correspond to quantum states on $S$. Here, a {\em normalized} vector $v=\sum_{x\in S}c_x\left|x\right>$ is one for which $\sum_{x\in S}|c_x|^2=1$, where $|c_x|^2$ denotes the norm square.
+\item (Processes) A quantum process going from a system $S$ to a system $S'$ is a linear map $\bC[S]\to \bC[S']$ which sends normalized vectors to normalized vectors.
+\item (Joining systems) If $S$ and $S'$ are two finite sets, the system obtained by joining $\bC[S]$ and $\bC[S']$ is $\bC[S\times S']$.
+\item (Measuring systems) Given a normalized vector $\sum_{x\in S}c_x \left |x\right>\in \bC[S]$, measurement corresponds to collapsing into a pure state, where we collapse into each $x\in S$ with probability $|c_x|^2$.
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
-We now relate these axioms to the previous dicussion and introduce terminology. The formal sums $\sum_{x\in S}c_x\ket{x}$ are not probability distributions. They are called \textit{wavefunctions}. Every state in quantum mechanics is encoded in a wavefunction. Treating the possible outcomes in $S$ as positions, we get the analogy
+We now relate these axioms to the previous dicussion and introduce terminology. The formal sums $\sum_{x\in S}c_x\ket{x}$ are not probability distributions. They are called {\em wavefunctions}. Every state in quantum mechanics is encoded in a wavefunction. The numbers $c_x$ are not probabilities. They are called {\em amplitudes}. We say that the state $\ket{\psi}=\sum_{x\in S}c_x \ket{x}$ is in a {\em superposition} of the different basis states $\ket{x}$.
+
+\begin{rem} In the case where the elements of $S$ as positions, we get the analogy
 
 \begin{itemize}
-\item Wave = multiple positions, spread-out =$\sum_{x\in S}c_x\ket{x}\in \CC[S]$;
+\item Wave = multiple positions, spread-out =$\sum_{x\in S}c_x\ket{x}\in \bC[S]$;
 \item Particle = single positions, definite = $\left|x\right>$, $x\in S$.
 \end{itemize}
 
-By axiom (4), measuring of wavefunction collapses it into a single particle. This is the essence of wave-particle duality in quantum mechanics. The numbers $c_x$ are not probilities. They are called \textit{amplitudes}. If a state $\ket{\psi}=\sum_{x\in S}c_x \ket{x}$ has non-zero aplidue at $x,y\in S$, then we say that $\ket{\psi}$ is in a \textit{superposition} of being in state $\ket{x}$ and $\ket{y}$.
+By axiom (4), measuring of wavefunction collapses it into a particle-like state. This is the essence of wave-particle duality in quantum mechanics.
+\end{rem}
 
-Within this framework it is easy to demonstrate the phenominon of interference. Define the transformation $M: \CC[S]\to \CC[S]$ by
+\begin{rem}
+Within this framework it is easy to demonstrate the phenominon of interference. Define the transformation $M: \bC[S]\to \bC[S]$ by
 
 $$M(\0)=\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1,$$
 
@@ -125,7 +134,8 @@ Applying $M$ to $\0$ and measuring gives $0$ and $1$ with equal probability, and
 
 $$H\left(\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1\right)=\frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1\right)+\frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}\0-\frac{1}{\sqrt{2}}\1\right)=\0.$$
 
-We can summarize this as saying that there was \textit{constructive interference} in the $\0$, and \textit{destructive interference} in the $\1$. The amplitudes had the same signs in the $\0$ causing the probability of measuring $0$ to add, and the amplitudes had opposite signs in the $\1$, causing the probabilities of measuring $1$ to cancel. 
+We can summarize this as saying that there was {\em constructive interference} in the $\0$, and {\em destructive interference} in the $\1$. The amplitudes had the same signs in the $\0$ causing the probability of measuring $0$ to add, and the amplitudes had opposite signs in the $\1$, causing the probabilities of measuring $1$ to cancel.
+\end{rem}
 
 \subsubsection{Measurement}
 
@@ -134,7 +144,7 @@ The axioms in the previous section are all accurate, but they do not give a comp
 \begin{enumerate}
 \item It is possible to measure with respect to bases other than the standard basis;
 \item Measurements can be incomplete, meaning that they do not collapse a wavefunction all the way down to a particle;
-\item Measurements always have \textit{observables} associated with them.
+\item Measurements always have {\em observables} associated with them.
 \end{enumerate}
 
 The easiest point to discuss is observables. Every time you measure something in a laboratory, there is always a real number output associated with the measurement:
@@ -146,32 +156,40 @@ The easiest point to discuss is observables. Every time you measure something in
 \item etc, etc...
 \end{itemize}
 
-Seeing as these real numbers are the only quantities which we actually get to record as experiments, we have to incorporate them into our theory. For example, consider some finite set S with associated quantum system $\CC[S]$. Suppose we measure the energy of the system in joules (J). Since $S$ is finite there are finitely many possibilities for the energy, say 1J, 5J, 10J. In a quantum system, measuring with respect to energy will produce some output (1J, 5J, or 10J) and collapse the system onto a state with a well-defined energy.
+Seeing as these real numbers are the only quantities which we actually get to record as experiments, we have to incorporate them into our theory. For example, consider some finite set S with associated quantum system $\bC[S]$. Suppose we measure the energy of the system in joules (J). Since $S$ is finite there are finitely many possibilities for the energy, say 1J, 5J, 10J. In a quantum system, measuring with respect to energy will produce some output (1J, 5J, or 10J) and collapse the system onto a state with a well-defined energy.
 
-A crucial point is that these states with well-defined energy have \textit{absolutely no reason} to be the same as the elements of $S$. Different observables can have different collections of states with well-defined values of those observables. A state with a well-defined value of some observable is called an \textit{eigenstate} of that observable. This will connect back to our usual notation of eigenvector from linear algebra.
+A crucial point is that these states with well-defined energy have {\em absolutely no reason} to be the same as the elements of $S$. Different observables can have different collections of states with well-defined values of those observables. A state with a well-defined value of some observable is called an {\em eigenstate} of that observable. This will connect back to our usual notation of eigenvector from linear algebra.
 
 As an example, suppose $S=\{0,1\}$. We define an observable called energy. We say that the state $\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1$ has energy $2J$ and the state $\frac{1}{\sqrt{2}}\0-\frac{1}{\sqrt{2}}\1$ has energy 3J. The state $\0$ can be decomposed as
 
 $$\0=\frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1\right)+\frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}\0-\frac{1}{\sqrt{2}}\1\right).$$
 
-We see here that $\0$ is in an equal superposition of the state with energy 2J and the state with energy 3J. When we measure this state, it will collapse onto some energy eigenstate. It will collapse onto $\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}$ with probability $1/2$ and it will collapse onto $\frac{1}{\sqrt{2}}\0-\frac{1}{\sqrt{2}}\1$ with probability $1/2$, depending on the value of energy that was measured.
+We see here that $\0$ is in an equal superposition of the state with energy 2J and the state with energy 3J. When we measure the energy of this state, it will collapse onto some energy eigenstate. It will collapse onto $\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\1$ with probability $1/2$ and it will collapse onto $\frac{1}{\sqrt{2}}\0-\frac{1}{\sqrt{2}}\1$ with probability $1/2$, depending on the value of energy that was measured.
 
-It is important that one needs to take care when defining observables to make sure that no contradictions appear. For instance, once the values of the observable are specified on a basis then the rest of the values of the observable follow by linearity. A more subtle restricition is seen in the following example. Supose that $\0$ is given energy 2J and $\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}$ is given energy 3J. Then, we can write
+It is important that one needs to take care when defining observables to make sure that no contradictions appear. For instance, once the values of the observable are specified on a basis then the rest of the values of the observable follow by linearity.
+
+\begin{ex}\label{no-orthogonality}
+A more subtle restricition on the definition of observes is illustrated in the following example. Supose that $\0$ is given energy 2J and $\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}$ is given energy 3J. Then, we can write
 
 $$\1=-\sqrt{2}(\0)+\sqrt{2}\left(\frac{1}{\sqrt{2}}\0+\frac{1}{\sqrt{2}}\right).$$
 
-In this way, $\1$ has energy 2J with amplitude $-\sqrt{2}$ and energy 3J with amplitude $+\sqrt{2}$. Clearly, the norm squares of these amplitdues does not give a valid probability distribution. They key algebraic requirement is \textit{orthogonality}. Namely, we have an \textit{inner product} on $\CC[S]$ defined by
+In this way, $\1$ has energy 2J with amplitude $-\sqrt{2}$ and energy 3J with amplitude $+\sqrt{2}$. Clearly, the norm squares of these amplitdues do not add to one and hence do not give a valid probability distribution. This means that our proposed definition of an observable was invalid.
+\end{ex}
+
+They key algebraic requirement illustrated by example \ref{no-orthogonality} is {\em orthogonality}. Namely, we have an {\em inner product} on $\bC[S]$ defined by
 
 $$\left<\left.\sum_{x\in S}c_x\ket{x}\right| \sum_{x\in S}c'_x \ket{x}\right>=\sum_{x\in S}c_x\overline{c_x'}.$$
 
-Two states in $\CC[S]$ are called \textit{orthogonal} if their inner product is $0$. If the values of an observable are specififed with respect to a basis in which every basis vector is normalized and every pair of basis vectors is orthogonal, then this observable can be extended to all normalized vectors in $\CC[S]$ without issues. Before stating this axiom formally, we introduce some notation. If a basis of $\CC[S]$ consists of normalized pairwise orthogonal vectors, we call it \textit{orthonormal}. An \textit{obervable} on $\CC[S]$ is a pair $(B,v)$ where $B\subset \CC[S]$ is an orthonormal basis and $v:B\to \RR$ is a set function.
+Two states in $\bC[S]$ are called {\em orthogonal} if their inner product is $0$. If the values of an observable are specififed with respect to a basis in which every basis vector is normalized and every pair of basis vectors is orthogonal, then this observable can be extended to all normalized vectors in $\bC[S]$ without issues. Before stating this axiom formally, we introduce some notation. If a basis of $\bC[S]$ consists of normalized pairwise orthogonal vectors, we call it {\em orthonormal}. An {\em obervable} on $\bC[S]$ is a pair $(B,v)$ where $B\subset \bC[S]$ is an orthonormal basis and $v:B\to \bR$ is a set function. For simplicity, for all states $\ket{\psi}$, $\ket{\varphi}$ we use the notation
+
+$$\left< \left. \ket{\psi} \right| \ket{\varphi}\right>\coloneqq \left< \left. \psi \right| \varphi \right>.$$
 
 This gives us our next version of the axioms of quantum mechanics. There are issues that arise when $v$ is not injective, so we state our axioms with a restriction on $v$ for now:
 
 \begin{enumerate}[1'.]
 \setcounter{enumi}{2}
 
-\item (Measuring systems) Let $(B,v)$ be an observable for which $v$ is injective. The system $\CC[S]$ can be measured with respect to $(B,v)$. When $\ket{\psi} = \sum_{b\in B} c_b \ket{b}\in \CC[S]$ is measured with respect to $(B,v)$, the state collapses to each $\ket{b}$, $b\in B$, with probability $|c_b|^2$. In the case that $\ket{\psi}$ collapses onto $\ket{b}$, we say that the outcome of the measurement is $v(b)\in \RR$.
+\item (Measuring systems) Let $(B,v)$ be an observable for which $v$ is injective. The system $\bC[S]$ can be measured with respect to $(B,v)$. When $\ket{\psi} = \sum_{b\in B} c_b \ket{b}\in \bC[S]$ is measured with respect to $(B,v)$, the state collapses to each $\ket{b}$, $b\in B$, with probability $|c_b|^2$. In the case that $\ket{\psi}$ collapses onto $\ket{b}$, we say that the outcome of the measurement is $v(b)\in \bR$.
 \end{enumerate}
 
 
@@ -179,22 +197,24 @@ We will verify that the values $|c_b|^2$ indeed form a probability distribuution
 
 \subsubsection{Incomplete measurement}
 
-The above discussion is still missing some generality. Namely, it ignores the fact that that measurements can be \textit{incomplete}. Incomplete measurements arrise when two linearly indendent vectors have the same value of an observable. When the observable is measured, it doesn't know which of those two linearly independent vectors to collapse to! In this situation, we say that the observable is \textit{degenerate}. The term degeneracy here comes from its general mathematical usage, whereby it used to describe edge cases where not-neccecarily-equal values happen to be equal.
+The above discussion is still missing some generality. Namely, it ignores the fact that that measurements can be {\em incomplete}. Incomplete measurements arrise when two linearly indendent vectors have the same value of an observable. When the observable is measured, it doesn't know which of those two linearly independent vectors to collapse to! In this situation, we say that the observable is {\em degenerate}. The term degeneracy here comes from its general mathematical usage, whereby it used to describe edge cases where not-neccecarily-equal values happen to be equal. Instead of collapsing all the way down to an eigenstate, the measurement of degenerate observables will project a state onto the subspace spanned by the eigenstates with the measured value of the observable.
 
-Instead of collapsing all the way down to an eigenstate, the measurement of degenerate observables will project a state onto the subspace spanned by the eigenstates with the measured value of the observable. For example, let $S=\{0,1,2\}$. Suppose that the state $\0$ has energy 5J, and that the states $\1$ and $\ket{2}$ have energy 10J. Suppose further that we measure the state
+\begin{ex}
+Let $S=\{0,1,2\}$. Suppose that the state $\0$ has energy 5J, and that the states $\1$ and $\ket{2}$ have energy 10J. Suppose further that we measure the state
 
 $$\frac{1}{\sqrt{3}}\0+\frac{1}{\sqrt{3}}\1-\frac{i}{\sqrt{3}}\ket{2}$$
 
-with respect to energy, and the observed valu is 10J. This will collapse the state onto $\frac{1}{\sqrt{2}}\1-\frac{i}{\sqrt{2}}\ket{2}$. The projection respects phases, but scales the absolute value of the state so that it becomes normalized. Formally, this is an orthogonal projection. To state this axiom it is good to introduce some notation. Let $S$ be a finite set and let $\ket{\psi}$, $\ket{\varphi}$ be states in $\CC[S]$. We use the notation
+with respect to energy, and the observed value is 10J. This will collapse the state onto $\frac{1}{\sqrt{2}}\1-\frac{i}{\sqrt{2}}\ket{2}$.
+\end{ex}
 
-$$\left< \left. \ket{\psi} \right| \ket{\varphi}\right>\coloneqq \left< \left. \psi \right| \varphi \right>.$$
+Algebraically, the result of a measurement will be an orthogonal projection onto the space of states which the observed value of the observable, scaled so that the resulting state is normalized. To state this axiom it is good to introduce some notation.
 
 This gives us a complete description of measurement in quantum mechanics:
 
 \begin{enumerate}[1''.]
 \setcounter{enumi}{2}
 
-\item (Measuring systems) Let $(B,v)$ be an observable. The system $\CC[S]$ can be measured with respect to $(B,v)$. Let $\ket{\psi}=\sum_{b\in B}c_b \ket{b}\in \CC[S]$ be a state, and let $\lambda\in \RR$ be a real number. The probability that the outcome of the measurement is equal to $\lambda$ is $\sum_{v(b)=\lambda}|c_b|^2$. In this case, the state $\ket{\psi}$ will collapse onto
+\item (Measuring systems) Let $(B,v)$ be an observable. The system $\bC[S]$ can be measured with respect to $(B,v)$. Let $\ket{\psi}=\sum_{b\in B}c_b \ket{b}\in \bC[S]$ be a state, and let $\lambda\in \bR$ be a real number. The probability that the outcome of the measurement is equal to $\lambda$ is $\sum_{v(b)=\lambda}|c_b|^2$. In this case, the state $\ket{\psi}$ will collapse onto
 
 $$\left.\left(\sum_{v(b)=\lambda}c_b \ket{b}\right)\right/ \left(\sum_{v(b)=\lambda}|c_b|^2\right).$$
 \end{enumerate}
@@ -203,15 +223,15 @@ $$\left.\left(\sum_{v(b)=\lambda}c_b \ket{b}\right)\right/ \left(\sum_{v(b)=\lam
 
 \subsubsection{Basis-independent quantum mechanics}
 
-From our discussion of measurement it is clear that, unlike probibilistic systems, quantum systems do not have a favored choice of basis. However, our definition of quantum system is still woefully basis-dependent. Namely, it starts by choosing a distinguished basis $S$ of $\CC[S]$. What would be better if we could remove this choice, and make a quantum system simply a vector space.
+From our discussion of measurement it is clear that, unlike probibilistic systems, quantum systems do not have a favored choice of basis. However, our definition of quantum system is still woefully basis-dependent. Namely, it starts by choosing a distinguished basis $S$ of $\bC[S]$. What would be better if we could remove this choice, and make a quantum system simply a vector space.
 
-This poses some immediate problems however. The first is that vector spaces have no notion of norm. Hence, we cannot speak of normalized vectors, and hence we cannot speak of sates. What's more, measurements are required to use an orthonormal basis. To define orthogonality we used the canonical inner product on $\CC[S]$. Without a basis there is no distinguished choice of inner product. However, in a real sense that is the \textit{only} piece of information we need about our basis - its inner product. This means that we can state the axioms of quantum mechanics for any vector space with a distinguished choice of inner product. We define what it means for a space to have an inner product below:
+This poses some immediate problems however. The first is that vector spaces have no notion of norm. Hence, we cannot speak of normalized vectors, and hence we cannot speak of sates. What's more, measurements are required to use an orthonormal basis. To define orthogonality we used the canonical inner product on $\bC[S]$. Without a basis there is no distinguished choice of inner product. However, in a real sense that is the {\em only} piece of information we need about our basis - its inner product. This means that we can state the axioms of quantum mechanics for any vector space with a distinguished choice of inner product. We define what it means for a space to have an inner product below:
 
-\begin{definition} A (finite-dimensional) Hilbert space $(V,\Braket{\cdot | \cdot})$ is the following data:
+\begin{defn} A (finite-dimensional) Hilbert space $(V,\Braket{\cdot | \cdot})$ is the following data:
 
 \begin{enumerate}
 \item A finite-dimensional vector space $V$;
-\item A map $\Braket{\cdot | \cdot}:V\times V\to \CC$;
+\item A map $\Braket{\cdot | \cdot}:V\times V\to \bC$;
 \end{enumerate}
 
 such that
@@ -223,7 +243,7 @@ such that
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
 In any Hilbert space $V$, we can define the 2-norm of a vector $\ket{\psi}\in V$ to be
 
@@ -242,45 +262,51 @@ Thus, $|\ket{\psi}|=1$ if and only if $\sum_{b\in B} |c_b|^2=1$ relative to any 
 The quantum process and quantum measurement axioms are obvious to state in any Hilbert space. The difficulty is in the joining axiom. It's here that we observe that for any finite sets $S,S'$, there is a canonical isomorphism
 
 \begin{align*}
-\CC[S\times S']&\cong \CC[S]\otimes \CC[S']\\
+\bC[S\times S']&\cong \bC[S]\otimes \bC[S']\\
 \ket{(x,x')}&\mapsto \ket{s}\otimes \ket{s'}
 \end{align*}
 
-where $\otimes$ is the tensor product. For those unfamilar with the tensor product, this could be taken as the \textit{definition} of it. We note that the tensor product of two Hilbert spaces $(V,\left<\cdot|\cdot\right>_V)$, $(V',\left<\cdot|\cdot\right>_{V'})$ is a Hilbert space. The inner product on $V\otimes V'$ is given by
+where $\otimes$ is the tensor product. For those unfamilar with the tensor product, this could be taken as a {\em definition}. We note that the tensor product of two Hilbert spaces $(V,\left<\cdot|\cdot\right>_V)$, $(V',\left<\cdot|\cdot\right>_{V'})$ is a Hilbert space. The inner product on $V\otimes V'$ is given by
 
 $$\left<(v\otimes v')| (w\otimes w')\right>_{V\otimes V'}=\left<v | w\right>_V\cdot \left<v' | w'\right>_{V'}.$$
 
 This leads us to the following basis independent formulation of the axioms of quantum mechanics:
 
-\begin{definition}[Axioms of quantum mechanics, basis independent version] $\,$
+\begin{defn}[Axioms of quantum mechanics, basis independent version] $\,$
 
 \begin{enumerate}
 \item (Systems) A quantum system is a complex Hilbert space $V$
 \item (Processes) A quantum process going from a system $V$ to a system $W$ is a unitary transformation from $V$ to $W$
 \item (Joining systems) If $V$ and $W$ are two quantum systems, the system obtained by joining $V$ and $W$ is $V\otimes W$.
-\item (Measuring systems) Let $(B,v)$ be an observable. The system $V$ can be measured with respect to $(B,v)$. Let $\ket{\psi}=\sum_{b\in B}c_b \ket{b}\in V$ be a state, and let $\lambda\in \RR$ be a real number. The probability that the outcome of the measurement is equal to $\lambda$ is $\sum_{v(b)=\lambda}|c_b|^2$. In this case, the state $\ket{\psi}$ will collapse onto
+\item (Measuring systems) Let $(B,v)$ be an observable. The system $V$ can be measured with respect to $(B,v)$. Let $\ket{\psi}=\sum_{b\in B}c_b \ket{b}\in V$ be a state, and let $\lambda\in \bR$ be a real number. The probability that the outcome of the measurement is equal to $\lambda$ is $\sum_{v(b)=\lambda}|c_b|^2$. In this case, the state $\ket{\psi}$ will collapse onto
 
 $$\left.\left(\sum_{v(b)=\lambda}c_b \ket{b}\right)\right/ \left(\sum_{v(b)=\lambda}|c_b|^2\right).$$
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
-Now that we have stated our final version of the axioms of quantum mechanics, we make some technical comments which aid in our future endevors. The first is that operators which send normalized states to normalized states have a very concise charactarization in terms of the \textit{conjugate tranpose}. Of course, without a basis we have no way of identifying linear operators with matrces, and hence no way of defining the transpose. Given a Hilbert space $V$ and a linear map $M:V\to V$ there may be no way to define the transpose but there \textit{is} a way of defining the component-wise conjugate transpose of $V$. This conjugate tranpose is denoted $M^\dagger$, and is defined by the inner-product formula
+ Of course, without a basis we have no way of identifying linear operators with matrces, and hence no way of defining the transpose. 
 
-$$\Braket{ U \psi  | \varphi}=\Braket{\psi | U^\dagger \varphi}.$$
+Given a Hilbert space $V$ and a linear map $M:V\to V$ there may be no way to define the transpose but there {\em is} a way of defining the component-wise conjugate transpose of $V$
 
-It is verified in Exercise [ref] that this formula always specifies a unique well-defined operator, and that this operator is equal to the conjugate tranpose of $V$ relative to any orthonormal basis. Seeing as this definition of the conjugate transpose is basis independent, we will henceforth refer to the conjugate transpose of an operator as its \textit{adjoint}. Here is our charactarization of maps which send normalized vectors to normalized vectors:
+\begin{rem}
+The space of operators which send normalized states to normalized states has a very concise charactarization in terms of the {\em adjoint}. Let $V$ be a Hilbert space, and let $M:V\to V$ be an operator. The adjoint is denoted $M^\dagger$, and is defined to be the unique operator on $V$ such that
 
-\begin{proposition}\label{unitary equivilance} Let $V$ be a Hilbert space, and let $U:V\to V$ be a linear transformation. The following are equivalent:
+$$\Braket{ U \psi  | \varphi}=\Braket{\psi | U^\dagger \varphi}$$
+
+for all $\ket{\varphi}\in V$. It is verified in Exercise [ref] that this formula always specifies a unique well-defined operator. In fact, the adjoint can be constructed quite succinctly. Relative to any orthonormal basis of $V$, the adjoint $M^\dagger$ is equal to the {\em conjugate transpose} of $M$ relative to that basis.
+\end{rem}
+
+\begin{prop}\label{unitary equivilance} Let $V$ be a Hilbert space, and let $U:V\to V$ be a linear transformation. The following are equivalent:
 
 \begin{enumerate}
 \item $U$ sends normalized vectors to normalized vectors;
 \item $U^{\dagger}=U^{-1}$.
 \end{enumerate}
 
-If either of these two equivalent conditions are met, we call $U$ a unitary transformation.
-\end{proposition}
+If either of these two equivalent conditions are met, we call $U$ a {\em unitary transformation}.
+\end{prop}
 \begin{proof} We observe that if $U^\dagger=U^{-1}$, then for any normalized vector $\ket{\psi}$
 
 $$|U\ket{\psi}|=\Braket{U \psi | U \psi}=\Braket{\psi | U^\dagger U \psi}=\Braket{\psi | \psi} =1.$$
@@ -297,15 +323,16 @@ Hence, $(2)\implies (1)$. To show the other direction, suppose that $U$ sends no
 where $\Re(\cdot)$ denotes the real part of a complex number. Thus, we conclude that $\Re\left(\Braket{U\psi | U\varphi}\right)=0$. However, chaning $\ket{\varphi}$ by a phase, we can assume without loss of generality that $\Braket{U\psi | U\varphi}$ is real, and hence we conclude that $\Braket{U\psi | U\varphi}=0$. Thus, we conclude that $\Braket{U\psi | U\varphi}=\Braket{\psi | \varphi}$ whenever $\psi$ and $\varphi$ are equal or orthogonal. Letting $\psi$, $\varphi$ run over an orthonormal basis, we thus conclude that the equation $\Braket{U\psi | U\varphi}=\Braket{\psi | \varphi}$ holds on a basis. Extending via linearity we conclude it holds everywhere, which is exactly the statement that $U^\dagger=U^{-1}$, as desired. 
 \end{proof}
 
-Our second comment is in its heart a way of compact packaging the data of an observable. Given a Hilbert space $V$, instead of working with a choice of orthonormal basis $B$ and a function $v:B\to \RR$ we can work instead with a single operator $H:V\to V$. This is done by defining
+\begin{rem}
+In a similar spirit to how transformations in quantum mechanics can be characterized as unitary transformations, we can give an alternate characterization of the data of an observable. Given a Hilbert space $V$, instead of working with a choice of orthonormal basis $B$ and a function $v:B\to \bR$ we can work instead with a single operator $H:V\to V$. This is done by defining
 
 $$H(b)=v(b)\cdot b$$
 
-for all $b\in B$. The set $B$ can now be recovered as the eigenvectors of $H$, and the measured results of the observable correspond to the eigenvalues. It is from this repackaging that the states in $B$ get the name eigenstate. This packaging is useful because the space of linear operators $H:V\to V$ has more structure than the space of orthonormal bases of $B$ paired with functions $v:B\to \RR$. For example, we can now add two observables together, or tensor two observables on smaller systems to obtain an observable on a larger system. These sorts of operations will be very important going forward. In fact, the operator $H$ will often have a simple form, and even computing what the elements of $B$ are can be highly complex.
+for all $b\in B$. In the case that $v$ is injective, the set $B$ can now be recovered as the eigenvectors of $H$, and the values $v(b)$ correspond to the eigenvalues. It is from this repackaging that the states in $B$ get the name eigenstate. This packaging is useful because the space of linear operators $H:V\to V$ has more structure than the space of orthonormal bases of $B$ paired with functions $v:B\to \bR$. For example, we can now add two observables together, or tensor two observables on smaller systems to obtain an observable on a larger system. These sorts of operations will be very important going forward. In fact, the operator $H$ will often have a simple form, and computing what the elements of $B$ are can be highly complex.
 
-In a similar vein to our characterization of unitary operators, we give a characterization of those linear operators which arrise from observables:
+\end{rem}
 
-\begin{proposition}[Spectral theorem]\label{Spectral theorem} Let $H: V\to V$ be a linear transformation. The following are equivalent:
+\begin{prop}[Spectral theorem]\label{Spectral theorem} Let $H: V\to V$ be a linear transformation. The following are equivalent:
 
 \begin{enumerate}
 \item There exists an observable $(B,v)$ such that $H(b)=v(b)\cdot b$ for all $b\in B$;
@@ -313,12 +340,12 @@ In a similar vein to our characterization of unitary operators, we give a charac
 \end{enumerate}
 
 If any of the three equivalent conditions are met, we call $H$ a Hermitian matrix.
-\end{proposition}
+\end{prop}
 \begin{proof} We do $(1)\implies (2)$ first. From Exercise [ref], we know that $H^{\dagger}$ can be computed as the conjugate transpose relative to any orthonormal basis. Choosing the orthonormal basis $B$, $H$ is a real diagonal matrix. Hence, it is clearly equal to its own conjugate transpose.
 
-We now prove the converse. We consider the map $\left<\cdot |\cdot \right>$ as defined in the proof of Proposition \ref{unitary equivilance}. Since $\CC$ is algebraically closed the characteristic polynomial of $H$ must have a root, hence we know that $H$ has some eigenvector $e$, with eigenvalue $\lambda$. Scaling $e$ if neccecary, we can assume without loss of generality that $\left<e | e\right> = 1$. Let $V$ be the subspace of vectors $x\in \CC[S]$ such that $\left<e | x\right>=0$. This space has dimension one less than $V$. We know from the definiton of conjugate transpose that
+We now prove the converse. We consider the map $\left<\cdot |\cdot \right>$ as defined in the proof of Proposition \ref{unitary equivilance}. Since $\bC$ is algebraically closed the characteristic polynomial of $H$ must have a root, hence we know that $H$ has some eigenvector $e$, with eigenvalue $\lambda$. Scaling $e$ if neccecary, we can assume without loss of generality that $\left<e | e\right> = 1$. Let $V$ be the subspace of vectors $x\in \bC[S]$ such that $\left<e | x\right>=0$. This space has dimension one less than $V$. We know from the definiton of conjugate transpose that
 
-$$\left<x | Hy\right>=\left<Hx |y\right>\,\, \forall x,y\in \CC[S].$$
+$$\left<x | Hy\right>=\left<Hx |y\right>\,\, \forall x,y\in \bC[S].$$
 
 In particular, if $\left<e | x\right>=0$ then
 
@@ -335,31 +362,34 @@ This concludes our treatment of the basic axioms of quantum mechanics.
 
 \subsubsection{Hamiltonians and the Schrodinger equation}
 
-We now know the basic rules of quantum mechanics. Suppose, however, that we are given some quantum mechanical system in a lab. How will it evolve in time? Certinaly it will evolve by a unitary transformation, as per the axioms. But \textit{which} unitary? The answer to this question is the Schrodinger equation. It gives us time dynamics in quantum mechanics. Once the initial state of the universe was set, the rest of time was just an evolution by the Schrodinger equation. 
+We now know the basic rules of quantum mechanics. Suppose, however, that we are given some quantum mechanical system in a lab. How will it evolve in time? Certinaly it will evolve by a unitary transformation, as per the axioms. But {\em which} unitary? The answer to this question is the Schrodinger equation. It gives us time dynamics in quantum mechanics. Once the initial state of the universe was set, the rest of time was just an evolution by the Schrodinger equation. 
 
-At the heart of the Schrodinger equation is the \textit{Hamiltonian} of a quantum system. The Hamiltonian is an observable. The physical quantity it coressponds to is \textit{total energy}. States with definite total energy are known as energy eigenstates, and their energy is some real number. In line with general principles established in the previous subsection, we will think of the Hamiltonian as being a linear operator $H:V\to V$. The Schrodinger equation is defined as follows:
+At the heart of the Schrodinger equation is the {\em Hamiltonian} of a quantum system. The Hamiltonian is an observable. The physical quantity it coressponds to is {\em total energy}. States with definite total energy are known as energy eigenstates, and their energy is some real number. In line with general principles established in the previous subsection, we will think of the Hamiltonian as being a linear operator $H:V\to V$. The Schrodinger equation is defined as follows:
 
-\begin{definition} (Schrodinger equation) Let $V$ be a Hilbert space, corresponding to a quantum system. Let $H$ be a Hermitian operator, corresponding to the Hamiltonian of $V$. Let $\ket{\psi(t)}$ denote the state of the system at time $t$. We have the formula
+\begin{defn} (Schrodinger equation) Let $V$ be a Hilbert space, corresponding to a quantum system. Let $H$ be a Hermitian operator, corresponding to the Hamiltonian of $V$. Let $\ket{\psi(t)}$ denote the state of the system at time $t$. We have the formula
 
 $$\ket{\psi(t)}=e^{-i H t}\ket{\psi(0)}$$
 
 where $e^M=\sum_{n=0}^{\infty}\frac{M^n}{n!}$ is the matrix exponential.
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
-This equation deserves several comments. First, we comment on terminology. Initially words \textit{state of the system at time $t$} currently have no meaning. In fact time itself is at the current moment undefined. In this way, the Schrodinger equation is defining what time is in quantum mechanics (a one dimensional real parameter) and what it means for a system to be in a state at a time. We still do need to verify that the Schrodiner equation is consistent with our intuitive notion of time. For instance, if we first evolve the system in forward by $t$ time units and then by $s$ time units is that the same as evolving the system forward by $t+s$ time units? Under the Schroding equation, this is the same as verifying the equation
+\begin{rem}
+This equation deserves several comments. First, we comment on terminology. Initially the words ``state of the system at time $t$"currently have no meaning. In fact time itself is at the current moment undefined. In this way, the Schrodinger equation is defining what time is in quantum mechanics (a one dimensional real parameter) and what it means for a system to be in a state at a time. We still do need to verify that the Schrodiner equation is consistent with our intuitive notion of time. For instance, if we first evolve the system in forward by $t$ time units and then by $s$ time units is that the same as evolving the system forward by $t+s$ time units? Under the Schrodinger equation, this is the equation
 
-$$e^{-i H (t+s)}\ket{\psi(0)}\stackrel{?}{=}e^{- i H t} e^{- i H s}\ket{\psi(0)}.$$
+$$e^{-i H (t+s)}\ket{\psi(0)}=e^{- i H t} e^{- i H s}\ket{\psi(0)},$$
 
-This formula follows from the well known fact about matrix exponentials, which we will not prove:
+which follows from proposition \ref{exponential-commuting}.
+\end{rem}
 
-\begin{proposition} If $A$ and $B$ are commuting operators, then
+\begin{prop}\label{exponential-commuting} If $A$ and $B$ are commuting operators, then
 
 $$e^{A}e^{B}=e^{A+B}.$$
-\end{proposition}
+\end{prop}
 
-Second, we make sure that the equation as stated is consistent with the axioms of quantum mechanics as we have previously defined them. In other words, is the map $e^{-iHt}: V\to V$ really a unitary operator for every $t\in \RR$? This follows from the following important computation:
+\begin{rem}
+We also need make sure that the Schrodinger equation is consistent with the axioms of quantum mechanics as we have previously developped them. In particular, is it true that the map $e^{-iHt}: V\to V$ really a unitary operator for every $t\in \bR$? This follows from the following important computation:
 
 \begin{align*}
 \left(e^{-iHt}\right)^\dagger &= \left(\sum_{n=0}^{\infty}\frac{(-i H t)^n}{n!}\right)^{\dagger}\\
@@ -368,14 +398,18 @@ Second, we make sure that the equation as stated is consistent with the axioms o
 &=e^{i H t}.
 \end{align*}
 
-The operators $e^{- i H t}$ and $e^{i H t}$ are inverses by Proposition [ref].
+The operators $e^{- i H t}$ and $e^{i H t}$ are inverses by Proposition \ref{exponential-commuting}.
+\end{rem}
 
-A third comment to make about the Schrodinger equation is about units. Both time and energy, austensibly, should have units. However, we have treated them as dimensionless mathematical quantities. How can this be? The answer is that implicitely we \textit{did} choose units. When different choices of units are made, different constants need to be put into the Schrodinger equation. The version of the Schrodinger equtaion which includes units is
+\begin{rem}
+It is worthwhile to take note of the {\em units} in the Shrodinger equation. Both time and energy, austensibly, should have units. However, we have treated them as dimensionless mathematical quantities. How can this be? The answer is that implicitely we {\em did} choose units. When different choices of units are made, different constants need to be put into the Schrodinger equation. The version of the Schrodinger equtaion which includes units is
 
 $$\ket{\psi(t)}=e^{-i H t/\hbar}\ket{\psi(0)}$$
 
 where $\hbar$ is the normalized plank constant. In our original statement of the Schrodinger equation we have simply decided to use units in which the normalized plank constant is equal to $1$.
+\end{rem}
 
+\begin{rem}
 The Schrodinger equation tells us that all we need to do to understand the dynamics of a quantum system is solve the Schrodinger equation. Suppose now that $\ket{\psi(0)}$ is some initial state in a quantum system with extended state space $V$ and Hamiltonian $H$. Suppose that we have a decomposition $\ket{\psi(0)}=\sum_{x\in B}c_x \ket{x}$ where $B$ is the set of energy eigenstates of $H$. Then, the Schrodinger equation would tell us that
 
 $$\ket{\psi(t)}=\sum_{x\in B}e^{- i v(b) t}c_x \ket{x}$$
@@ -383,6 +417,8 @@ $$\ket{\psi(t)}=\sum_{x\in B}e^{- i v(b) t}c_x \ket{x}$$
 where $v(b)$ is the eigenvalue corresponding to $v$. In this way, we see that by writing $\ket{\psi(0)}$ in terms of an energy eigenbasis we can exactly solve the Schrodinger equation.
 
 In this way, solving quantum dynamics correponds exactly to finding the eigenvectors of the Hamiltonian. Or, in other words, diagonalizing the Hamiltonian. This task, while conceptually easy, can be very difficult in specific cases. Diagonalizing matrices has never been so exciting!
+
+\end{rem}
 
 
 $\newline$
@@ -392,7 +428,7 @@ $\newline$
 \textbf{History and further reading:}\\
 \end{center}
 
-[WORK: there are people who can do a history of quantum mechanics way better than me]
+\Note{I should learn the history of quantum mechanics better. Maybe give references to the many good history books on this topic.}
 
 A fantastic place to first learn about quantum mechanics and its principles is the popular science book ``Quantum computing since Democritus" \cite{aaronson2013quantum}. A more formal, but still excellent, introduction to finite-dimensional quantum theory is Nielsen-Chuang's book ``Quantum computation and quantum information" \cite{nielsen2010quantum}. Past this there are many great textbooks which go into full depth on infinite-dimensional quantum theory and advanced properties of quantum systems. A good physics-oriented text is Shankar's ``Principles of quantum mechanics" \cite{shankar2012principles}, and a good math-oriented text is Hall's ``Quantum theory for mathematicians" \cite{hall2013quantum}.
 
@@ -405,7 +441,7 @@ $\newline\newline$
 
 \begin{enumerate}[\thesection .1.]
 
-\item .[WORK: show that the adjoint really is the conjugate transpose]
+\item \Note{show that the adjoint really is the conjugate transpose}
 \end{enumerate}
 
-[WORK: I need to add somewhere that global phases don't matter, clear up this ambiguity]
+\Note{I need to add somewhere that global phases don't matter, clear up this ambiguity}

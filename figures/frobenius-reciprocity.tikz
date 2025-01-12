@@ -1,7 +1,7 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=none] (16) at (-5.5, 3.75) {$\Hom_{\M}(N,A\otimes M)$};
-		\node [style=none] (17) at (2.25, 3.75) {$\Hom_{\M}(A^*\otimes N,M)$};
+		\node [style=none] (16) at (-5.5, 3.75) {$\Hom_{\cM}(N,A\otimes M)$};
+		\node [style=none] (17) at (2.25, 3.75) {$\Hom_{\cM}(A^*\otimes N,M)$};
 		\node [style=none] (18) at (-2.25, 3.825) {};
 		\node [style=none] (19) at (-1.25, 3.825) {};
 		\node [style=none] (20) at (-5.5, 2.25) {};

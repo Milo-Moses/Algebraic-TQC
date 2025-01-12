@@ -60,7 +60,7 @@
 		\node [style=none] (84) at (3.75, 2) {};
 		\node [style=none] (85) at (3.75, -1.5) {};
 		\node [style=none] (86) at (5, 0) {$=$};
-		\node [style=none] (87) at (7, -0.375) {$\displaystyle{\sum_{[C]\in \LL}}$};
+		\node [style=none] (87) at (7, -0.375) {$\displaystyle{\sum_{[C]\in \cL}}$};
 		\node [style=none] (88) at (8.5, 0) {$N^{A,B}_{C}$};
 		\node [style=none] (89) at (11.5, 1.5) {};
 		\node [style=none] (90) at (11.5, -1) {};
@@ -76,7 +76,7 @@
 		\node [style=none] (100) at (12.75, -1.5) {};
 		\node [style=none] (101) at (9.5, 0) {$\cdot$};
 		\node [style=none] (102) at (-1.5, -4) {$=$};
-		\node [style=none] (103) at (0.5, -4.375) {$\displaystyle{\sum_{[C]\in \LL}}$};
+		\node [style=none] (103) at (0.5, -4.375) {$\displaystyle{\sum_{[C]\in \cL}}$};
 		\node [style=none] (104) at (3.75, -4) {$N^{A,B}_{C}\left(\frac{1}{d_D}S_{D,C}\right).$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}

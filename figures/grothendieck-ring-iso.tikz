@@ -14,7 +14,7 @@
 		\node [style=none] (11) at (-2.75, 1) {};
 		\node [style=none] (12) at (0, 2.075) {$\left |b\right>$};
 		\node [style=none] (13) at (1, 2.075) {$\in$};
-		\node [style=none] (14) at (3, 2.025) {$\CC[\LL]^{\func},$};
+		\node [style=none] (14) at (3, 2.025) {$\bC[\LL]^{\func},$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (2.center) to (3.center);

@@ -50,7 +50,7 @@ One of the fantastic features of the above structures is that they are all mathe
 
 In this section we will talk about boundaries and domain walls in topological systems. To begin, we'll talk about boundaries in topological phases. We have the following general picture:
 
-[WORK: topologically ordered system with boundary. DON'T use the categorical ``$\C$". Use the words ``topologically ordered system". Keep with this convention for the whole section. I'm not assuming that the reader knows any category theory.]
+[WORK: topologically ordered system with boundary. DON'T use the categorical ``$\cC$". Use the words ``topologically ordered system". Keep with this convention for the whole section. I'm not assuming that the reader knows any category theory.]
 
 This topologically ordered system with boundary will be described by some Hamiltonian. Within the bulk of the system the Hamiltonian would be the same as if the topological system had no boundary. On the boundary, however, it will neccecarily be different. A-priori, we could chose our boundary terms in the Hamiltonian to behave arbitrarily. This will cause a problem, however. It can close the topological gap!
 
@@ -74,7 +74,7 @@ One important feature of boundary defects is that they can be \textit{fused}. Th
 
 [WORK: add a picture for the fusion of boundary defects.]
 
-This fusion can be nondeterministic. That is, repeating the fusion of two boundary defects can yield different results. In this sense boundaries can host non-abelian defects. Importantly, we will find that abelian bulk theories can host non-abelian boundary defects! This is the heart of our proposal for quantum computing with $\D(\ZZ_2)$ topological order. Instead of working with the abelian anyons, we work with the nonabelian boundary defects!
+This fusion can be nondeterministic. That is, repeating the fusion of two boundary defects can yield different results. In this sense boundaries can host non-abelian defects. Importantly, we will find that abelian bulk theories can host non-abelian boundary defects! This is the heart of our proposal for quantum computing with $\fD(\bZ_2)$ topological order. Instead of working with the abelian anyons, we work with the nonabelian boundary defects!
 
 More generally, in this section we will also discuss \textit{domain walls}. Domain walls are boundaries between two different phases. That is, a domain wall is a one-dimensional line seperating two-dimensional topologically ordered systems, as shown below:
 
@@ -149,7 +149,7 @@ I'll talk to Zhenghan and he will explain everything to me.
 \item Classification of irriducible module categories in terms of Lagrangian algebras - this is proposition 4.8 of \cite{davydov2013witt}.
 \item Characterization of Lagrangian algebras in terms of algebras with nice properties - this is due to Cong-Cheng-Wang;
 \item Proof that an MTC is doubled iff it contains a Lagrangian algebra
-\item Characterization of Lagrangian algebras in $\Z(\Vec_{G})$;
+\item Characterization of Lagrangian algebras in $\cZ(\Vec_{G})$;
 \end{itemize}
 ]
 
@@ -177,7 +177,7 @@ To begin, we re-iteratre that not every topological phase admits a gapped bounda
 \left(
 \substack{
 \text{the topological order described}\\
-\text{by the modular category $\BB$}\\
+\text{by the modular category $\cB$}\\
 \text{admits a gapped boundary}
 }
 \right)
@@ -185,42 +185,42 @@ To begin, we re-iteratre that not every topological phase admits a gapped bounda
 \left(
 \substack{
 \text{there is an equivalence of categories}\\
-\text{$\BB\cong \Z(\C)$ for some}\\
-\text{spherical fusion category $\C$}
+\text{$\cB\cong \cZ(\cC)$ for some}\\
+\text{spherical fusion category $\cC$}
 }
 \right).
 \end{equation*}
 
-For this reason, we will restrict our attention to \textit{doubled} topological order for the rest of the section. That is, modular categories $\BB$ which are equivalent to $\Z(\C)$ for some spherical fusion category $\C$. We will simplify notion for doubled topological order. We will write
+For this reason, we will restrict our attention to \textit{doubled} topological order for the rest of the section. That is, modular categories $\cB$ which are equivalent to $\cZ(\cC)$ for some spherical fusion category $\cC$. We will simplify notion for doubled topological order. We will write
 
-[WORK: bulk theory with letter $\C$ in it $=$ topological ordered described by $\Z(\C)$.]
+[WORK: bulk theory with letter $\cC$ in it $=$ topological ordered described by $\cZ(\cC)$.]
 
-This now leads us to the big question: what, algebraically, are boundaries theories in the $\Z(\C)$ topological order?
+This now leads us to the big question: what, algebraically, are boundaries theories in the $\cZ(\cC)$ topological order?
 
-[WORK: The answer is $\C$-module categories. I am suspecting that to motivate this answer one needs to take some physical principles from the string-nets developped in the Levin-Wen model. I haven't written the Levin-Wen section yet, so this can wait until that.]
+[WORK: The answer is $\cC$-module categories. I am suspecting that to motivate this answer one needs to take some physical principles from the string-nets developped in the Levin-Wen model. I haven't written the Levin-Wen section yet, so this can wait until that.]
 
-More generally, a domain wall between the phases described by $\Z(\C)$ and $\Z(\Dcat)$ will be a $(\C,\Dcat)$-bimodle category. [WORK: motivate this as well].
+More generally, a domain wall between the phases described by $\cZ(\cC)$ and $\cZ(\cD)$ will be a $(\cC,\cD)$-bimodle category. [WORK: motivate this as well].
 
 We rigorously define the above intuitive notions as follows.
 
-\begin{definition}[Left module category] A \textit{left module category} over a fusion category $\C$ is the following data:
+\begin{defn}[Left module category] A \textit{left module category} over a fusion category $\cC$ is the following data:
 
 \begin{enumerate}
-\item A $\CC$-linear category $\M$;
-\item (Action) A functor $\otimes: \C \times \M \xrightarrow{} \M$;
-\item (Left associator) A natural isomorphism $m: \left((\--)\otimes (\--)\right)\otimes (\--) \xrightarrow{\sim} (\--)\otimes \left((\--)\otimes (\--)\right)$ of functors $\C\times \C\times \M \xrightarrow{} \M$;
-\item (Unit) A natural isomorphism $\lambda_m:\one \otimes (\--)\xrightarrow{} (\--)$ of functors $\M\xrightarrow{}\M$.
+\item A $\bC$-linear category $\cM$;
+\item (Action) A functor $\otimes: \cC \times \cM \xrightarrow{} \cM$;
+\item (Left associator) A natural isomorphism $m: \left((\--)\otimes (\--)\right)\otimes (\--) \xrightarrow{\sim} (\--)\otimes \left((\--)\otimes (\--)\right)$ of functors $\cC\times \cC\times \cM \xrightarrow{} \cM$;
+\item (Unit) A natural isomorphism $\lambda_m:\bone \otimes (\--)\xrightarrow{} (\--)$ of functors $\cM\xrightarrow{}\cM$.
 \end{enumerate}
 
 Such that:
 
 \begin{enumerate}
 
-\item There is an equivalence $\C \cong \Vec_{\CC}^n$ as $\CC$-linear categories for some integer $n\geq 1$.
+\item There is an equivalence $\cC \cong \Vec_{\bC}^n$ as $\bC$-linear categories for some integer $n\geq 1$.
 
-\item The functor $\otimes$ is $\CC$-linear.
+\item The functor $\otimes$ is $\bC$-linear.
 
-\item For all $A,B,C\in \C$ and $M\in \M$ the diagram
+\item For all $A,B,C\in \cC$ and $M\in \cM$ the diagram
 
 % https://q.uiver.app/#q=WzAsNSxbMSwwLCIoKEFcXG90aW1lcyBCKVxcb3RpbWVzIEMpXFxvdGltZXMgTSJdLFswLDEsIihBXFxvdGltZXMgKEJcXG90aW1lcyBDKSlcXG90aW1lcyBNIl0sWzAsMiwiQVxcb3RpbWVzICgoQlxcb3RpbWVzIEMpXFxvdGltZXMgTSkiXSxbMiwxLCIoQVxcb3RpbWVzIEIpXFxvdGltZXMgKENcXG90aW1lcyBNKSJdLFsyLDIsIkFcXG90aW1lcyAoQlxcb3RpbWVzIChDXFxvdGltZXMgTSkpIl0sWzAsMSwiXFxhbHBoYV97QSxCLEN9XFxvdGltZXMgXFxpZF97TX0iLDFdLFsxLDIsIm1fe0EsQlxcb3RpbWVzIEMsIE19Il0sWzAsMywibV97QVxcb3RpbWVzIEIsQyxNfSIsMV0sWzMsNCwibV97QSxCLENcXG90aW1lcyBNfSIsMl0sWzIsNCwiXFxpZF97QX1cXG90aW1lcyBtX3tCLEMsTX0iXV0=
 \[\begin{tikzcd}
@@ -236,13 +236,13 @@ Such that:
 
 commutes.
 
-\item For all $A\in \C$ and $M\in \M$, the diagram
+\item For all $A\in \cC$ and $M\in \cM$, the diagram
 
 % https://q.uiver.app/#q=WzAsMyxbMCwwLCIoQVxcb3RpbWVzIFxcb25lKVxcb3RpbWVzIE0iXSxbMSwwLCJBXFxvdGltZXMgKFxcb25lIFxcb3RpbWVzIE0pIl0sWzAsMSwiQVxcb3RpbWVzIE0iXSxbMCwyLCJcXHJob197QX0iXSxbMSwyLCJpZF97QX1cXG90aW1lcyBcXGxhbWJkYV9tIl0sWzAsMSwibV97QSxcXG9uZSxNfSJdXQ==
 \[\begin{tikzcd}
-	{(A\otimes \one)\otimes M} & {A\otimes (\one \otimes M)} \\
+	{(A\otimes \bone)\otimes M} & {A\otimes (\bone \otimes M)} \\
 	{A\otimes M}
-	\arrow["{m_{A,\one,M}}", from=1-1, to=1-2]
+	\arrow["{m_{A,\bone,M}}", from=1-1, to=1-2]
 	\arrow["{\rho_{A}}", from=1-1, to=2-1]
 	\arrow["{id_{A}\otimes \lambda_m}", from=1-2, to=2-1]
 \end{tikzcd}\]
@@ -251,22 +251,22 @@ commutes.
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
 The definition of a \textit{right} module category is completely symmetric, with no surprises. The definition of a bimodule category comes from putting these definitions together:
 
-\begin{definition}[Bimodule category] A \textit{$(\C,\Dcat)$-bimodule category} $\M$ over fusion categories $\C,\Dcat$ is the following data:
+\begin{defn}[Bimodule category] A \textit{$(\cC,\cD)$-bimodule category} $\cM$ over fusion categories $\cC,\cD$ is the following data:
 
 \begin{enumerate}
-\item The structure of a right $\C$-module on $\M$;
-\item The structure of a left $\Dcat$-module on $\M$;
-\item (Middle associator) A natural isomorphism $b: ((\--)\otimes (\--))\otimes (\--)\xrightarrow{\sim} (\--)\otimes ((\--)\otimes (\--))$ of functors $\C\times\M \times \Dcat \xrightarrow{} \M$;
+\item The structure of a right $\cC$-module on $\cM$;
+\item The structure of a left $\cD$-module on $\cM$;
+\item (Middle associator) A natural isomorphism $b: ((\--)\otimes (\--))\otimes (\--)\xrightarrow{\sim} (\--)\otimes ((\--)\otimes (\--))$ of functors $\cC\times\cM \times \cD \xrightarrow{} \cM$;
 \end{enumerate}
 
 Such that:
 
 \begin{enumerate}
-\item For all $A,B\in \C$, $M\in \prescript{}{\C}\M_{\Dcat}$, $A',B\in \Dcat$, the diagrams
+\item For all $A,B\in \cC$, $M\in \prescript{}{\cC}\cM_{\cD}$, $A',B\in \cD$, the diagrams
 
 % https://q.uiver.app/#q=WzAsNSxbMSwwLCIoKEFcXG90aW1lcyBCKVxcb3RpbWVzIE0pXFxvdGltZXMgQyJdLFswLDEsIihBXFxvdGltZXMgKEJcXG90aW1lcyBNKSlcXG90aW1lcyBDIl0sWzAsMiwiQVxcb3RpbWVzICgoQlxcb3RpbWVzIE0pXFxvdGltZXMgQykiXSxbMiwxLCIoQVxcb3RpbWVzIEIpXFxvdGltZXMgKE1cXG90aW1lcyBDKSJdLFsyLDIsIkFcXG90aW1lcyAoQlxcb3RpbWVzIChNXFxvdGltZXMgQykpIl0sWzAsMSwibV5MX3tBLEIsTX0iLDJdLFswLDMsImJfe0FcXG90aW1lcyBCLCBNLCBDfSJdLFsxLDIsImJfe0EsQlxcb3RpbWVzIE0sQ30iXSxbMiw0LCJcXGlkX3tBfVxcb3RpbWVzIGJfe0IsTSxDfSJdLFszLDQsIm1ee0x9X3tBLEIsTVxcb3RpbWVzIEN9IiwyXV0=
 \[\begin{tikzcd}
@@ -298,9 +298,9 @@ commute.
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
-Given two fusion categories $\C,\Dcat$ and a $(\C,\Dcat)$-bimodule categories $\M$, we define $\M$ to be a \textit{simple} module if for all simple objects $N,M\in \M$ there exists some $A\in \C$ such that $\Hom(N,A\otimes M)\neq 0$. This condition of irriducibility corresponds exactly the condition of stability of boundaries. Hence, we arrive at the following correspondance:
+Given two fusion categories $\cC,\cD$ and a $(\cC,\cD)$-bimodule categories $\cM$, we define $\cM$ to be a \textit{simple} module if for all simple objects $N,M\in \cM$ there exists some $A\in \cC$ such that $\Hom(N,A\otimes M)\neq 0$. This condition of irriducibility corresponds exactly the condition of stability of boundaries. Hence, we arrive at the following correspondance:
 
 [WORK: boundary theories correspond to simple module categories;]
 
@@ -312,55 +312,55 @@ We now turn our attention towards boundary defects.
 
 Formally, we get the following definition:
 
-\begin{definition}[Left module functor] A \textit{left module functor} between left $\C$-module categories $\M$, $\N$ is the following data:
+\begin{defn}[Left module functor] A \textit{left module functor} between left $\cC$-module categories $\cM$, $\cN$ is the following data:
 
 \begin{enumerate}
-\item A functor $F: \M \xrightarrow{}  \N$;
-\item A natural isomorphism $s:F((\--)\otimes (\--))\xrightarrow{\sim}(\--)\otimes (\--)$ of functors $\C\times \M\xrightarrow{} \N$.
+\item A functor $F: \cM \xrightarrow{}  \cN$;
+\item A natural isomorphism $s:F((\--)\otimes (\--))\xrightarrow{\sim}(\--)\otimes (\--)$ of functors $\cC\times \cM\xrightarrow{} \cN$.
 \end{enumerate}
 
 Such that:
 
 \begin{enumerate}
 
-\item For all $A,B\in \C$, $M\in \M$, the diagram
+\item For all $A,B\in \cC$, $M\in \cM$, the diagram
 
 % https://q.uiver.app/#q=WzAsNSxbMSwwLCJGKChBXFxvdGltZXMgQilcXG90aW1lcyBNKSJdLFswLDEsIkYoQVxcb3RpbWVzIChCXFxvdGltZXMgTSkpIl0sWzAsMiwiQVxcb3RpbWVzIEYoQlxcb3RpbWVzIE0pIl0sWzIsMSwiKEFcXG90aW1lcyBCKVxcb3RpbWVzIEYoTSkiXSxbMiwyLCJBXFxvdGltZXMgKEJcXG90aW1lcyBGKE0pKSJdLFsyLDQsIlxcaWRfe0F9XFxvdGltZXMgc197QixNfSJdLFswLDMsInNfe0FcXG90aW1lcyBCLE19Il0sWzMsNCwibV57XFxOfV97QSxCLEYoTSl9IiwxXSxbMCwxLCJGKG1ee1xcTX1fe0EsQixNfSkiLDJdLFsxLDIsInNfe0EsQlxcb3RpbWVzIE19IiwxXV0=
 \[\begin{tikzcd}
 	& {F((A\otimes B)\otimes M)} \\
 	{F(A\otimes (B\otimes M))} && {(A\otimes B)\otimes F(M)} \\
 	{A\otimes F(B\otimes M)} && {A\otimes (B\otimes F(M))}
-	\arrow["{F(m^{\M}_{A,B,M})}"', from=1-2, to=2-1]
+	\arrow["{F(m^{\cM}_{A,B,M})}"', from=1-2, to=2-1]
 	\arrow["{s_{A\otimes B,M}}", from=1-2, to=2-3]
 	\arrow["{s_{A,B\otimes M}}"{description}, from=2-1, to=3-1]
-	\arrow["{m^{\N}_{A,B,F(M)}}"{description}, from=2-3, to=3-3]
+	\arrow["{m^{\cN}_{A,B,F(M)}}"{description}, from=2-3, to=3-3]
 	\arrow["{\id_{A}\otimes s_{B,M}}", from=3-1, to=3-3]
 \end{tikzcd}\]
 
 commutes.
 
-\item For all $M\in \M$ the diagram
+\item For all $M\in \cM$ the diagram
 
 % https://q.uiver.app/#q=WzAsMyxbMCwwLCJGKFxcb25lXFxvdGltZXMgTSkiXSxbMSwwLCJcXG9uZVxcb3RpbWVzIEYoTSkiXSxbMSwxLCJGKE0pIl0sWzAsMiwiRihcXGxhbWJkYV5cXE1fe20sTX0pIiwyXSxbMSwyLCJcXGxhbWJkYV57XFxOfV97bSxGKE0pfSJdLFswLDEsInNfe1xcb25lLE19Il1d
 \[\begin{tikzcd}
-	{F(\one\otimes M)} & {\one\otimes F(M)} \\
+	{F(\bone\otimes M)} & {\bone\otimes F(M)} \\
 	& {F(M)}
-	\arrow["{s_{\one,M}}", from=1-1, to=1-2]
-	\arrow["{F(\lambda^\M_{m,M})}"', from=1-1, to=2-2]
-	\arrow["{\lambda^{\N}_{m,F(M)}}", from=1-2, to=2-2]
+	\arrow["{s_{\bone,M}}", from=1-1, to=1-2]
+	\arrow["{F(\lambda^\cM_{m,M})}"', from=1-1, to=2-2]
+	\arrow["{\lambda^{\cN}_{m,F(M)}}", from=1-2, to=2-2]
 \end{tikzcd}\]
 
 commutes.
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
-A right module functor is defined in complete analogy to left module functor. A $(\C,\Dcat)$-bimodule functor is defined to be a functor which is simulaneously equipped with the structure of a left and right module functor. We denote by $\Fun_{\C}(\M, \N)$, the space of $\C$-modue functors from $\M$ to $\N$, and we denote by $\Fun_{\C | \Dcat}( \M, \N)$ the space bimodule functors.
+A right module functor is defined in complete analogy to left module functor. A $(\cC,\cD)$-bimodule functor is defined to be a functor which is simulaneously equipped with the structure of a left and right module functor. We denote by $\Fun_{\cC}(\cM, \cN)$, the space of $\cC$-modue functors from $\cM$ to $\cN$, and we denote by $\Fun_{\cC | \cD}( \cM, \cN)$ the space bimodule functors.
 
 To turn these spaces of module functors into categories, we will need to define an appropriate notion of natural transformation
 
-\begin{definition}[Natural transformation of left module functors] A \textit{natural transformation of left module functions} between left $\C$-module functors $F,G:\M\to \N$ is a natural transformation $\eta:F\to G$ such that for all $A\in \C$, $M\in \M$
+\begin{defn}[Natural transformation of left module functors] A \textit{natural transformation of left module functions} between left $\cC$-module functors $F,G:\cM\to \cN$ is a natural transformation $\eta:F\to G$ such that for all $A\in \cC$, $M\in \cM$
 
 % https://q.uiver.app/#q=WzAsNCxbMCwwLCJGKEFcXG90aW1lcyBNKSJdLFsxLDAsIkcoQVxcb3RpbWVzIE0pIl0sWzAsMSwiQVxcb3RpbWVzIEYoTSkiXSxbMSwxLCJBXFxvdGltZXMgRyhNKSJdLFswLDEsIlxcZXRhX3tBXFxvdGltZXMgTX0iXSxbMiwzLCJcXGlkX3tBfVxcb3RpbWVzIFxcZXRhX3tNfSJdLFswLDIsInNee0Z9X3tBLE19IiwxXSxbMSwzLCJzXkdfe0EsTX0iLDFdXQ==
 \[\begin{tikzcd}
@@ -373,20 +373,20 @@ To turn these spaces of module functors into categories, we will need to define 
 \end{tikzcd}\]
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
 Just like in our general theory, we define an object in a functor category to be irriducible if it cannot be expressed as the biproduct of two nonzero elements. We arrive at the following correspondance:
 
 [WORK: boundary defects correspond to simple bimodule functors.]
 
-The fusion of boundary defects is clear. Given two boundary defects $F: \M\to \M'$ and $G: \M'\to \M''$ the composition $(G\circ F): \M\to \M''$ gives another boundary defect. This is the correct physical choice becase [WORK: depends on the physical motivation I gave for defects corresponding to functors].
+The fusion of boundary defects is clear. Given two boundary defects $F: \cM\to \cM'$ and $G: \cM'\to \cM''$ the composition $(G\circ F): \cM\to \cM''$ gives another boundary defect. This is the correct physical choice becase [WORK: depends on the physical motivation I gave for defects corresponding to functors].
 
 The fusion of domain walls is a bit more sublte. It requires the notion of relative tensor product:
 
-\begin{definition}[Relative Deligne tensor product] [WORK: give definition]
-\end{definition}
+\begin{defn}[Relative Deligne tensor product] [WORK: give definition]
+\end{defn}
 
-Physically, we can define fusion of domain walls $\M$ and $\N$ to be the relative Deligne tensor product $\M\boxtimes_{\K}\N$, where $\M$ is a $(\C\,\K)$-bimodule and $\N$ is a $(\K,\Dcat)$-bimodule. This is the correct definition because [WORK: give physical motivation].
+Physically, we can define fusion of domain walls $\cM$ and $\cN$ to be the relative Deligne tensor product $\cM\boxtimes_{\cK}\cN$, where $\cM$ is a $(\cC\,\cK)$-bimodule and $\cN$ is a $(\cK,\cD)$-bimodule. This is the correct definition because [WORK: give physical motivation].
 
 All together, this gives us the following physics-math dictionary:
 
@@ -396,32 +396,32 @@ As we have just seen, the algebraic theory of of topological boundaries and doma
 
 The first thing we are going to do is reinterpret bimodules in terms of modules. This will allow us to state all of our results in this section in terms of modules without loss of generality, because dealing with bimodules adds unnececary notational difficulty. This is done via the folding trick. As mentioned before, we have a correspondance as follows:
 
-[WORK: add folding trick. The flat plane should have the label $(\C,\Dcat)$-bimodules and the folded plane shuld have the label $(\C\boxtimes \overline{\Dcat})$-modules.]
+[WORK: add folding trick. The flat plane should have the label $(\cC,\cD)$-bimodules and the folded plane shuld have the label $(\cC\boxtimes \overline{\cD})$-modules.]
 
 This is codifed mathematically in the following proposition:
 
-\begin{proposition}[Folding trick] Let $\C,\Dcat$ be fusion categories. Given a $(\C,\Dcat)$-bimodule $\M$, define a left ($\C\boxtimes \overline{\Dcat}$)-module structure on $\M$ via the formula
+\begin{prop}[Folding trick] Let $\cC,\cD$ be fusion categories. Given a $(\cC,\cD)$-bimodule $\cM$, define a left ($\cC\boxtimes \overline{\cD}$)-module structure on $\cM$ via the formula
 
 $$(A\boxtimes \overline{B})\otimes M = (A\otimes M)\otimes B$$
 
-for any $A\in \C$, $B\in \Dcat$, $M\in \M$. This is a well-defined left $(\C\boxtimes \overline{\Dcat})$-module structure. This assignment induces a bijection between the set of  $(\C,\Dcat)$-bimodules and the set of left $(\C\boxtimes \overline{\Dcat})$-modules.
-\end{proposition}
+for any $A\in \cC$, $B\in \cD$, $M\in \cM$. This is a well-defined left $(\cC\boxtimes \overline{\cD})$-module structure. This assignment induces a bijection between the set of  $(\cC,\cD)$-bimodules and the set of left $(\cC\boxtimes \overline{\cD})$-modules.
+\end{prop}
 \begin{proof} This is a straightforward and unenlightening exercise.
 \end{proof}
 
 
-Next, we take a closer look at simple modules. That is, module categories with no proper nontrivial submodule categories. Given two categories $\M$ and $\N$, we can define their Cartesian product $\M\times \N$, whose objects are pairs $(A,B)$, $A\in \M$, $B\in \N$. To avoid confusion with the Deligne tensor product, we will use the notation $\boxplus$ to denote the Cartesian product in this context, and refer to it as the direct sum. This is consistent with our genereal principles of higher linear algebra (see section [ref]). If $\M$ and $\N$ are left $\C$-module categories, then $\M\boxplus \N$ can be equipped with the structure of a left $\C$-module via the action
+Next, we take a closer look at simple modules. That is, module categories with no proper nontrivial submodule categories. Given two categories $\cM$ and $\cN$, we can define their Cartesian product $\cM\times \cN$, whose objects are pairs $(A,B)$, $A\in \cM$, $B\in \cN$. To avoid confusion with the Deligne tensor product, we will use the notation $\boxplus$ to denote the Cartesian product in this context, and refer to it as the direct sum. This is consistent with our genereal principles of higher linear algebra (see section [ref]). If $\cM$ and $\cN$ are left $\cC$-module categories, then $\cM\boxplus \cN$ can be equipped with the structure of a left $\cC$-module via the action
 
 $$A\otimes (M\boxplus N)= (A\otimes M)\boxplus (A\otimes N).$$
 
 We seek to prove that every module is the direct sum of simple modules. This follows after a lemma.
 
-\begin{lemma} Let $\C$ be a fusion category. Let $\M$ be a left $\C$-module. For all $A\in \C$ and $N,M\in \M$, we have that
+\begin{lem} Let $\cC$ be a fusion category. Let $\cM$ be a left $\cC$-module. For all $A\in \cC$ and $N,M\in \cM$, we have that
 
-$$\Hom_{\M}(N,A\otimes M)\cong \Hom_{\M}(A^*\otimes N, M)$$
+$$\Hom_{\cM}(N,A\otimes M)\cong \Hom_{\cM}(A^*\otimes N, M)$$
 
-as $\CC$-vector spaces.
-\end{lemma}
+as $\bC$-vector spaces.
+\end{lem}
 \begin{proof} The proof is exactly the same as of proposition [ref]. We opt for a proof using the graphical language of morphisms instead of the algebraic approach, because it is more lucid. We have not formally introduced the graphical language for module categories, but it is completely analogous to the graphical language for fusion categories. We define the map
 
 \begin{equation*}
@@ -431,98 +431,98 @@ as $\CC$-vector spaces.
 Twisting the $A^*$ the other way serves as an inverse, completing the proof.
 \end{proof}
 
-\begin{proposition} Let $\C$ be a fusion category. Every left $\C$-module category is equivalent to a direct sum of simple $\C$-module categories.
-\end{proposition}
-\begin{remark} The usual way of summarizing this proposition is by saying that the space of left $\C$-modules is \textit{semsimple}.
-\end{remark}
-\begin{proof} Let $\M$ be a left $\C$-module. Denote by $\LL_{\M}$ the set of isomorphism classes of simple objects in $\M$. We define a equivalence relation $\sim$ on $\LL_{\M}$ by saying that $[N]\sim [M]$ if there exists some $A\in \C$ such that $\Hom(N,A\otimes M)\neq 0$. This relation is reflexive since $\Hom(M,\one\otimes M)\neq 0$, it is transitive since if $\Hom(M,A\otimes M')\neq 0$ and $\Hom(M',B\otimes M'')\neq 0$, then $\Hom(M,A\otimes B\otimes M'')\neq 0$ by composing morphisms. Seeing as $\M\cong \Vec_{\CC}^n$ for some $n\geq 1$ as a category, we have that $\Hom(N,M)\cong \Hom(M,N)$ as vector spaces for all $N,M\in \M$. Hence, the equivalence relation is symmetric by lemma [ref].
+\begin{prop} Let $\cC$ be a fusion category. Every left $\cC$-module category is equivalent to a direct sum of simple $\cC$-module categories.
+\end{prop}
+\begin{rem} The usual way of summarizing this proposition is by saying that the space of left $\cC$-modules is \textit{semsimple}.
+\end{rem}
+\begin{proof} Let $\cM$ be a left $\cC$-module. Denote by $\cL_{\cM}$ the set of isomorphism classes of simple objects in $\cM$. We define a equivalence relation $\sim$ on $\cL_{\cM}$ by saying that $[N]\sim [M]$ if there exists some $A\in \cC$ such that $\Hom(N,A\otimes M)\neq 0$. This relation is reflexive since $\Hom(M,\bone\otimes M)\neq 0$, it is transitive since if $\Hom(M,A\otimes M')\neq 0$ and $\Hom(M',B\otimes M'')\neq 0$, then $\Hom(M,A\otimes B\otimes M'')\neq 0$ by composing morphisms. Seeing as $\cM\cong \Vec_{\bC}^n$ for some $n\geq 1$ as a category, we have that $\Hom(N,M)\cong \Hom(M,N)$ as vector spaces for all $N,M\in \cM$. Hence, the equivalence relation is symmetric by lemma [ref].
 
-For all $i\in \LL_{M}/\sim$, we define a full subcategory of $\M$ via
+For all $i\in \cL_{M}/\sim$, we define a full subcategory of $\cM$ via
 
-$$\M_{i}=\left\{\left.M\in \M\right| M\cong \bigoplus_{[N]\in i}n_{N}\cdot N,\text{ for some integers } n_{A}\geq 0\right\}.$$
+$$\cM_{i}=\left\{\left.M\in \cM\right| M\cong \bigoplus_{[N]\in i}n_{N}\cdot N,\text{ for some integers } n_{A}\geq 0\right\}.$$
 
-Now, our equivalence relation gaurantees that $\M_{i}$ is closed under the action of $\C$ for all $i\in \LL_{\M}/\sim$. That is, it forms a left $\C$-submodule of $\M$. We claim that the map
+Now, our equivalence relation gaurantees that $\cM_{i}$ is closed under the action of $\cC$ for all $i\in \cL_{\cM}/\sim$. That is, it forms a left $\cC$-submodule of $\cM$. We claim that the map
 
 \begin{align*}
-\bplus_{i\in \LL_{\M}/\sim}\M_{i}&\xrightarrow{}\M\\
-(M_{i})_{i\in \LL_{\M}/\sim}&\mapsto \bigoplus_{i\in \LL_{\M}/\sim}M_{i}
+\bplus_{i\in \cL_{\cM}/\sim}\cM_{i}&\xrightarrow{}\cM\\
+(M_{i})_{i\in \cL_{\cM}/\sim}&\mapsto \bigoplus_{i\in \cL_{\cM}/\sim}M_{i}
 \end{align*}
 
-is an equivalence of categories. It is faithful by the general properties of the direct sum. It is full because $\Hom(M_i,M_j)=0$ for all $i\neq j$ since $M_i$, $M_j$ are the direct sums of disjoint sets of simple objects, and hence every morphisms can be broken into its $i$-components for each $i\in \LL_{\M}/\sim$. It is essentially surjective because every simple objects appears in the category $\M_{i}$ for some $i\in \LL_{\M}/\sim$. Hence, it is an equivalence of categories by proposition [ref] so our proof is complete.
+is an equivalence of categories. It is faithful by the general properties of the direct sum. It is full because $\Hom(M_i,M_j)=0$ for all $i\neq j$ since $M_i$, $M_j$ are the direct sums of disjoint sets of simple objects, and hence every morphisms can be broken into its $i$-components for each $i\in \cL_{\cM}/\sim$. It is essentially surjective because every simple objects appears in the category $\cM_{i}$ for some $i\in \cL_{\cM}/\sim$. Hence, it is an equivalence of categories by proposition [ref] so our proof is complete.
 \end{proof}
 
-With propositions [ref] and [ref] in hand, we can set up more directly the theory of fusion of domain walls. Let $\C$, $\K$, $\Dcat$ be fusion categories. Let $\M$ be a $(\C,\K)$-bimodule and let $\N$ be a $(\K,\Dcat)$ bimodule. We have an equivalence
+With propositions [ref] and [ref] in hand, we can set up more directly the theory of fusion of domain walls. Let $\cC$, $\cK$, $\cD$ be fusion categories. Let $\cM$ be a $(\cC,\cK)$-bimodule and let $\cN$ be a $(\cK,\cD)$ bimodule. We have an equivalence
 
-$$\N\boxtimes\M \cong \bplus_{[\M']} n^{\N,\M}_{\M'}\cdot \M',$$
+$$\cN\boxtimes\cM \cong \bplus_{[\cM']} n^{\cN,\cM}_{\cM'}\cdot \cM',$$
 
-where $[\M']$ runs over the set of equivalence classes of simple $(\C,\Dcat)$-bimodules. This is completely analogus to the algebraic theory of fusion of anyons introduced in section [ref]. One of the major differenes is that we are now up a categorical level. Instead of fusing objects in a category, we are fusing the categories themselves.
+where $[\cM']$ runs over the set of equivalence classes of simple $(\cC,\cD)$-bimodules. This is completely analogus to the algebraic theory of fusion of anyons introduced in section [ref]. One of the major differenes is that we are now up a categorical level. Instead of fusing objects in a category, we are fusing the categories themselves.
 
 We now turn our attention towards functors between module categories. When the source and target of our functors are the same, we have the following main result:
 
-\begin{proposition} Let $\C$ be a fusion category. Let $\M$ be a left $\C$-module. Define
+\begin{prop} Let $\cC$ be a fusion category. Let $\cM$ be a left $\cC$-module. Define
 
-$$\C^{\vee}_{\M}=\Fun_{\C}(\M,\M).$$
+$$\cC^{\vee}_{\cM}=\Fun_{\cC}(\cM,\cM).$$
 
-We call $\C^{\vee}_{\M}$ the \textit{dual of $\C$ with respect to $\M$}. We define a monoidal structure on $\C^{\vee}_{\M}$ via the formula
+We call $\cC^{\vee}_{\cM}$ the \textit{dual of $\cC$ with respect to $\cM$}. We define a monoidal structure on $\cC^{\vee}_{\cM}$ via the formula
 
 $$F\otimes G = G\circ F.$$
 
-Along with a natural choice of rigid structure, $\C^{\vee}_{\M}$ has the structure of a fusion category.
+Along with a natural choice of rigid structure, $\cC^{\vee}_{\cM}$ has the structure of a fusion category.
 
-If $\C$ is a spherical fusion category, then $\C^{\vee}_{\M}$ is naturally equipped with the structure of a spherical fusion category.
-\end{proposition}
+If $\cC$ is a spherical fusion category, then $\cC^{\vee}_{\cM}$ is naturally equipped with the structure of a spherical fusion category.
+\end{prop}
 \begin{proof}.[WORK: do proof. This is going to use some stuff from ``on fusion categories". Might need the same results for the next proposition as well.
 
-I'm in trouble the proof uses Yetter cohomology and other scary-looking tools. Is there a simpler proof? The hard part is showing that if $\N,\M$ are module categories the space of module functors is equivalent to $\Vec_{\CC}^n$ for some $n\geq 0$. In particular, we need to show that there are finitely many isomorphism classes of simple module functors. How do I do it?! It's a sort of generalized Ocneanu rigidity.
+I'm in trouble the proof uses Yetter cohomology and other scary-looking tools. Is there a simpler proof? The hard part is showing that if $\cN,\cM$ are module categories the space of module functors is equivalent to $\Vec_{\bC}^n$ for some $n\geq 0$. In particular, we need to show that there are finitely many isomorphism classes of simple module functors. How do I do it?! It's a sort of generalized Ocneanu rigidity.
 ]
 \end{proof}
 
 When the source and target are different, we have the follwing result:
 
-\begin{proposition} Let $\C$ be a fusion category. Let $\N$, $\M$ be left $\C$-modules. The category $\Fun_{\C}(\N,\M)$ is naturally equipped with the structure of a left $\C_{\N}^{\vee}$-module and a right $\C_{\M}^{\vee}$-module.
-\end{proposition}
+\begin{prop} Let $\cC$ be a fusion category. Let $\cN$, $\cM$ be left $\cC$-modules. The category $\Fun_{\cC}(\cN,\cM)$ is naturally equipped with the structure of a left $\cC_{\cN}^{\vee}$-module and a right $\cC_{\cM}^{\vee}$-module.
+\end{prop}
 \begin{proof}.[WORK: do proof. Again, the finiteness part is hard.]
 \end{proof}
 
 Now, we verify the finiteness result that we claimed in section [ref]:
 
-\begin{proposition} Let $\C$ be a fusion category. There are finitely many equivalence classes of simple left $\C$-modules.
-\end{proposition}
+\begin{prop} Let $\cC$ be a fusion category. There are finitely many equivalence classes of simple left $\cC$-modules.
+\end{prop}
 \begin{proof}.[WORK: do proof. In ``On fusion categories" they say that this follows from the finiteness condition on functors, along with a decategorified version of the same result which follows from counting.]
 \end{proof}
 
 The following result serves as the centerpiece of our study of module categories:
 
-\begin{theorem} Let $\C$ be a fusion category. Let $\M$ be a left $\C$ module. The map
+\begin{thrm} Let $\cC$ be a fusion category. Let $\cM$ be a left $\cC$ module. The map
 
 \begin{align*}
-\can: \C &\xrightarrow{\sim } \left(\C^{\vee}_{\M}\right)^{\vee}_{\M}\\
+\can: \cC &\xrightarrow{\sim } \left(\cC^{\vee}_{\cM}\right)^{\vee}_{\cM}\\
 A &\mapsto \left(M\mapsto A\otimes M\right)
 \end{align*}
 
-is an equivalence of categories. The $\C^{\vee}_{\M}$-module functor structure on $\can_{A}$ is defined for all $A\in \C$, $M\in \M$, $F\in \C^{\vee}_{\M}$ by
+is an equivalence of categories. The $\cC^{\vee}_{\cM}$-module functor structure on $\can_{A}$ is defined for all $A\in \cC$, $M\in \cM$, $F\in \cC^{\vee}_{\cM}$ by
 
 $$s^{\can_{A}}_{F,M}:\can_{A}(F\otimes M )= A\otimes F(M)\xrightarrow{s^{-1}_{A,M}}F(A\otimes M)=F\otimes \can_{A}(M).$$
 
-If $\C$ is a spherical fusion category, $\can$ is an equivalence of spherical fusion categories.
-\end{theorem}
-\begin{remark} This result is an analogue of the \textit{double centralizer theorem} from classical representation theory.
-\end{remark}
+If $\cC$ is a spherical fusion category, $\can$ is an equivalence of spherical fusion categories.
+\end{thrm}
+\begin{rem} This result is an analogue of the \textit{double centralizer theorem} from classical representation theory.
+\end{rem}
 \begin{proof}.[WORK: do proof. The proof in EGNO uses algebras an algebra structures. It would be nice to get around this.]
 \end{proof}
 
 As a corollary, we get the following:
 
-\begin{corollary} Let $\C$ be a fusion category and let $\M$ be a left $\C$-module. The module $\M$ is simple as a right $\C_{\M}^{\vee}$-module.
-\end{corollary}
+\begin{cor} Let $\cC$ be a fusion category and let $\cM$ be a left $\cC$-module. The module $\cM$ is simple as a right $\cC_{\cM}^{\vee}$-module.
+\end{cor}
 \begin{proof}.[WORK: do proof]
 \end{proof}
 
-Of course, the above discussion gaurantees a proper theory of fusion of boundary defects. Suppose that $\C,\D$ are fusion categories, and $\M$, $\M'$, $\M''$ are simple $(\C,\D)$-bimodules. Suppose that $F:\M\to \M'$ and $G:\M'\to\M''$ are simple $(\C,\D)$ bimodule functors. Since $\Fun_{\C|\D}(\M,\M'')$ is equivalent to $\Vec_{\CC}^n$ for some $\geq 0$ as a $\CC$-linear category, we have a decomposition
+Of course, the above discussion gaurantees a proper theory of fusion of boundary defects. Suppose that $\cC,\cD$ are fusion categories, and $\cM$, $\cM'$, $\cM''$ are simple $(\cC,\cD)$-bimodules. Suppose that $F:\cM\to \cM'$ and $G:\cM'\to\cM''$ are simple $(\cC,\cD)$ bimodule functors. Since $\Fun_{\cC|\cD}(\cM,\cM'')$ is equivalent to $\Vec_{\bC}^n$ for some $\geq 0$ as a $\bC$-linear category, we have a decomposition
 
 $$G\circ F \cong \bigoplus_{[H]}n^{F,G}_{H}\cdot H$$
 
-in $\Fun_{\C,\D}(\M,\M'')$ where $[H]$ runs over isomorphism classes of simple functors in $\Fun_{\C|\D}(\M,\M'')$. Again, this is completely analagous to the fusion of anyons.
+in $\Fun_{\cC,\cD}(\cM,\cM'')$ where $[H]$ runs over isomorphism classes of simple functors in $\Fun_{\cC|\cD}(\cM,\cM'')$. Again, this is completely analagous to the fusion of anyons.
 
 \subsubsection{The Drinfeld center via bimodules}
 
@@ -531,7 +531,7 @@ in $\Fun_{\C,\D}(\M,\M'')$ where $[H]$ runs over isomorphism classes of simple f
 
 So far we have been setting up a powerful theory of domain walls to study doubled topological order.
 
-We already know one thing about doubled topological order - its anyons are described by the Drinfeld center $\Z(\C)$ of the input spherical fusion category $\C$. These anyonic bulk excitations can interact with the boundaries, and produce non-trivial effects. This means that the category $\Z(\C)$ neccecarily has deep connections to the theory of boundaries, and thus mathematically will have a module-theoretic interpretation. This will also help answer the question of why the Drinfeld center $\Z(\C)$ is the category which describes anyons in the Levin-Wen model.
+We already know one thing about doubled topological order - its anyons are described by the Drinfeld center $\cZ(\cC)$ of the input spherical fusion category $\cC$. These anyonic bulk excitations can interact with the boundaries, and produce non-trivial effects. This means that the category $\cZ(\cC)$ neccecarily has deep connections to the theory of boundaries, and thus mathematically will have a module-theoretic interpretation. This will also help answer the question of why the Drinfeld center $\cZ(\cC)$ is the category which describes anyons in the Levin-Wen model.
 
 To start, consider an anyon in the bulk. This anyon is a stable localized excitation. Above it and below it the theory is in its ground state. Hence, we can think of this anyon as an interface between the trivial boundary and itself! This is seen visually below:
 
@@ -547,16 +547,16 @@ Thus, from our general description of boundary defects, we should conclude the f
 }\right)
 = \left(\substack{
 \text{simple objects in }\\
-\Fun_{\C|\C}(\C,\C)
+\Fun_{\cC|\cC}(\cC,\cC)
 }\right).
 \end{equation*}
 
-However, we know from our first discussion of the Levin-Wen model that anyon types should correspond to simple objects in $\Z(\C)$. Hence, we conclude that simple objects in $\Z(\C)$ should correspond to simple objects in $\Fun_{\C|\C}(\C,\C)$. Of course, this equivalence should repsect fusion, duality, braiding, and all the other algebraic structures of anyons. Thus, if our boundary theory is correct, it predicts an equivalence of categories $\Z(\C)\cong\Fun_{\C|\C}(\C,\C)$. This mathematical prediction is accurate, by the following proposition:
+However, we know from our first discussion of the Levin-Wen model that anyon types should correspond to simple objects in $\cZ(\cC)$. Hence, we conclude that simple objects in $\cZ(\cC)$ should correspond to simple objects in $\Fun_{\cC|\cC}(\cC,\cC)$. Of course, this equivalence should repsect fusion, duality, braiding, and all the other algebraic structures of anyons. Thus, if our boundary theory is correct, it predicts an equivalence of categories $\cZ(\cC)\cong\Fun_{\cC|\cC}(\cC,\cC)$. This mathematical prediction is accurate, by the following proposition:
 
-\begin{proposition} Let $\C$ be a fusion category. The map
+\begin{prop} Let $\cC$ be a fusion category. The map
 
 \begin{align*}
-\Fun_{\C|\C}(\C,\C)&\xrightarrow{\sim}\Z(\C)\\
+\Fun_{\cC|\cC}(\cC,\cC)&\xrightarrow{\sim}\cZ(\cC)\\
 F &\mapsto \left(F(1), \upbeta_{F(1),\--}\right)
 \end{align*}
 
@@ -564,91 +564,91 @@ is an equivalence of categories, where $\upbeta_{F(1),\--}$ is defined by the co
 
 % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXHVwYmV0YV97RigxKSxcXC0tfTpGKFxcb25lKVxcb3RpbWVzIEIiXSxbMSwwLCJGKFxcb25lXFxvdGltZXMgQik9RihCKT1GKEJcXG90aW1lcyBcXG9uZSkiXSxbMiwwLCJCXFxvdGltZXMgRihcXG9uZSkiXSxbMCwxLCJzXlJfe1xcb25lLEJ9Il0sWzEsMiwiKHNeTF97QixcXG9uZX0pXnstMX0iXV0=
 \[\begin{tikzcd}
-	{\upbeta_{F(1),\--}:F(\one)\otimes B} & {F(\one\otimes B)=F(B)=F(B\otimes \one)} & {B\otimes F(\one)}
-	\arrow["{s^R_{\one,B}}", from=1-1, to=1-2]
-	\arrow["{(s^L_{B,\one})^{-1}}", from=1-2, to=1-3]
+	{\upbeta_{F(1),\--}:F(\bone)\otimes B} & {F(\bone\otimes B)=F(B)=F(B\otimes \bone)} & {B\otimes F(\bone)}
+	\arrow["{s^R_{\bone,B}}", from=1-1, to=1-2]
+	\arrow["{(s^L_{B,\bone})^{-1}}", from=1-2, to=1-3]
 \end{tikzcd}\]
 
 and $s^L$, $s^R$ are the compatibility maps implicit in the left/right module functor structure of $F$.
 
-If $\C$ is a spherical category, then the map $\Fun_{\C|\C}(\C,\C)\xrightarrow{\sim}\Z(\C)$ induces an equivalence as pre-modular categories.
-\end{proposition}
+If $\cC$ is a spherical category, then the map $\Fun_{\cC|\cC}(\cC,\cC)\xrightarrow{\sim}\cZ(\cC)$ induces an equivalence as pre-modular categories.
+\end{prop}
 \begin{proof}. [WORK: do proof]
 \end{proof}
 
-This equivalence of categories gives the proper interpretation for $\Z(\C)$ in the theory of boundaries. If we wanted we could have taken it as a \textit{definition} of $\Z(\C)$. We now examine how anyons interact with boundaries to get more module-theoretic properties of the Drinfeld center.
+This equivalence of categories gives the proper interpretation for $\cZ(\cC)$ in the theory of boundaries. If we wanted we could have taken it as a \textit{defn} of $\cZ(\cC)$. We now examine how anyons interact with boundaries to get more module-theoretic properties of the Drinfeld center.
 
-Suppose $\C$, $\Dcat$ are spherical fusion categories, and $\prescript{}{\C}\M_{\Dcat}$ is a bimodule. If a $A\in \C$ is a simple object describing an anyon, we can imagine trying to push $A$ from $\C$ to $\Dcat$ through the boundary theory $\prescript{}{\C}\M_{\Dcat}$ :
+Suppose $\cC$, $\cD$ are spherical fusion categories, and $\prescript{}{\cC}\cM_{\cD}$ is a bimodule. If a $A\in \cC$ is a simple object describing an anyon, we can imagine trying to push $A$ from $\cC$ to $\cD$ through the boundary theory $\prescript{}{\cC}\cM_{\cD}$ :
 
-[WORK: add picture: first its on one side, then a bubble starts to form, then the bubble detaches. It leaves behind a dotted line with label $\prescript{}{\Dcat}\M^{op}_{\C}\boxtimes_{\C}\prescript{}{\C}\M_{\Dcat}$ ]
+[WORK: add picture: first its on one side, then a bubble starts to form, then the bubble detaches. It leaves behind a dotted line with label $\prescript{}{\cD}\cM^{op}_{\cC}\boxtimes_{\cC}\prescript{}{\cC}\cM_{\cD}$ ]
 
-Suppose that the domain wall is \textit{invertible}. This means that $\prescript{}{\Dcat}\M^{op}_{\C}\boxtimes_{\C}\prescript{}{\C}\M_{\Dcat}\cong \Dcat$. Thus, the anyon can pass directly through the boundary, and the boundary can re-close without leaving a trace of the fact that the anyon went through.
+Suppose that the domain wall is \textit{invertible}. This means that $\prescript{}{\cD}\cM^{op}_{\cC}\boxtimes_{\cC}\prescript{}{\cC}\cM_{\cD}\cong \cD$. Thus, the anyon can pass directly through the boundary, and the boundary can re-close without leaving a trace of the fact that the anyon went through.
 
-This gives an assignment of anyons in the $\Z(\C)$ to anyons in the $\Z(\Dcat)$ phase. This assignement is reversible, because anyons in the $\Z(\Dcat)$ phase can pass through the domain wall in the other direction. Thus, our boundary theory predicts that every invertible bimodule $\prescript{}{\C}\M_{\Dcat}$ will induce an equivalence of categories $F_{\M}:\Z(\C)\xrightarrow{\sim}\Z(\Dcat)$. We verify this prediction with a theorem. Before we can prove it, we need a lemma.
+This gives an assignment of anyons in the $\cZ(\cC)$ to anyons in the $\cZ(\cD)$ phase. This assignement is reversible, because anyons in the $\cZ(\cD)$ phase can pass through the domain wall in the other direction. Thus, our boundary theory predicts that every invertible bimodule $\prescript{}{\cC}\cM_{\cD}$ will induce an equivalence of categories $F_{\cM}:\cZ(\cC)\xrightarrow{\sim}\cZ(\cD)$. We verify this prediction with a theorem. Before we can prove it, we need a lemma.
 
-\begin{lemma} Let $\C$ be a fusion category. The forgetful functor
+\begin{lem} Let $\cC$ be a fusion category. The forgetful functor
 
 \begin{align*}
-\Z(\C)&\xrightarrow{} \C\\
+\cZ(\cC)&\xrightarrow{} \cC\\
 (A,\upbeta_{A,\--})&\mapsto A
 \end{align*}
 
-is surjective onto the objects of $\C$.
-\end{lemma}
+is surjective onto the objects of $\cC$.
+\end{lem}
 \begin{proof}.[WORK: this proof is steeped in the theory of module categories.]
 \end{proof}
 
-\begin{theorem} Let $\C$, $\Dcat$ be spherical fusion categories. There is a bijection
+\begin{thrm} Let $\cC$, $\cD$ be spherical fusion categories. There is a bijection
 
 $$
 \left(
 \substack{
-\text{invertible $(\C,\Dcat)$-bimodule}\\
-\text{categories }\M}
+\text{invertible $(\cC,\cD)$-bimodule}\\
+\text{categories }\cM}
 \right)
 \xleftrightarrow{\sim}
 \left(
 \substack{
 \text{equivalences of pre-modular}\\
-\text{categories }\Z(\C)\xrightarrow{\sim}\Z(\Dcat)}
+\text{categories }\cZ(\cC)\xrightarrow{\sim}\cZ(\cD)}
 \right),$$
 
-defined by sending a $(\C,\Dcat)$-bimodule category $\M$ to the functor $F_{\M}:\Z(\C)\to\Z(\D)$ defined by
+defined by sending a $(\cC,\cD)$-bimodule category $\cM$ to the functor $F_{\cM}:\cZ(\cC)\to\cZ(\cD)$ defined by
 
 \begin{align*}
-F_{\M}: \Z(\C)\cong &\Fun_{\C|\C}(\C,\C) \xrightarrow{} \Fun_{\Dcat|\Dcat}(\Dcat,\Dcat)\cong \Z(\Dcat).\\
-G&\mapsto \left(\Dcat\xrightarrow{}\M^{op}\boxtimes_{\C}\C\boxtimes_{\C}\M \xrightarrow{\id\boxtimes G \boxtimes \id}\M^{op}\boxtimes_{\C}\C\boxtimes_{\C}\M \xrightarrow{}\Dcat\right)
+F_{\cM}: \cZ(\cC)\cong &\Fun_{\cC|\cC}(\cC,\cC) \xrightarrow{} \Fun_{\cD|\cD}(\cD,\cD)\cong \cZ(\cD).\\
+G&\mapsto \left(\cD\xrightarrow{}\cM^{op}\boxtimes_{\cC}\cC\boxtimes_{\cC}\cM \xrightarrow{\id\boxtimes G \boxtimes \id}\cM^{op}\boxtimes_{\cC}\cC\boxtimes_{\cC}\cM \xrightarrow{}\cD\right)
 \end{align*}
 
-For all triples $\C$,$\K$, $\Dcat$ of fusion categories, $(\C,\K)$-bimodules $\M$, and $(\K,\Dcat)$-bimodules $\N$, we have that
+For all triples $\cC$,$\cK$, $\cD$ of fusion categories, $(\cC,\cK)$-bimodules $\cM$, and $(\cK,\cD)$-bimodules $\cN$, we have that
 
-$$F_{\M\boxtimes_{\K}\N}=F_{\N}\circ F_{\M}.$$
+$$F_{\cM\boxtimes_{\cK}\cN}=F_{\cN}\circ F_{\cM}.$$
 
-If $\C$ and $\Dcat$ are spherical fusion categories, then the assignement $\M\mapsto F_{\M}$ induces a bijection.
+If $\cC$ and $\cD$ are spherical fusion categories, then the assignement $\cM\mapsto F_{\cM}$ induces a bijection.
 
 [WORK: what is the correct statement? Do I have to reduce the class of bimodules I am considering?]
 
-\end{theorem}
-\begin{remark} This theorem is originally due to Etingof-Nikshych-Ostrik \cite{etingof2010fusion}. It was observed in the theory of gapped boundaries by Kitaev and Kong \cite{kitaev2012models}. The proof presented here is original.
-\end{remark}
+\end{thrm}
+\begin{rem} This theorem is originally due to Etingof-Nikshych-Ostrik \cite{etingof2010fusion}. It was observed in the theory of gapped boundaries by Kitaev and Kong \cite{kitaev2012models}. The proof presented here is original.
+\end{rem}
 \begin{proof}
 .[WORK: do proof. The first direct is making sure this is a well-defined map and filling in details. That's not very hard.
 
-The big question is showing that this is a \textit{bijection}. That means that we need an inverse to this map. The inverse is suprisingly cute and nice. The forgetful functor $\Z(\C)\to \C$ induces a $\Z(\C)$-bimodule structure on $\C$. Given any equivalence $F:\Z(\C)\xrightarrow{\sim}\Z(\Dcat)$, we can thus construct the tensor product
+The big question is showing that this is a \textit{bijection}. That means that we need an inverse to this map. The inverse is suprisingly cute and nice. The forgetful functor $\cZ(\cC)\to \cC$ induces a $\cZ(\cC)$-bimodule structure on $\cC$. Given any equivalence $F:\cZ(\cC)\xrightarrow{\sim}\cZ(\cD)$, we can thus construct the tensor product
 
-$$\C \boxtimes_{\Z(\C)\cong \Z(\Dcat)}\Dcat.$$
+$$\cC \boxtimes_{\cZ(\cC)\cong \cZ(\cD)}\cD.$$
 
-This tensor product is a $(\C,\Dcat)$ bimodule. The fact that it is an invertible bimodule uses in a key way the fact that the forgetful functors $\Z(\C)\to \C$ and $\Z(\Dcat)\to \Dcat$ are surjective. It's not hard to show that these two constructions are inverses to one another. This gives the proof.
+This tensor product is a $(\cC,\cD)$ bimodule. The fact that it is an invertible bimodule uses in a key way the fact that the forgetful functors $\cZ(\cC)\to \cC$ and $\cZ(\cD)\to \cD$ are surjective. It's not hard to show that these two constructions are inverses to one another. This gives the proof.
 ]
 \end{proof}
 
 
-As a corollary we find the following theorem, which was first proved by Kitaev and Muger and communicated by Etingof-Nikshych-Ostrik \cite{etingof2011weakly}. We recall that two fusion categories $\C$, $\Dcat$ are called \textit{Morita equivalent} if their Drinfeld centers are equivalent as braided fusion categories
+As a corollary we find the following theorem, which was first proved by Kitaev and Muger and communicated by Etingof-Nikshych-Ostrik \cite{etingof2011weakly}. We recall that two fusion categories $\cC$, $\cD$ are called \textit{Morita equivalent} if their Drinfeld centers are equivalent as braided fusion categories
 
 [WORK: What is the correct statement of this theorem for spherical fusion categories?]
 
-\begin{corollary} Two fusion categories $\C$, $\Dcat$ are Morita equivalent if and only if there exists an invertible bimodule category between them.
-\end{corollary}
+\begin{cor} Two fusion categories $\cC$, $\cD$ are Morita equivalent if and only if there exists an invertible bimodule category between them.
+\end{cor}
 \begin{proof} This is clear from Theorem [ref].
 \end{proof}
 
@@ -658,7 +658,7 @@ As a corollary we find the following theorem, which was first proved by Kitaev a
 
 [WORK: There's some results about Frobenius-Perron dimensions which will play a key role in the proof. Can I use quantum dimension instead? Probably not because I'm not assuming spherical.]
 
-[WORK: Out of all this we get Lagrange's theorem for fusion categories, that given a fusion $\C$ with full subcategory $\C$, the ratio $\FPdim(\Dcat)/\FPdim(\C)$ is an algebraic integer. Do I care? Should I include this? Maybe I should have a section with a proof of Muger's theorem plus a proof of Lagrange's theorem for fusion categories.]
+[WORK: Out of all this we get Lagrange's theorem for fusion categories, that given a fusion $\cC$ with full subcategory $\cC$, the ratio $\FPdim(\cD)/\FPdim(\cC)$ is an algebraic integer. Do I care? Should I include this? Maybe I should have a section with a proof of Muger's theorem plus a proof of Lagrange's theorem for fusion categories.]
 
 
 \subsubsection{Skeletonization of gapped boundaries}
@@ -685,7 +685,7 @@ I think that getting the example of the magnet phase transition across would be 
 
 ]
 
-[WORK: I would like to include the Curie principle - the symmetry of the causes are to be found in the effects! The symmetries $\Aut^{\otimes}(\C)$ are nessecarily interesting objects. Why? Curie principle! The curie principle in this case manifests in the possible defects which can appear. While $\C$ and $\C\otimes \overline{\C}$ might \textit{look} like very similar categories, $\C\otimes \overline{\C}$ may have way more symmetries than $\C$ and hence might look like a better candidate for TQC in this guise
+[WORK: I would like to include the Curie principle - the symmetry of the causes are to be found in the effects! The symmetries $\Aut^{\otimes}(\cC)$ are nessecarily interesting objects. Why? Curie principle! The curie principle in this case manifests in the possible defects which can appear. While $\cC$ and $\cC\otimes \overline{\cC}$ might \textit{look} like very similar categories, $\cC\otimes \overline{\cC}$ may have way more symmetries than $\cC$ and hence might look like a better candidate for TQC in this guise
 
 The original reference for the Curie principle is \cite{curie1894symetrie}. The theory of magnetic space groups gives a quite nice example.
 ]
@@ -713,7 +713,7 @@ In this section, we will introduce the algberaic theory of symmetry enriched top
 
 Why categorical $G$-actions? Why $G$-graded categories? It would be great if I could work up to the picture
 
-$$\C <-- confinement, defectification --> \C^{\times}_{G} $$
+$$\cC <-- confinement, defectification --> \cC^{\times}_{G} $$
 
 If I could even get in the fact that there are obstructions that would be awesome. Of course, I can't really prove much. The hope is that I can state everything trivially, and not have to make any big claims...
 ]
@@ -728,10 +728,10 @@ A really important theorem in this space is EGNO's observation that $\Aut$ and $
 Zhenghan made a point to me that noninvertible defects break the theorem (they aren't in the picard group), but the philosophy is still there. Namely, the category (appropriately defined) $\Pic\left(\mathcal{B}^{\times}_{G}\right)$ should be isomorphic to some endomorphism group. The philosophy holds (though I am hazy on it), but there is no known theorem. This is something to look into!
 ]
 
-\begin{definition}[Categorical group action] A \textit{categorical group action} of a finite group $G$ on a fusion category $\C$ is the following data:
+\begin{defn}[Categorical group action] A \textit{categorical group action} of a finite group $G$ on a fusion category $\cC$ is the following data:
 
 \begin{enumerate}
-\item A function $\rho: G \xrightarrow{}\Aut^{\otimes}(\C)$;
+\item A function $\rho: G \xrightarrow{}\Aut^{\otimes}(\cC)$;
 \item A natural isomorphism of functions of fusion categories
 
 $$\eta_{g,h}: \rho(g)\circ \rho(h)\xrightarrow{\sim}\rho(gh)$$
@@ -757,12 +757,12 @@ Such that:
 
 commutes for all $g_0,g_1,g_2\in G$.
 
-\item There is an equality of functors $ \rho(e)=\id_{\C}$, where $e\in G$ is the identity element\footnote{The condition is added for simplicity of notation down the line - the axioms already imply that there is an equivalence $\rho(e)\cong \id_{\C}$.}.
+\item There is an equality of functors $ \rho(e)=\id_{\cC}$, where $e\in G$ is the identity element\footnote{The condition is added for simplicity of notation down the line - the axioms already imply that there is an equivalence $\rho(e)\cong \id_{\cC}$.}.
 
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
 We can similarly define a categorical group action on a spherical fusion category and modular category. Namely, the group of automorphisms is replaced by the group of automorphisms which respect the additional structure, and the natural isomorphisms between those functors are required to respect that extra structure as well. In this case we allow ourselves extra adjectives to emphasize the additonal structure. Namely, we refer to a \textit{braided} categorical group action of a group on a braided fusion category. We can thus give the following physical principle:
 
@@ -770,14 +770,14 @@ We can similarly define a categorical group action on a spherical fusion categor
 \left(\text{Symmetry enriched topological phases} \right) \iff
 \left(
 \substack{
-\text{triples $(\C,G,\rho)$,}\\
-\text{where $\C$ is a modular category, $G$ is a finite group}\\
+\text{triples $(\cC,G,\rho)$,}\\
+\text{where $\cC$ is a modular category, $G$ is a finite group}\\
 \text{and $\rho$ is a braided categorical group action}
 }
 \right).
 \end{equation*}
 
-Algebraically, the physical phenominon of \textit{symmetry breaking} is extremly clear. It is the act of taking a symmetry enriched phase $(\C,G,\rho)$ and passing some subgroup $H\leq G$,  yield $(\C,H,\left.\rho\right|_{H})$. Passing all the way to the trivial group yields the ordinary topological phase $\C$.
+Algebraically, the physical phenominon of \textit{symmetry breaking} is extremly clear. It is the act of taking a symmetry enriched phase $(\cC,G,\rho)$ and passing some subgroup $H\leq G$,  yield $(\cC,H,\left.\rho\right|_{H})$. Passing all the way to the trivial group yields the ordinary topological phase $\cC$.
 
 We now move on to discussing symmetry fractionalization.
 
@@ -786,11 +786,11 @@ We now move on to discussing symmetry fractionalization.
 It's quite important that NOT every symmetry can be fractionalized. This is where the gauging anomaly shows up. Talk about this.
 ]
 
-\begin{definition}[$G$-graded fusion category] A \textit{$G$-graded fusion category} over a finite group $G$ is the following data:
+\begin{defn}[$G$-graded fusion category] A \textit{$G$-graded fusion category} over a finite group $G$ is the following data:
 
 \begin{enumerate}
-\item A fusion category $\C$;
-\item A full subcategory $\C_{g}$ of $\C$ for each $g\in G$.
+\item A fusion category $\cC$;
+\item A full subcategory $\cC_{g}$ of $\cC$ for each $g\in G$.
 \end{enumerate}
 
 Such that:
@@ -799,30 +799,30 @@ Such that:
 \item The functor
 
 \begin{align*}
-\bplus_{g\in G}\C_g &\xrightarrow{\sim} \C\\
+\bplus_{g\in G}\cC_g &\xrightarrow{\sim} \cC\\
 (A_g)_{g\in G}&\mapsto \bigoplus_{g\in G}A_g
 \end{align*}
 
 is an equivalence of categories;
 
-\item The tensor product on $\C$ restricts to a map $\otimes: \C_g\times \C_h \xrightarrow{}\C_{gh}$;
+\item The tensor product on $\cC$ restricts to a map $\otimes: \cC_g\times \cC_h \xrightarrow{}\cC_{gh}$;
 
-\item (Faithfullness\footnote{This condition is not included in the definition by many authors.}) The subcategories $\C_g$ are nonzero for all $g\in G$.
+\item (Faithfullness\footnote{This condition is not included in the definition by many authors.}) The subcategories $\cC_g$ are nonzero for all $g\in G$.
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
-\begin{definition}[$G$-crossed braided fusion category] A \textit{$G$-crossed braided fusion category} over a finite group $G$ is the following data:
+\begin{defn}[$G$-crossed braided fusion category] A \textit{$G$-crossed braided fusion category} over a finite group $G$ is the following data:
 
 \begin{enumerate}
-\item A $G$-graded fusion category $\C^{\times}_{G}$ with $g$-component $\C_{g}$;
-\item A categorical group action $\rho$ of $G$ on $\C^{\times}_{G}$;
+\item A $G$-graded fusion category $\cC^{\times}_{G}$ with $g$-component $\cC_{g}$;
+\item A categorical group action $\rho$ of $G$ on $\cC^{\times}_{G}$;
 \item A natural isomorphism
 
 $$\beta_{g,A,B}:A\otimes B \xrightarrow{}\rho(g)(B)\otimes A$$
 
-for all $A\in \C_{g}$, $B\in \C^{\times}_{G}$, $g\in G$.
+for all $A\in \cC_{g}$, $B\in \cC^{\times}_{G}$, $g\in G$.
 \end{enumerate}
 
 Such that:
@@ -831,36 +831,36 @@ Such that:
 
 Also there's another big one:
 
-$$\rho(g)(\C_h)\subseteq \C_{g h g^{-1}}.$$
+$$\rho(g)(\cC_h)\subseteq \cC_{g h g^{-1}}.$$
 ]
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
 Finally, we arrive at the definition of a $G$-crossed modular category:
 
-\begin{definition}[$G$-crossed modular category] A \textit{$G$-crossed modular category} over a finite group $G$ is the following data:
+\begin{defn}[$G$-crossed modular category] A \textit{$G$-crossed modular category} over a finite group $G$ is the following data:
 
 \begin{enumerate}
-\item A $G$-crossed braided fusion category $\C_{G}^{\times}$;
-\item A spherical structure on $\C_{G}^{\times}$;
+\item A $G$-crossed braided fusion category $\cC_{G}^{\times}$;
+\item A spherical structure on $\cC_{G}^{\times}$;
 \end{enumerate}
 
 Such that:
 
 \begin{enumerate}
 \item .[WORK: the spherical structure should be compatible with the $G$-crossed braided structure].
-\item $\C_{e}$ is a modular category, where $e\in G$ is the identity element. [WORK: say this nicer. Should I introduce better notation for group elements?]
+\item $\cC_{e}$ is a modular category, where $e\in G$ is the identity element. [WORK: say this nicer. Should I introduce better notation for group elements?]
 \end{enumerate}
 
 \raggedleft\qedsymbol{}
-\end{definition}
+\end{defn}
 
-We observe from our definitoins that the identity graded component $\C_{e}$ of any $G$-crossed modular category is itself a modular category. The assignment $\C^{\times}_{G}\mapsto \C=\C_{e}$ corresponds to the physical transition from a phase where defects exist and can be freely manipulated, and a phase in which no free defects can be made. This is known physically as \textit{confinement}. This gives us the following picture:
+We observe from our definitoins that the identity graded component $\cC_{e}$ of any $G$-crossed modular category is itself a modular category. The assignment $\cC^{\times}_{G}\mapsto \cC=\cC_{e}$ corresponds to the physical transition from a phase where defects exist and can be freely manipulated, and a phase in which no free defects can be made. This is known physically as \textit{confinement}. This gives us the following picture:
 
 % https://q.uiver.app/#q=WzAsNCxbMSwwLCJcXENee1xcdGltZXN9X3tHfSJdLFsxLDEsIlxcc3Vic3RhY2t7XFx0ZXh0eyRHJC1jcm9zc2VkfVxcXFwgXFx0ZXh0e21vZHVsYXIgY2F0ZWdvcnl9fSJdLFswLDAsIlxcQyJdLFswLDEsIlxcc3Vic3RhY2t7XFx0ZXh0e21vZHVsYXIgY2F0ZWdvcnl9XFxcXCBcXHRleHR7d2l0aCBicmFpZGVkfSBcXFxcIFxcdGV4dHtjYXRlZ29yaWNhbCAkRyQtYWN0aW9ufX0iXSxbMSwwLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJzcXVpZ2dseSJ9fX1dLFsyLDAsIlxcdGV4dHtmcmFjdGlvbmFsaXphdGlvbn0iLDAseyJvZmZzZXQiOi0xfV0sWzAsMiwiXFx0ZXh0e2NvbmZpbmVtZW50fSIsMCx7Im9mZnNldCI6LTF9XSxbMywyLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJzcXVpZ2dseSJ9fX1dXQ==
 \[\begin{tikzcd}
-	\C & {\C^{\times}_{G}} \\
+	\cC & {\cC^{\times}_{G}} \\
 	\begin{array}{c} \substack{\text{modular category}\\ \text{with braided} \\ \text{categorical $G$-action}} \end{array} & \begin{array}{c} \substack{\text{$G$-crossed}\\ \text{modular category}} \end{array}
 	\arrow["{\text{fractionalization}}", shift left, from=1-1, to=1-2]
 	\arrow["{\text{confinement}}", shift left, from=1-2, to=1-1]
@@ -875,53 +875,53 @@ as mentioned, it is not always possible to fractionalize symmetries. We will dis
 
 [WORK: This is the section where I talk about gauging. Not sure how much I would have mentioned it before. First off, it would be nice to talk about gauging from a physical perspective. The end game is to state the maps
 
-$$ \C^{\times}_{G}  <-- condensation, gauging --> \left(\C^{\times}_{G}\right)^{G}$$
+$$ \cC^{\times}_{G}  <-- condensation, gauging --> \left(\cC^{\times}_{G}\right)^{G}$$
 
 properly. General discussion gauge symmetry breaking phase transition would be nice to talk about. If I could state everything clearly mathematically that would be great.
 ]
 
-\begin{proposition} Let $\C$ be a fusion category with a categorical $G$ action. Define a category $\C^{G}$ as follows. It's objects are pairs $(A,\gamma)$, where $A\in \C$ is an object and
+\begin{prop} Let $\cC$ be a fusion category with a categorical $G$ action. Define a category $\cC^{G}$ as follows. It's objects are pairs $(A,\gamma)$, where $A\in \cC$ is an object and
 
 $$\gamma_{g,A}:\rho(g)(A)\xrightarrow{\sim}A$$
 
-is an isomorphism for all $g\in G$, $A\in \C$ such that
+is an isomorphism for all $g\in G$, $A\in \cC$ such that
 
 [WORK: add diagram]
 
-commutes. The morphisms in $\C^{G}$ are morphisms in $f$ such that
+commutes. The morphisms in $\cC^{G}$ are morphisms in $f$ such that
 
 [WORK: add diagram]
 
-commutes. [WORK: define the rest of the structure]. This endows $\C^{G}$ with the structure of a fusion category. We call $\C^{G}$ the \textit{equivariantization} of $G$.
+commutes. [WORK: define the rest of the structure]. This endows $\cC^{G}$ with the structure of a fusion category. We call $\cC^{G}$ the \textit{equivariantization} of $G$.
 
-[WORK: the space of possible maps $\gamma$ making $(n\cdot \one, \gamma)$ an element of $\C^{G}$ is equivalent to the space of $n$-dimensional representations of $G$. To make this canonical, however, one needs to choose a choice of trivialization of $\rho(g)(\one)$ for all $g\in G$. That is, an isomorphism $\rho(g)(\one)\cong \one$.
+[WORK: the space of possible maps $\gamma$ making $(n\cdot \bone, \gamma)$ an element of $\cC^{G}$ is equivalent to the space of $n$-dimensional representations of $G$. To make this canonical, however, one needs to choose a choice of trivialization of $\rho(g)(\bone)$ for all $g\in G$. That is, an isomorphism $\rho(g)(\bone)\cong \bone$.
 
 I figured it out. I added the axiom that $\rho(e)$ is the identity. We thus have the distinguished map
 
 \begin{align*}
-&\rho(g)(\one)\\
-&\to\rho(g)(\one)\otimes \rho(e)(\one)\\
-&\to\rho(g)(\one)\otimes \rho(g)\rho(g^{1})(\one)\\
-&\to \rho(g)(\one \otimes \rho(g^{-1})(\one))\\
-&\to \rho(g)(\rho(g^{-1})(\one))\\
-&\to \rho(e)(\one)\\
-&\to \one
+&\rho(g)(\bone)\\
+&\to\rho(g)(\bone)\otimes \rho(e)(\bone)\\
+&\to\rho(g)(\bone)\otimes \rho(g)\rho(g^{1})(\bone)\\
+&\to \rho(g)(\bone \otimes \rho(g^{-1})(\bone))\\
+&\to \rho(g)(\rho(g^{-1})(\bone))\\
+&\to \rho(e)(\bone)\\
+&\to \bone
 \end{align*}
 
 
 which fixes the issue of canonical trivialization. Should I add this as a footnote maybe? Feels overly technical.
 ]
 
-[WORK: figure out how to pass this lemma through once there's extra structure added onto $\C$.]
-\end{proposition}
+[WORK: figure out how to pass this lemma through once there's extra structure added onto $\cC$.]
+\end{prop}
 
 \begin{proof}.[WORK: do proof]
 \end{proof}
 
 In light of the above proposition, we give the following definition:
 
-\begin{definition}[Internal $G$-symmetry] An \textit{internal $G$-symmetry} of a fusion category $\C$ is a fully faithful functor $\Rep(G)\xrightarrow{} \C$.
-\end{definition}
+\begin{defn}[Internal $G$-symmetry] An \textit{internal $G$-symmetry} of a fusion category $\cC$ is a fully faithful functor $\Rep(G)\xrightarrow{} \cC$.
+\end{defn}
 
 [WORK: I'm realizing that I haven't done much with representation categories up to here. Should I talk about them more? Say some generalities about representation theory?]
 
@@ -929,27 +929,27 @@ Proposition [ref] tells us that every fusion category with a categorical $G$-act
 
 We now discuss \textit{condensation}. As discussed above, condensation should serve as an inverse to gauging. Thus, it should take as an input a category with an internal $G$-symmetry and output a category with a categorical $G$-action. We define this procedure as follows:
 
-\begin{proposition}.[WORK: define equivariantization and assert that it behaves well]
-\end{proposition}
+\begin{prop}.[WORK: define equivariantization and assert that it behaves well]
+\end{prop}
 \begin{proof}.[WORK: do proof]
 \end{proof}
 
 We now verify that these two constructions are indeed inverses to one another:
 
-\begin{proposition}.
+\begin{prop}.
 [WORK: define maps
 
-$$\C\to (\C^{G})_{G}$$
+$$\cC\to (\cC^{G})_{G}$$
 
 and
 
-$$\C\to (\C_G)^G.$$
+$$\cC\to (\cC_G)^G.$$
 
 State that these are equivalences of categories. Furthermore, assert that these equivalences of categories go through when we add all of our extra structure back on.
 
 The principle here is that the data of a $G$-grading is the same as the data of an internal $G$-symmetry. This is the ``main principle" of Bruguieres and Muger \cite{bruguieres2000categories, muger2000galois}. A good exposition of it is in \cite{drinfeld2010braided}.
 ]
-\end{proposition}
+\end{prop}
 
 Thus, combining the results of this section with the ones from the previous section we get the following picture:
 
@@ -977,9 +977,9 @@ There is a $G$-crossed verlinde formula - \cite{deshpande2019crossed}. Seeing as
 [WORK: Here are some tricks I found useful a few months ago when I was doing this
 
 \begin{enumerate}
-\item Given any $A\in \C_{g}$, all other elments of $\C_g$ an be obtained by fusion with an element of $\C_{e}$;
+\item Given any $A\in \cC_{g}$, all other elments of $\cC_g$ an be obtained by fusion with an element of $\cC_{e}$;
 
-\item Rank($\C_g$)=$\#$ fixed points of $\C_{e}$ under action of $g$
+\item Rank($\cC_g$)=$\#$ fixed points of $\cC_{e}$ under action of $g$
 \end{enumerate}
 
 is this a good section to include them in?
@@ -1079,7 +1079,7 @@ $\newline$
 \textit{(Fermionic topological order)}\\
 \end{center}
 
-There is a very strong link between fermions and $\ZZ_2$-gradings. This link was made popular by the discovery of \textit{supersymmetry} in string theory, which mean passing to a $\ZZ_2$-graded geometry \cite{varadarajan2004supersymmetry}. The fact that topological order whose fundamental degrees of freedom are fermionic need special attention was brough to light by Gu, Wang, and Wen, in a series of foundational papers \cite{gu2014lattice, gu2014symmetry, gu2015classification}. The formalism of super-modular categories was introduced in 2017 \cite{bruillard2017fermionic}. This paper brought together a lot of the surrounding literature into a coherent physical narrative. The central conjecture of this narrative was the 16-fold way, which was established in 2024 by Johnson-Freyd and Reutter \cite{johnson2024minimal}
+There is a very strong link between fermions and $\bZ_2$-gradings. This link was made popular by the discovery of \textit{supersymmetry} in string theory, which mean passing to a $\bZ_2$-graded geometry \cite{varadarajan2004supersymmetry}. The fact that topological order whose fundamental degrees of freedom are fermionic need special attention was brough to light by Gu, Wang, and Wen, in a series of foundational papers \cite{gu2014lattice, gu2014symmetry, gu2015classification}. The formalism of super-modular categories was introduced in 2017 \cite{bruillard2017fermionic}. This paper brought together a lot of the surrounding literature into a coherent physical narrative. The central conjecture of this narrative was the 16-fold way, which was established in 2024 by Johnson-Freyd and Reutter \cite{johnson2024minimal}
 }}
 
 
@@ -1089,9 +1089,9 @@ $\newline\newline$
 
 \begin{enumerate}[\thesection .1.]
 
-\item .[WORK: show that there is a canonical bijection between structures of a left $\C$-module on $\M$ and $\CC$-linear monoidal functors
+\item .[WORK: show that there is a canonical bijection between structures of a left $\cC$-module on $\cM$ and $\bC$-linear monoidal functors
 
-$$\M\xrightarrow{}\End(\C).$$
+$$\cM\xrightarrow{}\End(\cC).$$
 
 This is a categorical version of the fact that modules and representations are in bijection.]
 

@@ -110,11 +110,11 @@ There's lots of different ways of doing this of course, coming from the work of 
 
 .[WORK: need to read Mochon's papers and Zhenghan's clarifications again to write this section. Maybe have two sections, one for non-solvable and one for solvable non-nilpotent?]
 
-.[WORK: Maybe add a little word about the idea of having $\ZZ_2$ bulk and then interfacing with $S_3$ islands?]
+.[WORK: Maybe add a little word about the idea of having $\bZ_2$ bulk and then interfacing with $S_3$ islands?]
 
 .[WORK: using gapped boundaries. This is the surface code.]
 
-.[WORK: maybe bring up universal TQC with gapped boundaries in $\D(\ZZ_3)$ and projective charge measurement somehow? It would be nice to include somewhere. Maybe have an intro about how hard you have to try to get unversal TQC with different groups, and how you can get universal TQC even with abelian groups if you try hard enough.]
+.[WORK: maybe bring up universal TQC with gapped boundaries in $\fD(\bZ_3)$ and projective charge measurement somehow? It would be nice to include somewhere. Maybe have an intro about how hard you have to try to get unversal TQC with different groups, and how you can get universal TQC even with abelian groups if you try hard enough.]
 
 ]
 
@@ -145,7 +145,7 @@ This induces a hierarchy of adjectives, from most abelian to least abelian:
 
 The following phenominon presents itself. We find that less abelian a group is the more computational power it has. Additionally, the more computational power it has the harder it is to create topological systems in the lab which are algebraically described that group. It is harder to make systems which make good computers.
 
-This phenominon is especially well developped in the quantum case. Given a finite group $G$, we can describe a classical system of ordered media based on $G$. This system can be \textit{quantized}. This turns it into a topological quantum system whose behavior is still goverened by the group $G$. This quantized system is known as the \textit{quantum double} of $G$, and is denote $\D(G)$. These systems behave very similarly to the ones discussed in this chapter, just made quantum. These quantum doubles and the algebraic theory describing them and their generalizations will be the topic of much of this book.
+This phenominon is especially well developped in the quantum case. Given a finite group $G$, we can describe a classical system of ordered media based on $G$. This system can be \textit{quantized}. This turns it into a topological quantum system whose behavior is still goverened by the group $G$. This quantized system is known as the \textit{quantum double} of $G$, and is denote $\fD(G)$. These systems behave very similarly to the ones discussed in this chapter, just made quantum. These quantum doubles and the algebraic theory describing them and their generalizations will be the topic of much of this book.
 
 In the case of quantum doubles we can make a table detailing exactly the relationship between level of abelianness, computational power, and experimental status:
 
@@ -155,7 +155,7 @@ In the case of quantum doubles we can make a table detailing exactly the relatio
 \begin{tabular}{|| c | c | c | c ||} 
 
 \hline
-Abelianness & Smallest Example& Computational power of $\D(G)$& Experimental Status \\ [0.5ex] 
+Abelianness & Smallest Example& Computational power of $\fD(G)$& Experimental Status \\ [0.5ex] 
  \hline\hline
   &  & &\\ 
  non-solvable & $G=A_5,$ & Straightforwardly universal.& Fundamental limitations\\
@@ -179,9 +179,9 @@ Abelianness & Smallest Example& Computational power of $\D(G)$& Experimental Sta
   &  & &\\ 
  \hline
   &  & &\\ 
- abelian & $G=\ZZ_2,$ & Universal schemes seem& Widely used\\ 
+ abelian & $G=\bZ_2,$ & Universal schemes seem& Widely used\\ 
   & cyclic group & to be impossible.& in most applications. \\ 
-  &with $|\ZZ_2|=2$ &  Non-topological methods& (\cite{bravyi2024high, hong2024entangling}\\ 
+  &with $|\bZ_2|=2$ &  Non-topological methods& (\cite{bravyi2024high, hong2024entangling}\\ 
   &  & seem to be required.& \cite{balewski2024engineering, google2023suppressing})\\ 
   &  & (Chapter [ref], \cite{bravyi2013classification, eastin2009restrictions}) &\\ 
   &  & &\\ 
@@ -192,7 +192,7 @@ Abelianness & Smallest Example& Computational power of $\D(G)$& Experimental Sta
 We make a few comments about this table.
 
 \begin{enumerate}
-\item We notice that difficulty inherent to experimentally realizing topological phases is \textit{not} completely controlled by the size of that group. The quantum double $\D(D_4$) is simpler to realize than $\D(S_3)$ because it is nilpotent and $S_3$ is not, despite the fact that $|D_4|=8$ is larger than $|S_3|=6$.
+\item We notice that difficulty inherent to experimentally realizing topological phases is \textit{not} completely controlled by the size of that group. The quantum double $\fD(D_4$) is simpler to realize than $\fD(S_3)$ because it is nilpotent and $S_3$ is not, despite the fact that $|D_4|=8$ is larger than $|S_3|=6$.
 
 \item All of the experimental results cited come from the side of topological quantum error correction and not topological quantum materials. This is because most topological quantum materials are described by algebraic theories which are not doubles of finite groups. Doubles of finite groups are primarily used in topological quantum error correction theory.
 
@@ -217,16 +217,16 @@ We make a few comments about this table.
 
 \subsection{Computation with Majorana zero modes}
 
-.[WORK: Theory of Majoranas, as $\ZZ_2$-crossed extensions of sVec.]
+.[WORK: Theory of Majoranas, as $\bZ_2$-crossed extensions of sVec.]
 
 .[WORK: This section requires a real discussion of physics. There are three key systems to discuss.
 
 \begin{enumerate}
 \item $\nu=5/2$ FQH. This system is described by a supermodular category, up to the typical caveat that it is only quasi-topological order and not pure topological order so some phases might not be protected. This supermodular category has Ising as a subcategory. However, the simple object which makes the nonabelian anyon in the Ising MTC is \textit{not} ``fundamental" in the system. It is composite, made out of two physically creatable anyons. In this sense $\nu =5/2$ doesn't really have fundamental Ising anyons, only composite ones.
 
-\item The ends of nanowires. Kitaev has his famous paper introducing this idea. These are Majorana zero modes in their purest form. This is NOT ising. It is a $\ZZ_2$-crossed extension of sVec which is algebraically essentially the same as Ising, but the distinction is that some of the phases which are well-defined in Ising are unphysical in the $\ZZ_2$-crossed extension. (original paper is \cite{kitaev2001unpaired}, and then \cite{fidkowski2011topological} has big improvements)
+\item The ends of nanowires. Kitaev has his famous paper introducing this idea. These are Majorana zero modes in their purest form. This is NOT ising. It is a $\bZ_2$-crossed extension of sVec which is algebraically essentially the same as Ising, but the distinction is that some of the phases which are well-defined in Ising are unphysical in the $\bZ_2$-crossed extension. (original paper is \cite{kitaev2001unpaired}, and then \cite{fidkowski2011topological} has big improvements)
 
-\item Superconductor/topologial insulator heterostructures. If you have a sample of topological insulator and you make its boundary conditions oscillate between magnet and superconductor you get Majoranas at the interface between those boundaries. The online course on topology in condensed matter has a good section on this, and there is a lot of literature on the subject. Algebraically, this should be the $\ZZ_2$-crossed extension of sVec as well. This could be a good reference: \cite{son2019commuting}.
+\item Superconductor/topologial insulator heterostructures. If you have a sample of topological insulator and you make its boundary conditions oscillate between magnet and superconductor you get Majoranas at the interface between those boundaries. The online course on topology in condensed matter has a good section on this, and there is a lot of literature on the subject. Algebraically, this should be the $\bZ_2$-crossed extension of sVec as well. This could be a good reference: \cite{son2019commuting}.
 \end{enumerate}
 
 Pointing out the key subtle differences between these models is of utmost importance. There should be sections summarizing each experiment and describing its algebraic theory. Another thing to know about is intrinsically topological superconductors, c.f. \cite{bonderson2013time}.

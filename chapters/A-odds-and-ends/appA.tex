@@ -37,7 +37,7 @@ V(sphere)=1;
 
 V(torus)= number of anyons types...;
 
-V(two-holdes torus) = $\sum_{a,b,c\in \LL}(N^{a,b}_c)^2$.
+V(two-holdes torus) = $\sum_{a,b,c\in \cL}(N^{a,b}_c)^2$.
 ]
 
 [WORK: I think that I should add a heuristic derivation of these state-space dimensions. I want to use the example of the two-holed torus, and not having a basis is causing me trouble.]
@@ -56,11 +56,11 @@ We now describe this induced linear transformation, using the explicit example o
 
 [WORK: use four-by-four square lattice, write out Dehn twist action explicitely.]
 
-We make a few observations. Firstly, we observe that the permutation on the level of lattice sites induces a linear map on the level of Hilbert spaces. Just like how there is a linear ``swap" map $\CC^2\otimes \CC^2\to \CC^2\otimes \CC^2$ which sends $\ket{b_0}\otimes \ket{b_1}$ to $\ket{b_1}\otimes \ket{b_0}$, there are linear maps on any tensor-product Hilbert space induced by permuting the components.
+We make a few observations. Firstly, we observe that the permutation on the level of lattice sites induces a linear map on the level of Hilbert spaces. Just like how there is a linear ``swap" map $\bC^2\otimes \bC^2\to \bC^2\otimes \bC^2$ which sends $\ket{b_0}\otimes \ket{b_1}$ to $\ket{b_1}\otimes \ket{b_0}$, there are linear maps on any tensor-product Hilbert space induced by permuting the components.
 
-Secondly, we observe that the Hamiltonian is \textit{not} invariant under this linear map. This is an immediate corrolary of the fact that the lattice edges are not invariant under the map, and thus plaquette terms which used to act on square faces now act on slanted parallelograms. However, the new Hamiltonian is still manifestly a toric code Hamiltonian, just associated to a different lattice. Thus, the ground space of the old Hamiltonian and the new Hamiltonian are both canonically isomorphic to $\CC[H^1(T^2;\ZZ_2)]$. Thus, identifying the ground space of both Hamiltonians with $\CC[H^1(T^2;\ZZ_2)]$, we find that the Dehn twist induces a linear map
+Secondly, we observe that the Hamiltonian is \textit{not} invariant under this linear map. This is an immediate corrolary of the fact that the lattice edges are not invariant under the map, and thus plaquette terms which used to act on square faces now act on slanted parallelograms. However, the new Hamiltonian is still manifestly a toric code Hamiltonian, just associated to a different lattice. Thus, the ground space of the old Hamiltonian and the new Hamiltonian are both canonically isomorphic to $\bC[H^1(T^2;\bZ_2)]$. Thus, identifying the ground space of both Hamiltonians with $\bC[H^1(T^2;\bZ_2)]$, we find that the Dehn twist induces a linear map
 
-$$\CC[H^1(T^2;\ZZ_2)]\to \CC[H^1(T^2;\ZZ_2)].$$
+$$\bC[H^1(T^2;\bZ_2)]\to \bC[H^1(T^2;\bZ_2)].$$
 
 This linear map can be described entirely explicitely. [WORK: describe the map.]
 
@@ -103,8 +103,8 @@ $$Z_{g,g'}^\dagger \circ Z_{g,g'}=\id_{V_{g}\otimes V_{g'}}.$$
 [WORK: This map should be
 
 \begin{align*}
-\CC[\LL]\otimes \CC[\LL]&\xrightarrow{}\sum_{a,b,c\in \LL}B(V^{a,b}_c)\\
-\ket{a}\otimes \ket{b}&\mapsto \sum_{c\in \LL}\sqrt{\frac{d_c}{d_ad_b}}\ket{\id_{V^{a,b}_c}}
+\bC[\cL]\otimes \bC[\cL]&\xrightarrow{}\sum_{a,b,c\in \cL}B(V^{a,b}_c)\\
+\ket{a}\otimes \ket{b}&\mapsto \sum_{c\in \cL}\sqrt{\frac{d_c}{d_ad_b}}\ket{\id_{V^{a,b}_c}}
 \end{align*}
 
 but I don't have the setup for this to be a substantive statement yet.
@@ -133,7 +133,7 @@ which is a group homomorphism because $Z^\dagger_{g,g'}\circ Z_{g,g'}=\id_{V_{g}
 
 Of course, the above analysis has no been rigorous. It can't be, since we do not have a rigorous definition of topological order! However, what we can do now is \textit{define} a TQFT in terms of this data we have constructed. Namely, we have the following:
 
-\begin{definition}[TQFT] A \textit{topological quatum field theory} (TQFT) is the following data:
+\begin{defn}[TQFT] A \textit{topological quatum field theory} (TQFT) is the following data:
 
 \begin{enumerate}
 \item A collection of Hilbert spaces $V_{g}$ for every integer $g\geq 0$;
@@ -153,7 +153,7 @@ Such that:
 
 \begin{enumerate}
 
-\item $V_{0}=\CC$;
+\item $V_{0}=\bC$;
 
 \item For all $g,g'\geq 0$,
 
@@ -174,7 +174,7 @@ commutes.
 
 \item .[WORK: I bet I need more axioms. What are they?]
 \end{enumerate}
-\end{definition}
+\end{defn}
 
 \subsection{Quasitriangular weak Hopf algebras}
 
