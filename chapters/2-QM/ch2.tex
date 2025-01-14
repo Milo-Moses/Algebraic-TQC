@@ -87,8 +87,6 @@ We are now ready to state the full axioms of probability theory:
 \item (Joining systems) If $S$ and $S'$ are two finite sets, the system obtained by joining $\bR[S]$ and $\bR[S']$ is $\bR[S\times S']$.
 \item (Measuring systems) Given a normalized vector $\sum_{x\in S}p_x \left |x\right>\in \bR[S]$, measurement corresponds to collapsing onto an outcome, where we collapse into each $x\in S$ with probability $p_x$.
 \end{enumerate}
-
-\raggedleft\qedsymbol{}
 \end{defn}
 
 \subsubsection{Basis-dependent quantum mechanics}
@@ -107,8 +105,6 @@ Thus, given some finite set $S$, states in the quantum system based on $S$ corre
 \item (Joining systems) If $S$ and $S'$ are two finite sets, the system obtained by joining $\bC[S]$ and $\bC[S']$ is $\bC[S\times S']$.
 \item (Measuring systems) Given a normalized vector $\sum_{x\in S}c_x \left |x\right>\in \bC[S]$, measurement corresponds to collapsing into a pure state, where we collapse into each $x\in S$ with probability $|c_x|^2$.
 \end{enumerate}
-
-\raggedleft\qedsymbol{}
 \end{defn}
 
 We now relate these axioms to the previous dicussion and introduce terminology. The formal sums $\sum_{x\in S}c_x\ket{x}$ are not probability distributions. They are called {\em wavefunctions}. Every state in quantum mechanics is encoded in a wavefunction. The numbers $c_x$ are not probabilities. They are called {\em amplitudes}. We say that the state $\ket{\psi}=\sum_{x\in S}c_x \ket{x}$ is in a {\em superposition} of the different basis states $\ket{x}$.
@@ -227,22 +223,13 @@ From our discussion of measurement it is clear that, unlike probibilistic system
 
 This poses some immediate problems however. The first is that vector spaces have no notion of norm. Hence, we cannot speak of normalized vectors, and hence we cannot speak of sates. What's more, measurements are required to use an orthonormal basis. To define orthogonality we used the canonical inner product on $\bC[S]$. Without a basis there is no distinguished choice of inner product. However, in a real sense that is the {\em only} piece of information we need about our basis - its inner product. This means that we can state the axioms of quantum mechanics for any vector space with a distinguished choice of inner product. We define what it means for a space to have an inner product below:
 
-\begin{defn} A (finite-dimensional) Hilbert space $(V,\Braket{\cdot | \cdot})$ is the following data:
-
-\begin{enumerate}
-\item A finite-dimensional vector space $V$;
-\item A map $\Braket{\cdot | \cdot}:V\times V\to \bC$;
-\end{enumerate}
-
-such that
+\begin{defn} A (finite-dimensional) Hilbert space $(V,\Braket{\cdot | \cdot})$ is a (finite-dimensional) vector space $V$, along with a map $\Braket{\cdot | \cdot}:V\times V\to \bC$, such that
 
 \begin{enumerate}
 \item $\Braket{\cdot,\cdot}$ is linear in the first argument;
 \item $\Braket{x,y}=\overline{\Braket{y,x}}$ for all $x,y\in V$;
 \item If $x$ is non-zero, then $\Braket{x,x}>0$.
 \end{enumerate}
-
-\raggedleft\qedsymbol{}
 \end{defn}
 
 In any Hilbert space $V$, we can define the 2-norm of a vector $\ket{\psi}\in V$ to be
@@ -282,8 +269,6 @@ This leads us to the following basis independent formulation of the axioms of qu
 
 $$\left.\left(\sum_{v(b)=\lambda}c_b \ket{b}\right)\right/ \left(\sum_{v(b)=\lambda}|c_b|^2\right).$$
 \end{enumerate}
-
-\raggedleft\qedsymbol{}
 \end{defn}
 
  Of course, without a basis we have no way of identifying linear operators with matrces, and hence no way of defining the transpose. 
@@ -371,8 +356,6 @@ At the heart of the Schrodinger equation is the {\em Hamiltonian} of a quantum s
 $$\ket{\psi(t)}=e^{-i H t}\ket{\psi(0)}$$
 
 where $e^M=\sum_{n=0}^{\infty}\frac{M^n}{n!}$ is the matrix exponential.
-
-\raggedleft\qedsymbol{}
 \end{defn}
 
 \begin{rem}

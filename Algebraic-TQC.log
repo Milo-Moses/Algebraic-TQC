@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  11 JAN 2025 18:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  13 JAN 2025 16:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -670,23 +670,26 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@dimlist=\toks39
 )
 (./Algebraic-TQC.aux (./chapters/0-preface/ch0.aux)
-(./chapters/4-category-theory/ch4.aux) (./chapters/A-odds-and-ends/appA.aux)
+(./chapters/1-overview/ch1.aux) (./chapters/2-QM/ch2.aux)
+(./chapters/3-TQO/ch3.aux) (./chapters/4-category-theory/ch4.aux)
+(./chapters/5-MTCs/ch5.aux) (./chapters/6-further-structure/ch6.aux)
+(./chapters/7-TQC/ch7.aux) (./chapters/A-odds-and-ends/appA.aux)
 (./chapters/B-anyon-data/appB.aux))
 \openout1 = `Algebraic-TQC.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 31.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -791,39 +794,39 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 33.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 34.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 33.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 34.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 33.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 34.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 33.
+(Font)              <12> on input line 34.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 33.
+(Font)              <8> on input line 34.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 33.
-LaTeX Font Info:    Try loading font information for U+msa on input line 33.
+(Font)              <6> on input line 34.
+LaTeX Font Info:    Try loading font information for U+msa on input line 34.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 33.
+LaTeX Font Info:    Try loading font information for U+msb on input line 34.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 33.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 34.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -844,65 +847,631 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ] [4
 
-] (./Algebraic-TQC.toc)
+] (./Algebraic-TQC.toc [5] [6] [7])
 \tf@toc=\write4
 \openout4 = `Algebraic-TQC.toc'.
 
- [5]
-\openout2 = `./chapters/4-category-theory/ch4.aux'.
+
+[8]
+\openout2 = `./chapters/1-overview/ch1.aux'.
+
+ (./chapters/1-overview/ch1.tex [9
+
+] [10]
+(./figures/mathematical-outline.tikz)
+
+LaTeX Warning: Reference `topological-quantum-order' on page 11 undefined on in
+put line 52.
 
 
-(./chapters/4-category-theory/ch4.tex [6
+LaTeX Warning: Reference `modular-categories' on page 11 undefined on input lin
+e 52.
 
-]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 76.
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmr.fd
+LaTeX Warning: Reference `further-structure' on page 11 undefined on input line
+ 52.
+
+
+LaTeX Warning: Reference `topological-quantum-computation' on page 11 undefined
+ on input line 52.
+
+
+LaTeX Warning: Reference `quantum-mechanics' on page 11 undefined on input line
+ 52.
+
+
+LaTeX Warning: Reference `category-theory' on page 11 undefined on input line 5
+2.
+
+<./images/quipu.jpg, id=49, 301.125pt x 183.084pt>
+File: ./images/quipu.jpg Graphic file (type jpg)
+<use ./images/quipu.jpg>
+Package pdftex.def Info: ./images/quipu.jpg  used on input line 60.
+(pdftex.def)             Requested size: 150.56212pt x 91.54176pt.
+[11] [12 <./images/quipu.jpg>] [13]
+<./images/quasiparticle.jpeg, id=61, 3643.6125pt x 1812.7725pt>
+File: ./images/quasiparticle.jpeg Graphic file (type jpg)
+<use ./images/quasiparticle.jpeg>
+Package pdftex.def Info: ./images/quasiparticle.jpeg  used on input line 97.
+(pdftex.def)             Requested size: 145.71968pt x 72.49855pt.
+ [14 <./images/quasiparticle.jpeg>]
+<./images/braid-topologies.jpg, id=65, 2011.515pt x 1492.57625pt>
+File: ./images/braid-topologies.jpg Graphic file (type jpg)
+<use ./images/braid-topologies.jpg>
+Package pdftex.def Info: ./images/braid-topologies.jpg  used on input line 114.
+
+(pdftex.def)             Requested size: 130.75307pt x 97.02086pt.
+ [15 <./images/braid-topologies.jpg>]
+<./images/TQC-outline.png, id=69, 497.86pt x 401.5pt>
+File: ./images/TQC-outline.png Graphic file (type png)
+<use ./images/TQC-outline.png>
+Package pdftex.def Info: ./images/TQC-outline.png  used on input line 128.
+(pdftex.def)             Requested size: 174.2536pt x 140.5271pt.
+ (./figures/shor-fibonacci.tikz) [16 <./images/TQC-outline.png>] [17]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 161.
+
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 76.
- [7]
-LaTeX Font Info:    Try loading font information for U+euf on input line 90.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 161.
+<./images/xy-model.png, id=79, 3212.0pt x 3212.0pt>
+File: ./images/xy-model.png Graphic file (type png)
+<use ./images/xy-model.png>
+Package pdftex.def Info: ./images/xy-model.png  used on input line 170.
+(pdftex.def)             Requested size: 128.45811pt x 128.45811pt.
 
+Underfull \hbox (badness 10000) in paragraph at lines 176--178
+
+ []
+
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 181--182
+[][] 
+ []
+
+[18]
+<./images/xy-defects.png, id=84, 2409.0pt x 1204.5pt>
+File: ./images/xy-defects.png Graphic file (type png)
+<use ./images/xy-defects.png>
+Package pdftex.def Info: ./images/xy-defects.png  used on input line 203.
+(pdftex.def)             Requested size: 144.53377pt x 72.26688pt.
+ [19 <./images/xy-model.png>]
+<./images/defects.jpeg, id=92, 2631.8325pt x 1845.89626pt>
+File: ./images/defects.jpeg Graphic file (type jpg)
+<use ./images/defects.jpeg>
+Package pdftex.def Info: ./images/defects.jpeg  used on input line 227.
+(pdftex.def)             Requested size: 131.59933pt x 92.30022pt.
+ [20 <./images/xy-defects.png> <./images/defects.jpeg>]
+<./images/loops.jpeg, id=97, 3514.12875pt x 1726.45pt>
+File: ./images/loops.jpeg Graphic file (type jpg)
+<use ./images/loops.jpeg>
+Package pdftex.def Info: ./images/loops.jpeg  used on input line 248.
+(pdftex.def)             Requested size: 210.83862pt x 103.58252pt.
+ [21 <./images/loops.jpeg>]
+Overfull \hbox (7.31697pt too wide) in paragraph at lines 278--279
+[]\OT1/lmr/bx/n/10 Example 1.4. []\OT1/lmr/m/n/10 An-other im-por-tant im-por-t
+ant fun-da-men-tal group to com-pute is $\OML/lmm/m/it/10 ^^Y[]\OT1/lmr/m/n/10 
+(\U/msb/m/n/10 R[]\OMS/lmsy/m/n/10 nf\OML/lmm/m/it/10 p\OMS/lmsy/m/n/10 g\OML/l
+mm/m/it/10 ; m\OT1/lmr/m/n/10 )$
+ []
+
+<./images/conjugacy.jpeg, id=101, 2892.8075pt x 1858.945pt>
+File: ./images/conjugacy.jpeg Graphic file (type jpg)
+<use ./images/conjugacy.jpeg>
+Package pdftex.def Info: ./images/conjugacy.jpeg  used on input line 290.
+(pdftex.def)             Requested size: 115.6926pt x 74.34514pt.
+[22]
+<./images/classical-setup.jpeg, id=110, 3557.29pt x 1964.33875pt>
+File: ./images/classical-setup.jpeg Graphic file (type jpg)
+<use ./images/classical-setup.jpeg>
+Package pdftex.def Info: ./images/classical-setup.jpeg  used on input line 307.
+
+(pdftex.def)             Requested size: 142.26736pt x 78.56017pt.
+ [23 <./images/conjugacy.jpeg> <./images/classical-setup.jpeg>]
+<./images/braid-action.jpeg, id=114, 3372.6pt x 2924.9275pt>
+File: ./images/braid-action.jpeg Graphic file (type jpg)
+<use ./images/braid-action.jpeg>
+Package pdftex.def Info: ./images/braid-action.jpeg  used on input line 327.
+(pdftex.def)             Requested size: 168.63988pt x 146.25494pt.
+ [24 <./images/braid-action.jpeg>] (./figures/mathematical-outline-classical.ti
+kz
+
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 3.
+
+
+) (./figures/mathematical-outline.tikz)
+
+LaTeX Warning: Reference `topological-quantum-order' on page 25 undefined on in
+put line 354.
+
+LaTeX Font Info:    Try loading font information for U+euf on input line 354.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [8] [9]
-[10] [11] [12] (./figures/category-theory-motivating-example.tikz) [13]
+) [25]
+<./images/winding-numbers.jpeg, id=122, 3175.865pt x 840.13875pt>
+File: ./images/winding-numbers.jpeg Graphic file (type jpg)
+<use ./images/winding-numbers.jpeg>
+Package pdftex.def Info: ./images/winding-numbers.jpeg  used on input line 361.
+
+(pdftex.def)             Requested size: 158.80255pt x 42.00938pt.
+<./images/braiding-rule.jpeg, id=123, 3605.47pt x 987.69pt>
+File: ./images/braiding-rule.jpeg Graphic file (type jpg)
+<use ./images/braiding-rule.jpeg>
+Package pdftex.def Info: ./images/braiding-rule.jpeg  used on input line 370.
+(pdftex.def)             Requested size: 180.28406pt x 49.38739pt.
+<./images/fusion-rule.jpeg, id=124, 2699.08376pt x 809.0225pt>
+File: ./images/fusion-rule.jpeg Graphic file (type jpg)
+<use ./images/fusion-rule.jpeg>
+Package pdftex.def Info: ./images/fusion-rule.jpeg  used on input line 377.
+(pdftex.def)             Requested size: 134.9621pt x 40.45349pt.
+<./images/braiding-diagramatic.jpeg, id=125, 2745.25626pt x 1887.05pt>
+File: ./images/braiding-diagramatic.jpeg Graphic file (type jpg)
+<use ./images/braiding-diagramatic.jpeg>
+Package pdftex.def Info: ./images/braiding-diagramatic.jpeg  used on input line
+ 392.
+(pdftex.def)             Requested size: 137.27084pt x 94.35802pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./images/braiding-examples.jpeg, id=126, 3312.375pt x 2659.9375pt>
+File: ./images/braiding-examples.jpeg Graphic file (type jpg)
+<use ./images/braiding-examples.jpeg>
+Package pdftex.def Info: ./images/braiding-examples.jpeg  used on input line 40
+0.
+(pdftex.def)             Requested size: 165.62845pt x 133.00467pt.
+[26 <./images/winding-numbers.jpeg> <./images/braiding-rule.jpeg> <./images/fus
+ion-rule.jpeg>]
+<./images/braiding-decomposition.jpeg, id=131, 2510.37875pt x 1547.7825pt>
+File: ./images/braiding-decomposition.jpeg Graphic file (type jpg)
+<use ./images/braiding-decomposition.jpeg>
+Package pdftex.def Info: ./images/braiding-decomposition.jpeg  used on input li
+ne 412.
+(pdftex.def)             Requested size: 125.52629pt x 77.39365pt.
+ [27 <./images/braiding-diagramatic.jpeg> <./images/braiding-examples.jpeg> <./
+images/braiding-decomposition.jpeg>]
+<./images/yang-baxter.jpeg, id=135, 3310.3675pt x 1543.7675pt>
+File: ./images/yang-baxter.jpeg Graphic file (type jpg)
+<use ./images/yang-baxter.jpeg>
+Package pdftex.def Info: ./images/yang-baxter.jpeg  used on input line 424.
+(pdftex.def)             Requested size: 165.52806pt x 77.19289pt.
+ [28 <./images/yang-baxter.jpeg>] [29] (./figures/zero-and-one.tikz) (./figures
+/nc-state.tikz)
+(./figures/topological-and-gate.tikz) (./figures/topological-not-gate.tikz)
+[30] (./figures/big-circuit.tikz) [31]
+Underfull \hbox (badness 10000) in paragraph at lines 563--564
+
+ []
+
+(./figures/cloning-gate.tikz) (./figures/NC-state-reprise.tikz) [32]) [33]
+[34
+
+]
+\openout2 = `./chapters/2-QM/ch2.aux'.
+
+ (./chapters/2-QM/ch2.tex [35
+
+] [36] [37] [38] [39] [40] [41] [42] [43]
+Overfull \hbox (22.67253pt too wide) in paragraph at lines 308--309
+[]\OT1/lmr/m/n/10 where $\OMS/lmsy/m/n/10 <\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 ^^
+A\OT1/lmr/m/n/10 )$ de-notes the real part of a com-plex num-ber. Thus, we con-
+clude that $\OMS/lmsy/m/n/10 < [] \OT1/lmr/m/n/10 =
+ []
+
+[44] [45] [46]
+Underfull \hbox (badness 10000) in paragraph at lines 421--422
+
+ []
+
+) [47] [48
+
+]
+\openout2 = `./chapters/3-TQO/ch3.aux'.
+
+ (./chapters/3-TQO/ch3.tex (./figures/mathematical-outline-TQO.tikz) (./figures
+/TQO-spectrum-1.tikz) [49
+
+] (./figures/TQO-spectrum-2.tikz)
+(./figures/system-size.tikz)
+Overfull \hbox (2.55212pt too wide) in paragraph at lines 42--43
+[]\OT1/lmr/m/n/10 Letting $[](\OML/lmm/m/it/10 V\OT1/lmr/m/n/10 )$ de-note the 
+di-men-sion of $\OML/lmm/m/it/10 V$\OT1/lmr/m/n/10 , this gives us an as-symp-t
+otic for-mula $[](\OML/lmm/m/it/10 V\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^X
+ []
+
+[50] (./figures/TQO-basis-distance.tikz) [51] [52] [53]
+<./images/lattice-example.jpeg, id=223, 2683.02374pt x 1790.69pt>
+File: ./images/lattice-example.jpeg Graphic file (type jpg)
+<use ./images/lattice-example.jpeg>
+Package pdftex.def Info: ./images/lattice-example.jpeg  used on input line 122.
+
+(pdftex.def)             Requested size: 107.30267pt x 71.6154pt.
+<./images/torus-definition.jpeg, id=224, 3425.79875pt x 1190.4475pt>
+File: ./images/torus-definition.jpeg Graphic file (type jpg)
+<use ./images/torus-definition.jpeg>
+Package pdftex.def Info: ./images/torus-definition.jpeg  used on input line 134
+.
+(pdftex.def)             Requested size: 137.0086pt x 47.60979pt.
+ [54 <./images/lattice-example.jpeg> <./images/torus-definition.jpeg>]
+<./images/torus-lattice.jpeg, id=228, 2158.0625pt x 2069.7325pt>
+File: ./images/torus-lattice.jpeg Graphic file (type jpg)
+<use ./images/torus-lattice.jpeg>
+Package pdftex.def Info: ./images/torus-lattice.jpeg  used on input line 151.
+(pdftex.def)             Requested size: 86.3078pt x 82.77519pt.
+<./images/full-example.png, id=229, 926.46124pt x 354.32375pt>
+File: ./images/full-example.png Graphic file (type png)
+<use ./images/full-example.png>
+Package pdftex.def Info: ./images/full-example.png  used on input line 165.
+(pdftex.def)             Requested size: 277.9405pt x 106.29794pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[55 <./images/torus-lattice.jpeg>]
+<./images/plaquette-rule.jpeg, id=234, 3704.84125pt x 1095.09125pt>
+File: ./images/plaquette-rule.jpeg Graphic file (type jpg)
+<use ./images/plaquette-rule.jpeg>
+Package pdftex.def Info: ./images/plaquette-rule.jpeg  used on input line 175.
+(pdftex.def)             Requested size: 222.28088pt x 65.70264pt.
+ [56 <./images/full-example.png> <./images/plaquette-rule.jpeg>]
+<./images/gauge-transformation.jpeg, id=239, 3270.2175pt x 1237.62375pt>
+File: ./images/gauge-transformation.jpeg Graphic file (type jpg)
+<use ./images/gauge-transformation.jpeg>
+Package pdftex.def Info: ./images/gauge-transformation.jpeg  used on input line
+ 189.
+(pdftex.def)             Requested size: 130.78642pt x 49.4965pt.
+<./images/twisting.png, id=240, 446.66875pt x 188.705pt>
+File: ./images/twisting.png Graphic file (type png)
+<use ./images/twisting.png>
+Package pdftex.def Info: ./images/twisting.png  used on input line 197.
+(pdftex.def)             Requested size: 200.99907pt x 84.91646pt.
+ [57 <./images/gauge-transformation.jpeg> <./images/twisting.png>] [58] [59]
+Overfull \hbox (9.69862pt too wide) in paragraph at lines 304--305
+[]\OT1/lmr/m/it/10 The set of vec-tors $[][]$ is lin-early in-de-pen-dent. Henc
+e,
+ []
+
+<./images/torus.png, id=252, 340.27126pt x 223.83624pt>
+File: ./images/torus.png Graphic file (type png)
+<use ./images/torus.png>
+Package pdftex.def Info: ./images/torus.png  used on input line 319.
+(pdftex.def)             Requested size: 102.08215pt x 67.15138pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[60] [61 <./images/torus.png>]
+<./images/Av-gauge-action.jpeg, id=261, 3754.025pt x 1218.5525pt>
+File: ./images/Av-gauge-action.jpeg Graphic file (type jpg)
+<use ./images/Av-gauge-action.jpeg>
+Package pdftex.def Info: ./images/Av-gauge-action.jpeg  used on input line 374.
+
+(pdftex.def)             Requested size: 150.13542pt x 48.7338pt.
+ [62]
+<./images/Bp-definition.jpeg, id=265, 3648.63126pt x 1240.635pt>
+File: ./images/Bp-definition.jpeg Graphic file (type jpg)
+<use ./images/Bp-definition.jpeg>
+Package pdftex.def Info: ./images/Bp-definition.jpeg  used on input line 396.
+(pdftex.def)             Requested size: 145.9204pt x 49.61694pt.
+ [63 <./images/Av-gauge-action.jpeg> <./images/Bp-definition.jpeg>] [64] [65] [
+66] [67] [68] [69] [70]
+Underfull \hbox (badness 10000) in paragraph at lines 759--760
+
+ []
+
+[71]) [72] [73
+
+]
+\openout2 = `./chapters/4-category-theory/ch4.aux'.
+
+ (./chapters/4-category-theory/ch4.tex [74
+
+] [75] [76] [77]
+[78] [79] [80] [81] [82] [83] [84] [85] [86]
+(./figures/category-theory-motivating-example.tikz) [87]
 (./figures/basic-morphism-string-diagram.tikz)
 (./figures/composition-string-diagram.tikz)
-(./figures/identity-string-diagram.tikz) [14]
+(./figures/identity-string-diagram.tikz) [88] [89]
 (./figures/monoidal-string-diagram.tikz)
-(./figures/monoidal-unit-string-diagram.tikz) [15]
-(./figures/big-example-string-diagram.tikz) [16]
+(./figures/monoidal-unit-string-diagram.tikz)
+Overfull \hbox (31.50932pt too wide) in paragraph at lines 557--558
+[]\OT1/lmr/bx/n/10 Example 4.53. []\OT1/lmr/m/n/10 Di-a-gram 4.2[] is valid in 
+all strict monoidal cat-e-gories $\OMS/lmsy/m/n/10 C$\OT1/lmr/m/n/10 , where $\
+OML/lmm/m/it/10 A$\OT1/lmr/m/n/10 ,$\OML/lmm/m/it/10 B$\OT1/lmr/m/n/10 ,$\OML/l
+mm/m/it/10 C$\OT1/lmr/m/n/10 ,$\OML/lmm/m/it/10 D$\OT1/lmr/m/n/10 ,$\OML/lmm/m/
+it/10 E$\OT1/lmr/m/n/10 ,$\OML/lmm/m/it/10 F$\OT1/lmr/m/n/10 ,$\OML/lmm/m/it/10
+ G$\OT1/lmr/m/n/10 ,$\OML/lmm/m/it/10 H \OMS/lmsy/m/n/10 2
+ []
+
+(./figures/big-example-string-diagram.tikz) [90]
 (./figures/braiding-definition-string-diagram.tikz)
 (./figures/over-under-crossing-string-diagram.tikz)
-(./figures/braiding-naturality-string-diagram.tikz) [17]
+(./figures/braiding-naturality-string-diagram.tikz) [91]
 (./figures/braiding-coherence-string-diagram.tikz) (./figures/Yang-Baxter.tikz)
-(./figures/Yang-Baxter-proof.tikz) [18] [19] [20] [21]
+(./figures/Yang-Baxter-proof.tikz) [92] [93] [94] [95]
 (./figures/three-strand-identity.tikz) (./figures/associativity-example.tikz)
-[22] [23] [24] [25]
-Overfull \hbox (3.70934pt too wide) in paragraph at lines 840--841
+[96] [97] [98] [99]
+Overfull \hbox (3.70934pt too wide) in paragraph at lines 1005--1006
 \OT1/lmr/m/n/10 monoidal cat-e-gories is equiv-a-lent to a struc-ture monoidal 
 cat-e-gory whose un-der-ly-ing monoidal
  []
 
-[26] (./figures/eval-coeval-definition.tikz)
-(./figures/eval-coeval-coherence.tikz) [27] (./figures/pivotal-coherence-1.tikz
-) (./figures/morphism-duals-agree.tikz)
-(./figures/unique-rigidity-morphism.tikz) [28]
-(./figures/rigidity-iso-uniqueness-proof.tikz)
+[100] (./figures/eval-coeval-definition.tikz)
+(./figures/eval-coeval-coherence.tikz) (./figures/pivotal-coherence-1.tikz)
+[101] (./figures/morphism-duals-agree.tikz)
+(./figures/unique-rigidity-morphism.tikz)
+(./figures/rigidity-iso-uniqueness-proof.tikz) [102]
 (./figures/unique-rigidity-morphism-dual.tikz) (./figures/rigidity-functor.tikz
-) [29] (./figures/rigidity-functor-monoidal.tikz)
-(./figures/rigidity-functor-proof.tikz) [30]
+) [103] (./figures/rigidity-functor-monoidal.tikz)
+(./figures/rigidity-functor-proof.tikz) [104]
 (./figures/double-dual-natural-isomorphism.tikz)
 (./figures/pivotal-naturality.tikz) (./figures/pivotality-condition-maps.tikz)
-[31]
-Underfull \hbox (badness 10000) in paragraph at lines 1056--1057
+[105]
+Underfull \hbox (badness 10000) in paragraph at lines 1223--1224
 
  []
 
-) [32] [33
+) [106] [107] [108
+
+]
+\openout2 = `./chapters/5-MTCs/ch5.aux'.
+
+ (./chapters/5-MTCs/ch5.tex
+(./figures/mathematical-outline-MTC.tikz) [109
+
+] [110] [111]
+(./figures/spherical-category.tikz) (./figures/non-degeneracy.tikz) [112]
+[113] [114]
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
+
+ []
+
+[115] [116] [117] (./figures/trace.tikz) [118] (./figures/trace-tensor.tikz)
+(./figures/composition-commutes.tikz) [119] (./figures/fusion-coof-is-one.tikz)
+[120] (./figures/fusion-coof-proof.tikz) (./figures/quantum-dimension.tikz)
+Overfull \hbox (1.73265pt too wide) in paragraph at lines 517--518
+[]\OT1/lmr/m/n/10 As usual, we iden-titfy $\OML/lmm/m/it/10 d[]$ \OT1/lmr/m/n/1
+0 with a com-plex num-ber via the canon-i-cal iso-mor-phism $[](\OT1/lmr/bx/n/1
+0 1\OT1/lmr/m/n/10 ) []
+ []
+
+[121] [122]
+
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
+d on input line 558.
+
+[123] [124] (./figures/graphical-twist.tikz) (./figures/twist.tikz) [125]
+(./figures/twist-alternatives.tikz) (./figures/twist-equality.tikz)
+(./figures/twist-naturality.tikz) [126] (./figures/twist-duality.tikz)
+(./figures/co-dual.tikz)
+Overfull \hbox (7.9532pt too wide) in paragraph at lines 710--711
+[]\OT1/lmr/bx/n/10 Proposition 5.26 \OT1/lmr/m/n/10 (Deligne's twist-ing lemma,
+ [[]])\OT1/lmr/bx/n/10 . []\OT1/lmr/m/it/10 Let $\OMS/lmsy/m/n/10 C$ \OT1/lmr/m
+/it/10 be a right-rigid braided monoidal
+ []
+
+(./figures/graphical-twist-reverse.tikz) [127]
+(./figures/something-property-proof.tikz)
+(./figures/morphism-duals-agree-proof.tikz) (./figures/spherical-proof.tikz)
+[128]
+Overfull \hbox (2.84814pt too wide) in paragraph at lines 754--755
+[]\OT1/lmr/m/n/10 The cor-rect no-tion of func-tor be-tween pre-modular cat-e-g
+ories is $\U/msb/m/n/10 C$\OT1/lmr/m/n/10 -linear piv-otal braided
+ []
+
+[129] [130] [131] [132] (./figures/S-matrix.tikz) [133] [134] [135]
+(./figures/non-degeneracy.tikz)
+Overfull \hbox (31.23927pt too wide) detected at line 1083
+\U/msb/m/n/10 C\OT1/lmr/m/n/10 [\OMS/lmsy/m/n/10 L\OT1/lmr/m/n/10 ][] = [] \OML
+/lmm/m/it/10 :
+ []
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1102.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1102.
+
+[136] (./figures/verlinde-algebra-proof.tikz) (./figures/circles-split.tikz)
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1120.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1120.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1120.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1120.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1126.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1126.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1126.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1126.
+
+[137] (./figures/degenerate-braiding.tikz)
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1136.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1136.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1136.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1136.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1138.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1138.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1138.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1140.
+
+(./figures/braiding-non-degeneracy.tikz)
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1146.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1146.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1148.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1148.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1150.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1150.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1150.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1152.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1154.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1154.
+
+(./figures/null-vector-proof.tikz)
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1160.
+
+(./figures/null-vector-one.tikz) [138] (./figures/null-vector-two.tikz)
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1192.
+
+[139]
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1217.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1217.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1223.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1223.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1223.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1223.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1223.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1223.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1223.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1223.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1223.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1223.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1225.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1225.
+
+
+LaTeX Warning: Command \SS invalid in math mode on input line 1225.
+
+[140] [141] (./figures/kirby-color-lemma.tikz)
+(./figures/kirby-color-second.tikz) [142] (./figures/modularity-proof.tikz)
+(./figures/modularity-computation-1.tikz) [143] [144] [145] [146] [147]
+LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <10> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 1548.
+
+
+[148] [149] [150] [151] [152]
+Underfull \hbox (badness 10000) in paragraph at lines 1726--1727
+
+ []
+
+[153]) [154] [155
+
+]
+\openout2 = `./chapters/6-further-structure/ch6.aux'.
+
+ (./chapters/6-further-structure/ch6.tex [156
+
+] [157] [158]
+[159] [160] [161] [162] [163] (./figures/frobenius-reciprocity.tikz) [164]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 449.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <17.28> on input line 449.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <20.74> on input line 449.
+
+[165] [166]
+Overfull \hbox (40.35658pt too wide) in paragraph at lines 525--526
+[]\OT1/lmr/m/n/10 in $[][](\OMS/lmsy/m/n/10 M\OML/lmm/m/it/10 ; \OMS/lmsy/m/n/1
+0 M[]\OT1/lmr/m/n/10 )$ where $[\OML/lmm/m/it/10 H\OT1/lmr/m/n/10 ]$ runs over 
+iso-mor-phism classes of sim-ple func-tors in $[][](\OMS/lmsy/m/n/10 M\OML/lmm/
+m/it/10 ; \OMS/lmsy/m/n/10 M[]\OT1/lmr/m/n/10 )$.
+ []
+
+[167] [168] [169] [170] [171]
+Overfull \hbox (1.28828pt too wide) detected at line 778
+[]  \OMS/lmsy/m/n/10 ([])  [] \OML/lmm/m/it/10 :
+ []
+
+[172] [173] [174] [175] [176] [177]
+Underfull \hbox (badness 10000) in paragraph at lines 1086--1087
+
+ []
+
+[178]) [179] [180
+
+]
+\openout2 = `./chapters/7-TQC/ch7.aux'.
+
+ (./chapters/7-TQC/ch7.tex [181
+
+] [182] [183] [184]
+(./figures/hierarchy-of-adjectives.tikz) [185]
+Overfull \hbox (43.55345pt too wide) in paragraph at lines 155--190
+ [] 
+ []
+
+[186] [187]
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
+
+ []
+
+) [188] [189
 
 ]
 \openout2 = `./chapters/A-odds-and-ends/appA.aux'.
@@ -922,32 +1491,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
-[34
+[190
 
-] [35] [36] [37]
+] [191] [192] [193]
 
-LaTeX Warning: Reference `bohm1996coassociative' on page 38 undefined on input 
-line 183.
+LaTeX Warning: Reference `bohm1996coassociative' on page 194 undefined on input
+ line 183.
 
-[38]) [39] [40
+[194]) [195] [196
 
 ]
 \openout2 = `./chapters/B-anyon-data/appB.aux'.
 
- (./chapters/B-anyon-data/appB.tex) [41
+ (./chapters/B-anyon-data/appB.tex) [197
 
-] (./Algebraic-TQC.bbl
-[42
+]
+(./Algebraic-TQC.bbl [198
 
-] [43] [44] [45]
+] [199] [200] [201]
 Underfull \hbox (badness 1253) in paragraph at lines 376--380
 \OT1/lmr/m/n/10 u-lar iso-topes and ex-plains their topo-log-i-cal in-vari-ants
 .  \OT1/lmr/m/it/10 arXiv preprint
  []
 
-[46] [47] [48] [49] [50] [51] [52] [53] [54]) [55] (./Algebraic-TQC.aux
-(./chapters/0-preface/ch0.aux) (./chapters/4-category-theory/ch4.aux)
-(./chapters/A-odds-and-ends/appA.aux) (./chapters/B-anyon-data/appB.aux))
+[202] [203] [204] [205] [206] [207] [208] [209] [210]) [211]
+(./Algebraic-TQC.aux (./chapters/0-preface/ch0.aux)
+(./chapters/1-overview/ch1.aux) (./chapters/2-QM/ch2.aux)
+(./chapters/3-TQO/ch3.aux) (./chapters/4-category-theory/ch4.aux)
+(./chapters/5-MTCs/ch5.aux) (./chapters/6-further-structure/ch6.aux)
+(./chapters/7-TQC/ch7.aux) (./chapters/A-odds-and-ends/appA.aux)
+(./chapters/B-anyon-data/appB.aux))
 
 LaTeX Warning: There were undefined references.
 
@@ -956,42 +1529,57 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 20196 strings out of 492649
- 434732 string characters out of 6129622
- 519973 words of memory out of 5000000
- 23536 multiletter control sequences out of 15000+600000
- 74721 words of font info for 73 fonts, out of 8000000 for 9000
+ 22366 strings out of 492649
+ 482232 string characters out of 6129622
+ 565017 words of memory out of 5000000
+ 25470 multiletter control sequences out of 15000+600000
+ 116347 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,18n,86p,1287b,1072s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/lo
-cal/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/20
+ 68i,30n,86p,1849b,1104s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
+texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/20
 18/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2018/texmf-d
-ist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/local/texlive/2018/texmf-dist/fonts/
-type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2018/texmf-dist/font
-s/type1/public/lm/lmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pu
-blic/lm/lmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lm
-bx7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></u
-sr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/t
-exlive/2018/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/201
-8/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2018/texmf-dis
-t/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
-e1/public/lm/lmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/l
-m/lmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr17.pfb
-></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local
-/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/201
-8/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2018/texmf-dist
-/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
-e1/public/lm/lmri12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
-lm/lmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy5.p
-fb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/lo
-cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></us
-r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.p
-fb>
-Output written on Algebraic-TQC.pdf (55 pages, 521136 bytes).
+ist/fonts/enc/dvips/lm/lm-rmsc.enc}{/usr/local/texlive/2018/texmf-dist/fonts/en
+c/dvips/lm/lm-mathex.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public
+/amsfonts/euler/eufm10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publ
+ic/amsfonts/euler/eurm10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pu
+blic/lm/lmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lm
+bx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx5.pfb></
+usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/t
+exlive/2018/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2018
+/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2018/texmf-di
+st/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2018/texmf-dist/fonts/
+type1/public/lm/lmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publ
+ic/lm/lmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmmi
+12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></us
+r/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/tex
+live/2018/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2018/t
+exmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2018/texmf-dist/f
+onts/type1/public/lm/lmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
+public/lm/lmr17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/l
+mr5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr6.pfb></us
+r/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2018/tex
+mf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2018/texmf-dist/font
+s/type1/public/lm/lmri10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pu
+blic/lm/lmri12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lm
+ri7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></
+usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/t
+exlive/2018/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2018
+/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2018/texmf-dist
+/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
+1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2018/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2018/texmf-dist/fon
+ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/texmf-dist
+/fonts/type1/public/amsfonts/symbols/msbm5.pfb></usr/local/texlive/2018/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2018/texm
+f-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2018/texmf-dist/f
+onts/type1/public/rsfs/rsfs5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
+1/public/rsfs/rsfs7.pfb>
+Output written on Algebraic-TQC.pdf (211 pages, 32782881 bytes).
 PDF statistics:
- 282 PDF objects out of 1000 (max. 8388607)
- 200 compressed objects within 2 object streams
+ 884 PDF objects out of 1000 (max. 8388607)
+ 592 compressed objects within 6 object streams
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 153 words of extra memory for PDF output out of 10000 (max. 10000000)
 

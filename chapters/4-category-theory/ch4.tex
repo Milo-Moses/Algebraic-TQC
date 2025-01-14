@@ -63,8 +63,6 @@ f\circ \id_{A}=f, && \id_{A}\circ g = g.
 \end{align*}
 
 \end{enumerate}
-
-\raggedleft\qedsymbol{}
 \end{defn}
 
 \begin{rem} The structure of definition \ref{category-def} is very typical of algebra. Roughly, algebra is defined to be the study of algebraic structures. An algebraic structure is some collection operations on some space, with rules outlining how these operations interact with each other. The general way of definding an algebraic structure is to first list its operations, and then list the axioms of how these operations inteact with each other. We will see many definitions of this sort throughout the rest of the book, so it is good to get used to it now.
@@ -79,7 +77,7 @@ f\circ \id_{A}=f, && \id_{A}\circ g = g.
 
 \item $\Vec_k$, the category of finite dimensional vector spaces over a field $k$. The objects are finite dimensional vector spaces over $k$ and the morphisms are linear operators.
 
-\item $\Grp$, the category of finite groups. The objects are finite groups and the morphisms are group homomorphisms.
+\item $\Grp$, the category of groups. The objects are groups and the morphisms are group homomorphisms.
 
 \item $\Hilb$, the category of quantum systems. The objects are finite dimensional Hilbert spaces and the morphisms are unitary operators.
 
@@ -92,7 +90,14 @@ f\circ \id_{A}=f, && \id_{A}\circ g = g.
 \end{itemize}
 \end{ex}
 
+\begin{warn}
+One subtelty of the defintions in example \ref{category-examples} is that the collection of objects in some of these definitions are not sets. For instance, the collection of all sets does not itself form a set, due to logical paradoxes such as Bertrand's paradox. A more proper treatment of category theory would restrict to smaller categories (such as the category {\em finSet} of finite sets) where the collection of objects does really form a set. Alternatively, one can introduce the notation of a {\em class}, with is a collection of sets defined by some unambiguous property that all objects share. The collection of all objects in $\Set$ is not a set, but it is a class. In this framework, we call categories whose collection objects and whose hom spaces are all sets a {\em finite category}. The concerned reader can make all of our discussion correct by restricting to the case of small categories, and defining $\Set$ to be the space of all sets whose cardinality is at most the size of the real numbers, and in general restricting any definition of a category (such as $\Grp$) to spaces whose underlying set whose cardinality has at most the size of the real numbers.
+\end{warn}
+
 \begin{rem}The objects and morphisms of a category do not have much complexity implicit to them.  All of the interesting structure is encoded within the composition structure. This is despite the fact that when we listed our examples in example \ref{category-examples} we only described the objects and morphisms, and not the composition structure. The reason for this is that the composition structure between morphisms in all of our examples is clear. In all our examples the objects are sets with extra strcture, and the morphisms are maps of sets. The composition structure is inhereted from the composition structure on functions between sets. Going further, we remark that objects in abstract categories are {\em not} required to be sets and the morphisms are {\em not} required to be functions of sets. It is important to be aware of the fact that there are some categories for which there is no interpreation of morphisms as functions between sets \cite{freyd1970homotopy}.
+\end{rem}
+
+\begin{rem} We will make several notational shorthands when dealing with categories.  We will conflate a category and its set of objects whenever convenient. That is, we will label a category by its set of objects. Additionally, instead of writing ``$\Hom_{\cC}(A,B)$" we will write ``$\Hom(A,B)$" when $\cC$ is clear, and we will write ``$f:A\to B$" to mean ``$f\in \Hom_{\cC}(A,B)$". Additionally, we will use a single quantifier to instanciate multiple objects simultaneously. For example, we will use ``$\forall f:A\to B \text{ in }\cC$" to mean ``$\forall A,B\in \cC,\text{ and }\forall f:A\to B$".
 \end{rem}
 
 \begin{rem} A category isn't just a space with a good notion of composition - it also has identity maps. These identity maps are important, and we include them in the definition purposefully. There are two primary reasons: firstly that all of the relevant examples of categories will have identity maps, and secondly that most interesting properties of categories only make sense because of the identity maps. Hence if we didn't require identity maps then we would find ourselves constantly requiring them as a condition, which is a waste of space.
@@ -118,8 +123,6 @@ so the identity axiom is satisfied.
 \end{proof}
 
 \begin{defn}[Isomorphism] Let $\cC$ be a category, let $A,B\in C$ be objects, and let $f:A\to B$ be a morphism. We say that $f$ is an {\em isomorphism} if there exists a morphism $f^{-1}:B\to A$ such that $f^{-1}\circ f= \id_A$ and $f\circ f^{-1}=\id_B$. We call $f^{-1}$ the {\em inverse} of $f$. In this case, we say that $A$ and $B$ are {\em isomorphic objects}.
-
-\raggedleft\qedsymbol{}
 \end{defn}
 
 \begin{lem} Let $A,B$ be sets, and let $f:A\to B$ be a function. The map $f$ is a bijection if and only if there exists a function $f^{-1}: B\to A$ such that $f^{-1}\circ f= \id_A$ and $f\circ f^{-1}=\id_B$. In particular, a function $f$ in the category $\Set$ is an isomorphism if and only it is a bijection.
@@ -159,14 +162,14 @@ as desired.
 
 \subsection{Structures in category theory}
 
-\subsubsection{Universal properties}
+\subsubsection{Products and universal properties}
 
-In this section we will work on defining important structures in category, with a focus on the broadly applicable principles behind the definitions. Here is our first definition:
+In this section we will work on defining important structures in category, with a focus on the broadly applicable principles behind the definitions. In this first subsection we focus on products, our first example of a definition via universal property.
 
 \begin{defn}[Product]\label{product-definition} Let $A,B\in \cC$ be objects in a category. A {\em product} of $A$ and $B$ is the following data:
 
 \begin{enumerate}
-\item An item $A\times B\in \cC$;
+\item An object $A\times B\in \cC$;
 \item A morphism $\pi_A:A\times B\to A$;
 \item A morphism $\pi_B:A\times B\to B$;
 \end{enumerate}
@@ -187,13 +190,13 @@ such that for all other objects $C\in \cC$ with morphisms $f_A:C\to A$, $f_B:C\t
 
 commutes.
 
-\raggedleft\qedsymbol{}
+
 \end{defn}
 
-\begin{rem} At first glance, the categorical definition of a product may look strange. For a first level of comfort, one should observe that the categorical notion of product agrees with the usual notion of Cartesian product in the category $\Set$, by proposition \ref{product-in-set}. More generally, the same argument as in proposition \ref{product-in-set} can be used to show that the Cartesian product endowed with the product topology is a product in the category $\Top$, the direct sum of vector spaces is a product in the category $\Vec_k$ for all fields $k$,  the Cartesian product endowed with component-wise multiplication is a product in the category $\Grp$, and so on.
+\begin{rem}\label{product-examples-remark} At first glance, the categorical definition of a product may look strange. For a first level of comfort, one should observe that the categorical notion of product agrees with the usual notion of Cartesian product in the category $\Set$, by proposition \ref{product-in-set}. More generally, the same argument as in proposition \ref{product-in-set} can be used to show that the Cartesian product endowed with the product topology is a product in the category $\Top$, the direct sum of vector spaces is a product in the category $\Vec_k$ for all fields $k$,  the Cartesian product endowed with component-wise multiplication is a product in the category $\Grp$, and so on.
 \end{rem}
 
-\begin{prop}\label{product-in-set} For all pairs of sets $A,B$, the triple $(A\times B,\pi_A,\pi_B)$ is a product of $A,B$ in the category $\Set$, where $\pi_A$ is the projection of $A\times B$ onto the $A$ component and $\pi_B$ is the projection of $A\times B$ onto the $B$ component.
+\begin{prop}\label{product-in-set} For all pairs of sets $A,B$, the triple $(A\times B,\pi_A,\pi_B)$ is a product of $A,B$ in the category $\Set$, where $A\times B$ is the Cartesian product, $\pi_A$ is the projection of $A\times B$ onto the $A$ component, and $\pi_B$ is the projection of $A\times B$ onto the $B$ component.
 \end{prop}
 \begin{proof} Consider a set $C$ and functions $f_A:C\to A$, $f_B:C\to B$. We can define a function $f:C\to A\times B$ by $f(c)=(f_A(c),f_B(c))$. Clearly, this morphism $f$ satisfies $f_A=\pi_A\circ f$ and $f_B=\pi_B\circ f$. Moreover, suppose $f:C\to A\times B$ is any function with $f_A=\pi_A\circ f$ and $f_B=\pi_B\circ f$. Then, the $A$ component of $f(c)$ is $f_A(c)$ and the $B$ component of $f(c)$ is $f_B(c)$. Thus, $f(c)=(f_A(c),f_B(c))$. Thus, we conclude that there is a unique map $f:C\to A\times B$ making the relevant diagram commute, and since $C$, $f_A$, $f_B$ were chosen arbitrarily we conclude the result.
 \end{proof}
@@ -207,20 +210,21 @@ This is, however, the only freedom we have for choosing products. Every product 
 
 \begin{prop}\label{product-unique} Let $A,B\in\cC$ be objects in a category. Let $(C,f_A,f_B)$, $(D,g_A,g_B)$ be products of $A$ and $B$. There exists a unique isomorphism $i:C\to D$ such that $f_A= g_A\circ i$ and $f_B=g_B\circ i$.
 \end{prop}
-\begin{proof}\Note{Do proof.}
+\begin{proof} By the universal property of $(D,g_A,g_B)$, there exists a unique morphism $i:C\to D$ making the relevant diagram commute ($f_A= g_A\circ i$ and $f_B=g_B\circ i$). Similarly, by the universal property of $C$, there exists a unique morphism $j:D\to C$ making the relevant diagram commute ($g_A= f_A\circ j$ and $g_B=f_B\circ j$). Composing, we find that $j\circ i:C\to C$ makes the relevant diagram commute ($f_A=f_A\circ (j\circ i)$ and $f_B=f_B\circ (j\circ i)$). The map $\id_C:C\to C$, however, also makes the relevant diagram commute ($f_A=f_A\circ \id_C$ and $f_B=f_B\circ \id_C$). The universal property of the product says that there is a {\em unique} map making the diagram commute. Thus, we must have $j\circ i =\id_C$. By an analagous argument using the universal property of $D$, we find that $i\circ j=\id_D$. Thus, $j=i^{-1}$ and $i$ is an isomorphism as desired.
 \end{proof}
 
 \begin{rem} Definition \ref{product-definition} is our first example of a definition by a {\em universal property}. The property that the triple $(A\times B,\pi_A,\pi_B)$ is asked to satisfy in the definition is the universal property. In words, we will sometimes say that the product of $A,B$ is universal with respect to the property of having morphisms into $A$ and $B$. In light of proposition \ref{product-unique}, the categorical definition of product is unique up to isomorphism, and in light of proposition \ref{product-in-set} this unique product is isomorphic to the usual Cartesian product. Thus, at least for the category of sets, definition \ref{product-definition} is a more-complicated and less-precise way of defining the Cartesian product. There are several general reasons why one might prefer definitions by universal property:
 
 \begin{enumerate}
-\item \Note{Add reasons!}
+\item Universal properties are common throughout mathematics (and specifically in the study of topological quantum information). It is good to understand their general structure;
+\item \Note{make this list better. There's a very well-written list on Wikipedia.}
 \end{enumerate}
 \end{rem}
 
 \begin{defn}[Coproduct]\label{coproduct-definition} Let $A,B\in \cC$ be objects in a category. A {\em coproduct} of $A$ and $B$ is the following data:
 
 \begin{enumerate}
-\item An item $A\sqcup B\in \cC$;
+\item An object $A\sqcup B\in \cC$;
 \item A morphism $i_A:A\to A\sqcup B$;
 \item A morphism $i_B:B\times A\sqcup B$;
 \end{enumerate}
@@ -241,93 +245,248 @@ such that for all other objects $C\in \cC$ with morphisms $f_A:A\to A\sqcup B$, 
 
 commutes.
 
-\raggedleft\qedsymbol{}
+
 \end{defn}
 
-\begin{rem} Definition \ref{coproduct-definition} of the coproduct is another definition by universal property. The universal property, of course, is very similar to the universal property of the product. In a formal sense it is the same universal property but with all of the arrows reversed. In particular, proposition \ref{product-coproduct-duality} shows that products and coproducts are formally dual in the sense that products (resp. coproducts) in a category $\cC$ correspond to coproducts (resp. products) in the opposite category $\cC^{\op}$. This is a common theme in category. Many notions have corresponding dual notions, and the general terminology for the dual notion is to add the prefix ``co-".
+\begin{defn}[Opposite category] Let $\cC$ be a category. The {\em opposite category} of $\cC$ is the category defined as follows $\cC^{\op}$. The set of objects of $\cC^{\op}$ is the same as the set of objects as $\cC$, with the object $A\in \cC$ corresponding to the object $A^{\op}\in \cC^{\op}$. The hom-sets of $\cC^{\op}$ are defined as
+
+$$\Hom_{\cC^{\op}}(A^{\op},B^{\op})=\Hom_{\cC}(B,A).$$
+
+The morphism in $\Hom_{\cC^{\op}}(A^{\op},B^{\op})$ corresponding to $f\in \Hom_{\cC}(B,A)$ is denoted $f^{\op}$. Given any $A,B,C\in \cC$, and functions $f:A\to B$, $g:B\to C$ we define
+
+$$f^{\op}\circ g^{\op}=(g\circ f)^{\op}.$$
+\end{defn}
+
+\begin{rem} The category $\cC^{\op}$ is intuitively described as ``reversing all the arrows in $\cC$". It is often a useful category to consider, especially in the context of mathematical physics were we see that the opposite category can be seen as the {\em time reversal} of $\cC$. That is, the physical system analogous to $\cC$ where the arrow of time has been reversed. This is also a mathematically fruitful perspective to take, because flipping source and target for arrows is the same as changing the direction of causation.
+\end{rem}
+
+\begin{rem} Definition \ref{coproduct-definition} of the coproduct is another definition by universal property. The universal property, of course, is very similar to the universal property of the product. In a formal sense it is the same universal property but with all of the arrows reversed. In particular, proposition \ref{product-coproduct-duality} shows that products and coproducts are formally dual in the sense that products (resp. coproducts) in a category $\cC$ correspond to coproducts (resp. products) in the opposite category $\cC^{\op}$. This is a common theme in category theory. Many notions have corresponding dual notions, and the general terminology for the dual notion is to add the prefix ``co-".
 \end{rem}
 
 \begin{prop}\label{product-coproduct-duality} Let $A,B\in \cC$ be objects in a category. Let $(A\times B,\pi_A,\pi_B)$ be a product of $A,B$ in $\cC$. The triple $((A\times B)^{\op},\pi_A^{\op},\pi_B^{\op})$ is a coproduct of $A^{\op},B^{\op}$ in $\cC^{\op}$. Similarly, if $(A\sqcup B,i_A,i_B)$ is a coproduct of $A,B$ in $\cC$ then $((A\sqcup B)^{\op},i_A^{\op},i_B^{\op})$ is a product in $A^{\op},B^{\op}$ in $\cC^{\op}$.
 \end{prop}
-\begin{proof}\Note{do proof}
+\begin{proof} We show that $((A\times B)^{\op},\pi_A^{\op},\pi_B^{\op})$ is a coproduct. Choose an arbitrary triple $C^{\op}\in \cC^{\op}$,$f^{\op}_A:A^{\op}\to C^{\op}$, and $f^{\op}_B:B^{\op}\to C^{\op}$. Then considering the triple $(C,f_A,f_B)$ and applying the universal property of the product, we conclude that there is a unique map $f:C\to A\times B$ making the relevant diagram for the product commute. The dual map $f^{\op}:(A\times B)^{\op}\to C^{\op}$ is thus the unique map making the relevant diagram for the coproduct commute, so $((A\times B)^{\op},\pi_A^{\op},\pi_B^{\op})$ is indeed a coproduct. The argument for why $((A\sqcup B)^{\op},i_A^{\op},i_B^{\op})$ is a product is analagous.
 \end{proof}
 
-\begin{rem}
+\begin{cor} Let $A,B \in \cC$ be objects in a category. The coproduct of $A,B$, if it exists, is unique up to unique isomorphism. That is, if $(C,f_A,f_B)$, $(D,g_A,g_B)$ are coproducts of $A$ and $B$, there exists a unique isomorphism $i:C\to D$ such that $g_A=i\circ f_A$ and $g_B=i\circ f_B$.
+\end{cor}
+\begin{proof} By proposition \ref{product-coproduct-duality} we find that $(C^{\op},f_A^{\op},f_B^{\op})$, $(D^{\op},g_A^{\op},g_B^{\op})$ are products in $\cC^{\op}$. By proposition \ref{product-unique}, we conclude that there is a unique isomorphism between $C^{\op}$ and $D^{\op}$ making the relevant diagram commute. Taking the opposite of this isomorphism, we conclude that there is a unique isomorphism between $C$ and $D$ making the relevant diagram commute, as desired.
+\end{proof}
+
+\begin{rem}\label{coproduct-examples-remark} Unlike how the product looks roughly similar in all our basic examples of categories, the coproduct can change quite dramatically. For instance, in the category $\Set$ the coproduct is the disjoint union by proposition \ref{coproduct-example}. However, the coproduct of two vector spaces $V,W$ in $\Vec_k$ is the direct sum $V\oplus W$ with $i_V,i_W$ given by $i_V(v)=(v,0)$, $i_W(v)=(0,v)$, for all fields $k$. The coproduct in $\Grp$ is especially exotic. Given two groups $G,H$, their coproduct is the {\em free product}, defined to be the group whose elements are formal words where each letter is either an element of $G$ or an element of $H$, and two words are considered equivalent if it is possible to go from one to another by adding/removing copies of the identity elements of $G,H$ or by replacing a product $g_1g_2$ of adjacent elements by their product (in $G$ or $H$). For example, the free product of $\bZ$ and $\bZ$ is the free group on two generators. The definition of free product can sometimes feel cumbersome - it is an example of a case where the universal property can be helpful. Seeing as the free product of finite groups can be infinite, we conclude that the category ${\bf finGrp}$ does not have coproducts. Even though coproducts are unique up to unique isomorphism if they exist, they are not gauranteed to exist.
+
 \end{rem}
 
-\begin{prop} The \Note{contrast Set, Top, Vec, Grp. Very different coproducts.}
+\begin{prop}\label{coproduct-example} For all pairs of sets $A,B$, the triple $(A\sqcup B,i_A,i_B)$ is a coproduct of $A,B$ in the category of $\Set$, where $A\sqcup B$ is the disjoint union of $A$ and $B$ and $i_A$ (resp. $B$) is the inclusion of $A$ (resp. $B$) into $A\sqcup B$.
 \end{prop}
+\begin{proof} Suppose $C$ is a set and $f_A:A\to C$, $f_B:B\to C$ are maps. Then, we can define a map $f:A\sqcup B\to C$ by the formula
+
+$$
+f(x)=
+\begin{cases}
+f_A(x) & \text{if } x\in A\\
+f_B(x) & \text{if } x\in B.
+\end{cases}
+$$
+
+Moreover, suppose we had any other map $f:A\sqcup B\to C$ such that $f_A=f\circ i_A$ and $f_B=f\circ i_B$. The first condition says that $f(x)=f_A(x)$ for $x\in A$ and the second condition says that $f(x)=f_B(x)$ for $x\in B$, so $f$ must be equal to the map defined above. Thus, we conclude that $(A\sqcup B,i_A,i_B)$ as a coproduct of $A,B$.
+\end{proof}
+
+\subsubsection{Functors and natural transformations}
+
+Category theory philosophy tells us to care about the relationships between things (or more precisely, how those relationships compose). Moreover, category theory philosophy tells us to care about categories (any self-respecting theory should care about its central object of study). Naively combining these two principles, category theory thus suggests we should care about relationships between different categories. These relationships are called {\em functors}. Going further, seeing as we care about functors, a naive application of the principles of category theory suggests we should care about the relationships between different functors. These relationships are known as {\em natural transformations}. Thankfully, this line of reasoning does not go on indefinitely. One could try to define a notation of a relationship between natural transformations, but the resulting notion is trivial. Thus, one is left with exactly two important and fundamental notions to define: functors and natural transformations.
+
+\begin{defn}[Functor] A {\em functor} from a category $\cC$ to a category $\cD$ is the following data:
+
+\begin{enumerate}
+\item A function of objects $ F:\cC\to\cD$;
+\item A function of morphisms $F:\Hom_{\cC}(A,B)\to \Hom_{\cD}(F(A),F(B))$ for all $A,B\in \cC$;
+\end{enumerate}
+
+such that for all $A,B,C\in \cC$, $f:A\to B$, $g:B\to C$,
+
+$$F(g\circ f)=F(g)\circ F(f).$$
+\end{defn}
+
+\begin{defn}[Natural transformation] A {\em natural transformation} from a functor $F$ to a functor $G$ between categories $\cC,\cD$ is a family of morphisms $\eta_A:F(A)\to G(A)$ for all $A\in \cC$ such that the diagram
+
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJGKEEpIl0sWzEsMCwiRyhBKSJdLFswLDEsIkYoQikiXSxbMSwxLCJHKEIpIl0sWzAsMiwiRihmKSIsMl0sWzEsMywiRyhmKSJdLFswLDEsIlxcZXRhX0EiXSxbMiwzLCJcXGV0YV9CIiwyXV0=
+\[\begin{tikzcd}
+	{F(A)} & {G(A)} \\
+	{F(B)} & {G(B)}
+	\arrow["{\eta_A}", from=1-1, to=1-2]
+	\arrow["{F(f)}"', from=1-1, to=2-1]
+	\arrow["{G(f)}", from=1-2, to=2-2]
+	\arrow["{\eta_B}"', from=2-1, to=2-2]
+\end{tikzcd}\]
+
+commutes for all $f:A\to B$ in $\cC$.
+\end{defn}
+
+\begin{ex} A important family of examples of functors are {\em forgetful functors}. A forgetful functor is a functor which acts on the level of objects by taking an algebraic structure and forgetting that it satisfies certain axioms or is equipped with certain operations so that it becomes a different algebraic structure, and it acts as the identity on the level of morphisms. For instance, there is a forgetful functor $F:\Top\to\Set$ which takes a topological space and assigns to it its underlying set. There is a forgetful functor $F:\Vec\to\Grp$ which takes a vector space and assigns to it its underlying additive group. There is also a forgetful functors $F:\Field\to \Grp$ from the category of fields to the category of groups which assigns to every fields its underlying additive group. Some functors which are almost like forgetful functors also get called forgetful functors, such as the functor $F:\Field\to\Grp$ which assigns to every field its multiplicative group of non-zero elements. The inclusion functors $F:{\bf finSet}\to \Set$ and $F:{\bf finGrp}\to\Grp$ from the categories of finite sets (resp. finite groups) to to the category of all sets (resp. groups) can also be viewed as forgetful functors, where we are forgetting the fact that the input objects are finite.
+\end{ex}
+
+\begin{ex} For every $n\geq 1$, there is a functor $\GL_n:\Field\to\Grp$ which assigns to a field $k$ to the general linear group of $n$ by $n$ matrices, $\GL_n(k)$. This map is {em functorial} (that is, it can be extended to a functor) since every field homomorphism $k\to k'$ induces a group homomorphism $\GL_n(k)\to \GL_n(k')$ by acting via the field homomorphism element-wise on a matrix. It is clear that this assignment is compatible with composition, and is thus a functor. There are many natural transformations between the functors $\GL_n$. For instance, the inverse-transpose $((\dash)^{-1})^T$ is a natural transformation between the functor $\GL_n$ and itself. For every field $k$, there is a map $((\dash)^{-1})^T:\GL_n(k)\to \GL_n(k)$ which acts by first taking the inverse of a matrix and then taking its transpose. These maps form a natural transformation, because for any field homomorphism $k\to k'$ there is a commutative diagram
+
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXEdMX24oaykiXSxbMSwwLCJcXEdMX24oaykiXSxbMCwxLCJcXEdMX24oaycpIl0sWzEsMSwiXFxHTF9uKGsnKS4iXSxbMCwyXSxbMCwxLCIoKFxcZGFzaCleey0xfSleVCJdLFsyLDMsIigoXFxkYXNoKV57LTF9KV5UIiwyXSxbMSwzXV0=
+\[\begin{tikzcd}
+	{\GL_n(k)} & {\GL_n(k)} \\
+	{\GL_n(k')} & {\GL_n(k').}
+	\arrow["{((\dash)^{-1})^T}", from=1-1, to=1-2]
+	\arrow[from=1-1, to=2-1]
+	\arrow[from=1-2, to=2-2]
+	\arrow["{((\dash)^{-1})^T}"', from=2-1, to=2-2]
+\end{tikzcd}\]
+
+\Note{the determinant is also a good example, and so is the map which pads a matrix with an extra row/collumn. Lots of nice linear algebra natural transformations. Not sure how relevant they are to this book - maybe I can do something better? Perhpas the additive group of matrices, with trace as an example. Want something that I could pull on later.}
+\end{ex}
+
+\begin{defn} The way that functors relate categories and natural transformations relate functors is completely analagous to the way that morphisms relate objects in a category. In particular, we observe that there is a category $\Cat$ whose objects are categories, and whose morphisms are functors between categories. The identity morphisms in this category are the idenity functors $\id_\cC$, which act as the identity both on objects and on hom spaces. For any two categories $\cC\to\cD$, we can define a catgegory ${\bf Hom}(\cC,\cD)$ whose objects are functors $\cC\to\cD$ and whose morphisms are natural transformations. The identity morphisms in this category are the identity natural transformations $\id_F$ from a functor to itself which acts by the identity map on $F(A)$ for objects $A$.
+\end{defn}
+
+\begin{defn} Two categories are called {\em isomorphic} if they are isomorphic in the category of categories (denoted $\cC\cong \cD$), and two functors are called {\em naturally isomorphic} if they are isomorphic in the appropriate category of functors (denoted $F\cong G$). Two categories $\cC$, $\cD$ are called {\em equivalent} if there exists functors $F:\cC\to \cD$ and $G:\cD\to \cC$ such that $G\circ F\cong\id_\cC$ and $F\circ G\cong \id_\cD$ (denoted $\cC\simeq \cD$).
+\end{defn}
+
+\begin{rem} If two categories are isomorphic, then they are also equivalent. There are, however, equivalent categories which are not isomorphic. Let $\cC$ be a non-empty category for which between any two objects are is always a unique morphism. Then, by proposition \ref{unique-morphism-contractible}, $\cC$ is equivalent to the category ${\bf 1}$ which is defined to have a unique object labeled $X$ and whose only morphism is $\id_X$. We need not have $\cC\cong {\bf 1}$, however. In particular, if $\cC$ has at least two objects than it cannot be isomorphic to $\bf 1$ since $\bf 1$ has a single objects and isomorphisms of categories must be bijections of sets of objects.
+
+As an example, given objects $A,B\in \cD$ in a category we define a category ${\bf Prod}(A,B)$ as follows. The objects of ${\bf Prod}(A,B)$ are products $(C,f_A,f_B)$ of $A,B$. A morphism between $(C,f_A,f_B)$ and $(D,g_A,g_B)$ is a map $h:C\to D$ such that $f_A=g_A\circ h$ and $f_B=g_B\circ h$. That is, morphisms in ${\bf Prod}(A,B)$ are the morphisms in $\cC$ which respect the additional structure of the triples. By the definition of a product, there is a unique morphism between any two objects in ${\bf Prod}(A,B)$ so by proposition \ref{unique-morphism-contractible} we have ${\bf Prod}(A,B)\simeq {\bf 1}$ whenever the product of $A,B$ exists. Philosophicaly, this language of equivalence says that even though products are not unique, the space of possible products between any two objects is equivalent to a point.
+\end{rem}
 
 
+\begin{prop}\label{unique-morphism-contractible} Let $\cC$ be a non-empty category for there is a unique morphism between any two objects. Then, $\cC\simeq {\bf 1}$.
+\end{prop}
+\begin{proof}
+Define a functor $F:{\bf 1}\to \cC$ by $F(X)=C$, $F(\id_X)=\id_C$ for some $C\in \cC$. Define a functor $G:\cC\to{\bf 1}$ by $G(A)=X$, $G(f)=\id_X$ for all $A,B\in \cC$, $f:A\to B$. It is clear that $G\circ F=\id_{\bf 1}$. Conversely, we can show that $F\circ G\cong \id_{\cC}$. To do this, we can define a natural transformation $\eta:(F\circ G)\to \id_{\cC}$ which acts on each component by the unique morphism with the correct source and target. Namely, for all $A\in \cC$, $\eta$ is the unique morphism from $(F\circ G)(A)=F(X)=C$ to $\id_{\cC}(A)=A$. The relevant diagram for showing that $\eta$ is a natural transformation must commute, because there is a unique morphism between any two objects in $\cC$ and thus every diagram in $\cC$ commutes! Thus, $\eta$ is indeed a natural transformation. We can see that $\eta$ is invertible, it acts by invertible maps on all components (since all maps in $\cC$ are invertible). Thus, $\eta$ is a natural isomorphism as desired, so $\cC\simeq {\bf 1}$.
+\end{proof}
 
-\Note{ this section should include all of the structures which are neccecary for the rest of the book,
-and are too cumbersome to define on-site. It should also read as an introducting to how to think in the language of categories. Here is the running list of neccecary topics
-\begin{itemize}
-\item Products/coproducts/biproducts;
-\item zero objects;
-\item $\bC$-linear structure;
-\item Functors, natural equivalence, equivalence of categories, NOT Yoneda lemma;
-\item Opposite category. This is relevant for the discussions of time-reversal which will be at play during the book. Namely, given an MTC I want to define $\overline{\cC}$ so that $Z(\cC)\cong \cC \boxtimes \overline{\cC}$. Also, when talking about module categories, the category $\mathcal{M}^{op}$ is going to show up when we reverse the direction of the boundary.
-\end{itemize}}
+\begin{ex} For all categories $\cC$, the functor $i:(\cC^{\op})^{\op}\to \cC$ defined by $(A^{\op})^{\op}\mapsto A$ and $(f^{\op})^{\op}\mapsto f$ is an isomorphism of categories.
+\end{ex}
 
-\Note{maybe use homotopy theory as a reccuring motivating example?}
+\begin{rem} We can give an alternate definition of the opposite category via a universal property. Given two categories $\cC,\cD$, we define a {\em contravariant functor} $F:\cC\to \cD$ to be an assignment $F:\cC\to \cD$ of objects and $F:\Hom_{\cC}(A,B)\to \Hom_{\cD}(F(B),F(A))$ of morphisms for all $A,B\in \cC$, such that for all $A,B,C\in \cC$, $f:A\to B$, $g:B\to C$,
+
+$$F(g\circ f)=F(f)\circ F(g).$$
+
+Note that a contravariant functor is not a functor. We will sometimes call a standard functor a {\em covariant functor} to highlight that it is not contravariant. We observe that by the definition of the opposite category, every contravariant functor $F:\cC\to \cD$ naturally induces a covariant functor $G:\cC^{\op}\to \cD$ by defining $G(A^{\op})=F(A)$, $G(f^{\op})=F(f)$. Moreover, this basic fact about the opposite category can be stated in terms of a universal property. This goes as follows. There is a canonical contravariant functor $i:\cC\to\cC^{\op}$, which takes $A\to A^{\op}$. This functor has the property that for any category $\cD$ and for any contravariant functor $F:\cC\to \cD$, there exists a unique covaraint functor $G:\cC^{\op}\to\cD$ as defined before, making the diagram
+
+% https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXGNDIl0sWzEsMCwiXFxjQ157XFxvcH0iXSxbMCwxLCJcXGNEIl0sWzAsMiwiRiIsMl0sWzAsMSwiaSJdLFsxLDIsIkciXV0=
+\[\begin{tikzcd}
+	\cC & {\cC^{\op}} \\
+	\cD
+	\arrow["i", from=1-1, to=1-2]
+	\arrow["F"', from=1-1, to=2-1]
+	\arrow["G", from=1-2, to=2-1]
+\end{tikzcd}\]
+
+commute. Moreover, for any other pair $(\mathcal{E},i)$ with $\mathcal{E}$ a category $j:\cC\to\mathcal{E}$ a contravariant with the same universal property then there would be a unique isomorphism of categories $I:\mathcal{E}\to \cC^{\op}$ such that $I\circ j = i$. That is, the universal property that $\cC^{\op}$ turns contravariant functors into covariant functors defines $\cC^{\op}$ up to unique isomorphism.
+\end{rem}
+
+\begin{ex} Let $\cC$ be a category. For all $A\in \cC$, there is a functor $\Hom_{\cC}(A,\dash):\cC\to\Set$ defined by $\Hom_{\cC}(A,\dash)(B)=\Hom_{\cC}(A,B)$. This map is functorial because any morphism $f:B\to C$ induces a map $\Hom_{\cC}(A,B)\to \Hom_{\cC}(A,C)$ by postcomposition. Similarly, there is a contravariant functor $\Hom_{\cC}(\dash,A)$. If a functor $F:\cC\to\Set$ is of the form $\Hom_{\cC}(A,\dash)$ or $\Hom_{\cC}(\dash,A)$ for some $A\in\cC$, we call it {\em representable}.
+\end{ex}
+
+\begin{defn} Let $\cC$, $\cD$ be categories. We define the {\em product category} $\cC\times \cD$ of $\cC$ to $\cD$ to be the category whose objects are pairs $(A,B)$, $A\in \cC$, $B\in \cD$, whose morphisms between $(A,A')$ and $(B,B')$ are pairs $(f,g)$, $f\in \Hom_{\cC}(A,B)$, $g\in \Hom_{\cD}(A',B')$, and whose composition is defined component-wise. It is simple to check that this definition of the product of categories is an abstract product in the category $\Cat$.
+\end{defn}
+
+\begin{ex} There is a nice rephrasing of the definition of product and coproduct in terms of representable functors. In particular, we claim that products of $A,B\in \cC$ are in bijective correspondance with objects $A\times B\in \cC$ paired with natural isomorphisms
+
+$$\eta:\Hom(\dash,A\times B)\xrightarrow{\sim}\Hom(\dash,A)\times\Hom(\dash,B).$$
+
+This can be seen as follows. Suppose $\eta$ is a natural isomorphism as above. Then, we can define $(\pi_A,\pi_B)=\eta_{A\times B}(\id_{A\times B})$. We claim that $(A\times B,\pi_A,\pi_B)$ is a product in $\cC$. Suppose that $C\in \cC$, $f_A:C\to A$, $f_B:C\to B$ is another triple. Then, we can define $f=\eta_{C}^{-1}((f_A,f_B))$. By naturality the following diagram commutes:
+
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXEhvbShBXFx0aW1lcyBCLEFcXHRpbWVzIEIpIl0sWzEsMCwiXFxIb20oQVxcdGltZXMgQixBKVxcdGltZXMgXFxIb20oQVxcdGltZXMgQixCKSJdLFswLDEsIlxcSG9tKEMsQVxcdGltZXMgQikiXSxbMSwxLCJcXEhvbShDLEEpXFx0aW1lc1xcSG9tKEMsQikiXSxbMiwzLCJcXGV0YV9DIl0sWzAsMSwiXFxldGFfe0FcXHRpbWVzIEJ9Il0sWzAsMiwiXFxIb20oZixBXFx0aW1lcyBCKSIsMl0sWzEsMywiXFxIb20oZixBKVxcdGltZXNcXEhvbShmLEIpIl1d
+\[\begin{tikzcd}
+	{\Hom(A\times B,A\times B)} & {\Hom(A\times B,A)\times \Hom(A\times B,B)} \\
+	{\Hom(C,A\times B)} & {\Hom(C,A)\times\Hom(C,B)}
+	\arrow["{\eta_{A\times B}}", from=1-1, to=1-2]
+	\arrow["{\Hom(f,A\times B)}"', from=1-1, to=2-1]
+	\arrow["{\Hom(f,A)\times\Hom(f,B)}", from=1-2, to=2-2]
+	\arrow["{\eta_C}", from=2-1, to=2-2]
+\end{tikzcd}\]
+
+following $\id_{A\times B}$ through this square, we get that $f_A=\pi_A\circ f$ and $f_B=\pi_B\circ f$ as desired. Applying this same procedure in reverse allows one to define a natural transformation $\eta$ given a product $(A\times B,\pi_A,\pi_B)$. Dually, we find that coproducts of $A,B\in \cC$ are in bijective correspondance with objects $A\sqcup B\in \cC$ paired with natural isomorphisms
+
+$$\eta:\Hom(A\sqcup B,\dash)\xrightarrow{\sim}\Hom(A,\dash)\times\Hom(B,\dash).$$
+\end{ex}
+
+\subsubsection{Linear categories}
+
+To understand topological quantum information, we will need our categories to be in some real sense quantum mechanical. Quantum systems are always vector spaces over $\bC$. Eventually, the morphisms in our categories will directly correspond to quantum states in certain quantum systems. Thus, we need the hom-spaces in our categories to be vector spaces over $\cC$. This leads us to study the abstract properties of {\em linear categories}.
 
 \begin{defn}[$\bC$-linear category] A $\bC$-linear category is the following data:
 
 \begin{enumerate}
 \item A category $\cC$;
-\item The structure of a $\bC$-vector space on $\Hom(A,B)$ for all $A,B\in \cC$.
+\item The structure of a $\bC$-vector space on $\Hom(A,B)$ for all $A,B\in \cC$;
 
 \end{enumerate}
 
-Such that:
-
-\begin{enumerate}
-
-\item The composition maps $\cC:\Hom(B,C)\times \Hom(A,B)\to \Hom(A,C)$ are bilinear maps of vector spaces for all $A,B,C\in \cC$.
-\end{enumerate}
-
-\raggedleft\qedsymbol{}
+such that the composition maps $\circ:\Hom(B,C)\times \Hom(A,B)\to \Hom(A,C)$ are bilinear maps of vector spaces for all $A,B,C\in \cC$.
 \end{defn}
-
-
 
 \begin{defn}[$\bC$-linear functor] A $\bC$-linear functor between $\bC$-linear categories $\cC,\cD$ is a functor $F:\cC\to\cD$ such that $F:\Hom_\cC(A,B)\to\Hom_\cD(F(A),F(B))$ is a linear map of vector spaces for all $A,B\in\cC$.
-
-\raggedleft\qedsymbol{}
 \end{defn}
 
+\begin{rem} When we refer to a functor between two $\bC$-linear categories, we will always assume that that functor is $\bC$-linear unless otherwise stated. In general, whenever two categories are equipped with extra structure we will assume that functors between those categories respect that structure. There is no notion of a $\bC$-linear natural transformation (or, if there were, it would have to be the same as the notion of usual natural transformation).
+\end{rem}
 
-\Note{do I need to define $\bC$-linear natural transformation?}
+\begin{ex} The category $\Vec_{\bC}$ of vector spaces over the complex numbers is  $\bC$-linear category, since the space of linear maps $\Hom_{\Vec_{\bC}}(V,W)$ between any two vector spaces $V,W$ is itself a vector space. Additionally, the product of two $\bC$-linear categories is again a $\bC$-linear category. So, the category $\Vec_{\bC}^n$ of ordered $n$-tuples of vector spaces (equivalent to the product of $n$ copies of $\Vec_{\bC}^n$) is a $\bC$-linear category.
+\end{ex}
+
+\begin{rem} A noteworthy feature of $\bC$-linear categories is the existence of {\em zero morphisms}. Suppose that $A,B\in \cC$ are objects in a $\bC$-linear category. There is a distingished morphism $0:A\to B$, called the {\em zero morphism}, corresponding to the zero element of $\Hom(A,B)$ as a vector space. The zero element is uniquely identified by the fact that for all $f:B\to C$ and for all $g:C\to A$,
+
+$$ f\circ 0=0, \qquad\qquad 0\circ g=0.$$
+
+Note that the notation being used is ambiguous, since in the formulas above $0$ refers to both the zero morphism $A\to B$ but also to the zero morphisms $A\to C$ and $C\to B$. The reason that the zero morphism satisfies these properties is that $\circ$ is a bilinear map, and bilinear maps evaluate to zero on any pair which has zero as one of its components.
+\end{rem}
+
+\begin{defn}[Biproduct]\label{biproduct-definition} Let $A,B\in \cC$ be objects in a $\bC$-linear category category. A {\em biproduct} (or {\em direct sum}) of $A$ and $B$ is the following data:
+
+\begin{enumerate}
+\item An object $A\oplus B\in \cC$;
+\item The structure of a product $(A\oplus B,\pi_A,\pi_B)$ on $A\oplus B$;
+\item The structure of a coproduct $(A\oplus B,i_A,i_B)$ on $A\oplus B$;
+\end{enumerate}
+
+such that:
+
+\begin{enumerate}
+\item $\pi_A\circ i_A=\id_A$ and $\pi_B\circ i_B=\id_B$;
+\item $\pi_A\circ i_B=0$ and $\pi_B\circ i_A=0$.
+\end{enumerate}
+\end{defn}
+
+\begin{prop} For all vector spaces $V,W$, the direct sum $A\oplus B$ paired with its projections $(\pi_A,\pi_B)$ onto its components and its inclusions $i_V(v)=(v,0)$, $i_W(v)=(0,v)$ is a biproduct in $\Vec_{\bC}$.
+\end{prop}
+\begin{proof} We have observed in remarks \ref{product-examples-remark} and \ref{coproduct-examples-remark} that $A\oplus B$ is individually a product and a coproduct. It is immediate that the structures are compatible in the sense of definition \ref{biproduct-definition}, and thus $A\oplus B$ is a biproduct.
+\end{proof}
 
 \subsection{Monoidal categories}
 
 \subsubsection{Motivation, definition, and string diagrams}
 
-\Note{ an early reference for string diagrams is \cite{moussouris1984quantum}. Maybe I should cite it?}
+The goal of this section is to introduce the languages of {\em monoidal categories} and {\em string diagrams}, which are neccecary for a proper algebraic discussion of anyons and modular tensor categories.
 
-The goal of this sectio is to introduce the language neccecary for a proper detailed discussion of modular tensor categories. Despite the fact that the language of composition is very useful for MTCs, there are still many concepts in MTC theory which require more structure than just composition. In the sections that follow we will introduce these structures one-by-one, giving motivation and proving basic properties along the way.
+The structures in monoidal category theory and their interpretation in terms of string diagrams will allow us to discuss situations like the one below, where we create and braid quasiparticles:
 
-By the end of our discussion, we will be able to discuss situations like these, where we create and braid quasiparticles:
+\begin{ex} Suppose that we are braiding quasiparticles in a topological system. In spacetime, the trajectories of the anyons will look something like diagram \ref{anyon-example-picture}. 
 
-\begin{equation*}
+\begin{equation}\label{anyon-example-picture}
 \tikzfig{category-theory-motivating-example}
-\end{equation*}
+\end{equation}
 
-This sort of diagram will take place in some category $\cC$. The labeles $A,B,A^*,B^*$ represent objects in $\cC$. The objects $(A,A^*)$ form a particle/antiparticle pair, and the objects $(B,B^*)$ form a particle/antiparticle pair. Naively, we could interpret this diagram as follows. To begin, there are no particles. Then, we have creation maps $\text{create}_{A,A^*}$ and $\text{create}_{B^*,B}$ which pairs of particles and their antiparticles. Then we have three different braids, $\text{braid}_{A^*,B^*}$, $\text{braid}_{A,B^*}$, and $\text{braid}_{A^*,B}$. The overall process is the composition of these:
+Using the formalism of monoidal categories and the language of string diagrams, we will be able to interpret the above diagram \ref{anyon-example-picture} as a certain morphism in a category. The exact category in which the morphism should live depends on the underlying topological system. The quasiparticle labels $A,B,A^*,B^*$ represent objects in $\cC$.  The objects $(A,A^*)$ form a particle/antiparticle pair, and the objects $(B,B^*)$ form a particle/antiparticle pair. The diagram is broadly interpreted as follows. To begin, there are no particles. Then, we have creation maps $\text{create}_{A,A^*}$ and $\text{create}_{B^*,B}$ which pairs of particles and their antiparticles. Then we have three different braiding operatations ($\text{braid}_{A^*,B^*}$, $\text{braid}_{A,B^*}$, and $\text{braid}_{A^*,B}$) which swap the positions of adjacent quasiparticles. The overall process is the composition of these sub-processes:
 
-$$(\text{braid}_{A^*,B})\cC (\text{braid}_{A,B^*})\cC (\text{braid}_{A^*,B^*}) \cC (\text{create}_{B^*,B})\cC (\text{create}_{A,A^*}).$$
+$$(\text{braid}_{A^*,B})\circ (\text{braid}_{A,B^*})\circ (\text{braid}_{A^*,B^*}) \circ (\text{create}_{B^*,B})\circ (\text{create}_{A,A^*}).$$
 
+It is thus clear why categories-with-structure are the right framwork for understanding diagrams like diagram \ref{anyon-example-picture}. The additional structures on $\cC$ will give the braiding and creation maps meaning, and the composition structure on $\cC$ will tell us how these components fit together to make larger processes.
+\end{ex}
 
-These creation maps and braiding maps are exactly the sort of maps which we will be introducing as extra structures on our category during this chapter. One lingering problem, however, is that the naive approach to formalising these diagrams in category theory results in long chains of composition. These long chains of composition hide the real structure of the problem, and make processes like the one in diagram [ref] much harder to parse. It is for this reason that we introduce a {\em graphical language for category theory}. This graphical language makes the diagrams like [ref] rigorous mathematical notion which describe well-defined morphisms. These diagrams are known as {\em string diagrams}.
-
-The main principle of string diagrams is that morphisms are represented as follows:
+We now begin to introduce the language of string diagrams. The most basic principle os string diagrams is that morphisms are represented as follows:
 
 \begin{equation*}
 \tikzfig{basic-morphism-string-diagram}
 \end{equation*}
 
-The direction of time going from bottom to up and the space being two-dimensional slices is the same in every diagram, and hence is left implicit from here on out. Composition can be expressed cleanly in this langauge as stacking, for all $f:A\to B$, $g:B\to C$:
+The direction of time going from bottom to up and the space being two-dimensional slices is the same in every diagram, and hence is left implicit from here on out. Composition is expressed cleanly in this langauge as stacking. That is, for all $f:A\to B$, $g:B\to C$, we define
 
 \begin{equation*}
 \tikzfig{composition-string-diagram}
@@ -339,7 +498,7 @@ Accordingly, the identity map has a simple implementation:
 \tikzfig{identity-string-diagram}
 \end{equation*}
 
-We now give our first major example of adding structure, and how that structure can be interpreted in terms of string diagrams. This structure is that of a {\em monoidal category}. For technical reasons we only define {\em strict} monoidal categories for now - we will come back to the general definition later. Monoidal categories give a way to put objects together. For instance, in diagram [ref] we had four particles all together. We need to way to discuss composite-particle systems. In quantum mechanics, forming a composite system is done by taking the tensor product. Hence, we will use the notation $\otimes$ for joining particles in our current setting. We will even use the term ``tensor product" to discuss it. In general, joining two systems is one way of going from pairs of systems to individual systems:
+We now give our first major example of adding structure, and how that structure can be interpreted in terms of string diagrams. This structure is that of a {\em monoidal category}. For technical reasons we only define {\em strict} monoidal categories for now - we will come back to the general definition later. Monoidal categories give a way to put objects together. For instance, in diagram \ref{anyon-example-picture} we had four particles all together. We need to way to discuss composite-particle systems. In quantum mechanics, forming a composite system is done by taking the tensor product. Hence, we will use the notation $\otimes$ for joining particles in our current setting. We will even use the term ``tensor product" to discuss it. In general, joining two systems is one way of going from pairs of systems to individual systems:
 
 \begin{align*}
 (\text{systems})\times (\text{systems})&\xrightarrow{}(\text{systems}).\\
@@ -372,10 +531,12 @@ A\otimes \bone = \bone \otimes A =A, && f\otimes \id_{\bone} = \id_{\bone}\otime
 \end{align*}
 \end{enumerate}
 
-\raggedleft\qedsymbol{}
+
 \end{defn}
 
-The object $\bone\in \cC$ is important. Just like how groups of symmetries always include the ``do-nothing" symmetry, strict monoidal categories should always include the unit. In this case, $\bone\in \cC$ represents the empty particle - no particle at all. In every particle theory there should be the possibility of not having any particles. Joining the empty particle with any other particle should obviously do nothing, hence the axiom $1\otimes A = A\otimes 1 = A$.
+\begin{rem}
+The object $\bone\in \cC$ is important. Just like how groups of symmetries always include the ``do-nothing" symmetry, strict monoidal categories should always include the unit. In this case, $\bone\in \cC$ represents the empty particle - no particle at all. In every particle theory there should be the possibility of not having any particles. Joining the empty particle with any other particle should obviously do nothing, hence the axiom $\bone\otimes A = A\otimes \bone = A$.
+\end{rem}
 
 We can now work strict monoidal categories into our graphical language. The tensor product of two objects is represented by putting two lines adjacent to one another. For instance, let $\cC$ be a strict monoidal category, let $A,B,C,D\in \cC$ be four objects, and let $f:A\to C$, $g:B\to D$ be morphisms. We have
 
@@ -389,16 +550,22 @@ The monoidal unit $\bone$ is distinguished in monoidal categories, and hence is 
 \tikzfig{monoidal-unit-string-diagram}
 \end{equation*}
 
-We {\em do not} require that the lines drawn in string diagrams be straight. They can curve any amount so long as it is clear that they are directly connecting an output to an input. The lines cannot cross each other or double back. Additionally, when it is clear from context, we {\em do not} require ourselves to include every label. For example, the following is a valid diagram in all strict monoidal categories $\cC$, where $A,B,C,D,E,F,G,H\in \cC$ are objects, and $f:A\otimes B\otimes C \to E\times F$, $g: E \to I\otimes G$, $h: F\otimes D\to H$, and $k:G\otimes H \to \bone$ are morphisms:
+\begin{rem} We {\em do not} require that the lines drawn in string diagrams be straight. They can curve any amount so long as it is clear that they are directly connecting an output to an input. The lines cannot cross each other or double back. Additionally, when it is clear from context, we {\em do not} require ourselves to include every label.
+\end{rem}
 
-\begin{equation*}
+\begin{ex} 
+Diagram \ref{diagramatics-example-picture} is valid in all strict monoidal categories $\cC$, where $A$,$B$,$C$,$D$,$E$,$F$,$G$,$H\in \cC$ are objects, and $f:A\otimes B\otimes C \to E\otimes F$, $g: E \to I\otimes G$, $h: F\otimes D\to H$, and $k:G\otimes H \to \bone$ are morphisms:
+
+\begin{equation}\label{diagramatics-example-picture}
 \tikzfig{big-example-string-diagram}
-\end{equation*}
+\end{equation}
+
+\end{ex}
 
 
 \subsubsection{Braided monoidal categories}
 
-We continue our definitions of structures on monoidal categories, and their expression in the language of string diagrams. Our next definition is that of a strict {\em braided} monoidal category:
+We continue our definitions of structures on monoidal categories, and their expression in the language of string diagrams. Our next definition is that of a strict braided monoidal category:
 
 
 \begin{defn}[Strict braided monoidal category] A strict braided monoidal category is the following data:
@@ -418,26 +585,24 @@ Such that for all $A,B,C\in \cC$, the diagrams
 	\arrow["{\beta_{A,B}\otimes \id_{C}}", from=1-1, to=2-2]
 	\arrow["{\beta_{A,B\otimes C}}"', from=1-1, to=3-1]
 	\arrow["{\id_{B}\otimes \beta_{A,C}}", from=2-2, to=3-1]
-\end{tikzcd}\]
-
-and
-
-% https://q.uiver.app/#q=WzAsMyxbMCwwLCJBXFxvdGltZXMgQlxcb3RpbWVzIEMiXSxbMCwyLCJCXFxvdGltZXMgQ1xcb3RpbWVzIEEiXSxbMSwxLCJCXFxvdGltZXMgQVxcb3RpbWVzIEMiXSxbMCwyLCJcXGJldGFfe0IsQX1eey0xfVxcb3RpbWVzIFxcaWRfe0N9Il0sWzIsMSwiXFxpZF97Qn1cXG90aW1lcyBcXGJldGFeey0xfV97QyxBfSJdLFswLDEsIlxcYmV0YV57LTF9X3tCXFxvdGltZXMgQyxBfSIsMl1d
-\[\begin{tikzcd}
+\end{tikzcd}
+,\qquad
+\begin{tikzcd}
 	{A\otimes B\otimes C} \\
 	& {B\otimes A\otimes C} \\
 	{B\otimes C\otimes A}
 	\arrow["{\beta_{B,A}^{-1}\otimes \id_{C}}", from=1-1, to=2-2]
 	\arrow["{\beta^{-1}_{B\otimes C,A}}"', from=1-1, to=3-1]
 	\arrow["{\id_{B}\otimes \beta^{-1}_{C,A}}", from=2-2, to=3-1]
-\end{tikzcd}\]
+\end{tikzcd}
+\]
 
 commute.
 
-\raggedleft\qedsymbol{}
+
 \end{defn}
 
-The idea for how to implement braided monoidal categories in the language of string diagrams is to introduce a special symbol for the braiding map $\beta_{A,B}$. Namely, we define graphically overcrossing and undercrossing as follows:
+The idea for how to implement braided monoidal categories in the language of string diagrams is to introduce a special symbol for the braiding map $\beta_{A,B}$. Namely, we graphically define overcrossing and undercrossing as follows:
 
 
 \begin{equation*}
@@ -598,7 +763,7 @@ commutes for all $A,B\in \cC$.
 commutes for all $A,B,C,D\in \cC$.
 \end{enumerate}
 
-\raggedleft\qedsymbol{}
+
 \end{defn}
 
 With this more general definition, we now have many examples of monoidal categories:
@@ -728,7 +893,7 @@ and
 commute for all $A\in \cC$.
 \end{enumerate}
 
-\raggedleft\qedsymbol{}
+
 \end{defn}
 
 
@@ -760,7 +925,7 @@ commutes.
 
 commutes.
 \end{enumerate}
-\raggedleft\qedsymbol{}
+
 \end{defn}
 
 
@@ -810,7 +975,7 @@ and
 commute for all $A,B,C\in \cC$.
 \end{enumerate}
 
-\raggedleft\qedsymbol{}
+
 \end{defn}
 
 \begin{defn}[Braided monoidal functor] A braided monoidal functor between braided monoidal categories $(\cC,\otimes_{\cC},\beta_{\cC})$, $(\cD,\otimes_{\cD},\beta_{\cD})$ is a monoidal functor $(F,\mu):\cC\to \cD$ such that the diagram
@@ -827,7 +992,7 @@ commute for all $A,B,C\in \cC$.
 
 commutes for all $A,B\in \cC$.
 
-\raggedleft\qedsymbol{}
+
 \end{defn}
 
 Thankfully, there is no notion of braided monoidal natural transformation - any monoidal natural transformation will automatically repsect the braiding. Hence, we can define two braided monoidal categories to be equivalent if there are braided monoidal functors between them which have compositions which are naturally isomorphic to the identity. Hence we can state a braided MacLane coherence theorem:
@@ -855,7 +1020,7 @@ In any realistic system, every particle will have a dual {\em antiparticle}. Par
 
 Such that $(\ev_A \otimes \id_A)\circ (\id_A\otimes \coev_A)=\id_A$ and $(\id_{A^*}\otimes \ev_A)\circ (\coev_{A}\otimes \id_{A^*})=\id_{A^*}$ for all $A\in \cC$. 
 
-\raggedleft\qedsymbol{}
+
 \end{defn}
 
 We implement right-rigid monoidal categories in string diagrams as follows. We denote evaluation and coevaluation as follows:
@@ -882,7 +1047,7 @@ We now note that particle/antiparticle pairs could also be created on the other 
 
 Additionally, a rigid category is required to satisfy the property that $(\id_A\otimes\ev_A)\circ (\coev_A\otimes \id_A)=\id_A$ and $(\ev_A\otimes \id_{A^*})\circ (\id_{A^*}\otimes \coev_{A})=\id_{A^*}$ for all $A\in \cC$. 
 
-\raggedleft\qedsymbol{}
+
 \end{defn}
 
 In a left-rigid monoidal category, graphical cups and caps can be defined just like in right-rigid monoidal categories.
@@ -914,7 +1079,7 @@ Such that:
 \end{equation*}
 \end{enumerate}
 
-\raggedleft\qedsymbol{}
+
 \end{defn}
 
 Now that we have given our main definitions, we prove some basic properties of rigid and pivotal categories.
@@ -1045,6 +1210,8 @@ $\newline$
 \begin{center}
 \textbf{History and further reading:}\\
 \end{center}
+
+\Note{ an early reference for string diagrams is \cite{moussouris1984quantum}. Maybe I should cite it?}
 
 Category theory was first introduced and formalized by Saunders Mac Lane and Samuel Eilenberg in 1945 \cite{eilenberg1945general}. Of course, the ideas underlying category theory were present earlier and can be traced back arbitrarily far. In the subsequent decades the formalism of category theory spread far and wide, bringing with it the discovery of many deep theorems. The first major explicit appearance of category theory in physics was Vladimir Drinfeld's work on so-called {\em quantum groups} in the early 1980s \cite{drinfeld1986quantum}. Quantum groups are certain kinds of mathematical objects righly related to content in this book. They were introduced as tools to help generate exactly-solvable models in condensed matter physics. Very quickly quantum groups were absorbed into the theory of the ideas of string theory of topological quantum field theory, which were both new at the time \cite{belavin1984infinite, witten1988topological}. The physics in this area has since become and remained extremely categorical in nature \cite{lurie2008classification, bartlett2015modular}.
 
