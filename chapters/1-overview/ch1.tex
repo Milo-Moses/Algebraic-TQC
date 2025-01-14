@@ -337,6 +337,7 @@ It is also desirabe to have a mechanism for reading out some non-local informati
 A sample measurement pattern is as follows.  Suppose that $\phi$ is a state with $n$ defects arranged in a line as before, and let us denote the winding numbers $\phi_*(\alpha_i)=g_i$. Local measurements give us access to the conjugacy classes of all of the elements $g_i$. By fusing the defects into the left-most defect one by one, we can access the conjugacy classes of $g_1$, $g_1g_2$,  $g_1g_2g_3$,... all the way up to $g_1g_2g_3...g_n$. In favorable situations these measurements can give a large amount of non-local information.
 
 \subsubsection{Topological classical computation}
+\label{topological-classical-computation}
 
 We are now ready to describe the theory of topological classical computation. In the subsection \ref{the-fundamental-group}, we showed how all the topological information about defects in ordered media is controlled by the fundamental group $G=\pi_1(M,m)$ of the order space $M$ relative to some basepoint $m\in M$. This is the heart of the algebraic theory of topological computing. Even though our physical model is complicated, most information theoretic properties can understrood by analysing the algebraic structure $G$. In fact, we can now formulate our discussion of topological classical computation in a way which does not make reference to the order space at all. We will choose an abstract group $G$ and make a computer using it. This gives the following schematic for our discussion:
 
@@ -394,14 +395,12 @@ To facilitate our discussion of braids, we use a graphical notation which tracks
 \end{center}
 \end{figure}
 
-
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.05]{braiding-examples}
 \label{braiding-examples}
 \end{center}
 \end{figure}
-
 
 The braid group is called a group because it has a natural group structure on it induced by composition. Given any two braiding operations on $n$ points, composing them will give another braiding operation!  Composition is well-defined on equivalence classes under continuous deformation, and thus it gives a well-defined group structure. The unit element for this group structure is the equivalence class of the braiding operation which does not move the points at all, and the inverse of a braid comes from taking a braiding operation and then reversing its direction in time. This turns $B_n$ into a group, and $P_n$ into a normal subgroup.
 
