@@ -1,0 +1,31 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (6, 1.5) {$A_{n-1}$};
+		\node [style=none] (1) at (7.5, 1.5) {$A_n$};
+		\node [style=none] (2) at (4.75, 1) {$...$};
+		\node [style=none] (3) at (1.7, 1.5) {$A_{1}$};
+		\node [style=none] (4) at (3, 1.5) {$A_2$};
+		\node [style=none] (5) at (6, -0.5) {$A_{n-1}$};
+		\node [style=none] (6) at (7.5, -0.5) {$A_n$};
+		\node [style=none] (7) at (4.75, -1) {$...$};
+		\node [style=none] (8) at (2.45, -0.5) {$B$};
+		\node [style=none] (9) at (5, 0.25) {$\Downarrow$};
+		\node [style=none] (10) at (6.25, 1) {$\cdot$};
+		\node [style=none] (11) at (7.25, 1) {$\cdot$};
+		\node [style=none] (12) at (1.75, 1) {$\cdot$};
+		\node [style=none] (13) at (3, 1) {$\cdot$};
+		\node [style=none] (14) at (6.25, -1) {$\cdot$};
+		\node [style=none] (15) at (7.25, -1) {$\cdot$};
+		\node [style=none] (16) at (2.5, -1) {$\cdot$};
+		\node [style=none] (17) at (1, 1.25) {};
+		\node [style=none] (18) at (3.65, 1.25) {};
+		\node [style=none] (19) at (3.75, 1.75) {};
+		\node [style=none] (20) at (4.5, 2.25) {};
+		\node [style=none] (21) at (4.75, 2.75) {measure charge};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=dashed edge, bend right=90] (17.center) to (18.center);
+		\draw [style=dashed edge, bend left=90, looseness=1.25] (17.center) to (18.center);
+		\draw [style=arrow, bend left, looseness=0.75] (20.center) to (19.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

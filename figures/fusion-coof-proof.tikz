@@ -12,8 +12,8 @@
 		\node [style=none] (9) at (-2.75, -0.125) {};
 		\node [style=none] (10) at (-3, 1) {};
 		\node [style=none] (11) at (-2.75, -0.75) {};
-		\node [style=none] (12) at (-3, 1.25) {$B$};
-		\node [style=none] (13) at (-2.75, -1) {$C$};
+		\node [style=none] (12) at (-3, 1.35) {$B$};
+		\node [style=none] (13) at (-2.65, -1.15) {$C$};
 		\node [style=none] (14) at (-0.25, 0.25) {};
 		\node [style=none] (15) at (0.75, 0.25) {};
 		\node [style=none] (16) at (-0.25, 0.375) {};
@@ -23,7 +23,7 @@
 		\node [style=none] (24) at (-3, 0.175) {$\alpha$};
 		\node [style=none] (25) at (-3.25, -0.75) {};
 		\node [style=none] (26) at (-3.25, -0.125) {};
-		\node [style=none] (27) at (-3.25, -1) {$A^*$};
+		\node [style=none] (27) at (-3.375, -1.15) {$A^*$};
 		\node [style=none] (28) at (2.5, 0.5) {};
 		\node [style=none] (29) at (3.5, 0.5) {};
 		\node [style=none] (30) at (3.5, -0.125) {};
@@ -32,12 +32,12 @@
 		\node [style=none] (33) at (3.25, -0.125) {};
 		\node [style=none] (34) at (3, 1) {};
 		\node [style=none] (35) at (3.25, -0.75) {};
-		\node [style=none] (36) at (3, 1.25) {$B$};
-		\node [style=none] (37) at (3.25, -1) {$C$};
+		\node [style=none] (36) at (3, 1.35) {$B$};
+		\node [style=none] (37) at (3.25, -1.15) {$C$};
 		\node [style=none] (38) at (3, 0.175) {$\alpha$};
 		\node [style=none] (39) at (2.75, -0.75) {};
 		\node [style=none] (40) at (2.75, -0.125) {};
-		\node [style=none] (41) at (2, 1.25) {$A$};
+		\node [style=none] (41) at (2, 1.35) {$A$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw [style=arrow] (2.center) to (3.center);

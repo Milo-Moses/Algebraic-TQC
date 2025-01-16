@@ -1,0 +1,66 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-1.5, -0.75) {};
+		\node [style=none] (1) at (-1.5, -0.25) {};
+		\node [style=none] (2) at (2, -0.25) {};
+		\node [style=none] (3) at (2, -0.75) {};
+		\node [style=none] (4) at (0.25, -0.5) {$\alpha$};
+		\node [style=none] (5) at (0.25, -0.75) {};
+		\node [style=none] (6) at (0.25, -1.225) {};
+		\node [style=none] (7) at (0.25, -1.75) {$\bone$};
+		\node [style=none] (8) at (-1, -0.25) {};
+		\node [style=none] (9) at (-1, 0.5) {};
+		\node [style=none] (10) at (-0.5, -0.25) {};
+		\node [style=none] (11) at (-0.5, 0.5) {};
+		\node [style=none] (12) at (1.25, 0) {$...$};
+		\node [style=none] (13) at (1.75, -0.25) {};
+		\node [style=none] (14) at (1.75, 0.5) {};
+		\node [style=none] (15) at (1.75, 1) {$A_n$};
+		\node [style=none] (16) at (0.75, -0.25) {};
+		\node [style=none] (17) at (0.75, 0.5) {};
+		\node [style=none] (18) at (0.75, 1) {$A_3$};
+		\node [style=none] (19) at (-1.425, 0.1) {$A_1$};
+		\node [style=none] (20) at (-0.025, 0.1) {$A_2$};
+		\node [style=none] (21) at (-1.25, 1.375) {};
+		\node [style=none] (22) at (-1.25, 0.5) {};
+		\node [style=none] (23) at (-0.25, 0.5) {};
+		\node [style=none] (24) at (-0.25, 1.375) {};
+		\node [style=none] (25) at (-0.75, 0.925) {$\mu^\dagger$};
+		\node [style=none] (26) at (-0.75, 1.375) {};
+		\node [style=none] (27) at (-0.75, 2.1) {};
+		\node [style=none] (28) at (-1.25, 2.1) {};
+		\node [style=none] (29) at (-0.25, 2.1) {};
+		\node [style=none] (30) at (-0.25, 2.725) {};
+		\node [style=none] (31) at (-1.25, 2.725) {};
+		\node [style=none] (32) at (-0.75, 2.375) {$\mu$};
+		\node [style=none] (33) at (-1, 2.725) {};
+		\node [style=none] (34) at (-0.5, 2.725) {};
+		\node [style=none] (35) at (-0.5, 3.225) {};
+		\node [style=none] (36) at (-1, 3.225) {};
+		\node [style=none] (37) at (-1.125, 3.6) {$A_1$};
+		\node [style=none] (38) at (-0.3, 3.6) {$A_2$};
+		\node [style=none] (39) at (-0.45, 1.725) {$B$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (1.center) to (2.center);
+		\draw (2.center) to (3.center);
+		\draw (3.center) to (0.center);
+		\draw (0.center) to (1.center);
+		\draw (14.center) to (13.center);
+		\draw (11.center) to (10.center);
+		\draw (9.center) to (8.center);
+		\draw (24.center) to (21.center);
+		\draw (21.center) to (22.center);
+		\draw (22.center) to (23.center);
+		\draw (23.center) to (24.center);
+		\draw (28.center) to (29.center);
+		\draw (31.center) to (28.center);
+		\draw (31.center) to (30.center);
+		\draw (30.center) to (29.center);
+		\draw (27.center) to (26.center);
+		\draw (36.center) to (33.center);
+		\draw (35.center) to (34.center);
+		\draw (17.center) to (16.center);
+		\draw [style=dashed edge] (5.center) to (6.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
