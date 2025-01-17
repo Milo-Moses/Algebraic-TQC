@@ -2,63 +2,49 @@ This is BibTeX, Version 0.99d (TeX Live 2018)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Algebraic-TQC.aux
 A level-1 auxiliary file: ./chapters/0-preface/ch0.aux
-A level-1 auxiliary file: ./chapters/1-overview/ch1.aux
-A level-1 auxiliary file: ./chapters/2-QM/ch2.aux
-A level-1 auxiliary file: ./chapters/3-TQO/ch3.aux
-A level-1 auxiliary file: ./chapters/4-category-theory/ch4.aux
 A level-1 auxiliary file: ./chapters/5-MTCs/ch5.aux
-A level-1 auxiliary file: ./chapters/6-further-structure/ch6.aux
-A level-1 auxiliary file: ./chapters/7-TQC/ch7.aux
-A level-1 auxiliary file: ./chapters/A-odds-and-ends/appA.aux
-A level-1 auxiliary file: ./chapters/B-anyon-data/appB.aux
 The style file: alpha.bst
 Database file #1: ref.bib
-Warning--to sort, need author or key in google2023suppressing
-Warning--empty journal in copeland1997church
-Warning--can't use both volume and number fields in de2022non
-Warning--empty author in google2023suppressing
-Warning--can't use both volume and number fields in jaeger1990computational
 Warning--there's a number but no series in wang2010topological
-Warning--empty year in wang2307intrinsic
-You've used 214 entries,
+You've used 36 entries,
             2543 wiz_defined-function locations,
-            1690 strings with 35935 characters,
-and the built_in function-call counts, 84652 in all, are:
-= -- 8485
-> -- 4129
-< -- 101
-+ -- 1429
-- -- 1401
-* -- 6468
-:= -- 14197
-add.period$ -- 651
-call.type$ -- 214
-change.case$ -- 1345
-chr.to.int$ -- 211
-cite$ -- 222
-duplicate$ -- 3187
-empty$ -- 5961
-format.name$ -- 1668
-if$ -- 16877
-int.to.chr$ -- 4
+            780 strings with 9564 characters,
+and the built_in function-call counts, 13651 in all, are:
+= -- 1381
+> -- 597
+< -- 24
++ -- 199
+- -- 195
+* -- 976
+:= -- 2275
+add.period$ -- 110
+call.type$ -- 36
+change.case$ -- 207
+chr.to.int$ -- 36
+cite$ -- 37
+duplicate$ -- 549
+empty$ -- 1003
+format.name$ -- 244
+if$ -- 2749
+int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 227
-newline$ -- 1073
-num.names$ -- 639
-pop$ -- 1005
+missing$ -- 42
+newline$ -- 184
+num.names$ -- 108
+pop$ -- 178
 preamble$ -- 1
-purify$ -- 1578
+purify$ -- 249
 quote$ -- 0
-skip$ -- 2655
+skip$ -- 450
 stack$ -- 0
-substring$ -- 4955
-swap$ -- 336
-text.length$ -- 101
-text.prefix$ -- 70
+substring$ -- 809
+swap$ -- 65
+text.length$ -- 24
+text.prefix$ -- 14
 top$ -- 0
-type$ -- 1644
-warning$ -- 7
-while$ -- 837
-width$ -- 217
-write$ -- 2757
-(There were 7 warnings)
+type$ -- 260
+warning$ -- 1
+while$ -- 139
+width$ -- 42
+write$ -- 466
+(There was 1 warning)

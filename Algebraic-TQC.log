@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  15 JAN 2025 18:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  16 JAN 2025 18:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -848,62 +848,64 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ] [4
 
-] (./Algebraic-TQC.toc [5])
-\tf@toc=\write4
-\openout4 = `Algebraic-TQC.toc'.
-
- [6]
+]
 \openout2 = `./chapters/5-MTCs/ch5.aux'.
 
+ (./chapters/5-MTCs/ch5.tex
+(./figures/mathematical-outline-MTC.tikz)
 
-(./chapters/5-MTCs/ch5.tex (./figures/mathematical-outline-MTC.tikz)
-
-LaTeX Warning: Reference `category-theory' on page 7 undefined on input line 14
+LaTeX Warning: Reference `category-theory' on page 5 undefined on input line 14
 .
 
-[7
+[5
 
 ]
 
-LaTeX Warning: Reference `overview' on page 8 undefined on input line 44.
+LaTeX Warning: Reference `overview' on page 6 undefined on input line 44.
 
 LaTeX Font Info:    Try loading font information for U+euf on input line 44.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 
-LaTeX Warning: Reference `anyon-data' on page 8 undefined on input line 60.
+LaTeX Warning: Reference `anyon-data' on page 6 undefined on input line 60.
 
-[8] (./figures/spherical-category.tikz) [9] (./figures/non-degeneracy.tikz)
-[10] [11]
+[6] (./figures/spherical-category.tikz) [7] (./figures/non-degeneracy.tikz)
+[8]
 
-LaTeX Warning: Reference `rigidity-functorial' on page 12 undefined on input li
-ne 216.
+LaTeX Warning: Reference `higher-linear-algebra' on page 9 undefined on input l
+ine 162.
 
-[12] (./figures/non-degeneracy.tikz) [13] [14]
-<./images/sphere-braiding.png, id=72, 1429.34pt x 493.845pt>
+
+LaTeX Warning: Reference `rigidity-functorial' on page 9 undefined on input lin
+e 181.
+
+
+LaTeX Warning: Reference `fusion-category-simples' on page 9 undefined on input
+ line 188.
+
+[9] (./figures/non-degeneracy.tikz) [10] [11]
+<./images/sphere-braiding.png, id=60, 1429.34pt x 493.845pt>
 File: ./images/sphere-braiding.png Graphic file (type png)
 <use ./images/sphere-braiding.png>
-Package pdftex.def Info: ./images/sphere-braiding.png  used on input line 373.
+Package pdftex.def Info: ./images/sphere-braiding.png  used on input line 338.
 (pdftex.def)             Requested size: 214.39174pt x 74.07355pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-(./figures/non-degeneracy.tikz) [15]
-<./images/plane-state.jpeg, id=78, 3894.55pt x 1989.4325pt>
+ (./figures/non-degeneracy.tikz)
+[12 <./images/sphere-braiding.png>]
+<./images/plane-state.jpeg, id=68, 3894.55pt x 1989.4325pt>
 File: ./images/plane-state.jpeg Graphic file (type jpg)
 <use ./images/plane-state.jpeg>
-Package pdftex.def Info: ./images/plane-state.jpeg  used on input line 410.
+Package pdftex.def Info: ./images/plane-state.jpeg  used on input line 375.
 (pdftex.def)             Requested size: 136.32318pt x 69.63725pt.
- [16 <./images/sphere-braiding.png> <./images/plane-state.jpeg>] (./figures/adj
-acent-pair.tikz)
-(./figures/nested-pair.tikz) (./figures/measuring-a-pair.tikz) [17]
-(./figures/definite-charge-and-channel.tikz)
-(./figures/definite-charge-and-channel-2.tikz)
+ [13 <./images/plane-state.jpeg>]
+(./figures/adjacent-pair.tikz) (./figures/nested-pair.tikz)
+(./figures/measuring-a-pair.tikz) (./figures/definite-charge-and-channel.tikz)
+(./figures/definite-charge-and-channel-2.tikz) [14]
 (./figures/definite-charge-and-channel-3.tikz) (./figures/resolution-of-id.tikz
-) [18] (./figures/definite-charge-and-channel-3.tikz)
-(./figures/definite-charge-and-channel-4.tikz) [19]
+) (./figures/resolution-of-id-proof.tikz) [15]
+(./figures/resolution-of-id-big.tikz)
+(./figures/definite-charge-and-channel-3.tikz) [16]
+(./figures/definite-charge-and-channel-4.tikz)
 (./figures/independent-pairs.tikz) (./figures/independent-pairs.tikz)
 (./figures/independent-pairs.tikz) (./figures/independent-circles.tikz)
 (./figures/independent-pairs.tikz) (./figures/independent-pairs.tikz)
@@ -911,90 +913,115 @@ acent-pair.tikz)
 (./figures/independent-circles-fused.tikz)
 (./figures/independent-circles-fused-2.tikz) (./figures/C-circle.tikz)
 (./figures/independent-circles-fused.tikz)
-(./figures/independent-circles-fused-2.tikz) (./figures/C-circle.tikz) [20]
+(./figures/independent-circles-fused-2.tikz) (./figures/C-circle.tikz) [17]
+
+LaTeX Warning: Reference `rigidity-functorial' on page 18 undefined on input li
+ne 567.
+
+[18] (./figures/fusion-coof-is-one.tikz) (./figures/fusion-coof-proof.tikz)
+(./figures/trace.tikz) [19] (./figures/trace-tensor.tikz)
+(./figures/composition-commutes.tikz) [20] (./figures/trace.tikz)
+(./figures/pivotal-functor-trace.tikz) (./figures/trace.tikz)
+(./figures/pivotal-functor-trace.tikz)
 
 LaTeX Warning: Reference `rigidity-functorial' on page 21 undefined on input li
-ne 579.
+ne 685.
 
-(./figures/fusion-coof-is-one.tikz) (./figures/fusion-coof-proof.tikz) [21]
-(./figures/trace.tikz) [22] (./figures/trace-tensor.tikz)
-(./figures/composition-commutes.tikz) [23] (./figures/quantum-dimension.tikz)
-Overfull \hbox (1.73265pt too wide) in paragraph at lines 714--715
+[21] (./figures/quantum-dimension.tikz)
+Overfull \hbox (1.73265pt too wide) in paragraph at lines 703--704
 []\OT1/lmr/m/n/10 As usual, we iden-titfy $\OML/lmm/m/it/10 d[]$ \OT1/lmr/m/n/1
 0 with a com-plex num-ber via the canon-i-cal iso-mor-phism $[](\OT1/lmr/bx/n/1
 0 1\OT1/lmr/m/n/10 ) []
  []
 
-[24]
+[22]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 752.
+d on input line 741.
 
-[25] [26] (./figures/graphical-twist.tikz) [27] (./figures/twist.tikz)
-(./figures/twist-alternatives.tikz) (./figures/twist-equality.tikz) [28]
-(./figures/twist-naturality.tikz) (./figures/twist-duality.tikz)
-(./figures/co-dual.tikz)
-Overfull \hbox (7.9532pt too wide) in paragraph at lines 911--912
+[23] [24]
+Overfull \hbox (6.47704pt too wide) in paragraph at lines 865--866
+[]\OT1/lmr/m/n/10 This sum is dom-i-nated by the terms with $\OMS/lmsy/m/n/10 j
+\OML/lmm/m/it/10 ^^U[]\OMS/lmsy/m/n/10 j \OT1/lmr/m/n/10 = [](\OML/lmm/m/it/10 
+A\OT1/lmr/m/n/10 )$, which grow like $[](\OML/lmm/m/it/10 A\OT1/lmr/m/n/10 )[]$
+.
+ []
+
+[25]
+Overfull \hbox (4.60207pt too wide) detected at line 875
+\OT1/lmr/m/n/10 ([]) = [] [] []\OML/lmm/m/it/10 N[][][] [] :
+ []
+
+(./figures/thick-Y.tikz) (./figures/ribbon.tikz) [26]
+(./figures/ribbon-expanded.tikz) (./figures/graphical-twist.tikz)
+(./figures/twist.tikz) (./figures/twist-alternatives.tikz) [27]
+(./figures/twist-equality.tikz) (./figures/twist-naturality.tikz)
+(./figures/twist-duality.tikz) (./figures/co-dual.tikz) [28]
+Overfull \hbox (7.9532pt too wide) in paragraph at lines 982--983
 []\OT1/lmr/bx/n/10 Proposition 1.78 \OT1/lmr/m/n/10 (Deligne's twist-ing lemma,
  [[]])\OT1/lmr/bx/n/10 . []\OT1/lmr/m/it/10 Let $\OMS/lmsy/m/n/10 C$ \OT1/lmr/m
 /it/10 be a right-rigid braided monoidal
  []
 
-[29] (./figures/graphical-twist-reverse.tikz)
-(./figures/something-property-proof.tikz)
+(./figures/graphical-twist-reverse.tikz)
+(./figures/something-property-proof.tikz) [29]
 (./figures/morphism-duals-agree-proof.tikz) (./figures/spherical-proof.tikz)
 [30]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 951.
-
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 1024
+.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 951.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 1024.
 
-Overfull \hbox (2.84814pt too wide) in paragraph at lines 955--956
+
+Overfull \hbox (2.84814pt too wide) in paragraph at lines 1028--1029
 []\OT1/lmr/m/n/10 The cor-rect no-tion of func-tor be-tween pre-modular cat-e-g
 ories is $\U/msb/m/n/10 C$\OT1/lmr/m/n/10 -linear piv-otal braided
  []
 
-[31] [32] [33] [34] (./figures/S-matrix.tikz) [35] [36] [37]
-(./figures/non-degeneracy.tikz)
-Overfull \hbox (31.23927pt too wide) detected at line 1283
+[31] [32] (./figures/bilayer-system.tikz)
+
+LaTeX Warning: Reference `anyons-in-discrete-gauge-theory' on page 33 undefined
+ on input line 1152.
+
+[33] [34] [35] [36]
+
+LaTeX Warning: Reference `higher-linear-algebra' on page 37 undefined on input 
+line 1274.
+
+[37] (./figures/S-matrix.tikz) [38] [39] [40] (./figures/non-degeneracy.tikz)
+Overfull \hbox (31.23927pt too wide) detected at line 1481
 \U/msb/m/n/10 C\OT1/lmr/m/n/10 [\OMS/lmsy/m/n/10 L\OT1/lmr/m/n/10 ][] = [] \OML
 /lmm/m/it/10 :
  []
 
-[38] (./figures/verlinde-algebra-proof.tikz) (./figures/circles-split.tikz)
-[39] (./figures/degenerate-braiding.tikz)
-(./figures/braiding-non-degeneracy.tikz) [40] (./figures/null-vector-proof.tikz
-) (./figures/null-vector-one.tikz) (./figures/null-vector-two.tikz) [41]
-[42] [43] (./figures/kirby-color-lemma.tikz) (./figures/kirby-color-second.tikz
-) [44] (./figures/modularity-proof.tikz)
-(./figures/modularity-computation-1.tikz) [45] [46] [47] [48] [49]
-Overfull \hbox (3.04813pt too wide) in paragraph at lines 1742--1743
-[]\OT1/lmr/bx/n/10 Proposition 1.103. []\OT1/lmr/m/it/10 The Drin-feld cen-ter 
+[41] (./figures/verlinde-algebra-proof.tikz) (./figures/circles-split.tikz)
+[42] (./figures/degenerate-braiding.tikz)
+(./figures/braiding-non-degeneracy.tikz) (./figures/null-vector-proof.tikz)
+(./figures/null-vector-one.tikz) [43] (./figures/null-vector-two.tikz) [44]
+[45] [46] (./figures/kirby-color-lemma.tikz) (./figures/kirby-color-second.tikz
+) [47] (./figures/modularity-proof.tikz)
+(./figures/modularity-computation-1.tikz) [48] [49] [50] [51] [52]
+Overfull \hbox (3.04813pt too wide) in paragraph at lines 1940--1941
+[]\OT1/lmr/bx/n/10 Proposition 1.116. []\OT1/lmr/m/it/10 The Drin-feld cen-ter 
 $\OMS/lmsy/m/n/10 Z\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 C\OT1/lmr/m/n/10 )$\OT1/lm
 r/m/it/10 of a monoidal cat-e-gory $\OMS/lmsy/m/n/10 C$ \OT1/lmr/m/it/10 is a b
 raided monoidal
  []
 
 LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 1745.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 1943.
 
-[50] [51] [52] [53] [54]
-Underfull \hbox (badness 10000) in paragraph at lines 1919--1920
+[53] [54] [55] [56] [57]
+Underfull \hbox (badness 10000) in paragraph at lines 2117--2118
 
  []
 
-[55]) [56] (./Algebraic-TQC.bbl [57
+[58]) [59] (./Algebraic-TQC.bbl [60
 
-] [58] [59] [60]
-Underfull \hbox (badness 1253) in paragraph at lines 376--380
-\OT1/lmr/m/n/10 u-lar iso-topes and ex-plains their topo-log-i-cal in-vari-ants
-.  \OT1/lmr/m/it/10 arXiv preprint
- []
-
-[61] [62] [63] [64] [65] [66] [67] [68] [69]) [70] (./Algebraic-TQC.aux
+] [61]) [62] (./Algebraic-TQC.aux
 (./chapters/0-preface/ch0.aux) (./chapters/5-MTCs/ch5.aux))
 
 LaTeX Warning: There were undefined references.
@@ -1004,13 +1031,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 19648 strings out of 492649
- 421277 string characters out of 6129622
- 534548 words of memory out of 5000000
- 22916 multiletter control sequences out of 15000+600000
- 93989 words of font info for 81 fonts, out of 8000000 for 9000
+ 19597 strings out of 492649
+ 420864 string characters out of 6129622
+ 530675 words of memory out of 5000000
+ 22842 multiletter control sequences out of 15000+600000
+ 81311 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,19n,86p,1287b,1044s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,19n,86p,1287b,1046s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
 texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/20
 18/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2018/texmf-d
@@ -1020,31 +1047,30 @@ s/type1/public/amsfonts/euler/eurm10.pfb></usr/local/texlive/2018/texmf-dist/fo
 nts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
 public/lm/lmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/
 lmbx7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><
-/usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/loca
-l/texlive/2018/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/
-2018/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2018/texmf
--dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2018/texmf-dist/font
-s/type1/public/lm/lmmi5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pub
-lic/lm/lmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr1
-0.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr
-/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texl
-ive/2018/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2018/tex
-mf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2018/texmf-dist/font
-s/type1/public/lm/lmr9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publ
-ic/lm/lmri10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmri
-12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmri7.pfb></us
-r/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/te
-xlive/2018/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2018/
-texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2018/texmf-dist/
-fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2018/texmf-d
-ist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2018/texm
-f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/
-texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb></usr/local/texlive/20
-18/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on Algebraic-TQC.pdf (70 pages, 7427886 bytes).
+/usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local
+/texlive/2018/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2
+018/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2018/texmf-
+dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2018/texmf-dist/fonts/
+type1/public/lm/lmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
+c/lm/lmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr12.
+pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/l
+ocal/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive
+/2018/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2018/texmf-
+dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2018/texmf-dist/fonts/t
+ype1/public/lm/lmri10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
+c/lm/lmri12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmri7
+.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr
+/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2018/te
+xmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/201
+8/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/
+2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb></usr/local/t
+exlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on Algebraic-TQC.pdf (62 pages, 7404721 bytes).
 PDF statistics:
- 358 PDF objects out of 1000 (max. 8388607)
- 251 compressed objects within 3 object streams
+ 329 PDF objects out of 1000 (max. 8388607)
+ 231 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -21,14 +21,14 @@
 		\node [style=none] (18) at (2.75, 1) {$A_3$};
 		\node [style=none] (19) at (0.575, 0.1) {$A_1$};
 		\node [style=none] (20) at (1.975, 0.1) {$A_2$};
-		\node [style=none] (21) at (0.75, 1.375) {};
+		\node [style=none] (21) at (0.75, 1.125) {};
 		\node [style=none] (22) at (0.75, 0.5) {};
 		\node [style=none] (23) at (1.75, 0.5) {};
-		\node [style=none] (24) at (1.75, 1.375) {};
-		\node [style=none] (25) at (1.25, 0.925) {$\mu^\dagger$};
-		\node [style=none] (26) at (1.25, 1.375) {};
-		\node [style=none] (27) at (1.25, 1.85) {};
-		\node [style=none] (39) at (1.25, 2.25) {$B$};
+		\node [style=none] (24) at (1.75, 1.125) {};
+		\node [style=none] (25) at (1.25, 0.775) {$\mu$};
+		\node [style=none] (26) at (1.25, 1.125) {};
+		\node [style=none] (27) at (1.25, 1.6) {};
+		\node [style=none] (39) at (1.25, 2) {$B$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (1.center) to (2.center);

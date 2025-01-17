@@ -150,22 +150,7 @@ for all $B\in \cC$, then $A\cong \bone$.
 
 \subsubsection{Anyons in modular categories}
 
-Modular categories are supposed to be theories of anyons in topological order. So, now that we have the definition of modular category, it is natural to ask: what do anyons mathematically correspond to, in modular categories? The answer lies within the condition in a fusion category $\cC$ that there is an equivalence $\cC\cong \Vec_\bC^n$ as $\bC$-linear categories. We explore the importance of this condition.
-
-\begin{rem}
-Suppose we are given an object $V=(V_1,V_2...V_n)\in \Vec_\bC^n$. For all $1\leq i\leq n$, let  $\bC_i\in \Vec_\bC^n$ denote the object which has dimension zero in every index $j\neq i$ and is equal to $\bC$ in index $i$. We observe the isomorphism
-
-\begin{align*}
-V& \cong \bigoplus_{i=1}^n (0... V_i ... 0)\\
-& \cong \bigoplus_{i=1}^n (0... \bC^{\dim (V_i)}.. 0)\\
-& \cong \bigoplus_{i=1}^n \dim(V_i)\cdot \bC_i
-\end{align*}
-
-where $\dim(V_i)\cdot (\bC_i)=\bC_i\oplus \bC_i...\oplus \bC_i$, $\dim(V_i)$ many times. This computation shows that any object in $\Vec_\bC^n$ can be decomposed into irriducible components $\bC_i$. These objects $\bC_i$ are in a real sense the building blocks of $\Vec_\bC^n$. In the language of definition \ref{simple-object-definition}, the objects $\cC_i$ are the simple objects of $\Vec_{\bC}^n$.
-\end{rem}
-
-\begin{defn}\label{simple-object-definition} A {\em simple object} $A$ in a fusion category $\cC$ is an object which has no direct sum decomposition into smaller objects. That is, $A\ncong B\oplus C$ for any non-zero objects $B,C\in \cC$ where $\oplus$ denotes the biproduct in $\cC$.
-\end{defn}
+Modular categories are supposed to be theories of anyons in topological order. So, now that we have the definition of modular category, it is natural to ask: what do anyons mathematically correspond to, in modular categories? The answer lies within the condition in a fusion category $\cC$ that there is an equivalence $\cC\cong \Vec_\bC^n$ as $\bC$-linear categories. We saw in proposition [ref] that every object $A\in \cC$ is isomorphic to a direct sum of {\em simple objects}, objects which cannot be written as the direct sum of two nonzero objects. Alternatively, $A\in \cC$ is simple if and only if $\End(A)\cong \bC$.
 
 \begin{dict}\label{anyon-types-definition}
 Isomorphism classes of simple objects in $\cC$ correspond to anyon types in a topological phase described by the MTC $\cC$.
@@ -174,31 +159,11 @@ Isomorphism classes of simple objects in $\cC$ correspond to anyon types in a to
 \begin{defn} For all fusion categories $\cC$, we define $\cL(\cC)$ (or simple $\cL$ when $\cC$ is clear from context) to the the set of isomorphism classes of simple objects. By entry \ref{anyon-types-definition} of the physics-math direction, elements of $\cL(\cC)$ correspond bijectively to anyon types in any topological phase described by $\cC$.
 \end{defn}
 
-\begin{prop}\label{fusion-category-simples} Let $\cC$ be a fusion category. The biproduct of any two elements in $\cC$ exists, and $\cC$ has a zero object. The set $\cL=\cL(\cC)$ is finite. Choose an object $X\in \cC$. There exist unique nonnegative integers $c_{[A]}$, $[A]\in \cL$ such that 
+We now restate the results of proposition \ref{higher-linear-algebra} in our current setting for a fusion category $\cC$.  For every object $X\in \cC$, there exists unique nonnegative integers $c_{[A]}$, $[A]\in \cL$, such that
 
-$$X\cong \bigoplus_{[A]\in \cL}N_{[A]}\cdot A.$$
-\end{prop}
-\begin{proof} We first show that $\cC$ has biproducts. Let $F:\cC\to \Vec_{\bC}^n$, $G:\Vec_{\bC}^n\to \cC$ be a pair of functors which induces an equivalence of categories, for some $n\geq 1$ Let $A,B\in \cC$ be objects. Since $G$ and $F$ are fully faithfull, the universal property of the direct sum $F(A)\oplus F(B)$ guarantees that $G(F(A)\oplus F(B))$ will be a direct sum of $G(F(A))$ and $G(F(B))$. Since $G(F(A))\cong A$ and $G(F(B))\cong B$, we conclude that $\cC$ has biproducts. The object $G(0)$ is a zero object for $\cC$.
+$$X\cong \bigoplus_{[A]\in \cL}c_{[A]}\cdot A.$$
 
-We now prove that $\cC$ has finitely many isomorphism classes of simple objects. It is clear that an object $A\in \cC$ is simple if and only fi $F(A)\in \Vec_{\bC}^n$ is simple. Thus, since $G$ serves as an inverse, $F$ establishes a bijection between isomorphism classes of simple obejcts in $\cC$ and isomorphism classes of simple objects in $\Vec_{\bC}^n$. Every simple obejct in $\Vec_{\bC}^n$ will be isomorphic to $\bC_i$ for some $1\leq i \leq n$. Hence, there are $n$ simple objects in $\Vec_{\bC}^n$. Hence, there are $n$ simple objects in $\cC$, which is finite. The unique direct sum decomposition is clearly true in $\Vec_{\bC}^n$. It is immediate that it passes to a unique direct sum decomposition in $\cC$.
-\end{proof}
-
-\begin{prop}[Schur's Lemma] Let $\cC$ be a fusion category. An object $A\in \cC$ is simple if and only if its endomorphism ring $\End(A)$ is one-dimensional. Additionally, if $A,B\in \cC$ are nonisomorphic simple objects then $\Hom(A,B)=0$.
-\end{prop}
-\begin{proof} Let $F:\cC\to \Vec_{\bC}^n$, $G:\Vec_{\bC}^n\to \cC$ be a pair of $\bC$-linear functors which establishes an equivalence between $\cC$ and $\Vec_{\bC}^n$ as $\bC$-linear categories. The simple objects in $\Vec_{\bC}^n$ are all isomorphic to $\bC_i$ for some $1\leq i \leq n$. We compute that
-
-$$\dim\left(\Hom_{\Vec_{\bC}^n}\left(\bigoplus_{i=1}^n n_i \bC_i , \bigoplus_{i=1}^n m_i \bC_i\right)\right)=\sum_{i=1}^n n_im_i.$$
-
-As a corrolary of this formula, we find that if $A=\bigoplus_{i=1}^n n_i\bC_i$ then $\dim(\End_{\Vec_{\bC}^n}(A))=\sum_{i=1}^nn_i^2$. Clearly, this dimension is equal to one if $A=\bC_i$ for some $1\leq i\leq n$, and is greater than one otherwise. As a second corrolary, we compute that $\Hom(\bC_i,\bC_j)=0$ whenever $i\neq j$. The functor $G$ induces a bijection between isomorphism classes of simple objects in $\Vec_{\bC}^n$ and isomorphism classes of simple objects in $\Vec_{\bC}^n$, and it induces vector space isomorphisms on hom spaces. This means that the results for $\Vec_{\bC}^n$ translate to the desired result on $\cC$.
-\end{proof}
-
-\begin{rem}
-Schur's lemma is a first verification that simple objects are a good choice of mathematical characterization of anyons. If $A,B$ are distinct anyon types, then there should not be any physical process which goes from one to another. There is no physical mechanism for locally turning one anyon type into another. This is captured by the formula $\Hom(A,B)=0$. Similarly, given an anyon $A$, there is no nontrivial action that can be locally performed on $A$. This comes from the fact that information is topologically protected, and thus cannot be changed by acting on a single particle - topological information processing requires global braiding between multiple particles. This is encoded in the fact that $\Hom(A,A)\cong \bC$ is one dimensional and hence consists only of trivial phase gates.
-\end{rem}
-
-\begin{rem}
-As an application of Schur's lemma, we can observe that the monoidal unit $\bone$ is a simple object in every fusion category. By our physics-math dictionary, this means that $\bone$ corresponds to an anyon type. This anyon $\bone$ is the trivial ``no-anyon" type, corresponding to a quasiparticle which happens to be the same as the homogenous bulk.
-\end{rem}
+We assumed in the definition of a fusion category that $\End_\cC(\bone)\cong \cC$. Thus, the monoidal unit is a simple object in every fusion category. By our physics-math dictionary, this means that $\bone$ corresponds to an anyon type. This anyon $\bone$ is the trivial ``no-anyon" type, corresponding to a quasiparticle which happens to be the same as the homogenous bulk.
 
 \begin{dict}\label{vacuum-anyon-definition} The monodial unit $\bone $ corresponds to the trivial anyon type, which is the same as the homogenous bulk (sometimes called the  {\em vaccuum} anyon type).
 \end{dict}
@@ -442,6 +407,7 @@ These two (unnormalized) states have the same anyon configuration. However, they
 \end{ex}
 
 \subsubsection{Topological charge measurement}
+\label{topological-charge-measurement}
 
 In any reasonable physical theory, one needs to talk about measurements and observables. For the algebraic theory of topological quantum information, the only relevant type of measurement is a {\em topological charge measurement} \cite{bonderson2021measuring}. This is the measurement of the overall anyon type (or {\em topological charge}) of a collection of anyons. When the topological charge of a pair of anyons in a state $\ket{\psi}$ is measured, $\ket{\psi}$ will collapse onto a new state $\ket{\psi'}$ for which that pair of anyons now has a single well-defined charge as shown in equation \ref{measuring-a-pair}. That is, the two anyons will fuse together.
 
@@ -455,15 +421,15 @@ As a first step towards an algebraic understanding of topological charge measure
 \ket{\psi}=\ket{\tikzfig{definite-charge-and-channel}}
 \end{equation}
 
-Where $A_1...A_n$, $B$ are simple objects,  and $\mu:B\to A_1\otimes A_2$ is normalized so that $\Braket{\mu | \mu}=1$. If we postcompose $\ket{\psi}$ with the map $\mu^\dagger \otimes \id_{A_3\otimes...\otimes A_n}$, the result will be equal to
+Where $A_1...A_n$, $B$ are simple objects,  and $\mu:A_1\otimes A_2\to B$ is normalized so that $\Braket{\mu | \mu}=1$. If we postcompose $\ket{\psi}$ with the map $\mu \otimes \id_{A_3\otimes...\otimes A_n}$, the result will be equal to
 
 \begin{equation}\label{definite-charge-and-channel}
 \mu^\dagger \ket{\psi}=\ket{\tikzfig{definite-charge-and-channel-2}}.
 \end{equation}
 
-This means that $\mu$ gives a physical process whereby $\ket{\psi}$ can transform to a state with an anyon of type $B$ where $A_1,A_2$ used to be. Moreover, if we postcompose $\ket{\psi}$ with $\eta\otimes \id_{A_3\otimes ... \otimes A_n}$ with any map such that $\eta\circ \mu=0$ so $\eta \ket{\psi}$ will be zero (and thus an invalid quantum state). In particular, since there are no maps $B\to C$ for non-isomorphism simple objects $B,C$, we find that there is no physical process on the first two anyons which can be applied to $\ket{\psi}$ which results in a state with charge $C\not\cong B$ where $A_1,A_2$ used to be. This motivates the following mathematical-physical correspondance:
+This means that $\mu$ gives a physical process whereby $\ket{\psi}$ can transform to a state with an anyon of type $B$ where $A_1,A_2$ used to be. Moreover, if we postcompose $\ket{\psi}$ with $\eta\otimes \id_{A_3\otimes ... \otimes A_n}$ with any map such that $\eta\circ \mu^\dagger=0$ so $\eta \ket{\psi}$ will be zero (and thus an invalid quantum state). In particular, since there are no maps $B\to C$ for non-isomorphism simple objects $B,C$, we find that there is no physical process on the first two anyons which can be applied to $\ket{\psi}$ which results in a state with charge $C\not\cong B$ where $A_1,A_2$ used to be. This motivates the following mathematical-physical correspondance:
 
-\begin{dict} Given a state $\ket{\psi}$ with anyon content $A_1... A_n$, $B_1... B_m$ we say that the anyons $A_1...A_n$ have overall topological charge $C$ with fusion channel $\mu^\dagger:A_1\otimes A_2... \otimes A_n\to C$ if there exists $\alpha$ such that $\ket{\psi}$ can be expressed as follows:
+\begin{dict} Given a state $\ket{\psi}$ with anyon content $A_1... A_n$, $B_1... B_m$ we say that the anyons $A_1...A_n$ have overall topological charge $C$ with fusion channel $\mu:A_1\otimes A_2... \otimes A_n\to C$ if there exists $\alpha$ such that $\ket{\psi}$ can be expressed as follows:
 
 \begin{equation}\label{definite-charge-and-channel-3}
 \ket{\psi}=\ket{\tikzfig{definite-charge-and-channel-3}}
@@ -474,20 +440,42 @@ If $\ket{\psi}$ is a superposition of states the form \ref{definite-charge-and-c
 
 \begin{prop}\label{resolution-of-id-prop} Let $A,B\in \cC$ be objects in a modular category. We have that
 
-\begin{equation}
+\begin{equation}\label{resolution-of-id}
 \tikzfig{resolution-of-id}
 \end{equation}
 
-where $[C]$ runs over isomorphism classes of simple objects in $\cC$, and $\mu$ runs over an orthonomral basis of $\Hom(C,A\otimes B)$ in the isotopy normalization.
+where $[C]$ runs over isomorphism classes of simple objects in $\cC$, and $\mu$ runs over any orthonomral basis of $\Hom(A\otimes B,C)$.
 \end{prop}
-\begin{proof} \Note{Both maps are the same when precomposed with $\eta'$ and postcomposed with $\eta^\dagger$ for any $\eta',\eta^\dagger$ in the orthonormal basis. Since it is a basis, we can take linear combinations to conclude that they are the same precomposed and postcomposed with any map, and thus they are the same map. }
+\begin{proof} Let $f$ denote the morphism on the right hand side of equation \ref{resolution-of-id}. Choose any $[D]\in \cL$, and fusion channels $\eta,\eta':A\otimes B\to D$ in the same orthonormal basis as in equation \ref{resolution-of-id}. We have that
+
+$$\eta'\circ f \circ \eta^\dagger=\tikzfig{resolution-of-id-proof}.$$
+
+Seeing as there are no non-zero maps $C\to D$ for $C\not\cong D$, the only terms that survive are the ones with $C\cong D$. Moreover, since $\{\mu\}$ is chosen to be an orthonormal basis, the only term which survive are the one with $\mu=\eta=\eta'$. Thus,
+
+$$\eta'\circ f \circ \eta^\dagger=
+\begin{cases}
+\id_D & \eta=\eta'\\
+0 & \eta\neq \eta'.
+\end{cases}$$
+
+Similarly, the orthonormality of the basis $\{\mu\}$ gives
+
+$$\eta' \circ \eta^\dagger=
+\begin{cases}
+\id_D & \eta=\eta'\\
+0 & \eta\neq \eta'.
+\end{cases}$$
+
+Thus, $\eta'\circ f \circ \eta^\dagger=\eta'\circ \id_{A\otimes B} \circ \eta^\dagger$. Since $\eta$ and $\eta'$ run over bases of maps $A\otimes B\to D$,  we can take linear combinations and sums to find that $f$ and $\id_{A\otimes B}$ are equal when precomposed or postcomposed with any map. Thus, we find that $f=\id_{A\otimes B}$ as desired.
 \end{proof}
 
 \begin{cor}\label{resolution-of-id-cor} Let $\cC$ be a modular category.  For all simple objects $A_1, A_2... A_n\in \cC$, we have that 
 
-\Note{Generalized version of proposition \ref{resolution-of-id-prop}.}
+\begin{equation}
+\tikzfig{resolution-of-id-big}
+\end{equation}
 \end{cor}
-\begin{proof} \Note{This is a straightforward proof by induction}.
+\begin{proof} The proof follows be precomposing and postcomposing with fusion channels, completely analagously to the proof of proposition \ref{resolution-of-id-prop}.
 \end{proof}
 
 \begin{rem} Corollary \ref{resolution-of-id-cor} tells us every state $\ket{\psi}$ with anyon content $A_1...A_n$, $B_1...B_m$ can be made into a superposition of states with defininte overall charge and fusion channel of $A_1...A_n$. The general principles of quantum mechanics tell us how to measure
@@ -515,7 +503,7 @@ A topological charge measurement of the anyons $A_1...A_n$ without respect to an
 \begin{defn} Let $\cC$ be a modular category. We define the {\em quantum dimension} of a simple object $A\in \cC$ to be $d_A=\tr(\id_A)$.
 \end{defn}
 
-\begin{rem} We will discuss quantum dimensions in more detail in subsection [ref]. \Note{is there anything I need to recall now? Probably that they are non-zero, and positive when $\cC$ is unitary.}
+\begin{rem} We will discuss quantum dimensions in more detail in subsection [ref]. For now, it suffices to recall from proposition [ref] that quantum dimensions are positive (in particular, nonzero) for unitary modular categories.
 \end{rem}
 
 \begin{ex} We give a basic and fundamental example of topological charge measurement. Suppose that we create adjacent particle/antiparticle pairs, $(A^*\otimes A)$ and $(B\otimes B^*)$. What is the probability that we measure the charge $C$ when the middle anyons $A,B$ are fused? When we create the pairs of anyons $(A^*, A)$, $(B,B*)$, the state is represented algebraically as
@@ -631,7 +619,7 @@ Despite corollary \ref{double-dual-noncanon-iso}, we {\em cannot} conclude that 
 The first structure to define in the theory of modular categories is the {\em trace}. Let $\cC$ be a spherical fusion category. Given any object $A\in \cC$ and any endomorphism $f:A\to A$, we define the {\em trace of $f$} by the following formula:
 
 \begin{equation*}
-\tikzfig{trace}
+\tr(f)=\tikzfig{trace}
 \end{equation*}
 
 Initially, the trace is a morphism,  $\tr(f):\bone\to\bone$. However, we will choose to think of the trace of a morphism as a {\em complex number}, $\tr(f)\in \bC$. This can be done because the definition of a fusion category $\End(\bone)\cong \bC$. This isomorphism can be made canonical by identifying an endomorphism $g\in \End(\bone)$ with the unique $\lambda\in \bC$ such that $g = \lambda \cdot \id_{\bone}$.
@@ -640,7 +628,7 @@ Initially, the trace is a morphism,  $\tr(f):\bone\to\bone$. However, we will ch
 The trace is used mainly as a tool for linearization. Morphisms and objects are hard to describe, but the trace is a complex number.
 \end{rem}
 
-\begin{prop} Let $\cC$ be a spherical fusion category. For all $A,B\in \cC$, $f\in \End(A)$ the following claims are all true:
+\begin{prop}\label{trace-facts} Let $\cC$ be a spherical fusion category. For all $A,B\in \cC$, $f\in \End(A)$ the following claims are all true:
 
 \begin{enumerate}
 \item $\tr: \End(A)\to \bC$ is a linear map of vector spaces,
@@ -659,7 +647,7 @@ The trace is used mainly as a tool for linearization. Morphisms and objects are 
 
 \item This is a straightforward computation.
 
-\item \Note{do proof. This uses facts about the direct sum we haven't established yet.}
+\item This is a special case of the proof strategy used in corollary \ref{trace-computation}.
 
 \item We compute as follows:
 
@@ -673,14 +661,19 @@ The trace is used mainly as a tool for linearization. Morphisms and objects are 
 \tikzfig{composition-commutes}
 \end{equation*}
 
-\item \Note{do the proof. It's not very hard, but involves a diagram and uses pivotality of the functor.}
+\item Treating the trace as a morphism $\bone_{\cC}\to\bone_{\cC}$, we find
 
+\begin{align*}
+F(\tr_{\cC}(f))=F(\tikzfig{trace})=\tikzfig{pivotal-functor-trace}.
+\end{align*}
+
+Here, we used that $F$ sends evaluation/coevaluation maps to evaluation/coevaluation maps, with compatible isomorphisms $A\cong A^*$ between the left/right rigid structures.
 \end{enumerate}
 
 This completes the proof.
 \end{proof}
 
-\begin{cor} Let $f:A\to A$ be an endomorphism in a fusion category $\cC$. Fix a decomposition $A\cong \bigoplus_{i\in I}A_i$ of $A$ into simple objects $A_i$. Moreover, we take the decomposition such that if $A_i\cong A_j$ then $A_i=A_j$. We can decompose
+\begin{cor}\label{trace-computation} Let $f:A\to A$ be an endomorphism in a fusion category $\cC$. Fix a decomposition $A\cong \bigoplus_{i\in I}A_i$ of $A$ into simple objects $A_i$. Moreover, we take the decomposition such that if $A_i\cong A_j$ then $A_i=A_j$. We can decompose
 
 $$\Hom(A,A)\cong \Hom(\bigoplus_{i\in I} A_i,\bigoplus_{i\in I}A_i)=\bigoplus_{i\in I, j\in I}\Hom(A_i,A_j).$$
 
@@ -689,23 +682,19 @@ Let $M$ be the matrix whose collums and rows are labeled by $I$, and whose $(i,j
 $$\tr_{\cC}(f)=\tr_{\Vec}(M).$$
 
 \end{cor}
-\begin{proof} Suppose that $A=A_0\oplus A_1$ is the direct sum of two objects, not neccecarily simple. By proposition [ref] we have a canonical decomposition
+\begin{proof} Suppose that $A=A_0\oplus A_1$ is the direct sum of two objects, not neccecarily simple. By proposition \ref{rigidity-functorial} we have a canonical decomposition
 
 $$(A_0\oplus A_1)\otimes (A_0\oplus A_1)^*\cong (A_0\otimes A_0^*) \oplus (A_0\otimes A_1^*) \oplus (A_1\otimes A_0^{*})\oplus (A_1\otimes A_1^*).$$
 
 Suppose that $h:A\to A$ is an endomorphism. We can decompose $h=h_{A_0,A_0}+h_{A_0,A_1}+h_{A_1,A_0}+h_{A_0,A_1}$ as a sum of morphisms which restrict to maps $A_i\to A_j$. We find that $\coev_{A\oplus B}$ restricts to a map whose codomain is  $(A_0\otimes A_0^*) \oplus (A_1\otimes A_0)^*$ and similarly $\ev$ restricts to a map whose domain is $(A_0\otimes A_0^*) \oplus (A_1\otimes A_0)^*$, since $\coev_{A\oplus B}=\coev_{A}\oplus \coev_{B}$ and $\ev_{A\oplus B}=\ev_{A}\oplus \ev_{B}$.
 
-Hence, in the definition of trace, we find that the cross terms $h_{A_0,A_1}+h_{A_1,A_0}$ act by zero since they send the codomain of $\coev_{A\oplus B}$ to elements with no effect on the map $\ev_{A\oplus B}$. Moreover, we compute in this way that $\tr(h)=\tr(h_{A_0,A_0})+\tr(h_{A_1,A_1})$.
-
-In this way, the trace splits over direct sums and only picks out diagonal elements. Applying this result inductively reduces the proof to the case that $A$ is a simple object. This follows directly from the definition of quantum dimension.
+Hence, in the definition of trace, we find that the cross terms $h_{A_0,A_1}+h_{A_1,A_0}$ act by zero since they send the codomain of $\coev_{A\oplus B}$ to elements with no effect on the map $\ev_{A\oplus B}$. Moreover, we compute in this way that $\tr(h)=\tr(h_{A_0,A_0})+\tr(h_{A_1,A_1})$. In this way, the trace splits over direct sums and only picks out diagonal elements. Applying this result inductively reduces the proof to the case that $A$ is a simple object. This follows directly from the definition of quantum dimension.
 \end{proof}
 
 
 \subsubsection{Quantum dimension and Frobenius-Perron dimension}
 
-\Note{ include something about global quantum dimension $\cD$.}
-
-Our next tool to discuss is the {\em quantum dimension}. We have already seen quantum dimensions appear in subsection [ref]. We recall that given any spherical fusion category $\cC$ and any simple object $A\in \cC$, we the quantum dimension of $A$ by the formula
+Our next tool to discuss is the {\em quantum dimension}. We have already seen quantum dimensions appear in subsection \ref{topological-charge-measurement}. We recall that given any spherical fusion category $\cC$ and any simple object $A\in \cC$, we the quantum dimension of $A$ by the formula
 
 \begin{equation*}
 \tikzfig{quantum-dimension}
@@ -713,7 +702,7 @@ Our next tool to discuss is the {\em quantum dimension}. We have already seen qu
 
 As usual, we identitfy $d_A$ with a complex number via the canonical isomorphism $\End(\bone)\cong \bC$. The quantum dimension is clearly equal to the trace of the identity map on $A$, $d_A=\tr(\id_A)$. The first properties of quantum dimension follow from our general analysis of trace:
 
-\begin{prop} For every spherical fusion category $\cC$ and any objects $A,B\in \cC$, we have the following formulas:
+\begin{prop}\label{quantum-dim-basics} For every spherical fusion category $\cC$ and any objects $A,B\in \cC$, we have the following formulas:
 
 \begin{enumerate}[(i)]
 \item If $A\cong B$, then $d_A=d_B$;
@@ -724,12 +713,12 @@ As usual, we identitfy $d_A$ with a complex number via the canonical isomorphism
 \end{prop}
 \begin{proof}$\,$
 \begin{enumerate}[(i)]
-\item Let $f:A\cong B$ be an isomorphism. Using Proposition [ref] we find
+\item Let $f:A\cong B$ be an isomorphism. Using proposition \ref{trace-facts} we find
 
 $$d_A=\tr(\id_{A})=\tr(f^{-1}\circ f)=\tr(f\circ f^{-1})=\tr(\id_{B})=d_B.$$
 
-\item This follows from proposition [ref].
-\item From proposition [ref], we know that $A\otimes A^* \cong \bone \oplus X$ for some $X\in \cC$ which does not have any factors of $\bone$ in its direct sum decomposition. The map $\coev^R_A: \bone \to A\otimes A^*$ is thus a non-zero scalar times the inclusion $\bone \hookrightarrow{} \bone\oplus X$, and the map $\ev^L_A: A\otimes A^*\to \bone$ is a non-zer scalar times the projection $\bone \oplus X \xrightarrow{}\bone$. Since inclusion composed with projection is the identity, we find that $\ev^{L}_{A}\circ \coev^R_{A}$ is a non-zero scalar times the identity, as desired.
+\item This follows from proposition \ref{trace-facts}.
+\item From proposition \ref{dual-fusion-coefficients-cor}, we know that $A\otimes A^* \cong \bone \oplus X$ for some $X\in \cC$ which does not have any factors of $\bone$ in its direct sum decomposition. The map $\coev^R_A: \bone \to A\otimes A^*$ is thus a non-zero scalar times the inclusion $\bone \hookrightarrow{} \bone\oplus X$, and the map $\ev^L_A: A\otimes A^*\to \bone$ is a non-zer scalar times the projection $\bone \oplus X \xrightarrow{}\bone$. Since inclusion composed with projection is the identity, we find that $\ev^{L}_{A}\circ \coev^R_{A}$ is a non-zero scalar times the identity, as desired.
 \item \Note{There is reference to this fact in the MathOverflow question `Modular Tensor Categories: Reasoning behind the axioms"}
 \end{enumerate}
 \end{proof}
@@ -758,26 +747,53 @@ for all simple objects $A$.
 \end{enumerate}
 
 \end{prop}
-\begin{proof} From proposition [ref], we have an isomorphism
+\begin{proof} Taking the trace of the identity of both sides of the isomorphism
 
-$$A\otimes B \cong \bigoplus_{[C]\in \cL}N^{A,B}_{C}\cdot C$$
+$$A\otimes B \cong \bigoplus_{[C]\in \cL}N^{A,B}_{C}\cdot C,$$
 
-and thus
+we find that
 
 $$\tr(\id_{A\otimes B})=\tr(\id_{\bigoplus_{[C]\in \cL}N^{A,B}_{C}\cdot C}).$$
 
-Expanding using the rules in proposition [ref] gives part (i). Part (ii) follows from expanding the definition of the linear operator and applying part (i).
+Expanding using the rules in proposition \ref{dual-fusion-coefficients-cor} gives part (i). Part (ii) follows from expanding the definition of the linear operator and applying part (i).
 \end{proof}
 
-\begin{rem}
-Proposition \ref{quantum-dim-fusion-rule} tells us that $d_A$ is an eigenvalue of $N^A$. This gives a strong restriction on $d_A$. A first restriction is that $d_A$ is an algebraic number, since it is the root of the characteristic polynomial of $N^A$.
-\end{rem}
+\begin{defn} For every spherical fusion category $\cC$, we define the {\em global quantum dimension} $\cD=\cD_{\cC}$ of $\cC$ by
 
-\begin{rem}
-The question is whether or not the quantum dimensions are {\em positive} real numbers. We recall that we defined a unitarizable spherical fusion category to be one in which the quantum dimensions are all positive. It is at this point that this becomes relevant. In particular, if $\cC$ is unitarizable then its quantum dimensions are eigenvalues of $N^A$, and their corresponding eigenvector $\bold{d}$ has positive real entries.\Note{Not sure how much of this stuff I will have already said before.}
-\end{rem}
+\begin{equation}\label{global-quantum-dim}
+\cD^2=\sum_{[A]\in\cL}d_{A}^2.
+\end{equation}
 
-\begin{thrm}[Frobenius-Perron theorem, \cite{etingof2016tensor}] Let $B$ be a square matrix with nonnegative real entries.
+Since $d_A\in \bR$ by proposition \ref{quantum-dim-basics}, $\cD^2\geq 0$, so taking $\cD$ to be the positive square root of the right hand side in equation \ref{global-quantum-dim} gives an unambiguous definition of $\cD$.
+\end{defn}
+
+\begin{prop}\label{global-dim-prop} Let $\cC$ be a spherical fusion category. For all $C\in \cC$, we have that
+
+$$d_C \cD^2=\sum_{[A],[B]\in \cL}d_A d_B N^{A,B}_C.$$
+\end{prop}
+\begin{proof} From proposition \ref{quantum-dim-fusion-rule}, we have that
+
+$$\sum_{A,B\in \cL}d_A d_B N^{A,B}_C=\sum_{[A],[B],[D]\in \cL}d_D N^{A,B}_D N^{A,B}_C.$$
+
+Now, we observe that for all $A,C\in \cL$,
+
+\begin{align*}
+A\otimes (C\otimes A^*)&\cong \sum_{[B]\in \cL}N^{C,A^*}_{B} A\otimes B\\
+&\cong \sum_{[B],[D]\in\cL}N^{C,A^*}_{B} N^{A,B}_D D.
+\end{align*}
+
+Taking the trace of $\id_{A\otimes C\otimes A^*}$, we thus find that
+
+$$d_{A}d_{C}d_{A^*}=\sum_{[B],[D]}N^{C,A^*}_{B}N^{A,B}_{D}d_D.$$
+
+Now, proposition \ref{quantum-dim-basics} tells us $d_{A^*}=d_A$, and proposition \ref{duality-fusion-coofs-prop} tells us that $N^{C,A^*}_B=N^{A,B}_C$. Thus, we find that
+
+$$\sum_{[A],[B],[D]\in \cL}d_D N^{A,B}_D N^{A,B}_C=\sum_{A}d_A^2d_C=d_C\cD^2$$
+
+as desired.
+\end{proof}
+
+\begin{thrm}[Frobenius-Perron theorem, \cite{etingof2016tensor}]\label{frobenius-perron} Let $B$ be a square matrix with nonnegative real entries.
 
 \begin{enumerate}[(i)]
 \item $B$ has a non-negative real eigenvalue. The largest non-negative real eigenvalue $\lambda(B)$ of $B$ dominates the absolute values of all other eigenvalues $\mu$ of $B$: $|\mu|\leq \lambda(B)$. Moreover, there is an eigenvector of B with non-negative entries
@@ -788,11 +804,9 @@ positive entries, then the corresponding eigenvalue is $\lambda(B)$.
 \end{enumerate}
 \end{thrm}
 
-\begin{rem}
+\begin{defn}
 We call the largest positive real eigenvalue of a matrix its {\em Frobenius-Perron eigenvalue}.
-\end{rem}
-
-\Note{Not sure what direction I should take for statements about unitary fusion categories like corollary \ref{unitarizable-frobenius-perron}. Should I state them for unitary fusion categories, or for unitarizable fusion categories, which have less baggage (I can define a unitarizable fusion category to be one with positive quantum dimensions, and then prove that that a fusion category admits a unitary structure if and only if it is unitarizable).}
+\end{defn}
 
 \begin{cor}\label{unitarizable-frobenius-perron} Let $\cC$ be a unitarizable spherical fusion category. Let $A\in \cC$ be a simple object. The quantum dimension $d_A$ is equal to the Frobenius-Perron eigenvalue of $N^A$.
 \end{cor}
@@ -807,6 +821,19 @@ $$\FPdim(A)=(\text{Frobenius-Perron eigenvalue of $N^A$}).$$
 \begin{rem} In light of corollary \ref{unitarizable-frobenius-perron}, $\FPdim(A)=d_A$ whenever $\cC$ is unitarizable. However, in this chapter we will mostly work with spherical fusion categories with no conditions on unitarizability. Thus, the definition of $\FPdim(A)$ is not redundant and is at times useful. An additional observation is that the definition of quantum dimension strongly uses the spherical structure on $\cC$. However, the Frobenius-Perron dimension only uses the fusion coeffients, and those are well-defined in any fusion category. Hence, the Frobenius-Perron dimension also derives utility from being applicable in a broader set of situations than the quantum dimension.
 \end{rem}
 
+\begin{rem}
+Proposition \ref{quantum-dim-fusion-rule} tells us that $d_A$ is an eigenvalue of $N^A$. This gives a restriction on $d_A$. For instance, $d_A$ is always an algebraic number since it is the root of the characteristic polynomial of $N^A$. Frobenius-Perron dimensions are much more strongly restricted, by the general theory of matrices with nonnegative integer coefficients. In particular, Theorem 1.1.1 of \cite{goodman2012coxeter} says that that Frobenius-Perron eigenvalue of a matrix with nonnegative integer entries must be either greater or equal to $2$, or it will be equal to $2\cos(\pi/q)$ for some integer $q\geq 2$. Thus, we get that
+
+$$\FPdim(A)\geq 2 \qquad\text{or}\qquad\FPdim(A)=2\cos(\pi/q),\,\, q\geq 3.$$
+
+Writing out the first few values of $2\cos(\pi/q)$, we find the following possible values for $\FPdim(A)$:
+
+$$\FPdim(A)=1,\sqrt{2},\phi,\sqrt{3}, ...$$
+
+where $\phi=(1+\sqrt{5})/2$ is the golden ratio. 
+\end{rem}
+
+
 \begin{prop}\label{tensor-power-growth} Let $\cC$ be a fusion category, and let $A\in \cC$ be a simple object.
 
 \begin{enumerate}[(i)]
@@ -817,46 +844,92 @@ $$\FPdim(A)=(\text{Frobenius-Perron eigenvalue of $N^A$}).$$
 $$\FPdim(A)=\lim_{n\to\infty}(\text{\# of simple objects in the direct sum decomposition of $A^{\otimes n}$})^{1/n}.$$
 \end{enumerate}
 \end{prop}
-\begin{proof}\Note{I can do a good part of this when $\cC$ is unitarizable, so that its largest eigenvalue is strictly larger than all of the others. When there are multiple large eigenvalues all of the same size then the proofs go wrong. Is there something about the structure of $N^A$ I can exploit? Are these theorems true for fusion categories, or do I need to pass to unitarizable fusion categories?}
+\begin{proof}
+\begin{enumerate}[(i)]
+\item  We observe that if in $\bC[\cL]$
+
+$$\big(N^A\big)^n\ket{\bone}=\sum_{[B]\in \cL}n_B \ket{[B]},$$
+
+then $A^{\otimes n}\cong \bigoplus_{[B]\in \cL}n_B B$. So,
+
+$$\dim(\Hom(A^{\otimes n},A^{\otimes n}))=\sum_{[B]\in \cL}n_B^2= \norm{\big(N^A\big)^n\ket{\bone}}^2.$$
+
+We can now decompose $\ket{\bone}=\sum_i \bold{v}_i$ where $\bold{v}_i$ is in the $\lambda_i$ generalized eigenspace of $N^A$. We observe that element $\bold{v}_{i}$ with $\lambda_i=\FPdim(A)$ is non-zero, since 
+
+$$\bra{\bone} \sum_{[B]\in \cL} \FPdim(B)\ket{[B]}=1\neq 0.$$
+
+Now, 
+
+$$\norm{\big(N^A\big)^n\ket{\bone}}^2=\sum_{i}\norm{\big(N^A\big)^n\bold{v}_i}^2.$$
+
+This sum is dominated by the terms with $|\lambda_i|=\FPdim(A)$, which grow like $\FPdim(A)^{2n}$. Thus,
+
+$$\lim_{n\to \infty}\left(\norm{\big(N^A\big)^n\ket{\bone}}^2\right)^{1/2n}=\FPdim(A)$$
+
+as desired.
+
+\item \Note{This one is more subtle. There's some arguing I have to do. By hand, it seems like it uses an approximation theorem of Dirichlet. Perhaps there is a good reference for the general linear algebra result?}
+
+\item We observe that
+
+$$(\text{\# of simple objects in the direct sum decomposition of $A^{\otimes n}$})=\sum_{[B]\in\cL}\bra{[B]}\big(N^A\big)^n\ket{\bone}.$$
+
+Up to constant factors, this grows like $\sum_{[B]\in\cL}\FPdim(B)\bra{[B]}\big(N^A\big)^n\ket{\bone}$. This term is exactly
+
+$$\bra{\bold{w}}\big(N^A\big)^n\ket{\bone}$$
+
+where $\bold{w}=\sum_{[B]\in\cL}\FPdim(B)\ket{[B]}$ . This term is an eigenvector with Frobenius-Perron eigenvalue. Thus, its inner product with $\big(N^A\big)^n\ket{\bone}$ grows like $\FPdim(A)^n$ as desired.
+\end{enumerate}
 \end{proof}
 
 \begin{rem}
-Proposition \ref{tensor-power-growth} gives an alternate interpretation of the Frobenius-Perron dimension in terms of growth in tensor powers. This sort of alternate perspective of dimension applies to several types of objects outside the scope of tensor category theory \cite{coulembier2024growth}.
-
-This proposition can be interpreted as saying that the simple object $A$ has $\FPdim(A)$ internal degrees of freedom ``on average". Elements of the vector space $\Hom(\bone,A^{\otimes n})$ correspond to states in the system with $n$ anyons of type $A$ arranged in a line. If the internal configuration space of each anyon was $\FPdim(A)$-dimensional, then the overall dimension would be $\FPdim(A)^n$. By Proposition [ref], $\FPdim(A)^n$ is approximately $\Hom(\bone,A^{\otimes n})$ for large $n$. Hence, each anyon has approximately $\FPdim(A)$ internal degrees of freedom. Of course, $\FPdim(A)$ has no reason to be an integer! In the Fibonacci theory $\FPdim(\tau)=\phi=1.61...$. Frobenius-Perron dimension just gives an average amount for large values.
-
-\Note{re-do this explanation way better + add diagram for it.}
+Proposition \ref{tensor-power-growth} gives an alternate interpretation of the Frobenius-Perron dimension in terms of growth in tensor powers. This sort of alternate perspective of dimension applies to several types of objects outside the scope of tensor category theory \cite{coulembier2024growth}. This proposition can be interpreted as saying that the simple object $A$ has $\FPdim(A)$ internal degrees of freedom ``on average". Elements of the vector space $\Hom(\bone,A^{\otimes n})$ correspond to states in the system with $n$ anyons of type $A$ arranged in a line. If the internal configuration space of each anyon was $\FPdim(A)$-dimensional, then the overall dimension would be $\FPdim(A)^n$. By Proposition \ref{tensor-power-growth}, $\FPdim(A)^n$ is approximately $\Hom(\bone,A^{\otimes n})$ for large $n$. Hence, each anyon has approximately $\FPdim(A)$ internal degrees of freedom. Of course, $\FPdim(A)$ has no reason to be an integer! In the Fibonacci theory $\FPdim(\tau)=\phi=1.61...$. Frobenius-Perron dimension just gives an average amount for large values.
 \end{rem}
 
 \subsubsection{Twist}
 
 In this section we will discuss {\em twists}. The twist is a subtle concept, which we have not explicitely mentioned up to now. The idea is that anyons can {\em rotate in place}. Since the space of endomorphisms of an anyon is one dimensional, this rotation must act by a phase. This phase is physically relevant, and can be measured in experiment.
 
-For example, consider the $Y$-type on the toric code. It consists of the fusion of an $X$-type anyon and a $Z$-type anyon, as shown below:
+\begin{ex}
+Consider the $Y$-type anyon on the toric code. It consists of the fusion of an $X$-type anyon and a $Z$-type anyon, as shown below:
 
-\Note{ add figure of Y as a thick X and Z together; could be hard to draw these nice}
+\begin{equation}
+\tikzfig{thick-Y}
+\end{equation}
 
 Twisting $Y$ in place will correspond to twisting $X$ and $Z$ around each other. This twsiting thus results in a phase of $-1$. In general, we can imagine anyons as having some thickness to them. Anyons are not localized at points - they are localized at small regions. Twisting this region all the way around can be viewed visually as
 
-\Note{ twisted anyon.}
+\begin{equation}
+\tikzfig{ribbon}
+\end{equation}
 
-This is the twist. One way of working with the twist is to work with thickened diagrams, where strings are replaced with ribbons. While popular in some parts of the literature, we will continue to work with string diagrams for simplicity. The key observation is that the twist can be constructed using string diagramatic structures we already have as follows:
+This is the twist. 
+\end{ex}
 
-\Note{twist as a swirl diagram, compared with ribbon.}
+\begin{rem}
+One way of working with the twist is to work with thickened diagrams, where strings are replaced with ribbons. While popular in some parts of the literature, we will continue to work with string diagrams for simplicity. We observe that the twist can be constructed in an alternative form more amenable to our usual string diagrams:
 
-Hence, letting $\cC$ be a pre-modular fusion category, we {\em define} the twist $\theta_{A}$ of an object $A\in \cC$ to be
+\begin{equation}
+\tikzfig{ribbon-expanded}
+\end{equation}
+\end{rem}
+
+\begin{defn}
+Let $\cC$ be a pre-modular fusion category, we define the {\em twist} $\theta_{A}$ of an object $A\in \cC$ to be
 
 \begin{equation*}
 \tikzfig{graphical-twist}
 \end{equation*}
 
+\end{defn}
+
+\begin{rem}
 For every simple object $A\in \cC$, the map $\theta_A\in \End(A)$ can be identified with the unique complex number $\lambda$ such that $\theta_A=\lambda\cdot \id_A$. Equivilantly, we can identify $\theta_A$ with the complex number $\lambda=\tr(\theta_A)/d_A$ which gives the graphical formula
 
 \begin{equation*}
 \tikzfig{twist}
 \end{equation*}
-
-We can reinterpret all other twist-like maps in terms of $\theta$:
+\end{rem}
 
 \begin{lem} Let $\cC$ be a pre-modular fusion category. We have that
 
@@ -871,12 +944,8 @@ We can reinterpret all other twist-like maps in terms of $\theta$:
 \tikzfig{twist-equality}
 \end{equation*}
 
-When $A$ is simple, this follows from the spherical axiom. Taking the trace of both sides gives the same formula for $\theta_A$ as a figure-eight. Additionally, pushing through duals it is clear that both sides in the above proposed equality are natural isomorphisms. Natural isomorphisms are determined by their action on simple objects because they commute with direct sums. Hence, we conclude that the sides are equal for all objects.
-
-To get that the two reversed formulas are equal to $\theta_{A}^{-1}$, it suffices to compose with $\theta_A$ and use string-diagram manipulations to show that it results in the identity. This is a simple exercise and is left as an exercise to the reader.
+When $A$ is simple, this follows from the spherical axiom. Taking the trace of both sides gives the same formula for $\theta_A$ as a figure-eight. Additionally, pushing through duals it is clear that both sides in the above proposed equality are natural isomorphisms. Natural isomorphisms are determined by their action on simple objects because they commute with direct sums. Hence, we conclude that the sides are equal for all objects. To get that the two reversed formulas are equal to $\theta_{A}^{-1}$, it suffices to compose with $\theta_A$ and use string-diagram manipulations to show that it results in the identity. This is a simple exercise and is left as an exercise to the reader.
 \end{proof}
-
-We now characterize the key properties of the twist:
 
 \begin{prop} Let $\cC$ be a pre-modular fusion category. The twists $\theta$ induce a monoidal natural isomorphism $\id_{\cC}\xrightarrow{\sim}\id_{\cC}$. Additionally, $\theta$ satisfies the identity
 
@@ -890,7 +959,6 @@ for all $A,B\in \cC$, and $\theta_{A^*}=(\theta_A)^*$.
 \tikzfig{twist-naturality}
 \end{equation*}
 
-
 Finally, $\theta_{A^*}=(\theta_A)^*$ comes from the string-diagram manipulation and proposition [ref]:
 
 \begin{equation*}
@@ -900,15 +968,18 @@ Finally, $\theta_{A^*}=(\theta_A)^*$ comes from the string-diagram manipulation 
 as desired.
 \end{proof}
 
-The naive reason to care about twists is that they descrbe a physically relevant quantity and hence should be studied. The more subtle reason to care about twists is that they are the most efficient way of encoding the spherical structure on $\cC$. A spherical structure is first and foremost a pivotal structure, meaning that it has a right and left rigid structure which are compatible. Given a spherical structure one can always obtain twists. Conversely, given a right-rigid structure and twists one can recover the left-rigid structure via the formulas
+\begin{rem}
+
+The naive reason to care about twists is that they descrbe a physically relevant quantity and hence should be studied. The more subtle reason to care about twists is that they are an efficient way of encoding the spherical structure on $\cC$. A spherical structure is first and foremost a pivotal structure, meaning that it has a right and left rigid structure which are compatible. Given a spherical structure one can always obtain twists. Conversely, given a right-rigid structure and twists one can recover the left-rigid structure via the formulas
 
 \begin{equation*}
 \tikzfig{co-dual}
 \end{equation*}
 
-In this way, giving a spherical structure on a right-rigid monoidal category is the {\em same} as giving a twist structure. This is codified in the following lemma:
+In this way, giving a spherical structure on a right-rigid monoidal category is the {\em same} as giving a twist structure, as codified in proposition \ref{deligne-twisting-lemma}.
+\end{rem}
 
-\begin{prop}[Deligne's twisting lemma, \cite{yetter1992framed}] Let $\cC$ be a right-rigid braided monoidal category. Every pivotal structure on $\cC$ naturally gives a twist natural transformation $\theta:\id_\cC\to\id_\cC$. This assignment induces a canonical bijection between the set of pivotal structures on $\cC$ and the set of natural isomorphism $\theta:\id_\cC\to\id_\cC$ satisfying $\theta_{A\otimes B}=\beta_{B,A}\circ \beta_{A,B}\circ (\theta_A\otimes \theta_B)$ for all $A,B\in \cC$.
+\begin{prop}[Deligne's twisting lemma, \cite{yetter1992framed}]\label{deligne-twisting-lemma} Let $\cC$ be a right-rigid braided monoidal category. Every pivotal structure on $\cC$ naturally gives a twist natural transformation $\theta:\id_\cC\to\id_\cC$. This assignment induces a canonical bijection between the set of pivotal structures on $\cC$ and the set of natural isomorphism $\theta:\id_\cC\to\id_\cC$ satisfying $\theta_{A\otimes B}=\beta_{B,A}\circ \beta_{A,B}\circ (\theta_A\otimes \theta_B)$ for all $A,B\in \cC$.
 
 Moreover, restricting the assignment to the space of spherical structures on $\cC$ induces a canonical bijection between the set of spherical structures on $\cC$ and the set of isomorphisms $\theta:\id_\cC\to\id_\cC$ satisfying $\theta_{A\otimes B}=\beta_{B,A}\circ \beta_{A,B}\circ (\theta_A\otimes \theta_B)$ for all $A,B\in \cC$ and $\theta_{A^*}=(\theta_A)^*$.
 \end{prop}
@@ -943,33 +1014,25 @@ as desired.
 
 In this section, we will talk about functors, natural transformations, and equivalences between fusion, spherical, pre-modular, and modular categories. Given a topological order, there is {\em not} a unique modular category describing it. There is a unique modular category {\em up to equivalence}. Hence, the notion of equivalence of categories is baked into our physics-math correspondance so it is important that we state it explicitely.
 
+\begin{rem}
 Functors which do not induce equivalences of categories are also physically relevant. In certain contexts, a functor $F:\cC\to \cD$ is used to model a {\em phase transition} from $\cC$ to $\cD$. We will see a lot more functors and natural transformations between modular categories throughout the book, especially in chapter [ref].
+\end{rem}
 
-Even though structures in categories require a lot of compatibility conditions, the conditions on the functors do not. This means that we have the following:
+We now dicuss the correct notion of functor nad natural transfrormation between our different levels and categorical structure:
 
 \begin{itemize}
 \item The correct notion of functor between fusion categories is $\bC$-linear monoidal functor. There is no compatibility condition required between the $\bC$-linear structure and the monoidal structure. The correct notion of natural transformation between $\bC$-linear monoidal functors is a monoidal natural transformation.
 
-\item The correct notion of functor between spherical fusion categories is $\bC$-linear pivotal monoidal functor. There is no compatibility condition required between the $\bC$-linear structure and the pivotal monoidal structure. The correct notion of natural trasnformation is monoidal natural transformation.
+\item The correct notion of functor between spherical fusion categories is $\bC$-linear pivotal functor. There is no compatibility condition required between the $\bC$-linear structure and the pivotal structure. The correct notion of natural trasnformation is monoidal natural transformation.
 
-\item The correct notion of functor between pre-modular categories is $\bC$-linear pivotal braided monoidal functor. There is no compatibility condition required between the $\bC$-linear structure, pivotal monoidal structure, or braided monoidal structure. The correct notion of natural transformation is monoidal natural transformation.
+\item The correct notion of functor between pre-modular categories is $\bC$-linear pivotal braided monoidal functor. There is no compatibility condition required between the $\bC$-linear structure, pivotal structure, or braided monoidal structure. We call these {\em pre-modular functors}. The correct notion of natural transformation is monoidal natural transformation.
 
 \item The correct notions of functors/natural transformations for modular categories are the same as for pre-modular categories.
-
 \end{itemize}
-
-
-\Note{: this section is very short. I don't have much to say, actually. Should this be moved? Maybe I keep a very short section? I don't know.}
 
 \subsubsection{Deligne tensor product}
 
 In the theory of any class of mathematical object, an important consideration is the ways in which examples can be put together to give new examples. In the case of fusion categories, this basic operation is known as the {\em Deligne tensor product}. Given any fusion categories $\cC$, $\cD$, their Deligne tensor product $\cC\boxtimes \cD$ is a new fusion category. The Deligne tensor product of spherical fusion categories will be equipped with the structure of a spherical fusion category, and the Deligne tensor product of (pre-)modular categories will be equipped with the structure of a (pre-)modular category.
-
-Physically, the Deligne tensor product corresponds to {\em stacking}. Consider two sheets of material. We choose two modular categories $\cC$, $\cD$. We enodow the top sheet with the structure of a topologically ordered quantum system described by $\cC$ and we endow the bottome with the structure of a topologically ordered quantum system described by $\cD$. The algebraic description of this bilayer system is $\cC\boxtimes \cD$. This can be viewed as the physical definition of $\cC\boxtimes \cD$.
-
-\Note{ add bilayer system diagram}
-
-We now mathematically define the Deligne tensor product.
 
 \begin{defn} Let $\cC,\cD$ be a $\bC$-linear categories, isomorphic as a $\bC$-linear categories to $\Vec_{\bC}^{n}$, $\Vec_{\bC}^m$ respectively. We define a Deligne tensor product of $\cC$ and $\cD$ to be be the following data:
 
@@ -1005,8 +1068,6 @@ commutes.
 \end{enumerate}
 
 \end{defn}
-
-We know state the main existence/uniqueness result about the Deligne tensor product:
 
 \begin{prop} Let $\cC,\cD$ be $\bC$-linear categories isomorphic as $\bC$-linear categories to $\Vec_{\bC}^n$ and $\Vec_{\bC}^m$ respectively. There exists a Deligne product $\cC\boxtimes \cD$ for $\cC$ and $\cD$. Moreover, given any other deligne tensor product $\cC\boxtimes' \cD$ of $\cC$ and $\cD$ there exists a unique functor $F: \cC\boxtimes \cD\xrightarrow{} \cC\boxtimes' \cD$ making the diagram
 
@@ -1049,39 +1110,178 @@ The above definitions induce the structure of a fusion category on $\cC\boxtimes
 \begin{proof} Given any of the above structures, all of the axioms on $\cC\boxtimes \cD$ immediately follow from their respective axioms on $\cC$ and $\cD$. Hence, the proof is an exercise is recalling definitons which we omit.
 \end{proof}
 
+\begin{dict}
+Physically, the Deligne tensor product corresponds to {\em stacking}. Consider two sheets of material. Assume that the bottom one has topological order described by modular category $\cC$ and chiral central charge $c_-^{\cC}$, and that the top one has topological order described by the modular category $\cC$ and chiral central charge $c_-^{\cD}$. Consider a composite system obtained from stacking the two sheet, as shown in diagram \ref{bilayer-system}. The modular category describing the stacked system is $\cC\boxtimes \cD$, and the chiral central charge is $c_-^{\cC}+c_-^{\cD}$.
+
+\begin{equation}\label{bilayer-system}
+\cC\boxtimes \cD\left\{\tikzfig{bilayer-system}\right.
+\end{equation}
+\end{dict}
+
 
 \subsection{The category of $G$-graded $G$-representations}
 
 \subsubsection{Overview}
 
-We've talked about a lot of general theory of modular categories. It's time for us to focus on our main family of {\em examples}. Namely, the categories $\fD(G)$ of $G$-graded $G$-representations. These categories describe discrete gauge theory based on the finite group $G$.
+We've talked about a lot of general theory of modular categories. It's time for us to focus on our main family of {\em examples}, which we define as plain categories below:
 
-Before we can prove that $\fD(G)$ is a modular category, we need to endow $\fD(G)$ with the neccecary structures. In particular, we will endow $\fD(G)$ with $\bC$-linear, monoidal, braided, right-rigid, and left-rigid structures. We will need to show that all of these structures are comptabile with each other in the neccecary ways, and that $\fD(G)$ satisfies the non-degeneracy axiom. We will use this as an oppurtunity to introduce tools of general use for proving that categories satisfy the axioms of a modular category.
+\begin{defn} We define a category $\fD(G)$, the category of {\em $G$-graded $G$-representations}, as follows. It's objects are pairs $(V,\rho)$, where $V=\bigoplus_{g\in G}V_g$ is a $\bC$ vector space with a distinguished choice of direct sum decomposition into terms indexed by $G$, and
 
-Additionally, we will also study two categories similar to $\fD(G)$ which will serve as extra examples to get our grip on definitions. These categories will also appear later as relevant in and of themselves. The first is $\Vec_G$, the category of $G$-graded vector spaces. It is defined as follows:
+$$\rho:G\to \Aut(V)$$
 
-\Note{define $\Vec_G$ in terms of objects and composition.}
+is a group homomorphism such that
 
-Our second structure of interest is $\Rep(G)$, the category of $G$-representations. It is defined as follows:
+$$\rho(g)(V_h)\subseteq V_{ghg^{-1}}.$$
 
-\Note{define $\Rep(G)$ in terms of objects and composition.}
+Morphisms in $\fD(G)$ from $(V,\rho_V)$ to $(W,\rho_W)$ are linear maps $f:V\to W$ such that $f(V_g)\subseteq W_g$ and the diagram
 
-We will show that both $\Vec_G$ and $\Rep(G)$ can be naturally equipped with the structures of spherical fusion categories. We then show that $\Rep(G)$ admits a braiding which turns it into a pre-modular category. This braiding is symmetric in the sense that $\beta_{B,A}\circ \beta_{A,B}=\id_{A}\otimes \id_{B}$ for all $A,B\in \cC$, and hence $\Rep(G)$ is not a modular category. The category $\Vec_G$ is shown to not admit a braiding whenever $G$ is non-abelian.
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJWIl0sWzEsMCwiViJdLFswLDEsIlciXSxbMSwxLCJXIl0sWzAsMSwiXFxyaG9fVihnKSJdLFsyLDMsIlxccmhvX1coZykiXSxbMCwyLCJmIiwxXSxbMSwzLCJmIiwxXV0=
+\[\begin{tikzcd}
+	V & V \\
+	W & W
+	\arrow["{\rho_V(g)}", from=1-1, to=1-2]
+	\arrow["f"{description}, from=1-1, to=2-1]
+	\arrow["f"{description}, from=1-2, to=2-2]
+	\arrow["{\rho_W(g)}", from=2-1, to=2-2]
+\end{tikzcd}\]
 
+commutes for all $g\in G$.
+\end{defn}
 
-\subsubsection{Higher linear algebra}
+\begin{rem}
+The conclusion of subsection \ref{anyons-in-discrete-gauge-theory} was that $G$-graded $G$-representations are the correct objects to characterize anyons in discrete gauge theory based on the finite group $G$. This physically motivates most of the developments made in this section.
+\end{rem}
 
-\Note{ In this section we define the $\bC$-linear structures on $\Vec_G$, $\Rep(G)$, and $\fD(G)$. Our goal is to show that they are all equivalent to $\Vec_\bC^n$ for some $n\geq 1$.}
+In addition to proving that the category of $G$-graded $G$-representations, we will define two other auxiliary categories which we will track through the process: 
 
-\Note{It seems like the best approach is through higher linear algebra. Namely, we show that if $\cC$ is abelian, $\bC$-linear, semisimple, and has finitely many isomorphism classes of simple obejcts then it must be isomorphism to $\Vec_{\bC}^n$. Its a good time to wax philosophical about higher linear algebra and 2-vector spaces. However, its not clear that this approach actually helps at all. It might be easier to immediately note that everybody is the direct sum of irriducibles, prove a Schur's lemma, and call it a day. Of course these approaches are all equivalent but its not clear what's best.}
+\begin{defn} We define a category $\Vec_G$, the category of {\em $G$-graded vector spaces}, as follows. It's objects are $\bC$ vector spaces $V=\bigoplus_{g\in G}V_g$, with a distinguished choice of direct sum decomposition into terms indexed by $G$. Morphisms in $\Vec_G$  from $V$ to $W$ are linear maps $f:V\to W$ such that $f(V_g)\subset W_g$.
+\end{defn}
 
+\begin{defn} We define a category $\Rep(G)$, the category of {\em $G$-representations}, as follows. It's objects are pairs $(V,\rho)$ where $V$ is a $\bC$ vector space and $\rho:G\to\Aut(V)$ is a group homorphism. Morphisms in $\Rep(G)$ from $(V,\rho_V)$ to $(W,\rho_W)$ are linear maps $f:V\to W$ such that $\rho_W(g)\circ f=f\circ\rho_V(g)$ for all $g\in G$.
+\end{defn}
 
-\Note{Here's a lemma I would like to use. Since $\times$ and $\boxtimes$ look too similar, I should use $\boxplus$ to denote the Cartesian product and call it the direct sum. I should then prove this:
-\begin{lem} Consider the category $\mathrm{\textbf{2Vec}}$ whose objects are $\bC$-linear categories equivalent to $\Vec_{\bC}^n$ for sme $n\geq 0$, and whose morphisms are $\bC$-linear functors. The direct sum $\boxplus$ is a biproduct in $\mathrm{\textbf{2Vec}}$
-\end{lem}
-\begin{proof} \Note{ do proof}
+Currently, we have only defiened $\fD(G)$, $\Vec_G$, and $\Rep(G)$ as plain categories. It is one of the main projectes of the section to endow these categories with additional structure. We will endow $\fD(G)$  with the structure of a modular category (theorem [ref]). We will endow $\Vec_G$ and $\Rep(G)$ with the structure of spherical fusion categories (propositions [ref] and [ref]). We will show that $\Rep(G)$ always admits a braiding, but this braiding is not non-degenerate (in fact, it is in a sense maximally degenerate, which we call {\em symmetric}). We show that $\Vec_G$ admits a symmetric braiding whenever $G$ is abelian, and admits no braiding whenver $G$ is nonabelian.
+
+The categories $\Vec_G$, $\Rep(G)$ are all related in various ways. For instance, we have forgetful functors
+
+\begin{align*}
+\fD(G)&\xrightarrow{}\Vec_G\\
+\fD(G)&\xrightarrow{}\Rep(G)
+\end{align*}
+
+which send a $G$-graded $G$-representation to their underlying $G$-graded vector space or $G$-representation. Additionally, there is a functor
+
+$$\Rep(G)\to \fD(G)$$
+
+which sends a representation $(V,\rho)$ to the same representation, with the $G$-grading on $V$ that puts all of $V$ into the $1$-graded component, where $1$ is the identity elemenet of $G$. We will see that all of these functors can be upgraded to functors of spherical categories (that is, $\bC$-linear pivotal functors). Moreover, the functor $\Rep(G)\to \fD(G)$ can be upgraded to a functor of pre-modular categories.
+
+\begin{rem}
+In chapter [ref], all of the functors defined above will be given physical interpretations. Namely, the forgetful functors $\fD(G)\to \Vec_{G}$ and $\fD(G)\to\Rep(G)$ are interpreted as bulk-to-boundary condensation maps and the functor $\Rep(G)\to \fD(G)$ is interpreted as internal $G$-symmetry of $\fD(G)$.
+\end{rem}
+
+\subsubsection{$\bC$-linear structures}
+
+In this subsection, we will define $\bC$-linear structures on $\Vec_G$, $\Rep(G)$, and $\fD(G)$ for all finite groups $G$, and show that they are all equivalent to $\Vec_{\bC}^n$ for various values of $n$. The definitions of the structures are simple. In particular, all three categories $\Vec_G$, $\Rep(G)$, and $\fD(G)$ have forgetful functors onto $\Vec_\bC$ assigning to every $G$-graded vector space/$G$-representation/$G$-graded $G$-repesentation its underlying vector space. The hom-sets in $\Vec_G$, $\Rep(G)$, $\fD(G)$ are all linear subspaces of the hom-sets of their underlying vector spaces, and thus inherit a subspace $\bC$-linear structure. This defines a $\bC$-linear structure on $\Vec_G$, $\Rep(G)$, $\fD(G)$.
+
+\begin{prop} For all finite groups $G$, there is an equivalence of categories $\Vec_G\cong \Vec_{\bC}^{|G|}$ .
+\end{prop}
+\begin{proof} We can define a functor $F:\Vec_G\to \Vec_{\bC}^{|G|}$ which sends a $G$-graded vector space $V$ to the arrangement of $|G|$ of vector spaces $\{V_g\}_{g\in G}$. Morphisms in $\Vec_G$ are exactly the same thing as a morphism in $\Vec_{\bC}^{|G|}$, so $F$ is bijective on hom-spaces. Thus, by proposition [ref], it induces an equivalence of categories.
 \end{proof}
-}
+
+\begin{prop}Let $G$ be a finite group. Let $(V,\rho)\in \Rep(G)$ be a representation of $G$. There exists an inner product $\Braket{\dash | \dash}$ on $V$ such that $\rho$ acts by unitary transformations
+\end{prop}
+\begin{proof} Choose any inner product $\Braket{\dash|\dash}$ on $V$. Define a new inner product by
+
+$$\Braket{v|w}'=\frac{1}{|G|}\sum_{g\in G}\Braket{\rho(g)(v)|\rho(g)(w)}.$$
+
+It is simple to check that $ \Braket{\dash|\dash}'$ satisfies all of the axioms of an inner product. Additionally, we find that for all $h\in G$,
+
+\begin{align*}
+\Braket{\rho(h)v|\rho(h)w}'&=\frac{1}{|G|}\sum_{g\in G}\Braket{\rho(g)\rho(h)(v)|\rho(g)\rho(h)(w)}\\
+&=\frac{1}{|G|}\sum_{g\in G}\Braket{\rho(gh)(v)|\rho(gh)(w)}\\
+&=\Braket{v|w}.
+\end{align*}
+
+Thus, $\rho(h)$ is unitary as desired.
+
+\end{proof}
+\begin{prop}[Schur's lemma]\label{schur-lemma-reps} Let $G$ be a finite group. Let $V,W\in \Rep(G)$ be simple representations. We have that
+
+$$\dim\Hom_{\Rep(G)}(V,W)=
+\begin{cases}
+1 & V\cong W\\
+0 & V\not\cong W.
+\end{cases}$$
+\end{prop}
+\begin{proof}Choose inner products on $V$,$W$ so that $\rho_V,\rho_W$ act by unitary transformations. Let $f:V\to W$ be a morphism of representations. We find that $\ker(f)\subseteq V$ is a subspace of $V$ which is invariant under the $G$ action. Moreover, the orthogonal complement $\ker(f)^\perp$ is also invariant under the $G$ action since $\rho_V$ acts by unitaries. Thus, we have that
+
+$$V=\ker(f)\oplus \ker(f)^\perp$$
+
+is a decomposition of $V$ into a direct sum of representations. Since $V$ is simple, we must have $\ker(f)=0$ (in which case $f$ is injective) or $\ker(f)^\perp=0$ (in which case $f=0$). Similarly, the image $\im(f)\subseteq W$ is invariant under the $G$-action, so the decomposition 
+
+$$W=\im(f)\oplus \im(f)^\perp$$
+
+proves either $\im(f)=0$ (in which case $f=0$) or $\im(f)^\perp=0$ (in which case $f$ is surjective). Thus, $f$ is either $0$ or an isomorphism.
+
+We now show that if $V=W$ then the space of maps $V\to V$ is one dimensional. Let $f:V\to V$ be a morphism of represenations. Since $\bC$ is algebraically closed, we can choose an eigenvector $\lambda$ of $f$, so that $f-\lambda\cdot \id_V$ is not invertible. However, every non-invertible morphism of representations must be 0 by the above argument. Thus, $f-\lambda\cdot \id_V=0$ so $f=\lambda\cdot \id_V$. Thus, the space of maps $V\to V$ is spanned by $\id_V$ so is one-dimensional as desired.
+\end{proof}
+
+\begin{prop}[Mashke's theorem]\label{mashke-theorem} Let $G$ be a finite group. Every representation in $\Rep(G)$ is the direct sum of finitely many simple representations
+\end{prop}
+\begin{proof}We argue by induction on the dimension of the representation as a vector space, $\dim V =n$. Suppose that $V$ is a representation of dimension $n$. It is simple, we are done. If it is not simple, then we can write $V\cong V_0\oplus V_1$ with $V_0,V_1\neq 1$. Since $\dim(V_0),\dim(V_1)<n$, they are the direct sum of finitely many simple representations by the induction hypothesis. Thus, $V$ is the direct sum of finitely many simple representations as desired.
+\end{proof}
+
+\begin{ex}
+The vector space $\bC[G]$ spanned by elements of $G$ is naturally equipped with the structure of a $G$-representation. Namely, there is a map
+
+\begin{align*}
+\rho:G&\xrightarrow{}\Aut(\bC[G]).\\
+g&\mapsto (\ket{h}\mapsto \ket{gh})
+\end{align*}
+
+This is called the {\em regular representation} of $G$.
+\end{ex}
+
+\begin{lem}\label{regular-rep-decomp} Let $G$ be a finite group. There is an isomorphism of representations
+
+\begin{equation}\label{regular-rep-decomp-formula}
+\bC[G]\cong \bigoplus_{[V]\in \cL(\Rep(G))}(\dim V)\cdot V
+\end{equation}
+
+where $\dim V$ denotes the dimension $V$ as a vector space.
+\end{lem}
+\begin{proof} By Mashke's theorem we find that
+
+$$\bC[G]\cong \bigoplus_{[V]\in \cL}n_V \cdot V$$
+
+for some $n_V\geq 0$, only finitely many of which are nonzero, and by Schur's lemma we can compute
+
+$$n_V=\dim \Hom_{\Rep(G)}(\bC[G],V).$$
+
+Now, given any $v\in V$, we can define a map
+
+\begin{align*}
+\pi_{V,v}:\bC[G]&\to V.\\
+\ket{g}&\mapsto \rho_V(g)(v)
+\end{align*}
+
+Clearly, $\pi_{V,v}$ is the unique map $\bC[G]\to V$ satisfying $\pi_{V,v}(\ket{1})=v$. Thus, we find a bijection between maps of representations $\bC[G]\to V$ and vectors $v\in V$. Thus, we conclude that $n_V=\dim V$ as desired.
+
+\end{proof}
+
+\begin{cor} For all finite groups $G$, there is an equivalence of categories $\Rep(G)\simeq  \Vec_{\bC}^n$ for some $n\geq 1$.
+\end{cor}
+\begin{proof}We show that $\Rep(G)$ satisfies all of the criteria of proposition \ref{higher-linear-algebra}. First, we show that $\Rep(G)$ has finitely many isomorphism classes of simple objects. Taking the dimension of both sides of equation \ref{regular-rep-decomp-formula}, we find that
+
+$$\sum_{[V]\in \cL(\Rep(G))}(\dim V)^2=|G|.$$
+
+In particular, since $\dim V\geq 1$, we conclude that $\cL(\Rep(G))$ is finite. The fact that every object in $\Rep(G)$ decomposes as a direct sum of finitely many simple objects is Mashke's theorem (proposition \ref{mashke-theorem}). The Schur's lemma axiom is satisfied by the Schur's lemma for representations (proposition \ref{schur-lemma-reps}).
+\end{proof}
+
+\begin{prop} For all finite groups $G$, there is an equivalence of categories $\fD(G)\simeq \Vec_{\bC}^n$ for some $n\geq 1$.
+\end{prop}
+\begin{proof} All of the arguments 
+\end{proof}
 
 \subsubsection{Spherical fusion structures}
 

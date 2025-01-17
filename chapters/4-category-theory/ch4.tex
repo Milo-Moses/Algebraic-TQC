@@ -386,7 +386,7 @@ commute. Moreover, for any other pair $(\mathcal{E},i)$ with $\mathcal{E}$ a cat
 \begin{defn} Let $\cC$, $\cD$ be categories. We define the {\em product category} $\cC\times \cD$ of $\cC$ to $\cD$ to be the category whose objects are pairs $(A,B)$, $A\in \cC$, $B\in \cD$, whose morphisms between $(A,A')$ and $(B,B')$ are pairs $(f,g)$, $f\in \Hom_{\cC}(A,B)$, $g\in \Hom_{\cD}(A',B')$, and whose composition is defined component-wise. It is simple to check that this definition of the product of categories is an abstract product in the category $\Cat$.
 \end{defn}
 
-\begin{ex} There is a nice rephrasing of the definition of product and coproduct in terms of representable functors. In particular, we claim that products of $A,B\in \cC$ are in bijective correspondance with objects $A\times B\in \cC$ paired with natural isomorphisms
+\begin{ex}\label{product-natural-transformation} There is a nice rephrasing of the definition of product and coproduct in terms of representable functors. In particular, we claim that products of $A,B\in \cC$ are in bijective correspondance with objects $A\times B\in \cC$ paired with natural isomorphisms
 
 $$\eta:\Hom(\dash,A\times B)\xrightarrow{\sim}\Hom(\dash,A)\times\Hom(\dash,B).$$
 
@@ -406,6 +406,11 @@ following $\id_{A\times B}$ through this square, we get that $f_A=\pi_A\circ f$ 
 
 $$\eta:\Hom(A\sqcup B,\dash)\xrightarrow{\sim}\Hom(A,\dash)\times\Hom(B,\dash).$$
 \end{ex}
+
+\Note{Add a remark which introduces ``fully faithful" and ``essentially surjecive". Then prove that a functor induces an equivalence of categories if and only if it is fully faithful and essentially surjective.
+\begin{prop}\label{equivalence-prop} Let $F:\cC\to\cD$ be a functor. The functor $F$ induces an equivalence of categories $\cC\simeq \cD$ if and only if it is fully faithful and essentially surjective.
+\end{prop}
+}
 
 \subsubsection{Linear categories}
 
@@ -460,6 +465,74 @@ such that:
 \end{prop}
 \begin{proof} We have observed in remarks \ref{product-examples-remark} and \ref{coproduct-examples-remark} that $A\oplus B$ is individually a product and a coproduct. It is immediate that the structures are compatible in the sense of definition \ref{biproduct-definition}, and thus $A\oplus B$ is a biproduct.
 \end{proof}
+
+\begin{ex}\label{vec-Cn-example}
+Suppose we are given an object $V=(V_1,V_2...V_n)\in \Vec_\bC^n$. For all $1\leq i\leq n$, let  $\bC_i\in \Vec_\bC^n$ denote the object which has dimension zero in every index $j\neq i$ and is equal to $\bC$ in index $i$. We observe the isomorphism
+
+\begin{align*}
+V& \cong \bigoplus_{i=1}^n (0... V_i ... 0)\\
+& \cong \bigoplus_{i=1}^n (0... \bC^{\dim (V_i)}.. 0)\\
+& \cong \bigoplus_{i=1}^n \dim(V_i)\cdot \bC_i
+\end{align*}
+
+where $\dim(V_i)\cdot (\bC_i)=\bC_i\oplus \bC_i...\oplus \bC_i$, $\dim(V_i)$ many times. This computation shows that any object in $\Vec_\bC^n$ can be decomposed into irriducible components $\bC_i$. These objects $\bC_i$ are in a real sense the building blocks of $\Vec_\bC^n$. In the language of definition \ref{simple-object-definition}, the objects $\cC_i$ are the simple objects of $\Vec_{\bC}^n$.
+\end{ex}
+
+\begin{defn}\label{simple-object-definition} A {\em simple object} $A$ in a $\cC$-linear category $\cC$ is an object which has no direct sum decomposition into smaller objects. That is, $A\ncong B\oplus C$ for any non-zero objects $B,C\in \cC$ where $\oplus$ denotes the biproduct in $\cC$.
+\end{defn}
+
+\begin{prop}\label{higher-linear-algebra} Let $\cC$ be a $\bC$-linear category. There exists an equivalence of categories $\cC\simeq \Vec_{\cC}^n$ for some $n\geq 1$ if and only if $\cC$ satisfies the following properties:
+
+\begin{enumerate}
+\item $\cC$ has finitely many isomorphism classes of simple objects;
+\item Every object in $\cC$ can be decomposed as a direct sum of finitely many simple objects;
+\item (Schur's lemma) If $A,B\in \cC$ are simple objects
+
+$$\dim\Hom_{\cC}(A,B)=
+\begin{cases}
+1 & A\cong B\\
+0 & \text{otherwise}
+\end{cases}$$
+\end{enumerate}
+
+\Note{Do I need to require that $\cC$ has a zero object, so that $0$ is in its essential image?}
+\end{prop}
+\begin{proof} Let $n$ be the number of isomorphism classes of simple objects in $\cC$. We choose representatives $V_1,V_2... V_n$ of the isomorphism classes of simple objects in $\cC$. We define $F$ on the level of objects by
+
+$$F\left(\bigoplus_{i=1}^n V_i^{n_i}\right)=\bigoplus_{i=1}^n\bC_i^{n_i},$$
+
+where $V_i^{n_i}=V_i\oplus V_i ...\oplus V_i$ is the $n$-fold itterated direct sum of $V_i$. Of course, the direct sum is only defined up to isomorphism so we imagine working over all choices of biproduct on the left hand side, and some arbitrary but specific choice of direct sum on the right hand side. Given a morphism
+
+$$f\in \Hom_{\cC}\left(\bigoplus_{i=1}^n V_i^{m_i},\bigoplus_{j=1}^n V_j^{n_j}\right),$$
+
+we can expand using the natural isomorphism associated with the product/coproduct structure (as in example \ref{product-natural-transformation}) to get an associated by
+
+$$f\in \bigoplus_{i=1}^n\bigoplus_{j=1}^n\bigoplus_{\ell=1}^{m_i}\bigoplus_{k=1}^{n_i}\Hom_{\cC}\left( V_i, V_j\right).$$
+
+By Schur's lemma, the cross terms $i\neq j$ cancel, giving us a decomposition $f=\oplus f_i$,
+
+$$f_i\in \bigoplus_{\ell=1}^{m_i}\bigoplus_{k=1}^{n_i}\Hom_{\cC}\left( V_i, V_i\right).$$
+
+We can now define the associated morphism
+
+$$F(f)\in \Hom_{\Vec_{\bC}^n}\left(\bigoplus_{i=1}^n \bC_i^{m_i},\bigoplus_{j=1}^n \bC_j^{n_j}\right)$$
+
+by saying that $F(f)$ acts as the linear map $\bC_i^{m_i}\to \bC_{i}^{n_i}$ by the matrix whose coefficients exactly the coefficients of $f_i$, where we identify $\Hom_{\cC}\left( V_i, V_i\right)$ with $\bC$ by sending each morphism $g$ to the unique scalar $\lambda\in \bC$ for which $g=\lambda\cdot \id_{V_i}$. It is simple to check that $F$ is a well-defined functor.
+
+We observe that $F$ is essentially surjective, because every object in $\Vec_{\bC}^n$ is a direct sum of some number of copies of $\bC_i$ for $1\leq i\leq n$. It is fully faithful because the correspondance between morphisms and linear maps used in the definition is a bijection. Thus, we conclude the first direction by proposition \ref{equivalence-prop}. The other direction is a simple check.
+\end{proof}
+
+\Note{Maybe that a bit of room here to wax poetic about higher linear algebra.}
+
+\Note{Here's a lemma I would like to use. Since $\times$ and $\boxtimes$ look too similar, I should use $\boxplus$ to denote the Cartesian product and call it the direct sum. I should then prove this:
+\begin{lem} Consider the category $\mathrm{\textbf{2Vec}}$ whose objects are $\bC$-linear categories equivalent to $\Vec_{\bC}^n$ for sme $n\geq 0$, and whose morphisms are $\bC$-linear functors. The direct sum $\boxplus$ is a biproduct in $\mathrm{\textbf{2Vec}}$
+\end{lem}
+\begin{proof} \Note{ do proof}
+\end{proof}
+}
+
+
+
 
 \subsection{Monoidal categories}
 

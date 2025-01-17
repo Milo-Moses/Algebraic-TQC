@@ -1,0 +1,68 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (3.5, 1.5) {};
+		\node [style=none] (1) at (3.5, -1.375) {};
+		\node [style=none] (2) at (4.5, -1.375) {};
+		\node [style=none] (8) at (3.25, -1) {};
+		\node [style=none] (9) at (3.25, -0.375) {};
+		\node [style=none] (10) at (4.75, -0.375) {};
+		\node [style=none] (11) at (4.75, -1) {};
+		\node [style=none] (12) at (3.25, 1.125) {};
+		\node [style=none] (13) at (3.25, 0.375) {};
+		\node [style=none] (14) at (4.75, 1.125) {};
+		\node [style=none] (15) at (4.75, 0.375) {};
+		\node [style=none] (16) at (4, 0.375) {};
+		\node [style=none] (17) at (4, -0.375) {};
+		\node [style=none] (18) at (3.5, -1) {};
+		\node [style=none] (19) at (4.5, -1) {};
+		\node [style=none] (20) at (3.5, 1.125) {};
+		\node [style=none] (21) at (4.5, 1.125) {};
+		\node [style=none] (22) at (4, 0.775) {$\mu^\dagger$};
+		\node [style=none] (23) at (4, -0.75) {$\mu$};
+		\node [style=none] (24) at (1.75, -0.75) {$\displaystyle\sum_{\substack{[C]\in \cL \\ \mu:A\otimes B\to C}}$};
+		\node [style=none] (25) at (4.4, -0.025) {$C$};
+		\node [style=none] (32) at (3.25, -1.375) {};
+		\node [style=none] (33) at (3.25, -2.125) {};
+		\node [style=none] (34) at (4.75, -1.375) {};
+		\node [style=none] (35) at (4.75, -2.125) {};
+		\node [style=none] (36) at (4, -2.125) {};
+		\node [style=none] (37) at (4, -2.375) {};
+		\node [style=none] (40) at (4, -1.725) {$\eta^\dagger$};
+		\node [style=none] (41) at (4.025, -2.525) {$D$};
+		\node [style=none] (42) at (3.25, 1.5) {};
+		\node [style=none] (43) at (3.25, 2.125) {};
+		\node [style=none] (44) at (4.75, 2.125) {};
+		\node [style=none] (45) at (4.75, 1.5) {};
+		\node [style=none] (46) at (4, 2.125) {};
+		\node [style=none] (47) at (3.5, 1.5) {};
+		\node [style=none] (48) at (4.5, 1.5) {};
+		\node [style=none] (49) at (4, 1.75) {$\eta'$};
+		\node [style=none] (50) at (4, 2.5) {};
+		\node [style=none] (51) at (4, 2.75) {$D$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (9.center) to (8.center);
+		\draw (8.center) to (11.center);
+		\draw (11.center) to (10.center);
+		\draw (10.center) to (9.center);
+		\draw (12.center) to (14.center);
+		\draw (14.center) to (15.center);
+		\draw (15.center) to (13.center);
+		\draw (12.center) to (13.center);
+		\draw (16.center) to (17.center);
+		\draw (19.center) to (2.center);
+		\draw (18.center) to (1.center);
+		\draw (20.center) to (0.center);
+		\draw (32.center) to (34.center);
+		\draw (34.center) to (35.center);
+		\draw (35.center) to (33.center);
+		\draw (32.center) to (33.center);
+		\draw (36.center) to (37.center);
+		\draw (43.center) to (42.center);
+		\draw (42.center) to (45.center);
+		\draw (45.center) to (44.center);
+		\draw (44.center) to (43.center);
+		\draw (50.center) to (46.center);
+		\draw (48.center) to (21.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

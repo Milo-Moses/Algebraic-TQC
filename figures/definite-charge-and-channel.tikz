@@ -21,25 +21,25 @@
 		\node [style=none] (18) at (0.75, 1) {$A_3$};
 		\node [style=none] (19) at (-1.425, 0.1) {$A_1$};
 		\node [style=none] (20) at (-0.025, 0.1) {$A_2$};
-		\node [style=none] (21) at (-1.25, 1.375) {};
+		\node [style=none] (21) at (-1.25, 1.125) {};
 		\node [style=none] (22) at (-1.25, 0.5) {};
 		\node [style=none] (23) at (-0.25, 0.5) {};
-		\node [style=none] (24) at (-0.25, 1.375) {};
-		\node [style=none] (25) at (-0.75, 0.925) {$\mu^\dagger$};
-		\node [style=none] (26) at (-0.75, 1.375) {};
-		\node [style=none] (27) at (-0.75, 2.1) {};
-		\node [style=none] (28) at (-1.25, 2.1) {};
-		\node [style=none] (29) at (-0.25, 2.1) {};
+		\node [style=none] (24) at (-0.25, 1.125) {};
+		\node [style=none] (25) at (-0.75, 0.8) {$\mu$};
+		\node [style=none] (26) at (-0.75, 1.125) {};
+		\node [style=none] (27) at (-0.75, 1.85) {};
+		\node [style=none] (28) at (-1.25, 1.85) {};
+		\node [style=none] (29) at (-0.25, 1.85) {};
 		\node [style=none] (30) at (-0.25, 2.725) {};
 		\node [style=none] (31) at (-1.25, 2.725) {};
-		\node [style=none] (32) at (-0.75, 2.375) {$\mu$};
+		\node [style=none] (32) at (-0.75, 2.275) {$\mu^\dagger$};
 		\node [style=none] (33) at (-1, 2.725) {};
 		\node [style=none] (34) at (-0.5, 2.725) {};
 		\node [style=none] (35) at (-0.5, 3.225) {};
 		\node [style=none] (36) at (-1, 3.225) {};
 		\node [style=none] (37) at (-1.125, 3.6) {$A_1$};
 		\node [style=none] (38) at (-0.3, 3.6) {$A_2$};
-		\node [style=none] (39) at (-0.45, 1.725) {$B$};
+		\node [style=none] (39) at (-0.45, 1.475) {$B$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (1.center) to (2.center);

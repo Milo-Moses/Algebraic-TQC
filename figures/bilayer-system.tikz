@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-4, -1) {};
+		\node [style=none] (1) at (-1.425, -1.025) {};
+		\node [style=none] (2) at (-1.75, 0) {};
+		\node [style=none] (3) at (0.75, 0) {};
+		\node [style=none] (4) at (-3.5, 0.5) {};
+		\node [style=none] (5) at (-0.925, 0.475) {};
+		\node [style=none] (6) at (-1.25, 1.5) {};
+		\node [style=none] (7) at (1.25, 1.5) {};
+		\node [style=none] (8) at (-1.5, -0.5) {$\cC$};
+		\node [style=none] (9) at (-1, 1) {$\cD$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (2.center) to (3.center);
+		\draw (3.center) to (1.center);
+		\draw (1.center) to (0.center);
+		\draw (0.center) to (2.center);
+		\draw (6.center) to (7.center);
+		\draw (7.center) to (5.center);
+		\draw (5.center) to (4.center);
+		\draw (4.center) to (6.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
