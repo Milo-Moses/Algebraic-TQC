@@ -435,7 +435,7 @@ such that the composition maps $\circ:\Hom(B,C)\times \Hom(A,B)\to \Hom(A,C)$ ar
 \begin{rem} When we refer to a functor between two $\bC$-linear categories, we will always assume that that functor is $\bC$-linear unless otherwise stated. In general, whenever two categories are equipped with extra structure we will assume that functors between those categories respect that structure. There is no notion of a $\bC$-linear natural transformation (or, if there were, it would have to be the same as the notion of usual natural transformation).
 \end{rem}
 
-\begin{ex} The category $\Vec_{\bC}$ of vector spaces over the complex numbers is  $\bC$-linear category, since the space of linear maps $\Hom_{\Vec_{\bC}}(V,W)$ between any two vector spaces $V,W$ is itself a vector space. Additionally, the product of two $\bC$-linear categories is again a $\bC$-linear category. So, the category $\Vec_{\bC}^n$ of ordered $n$-tuples of vector spaces (equivalent to the product of $n$ copies of $\Vec_{\bC}^n$) is a $\bC$-linear category.
+\begin{ex}\label{linear-category-examples} The category $\Vec_{\bC}$ of vector spaces over the complex numbers is  $\bC$-linear category, since the space of linear maps $\Hom_{\Vec_{\bC}}(V,W)$ between any two vector spaces $V,W$ is itself a vector space. Additionally, the product of two $\bC$-linear categories is again a $\bC$-linear category. So, the category $\Vec_{\bC}^n$ of ordered $n$-tuples of vector spaces (equivalent to the product of $n$ copies of $\Vec_{\bC}^n$) is a $\bC$-linear category.
 \end{ex}
 
 \begin{rem} A noteworthy feature of $\bC$-linear categories is the existence of {\em zero morphisms}. Suppose that $A,B\in \cC$ are objects in a $\bC$-linear category. There is a distingished morphism $0:A\to B$, called the {\em zero morphism}, corresponding to the zero element of $\Hom(A,B)$ as a vector space. The zero element is uniquely identified by the fact that for all $f:B\to C$ and for all $g:C\to A$,
@@ -833,7 +833,7 @@ commutes for all $A,B,C,D\in \cC$.
 \end{enumerate}
 \end{defn}
 
-\begin{ex}
+\begin{ex}\label{monoidal-category-examples}
 The following collections of data form monoidal categories
 
 \begin{itemize}
@@ -1046,9 +1046,10 @@ and
 
 commute for all $A,B,C\in \cC$.
 \end{enumerate}
-
-
 \end{defn}
+
+\begin{ex}\label{braided-monoidal-examples}\Note{Now that we have defined braided monoidal category, we can give some example. Namely. it's neccecary that we give $\Vec_{\bC}$ as an example.}
+\end{ex}
 
 \begin{defn}[Braided monoidal functor] A braided monoidal functor between braided monoidal categories $(\cC,\otimes_{\cC},\beta_{\cC})$, $(\cD,\otimes_{\cD},\beta_{\cD})$ is a monoidal functor $(F,\mu):\cC\to \cD$ such that the diagram
 
@@ -1100,6 +1101,10 @@ So far we have defined a language for putting particles together and braiding th
 \begin{rem}
 In the relevant physical systems, every particle has a dual {\em antiparticle}. Particle/antiparticle pairs can always spontaneously be created from the vaccuum. Often, particles/antiparticles can annhilate each other to go back to the vaccum. This process of annhilation is subtle however, because a particle/antiparticle pair could also fuse to make a particle which is not the vacuum. We delay the subtleties of fusion to our chapter on modular tensor categories, and focus instead on the abstract underpinnings of antiparticles (which we call {\em duals}), pair-creation (which we call {\em coevaluation}) and fusion (which we all {\em evaluation}).
 \end{rem}
+
+\begin{ex}\label{pivotal-category-examples}
+\Note{This section doesn't contain any examples! In particular, there is the fantastic example of $\Vec_{\bC}$. This is the canonical example that should be used to motivate the definition. Putting it all the way up here might be the best idea.}
+\end{ex}
 
 \begin{defn}[Right-rigid monoidal category] A right-rigid monoidal category is the following data:
 

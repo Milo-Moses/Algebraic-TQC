@@ -25,7 +25,7 @@ We have the following general pictuture for our algebraic theory:
 \begin{dict}\label{topo-phase-dictionary} Topological phases of matter are algebraically described by unitary modular categories $\cC$ called the {\em anyon theory} of the phase, and a choice of integer $c_-\in \bZ$ called the {\em chiral central charge} of the phase. \cite{kitaev2006anyons}
 \end{dict}
 
-\begin{rem} Throughout these notes, there are some aspects of the general dictionary \ref{topo-phase-dictionary} that we have not emphasized. For instance, we have not emphasized that the modular categories describing topological phases are supposed to be {\em unitary} modular categories - we will discuss this later, but by analagy we can say that a unitary modular category is related to a modular category just like a Hilbert space is related to a vector space.
+\begin{rem}\label{chiral-central-charge-remark} Throughout these notes, there are some aspects of the general dictionary \ref{topo-phase-dictionary} that we have not emphasized. For instance, we have not emphasized that the modular categories describing topological phases are supposed to be {\em unitary} modular categories - we will discuss this later, but by analagy we can say that a unitary modular category is related to a modular category just like a Hilbert space is related to a vector space.
 
 Another aspect we have not emphasized is the {\em chiral central charge}. This is a real invariant of topological phases which is beyond the description of modular categories. In particular, there are topological phases with no non-trivial anyons (and hence correspond to the trivial modular category) yet are non-trivial as topological phases. These are called {\em invertible} topological phases. Invertible topological phases are paramaterized by an integer invariant, their chiral central charge. Not every pair $(\cC,c_-)$ describes a valid topological phase. In particular, $\cC$ determines $c_-$ modulo $8$ but there is no other condition. The way that $\cC$ determins $c_-$ modulo $8$ is known as the Gauss-Milgram formula and is discussed in subsection \ref{vafa-theorem-unitarity-chiral-central-charge}. 
 \end{rem}
@@ -87,7 +87,7 @@ Such that:
 
 \begin{enumerate}
 \item The tensor product functor $\otimes: \cC\times \cC\to \cC$ induces bilinear maps hom-spaces;
-\item There is an equivalence $\cC \cong \Vec_\bC^n$ as $\bC$-linear categories;
+\item There is an equivalence $\cC \simeq \Vec_\bC^n$ as $\bC$-linear categories;
 \item $\End_\cC(\bone)\cong \bC$ as $\bC$-vector spaces
 \end{enumerate}
 
@@ -141,12 +141,17 @@ A pre-modular category has all of the structure we require of a modular category
 \tikzfig{non-degeneracy}
 \end{equation*}
 
-for all $B\in \cC$, then $A\cong \bone$.
+for all $B\in \cC$, then $A\cong n\cdot \bone$ for some $n\geq 1$.
 \end{defn}
 
 \begin{rem} Our usage of the term ``modular category" is a bit nonstandard. Where we call ``modular categories" most authors would call ``modular {\em tensor} categories". I find ``modular category" more convient here because it is shorter than ``modular tensor category" and I want to be succinct. For many authors, the term ``modular category" refers to a potentially non-semsimple modular category, such as in Turaev's original work on modular categories \cite{turaev1992modular}.
 \end{rem}
 
+\begin{ex}\label{modular-category-examples} The category $\Vec_{\bC}$ is naturally a modular category. We discusses its $\bC$-linear structure in example \ref{linear-category-examples}, we discussed its pivotal structure in subsection \ref{pivotal-category-examples}, and we discussed its braided monoidal structure in examples \ref{monoidal-category-examples}, \ref{braided-monoidal-examples}. It satisfies $\Hom_{\Vec_{\bC}}(\bC,\bC)\cong \bC$, the right-rigid structure and the $\bC$-linear structure turn $\Vec_{\bC}$ into a fusion category. As we saw in example \ref{pivotal-category-examples}, the fusion category structure and the left-rigid structure turn $\Vec_{\bC}$ into a spherical fusion category.  Clearly $\Vec_{\bC}$ satisfies the non-degeneracy axiom, because every object is isomorphic to $n\cdot \bone$ for some $n\geq 1$! Thus, $\Vec_{\bC}$ is indeed a modular category.
+\end{ex}
+
+\begin{dict} The category $\Vec_{\bC}$ equipped with chiral central charge $c_-=0$ corresponds physically to the {\em trivial phase}. That is, the phase of matter describing empty space.
+\end{dict}
 
 \subsubsection{Anyons in modular categories}
 
@@ -947,7 +952,7 @@ For every simple object $A\in \cC$, the map $\theta_A\in \End(A)$ can be identif
 When $A$ is simple, this follows from the spherical axiom. Taking the trace of both sides gives the same formula for $\theta_A$ as a figure-eight. Additionally, pushing through duals it is clear that both sides in the above proposed equality are natural isomorphisms. Natural isomorphisms are determined by their action on simple objects because they commute with direct sums. Hence, we conclude that the sides are equal for all objects. To get that the two reversed formulas are equal to $\theta_{A}^{-1}$, it suffices to compose with $\theta_A$ and use string-diagram manipulations to show that it results in the identity. This is a simple exercise and is left as an exercise to the reader.
 \end{proof}
 
-\begin{prop} Let $\cC$ be a pre-modular fusion category. The twists $\theta$ induce a monoidal natural isomorphism $\id_{\cC}\xrightarrow{\sim}\id_{\cC}$. Additionally, $\theta$ satisfies the identity
+\begin{prop}\label{twist-expanded} Let $\cC$ be a pre-modular fusion category. The twists $\theta$ induce a monoidal natural isomorphism $\id_{\cC}\xrightarrow{\sim}\id_{\cC}$. Additionally, $\theta$ satisfies the identity
 
 $$\theta_{A\otimes B}=\beta_{B,A}\circ \beta_{A,B}\circ (\theta_{A}\otimes \theta_{B})$$
 
@@ -1032,7 +1037,9 @@ We now dicuss the correct notion of functor nad natural transfrormation between 
 
 \subsubsection{Deligne tensor product}
 
-In the theory of any class of mathematical object, an important consideration is the ways in which examples can be put together to give new examples. In the case of fusion categories, this basic operation is known as the {\em Deligne tensor product}. Given any fusion categories $\cC$, $\cD$, their Deligne tensor product $\cC\boxtimes \cD$ is a new fusion category. The Deligne tensor product of spherical fusion categories will be equipped with the structure of a spherical fusion category, and the Deligne tensor product of (pre-)modular categories will be equipped with the structure of a (pre-)modular category.
+\Note{There's another structure I would like to include - time reversal. Given a modular category $\cC$, define $\overline{\cC}$. Say that this corresponds to time reversal. I'm not sure if there's anything much to say. Somehow it feels natural for me to put this with the Deligne tensor product, but I think that's because I know about quantum double MTC... maybe there's a better place somewhere else.}
+
+In the theory of any class of mathematical object, an important consideration is the ways in which examples can be put together to give new examples. In the case of fusion categories, this basic operation is known as the {\em Deligne tensor product} \cite{deligne2002categories}. Given any fusion categories $\cC$, $\cD$, their Deligne tensor product $\cC\boxtimes \cD$ is a new fusion category. The Deligne tensor product of spherical fusion categories will be equipped with the structure of a spherical fusion category, and the Deligne tensor product of (pre-)modular categories will be equipped with the structure of a (pre-)modular category.
 
 \begin{defn} Let $\cC,\cD$ be a $\bC$-linear categories, isomorphic as a $\bC$-linear categories to $\Vec_{\bC}^{n}$, $\Vec_{\bC}^m$ respectively. We define a Deligne tensor product of $\cC$ and $\cD$ to be be the following data:
 
@@ -1118,6 +1125,12 @@ Physically, the Deligne tensor product corresponds to {\em stacking}. Consider t
 \end{equation}
 \end{dict}
 
+\begin{ex} For any fusion category $\cC$, we have that
+
+$$\Vec_{\bC}\boxtimes \cC \simeq \cC \boxtimes \Vec_{\bC}\simeq \cC.$$
+
+Physically, this corresponds to the fact that stacking a sheet of material with the copy of the trivial phase (empty space) does not change the phase of that material.
+\end{ex}
 
 \subsection{The category of $G$-graded $G$-representations}
 
@@ -1179,7 +1192,14 @@ which sends a representation $(V,\rho)$ to the same representation, with the $G$
 In chapter [ref], all of the functors defined above will be given physical interpretations. Namely, the forgetful functors $\fD(G)\to \Vec_{G}$ and $\fD(G)\to\Rep(G)$ are interpreted as bulk-to-boundary condensation maps and the functor $\Rep(G)\to \fD(G)$ is interpreted as internal $G$-symmetry of $\fD(G)$.
 \end{rem}
 
+In our study of $G$-graded $G$-representations, we will repeatedly make use of the following result:
+
+\begin{prop}\label{DG-simples} Simple objects in $\fD(G)$ are in bijection with pairs $(C,\chi)$ where $C\subseteq G$ is a conjugacy class and $\chi$ is a simple representation of the centralizer of $C$. \Note{I don't know if this should go here, of if it is going to be in the TQO section. This proposition is not well-stated yet, becauase there is no such thing as ``centralizer of a conjugacy class". The centralizer depends on which element in the conjugacy class you choose. It is only well-defined up to conjugacy. Of course, conjugacy groups are isomorphic so in a sense this is not a problem.}
+\end{prop}
+
+
 \subsubsection{$\bC$-linear structures}
+\label{C-linear-structures}
 
 In this subsection, we will define $\bC$-linear structures on $\Vec_G$, $\Rep(G)$, and $\fD(G)$ for all finite groups $G$, and show that they are all equivalent to $\Vec_{\bC}^n$ for various values of $n$. The definitions of the structures are simple. In particular, all three categories $\Vec_G$, $\Rep(G)$, and $\fD(G)$ have forgetful functors onto $\Vec_\bC$ assigning to every $G$-graded vector space/$G$-representation/$G$-graded $G$-repesentation its underlying vector space. The hom-sets in $\Vec_G$, $\Rep(G)$, $\fD(G)$ are all linear subspaces of the hom-sets of their underlying vector spaces, and thus inherit a subspace $\bC$-linear structure. This defines a $\bC$-linear structure on $\Vec_G$, $\Rep(G)$, $\fD(G)$.
 
@@ -1269,7 +1289,7 @@ Clearly, $\pi_{V,v}$ is the unique map $\bC[G]\to V$ satisfying $\pi_{V,v}(\ket{
 
 \end{proof}
 
-\begin{cor} For all finite groups $G$, there is an equivalence of categories $\Rep(G)\simeq  \Vec_{\bC}^n$ for some $n\geq 1$.
+\begin{cor}\label{repG-is-vector-space} For all finite groups $G$, there is an equivalence of categories $\Rep(G)\simeq  \Vec_{\bC}^n$ for some $n\geq 1$.
 \end{cor}
 \begin{proof}We show that $\Rep(G)$ satisfies all of the criteria of proposition \ref{higher-linear-algebra}. First, we show that $\Rep(G)$ has finitely many isomorphism classes of simple objects. Taking the dimension of both sides of equation \ref{regular-rep-decomp-formula}, we find that
 
@@ -1278,33 +1298,239 @@ $$\sum_{[V]\in \cL(\Rep(G))}(\dim V)^2=|G|.$$
 In particular, since $\dim V\geq 1$, we conclude that $\cL(\Rep(G))$ is finite. The fact that every object in $\Rep(G)$ decomposes as a direct sum of finitely many simple objects is Mashke's theorem (proposition \ref{mashke-theorem}). The Schur's lemma axiom is satisfied by the Schur's lemma for representations (proposition \ref{schur-lemma-reps}).
 \end{proof}
 
-\begin{prop} For all finite groups $G$, there is an equivalence of categories $\fD(G)\simeq \Vec_{\bC}^n$ for some $n\geq 1$.
+\begin{prop}\label{DG-is-vector-space} For all finite groups $G$, there is an equivalence of categories $\fD(G)\simeq \Vec_{\bC}^n$ for some $n\geq 1$.
 \end{prop}
-\begin{proof} All of the arguments 
+\begin{proof} The proof of Schur's lemma and Mashke's theorem carry over essentially verbatim to the case of $\fD(G)$, so we do not repeat them. Thus, applying proposition \ref{higher-linear-algebra}, it remains to prove that $\fD(G)$ has finitely many isomorphism classes of simple objects. By proposition \ref{DG-simples}, simple objects in $\fD(G)$ correspond to pairs $(C,\chi)$ where $C\subseteq G$ is a conjugacy clas and $\chi$ is an irriducible representation of the centralizer of $C$. Since $G$ is finite, it has finitely many conjugacy classes. By proposition \ref{repG-is-vector-space}, the centralizers of each of those conjugacy classes have finitely many irriducible representations. Hence, we conclude the result.
 \end{proof}
 
 \subsubsection{Spherical fusion structures}
 
-\Note{ show that the categories have duals and monoidal structure. This should be pretty easy and painless. Pentagon identity should follow from the pentangon identity on $\Vec_{\bC}$.}
+We now work on the spherical fusion structures of $\Vec_{G}$, $\Rep(G)$, and $\fD(G)$. 
+
+\begin{defn}
+The monoidal structures are defined as follows. We define a tensor product on $\Vec_G$ by
+
+\begin{align*}
+\otimes: \Vec_{G}\otimes \Vec_{G}&\to \Vec_{G},\\
+V\otimes W&\mapsto \bigoplus_{g\in G}(V\otimes W)_g
+\end{align*}
+
+where the $g$-graded component $(V\otimes W)_g$ is defined to be 
+
+$$(V\otimes W)_g=\bigoplus_{\substack{h,k\in G \\ hk=g}}V_h\otimes W_k.$$
+
+We define a tensor product on $\Rep(G)$ by
+
+\begin{align*}
+\otimes: \Rep(G)\otimes \Rep(G)&\to \Rep(G),\\
+(V,\rho_V)\otimes (W,\rho_W)&\mapsto (V\otimes W,\rho_{V}\otimes \rho_W)
+\end{align*}
+
+where for all $g\in G$,
+
+$$(\rho_V\otimes \rho_W)(g)(v\otimes w)=\rho_V(g)(v)\otimes \rho_W(g)(w).$$
+
+We define a tensor product on $\fD(G)$ by endowing $V\otimes W$ with the tensor-product graded structure of its underlying graded vector spaces, with the with representation structure of its underlying representations. 
+\end{defn}
+
+\begin{prop} Endowed with their natural tensor products $\Vec_G$, $\Rep(G)$, and $\fD(G)$ are all monoidal categories
+\end{prop}
+\begin{proof}In all three cases, the underlying vector space of the tensor product is the tensor product of the underlying vector spaces. This means that all three categories inherit unit and associativity maps from $\Vec_{\bC}$, which automatically satisfy the correct coherence relations. What one needs to prove is that these unit/associativity maps repsect the structure of $\Vec_G$, $\Rep(G)$, and $\fD(G)$ respectively. For $\Vec_G$, we obseve that
+
+\begin{align*}
+(V\otimes (V'\otimes V''))_g &=\bigoplus_{hk=g}V_h\otimes (V'\otimes V'')_k\\
+&=\bigoplus_{hk=g}V_h\otimes \big(\bigoplus_{h'h''=k}V'_{h'}\otimes V''_{h''}\big)\\
+&\cong \bigoplus_{hh'h''=g}V_h\otimes V'_{h'}V''_{h''}.
+\end{align*}
+
+Clealy, repeating this process on $((V\otimes V')\otimes V'')_g$ would have given the same answer with the other parenthesization, and so the associativity map is indeed a graded map. Since $\bC_{1}$ does not change gradings, it serves as a monoidal unit.
+
+We now move on to $\Rep(G)$. It is clear in this case that the associativity maps are morphisms of representations, and the trivial representation $G\to \Aut(\bC)$ where every group element acts by the identity is the monoidal unit. As for $\fD(G)$, all that remains to check is that the tensor product of representations is compatible with the tensor product grading. This follows from the following computation:
+
+\begin{align*}
+(\rho_V\otimes \rho_W)(g)((V\otimes W)_h)&=\bigoplus_{kk'=h}\rho_V(g)(V_k)\otimes \rho_W(g)(W_{k'})\\
+&\subseteq \bigoplus_{kk'=h}V_{g k g^{-1}}\otimes W_{gk'g^{-1}}.
+\end{align*}
+
+Seeing as $(gkg^{-1})(gk'g^{-1})=gkk'g^{-1}=ghg^{-1}$, each term in the direct sum is contained in $ghg^{-1}$. Thus, we get
+
+$$(\rho_V\otimes \rho_W)(g)((V\otimes W)_h)\subseteq (V\otimes W)_{ghg^{-1}}$$
+
+so the tensor product and grading are compatible, as desired.
+\end{proof}
+
+\begin{defn} The right and left rigid structures are defined as follows. On $\Vec_G$, $\Rep(G)$, $\fD(G)$, the underlying vector space of the dual will be equal to the dual of the underlying vector space. The left and right evaluation and coevaluation maps are inherited from the evaluation and coevaluation maps on $\Vec_{\bC}$. On $\Vec_G$, we define the dual as follows:
+
+$$V^*=\bigoplus_{g\in G}V_{g^{-1}}^*.$$
+
+On $\Rep(G)$ we define the dual as $(V,\rho)^*=(V^*,\rho^*)$, where
+
+$$\rho^*(g)(\varphi)=\varphi\circ \rho\big(g^{-1}\big).$$
+
+On $\fD(G)$ we inherit a structure of a $G$-graded $G$-representation on the dual $V^*$ by endowing with the dual structures defined on $\Vec_G$, $\Rep(G)$ seperately.
+\end{defn}
+
+\begin{prop}\label{examples-are-pivotal} Endowed with their natural right and left rigid structures, $\Vec_G$, $\Rep(G)$, and $\fD(G)$ are all pivotal categories.
+\end{prop}
+\begin{proof} It suffices to show that the evaluation and coevaluation maps respect the structures on each of the categories. For $\Vec_G$, the evaluation and coevaluatin maps will act by components as evaluation and coevaluation maps $V_g\otimes V_g^*\to \bC_1$, $\bC_1\to V_g^*\otimes V_g$, and the same with the orders of the duals swapped. In all cases $V_g$ is in the $g$-graded component and $V_g^*$  is in the $g^{-1}$-graded component. Thus, $V_g\otimes V_g^*$ and $V_g^*\otimes V_g$ are both in the $1$-graded component, so the evaluation and coevaluation maps respect grading.
+
+We now move on to $\Rep(G)$. To check that the dual representation is a representation is a representation, we compute for all $\varphi \in V^*$
+
+\begin{align*}
+\rho^*(g)(\rho^*(h)(\varphi))&=\varphi\circ \rho(h^{-1})\circ \rho(g^{-1})\\
+&=\varphi\circ \rho((gh)^{-1})=\rho^*(gh)(\varphi).
+\end{align*}
+
+To check that the evaluation map is a morphism of representations, we compute for all $v\otimes \varphi\in V\otimes V^*$
+
+\begin{align*}
+\ev_{V}((\rho\otimes \rho^*)(g)(v\otimes \varphi))&=\ev_V(\rho(g)(v)\otimes (\varphi \circ \rho(g^{-1})))\\
+&=(\varphi \circ \rho(g^-1)\circ \rho(g))(v)=\varphi(v).
+\end{align*}
+
+The proof that $\rho$ respect the coevaluation map is similar, so we conclude that $\Rep(G)$ is a pivotal category. Seeing as the pivotal on $\fD(G)$ is the composite of the pivotal structure on $\Vec_G$ and $\Rep(G)$, it remains to show that that the dual grading is compatible with the dual representation. By definition $V_h^*$ consists of functions on $V$ which act by $0$ on all vectors $v\not\in V_h$. We compute
+
+$$\rho^*(g)(\varphi)(v)=\varphi(\rho(g^{-1})v),$$
+
+which is $0$ whenever $\rho(g^{-1})v\not\in V_{h}$, or equivalently, whenever $v\not\in V_{ghg^{-1}}$. Thus, $\rho^*(g)(\varphi)$ is in $V_{ghg^{-1}}^*$. This means that $\rho^*$ respects the grading, so our proof is complete.
+\end{proof}
+
+\begin{cor} The categories $\Vec_G$, $\Rep(G)$ and $\fD(G)$ are all spherical fusion categories.
+\end{cor}
+\begin{proof}We have already seen that the pivotal structure on $\Vec_{\bC}$ is spherical, so the pivotal structures on $\Vec_G$, $\Rep(G)$, and $\fD(G)$ are spherical as well. Thus, the result follows immediately form combining our results on $\bC$-linear structures from subsection \ref{C-linear-structures} and proposition \ref{examples-are-pivotal}, and checking some simple axioms (such as, the compatibility of the tensor product and the $\bC$-linear structure).
+\end{proof}
 
 \subsubsection{Braiding and modularity}
 
-\Note{Introduce braidings. Show that $\Rep(G)$ is symmetric. Show that $\Vec_G$ does not admit a braiding if $G$ is not abelian and does admit a symmetric braiding if $G$ is abelian. Show that $\fD(G)$ admits a non-degenerate braiding.}
+We can now define our braided structures.
 
+\begin{defn} We define a braided structure on $\Rep(G)$ as follows. Given any $(V,\rho_V)$, $(W,\rho_W)$, we define
+
+\begin{align*}
+\beta_{V,W}:V\otimes W&\to W\otimes V \\
+(v,w)&\mapsto (w,v)
+\end{align*}
+
+We define a braided structure on $\fD(G)$ as follows. Decomposing $V\otimes G= \bigoplus_{g\in G}V_g\otimes W$, we define $\beta$ on each component as
+
+\begin{align*}
+\beta_{V,W}:V_g\otimes W&\to W\otimes V_g,\\
+(v,w)&\mapsto (\rho_W(g)(w),v)
+\end{align*}
+
+and we define $\beta_{V,W}:V\otimes W\to W\otimes V$ by summing these maps.
+\end{defn}
+
+\begin{prop}\label{braiding-structures-are-good} Endowed with their natural braiding maps, both $\Rep(G)$ and $\fD(G)$ are braided monoidal categories. In fact, they are pre-modular categories.
+\end{prop} 
+\begin{proof}This is clear for $\Rep(G)$, since its braiding is inherited from $\Vec_{\bC}$ and $\Vec_{\bC}$ is a braided monoidal category. All that one needs to check is that the braiding maps are morphisms of representations, but this is immediate. Thus, we can focus on $\fD(G)$. For simplicity, we will supress associativity maps and prove that $\fD(G)$ satisfies the axioms as stated for strict braided monoidal categories. Choose some elements $V,V',V''\in \fD(G)$. Suppose that $v\in V_g$, $v'\in V'_{g'}$, and $v''\in V''_{g''}$. For the first coherence axiom, we compute
+
+\begin{align*}
+(\id_{V'}\otimes \beta_{V,V''})(\beta_{V,V'}\otimes \id_{V''})(v\otimes v'\otimes v'')&=(\id_{V'}\otimes \beta_{V,V''})(\rho_{V'}(g)v'\otimes v\otimes v'')\\
+&=(\rho_{V'}(g)v'\otimes \rho_{V''}(g)v''\otimes v)\\
+&=\beta_{V,V'\otimes V''}(v\otimes v'\otimes v'').
+\end{align*}
+
+For the second coherence axiom, we compute
+
+\begin{align*}
+(\id_{V'}\otimes \beta^{-1}_{V'',V})(\beta^{-1}_{V',V}\otimes \id_{V''})(v\otimes v'\otimes v'')&=(\id_{V'}\otimes \beta^{-1}_{V'',V})(v'\otimes \rho_{V}(g'^{-1})v\otimes v'')\\
+&=(v'\otimes v''\otimes \rho_{V}(g''^{-1})\rho_{V}(g'^{-1})v)\\
+&=\beta_{V'\otimes V'',V}^{-1}(v\otimes v'\otimes v'').
+\end{align*}
+
+where in the last step we used that
+
+$$\rho_{V}(g''^{-1})\rho_{V}(g'^{-1})=\rho_V((g'g'')^{-1}).$$
+
+Thus, $\fD(G)$ forms a braided monoidal category so our proof is complete.
+\end{proof}
+
+\begin{defn} We call a braided monoidal category $\cC$ a {\em symmetric} monoidal category if $\beta_{B,A}\circ \beta_{A,B}=\id_{A\otimes B}$ for all $A,B\in \cC$.
+\end{defn}
+
+\begin{rem}\label{symmetric-monoidal-categories} In a sense, symmetric monoidal categories are the opposite of modular categories. In a modular category, $\beta_{B,A}\circ \beta_{A,B}=\id_{A\otimes B}$ for all $B\in \cC$ implies $A\cong n\cdot \bone$ for some $n\geq 1$. In a symmetric category $\beta_{B,A}\circ \beta_{A,B}=\id_{A\otimes B}$ is true for all $A,B\in \cC$. The only way for a pre-modular category to be both symmetric and modular is to have every object be isomorphic to $\bone$. That is, the only symmetric modular category is $\Vec_{\bC}$
+\end{rem}
+
+\begin{ex}
+For all finite groups $G$, $\Rep(G)$ is a symmetric monoidal category. In light of remark \ref{symmetric-monoidal-categories}, we observe thus that $\Rep(G)$ is modular if and only if $G=1$ is the trivial group.
+\end{ex}
+
+\begin{ex}
+The category $\Vec_G$ typically does not admit a braiding. In particular, we have that $\bC_g\otimes \bC_h\cong\bC_{gh}$ and $\bC_h\otimes \bC_g\cong \bC_{hg}$. A prerequisite for being braided is to have non-natural isomorphisms $A\otimes B\cong B\otimes A$ for all $A,B$. Thus, for $\Vec_G$ to admit a braiding, we would need $\bC_{gh}\cong \bC_{hg}$ for all $g,h\in G$. That is, we would need $G$ to be abelian. In this case, the map $\beta_{V,W}:V\otimes W\to W\otimes V$ which sends $v\otimes w$ to $w\otimes v$ can be readily shown to be a symmetric braiding on $\Vec_G$, along the same lines as the proof of proposition \ref{braiding-structures-are-good}.
+\end{ex}
+
+\begin{thrm} For all finite groups $G$, $\fD(G)$ is a modular category.
+\end{thrm}
+\begin{proof}
+Suppose that $V\in \fD(G)$ is an element such that $\beta_{W,V}\circ\beta_{V,W}=\id_{V\otimes W}$ for all $W\in \fD(G)$. We first take $W=\bC[G]_1$ to be the regular representation of $G$, with the entire vector space put into the $1$-graded component. Then, for all $v\in V_g$ we find that
+
+\begin{align*}
+V_g\otimes W &\xrightarrow{\beta}W\otimes V_g\xrightarrow{\beta} V_g\otimes W.\\
+v\otimes \ket{1}&\mapsto \ket{g}\otimes v \mapsto v\otimes \ket{g}
+\end{align*}
+
+So, $V_g=0$ for all $g\neq 1$. That is, $V$ is entirely supported in its $1$-graded component. Now, we let $W=\bC[G]$ as a vector space, where $W_g$ is spanned by $\ket{g}$, and $\rho_W(g)(\ket{h})=\ket{ghg^{-1}}$. We observe for all $g\in G$
+
+\begin{align*}
+V\otimes W &\xrightarrow{\beta}W\otimes V\xrightarrow{\beta} V\otimes W.\\
+v\otimes \ket{g}&\mapsto \ket{g}\otimes v \mapsto \rho(g)(v)\otimes \ket{g}
+\end{align*}
+
+Thus, $\rho(g)(v)=v$  for all $v\in V$, $g\in G$. That is, the action of $\rho$ is trivial. Since $V$ lives entirely in the $1$-graded component and has trivial action, we thus find that $V$ is a direct sum of the trivial vector space in the $1$-graded component some number of times. Since $V$ was chosen arbitrarily among elements with $\beta_{W,V}\circ\beta_{V,W}=\id_{V\otimes W}$ for all $W\in \fD(G)$, we conclude the result.
+\end{proof}
+
+\begin{prop}The forgetful functors $\fD(G)\to \Vec_G$ and $\fD(G)\to\Rep(G)$ are functors of spherical fusion categories. The natural functor $\Rep(G)\to\fD(G)$ is a functor of pre-modular categories.
+\end{prop}
+\begin{proof} Every structure of $\fD(G)$ as a spherical fusion category was defined so that if you forget the grading it is the same structure as in $\Rep(G)$ and if you forget the representation it is the same structure as in $\Vec_G$. Thus, it is immediate that the forgetful functors are functors of spherical fusion categories. It thus remains to show that the natural functor $\Rep(G)\to\fD(G)$ respects braiding. This comes from the fact that the braiding in $\fD(G)$ is the same as the braiding of $\Rep(G)$ in the $1$-graded component, and the image  of $\Rep(G)$ consists of objects which are supported entirely in their $1$-graded components.
+\end{proof}
+
+\begin{prop} For all finite groups $G,H$, we have that
+
+\begin{align*}
+\Vec_{G}\boxtimes \Vec_H&\simeq \Vec_{G\times H}\\
+\Rep(G)\boxtimes \Rep(H)&\simeq \Rep(G\times H)\\
+\fD(G)\boxtimes \fD(H)&\simeq \fD(G\times H)
+\end{align*}
+
+where the first equivalence is an equivalence of spherical fusion categories, and the last two are equivalences of pre-modular categories.
+\end{prop}
+\begin{proof} We suffice ourselves to defining the relevant functors which induce the equivalences of categories. Verifying that these functors respect the appropriate structures is tedious but straightforward, and they are all manifestly fully faithful and essentially surjective so they induce equivalences of categories by proposition [ref]. The first functor is
+
+\begin{align*}
+\Vec_{G}\boxtimes \Vec_{H}&\xrightarrow{}\Vec_{G\times H}
+V\boxtimes W&\mapsto \bigoplus_{(g,h)\in G\times H}V_g\otimes W_h.
+\end{align*}
+
+The next is
+
+\begin{align*}
+\Rep_{G}\boxtimes \Rep_{H}&\xrightarrow{}\Rep_{G\times H}
+(V,\rho_V)\otimes (W,\rho_W)&\mapsto (V\otimes W, \rho_V\otimes \rho_W)
+\end{align*}
+
+where
+
+$$(\rho_V\otimes \rho_W)(g,h)(v\otimes w)=\rho_V(g)(v)\otimes \rho_W(h)(w).$$
+
+The functor $\fD(G)\boxtimes \fD(H)\to \fD(G\times H)$ is defined on the level of graded vector spaces by forgeting the representation structure and using the first functor we defined, and it is defined on the level of representations by forgetful the graded structure and using the second functor we defined.
+\end{proof}
+
+\begin{ex}\Note{Work through the toric code. What I should include here is quite dependent on what is covered in the TQO chapter. Additionally, it would be nice to have a second example with the $G=S_3$ model.}
+\end{ex}
 
 \subsection{The modular representation}
 
 \subsubsection{Definition}
 
-In this chapter we are going to talk about the {\em modular representations} of modular categories. Here's the point. Let $\cC$ be a modular category. Let $\cL$ be the set of isomorphism classes of simple objects of $\cC$. We will define a group homomorphism
+In this chapter we will discuss the {\em modular representations} of modular categories. Let $\cC$ be a modular category. Let $\cL$ be the set of isomorphism classes of simple objects of $\cC$. We will define a group homomorphism
 
 $$\rho_{\cC}:\SL_2(\bZ)\xrightarrow{}\Aut(\bC[\cL])$$
 
-assocociated to $\cC$, where $\SL_2(\bZ)$ is the group of $2$-by-$2$ matrices with integer coefficients and unit determinant. The group $\SL_2(\bZ)$ is sometimes known as the {\em modular group}, due to its connection with moduli spaces of elliptic curves. Hence, $\rho_{\cC}$ is known as the {\em modular representation} of $\cC$.
+assocociated to $\cC$, where $\SL_2(\bZ)$ is the group of $2$-by-$2$ matrices with integer coefficients and unit determinant. The group $\SL_2(\bZ)$ is sometimes known as the {\em modular group}, due to its connection with moduli spaces of elliptic curves. Hence, $\rho_{\cC}$ is known as the {\em modular representation} of $\cC$. It is from the existence of this representation that modular categories get their name. The goal of this chapter is to introduce $\rho_{\cC}$, show it is well defined, and then prove a series of theorems related to $\rho_{\cC}$.
 
-The goal of this chapter is to introduce $\rho_{\cC}$, show it is well defined, and then prove a series of theorems related to $\rho_{\cC}$.
-
-Before defining $\rho_{\cC}$, we recall the basic group theory of $\SL_2(\bZ)$. It is generated by the matrices
+\begin{rem}\label{SL2Z-group-theory}
+We recall the basic group theory of $\SL_2(\bZ)$. It is generated by the matrices
 
 $$
 s=
@@ -1320,30 +1546,26 @@ t=
 \end{pmatrix}.
 $$
 
-These two matrices satisfy the relations $s^2=-1$ and $(st)^3=-1$, where $1$ is used the represent the identity matrix. These relations generate $\SL_2(\bZ)$, in the sense that we have the following presentation:
+These two matrices satisfy the relations $s^2=-1$ and $(st)^3=-1$, where $1$ is used the represent the identity matrix. These relations generate $\SL_2(\bZ)$, in the sense that we have the following presentation [ref]:
 
-\begin{prop} The following presentation is valid:
+\begin{equation}
+\SL_2(\bZ)=\Braket{s,t | s^4=1,\,\, (st)^3=s^2}.
+\end{equation}
+\end{rem}
 
-$$\SL_2(\bZ)=\Braket{s,t | s^4=1,\,\, (st)^3=s^2}.$$
-\end{prop}
-\begin{proof} This is a standard fact about $\SL_2(\bZ)$. Se for instance [ref]
-\end{proof}
-
-Hence, to define a homomorphism $\rho_{\cC}:\SL_2(\bZ)\to \Aut(\bC[\cL])$ it suffices to choose automorphisms $\rho_{\cC}(s)$, $\rho_{\cC}(t)$ of $\bC[\cL]$, and show that they satisfy the relations $\rho_{\cC}(s)^4=1$ and $(\rho_{\cC}(s)\rho_{\cC}(t))^3=\rho_{\cC}(s)^2$. Since $\bC[\cL]$ has a canonical basis, we can think of its automorphisms as being matrices with rows and collumns labeled by $\cL$. We define an operator $S:\bC[\cL]\to \bC[\cL]$ via the matrix coeffients
+In light of remark \ref{SL2Z-group-theory}, to define a homomorphism $\rho_{\cC}:\SL_2(\bZ)\to \Aut(\bC[\cL])$ it suffices to choose automorphisms $\rho_{\cC}(s)$, $\rho_{\cC}(t)$ of $\bC[\cL]$, and show that they satisfy the relations $\rho_{\cC}(s)^4=1$ and $(\rho_{\cC}(s)\rho_{\cC}(t))^3=\rho_{\cC}(s)^2$. Since $\bC[\cL]$ has a canonical basis, we can think of its automorphisms as being matrices with rows and collumns labeled by $\cL$. We define an operator $S:\bC[\cL]\to \bC[\cL]$ via the matrix coeffients $S_{[A],[B]}=S_{A,B}$ defined by
 
 \begin{equation*}
 \tikzfig{S-matrix}
 \end{equation*}
 
-We next define the matrix $T:\bC[\cL]\to\bC[\cL]$ to be the diagonal matrix with $([A],[A])$-entry $\theta_{A}$, for all $[A]\in \cL$.
-
-As currently stated, the $S$ and $T$ matrices defined do not satify $S^4=1$ and $(ST)^3=S^2$. They only satisfy these formula up to phases in $\bC$. They still need to be normalized before we can defined $\rho_{\bC}$. The normalization factors come in terms of the {\em Gauss sums},
+We define the matrix $T:\bC[\cL]\to\bC[\cL]$ to be the diagonal matrix with $([A],[A])$-entry $\theta_{A}$, for all $[A]\in \cL$. We call these the {\em $S$-matrix} and {\em $T$-matrix} of $\cC$ respectively. As currently stated, the $S$ and $T$ matrices defined do not satify $S^4=1$ and $(ST)^3=S^2$. They only satisfy these formula up to phases in $\bC$. They still need to be normalized before we can defined $\rho_{\bC}$. The normalization factors come in terms of the {\em Gauss sums},
 
 $$p^{\pm}_{\cC}=\sum_{[A]\in \cL}\theta_A^{\pm 1}d_A^2.$$
 
 We can now state the main theorem of this chapter:
 
-\begin{thrm} Let $\cC$ be a modular category. The values $p_{\cC}^{+}$ and $p_{\cC}^{-}$ are nonzero, and the map
+\begin{thrm}\label{modular-rep-theorem} Let $\cC$ be a modular category. The values $p_{\cC}^{+}$ and $p_{\cC}^{-}$ are nonzero, and the map
 
 \begin{align*}
 \rho_{\cC}:\SL_2(\bZ)&\xrightarrow{}\Aut(\bC[\cL])\\
@@ -1354,17 +1576,23 @@ t & \mapsto \left(p_{\cC}^{-}/p_{\cC}^+\right)^{1/6}\cdot T
 is a group homomorphism.
 \end{thrm}
 
-We will prove this theorem and motivate why it should be true over the course of this chapter. We will also prove key facts about the image and kernel of this representation, as well as other formulas of interest relating to twists, S-matrix entries, and Gauss sums.
+We will prove this theorem and motivate why it should be true over the course of this chapter. We will also prove key facts about the image and kernel of this representation, as well as other formulas of interest relating to twists, $S$-matrix entries, and Gauss sums.
+
+\begin{ex}\Note{Write out modular data for toric code.}
+\end{ex}
+
+\begin{ex}\Note{Write out modular data for $G=S_3$.}
+\end{ex}
 
 \subsubsection{Torus perspective}
 
-It's good to reflect on why MCs have $\SL_2(\bZ)$ representations assocated with them in the first place. Not only does the representation exist, but it is so fundamental to the modular category that it is chosen as the namesake. This begs the question. What's going on?
+\Note{I should wait until I'm done with the TQO chapter to write this section.}
 
-The answer has to do with topological phases on the torus.
+It's good to reflect physically on why modular categories have $\SL_2(\bZ)$ representations assocated with them in the first place. Not only does the representation exist, but it is so fundamental to the modular category that it is chosen as the namesake. This begs the question - what's going on? The answer has to do with topological phases on the torus:
 
 \Note{add torus}
 
-Every modular category $\cC$ is supposed to describe a topological order. Up to now we have only considered what happens when this topological order is applied to an infnitely large flat sheet. We have not examined what happens when this topological order is put on a space with nontrivial topology. For instance, the torus. Suppose we analyse the system of $\cC$ applied to the torus. This amounts to breaking up the torus into some microscopic lattice and applying some Hamiltonian. This Hamiltonian will have group states $V_{\text{g.s.}}^{T^2}$, which are independent of the choice of microscopic realization of $\cC$.
+Every modular category $\cC$ (paired with a chiral central charge $c_-$) is supposed to describe a topologically ordered phase. Up to now we have only considered what happens when this topological order is applied to an infnitely large flat sheet or sphere. We have not examined what happens when this topological order is put on a space with nontrivial topology. For instance, the torus. Suppose we analyse the system of $\cC$ applied to the torus. This amounts to breaking up the torus into some microscopic lattice and applying some Hamiltonian. This Hamiltonian will have group states $V_{\text{g.s.}}^{T^2}$, which are independent of the choice of microscopic realization of $\cC$.
 
 Suppose we start with a torus, cut it across, twist one of its legs, then glue it back together, as shown below:
 
@@ -1442,9 +1670,6 @@ A more elementary way of stating this theorem is that every self-homeomorphism o
 The Dehn twist is described as follows. \Note{describe Dehn twist in terms of theta-symbols $\theta_{A}$}.
 
 The rotation is described as follows.\Note{describe the rotation in terms of the $S$-matrix.}
-
-
-
 \end{rem}
 
 Now that we have described $\MCG(T^2)=\SL_2(\bZ)$ and $V_1=\bC[\cL]$, we are tasked with understanding $\rho_1:\SL_2(\bZ)\to \bC[\cL]$. That is, we must describe the maps $\rho_1(s),\rho_1(t)\in \Aut(\bC[\cL])$.
@@ -1454,15 +1679,9 @@ Now that we have described $\MCG(T^2)=\SL_2(\bZ)$ and $V_1=\bC[\cL]$, we are tas
 
 \subsubsection{Bruguieres's modularity theorem and the Verlinde formula}
 
-In this section we prove Bruguieres's modularity theorem. This theorem asserts that, given a pre-modular category $\cC$, the $S$-matrix $S$ is invertible if and only if $\cC$ is modular. Historically, this theorem is backwards. The original definition of modular category included that the $S$-matrix should be invertible. This was the only definition of modular category, until Bruguieres proved in [ref] that the invertability of the $S$-matrix is equivalent to $\cC$ having the non-degenerate braiding property that if
+In this section we prove Bruguieres's modularity theorem. This theorem asserts that, given a pre-modular category $\cC$, the $S$-matrix $S$ is invertible if and only if $\cC$ is modular. Historically, this theorem is backwards. The original definition of modular category included that the $S$-matrix should be invertible. This was the only definition of modular category, until Bruguieres proved \cite{bruguieres2000categories} that the invertability of the $S$-matrix is equivalent to $\cC$ having the non-degenerate braiding property. In this way our definition of modular category is historically incorrect, and Bruguieres's modularity theorem tells us that this is equivalent to the original definition. The proof of the modularity theorem relies on the {\em Verlinde algebra} of $\cC$. This algebra will be of use for us in proving other theorems in the future, in particular the Verlinde formula (theorem \ref{verlinde-formula}).
 
-\begin{equation*}
-\tikzfig{non-degeneracy}
-\end{equation*}
-
-for all $B\in \cC$ then $A\cong \bone$. We are thus stating a historically incorrect definition of modular category, and Bruguieres's modularity theorem tells us that this is equivalent to the original definition. The proof of the modularity theorem relies on the {\em Verlinde algebra} of $\cC$. This algebra will be of use for us in proving other theorems in the future, in particular the Verlinde formula in section [ref].
-
-We define an {\em algebra} over $\bC$ to a vector space $V$ paired with a bilinear map $\cdot: V\times V\to V$ called multiplication, such that multiplication is associative and has a unit. An algebra is called {\em commutative} if its multiplication is commutative.
+\begin{defn}
 
 We define the Verlinde algebra $K_{\bC}(\cC)$ of $\cC$ as follows:
 
@@ -1482,15 +1701,15 @@ $$
 \right\}.
 $$
 
+Recall that an {\em algebra} over $\bC$ is a vector space $V$ paired with a bilinear map $\cdot: V\times V\to V$ called multiplication, such that multiplication is associative and has a unit. An algebra is called {\em commutative} if its multiplication is commutative.
+\end{defn}
+
 \begin{lem} Both $K_{\bC}(\cC)$ and $\cfunc$ are commutative algebras.
 \end{lem}
 \begin{proof} The fact that $K_{\bC}(\cC)$ is associative follows from the associativity of the tensor product. Its unit is $\ket{[\bone]}$. It is commutative because $\cC$ is braided. The fact that $\cfunc$ is a commutative algebra is a standard exercise in algebra. Its unit is $\sum_{[A]\in \cL}\ket{[A]}$.
 \end{proof}
 
-
-We now state and prove the core theorem which underlies the core properties of the $S$ matrix:
-
-\begin{prop} The map
+\begin{prop}\label{s-matrix-algebras} The map
 
 \begin{align*}
 \cS:K_{\bC}(\cC)&\xrightarrow{} \cfunc\\
@@ -1522,10 +1741,7 @@ which follows from the facts that $\id_{B\oplus C}$ can be decomposed as project
 as desired.
 \end{proof}
 
-
-By Proposition [ref], we have constructed a map of algebras $\cS:K_{\bC}(\cC)\to \cfunc$. As a map of vector spacces, $\cS$ is equal to the $S$-matrix up to a rescaling of rows by nonzero factors. Hence, it is clear that the $S$-matrix is invertible if and only if the algebra map $\cS$ is invertible. We now use special properties of the map $\cS$ to prove the main theorem of the section:
-
-\begin{thrm}[Bruguieres's modularity theorem] Let $\cC$ be a pre-modular category. The braiding on $\cC$ satisfies the non-degenerate braiding axiom if and only if the $S$-matrix is invertible.
+\begin{thrm}[Bruguieres's modularity theorem]\label{bruguieres-theorem} Let $\cC$ be a pre-modular category. The braiding on $\cC$ satisfies the non-degenerate braiding axiom if and only if the $S$-matrix is invertible.
 \end{thrm}
 \begin{proof} We observe that $\cC$ has a degenerate braiding if and only if there exists some $A\not\cong \bone$ such that
 
@@ -1593,12 +1809,9 @@ Hence $\ket{[X]}$ is in the image of $\cS$ for $[X]\in \cL$, as desired.
 
 \end{proof}
 
+We can also use proposition \ref{s-matrix-algebras} to prove the {\em Verlinde formula}. This formula was first conjectured by Verlinde \cite{verlinde1988fusion}, and proven the following year by Moore-Seiberg \cite{moore1989classical}. There are now many Verlinde-type formulas. Most imporantly, there is one for vertex operator algebras \cite{huang2008vertex} and one in algebraic geometry \cite{faltings1994proof}.
 
-\subsubsection{Verlinde formula}
-
-In this section, we prove the {\em Verlinde formula}. This formula was first conjectured by Verlinde \cite{verlinde1988fusion}, and proven the following year by Moore-Seiberg \cite{moore1989classical}. There are now many Verlinde-type formulas. Most imporantly, there is one for vertex operator algebras \cite{huang2008vertex} and one in algebraic geometry \cite{faltings1994proof}. With proposition [ref] in hand, the proof is very quick:
-
-\begin{thrm}[Verlinde formula] Let $\cC$ be a modular category.
+\begin{thrm}[Verlinde formula]\label{verlinde-formula} Let $\cC$ be a modular category.
 
 \begin{enumerate}[(i)]
 \item For all simple objects $A,B,C\in \cC$,
@@ -1639,12 +1852,10 @@ Comparing coeffients with the definition of $N^{A}$, we conclude the result.
 
 \subsubsection{Proof of modularity}
 
-In this section we prove that the $S$-matrix and $T$-matrix indeed give a representation of the modular group. That is, we will prove Theorem [ref]. At its heart, the fact that the modular representation of modular category is a homomorphisms comes down to proving a series of relations between the coeffients of the $S$-matrix and the coeffients of the $T$-matrix. That is, we are proving a series of relations between braiding and twisting. The general method is to take traces of certain diagrams, and then compute those traces in two ways. One way will involve more twists and the other will involve more braiding. This will give some algebraic relation, and choosing the right diagrams we will get enough algebraic relations to deduce Theorem [ref].
-
-We begin with the most fundamental relationship between $S$-matrix and $T$-matrix entries:
+In this section we prove that the $S$-matrix and $T$-matrix indeed give a representation of the modular group. That is, we will prove theorem \ref{modular-rep-theorem}. At its heart, the fact that the modular representation of modular category is a homomorphisms comes down to proving a series of relations between the coeffients of the $S$-matrix and the coeffients of the $T$-matrix. That is, we are proving a series of relations between braiding and twisting. The general method is to take traces of certain diagrams, and then compute those traces in two ways. One way will involve more twists and the other will involve more braiding. This will give some algebraic relation, and choosing the right diagrams we will get enough algebraic relations to deduce theorem \ref{modular-rep-theorem}. We begin with the most fundamental relationship between $S$-matrix and $T$-matrix entries:
 
 
-\begin{lem} Let $\cC$ be a pre-modular category. We have that
+\begin{lem}\label{S-matrix-expansion} Let $\cC$ be a pre-modular category. For all simple objects $A,B\in \cC$,
 
 $$S_{A,B}=\theta_A^{-1}\theta_{B}^{-1}\sum_{[C]\in \cL}N^{A,B}_{C}\theta_{C}d_C$$
 
@@ -1652,16 +1863,14 @@ and
 
 $$S_{A^*,B}=\theta_A\theta_{B}\sum_{[C]\in \cL}N^{A,B}_{C}\theta^{-1}_{C}d_C.$$
 \end{lem}
-\begin{proof} By Proposition [ref], we have $\beta_{B,A}\circ \beta_{A,B}=(\theta_{A}^{-1}\otimes \theta_{B}^{-1}) \circ \theta_{A\otimes B }$. Taking the trace of this formula we get
+\begin{proof} By proposition \ref{twist-expanded}, we have $\beta_{B,A}\circ \beta_{A,B}=(\theta_{A}^{-1}\otimes \theta_{B}^{-1}) \circ \theta_{A\otimes B }$. Taking the trace of this formula we get
 
 $$S_{A,B}=\theta_{A}^{-1}\theta_{B}^{-1}\tr(\theta_{A\otimes B}).$$
 
-Now, since $\theta$ is a natural transformation it splits over direct sums. Traces split over direct sums as well by proposition [ref] and hence $\tr(\theta_{A\otimes B})=\sum_{[C]\in \cL}N^{A,B}_{C}\theta_{C}d_C$. This concludes the proof of the first formula.
+Now, since $\theta$ is a natural transformation it splits over direct sums. Traces split over direct sums as well by proposition \ref{trace-facts} and hence $\tr(\theta_{A\otimes B})=\sum_{[C]\in \cL}N^{A,B}_{C}\theta_{C}d_C$. This concludes the proof of the first formula.
 
 For the second formula, we observe that replacing overcrossings with undercrossings in the definition of $S_{A,B}$ has the effect of taking the dual of one of elements, replacing it with $S_{A^*,B}$. Hence $\tr(\beta_{A,B}^{-1}\circ \beta_{B,A}^{-1})=S_{A^*,B}$. Thus, taking the trace of the formula $\beta_{A,B}^{-1}\circ \beta_{B,A}^{-1}=\theta^{-1}_{A\otimes B }\circ (\theta_{A}\otimes \theta_{B})$ yields the desired result.
 \end{proof}
-
-Before continuing to our proof of theorem [ref] we observe a key lemma:
 
 \begin{lem} Let $\cC$ be a pre-modular category. Let $A\in \cC$ be a (possibly non-simple) object. We have that
 
@@ -1676,7 +1885,7 @@ and
 \end{equation*}
 
 \end{lem}
-\begin{proof} We only prove the first formula - the second follows by a formally dual argument. We restrict to the case that $A$ is simple. Seeing as both sides are linear with respect to direct sums, the case that $A$ is simple will immedaitely imply the general case. Since $A$ is simple, it suffices to prove that the traces of both sides are equal. The trace on the left hand side has the effect of replacing the diagram with $S_{A,B}$. Hence, we compute as follows using Lemma [ref] and the fact that $\sum_{[C]\in \cL}N^{A,B}_C d_B=d_{A}d_C$ from proposition [ref]:
+\begin{proof} We only prove the first formula - the second follows by a formally dual argument. We restrict to the case that $A$ is simple. Seeing as both sides are linear with respect to direct sums, the case that $A$ is simple will immedaitely imply the general case. Since $A$ is simple, it suffices to prove that the traces of both sides are equal. The trace on the left hand side has the effect of replacing the diagram with $S_{A,B}$. Hence, we compute as follows using lemma \ref{S-matrix-expansion} and the fact that $\sum_{[C]\in \cL}N^{A,B}_C d_B=d_{A}d_C$ from proposition \ref{quantum-dim-fusion-rule}:
 
 \begin{align*}
 \sum_{[B]\in \cL}d_{B}\theta_{B}S_{A,B}&= \sum_{[B]\in \cL}d_{B}\theta_{B}\left(\theta_A^{-1}\theta_{B}^{-1}\sum_{[C]\in \cL}N^{A,B}_{C}\theta_{C}d_C\right)\\
@@ -1687,10 +1896,7 @@ and
 This result is exact the trace of the right hand sides of the lemma. Hence, the proof is complete.
 \end{proof}
 
-
-We now give the heart of the proof of theorem [ref]:
-
-\begin{thrm} Let $\cC$ be a pre-modular category. Define the charge conjugation operator $\charge: \bC[\cL]\to \bC[\cL]$ to the matrix with $([A],[A^*])$ coefficient $1$ for all $[A]\in \cL$, and all other coefficients zero.
+\begin{thrm}\label{modular-rep-key-step} Let $\cC$ be a pre-modular category. Define the charge conjugation operator $\charge: \bC[\cL]\to \bC[\cL]$ to the matrix with $([A],[A^*])$ coefficient $1$ for all $[A]\in \cL$, and all other coefficients zero.
 
 \begin{enumerate}[(i)]
 \item $\charge S = S \charge$, $\charge T = T \charge$, and $\charge ^2 =1$;
@@ -1705,23 +1911,19 @@ If $\cC$ is modular, then
 \end{enumerate}
 
 \end{thrm}
-\begin{proof} Part $(i)$ follows from the fact that $S_{A^*,B^*}=S_{A,B}$, $\theta_{A^*}=\theta_A$, and $A^{**}\cong A$. Parts $(ii)$ and $(iii)$ have formally dual proofs, which arise from replacing $\theta$ with $\theta^{-1}$ at every opportunity. Part $(iv)$ follows algebraically from combining formulas $(ii)$ and $(iii)$ whenever $S$ is invertible, which is always the case when $\cC$ is modular by theorem [ref].
-
-Hence, it suffices to prove part $(ii)$. The proof comes from comuting the quantity
+\begin{proof} Part $(i)$ follows from the fact that $S_{A^*,B^*}=S_{A,B}$, $\theta_{A^*}=\theta_A$, and $A^{**}\cong A$. Parts $(ii)$ and $(iii)$ have formally dual proofs, which arise from replacing $\theta$ with $\theta^{-1}$ at every opportunity. Part $(iv)$ follows algebraically from combining formulas $(ii)$ and $(iii)$ whenever $S$ is invertible, which is always the case when $\cC$ is modular by theorem \ref{bruguieres-theorem}. Hence, it suffices to prove part $(ii)$. The proof comes from computing in two different ways the quantity
 
 \begin{equation*}
 \tikzfig{modularity-proof}
 \end{equation*}
 
-two ways.
-
-In the first way of computing $h_{X,Y}$, we use lemma [ref]. We find the following:
+In the first way of computing $h_{X,Y}$, we use lemma \ref{S-matrix-expansion}. We find the following:
 
 \begin{equation*}
 \tikzfig{modularity-computation-1}
 \end{equation*}
 
-In our second way of computing $h_{X,Y}$, we use computation of the trace of two lines through a loop in the proof of Theorem [ref]. We find this way that
+In our second way of computing $h_{X,Y}$, we use computation of the trace of two lines through a loop in the proof of theorem \ref{bruguieres-theorem}. We find this way that
 
 $$h_{X,Y}=\sum_{[A]\in \cL}\theta_{A}S_{X,A}S_{Y,A}.$$
 
@@ -1737,10 +1939,7 @@ as desired. I'm not sure where I went wrong, but something is off in here.
 }
 \end{proof}
 
-
-We now know that the $S$ and $T$ matrices give a modular representation {\em up to phase}! We still need to work out the details of the phases. A key part is the following computation:
-
-\begin{cor} Let $\cC$ be a modular category. The quantities $p_{\cC}^{+}$ and $p_{\cC}^{-}$ are nonzero, and
+\begin{cor}\label{gauss-sum-cor} Let $\cC$ be a modular category. The quantities $p_{\cC}^{+}$ and $p_{\cC}^{-}$ are nonzero, and
 
 $$p_{\cC}^+p_{\cC}^{-}=\cD^2.$$
 
@@ -1762,18 +1961,30 @@ $$\sum_{[C]\in \cL}S_{C,\bone}S_{C,\bone}=\sum_{[C]\in\cL}d_{C}^2=p_{\cC}^{+}p_{
 as desired.
 \end{proof}
 
-Now, it is clear that we can normalize the representation appropriately and conclude theorem [ref], as desired.
+\begin{rem}
+Normalizing the representation appropriately, we can conclude theorem \ref{modular-rep-theorem} from theorem \ref{modular-rep-key-step} and corollary \ref{gauss-sum-cor}.
+\end{rem}
 
 \subsubsection{Vafa's theorem, unitarity of $S$-matrix, and the Chiral central charge}
 \label{vafa-theorem-unitarity-chiral-central-charge}
 
-In this section we discuss some finer points of the structure of the modular representation. In particular, we will prove that modular representation of every modular category is {\em unitary}. That is, the $S$ and $T$ matrices are both unitary operators on $\bC[\cL]$ when it is endowed with its canonical inner product coming from its basis
+In this section we discuss some finer points of the structure of the modular representation. In particular, we will prove that modular representation of every modular category is {\em unitary}. That is, the $S$ and $T$ matrices are both unitary operators on $\bC[\cL]$ when it is endowed with its canonical inner product coming from its basis. We begin with the matrix $T$. For a diagonal matrix to be unitary, it is neccecary and sufficient for its diagonal entries to have absolute value $1$. We will prove something even stronger: that all of the entries are roots of unity! We recall that a number $z\in \cC$ is called a root of unity if $z^n=1$ for some integer $n\geq 1$.
 
-We begin with the matrix $T$. For a diagonal matrix to be unitary, it is neccecary and sufficient for its diagonal entries to have absolute value $1$. We will prove something even stronger: that all of the entries are roots of unity! We recall that a number $z\in \cC$ is called a root of unity if $z^n=1$ for some integer $n\geq 1$. We begin with a key topological lemma which will underscore our proof:
+Additionally, these techniques will allow us to analyze Gauss sums in more detail. By Vafa's theorem, $p_{\cC}^{-}=\overline{p_{\cC}^{+}}$. By corollary \ref{gauss-sum-cor}, thus, $|p_{\cC}^+|=|p_{\cC}^-|=\cD$. We will even prove that the quantity $p_{\cC}^-/p_{\cC}^+$ is a root of unity, so $p_{\cC}^+/\cD$ and $p_{\cC}^-/\cD$ are both roots of unity as well. These roots of unity are related to the chiral central charge $c_-$ of the theory by the following equation, known as the Gauss-Milgram formula (\cite{frohlich1990braid}):
 
-\begin{lem}[Lantern identity] Let $\cC$ be a pre-modular category. Let $A,B,C\in \cC$ be objects. As maps $A\otimes B\otimes C \to A\otimes B \otimes C$, we have the identity
+\begin{equation}\label{gauss-milgram}
+\frac{1}{\cD}p_{\cC}^{+}=\frac{1}{\cD}\sum_{[A]\in \cL}\theta_{A}d_A^2=e^{\frac{2\pi i c_-}{8}}.
+\end{equation}
 
-$$\theta_{A\otimes B}\circ \theta_{A\otimes C}\circ \theta_{B\otimes C} = \theta_{A\otimes B\otimes C}\circ (\theta_{A}\otimes \theta_{B}\otimes \theta_{C}).$$
+\begin{rem} We had already remarked in remark \ref{chiral-central-charge-remark} that the modular category determines the chiral central charge modulo $8$. Equation \ref{gauss-milgram} is the mechanism by which the modular category restricts the chiral central charge. There exists a topological phase with chiral central chage $8$ but without any anyons, known as Kitaev's $E8$ phase \cite{gaiotto2019symmetry}.  By stacking with copies of the $E8$ phase, one can take a phase with anyon content $\cC$ and chiral central charge $c_-$ and obtain a phase with the same anyon content any chiral central charge $c'_-$ equivalent to $c_-$ modulo $8$.
+\end{rem}
+
+
+We begin with a key topological lemma which will underscore our proof:
+
+\begin{lem}[Lantern identity]\label{lantern-identity} Let $\cC$ be a pre-modular category. Let $A,B,C\in \cC$ be objects. As maps $A\otimes B\otimes C \to A\otimes B \otimes C$, we have the identity
+
+$$\theta_{A\otimes B}\circ (\id_A\circ \beta_{B,C}^{-1})\circ \theta_{A\otimes C}\circ (\id_{A}\circ \beta_{B,C})\circ \theta_{B\otimes C} = \theta_{A\otimes B\otimes C}\circ (\theta_{A}\otimes \theta_{B}\otimes \theta_{C}).$$
 \end{lem}
 \begin{proof} In the language of string diagrams, this formula becomes
 
@@ -1782,24 +1993,26 @@ $$\theta_{A\otimes B}\circ \theta_{A\otimes C}\circ \theta_{B\otimes C} = \theta
 It is a matter of elementary manipulations to convince one's self that these two diagrams are equal. An alternate algebraic approach is to expand the relation both sides using the formula $\theta_{X\otimes Y}=(\beta_{Y,X}\circ \beta_{X,Y})\circ (\theta_{X}\otimes \theta_{Y})$, cancel $\theta_{A}^2\otimes \theta_{B}^2\otimes \theta_{C}^2$, and compare the resulting braids using the hexagon and naturality.
 \end{proof}
 
-We state one more linear-algebraic lemma neccecary for the proof:
+We will need another more linear-algebraic lemma for the proof:
 
-\begin{lem} Let $n\geq 1$ be an integer and let $M:\bR^n\to \bR^n$ be a linear operator whose $(a,b)$ entry is $M_{a,b}$. Suppose that all off diagonal entries of $M$ are positive, and that $\sum_{b=1}^n M_{a,b}<0$ for all $1\leq a\leq n$. Then, $M$ is invertible.
+\begin{lem}\label{linear-algebra-lemma} Let $n\geq 1$ be an integer and let $M:\bR^n\to \bR^n$ be a linear operator whose $(a,b)$ entry is $M_{a,b}$. Suppose that all off diagonal entries of $M$ are positive, and that $\sum_{b=1}^n M_{b,a}<0$ for all $1\leq a\leq n$. Then, $M$ is invertible.
 \end{lem}
-\begin{proof}\Note{ This follows from the Gershgorin circle theorem, but that's way to general for our purposes. Find a nice proof which is appropriate for the situation.}
+\begin{proof} Let $v=\sum_{a=1}^nc_i\ket{a}$ be a vector. Choose some value $1\leq a\leq n$ such that $|c_a|\geq |c_b|$ for all $1\leq b \leq n$. The coefficient of $\ket{a}$ in $Mv$ is $\sum_{b=1}^n c_b M_{b,a}$. We observe
+
+$$\big|\sum_{\substack{b=1 \\ b\neq a}}^n c_b M_{b,a}\big|\leq |c_a|\sum_{\substack{b\neq a}}^{n}M_{b,a}\leq |c_a|M_{a,a}.$$
+
+Thus, $\sum_{b=1}^n c_b M_{b,a}\neq 0$, so $Mv$ is nonzero, and hence is invertible since $v$ was chosen arbitrarily.
 \end{proof}
 
-\begin{thrm}[Vafa] Let $\cC$ be a pre-modular category. The values $\theta_{A}$ are roots of unity for all simple object $A\in \cC$.
+\begin{thrm}[Vafa, \cite{vafa1988toward}]\label{vafa-theorem} Let $\cC$ be a pre-modular category. The values $\theta_{A}$ are roots of unity for all simple object $A\in \cC$.
 \end{thrm}
-\begin{rem} This theorem is interesting in part due to its history. \Note{ add history.}
-\end{rem}
 \begin{proof} To begin, we choose a simple obejct $A$. We observe that every endomorphism of $A\otimes A^*\otimes A$ induces a linear map
 
 $$\Hom(A,A\otimes A^*\otimes A) \xrightarrow{} \Hom(A,A\otimes A^*\otimes A)$$
 
-by postcomposition. We now consider the lantern identity (proposition [ref]) on the stands $A$, $A^*$, $A$,
+by postcomposition. We now consider the lantern identity (proposition \ref{lantern-identity}) on the stands $A$, $A^*$, $A$,
 
-$$\theta_{A\otimes A^*}\circ \theta_{A\otimes A}\circ \theta_{A^*\otimes A} = \theta_{A\otimes A^*\otimes A}\circ (\theta_{A}\otimes \theta_{A^*}\otimes \theta_{A}).$$
+$$\theta_{A\otimes A^*}\circ (\id_A\circ \beta_{A^*,A}^{-1})\circ \theta_{A\otimes A}\circ (\id_A\otimes \beta_{A^*,A})\circ \theta_{A^*\otimes A} = \theta_{A\otimes A^*\otimes A}\circ (\theta_{A}\otimes \theta_{A^*}\otimes \theta_{A}).$$
 
 viewed as an equality of linear operators on $\Hom(A,A\otimes A^*\otimes A)$. We compute the determinant of both sides. We first compute the determinant of $\theta_{A\otimes A^*}$. The eigenvalues of the operator $\theta_{A\otimes A^*}$ are the twists $\theta_{B}$. The dimension of the $\theta_{B}$ eigenspace is exactly the dimension of the subspace of $\Hom(A,A\otimes A^*\otimes A)$ in which $A\otimes A^*$ fuse to $B$. The dimension of this space is $N^{A,A^*}_{B}N^{B,A}_{A}=(N^{A,A^*}_{B})^2$. The determinant is equal to the product of the eigenvalues counted with multiplicity, and hence
 
@@ -1826,16 +2039,12 @@ We observe that all of the off-diagonal entries of $M_{A,B}$ are positive and
 &=  -\dim \Hom(A,A\otimes A^*\otimes A)<0.
 \end{align*}
 
-Thus, by lemma [ref], we conclude that the matrix $M=(M_{A,B})_{([A],[B])\in \cL^2}: \bC[\cL]\to\bC[\cL]$ is invertible. Let $\tilde{M}$ be the adjugate of $M$. That is, an integer valued matrix such that $M\cdot \tilde{M}=\tilde{M}\cdot M = n$ where $n=\det M$. We find for all simple objects $A$ that
+Thus, by lemma \ref{linear-algebra-lemma}, we conclude that the matrix $M=(M_{A,B})_{([A],[B])\in \cL^2}: \bC[\cL]\to\bC[\cL]$ is invertible. Let $\tilde{M}$ be the adjugate of $M$. That is, an integer valued matrix such that $M\cdot \tilde{M}=\tilde{M}\cdot M = n$ where $n=\det M$. We find for all simple objects $A$ that
 
 $$\theta_{A}^n=\prod_{[C]\in \cL}\left(\prod_{[B]\in \cL}\theta_{B}^{M_{C,B}}\right)^{\tilde{M}_{A,C}}=1,$$
 
 and hence $\theta_{A}$ is a root of unity as desired.
-
 \end{proof}
-
-
-We immediately get several corollaries from this theorem. The first is that braiding enough times gets you back where you started:
 
 \begin{cor} Let $\cC$ be a pre-modular category. There exists an integer $n\geq 1$ such that
 
@@ -1847,7 +2056,7 @@ for all $A,B\in \cC$
 \begin{proof} Choose $n\geq 1$ so that $\theta_{C}^n=1$ for all simple objects $C\in \cC$, which exists by Vafa's theorem (theorem [ref]). Seeing that $\beta_{B,A}\circ \beta_{A,B}=\theta_{A\otimes B}\circ (\theta_{A}^{-1}\otimes \theta_{B}^{-1})$, in the direc sum decomposition $A\otimes B \cong \bigoplus_{[C]\in \cL}N^{A,B}_{C}\ket{[C]}$ the transformation $\beta_{B,A}\circ \beta_{A,B}$ acts by the scalar $\theta_{C}/(\theta_{A}\theta_{B})$ on every $\ket{[C]}$ summand. Thus, $(\beta_{B,A}\circ \beta_{A,B})^n$ acts by $(\theta_{C}/(\theta_{A}\theta_{B}))^n=1$ and thus $(\beta_{B,A}\circ \beta_{A,B})^n$ is the identity as desired.
 \end{proof}
 
-\begin{cor} Let $\cC$ be a modular category. The quantity $p_{\cC}^-/p_{\cC}^+$ is a root of unity.
+\begin{cor}\label{vafa-corollary} Let $\cC$ be a modular category. The quantity $p_{\cC}^-/p_{\cC}^+$ is a root of unity.
 \end{cor}
 \begin{proof} We take determinants. From $S^2= p^{+}_{\cC}p^{-}_{\cC}\charge$ we find that $\det(S)^2=\pm p_{\cC}^+p_{\cC}^-$, since $\det \charge = \pm 1$. From the formula $(ST)^3=p^{+}_{\cC}S^2$ we find that
 
@@ -1856,15 +2065,9 @@ $$\left(p^{+}_C/\det(S)\right)^2=\det(T)^6$$
 so $p^{+}_C/p^{-}_{C}=\pm \det(T)^6$. By Vafa's theorem $\det(T)$ is a root of unity. Hence, we conclude that $p^{+}_C/p^{-}_{C}$ is a root of unity as desired.
 \end{proof}
 
-We take a moment to observe that the quantity $p_{\cC}^-/p_{\cC}^+$ is of great interest to physicists. It is related to the {\em chiral central charge} $c_{\text{top}}$ of the theory by the formula
-
-$$p_{\cC}^-/p_{\cC}^{+}=e^{-\frac{2\pi i c_{\text{top}}}{4}}.$$
-
-\Note{ probably say a bit more? Maybe there will be a better spot somewhere else.}
-
 We now move on to proving that the $S$ matrix is unitary. The main technical ingredient is as follows:
 
-\begin{prop} Let $\cC$ be a modular category. For all simple objects $A,B\in \cC$ we have that $S_{A^*,B}=\overline{S_{A,B}}$.
+\begin{prop}\label{dual-is-conjugate} Let $\cC$ be a modular category. For all simple objects $A,B\in \cC$ we have that $S_{A^*,B}=\overline{S_{A,B}}$.
 \end{prop}
 \begin{proof} By the Verlinde formula [ref], we know that for all simple objects $A$ there exists a vector $\bold{v}_B\in \bC[\cL]$ such that
 
@@ -1890,7 +2093,7 @@ We now get the following theorem:
 
 \begin{thrm}[Etingof-Nikshych-Ostrik] Every matrix in the image of the modular represention $\SL_2(\bZ)\to \Aut(\bC[\cL])$ is a unitary operator on $\bC[\cL]$.
 \end{thrm}
-\begin{proof} We already know by theorem [ref] and corollary [ref] that the normalized $T$-matrix is unitary. It thus suffices to show that the modular $S$ matrix is unitary. From theorem [ref] we have that $\left(\frac{1}{\cD}S\right)^{-1} = (\frac{1}{\cD}S) \cdot \charge$. By proposition [ref] $(\frac{1}{\cD}S) \cdot \charge = (\frac{1}{\cD}S)^{\dagger}$ and thus $\frac{1}{\cD}S$ is unitary as desired.
+\begin{proof} We already know by theorem \ref{vafa-theorem} and corollary \ref{vafa-corollary} that the normalized $T$-matrix is unitary. It thus suffices to show that the modular $S$ matrix is unitary. From theorem [ref] we have that $\left(\frac{1}{\cD}S\right)^{-1} = (\frac{1}{\cD}S) \cdot \charge$. By proposition \ref{dual-is-conjugate} $(\frac{1}{\cD}S) \cdot \charge = (\frac{1}{\cD}S)^{\dagger}$ and thus $\frac{1}{\cD}S$ is unitary as desired.
 \end{proof}
 
 \subsection{Skeletonization}

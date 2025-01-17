@@ -6,45 +6,45 @@ A level-1 auxiliary file: ./chapters/5-MTCs/ch5.aux
 The style file: alpha.bst
 Database file #1: ref.bib
 Warning--there's a number but no series in wang2010topological
-You've used 36 entries,
+You've used 39 entries,
             2543 wiz_defined-function locations,
-            780 strings with 9564 characters,
-and the built_in function-call counts, 13651 in all, are:
-= -- 1381
-> -- 597
-< -- 24
-+ -- 199
-- -- 195
-* -- 976
-:= -- 2275
-add.period$ -- 110
-call.type$ -- 36
-change.case$ -- 207
-chr.to.int$ -- 36
-cite$ -- 37
-duplicate$ -- 549
-empty$ -- 1003
-format.name$ -- 244
-if$ -- 2749
+            797 strings with 9904 characters,
+and the built_in function-call counts, 14719 in all, are:
+= -- 1495
+> -- 621
+< -- 27
++ -- 205
+- -- 201
+* -- 1057
+:= -- 2443
+add.period$ -- 119
+call.type$ -- 39
+change.case$ -- 222
+chr.to.int$ -- 39
+cite$ -- 40
+duplicate$ -- 594
+empty$ -- 1093
+format.name$ -- 256
+if$ -- 2965
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 42
-newline$ -- 184
-num.names$ -- 108
-pop$ -- 178
+missing$ -- 45
+newline$ -- 199
+num.names$ -- 117
+pop$ -- 187
 preamble$ -- 1
-purify$ -- 249
+purify$ -- 267
 quote$ -- 0
-skip$ -- 450
+skip$ -- 483
 stack$ -- 0
-substring$ -- 809
-swap$ -- 65
-text.length$ -- 24
-text.prefix$ -- 14
+substring$ -- 905
+swap$ -- 68
+text.length$ -- 27
+text.prefix$ -- 17
 top$ -- 0
-type$ -- 260
+type$ -- 284
 warning$ -- 1
-while$ -- 139
-width$ -- 42
-write$ -- 466
+while$ -- 151
+width$ -- 45
+write$ -- 505
 (There was 1 warning)

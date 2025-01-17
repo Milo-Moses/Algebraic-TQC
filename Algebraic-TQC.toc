@@ -1,52 +1,155 @@
 \contentsline {section}{\numberline {0}Preface}{3}
-\contentsline {section}{\numberline {1}Modular categories}{7}
-\contentsline {subsection}{\numberline {1.1}Overview}{7}
-\contentsline {subsubsection}{\numberline {1.1.1}Introduction}{7}
-\contentsline {subsubsection}{\numberline {1.1.2}Using the final product}{8}
-\contentsline {subsection}{\numberline {1.2}First properties}{9}
-\contentsline {subsubsection}{\numberline {1.2.1}Definition}{9}
-\contentsline {subsubsection}{\numberline {1.2.2}Anyons in modular categories}{10}
-\contentsline {subsubsection}{\numberline {1.2.3}States in modular categories and unitarity}{13}
-\contentsline {subsubsection}{\numberline {1.2.4}Topological charge measurement}{17}
-\contentsline {subsection}{\numberline {1.3}The modular category toolkit}{21}
-\contentsline {subsubsection}{\numberline {1.3.1}Duality}{21}
-\contentsline {subsubsection}{\numberline {1.3.2}Trace}{22}
-\contentsline {subsubsection}{\numberline {1.3.3}Quantum dimension and Frobenius-Perron dimension}{24}
-\contentsline {subsubsection}{\numberline {1.3.4}Twist}{29}
-\contentsline {subsubsection}{\numberline {1.3.5}Functors, natural transformations, and equivalence}{33}
-\contentsline {subsubsection}{\numberline {1.3.6}Deligne tensor product}{33}
-\contentsline {subsection}{\numberline {1.4}The category of $G$-graded $G$-representations}{35}
-\contentsline {subsubsection}{\numberline {1.4.1}Overview}{35}
-\contentsline {subsubsection}{\numberline {1.4.2}Higher linear algebra}{36}
-\contentsline {subsubsection}{\numberline {1.4.3}Spherical fusion structures}{37}
-\contentsline {subsubsection}{\numberline {1.4.4}Braiding and modularity}{37}
-\contentsline {subsection}{\numberline {1.5}The modular representation}{37}
-\contentsline {subsubsection}{\numberline {1.5.1}Definition}{37}
-\contentsline {subsubsection}{\numberline {1.5.2}Torus perspective}{38}
-\contentsline {subsubsection}{\numberline {1.5.3}Bruguieres's modularity theorem and the Verlinde formula}{40}
-\contentsline {subsubsection}{\numberline {1.5.4}Verlinde formula}{45}
-\contentsline {subsubsection}{\numberline {1.5.5}Proof of modularity}{46}
-\contentsline {subsubsection}{\numberline {1.5.6}Vafa's theorem, unitarity of $S$-matrix, and the Chiral central charge}{49}
-\contentsline {subsection}{\numberline {1.6}Skeletonization}{52}
-\contentsline {subsubsection}{\numberline {1.6.1}Principle}{52}
-\contentsline {subsubsection}{\numberline {1.6.2}$F$-symbols}{52}
-\contentsline {subsubsection}{\numberline {1.6.3}$R$-symbols}{52}
-\contentsline {subsubsection}{\numberline {1.6.4}$\theta $-symbols}{52}
-\contentsline {subsubsection}{\numberline {1.6.5}Reconstruction theorem}{52}
-\contentsline {subsection}{\numberline {1.7}Quantum double modular categories}{52}
-\contentsline {subsubsection}{\numberline {1.7.1}The Drinfeld center}{52}
-\contentsline {subsubsection}{\numberline {1.7.2}Muger's theorem}{54}
-\contentsline {subsubsection}{\numberline {1.7.3}Discrete gauge theory as a quantum double and Morita equivalence}{54}
-\contentsline {subsubsection}{\numberline {1.7.4}Factorizability and time reversal symmetry}{55}
-\contentsline {subsubsection}{\numberline {1.7.5}Levin-Wen model}{55}
-\contentsline {subsection}{\numberline {1.8}Unitarity}{55}
-\contentsline {subsubsection}{\numberline {1.8.1}Characterization of unitarizability}{55}
-\contentsline {subsubsection}{\numberline {1.8.2}Unitary braidings}{56}
-\contentsline {subsubsection}{\numberline {1.8.3}Uniqueness of unitary structure}{56}
-\contentsline {subsubsection}{\numberline {1.8.4}Skeletonization of unitarity}{57}
-\contentsline {subsection}{\numberline {1.9}Number theory in modular categories}{57}
-\contentsline {subsubsection}{\numberline {1.9.1}Techniques and first results}{57}
-\contentsline {subsubsection}{\numberline {1.9.2}Galois conjugation}{57}
-\contentsline {subsubsection}{\numberline {1.9.3}Ocneanu rigidity}{57}
-\contentsline {subsubsection}{\numberline {1.9.4}Rank-finiteness theorem}{57}
-\contentsline {subsubsection}{\numberline {1.9.5}Schauenberg-Ng theorem}{57}
+\contentsline {section}{\numberline {1}Overview}{9}
+\contentsline {subsection}{\numberline {1.1}Conceptual introduction}{9}
+\contentsline {subsubsection}{\numberline {1.1.1}Motivation and applications}{9}
+\contentsline {subsubsection}{\numberline {1.1.2}Mathematical picture}{11}
+\contentsline {subsubsection}{\numberline {1.1.3}History of the subject}{11}
+\contentsline {subsection}{\numberline {1.2}Technical introduction}{14}
+\contentsline {subsubsection}{\numberline {1.2.1}Principles of topological quantum information}{14}
+\contentsline {subsubsection}{\numberline {1.2.2}Defects in ordered media}{17}
+\contentsline {subsubsection}{\numberline {1.2.3}The fundamental group}{21}
+\contentsline {subsubsection}{\numberline {1.2.4}Topological classical computation}{25}
+\contentsline {section}{\numberline {2}Quantum mechanics}{35}
+\contentsline {subsection}{\numberline {2.1}Overview}{35}
+\contentsline {subsubsection}{\numberline {2.1.1}Introduction}{35}
+\contentsline {subsubsection}{\numberline {2.1.2}Experimental motivation}{35}
+\contentsline {subsection}{\numberline {2.2}Axiomatic development}{36}
+\contentsline {subsubsection}{\numberline {2.2.1}Probability theory}{36}
+\contentsline {subsubsection}{\numberline {2.2.2}Basis-dependent quantum mechanics}{38}
+\contentsline {subsubsection}{\numberline {2.2.3}Measurement}{39}
+\contentsline {subsubsection}{\numberline {2.2.4}Incomplete measurement}{41}
+\contentsline {subsubsection}{\numberline {2.2.5}Basis-independent quantum mechanics}{42}
+\contentsline {subsubsection}{\numberline {2.2.6}Hamiltonians and the Schrodinger equation}{45}
+\contentsline {section}{\numberline {3}Topological quantum order}{49}
+\contentsline {subsection}{\numberline {3.1}Overview}{49}
+\contentsline {subsubsection}{\numberline {3.1.1}Introduction}{49}
+\contentsline {subsection}{\numberline {3.2}Discrete gauge theory}{53}
+\contentsline {subsubsection}{\numberline {3.2.1}Ordered media on a lattice}{53}
+\contentsline {subsubsection}{\numberline {3.2.2}From ordered media to gauge theory}{57}
+\contentsline {subsubsection}{\numberline {3.2.3}Kitaev quantum double model}{58}
+\contentsline {subsection}{\numberline {3.3}The toric code}{61}
+\contentsline {subsubsection}{\numberline {3.3.1}Simplified Hamiltonian}{62}
+\contentsline {subsubsection}{\numberline {3.3.2}Exact solution of the toric code}{65}
+\contentsline {subsubsection}{\numberline {3.3.3}Toric code as a topologically ordered system}{66}
+\contentsline {subsection}{\numberline {3.4}Anyons}{66}
+\contentsline {subsubsection}{\numberline {3.4.1}Topological quantum information in excited states}{66}
+\contentsline {subsubsection}{\numberline {3.4.2}Definition and principles of anyons}{69}
+\contentsline {subsubsection}{\numberline {3.4.3}Anyons in the toric code}{71}
+\contentsline {subsubsection}{\numberline {3.4.4}Anyons in discrete gauge theory}{71}
+\contentsline {section}{\numberline {4}Category theory}{74}
+\contentsline {subsection}{\numberline {4.1}Overview}{74}
+\contentsline {subsubsection}{\numberline {4.1.1}Introduction}{74}
+\contentsline {subsubsection}{\numberline {4.1.2}Definition and important obervations}{75}
+\contentsline {subsection}{\numberline {4.2}Structures in category theory}{78}
+\contentsline {subsubsection}{\numberline {4.2.1}Products and universal properties}{78}
+\contentsline {subsubsection}{\numberline {4.2.2}Functors and natural transformations}{82}
+\contentsline {subsubsection}{\numberline {4.2.3}Linear categories}{86}
+\contentsline {subsection}{\numberline {4.3}Monoidal categories}{89}
+\contentsline {subsubsection}{\numberline {4.3.1}Motivation, definition, and string diagrams}{89}
+\contentsline {subsubsection}{\numberline {4.3.2}Braided monoidal categories}{92}
+\contentsline {subsubsection}{\numberline {4.3.3}Examples, equivalences, and MacLane's coherence theorem}{95}
+\contentsline {subsubsection}{\numberline {4.3.4}Pivotal monoidal categories}{101}
+\contentsline {section}{\numberline {5}Modular categories}{110}
+\contentsline {subsection}{\numberline {5.1}Overview}{110}
+\contentsline {subsubsection}{\numberline {5.1.1}Introduction}{110}
+\contentsline {subsubsection}{\numberline {5.1.2}Using the final product}{111}
+\contentsline {subsection}{\numberline {5.2}First properties}{112}
+\contentsline {subsubsection}{\numberline {5.2.1}Definition}{112}
+\contentsline {subsubsection}{\numberline {5.2.2}Anyons in modular categories}{114}
+\contentsline {subsubsection}{\numberline {5.2.3}States in modular categories and unitarity}{116}
+\contentsline {subsubsection}{\numberline {5.2.4}Topological charge measurement}{119}
+\contentsline {subsection}{\numberline {5.3}The modular category toolkit}{123}
+\contentsline {subsubsection}{\numberline {5.3.1}Duality}{124}
+\contentsline {subsubsection}{\numberline {5.3.2}Trace}{125}
+\contentsline {subsubsection}{\numberline {5.3.3}Quantum dimension and Frobenius-Perron dimension}{127}
+\contentsline {subsubsection}{\numberline {5.3.4}Twist}{132}
+\contentsline {subsubsection}{\numberline {5.3.5}Functors, natural transformations, and equivalence}{136}
+\contentsline {subsubsection}{\numberline {5.3.6}Deligne tensor product}{136}
+\contentsline {subsection}{\numberline {5.4}The category of $G$-graded $G$-representations}{139}
+\contentsline {subsubsection}{\numberline {5.4.1}Overview}{139}
+\contentsline {subsubsection}{\numberline {5.4.2}${\mathbb C}$-linear structures}{140}
+\contentsline {subsubsection}{\numberline {5.4.3}Spherical fusion structures}{143}
+\contentsline {subsubsection}{\numberline {5.4.4}Braiding and modularity}{145}
+\contentsline {subsection}{\numberline {5.5}The modular representation}{148}
+\contentsline {subsubsection}{\numberline {5.5.1}Definition}{148}
+\contentsline {subsubsection}{\numberline {5.5.2}Torus perspective}{150}
+\contentsline {subsubsection}{\numberline {5.5.3}Bruguieres's modularity theorem and the Verlinde formula}{152}
+\contentsline {subsubsection}{\numberline {5.5.4}Proof of modularity}{157}
+\contentsline {subsubsection}{\numberline {5.5.5}Vafa's theorem, unitarity of $S$-matrix, and the Chiral central charge}{160}
+\contentsline {subsection}{\numberline {5.6}Skeletonization}{163}
+\contentsline {subsubsection}{\numberline {5.6.1}Principle}{163}
+\contentsline {subsubsection}{\numberline {5.6.2}$F$-symbols}{163}
+\contentsline {subsubsection}{\numberline {5.6.3}$R$-symbols}{163}
+\contentsline {subsubsection}{\numberline {5.6.4}$\theta $-symbols}{163}
+\contentsline {subsubsection}{\numberline {5.6.5}Reconstruction theorem}{163}
+\contentsline {subsection}{\numberline {5.7}Quantum double modular categories}{163}
+\contentsline {subsubsection}{\numberline {5.7.1}The Drinfeld center}{163}
+\contentsline {subsubsection}{\numberline {5.7.2}Muger's theorem}{165}
+\contentsline {subsubsection}{\numberline {5.7.3}Discrete gauge theory as a quantum double and Morita equivalence}{165}
+\contentsline {subsubsection}{\numberline {5.7.4}Factorizability and time reversal symmetry}{166}
+\contentsline {subsubsection}{\numberline {5.7.5}Levin-Wen model}{166}
+\contentsline {subsection}{\numberline {5.8}Unitarity}{166}
+\contentsline {subsubsection}{\numberline {5.8.1}Characterization of unitarizability}{166}
+\contentsline {subsubsection}{\numberline {5.8.2}Unitary braidings}{167}
+\contentsline {subsubsection}{\numberline {5.8.3}Uniqueness of unitary structure}{167}
+\contentsline {subsubsection}{\numberline {5.8.4}Skeletonization of unitarity}{168}
+\contentsline {subsection}{\numberline {5.9}Number theory in modular categories}{168}
+\contentsline {subsubsection}{\numberline {5.9.1}Techniques and first results}{168}
+\contentsline {subsubsection}{\numberline {5.9.2}Galois conjugation}{168}
+\contentsline {subsubsection}{\numberline {5.9.3}Ocneanu rigidity}{168}
+\contentsline {subsubsection}{\numberline {5.9.4}Rank-finiteness theorem}{168}
+\contentsline {subsubsection}{\numberline {5.9.5}Schauenberg-Ng theorem}{168}
+\contentsline {section}{\numberline {6}Further structure}{172}
+\contentsline {subsection}{\numberline {6.1}Overview}{172}
+\contentsline {subsubsection}{\numberline {6.1.1}Introduction}{172}
+\contentsline {subsection}{\numberline {6.2}Boundaries and domain walls}{173}
+\contentsline {subsubsection}{\numberline {6.2.1}Physical picture}{173}
+\contentsline {subsubsection}{\numberline {6.2.2}Boundaries and domain walls in the toric code}{174}
+\contentsline {subsubsection}{\numberline {6.2.3}The algebraic theory of gapped boundaries}{174}
+\contentsline {subsubsection}{\numberline {6.2.4}Lagrangian algebras and algebra objects}{175}
+\contentsline {subsubsection}{\numberline {6.2.5}Module categories and boundaries in the Levin-Wen model}{176}
+\contentsline {subsubsection}{\numberline {6.2.6}The Drinfeld center via bimodules}{183}
+\contentsline {subsubsection}{\numberline {6.2.7}Muger's theorem and Lagrange's theorem for fusion categories}{185}
+\contentsline {subsubsection}{\numberline {6.2.8}Skeletonization of gapped boundaries}{186}
+\contentsline {subsection}{\numberline {6.3}Symmetry enriched topological order}{186}
+\contentsline {subsubsection}{\numberline {6.3.1}Physical picture}{186}
+\contentsline {subsubsection}{\numberline {6.3.2}Haldane spin chain}{186}
+\contentsline {subsubsection}{\numberline {6.3.3}Twist defects in the toric code}{186}
+\contentsline {subsubsection}{\numberline {6.3.4}The algebraic theory of SET phases}{187}
+\contentsline {subsubsection}{\numberline {6.3.5}Gauging symmetries}{190}
+\contentsline {subsubsection}{\numberline {6.3.6}Obstruction theory, anomalies, and zesting}{191}
+\contentsline {subsubsection}{\numberline {6.3.7}$G$-crossed modularity}{192}
+\contentsline {subsubsection}{\numberline {6.3.8}Skeletonization of SET phases}{192}
+\contentsline {subsection}{\numberline {6.4}Fermionic topological order}{192}
+\contentsline {subsubsection}{\numberline {6.4.1}Physical picture}{192}
+\contentsline {subsubsection}{\numberline {6.4.2}Kitaev spin chain}{192}
+\contentsline {subsubsection}{\numberline {6.4.3}The algebraic theory of fermionic topological order}{192}
+\contentsline {subsubsection}{\numberline {6.4.4}The 16-fold way on the trivial fermionic theory}{192}
+\contentsline {subsubsection}{\numberline {6.4.5}Modular representations of fermionic topological order}{192}
+\contentsline {subsubsection}{\numberline {6.4.6}Super-groups and Deligne's theorem}{193}
+\contentsline {section}{\numberline {7}Topological quantum computation}{197}
+\contentsline {subsection}{\numberline {7.1}Overview}{197}
+\contentsline {subsubsection}{\numberline {7.1.1}Introduction}{197}
+\contentsline {subsubsection}{\numberline {7.1.2}Universality}{198}
+\contentsline {subsection}{\numberline {7.2}Computation with Fibonacci anyons}{200}
+\contentsline {subsubsection}{\numberline {7.2.1}Methodology}{200}
+\contentsline {subsubsection}{\numberline {7.2.2}The Jones invariant}{200}
+\contentsline {subsubsection}{\numberline {7.2.3}Proof of universality}{200}
+\contentsline {subsection}{\numberline {7.3}Computation with doubles of finite groups}{201}
+\contentsline {subsection}{\numberline {7.4}Computation with the toric code}{203}
+\contentsline {subsection}{\numberline {7.5}Computation with Ising anyons}{203}
+\contentsline {subsection}{\numberline {7.6}Computation with Majorana zero modes}{203}
+\contentsline {section}{\numberline {A}Odds and ends}{206}
+\contentsline {subsection}{\numberline {A.1}Topological quantum field theories}{206}
+\contentsline {subsubsection}{\numberline {A.1.1}Overview}{206}
+\contentsline {subsubsection}{\numberline {A.1.2}Dehn twists in the toric code}{207}
+\contentsline {subsubsection}{\numberline {A.1.3}Defining TQFT}{207}
+\contentsline {subsection}{\numberline {A.2}Quasitriangular weak Hopf algebras}{210}
+\contentsline {subsection}{\numberline {A.3}Quantum groups}{211}
+\contentsline {subsection}{\numberline {A.4}Subfactors}{211}
+\contentsline {subsection}{\numberline {A.5}Vertex operator algebras}{211}
+\contentsline {section}{\numberline {B}Anyon data}{213}
+\contentsline {subsection}{\numberline {B.1}Low-rank modular categories}{213}
+\contentsline {subsection}{\numberline {B.2}Abelian modular categories}{213}
+\contentsline {subsection}{\numberline {B.3}Group-theoretical modular categories}{213}
+\contentsline {subsection}{\numberline {B.4}Miscellaneous examples}{213}

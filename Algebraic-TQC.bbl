@@ -16,6 +16,12 @@ Matthew Buican and Rajath Radhakrishnan.
 \newblock Galois orbits of tqfts: symmetries and unitarity.
 \newblock {\em Journal of High Energy Physics}, 2022(1):1--73, 2022.
 
+\bibitem[Bru00]{bruguieres2000categories}
+Alain Bruguieres.
+\newblock Cat{\'e}gories pr{\'e}modulaires, modularisations et invariants des
+  vari{\'e}t{\'e}s de dimension 3.
+\newblock {\em Mathematische Annalen}, 316(2):215--236, 2000.
+
 \bibitem[CG93]{coste1993remarks}
 Antoine Coste and Terry Gannon.
 \newblock Remarks on galois symmetry in rational conformal field theories.
@@ -26,6 +32,11 @@ Kevin Coulembier, Victor Ostrik, and Daniel Tubbenhauer.
 \newblock Growth rates of the number of indecomposable summands in tensor
   powers.
 \newblock {\em Algebras and Representation Theory}, 27(2):1033--1062, 2024.
+
+\bibitem[Del02]{deligne2002categories}
+Pierre Deligne.
+\newblock Cat{\'e}gories tensorielles.
+\newblock {\em Mosc. Math. J}, 2(2):227--248, 2002.
 
 \bibitem[DHW13]{davidovich2013arithmetic}
 Orit Davidovich, Tobias Hagge, and Zhenghan Wang.
@@ -175,6 +186,11 @@ Vladimir~G Turaev.
 Vladimir~G Turaev.
 \newblock {\em Quantum invariants of knots and 3-manifolds}.
 \newblock de Gruyter, 2010.
+
+\bibitem[Vaf88]{vafa1988toward}
+Cumrun Vafa.
+\newblock Toward classification of conformal theories.
+\newblock {\em Physics Letters B}, 206(3):421--426, 1988.
 
 \bibitem[Ver88]{verlinde1988fusion}
 Erik Verlinde.
