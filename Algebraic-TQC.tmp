@@ -1,0 +1,14 @@
+% Algebraic-TQC.top
+\unprotect
+\def\MPOSTformatswitch{-progname=metafun -mem=}
+\setupsystem[\c!n=2,\c!m=2]
+\setupsystem[\c!method=2]
+\setupsystem[\c!type=macosx]
+\setupsystem[\c!random=1063]
+\setupsystem[inputfile=Algebraic-TQC.tex]
+\startsetups *runtime:options
+\setupoutput[xetex]
+\stopsetups
+\startsetups *runtime:modules
+\stopsetups
+\protect \endinput

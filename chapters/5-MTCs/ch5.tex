@@ -1037,8 +1037,6 @@ We now dicuss the correct notion of functor nad natural transfrormation between 
 
 \subsubsection{Deligne tensor product}
 
-\Note{There's another structure I would like to include - time reversal. Given a modular category $\cC$, define $\overline{\cC}$. Say that this corresponds to time reversal. I'm not sure if there's anything much to say. Somehow it feels natural for me to put this with the Deligne tensor product, but I think that's because I know about quantum double MTC... maybe there's a better place somewhere else.}
-
 In the theory of any class of mathematical object, an important consideration is the ways in which examples can be put together to give new examples. In the case of fusion categories, this basic operation is known as the {\em Deligne tensor product} \cite{deligne2002categories}. Given any fusion categories $\cC$, $\cD$, their Deligne tensor product $\cC\boxtimes \cD$ is a new fusion category. The Deligne tensor product of spherical fusion categories will be equipped with the structure of a spherical fusion category, and the Deligne tensor product of (pre-)modular categories will be equipped with the structure of a (pre-)modular category.
 
 \begin{defn} Let $\cC,\cD$ be a $\bC$-linear categories, isomorphic as a $\bC$-linear categories to $\Vec_{\bC}^{n}$, $\Vec_{\bC}^m$ respectively. We define a Deligne tensor product of $\cC$ and $\cD$ to be be the following data:
@@ -1133,7 +1131,7 @@ Physically, this corresponds to the fact that stacking a sheet of material with 
 \end{ex}
 
 \subsection{The category of $G$-graded $G$-representations}
-
+\label{the-category-of-G-graded-G-representations}
 \subsubsection{Overview}
 
 We've talked about a lot of general theory of modular categories. It's time for us to focus on our main family of {\em examples}, which we define as plain categories below:
@@ -2096,6 +2094,142 @@ We now get the following theorem:
 \begin{proof} We already know by theorem \ref{vafa-theorem} and corollary \ref{vafa-corollary} that the normalized $T$-matrix is unitary. It thus suffices to show that the modular $S$ matrix is unitary. From theorem [ref] we have that $\left(\frac{1}{\cD}S\right)^{-1} = (\frac{1}{\cD}S) \cdot \charge$. By proposition \ref{dual-is-conjugate} $(\frac{1}{\cD}S) \cdot \charge = (\frac{1}{\cD}S)^{\dagger}$ and thus $\frac{1}{\cD}S$ is unitary as desired.
 \end{proof}
 
+
+\subsection{Quantum double modular categories}
+
+\subsubsection{The Drinfeld center}
+
+A quantum double modular category is a special type of modular category. In practice, many of the modular categories one deals with are quantum double modular categories so it is good to be aware of how they work. For instance, the modular categories appearing in the world of subfactors \cite{muger2001subfactorsA, mueger2001subfactorsB} and tensor networks \cite{bultinck2017anyons, dubail2015tensor} are all quantum double modular categories.
+
+At the heart of quantum doubles is a construction known as the {\em Drinfeld center}. In its most basic form the Drinfeld center induces an assignment
+
+$$\cZ: (\text{monoidal categories})\xrightarrow{}(\text{braided monoidal categories}).$$
+
+In our context, we care about a more structured version of the Drinfeld center. A major goal of this chapter is to prove a theorem of Mueger which states that the Drinfeld center induces an assignment
+
+$$\cZ: (\text{spherical fusion categories})\xrightarrow{}(\text{modular categories}).$$
+
+This theorem is fantastic because it allows one to construct modular categories using much less data than would otherwise be neccecary. Without needing a braiding (non-degenerate or otherwise) the Drinfeld center allows one to construct a modular category. This makaes the Drinfeld center an abundant source of modular categories. We call an modular category $\cD$ a quantum double if it is of the form $\cD\cong \cZ(\cC)$ for some spherical fusion category $\cC$.
+
+We now define the Drinfeld center. The Drinfeld center is a somewhat direct categorification of the usual notion of center for finite groups. If $G$ is a finite group, its center is defined as follows:
+
+$$Z(G)=\{g\in G | gh=hg \,\, \forall h\in G\}.$$
+
+The first guess at $\cZ(\cC)$ is thus
+
+$$\cZ(\cC)=\{A\in \cC | A\otimes B \cong B\otimes A \,\, \forall B\in \cC\}.$$
+
+This is almost correct, but not quite. The issue is that $\cZ(\cC)$ is not a braided monoidal category yet. Even though $A\otimes B\cong B\otimes A$ for all $A,B\in \cZ(\cC)$, we don't have a distinguished choice of isomorphism. A braided monoidal category requires a distinugished isomorphism $\beta_{A,B}:A\otimes B\xrightarrow{} B\otimes A$. Moreover, these distinguished isomorphisms are required to satisfy the hexagon equations. Hence, we make a new definition of center which keeps track of the choice of isomorphism and enforces the hexagon equation along the way.
+
+
+\begin{defn} The Drinfeld center $\cZ(\cC)$of a monoidal category $\cC$ is a braided monoidal category defined as follows:
+
+\begin{itemize}
+\item (Objects) Pairs $(A,\upbeta_{A,\--})$, where $A\in \cC$, and $\upbeta_{A,\--}$ is a natural isomorphism of monoidal natural isomorphism between the two functors $A\otimes \--$ and $\--\otimes A$ from $\cC$ to $\cC$, satisfying the additional condition that
+
+$$\upbeta_{A,B\otimes C}=\left(\id_{B}\otimes \upbeta_{A,C}\right)\circ \left(\upbeta_{A,B}\otimes \id_C\right).$$
+
+\item (Morphisms) Given $(A,\upbeta_{A,\--}), (B,\upbeta_{B,\--})\in \cZ(\cC)$, $\Hom_{\cZ(\cC)}((A,\upbeta_{A,\--}),(B,\upbeta_{B,\--}))$ is the subspace of morphisms $f\in \Hom_{\cC}(A,B)$ such that for all $C\in \cC$
+
+$$\left(\id_{C}\otimes f\right)\circ \upbeta_{A,C}=\upbeta_{B,C}\circ (f\otimes \id_C).$$
+
+\item (Tensor product) Given $(A,\upbeta_{A,\--}), (B,\upbeta_{B,\--})\in \cZ(\cC)$, we define
+
+$$(A,\upbeta_{A,\--})\otimes (B,\upbeta_{B,\--})=\left(A\otimes B, (\upbeta_{A,\--}\otimes \id_{C})\circ (\id_{C}\otimes \upbeta_{B,\--}) \right).$$
+
+\item (Unit) The element $(1,\rho\circ \lambda^{-1})$
+
+\item (Braiding) We define the braiding between two elements $(A,\beta_{A,\--}), (B,\beta_{B,\--})\in \cZ(\cC)$ to be $\beta_{A,B}=\upbeta_{A,B}$.
+\end{itemize}
+
+The associativity, unitors, and composition in $\cZ(\cC)$ are inherited from $\cC$.
+\end{defn}
+
+\begin{prop} For all monoidal categories $\cC$, the Drinfeld center $\cZ(\cC)$ is a well-defined braided monoidal category.
+\end{prop}
+\begin{proof} Since morphisms in $\cZ(\cC)$ are a subspace of morphisms in $\cC$, commutative diagrams don't change when going from $\cC$ to $\cZ(\cC)$. Hence, the triangle and pentagon axioms for $\cZ(\cC)$ follow immediately from the triangle and pentagon axioms on $\cC$. One thing to be checked is that evaluation/co-evaluaiton satisfy the compatibility condition required to a morphism in $\cZ(\cC)$, but this is straightforward. We remark on the hexagon identities. The condition imposed on $\upbeta_{A,B\otimes C}$ given is technically incorrect. To make the parentheses work in the braiding one has to add associators, and impose the longer condition
+
+$$\upbeta_{A,B\otimes C}=\alpha_{C,A,B}^{-1}\circ \left(\id_{B}\otimes \upbeta_{A,C}\right)\circ \alpha_{A,C,B}\circ\left(\upbeta_{A,B}\otimes \id_C\right)\circ \alpha^{-1}_{A,B,C}.$$
+
+This condition makes the second hexagon identity tautological. Similarly, the definition of tensor product given is not strictly correct - one must add the correct associator terms, making the first hexagon identity immediate. Lastly one must verify the half-braidings defined on the tensor unit/tensor product are actually half braidings, i.e., that they satisfy the hexagon condition. These follow from straightforward computations, which we leave as exercises.
+\end{proof}
+
+\subsubsection{Muger's theorem}
+
+\Note{ through Mueger's theorem. The exposition will greatly differ based on what the proof looks like, which I haven't done before. The standard proof people use is completeley steeped in the language of module categories. The original proof uses the tube algebra, and is ``elementary" in the sense that you don't need tube algebras but it is heineous, and I would very much like to avoid it. I'll figure out what to write hence once I've done the module category section and I've digested the proof. Maybe there's a way to de-module-ify it, but maybe not. Maybe I don't want to do that if it'll lose its essence.
+}
+
+\Note{I also want to be sure to get the formula that the global dimension of the center is the square of the global dimension of the input.}
+
+
+\subsubsection{Discrete gauge theory as a quantum double and Morita equivalence}
+
+We saw in section \ref{the-category-of-G-graded-G-representations} that $\Vec_G$ anad $\Rep(G)$ are both naturally spherical fusion categories. Thus, Muger's theorem tells us that $\cZ(\Vec_G)$ and $\cZ(\Rep(G))$ are both modular categories. Hence, given a finite group $G$ we have three different modular categories we can associate to it: $\fD(G)$, $\cZ(\Vec_G)$, $\cZ(\Rep(G))$. The amazing fact is that these are all the same category:
+
+\begin{prop} For all finite groups $G$, there are equivalences of modular categories
+
+$$\fD(G)\cong \cZ(\Vec_G)\cong \cZ(\Rep(G)).$$
+\end{prop}
+\begin{proof} We begin with proving $\cZ(\Vec_G)\simeq \fD(G)$. Suppose that $(V,\upbeta_{V,\dash})\in \cZ(\Vec_G)$. We can define $\rho(g):V\to V$ for all $g\in G$ by the implicit formula
+
+\begin{align*}
+\upbeta_{V,\bC_{g^{-1}}}:V\otimes \bC_{g^{-1}}&\to \bC_{g^{-1}}\otimes V\\
+v\otimes 1 &\mapsto 1\otimes \rho(g)(v)
+\end{align*}
+
+Since $\upbeta_{V,\dash}$ is a $G$-graded map, we must have
+
+$$\rho(g)(V_h)\subseteq v_{ghg^{-1}}.$$
+
+Thus, we have naturally associated to $(V,\upbeta_{V,\dash})$ the structure of a $G$-graded $G$-representation. It is straightforward to show that this defines a functor $F:\cZ(\Vec_G)\to \cD(G)$, and that this functor induces an equivalence of categories.
+
+We now move on to $\cZ(\Rep(G))$. Given a $G$-graded $G$-representation $(V,\rho)$, we can define a half braiding by the same formula one usually uses for the braiding in $\fD(G)$,
+
+\begin{align*}
+\upbeta_{V,W}:V_g\otimes W&\to W\otimes V \\
+v\otimes w&\mapsto \rho_W(g)(w)\otimes v
+\end{align*}
+
+for all $v\in V_g$. It is straightforward to show that this gives a functor of pre-modular categories $\fD(G)\to\cZ(\Rep(G))$. While it is clear that this functor is fully faithful, it is rather cumbersome to show directly that it is essentially surjective (that is, that every half-braiding arrises from a $G$-graded $G$-representation). Thus, we turn to the more abstract machinery of subsection [ref].
+
+\Note{We can compute the global dimension of $\fD(G)$ by the fact that it is the Drinfeld center of $\Vec_G$. We can compute the global dimension of $\Rep(G)$ from the decomposition of $\bC[G]$ we proved before. Thus, we get that $\cZ(\Rep(G))$ and $\fD(G)$ have the same global quantum dimension, so the map must be essentially surjective!}
+\end{proof}
+
+The equivalance $\cZ(\Vec_G)\simeq \cZ(\Rep(G))$ demonstrates the concept known as {\em Morita equivalence}. We define two spherical fusion categories $\cC$, $\cD$ to be Morita equivalent if there exists an equivalence of pre-modular categories $\cZ(\cC)\simeq \cZ(\cD)$. The most naive motivation for the notion of Morita equivalance is as follows. If $\cD$ is a quantum double modular category, this means it can be written as $\cZ(\cC)$ for some some spherical fusion category $\cC$. However, the choice of $\cC$ is not unique. It is only unique up to Morita equivalence, by definition. Keeping aware of the different choices of $\cC$ can be a useful thing to.
+
+\begin{rem}
+There is an alternate definition of Morita equivalence in terms of bimodules which we will see in subsection [ref]. In fact, the original definition of Morita equivalence was stated in yet a different way, in terms of two-categories \cite{muger2001subfactorsA}. It is a theorem of Mueger and Kitaev and that the original definition of Morita equivalence can be restated in terms of Drinfeld centers \cite{etingof2011weakly}.
+\end{rem}
+
+\subsubsection{Factorizability and time reversal symmetry}
+
+Given a modular category $\cC$, we can forget the braiding on $\cC$ and only remember its structure as a spherical fusion category. Hence, Muger's theorem tells us that $\cZ(\cC)$ is naturally a modular category. In this section we will compute $\cZ(\cC)$ a modular category in terms of $\cC$, and prove some related results.
+
+\begin{defn}\Note{define the time-reversal conjugate $\overline{\cC}$}
+\end{defn} 
+
+\begin{rem} For any braided monoidal category $\cC$, there is an associated functor
+
+$$\cC\boxtimes \overline{\cC}\xrightarrow{} \cZ(\cC),$$
+
+defines as follows.\Note{Define it, pretty easy.}
+\end{rem}
+
+\begin{thrm}\label{factorizability-theorem} Let $\cC$ be a pre-modular category. The standard map $\cC\boxtimes \overline{\cC}\xrightarrow{}\cZ(\cC)$ is a functor of pre-modular categories. It is an equivalence of pre-modular categories if and only of $\cC$ is modular.
+\end{thrm}
+\begin{proof}\Note{proof}
+\end{proof}
+
+\begin{rem} \Note{This theorem is fantastic because it not only computes $\cZ(\cC)$ for every modular category $\cC$, but also it gives an equivalent definition of modularity. This gives us our third definition of modularity. Namely a pre-modular category $\cC$ is modular if and only if its braidings are all non-degenerate, or equivalently if its $S$-matrix is non-degenerate, or equivalently if it is factorizable in the above sense.}
+\end{rem}
+
+\subsubsection{Levin-Wen model}
+
+\Note{: work though the Levin-Wen model.
+I think that this model is fantastic because it shows how all of the ideas of tensor category theory can manifest themselves extremely concretelely on the level of gapped Hamiltonians. Namely, the coherence relations on the category theory side correspond exactly the the formulas needed to make terms in a Hamiltonian commute with one another. It would be nice if I could give a motivation for which the category which describes the Levin-Wen model is the Drinfeld center, though I've never seen that before.}
+
+
+
 \subsection{Skeletonization}
 \label{skeletonization}
 
@@ -2112,105 +2246,6 @@ A good mathematical reference is \cite{davidovich2013arithmetic}.
 \subsubsection{$\theta$-symbols}
 
 \subsubsection{Reconstruction theorem}
-
-
-
-\subsection{Quantum double modular categories}
-
-\subsubsection{The Drinfeld center}
-
-A quantum double modular category is a special type of modular category. They are particularly important because many of the constructions of topological order only deal with quantum double modular categories. For instance, there are constructions of modular categories/topological order coming from the theory of tensor networks [ref], subfactors [ref], vertex operator algebras [ref], \Note{add more sources}. All of these constructions only give quantum double modular categories. Hence, understanding quantum doubles is key to understanding how topological order work in practice.
-
-At the heart of quantum doubles is a construction known as the {\em Drinfeld center}. In its most basic form the Drinfeld center induces an assignment
-
-$$\cZ: (\text{monoidal categories})\xrightarrow{}(\text{braided monoidal categories}).$$
-
-In our context, we care about a more structured version of the Drinfeld center. It is a theorem of Muger that the Drinfeld center induces an assignment as follows:
-
-$$\cZ: (\text{spherical fusion categories})\xrightarrow{}(\text{modular categories}).$$
-
-This theorem is fantastic because it allows one to construct modular categories using much less data than would otherwise be neccecary. Without needing a braiding, non-degenerate or otherwise, the Drinfeld center allows one to construct a modular category. This makaes the Drinfeld center an abundant source of modular categories. We call an modular category $\cC$ a quantum double if it is of the form $\cZ(\cC_0)$ for some spherical fusion category $\cC_0$. A a major goal of this chapter is to set up and prove Muger's theorem
-
-We now define the Drinfeld center. The Drinfeld center is a somewhat direct categorification of the usual notion of center for finite groups. If $G$ is a finite group, its center is defined as follows:
-
-$$Z(G)=\{g\in G | gh=hg \,\, \forall h\in G\}.$$
-
-The first guess at $\cZ(\cC)$ is thus
-
-$$\cZ(\cC)=\{A\in \cC | A\otimes B \cong B\otimes A \,\, \forall B\in \cC\}.$$
-
-This is almost correct, but not quite. The issue is that $\cZ(\cC)$ is not quite a braided monoidal category yet. Even though $A\otimes B\cong B\otimes A$ for all $A,B\in \cZ(\cC)$, we don't have a distinguished choice of isomorphism. A braided monoidal category requires a distinugished isomorphism $\beta_{A,B}:A\otimes B\xrightarrow{\sim} B\otimes A$. Moreover, these distinguished isomorphisms are required to satisfy the hexagon equations. Hence, we make a new definition of center which keeps track of the choice of isomorphism and enforces the hexagon equation along the way:
-
-
-\begin{prop} The Drinfeld center $\cZ(\cC)$of a monoidal category $\cC$ is a braided monoidal category defined as follows:
-
-\begin{itemize}
-\item (Objects) Pairs $(A,\upbeta_{A,\--})$, where $A\in \cC$, and $\upbeta_{A,\--}$ is a natural isomorphism of monoidal natural isomorphism between the two functors $A\otimes \--$ and $\--\otimes A$ from $\cC$ to $\cC$, satisfying the additional condition that
-
-$$\upbeta_{A,B\otimes C}=\left(\id_{B}\otimes \upbeta_{A,C}\right)\circ \left(\upbeta_{A,B}\otimes \id_C\right).$$
-
-\item (Morphisms) Given $(A,\upbeta_{A,\--}), (B,\upbeta_{B,\--})\in \cZ(\cC)$, $\Hom_{\cZ(\cC)}((A,\upbeta_{A,\--}),(B,\upbeta_{B,\--}))$ is the subspace of morphisms $f\in \Hom_{\cC}(A,B)$ such that for all $C\in \cC$
-
-$$\left(\id_{C}\otimes f\right)\circ \upbeta_{A,C}=\upbeta_{B,C}\circ (f\otimes \id_C).$$
-
-\item (Tensor product) Given $(A,\upbeta_{A,\--}), (B,\upbeta_{B,\--})\in \cZ(\cC)$, we define
-
-$$(A,\upbeta_{A,\--})\otimes (B,\upbeta_{B,\--})=\left(A\otimes B, (\upbeta_{A,\--}\otimes \id_{\cC})\circ (\id_{\cC}\otimes \upbeta_{B,\--}) \right).$$
-
-\item (Unit) The element $(1,\rho\circ \lambda^{-1})$
-
-\item (Braiding) We define the braiding between two elements $(A,\beta_{A,\--}), (B,\beta_{B,\--})\in \cZ(\cC)$ to be $\beta_{A,B}=\upbeta_{A,B}$.
-\end{itemize}
-
-Inheriting associativity, unitors, and composition from $\cC$, this gives $\cZ(\cC)$ the structure of a braided monoidal category.
-\end{prop}
-\begin{proof} Since morphisms in $\cZ(\cC)$ are a subspace of morphisms in $\cC$, commutative diagrams don't change when going from $\cC$ to $\cZ(\cC)$. Hence, the triangle and pentagon axioms for $\cZ(\cC)$ follow immediately from the triangle and pentagon axioms on $\cC$. One thing to be checked is that evaluation/co-evaluaiton satisfy the compatibility condition required to a morphism in $\cZ(\cC)$, but this is straightforward. We remark on the hexagon identities. The condition imposed on $\upbeta_{A,B\otimes C}$ given is technically incorrect. To make the parentheses work in the braiding one has to add associators, and impose the longer condition
-
-$$\upbeta_{A,B\otimes C}=\alpha_{C,A,B}^{-1}\circ \left(\id_{B}\otimes \upbeta_{A,C}\right)\circ \alpha_{A,C,B}\circ\left(\upbeta_{A,B}\otimes \id_C\right)\circ \alpha^{-1}_{A,B,C}.$$
-
-This condition makes the second hexagon identity tautological. Similarly, the definition of tensor product given is not strictly correct - one must add the correct associator terms, making the first hexagon identity immediate. Lastly one must verify the half-braidings defined on the tensor unit/tensor product are actually half braidings, i.e., that they satisfy the hexagon condition. These follow from straightforward computations, which we leave as exercises. This completes the proof.
-
-\end{proof}
-
-\subsubsection{Muger's theorem}
-
-\Note{ through Mueger's theorem. The exposition will greatly differ based on what the proof looks like, which I haven't done before.
-The standard proof people use is completeley steeped in the language of module categories. The original proof uses the tube algebra, and is ``elementary" in the sense that you don't need tube algebras but it is heineous, and I would very much like to avoid it. I'll figure out what to write hence once I've done the module category section and I've digested the proof. Maybe there's a way to de-module-ify it, but maybe not. Maybe I don't want to do that if it'll lose its essence.
-}
-
-\subsubsection{Discrete gauge theory as a quantum double and Morita equivalence}
-
-We saw in chapter [ref] that $\Vec_G$ anad $\Rep(G)$ are both naturally spherical fusion categories. Thus, Muger's theorem tells us that $\cZ(\Vec_G)$ and $\cZ(\Rep(G))$ are both modular categories. Hence, given a finite group $G$ we have three different modular categories we can associate to it: $\fD(G)$, $\cZ(\Vec_G)$, $\cZ(\Rep(G))$. The amazing fact is that these are all the same category:
-
-\begin{prop} Let $G$ be a finite group. There are equivalences of modular categories $\fD(G)\cong \cZ(\Vec_G)\cong \cZ(\Rep(G))$.
-\end{prop}
-\begin{proof}\Note{ do proof. Shouldn't be too hard.}
-\end{proof}
-
-We now make a few comments about this theorem. The first is that it proves that $\fD(G)$ is a quantum double modular category. Secondly, it gives a second proof that $\fD(G)$ has a non-degenearte braiding, using Muger's theorem. Thirdly, it demonstrates the concept of {\em Morita equivalence}.
-
-\Note{ introduce Morita equivalence. I know that there's some important basic facts to tell - I should include those.}
-
-\subsubsection{Factorizability and time reversal symmetry}
-
-Given a modular category $\cC$, we can forget the braiding on $\cC$ and only remember its structure as a spherical fusion category. Hence, Muger's theorem tells us that $\cZ(\cC)$ is canonically a modular category. It is a fantastic fact that in this case $\cZ(\cC)$ can be explicitely computed in terms of $\cC$. We describe this computation now.
-
-\Note{ Define the time-reversal conjugate $\overline{\cC}$. Setup the map $\cC\boxtimes \overline{\cC}\xrightarrow{}\cZ(\cC)$}
-
-\begin{prop} Let $\cC$ be a pre-modular category. The canonical map $\cC\boxtimes \overline{\cC}\xrightarrow{}\cZ(\cC)$ is an equivalence of categories if and only if $\cC$ is modular.
-\end{prop}
-\begin{proof}\Note{proof}
-\end{proof}
-
-This theorem is fantastic because it not only computes $\cZ(\cC)$ for every modular category $\cC$, but also it gives an equivalent definition of modularity. This gives us our third definition of modularity. Namely a pre-modular category $\cC$ is modular if and only if its braidings are all non-degenerate, or equivalently if its $S$-matrix is non-degenerate, or equivalently if it is factorizable in the above sense.
-
-\subsubsection{Levin-Wen model}
-
-\Note{: work though the Levin-Wen model.
-I think that this model is fantastic because it shows how all of the ideas of tensor category theory can manifest themselves extremely concretelely on the level of gapped Hamiltonians. Namely, the coherence relations on the category theory side correspond exactly the the formulas needed to make terms in a Hamiltonian commute with one another. It would be nice if I could give a motivation for which the category which describes the Levin-Wen model is the Drinfeld center, though I've never seen that before.}
-
-
-
 
 \subsection{Unitarity}
 

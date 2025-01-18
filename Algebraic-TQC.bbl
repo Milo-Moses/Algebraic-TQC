@@ -1,15 +1,215 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
-\begin{thebibliography}{GdLHJ12}
+\begin{thebibliography}{vKCK{\etalchar{+}}20}
+
+\bibitem[AA81]{ascher1981code}
+Marcia Ascher and Robert Ascher.
+\newblock Code of the quipu.
+\newblock {\em Ann Arbor: University of Michigan Press}, pages 56--74, 1981.
+
+\bibitem[AA11]{aharonov2011bqp}
+Dorit Aharonov and Itai Arad.
+\newblock The bqp-hardness of approximating the jones polynomial.
+\newblock {\em New Journal of Physics}, 13(3):035019, 2011.
+
+\bibitem[Aar13]{aaronson2013quantum}
+Scott Aaronson.
+\newblock {\em Quantum computing since Democritus}.
+\newblock Cambridge University Press, 2013.
+
+\bibitem[AB59]{aharonov1959significance}
+Yakir Aharonov and David Bohm.
+\newblock Significance of electromagnetic potentials in the quantum theory.
+\newblock {\em Physical review}, 115(3):485, 1959.
+
+\bibitem[AFM20]{aasen2020topological}
+David Aasen, Paul Fendley, and Roger~SK Mong.
+\newblock Topological defects on the lattice: dualities and degeneracies.
+\newblock {\em arXiv preprint arXiv:2008.08598}, 2020.
+
+\bibitem[Ale28]{alexander1928topological}
+James~W Alexander.
+\newblock Topological invariants of knots and links.
+\newblock {\em Transactions of the American Mathematical Society},
+  30(2):275--306, 1928.
+
+\bibitem[Ali10]{alicea2010majorana}
+Jason Alicea.
+\newblock Majorana fermions in a tunable semiconductor device.
+\newblock {\em Physical Review B—Condensed Matter and Materials Physics},
+  81(12):125318, 2010.
+
+\bibitem[AMF16]{aasen2016topological}
+David Aasen, Roger~SK Mong, and Paul Fendley.
+\newblock Topological defects on the lattice: I. the ising model.
+\newblock {\em Journal of Physics A: Mathematical and Theoretical},
+  49(35):354001, 2016.
+
+\bibitem[AMV18]{armitage2018weyl}
+NP~Armitage, EJ~Mele, and Ashvin Vishwanath.
+\newblock Weyl and dirac semimetals in three-dimensional solids.
+\newblock {\em Reviews of Modern Physics}, 90(1):015001, 2018.
+
+\bibitem[ASW84]{arovas1984fractional}
+Daniel Arovas, John~R Schrieffer, and Frank Wilczek.
+\newblock Fractional statistics and the quantum hall effect.
+\newblock {\em Physical review letters}, 53(7):722, 1984.
+
+\bibitem[ASWZ85]{arovas1985statistical}
+Daniel~P Arovas, Robert Schrieffer, Frank Wilczek, and Anthony Zee.
+\newblock Statistical mechanics of anyons.
+\newblock {\em Nuclear Physics B}, 251:117--126, 1985.
+
+\bibitem[AT77]{anderson1977phase}
+PHILIP~W Anderson and G~Toulouse.
+\newblock Phase slippage without vortex cores: vortex textures in superfluid he
+  3.
+\newblock {\em Physical Review Letters}, 38(9):508, 1977.
+
+\bibitem[AWH22]{aasen2022adiabatic}
+David Aasen, Zhenghan Wang, and Matthew~B Hastings.
+\newblock Adiabatic paths of hamiltonians, symmetries of topological order, and
+  automorphism codes.
+\newblock {\em Physical Review B}, 106(8):085122, 2022.
+
+\bibitem[BB23]{babakhani2023g}
+Arman Babakhani and Parsa Bonderson.
+\newblock G-crossed modularity of symmetry enriched topological phases.
+\newblock {\em Communications in Mathematical Physics}, 402(3):2979--3019,
+  2023.
+
+\bibitem[BBCW19]{barkeshli2019symmetry}
+Maissam Barkeshli, Parsa Bonderson, Meng Cheng, and Zhenghan Wang.
+\newblock Symmetry fractionalization, defects, and gauging of topological
+  phases.
+\newblock {\em Physical Review B}, 100(11):115147, 2019.
+
+\bibitem[BCG{\etalchar{+}}24]{bravyi2024high}
+Sergey Bravyi, Andrew~W Cross, Jay~M Gambetta, Dmitri Maslov, Patrick Rall, and
+  Theodore~J Yoder.
+\newblock High-threshold and low-overhead fault-tolerant quantum memory.
+\newblock {\em Nature}, 627(8005):778--782, 2024.
+
+\bibitem[BDSPV15]{bartlett2015modular}
+Bruce Bartlett, Christopher~L Douglas, Christopher~J Schommer-Pries, and Jamie
+  Vicary.
+\newblock Modular categories as representations of the 3-dimensional bordism
+  2-category.
+\newblock {\em arXiv preprint arXiv:1509.06811}, 2015.
+
+\bibitem[BGH{\etalchar{+}}17]{bruillard2017fermionic}
+Paul Bruillard, C{\'e}sar Galindo, Tobias Hagge, Siu-Hung Ng, Julia~Yael
+  Plavnik, Eric~C Rowell, and Zhenghan Wang.
+\newblock Fermionic modular categories and the 16-fold way.
+\newblock {\em Journal of Mathematical Physics}, 58(4), 2017.
+
+\bibitem[BGS{\etalchar{+}}09]{bolotin2009observation}
+Kirill~I Bolotin, Fereshte Ghahari, Michael~D Shulman, Horst~L Stormer, and
+  Philip Kim.
+\newblock Observation of the fractional quantum hall effect in graphene.
+\newblock {\em Nature}, 462(7270):196--199, 2009.
+
+\bibitem[BH11]{bravyi2011short}
+Sergey Bravyi and Matthew~B Hastings.
+\newblock A short proof of stability of topological order under local
+  perturbations.
+\newblock {\em Communications in mathematical physics}, 307:609--627, 2011.
+
+\bibitem[BHM10]{bravyi2010topological}
+Sergey Bravyi, Matthew~B Hastings, and Spyridon Michalakis.
+\newblock Topological quantum order: stability under local perturbations.
+\newblock {\em Journal of mathematical physics}, 51(9), 2010.
+
+\bibitem[BJQ13]{barkeshli2013twist}
+Maissam Barkeshli, Chao-Ming Jian, and Xiao-Liang Qi.
+\newblock Twist defects and projective non-abelian braiding statistics.
+\newblock {\em Physical Review B—Condensed Matter and Materials Physics},
+  87(4):045130, 2013.
+
+\bibitem[BK98]{bravyi1998quantum}
+Sergey~B Bravyi and A~Yu Kitaev.
+\newblock Quantum codes on a lattice with boundary.
+\newblock {\em arXiv preprint quant-ph/9811052}, 1998.
 
 \bibitem[BK{\etalchar{+}}01]{bakalov2001lectures}
 Bojko Bakalov, Alexander~A Kirillov, et~al.
 \newblock {\em Lectures on tensor categories and modular functors}, volume~21.
 \newblock American Mathematical Society Providence, RI, 2001.
 
+\bibitem[BK05]{bravyi2005universal}
+Sergey Bravyi and Alexei Kitaev.
+\newblock Universal quantum computation with ideal clifford gates and noisy
+  ancillas.
+\newblock {\em Physical Review A—Atomic, Molecular, and Optical Physics},
+  71(2):022316, 2005.
+
+\bibitem[BK13]{bravyi2013classification}
+Sergey Bravyi and Robert K{\"o}nig.
+\newblock Classification of topologically protected gates for local stabilizer
+  codes.
+\newblock {\em Physical review letters}, 110(17):170503, 2013.
+
+\bibitem[BKK{\etalchar{+}}24]{balewski2024engineering}
+Jan Balewski, Milan Kornjaca, Katherine Klymko, Siva Darbha, Mark~R
+  Hirsbrunner, Pedro Lopes, Fangli Liu, and Daan Camps.
+\newblock Engineering quantum states with neutral atoms.
+\newblock {\em arXiv preprint arXiv:2404.04411}, 2024.
+
+\bibitem[BKKK22]{bravyi2022adaptive}
+Sergey Bravyi, Isaac Kim, Alexander Kliesch, and Robert Koenig.
+\newblock Adaptive constant-depth circuits for manipulating non-abelian anyons.
+\newblock {\em arXiv preprint arXiv:2205.01933}, 2022.
+
+\bibitem[BMD06]{bombin2006topological}
+Hector Bombin and Miguel~Angel Martin-Delgado.
+\newblock Topological quantum distillation.
+\newblock {\em Physical review letters}, 97(18):180501, 2006.
+
+\bibitem[BMD08]{bombin2008family}
+Hector Bombin and MA~Martin-Delgado.
+\newblock Family of non-abelian kitaev models on a lattice: Topological
+  condensation and confinement.
+\newblock {\em Physical Review B—Condensed Matter and Materials Physics},
+  78(11):115421, 2008.
+
+\bibitem[BMD11]{bombin2011nested}
+H~Bombin and MA~Martin-Delgado.
+\newblock Nested topological order.
+\newblock {\em New Journal of Physics}, 13(12):125001, 2011.
+
+\bibitem[BMW{\etalchar{+}}17]{bultinck2017anyons}
+Nick Bultinck, Michael Mari{\"e}n, Dominic~J Williamson, Mehmet~B
+  {\c{S}}ahino{\u{g}}lu, Jutho Haegeman, and Frank Verstraete.
+\newblock Anyons and matrix product operator algebras.
+\newblock {\em Annals of physics}, 378:183--233, 2017.
+
+\bibitem[BNQ13]{bonderson2013time}
+Parsa Bonderson, Chetan Nayak, and Xiao-Liang Qi.
+\newblock A time-reversal invariant topological phase at the surface of a 3d
+  topological insulator.
+\newblock {\em Journal of Statistical Mechanics: Theory and Experiment},
+  2013(09):P09016, 2013.
+
+\bibitem[BNRW16]{bruillard2016classification}
+Paul Bruillard, Siu-Hung Ng, Eric~C Rowell, and Zhenghan Wang.
+\newblock On classification of modular categories by rank.
+\newblock {\em International Mathematics Research Notices},
+  2016(24):7546--7588, 2016.
+
+\bibitem[Bom15]{bombin2015gauge}
+H{\'e}ctor Bomb{\'\i}n.
+\newblock Gauge color codes: optimal transversal gates and gauge fixing in
+  topological stabilizer codes.
+\newblock {\em New Journal of Physics}, 17(8):083002, 2015.
+
 \bibitem[Bon21]{bonderson2021measuring}
 Parsa Bonderson.
 \newblock Measuring topological order.
 \newblock {\em Physical Review Research}, 3(3):033110, 2021.
+
+\bibitem[BPZ84]{belavin1984infinite}
+Alexander~A Belavin, Alexander~M Polyakov, and Alexander~B Zamolodchikov.
+\newblock Infinite conformal symmetry in two-dimensional quantum field theory.
+\newblock {\em Nuclear Physics B}, 241(2):333--380, 1984.
 
 \bibitem[BR22]{buican2022galois}
 Matthew Buican and Rajath Radhakrishnan.
@@ -22,10 +222,83 @@ Alain Bruguieres.
   vari{\'e}t{\'e}s de dimension 3.
 \newblock {\em Mathematische Annalen}, 316(2):215--236, 2000.
 
+\bibitem[BRWZ18]{bonderson2018congruence}
+Parsa Bonderson, Eric Rowell, Zhenghan Wang, and Qing Zhang.
+\newblock Congruence subgroups and super-modular categories.
+\newblock {\em Pacific Journal of Mathematics}, 296(2):257--270, 2018.
+
+\bibitem[Bur18]{burnell2018anyon}
+Fiona~J Burnell.
+\newblock Anyon condensation and its applications.
+\newblock {\em Annual Review of Condensed Matter Physics}, 9(1):307--327, 2018.
+
+\bibitem[BW18]{bloomquist2018topological}
+Wade Bloomquist and Zhenghan Wang.
+\newblock On topological quantum computing with mapping class group
+  representations.
+\newblock {\em Journal of Physics A: Mathematical and Theoretical},
+  52(1):015301, 2018.
+
+\bibitem[Car89]{cardy1989boundary}
+John~L Cardy.
+\newblock Boundary conditions, fusion rules and the verlinde formula.
+\newblock {\em Nuclear Physics B}, 324(3):581--596, 1989.
+
+\bibitem[CCW16]{cong2016topological}
+Iris Cong, Meng Cheng, and Zhenghan Wang.
+\newblock Topological quantum computation with gapped boundaries.
+\newblock {\em arXiv preprint arXiv:1609.02037}, 2016.
+
+\bibitem[CDGG21]{creutzig2021qft}
+Thomas Creutzig, Tudor Dimofte, Niklas Garner, and Nathan Geer.
+\newblock A qft for non-semisimple tqft.
+\newblock {\em arXiv preprint arXiv:2112.01559}, 2021.
+
+\bibitem[CDH{\etalchar{+}}20]{cui2020kitaev}
+Shawn~X Cui, Dawei Ding, Xizhi Han, Geoffrey Penington, Daniel Ranard,
+  Brandon~C Rayhaun, and Zhou Shangnan.
+\newblock Kitaev's quantum double model as an error correcting code.
+\newblock {\em Quantum}, 4:331, 2020.
+
 \bibitem[CG93]{coste1993remarks}
 Antoine Coste and Terry Gannon.
 \newblock Remarks on galois symmetry in rational conformal field theories.
 \newblock Technical report, P00019855, 1993.
+
+\bibitem[CGH23]{carpi2023vertex}
+Sebastiano Carpi, Tiziano Gaudio, and Robin Hillier.
+\newblock From vertex operator superalgebras to graded-local conformal nets and
+  back.
+\newblock {\em arXiv preprint arXiv:2304.14263}, 2023.
+
+\bibitem[CGPM14]{costantino2014quantum}
+Francesco Costantino, Nathan Geer, and Bertrand Patureau-Mirand.
+\newblock Quantum invariants of 3-manifolds via link surgery presentations and
+  non-semi-simple categories.
+\newblock {\em Journal of Topology}, 7(4):1005--1053, 2014.
+
+\bibitem[CK18]{coecke2018picturing}
+Bob Coecke and Aleks Kissinger.
+\newblock Picturing quantum processes: A first course on quantum theory and
+  diagrammatic reasoning.
+\newblock In {\em Diagrammatic Representation and Inference: 10th International
+  Conference, Diagrams 2018, Edinburgh, UK, June 18-22, 2018, Proceedings 10},
+  pages 28--31. Springer, 2018.
+
+\bibitem[CKWZ24]{chang2024modular}
+Liang Chang, Quinn~T Kolt, Zhenghan Wang, and Qing Zhang.
+\newblock Modular data of non-semisimple modular categories.
+\newblock {\em arXiv preprint arXiv:2404.09314}, 2024.
+
+\bibitem[CLRL17]{chan2017photocurrents}
+Ching-Kit Chan, Netanel~H Lindner, Gil Refael, and Patrick~A Lee.
+\newblock Photocurrents in weyl semimetals.
+\newblock {\em Physical Review B}, 95(4):041104, 2017.
+
+\bibitem[Cop97]{copeland1997church}
+B~Jack Copeland.
+\newblock The church-turing thesis.
+\newblock 1997.
 
 \bibitem[COT24]{coulembier2024growth}
 Kevin Coulembier, Victor Ostrik, and Daniel Tubbenhauer.
@@ -33,35 +306,225 @@ Kevin Coulembier, Victor Ostrik, and Daniel Tubbenhauer.
   powers.
 \newblock {\em Algebras and Representation Theory}, 27(2):1033--1062, 2024.
 
+\bibitem[Cur94]{curie1894symetrie}
+Pierre Curie.
+\newblock Sur la sym{\'e}trie dans les ph{\'e}nom{\`e}nes physiques,
+  sym{\'e}trie d'un champ {\'e}lectrique et d'un champ magn{\'e}tique.
+\newblock {\em Journal de physique th{\'e}orique et appliqu{\'e}e},
+  3(1):393--415, 1894.
+
+\bibitem[CZW19]{cui2019generalized}
+Shawn~Xingshan Cui, Modjtaba~Shokrian Zini, and Zhenghan Wang.
+\newblock On generalized symmetries and structure of modular categories.
+\newblock {\em Science China Mathematics}, 62:417--446, 2019.
+
+\bibitem[Dav11]{davis2011axiomatic}
+Kelly~J Davis.
+\newblock Axiomatic tqft, axiomatic dqft, and exotic 4-manifolds.
+\newblock {\em arXiv preprint arXiv:1106.2358}, 2011.
+
 \bibitem[Del02]{deligne2002categories}
 Pierre Deligne.
 \newblock Cat{\'e}gories tensorielles.
 \newblock {\em Mosc. Math. J}, 2(2):227--248, 2002.
+
+\bibitem[Del19]{delaney2019categorical}
+Colleen Delaney.
+\newblock {\em A categorical perspective on symmetry, topological order, and
+  quantum information}.
+\newblock PhD thesis, UC Santa Barbara, 2019.
+
+\bibitem[DGNO10]{drinfeld2010braided}
+Vladimir Drinfeld, Shlomo Gelaki, Dmitri Nikshych, and Victor Ostrik.
+\newblock On braided fusion categories i.
+\newblock {\em Selecta Mathematica}, 16:1--119, 2010.
+
+\bibitem[DGP{\etalchar{+}}21]{delaney2021braided}
+Colleen Delaney, C{\'e}sar Galindo, Julia Plavnik, Eric~C Rowell, and Qing
+  Zhang.
+\newblock Braided zesting and its applications.
+\newblock {\em Communications in Mathematical Physics}, 386:1--55, 2021.
+
+\bibitem[DGP{\etalchar{+}}24]{delaney2024g}
+Colleen Delaney, C{\'e}sar Galindo, Julia Plavnik, Eric~C Rowell, and Qing
+  Zhang.
+\newblock G-crossed braided zesting.
+\newblock {\em Journal of the London Mathematical Society}, 109(1):e12816,
+  2024.
 
 \bibitem[DHW13]{davidovich2013arithmetic}
 Orit Davidovich, Tobias Hagge, and Zhenghan Wang.
 \newblock On arithmetic modular categories.
 \newblock {\em arXiv preprint arXiv:1305.2229}, 2013.
 
+\bibitem[Dir31]{dirac1931quantised}
+Paul Adrien~Maurice Dirac.
+\newblock Quantised singularities in the electromagnetic field.
+\newblock {\em Proceedings of the Royal Society of London. Series A, Containing
+  Papers of a Mathematical and Physical Character}, 133(821):60--72, 1931.
+
+\bibitem[DKLP02]{dennis2002topological}
+Eric Dennis, Alexei Kitaev, Andrew Landahl, and John Preskill.
+\newblock Topological quantum memory.
+\newblock {\em Journal of Mathematical Physics}, 43(9):4452--4505, 2002.
+
+\bibitem[DKP21]{delaney2021zesting}
+Colleen Delaney, Sung Kim, and Julia Plavnik.
+\newblock Zesting produces modular isotopes and explains their topological
+  invariants.
+\newblock {\em arXiv preprint arXiv:2107.11374}, 2021.
+
+\bibitem[DM19]{deshpande2019crossed}
+Tanmay Deshpande and Swarnava Mukhopadhyay.
+\newblock Crossed modular categories and the verlinde formula for twisted
+  conformal blocks.
+\newblock {\em arXiv preprint arXiv:1909.10799}, 2019.
+
+\bibitem[DMNO13]{davydov2013witt}
+Alexei Davydov, Michael M{\"u}ger, Dmitri Nikshych, and Victor Ostrik.
+\newblock The witt group of non-degenerate braided fusion categories.
+\newblock {\em Journal f{\"u}r die reine und angewandte Mathematik (Crelles
+  Journal)}, 2013(677):135--177, 2013.
+
+\bibitem[DR15]{dubail2015tensor}
+Jerome Dubail and Nicholas Read.
+\newblock Tensor network trial states for chiral topological phases in two
+  dimensions and a no-go theorem in any dimension.
+\newblock {\em Physical Review B}, 92(20):205307, 2015.
+
+\bibitem[DR22]{de2022non}
+Marco De~Renzi.
+\newblock {\em Non-semisimple extended topological quantum field theories},
+  volume 277.
+\newblock American Mathematical Society, 2022.
+
+\bibitem[Dri86]{drinfeld1986quantum}
+Vladimir~Gershonovich Drinfeld.
+\newblock Quantum groups.
+\newblock {\em Zapiski Nauchnykh Seminarov POMI}, 155:18--49, 1986.
+
+\bibitem[EC24]{ellison2024towards}
+Tyler Ellison and Meng Cheng.
+\newblock Towards a classification of mixed-state topological orders in two
+  dimensions.
+\newblock {\em arXiv preprint arXiv:2405.02390}, 2024.
+
 \bibitem[EGNO16]{etingof2016tensor}
 Pavel Etingof, Shlomo Gelaki, Dmitri Nikshych, and Victor Ostrik.
 \newblock {\em Tensor categories}, volume 205.
 \newblock American Mathematical Soc., 2016.
+
+\bibitem[EK09]{eastin2009restrictions}
+Bryan Eastin and Emanuel Knill.
+\newblock Restrictions on transversal encoded quantum gate sets.
+\newblock {\em Physical review letters}, 102(11):110502, 2009.
+
+\bibitem[EM45]{eilenberg1945general}
+Samuel Eilenberg and Saunders MacLane.
+\newblock General theory of natural equivalences.
+\newblock {\em Transactions of the American Mathematical Society},
+  58(2):231--294, 1945.
 
 \bibitem[ENO05]{etingof2005fusion}
 Pavel Etingof, Dmitri Nikshych, and Viktor Ostrik.
 \newblock On fusion categories.
 \newblock {\em Annals of mathematics}, pages 581--642, 2005.
 
+\bibitem[ENO10]{etingof2010fusion}
+Pavel Etingof, Dmitri Nikshych, and Victor Ostrik.
+\newblock Fusion categories and homotopy theory.
+\newblock {\em Quantum topology}, 1(3):209--273, 2010.
+
+\bibitem[ENO11]{etingof2011weakly}
+Pavel Etingof, Dmitri Nikshych, and Victor Ostrik.
+\newblock Weakly group-theoretical and solvable fusion categories.
+\newblock {\em Advances in Mathematics}, 226(1):176--205, 2011.
+
 \bibitem[Fal94]{faltings1994proof}
 Gerd Faltings.
 \newblock A proof for the verlinde formula.
 \newblock {\em Journal of Algebraic Geometry}, 3(2):347, 1994.
 
+\bibitem[FEC{\etalchar{+}}21]{fuhrer2021proposal}
+Michael~S Fuhrer, Mark~T Edmonds, Dimitrie Culcer, Muhammad Nadeem, Xiaolin
+  Wang, Nikhil Medhekar, Yuefeng Yin, and Jared~H Cole.
+\newblock Proposal for a negative capacitance topological quantum field-effect
+  transistor.
+\newblock In {\em 2021 IEEE International Electron Devices Meeting (IEDM)},
+  pages 38--2. IEEE, 2021.
+
+\bibitem[FFRS05]{frohlich2005picard}
+Jurg Frohlich, Jurgen Fuchs, Ingo Runkel, and Christoph Schweigert.
+\newblock Picard groups in rational conformal field theory.
+\newblock {\em Contemporary Mathematics}, 391:85, 2005.
+
+\bibitem[FG90]{frohlich1990braid}
+J{\"u}rg Fr{\"o}hlich and Fabrizio Gabbiani.
+\newblock Braid statistics in local quantum theory.
+\newblock {\em Reviews in Mathematical Physics}, 2(03):251--353, 1990.
+
+\bibitem[FK08]{fu2008superconducting}
+Liang Fu and Charles~L Kane.
+\newblock Superconducting proximity effect and majorana fermions<? format?> at
+  the surface of a topological insulator.
+\newblock {\em Physical review letters}, 100(9):096407, 2008.
+
+\bibitem[FK11]{fidkowski2011topological}
+Lukasz Fidkowski and Alexei Kitaev.
+\newblock Topological phases of fermions in one dimension.
+\newblock {\em Physical Review B—Condensed Matter and Materials Physics},
+  83(7):075103, 2011.
+
+\bibitem[FKLW03]{freedman2003topological}
+Michael Freedman, Alexei Kitaev, Michael Larsen, and Zhenghan Wang.
+\newblock Topological quantum computation.
+\newblock {\em Bulletin of the American Mathematical Society}, 40(1):31--38,
+  2003.
+
+\bibitem[FKW02]{freedman2002simulation}
+Michael~H Freedman, Alexei Kitaev, and Zhenghan Wang.
+\newblock Simulation of topological field theories by quantum computers.
+\newblock {\em Communications in Mathematical Physics}, 227:587--603, 2002.
+
+\bibitem[FLW02]{freedman2002modular}
+Michael~H Freedman, Michael Larsen, and Zhenghan Wang.
+\newblock A modular functor which is universal for quantum computation.
+\newblock {\em Communications in Mathematical Physics}, 227:605--622, 2002.
+
+\bibitem[FM01]{freedman2001projective}
+Michael~H Freedman and David~A Meyer.
+\newblock Projective plane and planar quantum codes.
+\newblock {\em Foundations of Computational Mathematics}, 1:325--332, 2001.
+
 \bibitem[FM11]{farb2011primer}
 Benson Farb and Dan Margalit.
 \newblock {\em A primer on mapping class groups (pms-49)}, volume~41.
 \newblock Princeton university press, 2011.
+
+\bibitem[Fre70]{freyd1970homotopy}
+Peter Freyd.
+\newblock Homotopy is not concrete.
+\newblock In {\em The Steenrod Algebra and Its Applications: A Conference to
+  Celebrate NE Steenrod's Sixtieth Birthday: Proceedings of the Conference held
+  at the Battelle Memorial Institute, Columbus, Ohio March 30th--April 4th,
+  1970}, pages 25--34. Springer, 1970.
+
+\bibitem[Fre98]{freedman1998p}
+Michael~H Freedman.
+\newblock P/np, and the quantum field computer.
+\newblock {\em Proceedings of the National Academy of Sciences}, 95(1):98--101,
+  1998.
+
+\bibitem[FS01]{fuchs2001category}
+J{\"u}rgen Fuchs and Christoph Schweigert.
+\newblock Category theory for conformal boundary conditions.
+\newblock {\em arXiv preprint math/0106050}, 2001.
+
+\bibitem[FS19]{fong2019invitation}
+Brendan Fong and David~I Spivak.
+\newblock {\em An invitation to applied category theory: seven sketches in
+  compositionality}.
+\newblock Cambridge University Press, 2019.
 
 \bibitem[Gal14]{galindo2014braided}
 C{\'e}sar Galindo.
@@ -73,10 +536,34 @@ Frederick~M Goodman, Pierre de~La~Harpe, and Vaughan~FR Jones.
 \newblock {\em Coxeter graphs and towers of algebras}, volume~14.
 \newblock Springer Science \& Business Media, 2012.
 
+\bibitem[GJ19]{gannon2019vanishing}
+Terry Gannon and Corey Jones.
+\newblock Vanishing of categorical obstructions for permutation orbifolds.
+\newblock {\em Communications in Mathematical Physics}, 369:245--259, 2019.
+
+\bibitem[GJF19]{gaiotto2019symmetry}
+Davide Gaiotto and Theo Johnson-Freyd.
+\newblock Symmetry protected topological phases and generalized cohomology.
+\newblock {\em Journal of High Energy Physics}, 2019(5):1--36, 2019.
+
 \bibitem[GN08]{gelaki2008nilpotent}
 Shlomo Gelaki and Dmitri Nikshych.
 \newblock Nilpotent fusion categories.
 \newblock {\em Advances in Mathematics}, 217(3):1053--1071, 2008.
+
+\bibitem[goo23]{google2023suppressing}
+Suppressing quantum errors by scaling a surface code logical qubit.
+\newblock {\em Nature}, 614(7949):676--681, 2023.
+
+\bibitem[Got97]{gottesman1997stabilizer}
+Daniel Gottesman.
+\newblock {\em Stabilizer codes and quantum error correction}.
+\newblock California Institute of Technology, 1997.
+
+\bibitem[GPMR21]{geer2021some}
+Nathan Geer, Bertrand Patureau-Mirand, and Matthew Rupert.
+\newblock Some remarks on relative modular categories.
+\newblock {\em arXiv preprint arXiv:2110.15518}, 2021.
 
 \bibitem[GS19]{gannon2019algebraic}
 Terry Gannon and Andrew Schopieray.
@@ -84,16 +571,148 @@ Terry Gannon and Andrew Schopieray.
   fusion rings.
 \newblock {\em arXiv preprint arXiv:1912.12260}, 2019.
 
+\bibitem[GW14]{gu2014symmetry}
+Zheng-Cheng Gu and Xiao-Gang Wen.
+\newblock Symmetry-protected topological orders for interacting fermions:
+  Fermionic topological nonlinear $\sigma$ models and a special group
+  supercohomology theory.
+\newblock {\em Physical Review B}, 90(11):115141, 2014.
+
+\bibitem[GWW14]{gu2014lattice}
+Zheng-Cheng Gu, Zhenghan Wang, and Xiao-Gang Wen.
+\newblock Lattice model for fermionic toric code.
+\newblock {\em Physical Review B}, 90(8):085140, 2014.
+
+\bibitem[GWW15]{gu2015classification}
+Zheng-Cheng Gu, Zhenghan Wang, and Xiao-Gang Wen.
+\newblock Classification of two-dimensional fermionic and bosonic topological
+  orders.
+\newblock {\em Physical Review B}, 91(12):125149, 2015.
+
+\bibitem[Hal83]{haldane1983nonlinear}
+F~Duncan~M Haldane.
+\newblock Nonlinear field theory of large-spin heisenberg antiferromagnets:
+  semiclassically quantized solitons of the one-dimensional easy-axis n{\'e}el
+  state.
+\newblock {\em Physical review letters}, 50(15):1153, 1983.
+
+\bibitem[Hal88]{haldane1988model}
+F~Duncan~M Haldane.
+\newblock Model for a quantum hall effect without landau levels:
+  Condensed-matter realization of the" parity anomaly".
+\newblock {\em Physical review letters}, 61(18):2015, 1988.
+
+\bibitem[Hal13]{hall2013quantum}
+Brian~C Hall.
+\newblock {\em Quantum theory for mathematicians}, volume 267.
+\newblock Springer Science \& Business Media, 2013.
+
+\bibitem[Has11]{hastings2011topological}
+Matthew~B Hastings.
+\newblock Topological order at nonzero temperature.
+\newblock {\em Physical review letters}, 107(21):210501, 2011.
+
+\bibitem[HDSHL24]{hong2024entangling}
+Yifan Hong, Elijah Durso-Sabina, David Hayes, and Andrew Lucas.
+\newblock Entangling four logical qubits beyond break-even in a nonlocal code.
+\newblock {\em arXiv preprint arXiv:2406.02666}, 2024.
+
+\bibitem[HI19]{hofman2019goldstone}
+Diego~M Hofman and Nabil Iqbal.
+\newblock Goldstone modes and photonization for higher form symmetries.
+\newblock {\em SciPost Physics}, 6(1):006, 2019.
+
+\bibitem[HK10]{hasan2010colloquium}
+M~Zahid Hasan and Charles~L Kane.
+\newblock Colloquium: topological insulators.
+\newblock {\em Reviews of modern physics}, 82(4):3045--3067, 2010.
+
+\bibitem[HRW08]{hong2008exotic}
+Seung-Moon Hong, Eric Rowell, and Zhenghan Wang.
+\newblock On exotic modular tensor categories.
+\newblock {\em Communications in Contemporary Mathematics},
+  10(supp01):1049--1074, 2008.
+
+\bibitem[Hua05]{huang2005vertex}
+Yi-Zhi Huang.
+\newblock Vertex operator algebras, the verlinde conjecture, and modular tensor
+  categories.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  102(15):5352--5356, 2005.
+
 \bibitem[Hua08]{huang2008vertex}
 Yi-Zhi Huang.
 \newblock Vertex operator algebras and the verlinde conjecture.
 \newblock {\em Communications in Contemporary Mathematics}, 10(01):103--154,
   2008.
 
+\bibitem[Hua21]{huang2021representation}
+Yi-Zhi Huang.
+\newblock Representation theory of vertex operator algebras and orbifold
+  conformal field theory.
+\newblock In {\em Lie Groups, Number Theory, and Vertex Algebras}, volume 768,
+  pages 221--252. Amer. Math. Soc. Providence, RI, 2021.
+
+\bibitem[ITV{\etalchar{+}}24]{iqbal2024non}
+Mohsin Iqbal, Nathanan Tantivasadakarn, Ruben Verresen, Sara~L Campbell, Joan~M
+  Dreiling, Caroline Figgatt, John~P Gaebler, Jacob Johansen, Michael Mills,
+  Steven~A Moses, et~al.
+\newblock Non-abelian topological order and anyons on a trapped-ion processor.
+\newblock {\em Nature}, 626(7999):505--511, 2024.
+
+\bibitem[JFR24]{johnson2024minimal}
+Theo Johnson-Freyd and David Reutter.
+\newblock Minimal nondegenerate extensions.
+\newblock {\em Journal of the American Mathematical Society}, 37(1):81--150,
+  2024.
+
 \bibitem[JMNR21]{jones2021rank}
 Corey Jones, Scott Morrison, Dmitri Nikshych, and Eric~C Rowell.
 \newblock Rank-finiteness for g-crossed braided fusion categories.
 \newblock {\em Transformation Groups}, 26(3):915--927, 2021.
+
+\bibitem[Jon97]{jones1997polynomial}
+Vaughan~FR Jones.
+\newblock A polynomial invariant for knots via von neumann algebras.
+\newblock In {\em Fields Medallists' Lectures}, pages 448--458. World
+  Scientific, 1997.
+
+\bibitem[JVW90]{jaeger1990computational}
+Fran{\c{c}}ois Jaeger, Dirk~L Vertigan, and Dominic~JA Welsh.
+\newblock On the computational complexity of the jones and tutte polynomials.
+\newblock In {\em Mathematical Proceedings of the Cambridge Philosophical
+  Society}, volume 108, pages 35--53. Cambridge University Press, 1990.
+
+\bibitem[KBRY15]{kliuchnikov2015frameworkA}
+Vadym Kliuchnikov, Alex Bocharov, Martin Roetteler, and Jon Yard.
+\newblock A framework for approximating qubit unitaries.
+\newblock {\em arXiv preprint arXiv:1510.03888}, 2015.
+
+\bibitem[KBS14]{kliuchnikov2014asymptotically}
+Vadym Kliuchnikov, Alex Bocharov, and Krysta~M Svore.
+\newblock Asymptotically optimal topological quantum compiling.
+\newblock {\em Physical review letters}, 112(14):140504, 2014.
+
+\bibitem[KDP80]{klitzing1980new}
+K~v Klitzing, Gerhard Dorda, and Michael Pepper.
+\newblock New method for high-accuracy determination of the fine-structure
+  constant based on quantized hall resistance.
+\newblock {\em Physical review letters}, 45(6):494, 1980.
+
+\bibitem[Kit97]{kitaev1997quantum}
+A~Yu Kitaev.
+\newblock Quantum computations: algorithms and error correction.
+\newblock {\em Russian Mathematical Surveys}, 52(6):1191, 1997.
+
+\bibitem[Kit01]{kitaev2001unpaired}
+A~Yu Kitaev.
+\newblock Unpaired majorana fermions in quantum wires.
+\newblock {\em Physics-uspekhi}, 44(10S):131, 2001.
+
+\bibitem[Kit03]{kitaev2003fault}
+A~Yu Kitaev.
+\newblock Fault-tolerant quantum computation by anyons.
+\newblock {\em Annals of physics}, 303(1):2--30, 2003.
 
 \bibitem[Kit06]{kitaev2006anyons}
 Alexei Kitaev.
@@ -106,11 +725,38 @@ Alexander Kirillov~Jr.
 \newblock {\em Journal of the American Mathematical Society}, 9(4):1135--1169,
   1996.
 
+\bibitem[KJ04]{kirillov2004g}
+Alexander Kirillov~Jr.
+\newblock On $ g $--equivariant modular categories.
+\newblock {\em arXiv preprint math/0401119}, 2004.
+
+\bibitem[KK12]{kitaev2012models}
+Alexei Kitaev and Liang Kong.
+\newblock Models for gapped boundaries and domain walls.
+\newblock {\em Communications in Mathematical Physics}, 313(2):351--373, 2012.
+
+\bibitem[KKO{\etalchar{+}}22]{kaidi2022higher}
+Justin Kaidi, Zohar Komargodski, Kantaro Ohmori, Sahand Seifnashri, and
+  Shu-Heng Shao.
+\newblock Higher central charges and topological boundaries in 2+ 1-dimensional
+  tqfts.
+\newblock {\em SciPost Physics}, 13(3):067, 2022.
+
 \bibitem[KL09]{kauffman2009topological}
 Louis~H Kauffman and Samuel~J Lomonaco.
 \newblock Topological quantum information theory.
 \newblock In {\em Proceedings of Symposia in Applied Mathematics}, volume~68,
   2009.
+
+\bibitem[KL20]{kawagoe2020microscopic}
+Kyle Kawagoe and Michael Levin.
+\newblock Microscopic definitions of anyon data.
+\newblock {\em Physical Review B}, 101(11):115113, 2020.
+
+\bibitem[KM05]{kane2005quantum}
+Charles~L Kane and Eugene~J Mele.
+\newblock Quantum spin hall effect in graphene.
+\newblock {\em Physical review letters}, 95(22):226801, 2005.
 
 \bibitem[KPEB18]{kesselring2018boundaries}
 Markus~S Kesselring, Fernando Pastawski, Jens Eisert, and Benjamin~J Brown.
@@ -118,16 +764,99 @@ Markus~S Kesselring, Fernando Pastawski, Jens Eisert, and Benjamin~J Brown.
   applications to topological quantum computation.
 \newblock {\em Quantum}, 2:101, 2018.
 
+\bibitem[KR08]{kong2008morita}
+Liang Kong and Ingo Runkel.
+\newblock Morita classes of algebras in modular tensor categories.
+\newblock {\em Advances in Mathematics}, 219(5):1548--1576, 2008.
+
+\bibitem[KT73]{kosterlitz1973ordering}
+JM~Kosterlitz and David~James Thouless.
+\newblock Ordering, metastability and phase transitions in two-dimensional
+  systems.
+\newblock {\em J. Phys. C}, 6:1181--1203, 1973.
+
+\bibitem[KT18]{kosterlitz2018ordering}
+John~Michael Kosterlitz and David~James Thouless.
+\newblock Ordering, metastability and phase transitions in two-dimensional
+  systems.
+\newblock In {\em Basic Notions Of Condensed Matter Physics}, pages 493--515.
+  CRC Press, 2018.
+
+\bibitem[KY15]{kliuchnikov2015frameworkB}
+Vadym Kliuchnikov and Jon Yard.
+\newblock A framework for exact synthesis.
+\newblock {\em arXiv preprint arXiv:1504.04350}, 2015.
+
 \bibitem[KZ22]{kong2022invitation}
 Liang Kong and Zhi-Hao Zhang.
 \newblock An invitation to topological orders and category theory.
 \newblock {\em arXiv preprint arXiv:2205.05565}, 2022.
+
+\bibitem[KZL{\etalchar{+}}16]{knapp2016quickly}
+Christina Knapp, Michael Zaletel, Dong~E Liu, Meng Cheng, Parsa Bonderson, and
+  Chetan Nayak.
+\newblock How quickly can anyons be braided? or: How i learned to stop worrying
+  about diabatic errors and love the anyon.
+\newblock {\em arXiv preprint arXiv:1601.05790}, 2016.
+
+\bibitem[Lan95]{landauer1995quantum}
+Rolf Landauer.
+\newblock Is quantum mechanics useful?
+\newblock {\em Philosophical Transactions of the Royal Society of London.
+  Series A: Physical and Engineering Sciences}, 353(1703):367--376, 1995.
+
+\bibitem[Lee97]{lee1997extraordinary}
+David~M Lee.
+\newblock The extraordinary phases of liquid 3 he.
+\newblock {\em Reviews of Modern Physics}, 69(3):645, 1997.
+
+\bibitem[LM77]{leinaas1977theory}
+JM~Leinaas and J~Myrheim.
+\newblock On the theory of identical particles.
+\newblock {\em Il nuovo cimento}, 37:132, 1977.
+
+\bibitem[Lur08]{lurie2008classification}
+Jacob Lurie.
+\newblock On the classification of topological field theories.
+\newblock {\em Current developments in mathematics}, 2008(1):129--280, 2008.
 
 \bibitem[Lyu95]{lyubashenko1995invariants}
 Volodymyr~V Lyubashenko.
 \newblock Invariants of 3-manifolds and projective representations of mapping
   class groups via quantum groups at roots of unity.
 \newblock {\em Communications in mathematical physics}, 172:467--516, 1995.
+
+\bibitem[Mer79]{mermin1979topological}
+N~David Mermin.
+\newblock The topological theory of defects in ordered media.
+\newblock {\em Reviews of Modern Physics}, 51(3):591, 1979.
+
+\bibitem[ML13]{mac2013categories}
+Saunders Mac~Lane.
+\newblock {\em Categories for the working mathematician}, volume~5.
+\newblock Springer Science \& Business Media, 2013.
+
+\bibitem[Moc03]{mochon2003anyons}
+Carlos Mochon.
+\newblock Anyons from nonsolvable finite groups are sufficient for universal
+  quantum computation.
+\newblock {\em Physical Review A}, 67(2):022315, 2003.
+
+\bibitem[Moc04]{mochon2004anyon}
+Carlos Mochon.
+\newblock Anyon computers with smaller groups.
+\newblock {\em Physical Review A}, 69(3):032306, 2004.
+
+\bibitem[Mou84]{moussouris1984quantum}
+J~Moussouris.
+\newblock {\em Quantum models of space-time based on recoupling theory}.
+\newblock PhD thesis, University of Oxford, 1984.
+
+\bibitem[MR65]{maurer1965property}
+Ward~D Maurer and John~L Rhodes.
+\newblock A property of finite simple non-abelian groups.
+\newblock {\em Proceedings of the American Mathematical Society},
+  16(3):552--554, 1965.
 
 \bibitem[MS88]{moore1988polynomial}
 Gregory Moore and Nathan Seiberg.
@@ -145,36 +874,227 @@ Gregory Moore and Nathan Seiberg.
 \newblock In {\em Physics, geometry and topology}, pages 263--361. Springer,
   1990.
 
+\bibitem[MS01]{moessner2001resonating}
+Roderich Moessner and Shivaji~L Sondhi.
+\newblock Resonating valence bond phase in the triangular lattice quantum dimer
+  model.
+\newblock {\em Physical Review Letters}, 86(9):1881, 2001.
+
 \bibitem[MS12]{morrison2012non}
 Scott Morrison and Noah Snyder.
 \newblock Non-cyclotomic fusion categories.
 \newblock {\em Transactions of the American Mathematical Society},
   364(9):4713--4733, 2012.
 
+\bibitem[MSP02]{misguich2002quantum}
+G~Misguich, D~Serban, and V~Pasquier.
+\newblock Quantum dimer model on the kagome lattice: Solvable dimer-liquid and
+  ising gauge theory.
+\newblock {\em Physical review letters}, 89(13):137202, 2002.
+
+\bibitem[Mue01]{mueger2001subfactorsB}
+Michael Mueger.
+\newblock From subfactors to categories and topology ii. the quantum double of
+  tensor categories and subfactors.
+\newblock {\em arXiv preprint math/0111205}, 2001.
+
+\bibitem[M{\"u}g00]{muger2000galois}
+Michael M{\"u}ger.
+\newblock Galois theory for braided tensor categories and the modular closure.
+\newblock {\em Advances in Mathematics}, 150(2):151--201, 2000.
+
+\bibitem[M{\"u}g01]{muger2001subfactorsA}
+Michael M{\"u}ger.
+\newblock From subfactors to categories and topology i. frobenius algebras in
+  and morita equivalence of tensor categories.
+\newblock {\em arXiv preprint math/0111204}, 2001.
+
 \bibitem[M{\"u}g02]{muger2002structure}
 Michael M{\"u}ger.
 \newblock On the structure of modular categories.
 \newblock {\em arXiv preprint math/0201017}, 2002.
+
+\bibitem[MZ21]{marrows2021perspective}
+CH~Marrows and K~Zeissler.
+\newblock Perspective on skyrmion spintronics.
+\newblock {\em Applied Physics Letters}, 119(25), 2021.
+
+\bibitem[NC10]{nielsen2010quantum}
+Michael~A Nielsen and Isaac~L Chuang.
+\newblock {\em Quantum computation and quantum information}.
+\newblock Cambridge university press, 2010.
+
+\bibitem[Nik04]{nikshych2004semisimple}
+Dmitri Nikshych.
+\newblock Semisimple weak hopf algebras.
+\newblock {\em Journal of Algebra}, 275(2):639--667, 2004.
+
+\bibitem[NO09]{nussinov2009symmetry}
+Zohar Nussinov and Gerardo Ortiz.
+\newblock A symmetry principle for topological quantum order.
+\newblock {\em Annals of Physics}, 324(5):977--1057, 2009.
+
+\bibitem[NSS{\etalchar{+}}08]{nayak2008non}
+Chetan Nayak, Steven~H Simon, Ady Stern, Michael Freedman, and Sankar
+  Das~Sarma.
+\newblock Non-abelian anyons and topological quantum computation.
+\newblock {\em Reviews of Modern Physics}, 80(3):1083--1159, 2008.
+
+\bibitem[Ost03]{ostrik2003module}
+Victor Ostrik.
+\newblock Module categories, weak hopf algebras and modular invariants.
+\newblock {\em Transformation groups}, 8:177--206, 2003.
+
+\bibitem[PBD17]{placke2017model}
+Benedikt Placke, Stefano Bosco, and David~P DiVincenzo.
+\newblock A model study of present-day hall-effect circulators.
+\newblock {\em EPJ Quantum Technology}, 4:1--14, 2017.
+
+\bibitem[Pfe09]{pfeiffer2009tannaka}
+Hendryk Pfeiffer.
+\newblock Tannaka--kre{\i}n reconstruction and a characterization of modular
+  tensor categories.
+\newblock {\em Journal of Algebra}, 321(12):3714--3763, 2009.
 
 \bibitem[PSYZ23]{plavnik2023modular}
 Julia Plavnik, Andrew Schopieray, Zhiqiang Yu, and Qing Zhang.
 \newblock Modular tensor categories, subcategories, and galois orbits.
 \newblock {\em Transformation Groups}, pages 1--26, 2023.
 
-\bibitem[Reu23]{reutter2023uniqueness}
+\bibitem[Ran88]{ranganath1988defects}
+GS~Ranganath.
+\newblock On defects in biaxial nematic liquid crystals.
+\newblock {\em Current Science}, pages 1--6, 1988.
+
+\bibitem[RB11]{regnault2011fractional}
+Nicolas Regnault and B~Andrei Bernevig.
+\newblock Fractional chern insulator.
+\newblock {\em Physical Review X}, 1(2):021014, 2011.
+
+\bibitem[Reu23a]{reutter2023semisimple}
+David Reutter.
+\newblock Semisimple four-dimensional topological field theories cannot detect
+  exotic smooth structure.
+\newblock {\em Journal of Topology}, 16(2):542--566, 2023.
+
+\bibitem[Reu23b]{reutter2023uniqueness}
 David Reutter.
 \newblock Uniqueness of unitary structure for unitarizable fusion categories.
 \newblock {\em Communications in Mathematical Physics}, 397(1):37--52, 2023.
+
+\bibitem[RS20]{ramirez2020dawn}
+Arthur~P Ramirez and Brian Skinner.
+\newblock Dawn of the topological age?
+\newblock {\em Physics Today}, 73(9):30--36, 2020.
+
+\bibitem[RSW09]{rowell2009classification}
+Eric Rowell, Richard Stong, and Zhenghan Wang.
+\newblock On classification of modular tensor categories.
+\newblock {\em Communications in Mathematical Physics}, 292(2):343--389, 2009.
 
 \bibitem[RT91]{reshetikhin1991invariants}
 Nicolai Reshetikhin and Vladimir~G Turaev.
 \newblock Invariants of 3-manifolds via link polynomials and quantum groups.
 \newblock {\em Inventiones mathematicae}, 103(1):547--597, 1991.
 
+\bibitem[SA17]{sato2017topological}
+Masatoshi Sato and Yoichi Ando.
+\newblock Topological superconductors: a review.
+\newblock {\em Reports on Progress in Physics}, 80(7):076501, 2017.
+
+\bibitem[SA19]{son2019commuting}
+Jun~Ho Son and Jason Alicea.
+\newblock Commuting-projector hamiltonians for two-dimensional topological
+  insulators: Edge physics and many-body invariants.
+\newblock {\em Physical Review B}, 100(15):155107, 2019.
+
+\bibitem[SBZ22]{schotte2022fault}
+Alexis Schotte, Lander Burgelman, and Guanyu Zhu.
+\newblock Fault-tolerant error correction for a universal non-abelian
+  topological quantum computer at finite temperature.
+\newblock {\em arXiv preprint arXiv:2301.00054}, 2022.
+
+\bibitem[SF18]{skinner2018large}
+Brian Skinner and Liang Fu.
+\newblock Large, nonsaturating thermopower in a quantizing magnetic field.
+\newblock {\em Science advances}, 4(5):eaat2621, 2018.
+
+\bibitem[SFN15]{sarma2015majorana}
+Sankar~Das Sarma, Michael Freedman, and Chetan Nayak.
+\newblock Majorana zero modes and topological quantum computation.
+\newblock {\em npj Quantum Information}, 1(1):1--13, 2015.
+
+\bibitem[Sha12]{shankar2012principles}
+Ramamurti Shankar.
+\newblock {\em Principles of quantum mechanics}.
+\newblock Springer Science \& Business Media, 2012.
+
+\bibitem[Shi19]{shimizu2019non}
+Kenichi Shimizu.
+\newblock Non-degeneracy conditions for braided finite tensor categories.
+\newblock {\em Advances in Mathematics}, 355:106778, 2019.
+
+\bibitem[Sho94]{shor1994algorithms}
+Peter~W Shor.
+\newblock Algorithms for quantum computation: discrete logarithms and
+  factoring.
+\newblock In {\em Proceedings 35th annual symposium on foundations of computer
+  science}, pages 124--134. Ieee, 1994.
+
 \bibitem[Sim23]{simon2023topological}
 Steven~H Simon.
 \newblock {\em Topological quantum}.
 \newblock Oxford University Press, 2023.
+
+\bibitem[Sky62]{skyrme1962unified}
+Tony Hilton~Royle Skyrme.
+\newblock A unified field theory of mesons and baryons.
+\newblock {\em Nuclear Physics}, 31:556--569, 1962.
+
+\bibitem[{\v{S}}MYM18]{vsmejkal2018topological}
+Libor {\v{S}}mejkal, Yuriy Mokrousov, Binghai Yan, and Allan~H MacDonald.
+\newblock Topological antiferromagnetic spintronics.
+\newblock {\em Nature physics}, 14(3):242--251, 2018.
+
+\bibitem[Sop23]{sopenko2023topological}
+Nikita~A Sopenko.
+\newblock {\em Topological invariants of gapped quantum lattice systems}.
+\newblock California Institute of Technology, 2023.
+
+\bibitem[STL{\etalchar{+}}10]{sau2010non}
+Jay~D Sau, Sumanta Tewari, Roman~M Lutchyn, Tudor~D Stanescu, and S~Das~Sarma.
+\newblock Non-abelian quantum order in spin-orbit-coupled semiconductors:
+  Search for topological majorana particles in solid-state systems.
+\newblock {\em Physical Review B—Condensed Matter and Materials Physics},
+  82(21):214509, 2010.
+
+\bibitem[SZBV22]{schotte2022quantum}
+Alexis Schotte, Guanyu Zhu, Lander Burgelman, and Frank Verstraete.
+\newblock Quantum error correction thresholds for the universal fibonacci
+  turaev-viro code.
+\newblock {\em Physical Review X}, 12(2):021012, 2022.
+
+\bibitem[Tan20]{tan2020vertex}
+Daniel Tan.
+\newblock {\em Vertex Operator Algebras, Modular Tensor Categories and a
+  Kazhdan-Lusztig Correspondence at a Non-negative Integral Level}.
+\newblock PhD thesis, UNIVERSITY OF MELBOURNE, 2020.
+
+\bibitem[Ter15]{terhal2015quantum}
+Barbara~M Terhal.
+\newblock Quantum error correction for quantum memories.
+\newblock {\em Reviews of Modern Physics}, 87(2):307--346, 2015.
+
+\bibitem[TSG82]{tsui1982two}
+Daniel~C Tsui, Horst~L Stormer, and Arthur~C Gossard.
+\newblock Two-dimensional magnetotransport in the extreme quantum limit.
+\newblock {\em Physical Review Letters}, 48(22):1559, 1982.
+
+\bibitem[Tur39]{turing1939systems}
+Alan~Mathison Turing.
+\newblock Systems of logic based on ordinals.
+\newblock {\em Proceedings of the London Mathematical Society, Series 2},
+  45:161--228, 1939.
 
 \bibitem[Tur92]{turaev1992modular}
 Vladimir~G Turaev.
@@ -182,15 +1102,54 @@ Vladimir~G Turaev.
 \newblock {\em International Journal of Modern Physics B}, 6(11n12):1807--1824,
   1992.
 
-\bibitem[Tur10]{turaev2010quantum}
+\bibitem[Tur10a]{turaev2010homotopy}
+Vladimir~G Turaev.
+\newblock {\em Homotopy quantum field theory}, volume~10.
+\newblock European Mathematical Society, 2010.
+
+\bibitem[Tur10b]{turaev2010quantum}
 Vladimir~G Turaev.
 \newblock {\em Quantum invariants of knots and 3-manifolds}.
 \newblock de Gruyter, 2010.
+
+\bibitem[Tve80]{tverberg1980proof}
+Helge Tverberg.
+\newblock A proof of the jordan curve theorem.
+\newblock {\em Bulletin of the London Mathematical Society}, 12(1):34--38,
+  1980.
+
+\bibitem[TVV23]{tantivasadakarn2023hierarchy}
+Nathanan Tantivasadakarn, Ashvin Vishwanath, and Ruben Verresen.
+\newblock Hierarchy of topological order from finite-depth unitaries,
+  measurement, and feedforward.
+\newblock {\em PRX Quantum}, 4(2):020339, 2023.
+
+\bibitem[TY98]{tambara1998tensor}
+Daisuke Tambara and Shigeru Yamagami.
+\newblock Tensor categories with fusion rules of self-duality for finite
+  abelian groups.
+\newblock {\em Journal of Algebra}, 209(2):692--707, 1998.
 
 \bibitem[Vaf88]{vafa1988toward}
 Cumrun Vafa.
 \newblock Toward classification of conformal theories.
 \newblock {\em Physics Letters B}, 206(3):421--426, 1988.
+
+\bibitem[Var04]{varadarajan2004supersymmetry}
+Veeravalli~S Varadarajan.
+\newblock {\em Supersymmetry for mathematicians: an introduction: an
+  introduction}, volume~11.
+\newblock American Mathematical Soc., 2004.
+
+\bibitem[VD98]{van1998algebraic}
+Alfons Van~Daele.
+\newblock An algebraic framework for group duality.
+\newblock {\em Advances in Mathematics}, 140(2):323--366, 1998.
+
+\bibitem[VD14]{viola2014hall}
+Giovanni Viola and David~P DiVincenzo.
+\newblock Hall effect gyrators and circulators.
+\newblock {\em Physical Review X}, 4(2):021019, 2014.
 
 \bibitem[Ver88]{verlinde1988fusion}
 Erik Verlinde.
@@ -198,15 +1157,71 @@ Erik Verlinde.
   theory.
 \newblock {\em Nuclear Physics B}, 300:360--376, 1988.
 
+\bibitem[VHF15]{vijay2015new}
+Sagar Vijay, Jeongwan Haah, and Liang Fu.
+\newblock A new kind of topological quantum order: A dimensional hierarchy of
+  quasiparticles built from stationary excitations.
+\newblock {\em Physical Review B}, 92(23):235136, 2015.
+
+\bibitem[vKCK{\etalchar{+}}20]{von202040}
+Klaus von Klitzing, Tapash Chakraborty, Philip Kim, Vidya Madhavan, Xi~Dai,
+  James McIver, Yoshinori Tokura, Lucile Savary, Daria Smirnova, Ana~Maria Rey,
+  et~al.
+\newblock 40 years of the quantum hall effect.
+\newblock {\em Nature Reviews Physics}, 2(8):397--401, 2020.
+
 \bibitem[Wan10]{wang2010topological}
 Zhenghan Wang.
 \newblock {\em Topological quantum computation}.
 \newblock Number 112. American Mathematical Soc., 2010.
+
+\bibitem[Wen89]{wen1989vacuum}
+Xiao-Gang Wen.
+\newblock Vacuum degeneracy of chiral spin states in compactified space.
+\newblock {\em Physical Review B}, 40(10):7387, 1989.
+
+\bibitem[Wil82a]{wilczek1982magnetic}
+Frank Wilczek.
+\newblock Magnetic flux, angular momentum, and statistics.
+\newblock {\em Physical Review Letters}, 48(17):1144, 1982.
+
+\bibitem[Wil82b]{wilczek1982quantum}
+Frank Wilczek.
+\newblock Quantum mechanics of fractional-spin particles.
+\newblock {\em Physical review letters}, 49(14):957, 1982.
+
+\bibitem[Wit88]{witten1988topological}
+Edward Witten.
+\newblock Topological quantum field theory.
+\newblock {\em Communications in Mathematical Physics}, 117(3):353--386, 1988.
+
+\bibitem[Wit89]{witten1989quantum}
+Edward Witten.
+\newblock Quantum field theory and the jones polynomial.
+\newblock {\em Communications in Mathematical Physics}, 121(3):351--399, 1989.
+
+\bibitem[WWW]{wang2307intrinsic}
+Z~Wang, Z~Wu, and Z~Wang.
+\newblock Intrinsic mixed-state quantum topological order.
+\newblock {\em arXiv preprint arXiv:2307.13758}.
+
+\bibitem[XSW{\etalchar{+}}24]{xu2024non}
+Shibo Xu, Zheng-Zhi Sun, Ke~Wang, Hekang Li, Zitian Zhu, Hang Dong, Jinfeng
+  Deng, Xu~Zhang, Jiachen Chen, Yaozu Wu, et~al.
+\newblock Non-abelian braiding of fibonacci anyons with a superconducting
+  processor.
+\newblock {\em Nature Physics}, pages 1--7, 2024.
 
 \bibitem[Yet92]{yetter1992framed}
 David~N Yetter.
 \newblock Framed tangles and a theorem of deligne on braided deformations of
   tannakian categories.
 \newblock {\em Contemp. Math}, 134:325--350, 1992.
+
+\bibitem[ZGHS15]{zhu2015fractional}
+W~Zhu, SS~Gong, FDM Haldane, and DN~Sheng.
+\newblock Fractional quantum hall states at $\nu$= 13/5 and 12/5 and their
+  non-abelian nature.
+\newblock {\em Physical review letters}, 115(12):126805, 2015.
 
 \end{thebibliography}
