@@ -9,10 +9,8 @@ A level-1 auxiliary file: ./chapters/4-category-theory/ch4.aux
 A level-1 auxiliary file: ./chapters/5-MTCs/ch5.aux
 A level-1 auxiliary file: ./chapters/6-further-structure/ch6.aux
 A level-1 auxiliary file: ./chapters/7-TQC/ch7.aux
-A level-1 auxiliary file: ./chapters/A-odds-and-ends/appA.aux
-A level-1 auxiliary file: ./chapters/B-anyon-data/appB.aux
+A level-1 auxiliary file: ./chapters/A-anyon-data/appA.aux
 The style file: alpha.bst
-Reallocated field_info (elt_size=4) to 10060 items from 5000.
 Database file #1: ref.bib
 Warning--to sort, need author or key in google2023suppressing
 Warning--empty journal in copeland1997church
@@ -21,45 +19,45 @@ Warning--empty author in google2023suppressing
 Warning--can't use both volume and number fields in jaeger1990computational
 Warning--there's a number but no series in wang2010topological
 Warning--empty year in wang2307intrinsic
-You've used 220 entries,
+You've used 208 entries,
             2543 wiz_defined-function locations,
-            1719 strings with 36933 characters,
-and the built_in function-call counts, 86763 in all, are:
-= -- 8695
-> -- 4225
-< -- 105
-+ -- 1459
-- -- 1431
-* -- 6619
-:= -- 14555
-add.period$ -- 669
-call.type$ -- 220
-change.case$ -- 1380
-chr.to.int$ -- 217
-cite$ -- 228
-duplicate$ -- 3273
-empty$ -- 6113
-format.name$ -- 1706
-if$ -- 17295
-int.to.chr$ -- 4
+            1669 strings with 35305 characters,
+and the built_in function-call counts, 82522 in all, are:
+= -- 8263
+> -- 4066
+< -- 94
++ -- 1406
+- -- 1380
+* -- 6331
+:= -- 13854
+add.period$ -- 632
+call.type$ -- 208
+change.case$ -- 1314
+chr.to.int$ -- 206
+cite$ -- 216
+duplicate$ -- 3088
+empty$ -- 5795
+format.name$ -- 1634
+if$ -- 16440
+int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 234
-newline$ -- 1103
-num.names$ -- 657
-pop$ -- 1035
+missing$ -- 222
+newline$ -- 1043
+num.names$ -- 621
+pop$ -- 975
 preamble$ -- 1
-purify$ -- 1620
+purify$ -- 1540
 quote$ -- 0
-skip$ -- 2726
+skip$ -- 2582
 stack$ -- 0
-substring$ -- 5063
-swap$ -- 343
-text.length$ -- 105
-text.prefix$ -- 73
+substring$ -- 4816
+swap$ -- 321
+text.length$ -- 94
+text.prefix$ -- 64
 top$ -- 0
-type$ -- 1688
+type$ -- 1596
 warning$ -- 7
-while$ -- 858
-width$ -- 223
-write$ -- 2833
+while$ -- 819
+width$ -- 211
+write$ -- 2680
 (There were 7 warnings)

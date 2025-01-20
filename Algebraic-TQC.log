@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  17 JAN 2025 17:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  20 JAN 2025 14:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -680,7 +680,7 @@ LaTeX Warning: Label `dict-state-formula-2' multiply defined.
 LaTeX Warning: Label `definite-charge-and-channel' multiply defined.
 
 ) (./chapters/6-further-structure/ch6.aux) (./chapters/7-TQC/ch7.aux)
-(./chapters/A-odds-and-ends/appA.aux) (./chapters/B-anyon-data/appB.aux))
+(./chapters/A-anyon-data/appA.aux))
 \openout1 = `Algebraic-TQC.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
@@ -1324,40 +1324,60 @@ ories is $\U/msb/m/n/10 C$\OT1/lmr/m/n/10 -linear piv-otal braided
 [136] [137] (./figures/bilayer-system.tikz) [138] [139] [140] [141] [142]
 [143] [144] [145] [146] [147] [148] (./figures/S-matrix.tikz) [149] [150]
 [151]
-Overfull \hbox (31.23927pt too wide) detected at line 1700
+Underfull \hbox (badness 10000) in paragraph at lines 1680--1681
+
+ []
+
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 1685--1686
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1687--1688
+
+ []
+
+[152]
+Overfull \hbox (31.23927pt too wide) detected at line 1749
 \U/msb/m/n/10 C\OT1/lmr/m/n/10 [\OMS/lmsy/m/n/10 L\OT1/lmr/m/n/10 ][] = [] \OML
 /lmm/m/it/10 :
  []
 
-(./figures/verlinde-algebra-proof.tikz) [152] (./figures/circles-split.tikz)
-(./figures/degenerate-braiding.tikz) [153]
-(./figures/braiding-non-degeneracy.tikz) (./figures/null-vector-proof.tikz)
-(./figures/null-vector-one.tikz) [154] (./figures/null-vector-two.tikz)
-[155] [156] (./figures/kirby-color-lemma.tikz)
-(./figures/kirby-color-second.tikz) [157] (./figures/modularity-proof.tikz)
-[158] (./figures/modularity-computation-1.tikz) [159] [160] [161] [162]
-[163] [164]
-Overfull \hbox (15.92151pt too wide) in paragraph at lines 2184--2185
+[153] (./figures/verlinde-algebra-proof.tikz) (./figures/circles-split.tikz)
+[154] (./figures/degenerate-braiding.tikz)
+(./figures/braiding-non-degeneracy.tikz) [155]
+(./figures/null-vector-proof.tikz) (./figures/null-vector-one.tikz)
+(./figures/null-vector-two.tikz) [156] [157] [158]
+(./figures/kirby-color-lemma.tikz) (./figures/kirby-color-second.tikz) [159]
+(./figures/modularity-proof.tikz) (./figures/modularity-computation-1.tikz)
+[160] [161] [162] [163] [164] [165] [166]
+Overfull \hbox (15.92151pt too wide) in paragraph at lines 2233--2234
 []\OT1/lmr/m/n/10 Thus, we have nat-u-rally as-so-ci-ated to $(\OML/lmm/m/it/10
  V; \U/eur/m/n/10 ^^L[]\OT1/lmr/m/n/10 )$ the struc-ture of a $\OML/lmm/m/it/10
  G$\OT1/lmr/m/n/10 -graded $\OML/lmm/m/it/10 G$\OT1/lmr/m/n/10 -representation.
 
  []
 
-[165] [166] [167] [168] [169]
-Underfull \hbox (badness 10000) in paragraph at lines 2357--2358
+[167] [168] [169] [170]
+
+LaTeX Warning: Citation `ng2019higher' on page 171 undefined on input line 2396
+.
+
+[171]
+Underfull \hbox (badness 10000) in paragraph at lines 2436--2437
 
  []
 
-[170]) [171] [172
+[172]) [173] [174
 
 ]
 \openout2 = `./chapters/6-further-structure/ch6.aux'.
 
- (./chapters/6-further-structure/ch6.tex [173
+ (./chapters/6-further-structure/ch6.tex [175
 
-] [174] [175]
-[176] [177] [178] [179] [180] (./figures/frobenius-reciprocity.tikz) [181]
+] [176] [177]
+[178] [179] [180] [181] [182] (./figures/frobenius-reciprocity.tikz) [183]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <14.4> on input line 449.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1365,7 +1385,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <20.74> on input line 449.
 
-[182] [183]
+[184] [185]
 Overfull \hbox (40.35658pt too wide) in paragraph at lines 525--526
 []\OT1/lmr/m/n/10 in $[][](\OMS/lmsy/m/n/10 M\OML/lmm/m/it/10 ; \OMS/lmsy/m/n/1
 0 M[]\OT1/lmr/m/n/10 )$ where $[\OML/lmm/m/it/10 H\OT1/lmr/m/n/10 ]$ runs over 
@@ -1373,84 +1393,60 @@ iso-mor-phism classes of sim-ple func-tors in $[][](\OMS/lmsy/m/n/10 M\OML/lmm/
 m/it/10 ; \OMS/lmsy/m/n/10 M[]\OT1/lmr/m/n/10 )$.
  []
 
-[184] [185] [186] [187] [188]
+[186] [187] [188] [189] [190]
 Overfull \hbox (1.28828pt too wide) detected at line 778
 []  \OMS/lmsy/m/n/10 ([])  [] \OML/lmm/m/it/10 :
  []
 
-[189] [190] [191] [192] [193] [194]
+[191] [192] [193] [194] [195] [196]
 Underfull \hbox (badness 10000) in paragraph at lines 1086--1087
 
  []
 
-[195]) [196] [197
+[197]) [198] [199
 
 ]
 \openout2 = `./chapters/7-TQC/ch7.aux'.
 
- (./chapters/7-TQC/ch7.tex [198
+ (./chapters/7-TQC/ch7.tex [200
 
-] [199] [200] [201]
-(./figures/hierarchy-of-adjectives.tikz) [202]
+] [201] [202] [203]
+(./figures/hierarchy-of-adjectives.tikz) [204]
 Overfull \hbox (43.55345pt too wide) in paragraph at lines 155--190
  [] 
  []
 
-[203] [204]
+[205] [206]
 Underfull \hbox (badness 10000) in paragraph at lines 258--259
 
  []
 
-) [205] [206
+) [207] [208
 
 ]
-\openout2 = `./chapters/A-odds-and-ends/appA.aux'.
+\openout2 = `./chapters/A-anyon-data/appA.aux'.
 
- (./chapters/A-odds-and-ends/appA.tex
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
+ (./chapters/A-anyon-data/appA.tex
 
- []
-
-
-Overfull \hbox (15.0pt too wide) in paragraph at lines 23--24
-[][] 
- []
+LaTeX Warning: Citation `geiko2024does' on page 209 undefined on input line 20.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
+) [209
 
- []
+] (./Algebraic-TQC.bbl [210
 
-[207
-
-] [208] [209] [210]
-
-LaTeX Warning: Reference `bohm1996coassociative' on page 211 undefined on input
- line 183.
-
-[211]) [212] [213
-
-]
-\openout2 = `./chapters/B-anyon-data/appB.aux'.
-
- (./chapters/B-anyon-data/appB.tex) [214
-
-]
-(./Algebraic-TQC.bbl [215
-
-] [216] [217] [218]
-Underfull \hbox (badness 1253) in paragraph at lines 372--376
+] [211] [212] [213]
+Underfull \hbox (badness 1253) in paragraph at lines 351--355
 \OT1/lmr/m/n/10 u-lar iso-topes and ex-plains their topo-log-i-cal in-vari-ants
 .  \OT1/lmr/m/it/10 arXiv preprint
  []
 
-[219] [220] [221] [222] [223] [224] [225] [226] [227] [228]) [229]
+[214] [215] [216] [217] [218] [219] [220] [221] [222]) [223]
 (./Algebraic-TQC.aux (./chapters/0-preface/ch0.aux)
 (./chapters/1-overview/ch1.aux) (./chapters/2-QM/ch2.aux)
 (./chapters/3-TQO/ch3.aux) (./chapters/4-category-theory/ch4.aux)
 (./chapters/5-MTCs/ch5.aux) (./chapters/6-further-structure/ch6.aux)
-(./chapters/7-TQC/ch7.aux) (./chapters/A-odds-and-ends/appA.aux)
-(./chapters/B-anyon-data/appB.aux))
+(./chapters/7-TQC/ch7.aux) (./chapters/A-anyon-data/appA.aux))
 
 LaTeX Warning: There were undefined references.
 
@@ -1459,10 +1455,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 22739 strings out of 492649
- 491841 string characters out of 6129622
- 571760 words of memory out of 5000000
- 25750 multiletter control sequences out of 15000+600000
+ 22626 strings out of 492649
+ 488847 string characters out of 6129622
+ 571460 words of memory out of 5000000
+ 25645 multiletter control sequences out of 15000+600000
  116347 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,30n,86p,1849b,1104s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1506,10 +1502,10 @@ ist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2018/texm
 f-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2018/texmf-dist/f
 onts/type1/public/rsfs/rsfs5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
 1/public/rsfs/rsfs7.pfb>
-Output written on Algebraic-TQC.pdf (229 pages, 39623474 bytes).
+Output written on Algebraic-TQC.pdf (223 pages, 39613953 bytes).
 PDF statistics:
- 948 PDF objects out of 1000 (max. 8388607)
- 634 compressed objects within 7 object streams
+ 929 PDF objects out of 1000 (max. 8388607)
+ 621 compressed objects within 7 object streams
  0 named destinations out of 1000 (max. 500000)
  163 words of extra memory for PDF output out of 10000 (max. 10000000)
 

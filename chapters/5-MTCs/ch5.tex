@@ -936,7 +936,7 @@ For every simple object $A\in \cC$, the map $\theta_A\in \End(A)$ can be identif
 \end{equation*}
 \end{rem}
 
-\begin{lem} Let $\cC$ be a pre-modular fusion category. We have that
+\begin{lem}\label{twist-alternatives-lemma} Let $\cC$ be a pre-modular fusion category. We have that
 
 \begin{equation*}
 \tikzfig{twist-alternatives}
@@ -1582,7 +1582,7 @@ We will prove this theorem and motivate why it should be true over the course of
 \begin{ex}\Note{Write out modular data for $G=S_3$.}
 \end{ex}
 
-\subsubsection{Torus perspective}
+\subsubsection{The TQFT perspective}
 
 \Note{I should wait until I'm done with the TQO chapter to write this section.}
 
@@ -1671,9 +1671,58 @@ The rotation is described as follows.\Note{describe the rotation in terms of the
 \end{rem}
 
 Now that we have described $\MCG(T^2)=\SL_2(\bZ)$ and $V_1=\bC[\cL]$, we are tasked with understanding $\rho_1:\SL_2(\bZ)\to \bC[\cL]$. That is, we must describe the maps $\rho_1(s),\rho_1(t)\in \Aut(\bC[\cL])$.
-
-
 ]
+
+I wrote stuff about TQFTs which could be relevant:
+
+Topological quantum field theory (TQFT) is an important player in the field of topological quantum information. For the purposes of this manuscript, TQFT is treated meerly as a perspective on topological order. TQFT can be connected more directly and deeply to physics using the machinery of effective field theory, which we will not discuss. The TQFT perspective is summarized as follows:
+
+$\newline$
+
+\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{
+
+\textbf{The TQFT perspective:} topological order should be studied in terms of the way topological systems react to being put on different manifolds, and by the way they react to topological manipulations on those manifolds.
+}}
+
+$\newline$
+
+We now elaborate on what this means. Start with some topological order, perhaps the toric code or some other Kitaev quantum double model. When we refer to \textit{putting the topological order on a manifold}, we mean the following. First, we draw some lattice the manifold, and add Hilbert spaces on the edges of the lattice. Then, we consider the Hamiltonian on the lattice associated with the relevant topological order. This Hamiltonian has a ground space (the zero-energy subspace), which we refer to as the state-space of the topological order on the manifold.
+
+Thus, associated to every two dimensional topological order, we have an assignment from closed surfaces to Hilbert spaces, which sends a surface to its state-space on that surface. We can call this assignment $V$, depicted below as follows:
+
+[WORK: add picture. Surface with holes, under $V$, gets assigned a Hilbert space.]
+
+These Hilbert spaces are the basic objects of study in the TQFT perspective. For instance, their dimensions give information about the anyon types and fusion rules of the topological order:
+
+[WORK: add table. 
+V(sphere)=1;
+
+V(torus)= number of anyons types...;
+
+V(two-holdes torus) = $\sum_{a,b,c\in \cL}(N^{a,b}_c)^2$.
+]
+
+[WORK: I think that I should add a heuristic derivation of these state-space dimensions. I want to use the example of the two-holed torus, and not having a basis is causing me trouble.]
+
+Of course, without any additional structure there is no information in a vector space beyond its dimension. For this reason, to make the TQFT perspective useful one must consider not only the dimensions of these vector spaces but also the way they react to topological manipulations of manifolds. In the remainder of this appendix, we will dicuss exactly what these extra manipulations are, use them to define an object called a TQFT, and explore the ramifications of this perspective.
+
+In the TQFT perspective, we are interested in studying the way that state-spaces of topological order on different manifolds behave under topological manipulations. We illustrate the sort of topological manipulations we are interested in though a paradigmatic example, a \textit{Dehn twist} on the torus, illustrated below:
+
+[WORK: dehn twist on torus, decomposed into cut, twist, and glue.]
+
+The crucial point is that this topological manipulation on the torus induces a linear transformation on the state-space of any topological order on the torus. The TQFT perspective says that studying the linear transformation on the state-space of the torus induced by the Dehn twist is a good thing to do.
+
+We now describe this induced linear transformation, using the explicit example of the toric code. Consider a square lattice on the torus, with qubits placed at edges, equipped with the toric code Hamiltonian. The Dehn twist on the torus is a continuous map from the torus to itself. Acting on the level of lattices, the Dehn twist sends the old lattice to a new lattice as follows:
+
+[WORK: use four-by-four square lattice, write out Dehn twist action explicitely.]
+
+We make a few observations. Firstly, we observe that the permutation on the level of lattice sites induces a linear map on the level of Hilbert spaces. Just like how there is a linear ``swap" map $\bC^2\otimes \bC^2\to \bC^2\otimes \bC^2$ which sends $\ket{b_0}\otimes \ket{b_1}$ to $\ket{b_1}\otimes \ket{b_0}$, there are linear maps on any tensor-product Hilbert space induced by permuting the components.
+
+Secondly, we observe that the Hamiltonian is \textit{not} invariant under this linear map. This is an immediate corrolary of the fact that the lattice edges are not invariant under the map, and thus plaquette terms which used to act on square faces now act on slanted parallelograms. However, the new Hamiltonian is still manifestly a toric code Hamiltonian, just associated to a different lattice. Thus, the ground space of the old Hamiltonian and the new Hamiltonian are both canonically isomorphic to $\bC[H^1(T^2;\bZ_2)]$. Thus, identifying the ground space of both Hamiltonians with $\bC[H^1(T^2;\bZ_2)]$, we find that the Dehn twist induces a linear map
+
+$$\bC[H^1(T^2;\bZ_2)]\to \bC[H^1(T^2;\bZ_2)].$$
+
+This linear map can be described entirely explicitely. [WORK: describe the map.]
 
 \subsubsection{Bruguieres's modularity theorem and the Verlinde formula}
 
@@ -2122,7 +2171,7 @@ $$\cZ(\cC)=\{A\in \cC | A\otimes B \cong B\otimes A \,\, \forall B\in \cC\}.$$
 This is almost correct, but not quite. The issue is that $\cZ(\cC)$ is not a braided monoidal category yet. Even though $A\otimes B\cong B\otimes A$ for all $A,B\in \cZ(\cC)$, we don't have a distinguished choice of isomorphism. A braided monoidal category requires a distinugished isomorphism $\beta_{A,B}:A\otimes B\xrightarrow{} B\otimes A$. Moreover, these distinguished isomorphisms are required to satisfy the hexagon equations. Hence, we make a new definition of center which keeps track of the choice of isomorphism and enforces the hexagon equation along the way.
 
 
-\begin{defn} The Drinfeld center $\cZ(\cC)$of a monoidal category $\cC$ is a braided monoidal category defined as follows:
+\begin{defn} The Drinfeld center $\cZ(\cC)$ of a monoidal category $\cC$ is a braided monoidal category defined as follows:
 
 \begin{itemize}
 \item (Objects) Pairs $(A,\upbeta_{A,\--})$, where $A\in \cC$, and $\upbeta_{A,\--}$ is a natural isomorphism of monoidal natural isomorphism between the two functors $A\otimes \--$ and $\--\otimes A$ from $\cC$ to $\cC$, satisfying the additional condition that
@@ -2154,7 +2203,7 @@ $$\upbeta_{A,B\otimes C}=\alpha_{C,A,B}^{-1}\circ \left(\id_{B}\otimes \upbeta_{
 This condition makes the second hexagon identity tautological. Similarly, the definition of tensor product given is not strictly correct - one must add the correct associator terms, making the first hexagon identity immediate. Lastly one must verify the half-braidings defined on the tensor unit/tensor product are actually half braidings, i.e., that they satisfy the hexagon condition. These follow from straightforward computations, which we leave as exercises.
 \end{proof}
 
-\subsubsection{Muger's theorem}
+\subsubsection{Mueger's theorem}
 
 \Note{ through Mueger's theorem. The exposition will greatly differ based on what the proof looks like, which I haven't done before. The standard proof people use is completeley steeped in the language of module categories. The original proof uses the tube algebra, and is ``elementary" in the sense that you don't need tube algebras but it is heineous, and I would very much like to avoid it. I'll figure out what to write hence once I've done the module category section and I've digested the proof. Maybe there's a way to de-module-ify it, but maybe not. Maybe I don't want to do that if it'll lose its essence.
 }
@@ -2179,20 +2228,27 @@ v\otimes 1 &\mapsto 1\otimes \rho(g)(v)
 
 Since $\upbeta_{V,\dash}$ is a $G$-graded map, we must have
 
-$$\rho(g)(V_h)\subseteq v_{ghg^{-1}}.$$
+$$\rho(g)(V_h)\subseteq V_{ghg^{-1}}.$$
 
 Thus, we have naturally associated to $(V,\upbeta_{V,\dash})$ the structure of a $G$-graded $G$-representation. It is straightforward to show that this defines a functor $F:\cZ(\Vec_G)\to \cD(G)$, and that this functor induces an equivalence of categories.
 
-We now move on to $\cZ(\Rep(G))$. Given a $G$-graded $G$-representation $(V,\rho)$, we can define a half braiding by the same formula one usually uses for the braiding in $\fD(G)$,
+We now move on to $\cZ(\Rep(G))$. Choose $(V,\upbeta_{B,\dash})\in \cZ(\Rep(G))$ . Define linear maps $f_{g,h}:V\to V$ implicitely by
 
-\begin{align*}
-\upbeta_{V,W}:V_g\otimes W&\to W\otimes V \\
-v\otimes w&\mapsto \rho_W(g)(w)\otimes v
-\end{align*}
+$$\beta_{V,\bC[G]_1}(v\otimes \ket{g})=\sum_{h\in G}\ket{h}\otimes f_{g,h}(v).$$
 
-for all $v\in V_g$. It is straightforward to show that this gives a functor of pre-modular categories $\fD(G)\to\cZ(\Rep(G))$. While it is clear that this functor is fully faithful, it is rather cumbersome to show directly that it is essentially surjective (that is, that every half-braiding arrises from a $G$-graded $G$-representation). Thus, we turn to the more abstract machinery of subsection [ref].
+We now use the fact that, as representations, $\bC[G]_1\otimes \bC[G]_1=\bigoplus_{h\in G}\bC[G]_1$, where the copy of $\bC[G]_1$ corresponding to $\ket{h}$ is the span of the kets $\ket{g}\otimes \ket{gh}$ over all $g\in G$. We now consider the half-braiding axiom on the triple tensor $V\otimes \bC[G]_1\otimes \bC[G]_1$. Applying the decomposition $\bC[G]_1\otimes \bC[G]_1$ to compute $\beta_{V,\bC[G]_1\otimes \bC[G]_1}$ and computing the other direction directly using the formula for $\beta_{V,\bC[G]_1}$, we find that for all $g,h,k,k'\in G$:
 
-\Note{We can compute the global dimension of $\fD(G)$ by the fact that it is the Drinfeld center of $\Vec_G$. We can compute the global dimension of $\Rep(G)$ from the decomposition of $\bC[G]$ we proved before. Thus, we get that $\cZ(\Rep(G))$ and $\fD(G)$ have the same global quantum dimension, so the map must be essentially surjective!}
+$$f_{hk,k'}\circ f_{g,h}=
+\begin{cases}
+f_{g,h} & h'=hk\\
+0 & \text{otherwise}.
+\end{cases}$$
+
+Additionally, the fact that $\beta$ is a $G$-representation implies
+
+$$f_{g,h}=\rho(g)\circ f_{1,g^{-1}h}\circ \rho(g^{-1}).$$
+
+We can now define $V_g=\text{im} f_{1,g}$. By the piecewise formula, the $f_{g,h}$ are all idempotentis. The subspaces $V_g$ are all disjoint. Since $\beta_{V,\bC[G]_1}$ is an isomorphism, we have $V=\bigoplus_{g\in G}V$. The $G$-rep formula and the piecewise formula together imply that $\rho(g)(V_h)=V_{ghg^{-1}}$. Thus, we have associated a $G$-graded $G$-rep to $V$. Working through the rest of the axioms we see that this gives the equivalence $\cZ(\Rep(G))\simeq \fD(G)$ as desired.
 \end{proof}
 
 The equivalance $\cZ(\Vec_G)\simeq \cZ(\Rep(G))$ demonstrates the concept known as {\em Morita equivalence}. We define two spherical fusion categories $\cC$, $\cD$ to be Morita equivalent if there exists an equivalence of pre-modular categories $\cZ(\cC)\simeq \cZ(\cD)$. The most naive motivation for the notion of Morita equivalance is as follows. If $\cD$ is a quantum double modular category, this means it can be written as $\cZ(\cC)$ for some some spherical fusion category $\cC$. However, the choice of $\cC$ is not unique. It is only unique up to Morita equivalence, by definition. Keeping aware of the different choices of $\cC$ can be a useful thing to.
@@ -2201,32 +2257,55 @@ The equivalance $\cZ(\Vec_G)\simeq \cZ(\Rep(G))$ demonstrates the concept known 
 There is an alternate definition of Morita equivalence in terms of bimodules which we will see in subsection [ref]. In fact, the original definition of Morita equivalence was stated in yet a different way, in terms of two-categories \cite{muger2001subfactorsA}. It is a theorem of Mueger and Kitaev and that the original definition of Morita equivalence can be restated in terms of Drinfeld centers \cite{etingof2011weakly}.
 \end{rem}
 
-\subsubsection{Factorizability and time reversal symmetry}
+\subsubsection{Factorizability and time reversal}
 
-Given a modular category $\cC$, we can forget the braiding on $\cC$ and only remember its structure as a spherical fusion category. Hence, Muger's theorem tells us that $\cZ(\cC)$ is naturally a modular category. In this section we will compute $\cZ(\cC)$ a modular category in terms of $\cC$, and prove some related results.
+Given a modular category $\cC$, we can always forget the braiding on $\cC$ and remember only its structure as a spherical fusion category. Hence, Muger's theorem tells us that $\cZ(\cC)$ is naturally a modular category. In this section we will compute $\cZ(\cC)$ a modular category in terms of $\cC$, and prove some related results. A key player in this story is {\em time reversal}. In a formal mathematical way, we can define timer reversal as in definition \ref{time-reversal-def}.
 
-\begin{defn}\Note{define the time-reversal conjugate $\overline{\cC}$}
-\end{defn} 
+\begin{defn}\label{time-reversal-def}Let $\cC$ be a pre-modular category. We define a pre-modular categoty $\overline{\cC}$ which is equal to $\cC$ as a spherical fusion category, but whose braiding is defined by the formula
 
-\begin{rem} For any braided monoidal category $\cC$, there is an associated functor
+$$\overline{\beta}_{A,B}=\beta_{B,A}^{-1}.$$
 
-$$\cC\boxtimes \overline{\cC}\xrightarrow{} \cZ(\cC),$$
+We call $\overline{\cC}$ the {\em time reversal conjugate} of $\cC$.
+\end{defn}
 
-defines as follows.\Note{Define it, pretty easy.}
+\begin{dict}\label{time-reversal-dict} Given a topological phase of matter described by the modular caterory chiral central charge pair $(\cC,c_{-})$, the {\em time reversal conjugate} of that phase is described by the pair $(\overline{\cC},-c_{-})$.\Note{I don't know how to describe time well, in this context. Physical intuition would be really good here... This could also be a good place to have a mirror-image type picture to say why this is a good definition.}
+\end{dict}
+
+\begin{rem} The Gauss-Milgram formula gives a compatibility condition between the anyon theory of phase and its chiral central charge. Proposition \ref{twists-of-conjugate} gaurantees that if $\cC$ is compatible with $c_-$, then $\overline{\cC}$ is compatible with $-c_{-}$, as one would hope from physics-math dictionary \ref{time-reversal-dict}.
 \end{rem}
 
-\begin{thrm}\label{factorizability-theorem} Let $\cC$ be a pre-modular category. The standard map $\cC\boxtimes \overline{\cC}\xrightarrow{}\cZ(\cC)$ is a functor of pre-modular categories. It is an equivalence of pre-modular categories if and only of $\cC$ is modular.
-\end{thrm}
-\begin{proof}\Note{proof}
+\begin{prop}\label{twists-of-conjugate} Let $\cC$ be a spherical fusion category. For all objects $A\in \cC$, the twist value $\theta_{A}$ as computed in $\cC$ is equal to $\overline{\theta}_A$ as computed in $\overline{\cC}$. We thus have that
+
+$$p_{\overline{\cC}}^{+}=\overline{p_{\cC}^{-}}, \qquad\qquad p_{\overline{\cC}}^{-}=\overline{p_{\cC}^+}$$ 
+\end{prop}
+\begin{proof} From lemma \ref{twist-alternatives-lemma}, we can see that the twists of the reversed theory are equal to the inverses of the twists in the original theory. By Vafa's theorem (theorem \ref{vafa-theorem}) the twist values are roots of unity, and thus their inverses are equal to their complex conjugates, giving the desired result.
 \end{proof}
 
-\begin{rem} \Note{This theorem is fantastic because it not only computes $\cZ(\cC)$ for every modular category $\cC$, but also it gives an equivalent definition of modularity. This gives us our third definition of modularity. Namely a pre-modular category $\cC$ is modular if and only if its braidings are all non-degenerate, or equivalently if its $S$-matrix is non-degenerate, or equivalently if it is factorizable in the above sense.}
+We can now explain the relationship between time-reversal and quantum double modular categories. For all pre-modular categories $\cC$, there is a functor of pre-modular categories $\cC\to \cZ(\cC)$ which takes an object $A\in \cC$ and associates to it the half-braiding $\upbeta_{A,\dash}=\beta_{A,\dash}$. Similarly, there is a functor of pre-modular categories $\overline{\cC}\to\cZ(\cC)$ which assigns to $A\in \cC$ the half-braiding $\upbeta_{A,\dash}=\beta_{\dash,A}^{-1}$. Putting these together, we get a functor of pre-modular categories
+
+$$\cC\boxtimes \overline{\cC}\xrightarrow{} \cZ(\cC).$$
+
+This map is at the heart of understanding $\cZ(\cC)$ for modular categories $\cC$, as shown in theorem \ref{factorizability-theorem}.
+
+\begin{thrm}\label{factorizability-theorem} Let $\cC$ be a pre-modular category. The functor $\cC\boxtimes \overline{\cC}\xrightarrow{}\cZ(\cC)$ is a map of pre-modular categories. It is an equivalence of pre-modular categories if and only of $\cC$ is modular.
+\end{thrm}
+\begin{proof}\Note{This is going to have to wait until I do the module category stuff, so that I can see what makes sense to put where.}
+\end{proof}
+
+\begin{rem} Theorem \ref{factorizability-theorem} is fantastic because it not only computes $\cZ(\cC)$ for every modular category $\cC$, but also it gives an equivalent definition of modularity. We can combine this result with Bruguieres's modularity theorem (theorem \ref{bruguieres-theorem}) to get three equivalent definitiosn of modularity. Namely a pre-modular category $\cC$ is modular if and only if its braidings are all non-degenerate, or equivalently if its $S$-matrix is non-degenerate, or equivalently if the functor $\cC\boxtimes \overline{\cC}\to \cZ(\cC)$ is an equivalence. We often refer to the condition that $\cC\boxtimes \overline{\cC}\to \cZ(\cC)$ as the {\em factorizability} condition, and we summarize theorem \ref{factorizability-theorem} as saying that a pre-modular category is modular if and only if it is factorizable.
 \end{rem}
+
+\begin{rem}
+One might wonder why we don't define the time-reversal conjugate of an anyon theory in terms of its opposite category $\cC^{\op}$, because naively the opposite category is in a real sense reversing causality. The answer for this is as follows. Given a monoidal category $\cC$, one can endow $\cC^{\op}$ with the structure of a monoidal category by the formula $A^{\op}\otimes^{\op}B^{\op}=(B\otimes A)^{\op}$, carrying through the associativity and unit maps. Given a braiding on $\cC$, on then naturally gets a braiding on $\cC^{\op}$ by the formula $\beta_{A^{\op},B^{\op}}^{\op}=\beta_{A,B}^{\op}$. Passing through the rest of the structure, one can show that the opposite of a spherical fusion (resp. pre-modular, modular) category is naturally a spherical fusion (resp. pre-modular, modular) category. Thus, $\cC^{\op}$ {\em is} a valid guess as the definition of the time reversal conjugate. However, it is straightforward to show that $\cC^{\op}\simeq \cC$ as pre-modular categories for all pre-modular categories! (\cite{etingof2016tensor}, Exercise 8.1.9). This shows at at mathematical level why $\cC^{\op}$ is not a good choice of time reversal conjugate.
+\end{rem}
+
 
 \subsubsection{Levin-Wen model}
 
 \Note{: work though the Levin-Wen model.
 I think that this model is fantastic because it shows how all of the ideas of tensor category theory can manifest themselves extremely concretelely on the level of gapped Hamiltonians. Namely, the coherence relations on the category theory side correspond exactly the the formulas needed to make terms in a Hamiltonian commute with one another. It would be nice if I could give a motivation for which the category which describes the Levin-Wen model is the Drinfeld center, though I've never seen that before.}
+
+\Note{This section is a good time to talk a bit more about chirality. All quantum double modular categories are time-reversal symmetric, but there are time-reversal symmetric modular categories which are not quantum doubles. There should be an example in the anyon-data subsection.}
 
 
 
@@ -2314,7 +2393,7 @@ It is clear that $(f^{\dagger})^{\dagger}=f$, $(f\circ g)^{\dagger}=g^{\dagger}\
 \Note{
 A good general reference about this stuff is \cite{gannon2019algebraic}. To-read, for sure.
 There is also interesting work in \cite{morrison2012non} which gives some counterexamples.
-Another reference is \cite{davidovich2013arithmetic}.}
+Another reference is \cite{davidovich2013arithmetic}. Another essential reference is \cite{ng2019higher}.}
 
 \subsubsection{Galois conjugation}
 

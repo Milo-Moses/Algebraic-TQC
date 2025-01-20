@@ -249,11 +249,6 @@ Iris Cong, Meng Cheng, and Zhenghan Wang.
 \newblock Topological quantum computation with gapped boundaries.
 \newblock {\em arXiv preprint arXiv:1609.02037}, 2016.
 
-\bibitem[CDGG21]{creutzig2021qft}
-Thomas Creutzig, Tudor Dimofte, Niklas Garner, and Nathan Geer.
-\newblock A qft for non-semisimple tqft.
-\newblock {\em arXiv preprint arXiv:2112.01559}, 2021.
-
 \bibitem[CDH{\etalchar{+}}20]{cui2020kitaev}
 Shawn~X Cui, Dawei Ding, Xizhi Han, Geoffrey Penington, Daniel Ranard,
   Brandon~C Rayhaun, and Zhou Shangnan.
@@ -264,12 +259,6 @@ Shawn~X Cui, Dawei Ding, Xizhi Han, Geoffrey Penington, Daniel Ranard,
 Antoine Coste and Terry Gannon.
 \newblock Remarks on galois symmetry in rational conformal field theories.
 \newblock Technical report, P00019855, 1993.
-
-\bibitem[CGH23]{carpi2023vertex}
-Sebastiano Carpi, Tiziano Gaudio, and Robin Hillier.
-\newblock From vertex operator superalgebras to graded-local conformal nets and
-  back.
-\newblock {\em arXiv preprint arXiv:2304.14263}, 2023.
 
 \bibitem[CGPM14]{costantino2014quantum}
 Francesco Costantino, Nathan Geer, and Bertrand Patureau-Mirand.
@@ -284,11 +273,6 @@ Bob Coecke and Aleks Kissinger.
 \newblock In {\em Diagrammatic Representation and Inference: 10th International
   Conference, Diagrams 2018, Edinburgh, UK, June 18-22, 2018, Proceedings 10},
   pages 28--31. Springer, 2018.
-
-\bibitem[CKWZ24]{chang2024modular}
-Liang Chang, Quinn~T Kolt, Zhenghan Wang, and Qing Zhang.
-\newblock Modular data of non-semisimple modular categories.
-\newblock {\em arXiv preprint arXiv:2404.09314}, 2024.
 
 \bibitem[CLRL17]{chan2017photocurrents}
 Ching-Kit Chan, Netanel~H Lindner, Gil Refael, and Patrick~A Lee.
@@ -317,11 +301,6 @@ Pierre Curie.
 Shawn~Xingshan Cui, Modjtaba~Shokrian Zini, and Zhenghan Wang.
 \newblock On generalized symmetries and structure of modular categories.
 \newblock {\em Science China Mathematics}, 62:417--446, 2019.
-
-\bibitem[Dav11]{davis2011axiomatic}
-Kelly~J Davis.
-\newblock Axiomatic tqft, axiomatic dqft, and exotic 4-manifolds.
-\newblock {\em arXiv preprint arXiv:1106.2358}, 2011.
 
 \bibitem[Del02]{deligne2002categories}
 Pierre Deligne.
@@ -633,25 +612,11 @@ Seung-Moon Hong, Eric Rowell, and Zhenghan Wang.
 \newblock {\em Communications in Contemporary Mathematics},
   10(supp01):1049--1074, 2008.
 
-\bibitem[Hua05]{huang2005vertex}
-Yi-Zhi Huang.
-\newblock Vertex operator algebras, the verlinde conjecture, and modular tensor
-  categories.
-\newblock {\em Proceedings of the National Academy of Sciences},
-  102(15):5352--5356, 2005.
-
 \bibitem[Hua08]{huang2008vertex}
 Yi-Zhi Huang.
 \newblock Vertex operator algebras and the verlinde conjecture.
 \newblock {\em Communications in Contemporary Mathematics}, 10(01):103--154,
   2008.
-
-\bibitem[Hua21]{huang2021representation}
-Yi-Zhi Huang.
-\newblock Representation theory of vertex operator algebras and orbifold
-  conformal field theory.
-\newblock In {\em Lie Groups, Number Theory, and Vertex Algebras}, volume 768,
-  pages 221--252. Amer. Math. Soc. Providence, RI, 2021.
 
 \bibitem[ITV{\etalchar{+}}24]{iqbal2024non}
 Mohsin Iqbal, Nathanan Tantivasadakarn, Ruben Verresen, Sara~L Campbell, Joan~M
@@ -924,11 +889,6 @@ Michael~A Nielsen and Isaac~L Chuang.
 \newblock {\em Quantum computation and quantum information}.
 \newblock Cambridge university press, 2010.
 
-\bibitem[Nik04]{nikshych2004semisimple}
-Dmitri Nikshych.
-\newblock Semisimple weak hopf algebras.
-\newblock {\em Journal of Algebra}, 275(2):639--667, 2004.
-
 \bibitem[NO09]{nussinov2009symmetry}
 Zohar Nussinov and Gerardo Ortiz.
 \newblock A symmetry principle for topological quantum order.
@@ -950,12 +910,6 @@ Benedikt Placke, Stefano Bosco, and David~P DiVincenzo.
 \newblock A model study of present-day hall-effect circulators.
 \newblock {\em EPJ Quantum Technology}, 4:1--14, 2017.
 
-\bibitem[Pfe09]{pfeiffer2009tannaka}
-Hendryk Pfeiffer.
-\newblock Tannaka--kre{\i}n reconstruction and a characterization of modular
-  tensor categories.
-\newblock {\em Journal of Algebra}, 321(12):3714--3763, 2009.
-
 \bibitem[PSYZ23]{plavnik2023modular}
 Julia Plavnik, Andrew Schopieray, Zhiqiang Yu, and Qing Zhang.
 \newblock Modular tensor categories, subcategories, and galois orbits.
@@ -971,13 +925,7 @@ Nicolas Regnault and B~Andrei Bernevig.
 \newblock Fractional chern insulator.
 \newblock {\em Physical Review X}, 1(2):021014, 2011.
 
-\bibitem[Reu23a]{reutter2023semisimple}
-David Reutter.
-\newblock Semisimple four-dimensional topological field theories cannot detect
-  exotic smooth structure.
-\newblock {\em Journal of Topology}, 16(2):542--566, 2023.
-
-\bibitem[Reu23b]{reutter2023uniqueness}
+\bibitem[Reu23]{reutter2023uniqueness}
 David Reutter.
 \newblock Uniqueness of unitary structure for unitarizable fusion categories.
 \newblock {\em Communications in Mathematical Physics}, 397(1):37--52, 2023.
@@ -1029,11 +977,6 @@ Ramamurti Shankar.
 \newblock {\em Principles of quantum mechanics}.
 \newblock Springer Science \& Business Media, 2012.
 
-\bibitem[Shi19]{shimizu2019non}
-Kenichi Shimizu.
-\newblock Non-degeneracy conditions for braided finite tensor categories.
-\newblock {\em Advances in Mathematics}, 355:106778, 2019.
-
 \bibitem[Sho94]{shor1994algorithms}
 Peter~W Shor.
 \newblock Algorithms for quantum computation: discrete logarithms and
@@ -1056,11 +999,6 @@ Libor {\v{S}}mejkal, Yuriy Mokrousov, Binghai Yan, and Allan~H MacDonald.
 \newblock Topological antiferromagnetic spintronics.
 \newblock {\em Nature physics}, 14(3):242--251, 2018.
 
-\bibitem[Sop23]{sopenko2023topological}
-Nikita~A Sopenko.
-\newblock {\em Topological invariants of gapped quantum lattice systems}.
-\newblock California Institute of Technology, 2023.
-
 \bibitem[STL{\etalchar{+}}10]{sau2010non}
 Jay~D Sau, Sumanta Tewari, Roman~M Lutchyn, Tudor~D Stanescu, and S~Das~Sarma.
 \newblock Non-abelian quantum order in spin-orbit-coupled semiconductors:
@@ -1073,12 +1011,6 @@ Alexis Schotte, Guanyu Zhu, Lander Burgelman, and Frank Verstraete.
 \newblock Quantum error correction thresholds for the universal fibonacci
   turaev-viro code.
 \newblock {\em Physical Review X}, 12(2):021012, 2022.
-
-\bibitem[Tan20]{tan2020vertex}
-Daniel Tan.
-\newblock {\em Vertex Operator Algebras, Modular Tensor Categories and a
-  Kazhdan-Lusztig Correspondence at a Non-negative Integral Level}.
-\newblock PhD thesis, UNIVERSITY OF MELBOURNE, 2020.
 
 \bibitem[Ter15]{terhal2015quantum}
 Barbara~M Terhal.
