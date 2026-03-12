@@ -1,0 +1,43 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-3, 0.5) {};
+		\node [style=none] (1) at (-2, 0.5) {};
+		\node [style=none] (2) at (-3, 1) {$X^*$};
+		\node [style=none] (3) at (-1, 1.25) {$X$};
+		\node [style=none] (4) at (-1, 0.5) {};
+		\node [style=none] (5) at (0, 0.5) {};
+		\node [style=none] (6) at (0, 1) {$X$};
+		\node [style=none] (7) at (-2, 1.25) {$X^*$};
+		\node [style=none] (8) at (-3, -1) {};
+		\node [style=none] (9) at (-2, -1) {};
+		\node [style=none] (10) at (-3, -1.5) {$X^*$};
+		\node [style=none] (11) at (-2, -1.5) {$X$};
+		\node [style=none] (12) at (-1, -1) {};
+		\node [style=none] (13) at (0, -1) {};
+		\node [style=none] (14) at (0, -1.5) {$X$};
+		\node [style=none] (15) at (-1, -1.5) {$X^*$};
+		\node [style=none] (16) at (-4.75, -0.25) {$\text{Tr}_{1,4}($};
+		\node [style=none] (17) at (0.75, -0.25) {$)=$};
+		\node [style=none] (18) at (2.25, 0.5) {};
+		\node [style=none] (19) at (3.25, 0.5) {};
+		\node [style=none] (20) at (2.25, -1) {};
+		\node [style=none] (21) at (3.25, -1) {};
+		\node [style=none] (22) at (1.75, 1) {$X$};
+		\node [style=none] (23) at (3.75, 1) {$X^*$};
+		\node [style=none] (24) at (2.25, -1.5) {$X$};
+		\node [style=none] (25) at (3.25, -1.5) {$X^*$};
+		\node [style=none] (26) at (-2, 0.5) {};
+		\node [style=none] (27) at (-1, 0.5) {};
+		\node [style=none] (28) at (1.5, -0.25) {$\lambda$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend right=90, looseness=2.00] (0.center) to (1.center);
+		\draw [bend right=90, looseness=2.00] (4.center) to (5.center);
+		\draw [bend left=90, looseness=2.00] (8.center) to (9.center);
+		\draw [bend left=90, looseness=2.00] (12.center) to (13.center);
+		\draw (18.center) to (20.center);
+		\draw (19.center) to (21.center);
+		\draw [bend left=90, looseness=2.00] (26.center) to (27.center);
+		\draw [bend left=90, looseness=1.75] (18.center) to (19.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

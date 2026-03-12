@@ -6,14 +6,25 @@
 % this style is applied by default to any tikzpicture included via \tikzfig
 \tikzstyle{tikzfig}=[baseline=-0.25em,scale=0.5]
 
-\tikzstyle{white node}=[fill=white, tikzit category=nodes, shape=circle]
-
-\tikzstyle{black node}=[fill=black, tikzit category=nodes, shape=circle]
+\tikzstyle{white node}=[fill=white, tikzit category=nodes, shape=circle, draw=black]
 
 \tikzstyle{default}=[-,tikzit category=edges]
+\tikzstyle{overlap}=[-, tikzit category=edges, commutative diagrams/crossing over]
 \tikzstyle{arrow}=[->,tikzit category=edges]
 \tikzstyle{dashed edge}=[-, tikzit category=edges, dashed]
-\tikzstyle{overlap}=[-, tikzit category=edges, commutative diagrams/crossing over]
+\tikzstyle{cyans-fill}=[-, tikzit category=edges, draw=none, fill={cyan!60!white}, fill opacity=0.5]
+\tikzstyle{olive-fill}=[-, tikzit category=edges, draw=none, fill={olive!60!white}, fill opacity=0.5]
+\tikzstyle{red-fill}=[-, tikzit category=edges, draw=none, fill={red!60!white}, fill opacity=0.5]
+\tikzstyle{pink-fill}=[-, tikzit category=edges, draw=none, fill={rgb,255: red,255; green,56; blue,142}, fill opacity=0.5]
+\tikzstyle{bolded-edge}=[-, tikzit category=edges, draw=red]
+\tikzstyle{soft-fill}=[-, tikzit category=edges, draw=none, fill={black!2!white}, fill opacity=0.9]
+\tikzstyle{yellow-fill}=[-, tikzit category=edges, draw=none, fill={yellow!60!white}, fill opacity=0.5]
+\tikzstyle{dotted-cyan}=[-, tikzit category=edges, draw={cyan!60!white}, dashed]
+\tikzstyle{dotted-pink}=[-, tikzit category=edges, draw={red!60!white}, dashed]
+\tikzstyle{dotted-olive}=[-, tikzit category=edges, draw={olive!60!white}, dashed]
+
+
+
 
 % these are dummy properties used by TikZiT, but ignored by LaTex
 \pgfkeys{/tikz/tikzit fill/.initial=0}

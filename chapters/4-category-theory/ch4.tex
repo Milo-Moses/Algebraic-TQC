@@ -5,9 +5,9 @@
 
 \subsubsection{Introduction}
 
-There is a lot of math in the world. The development of the subject has spanned thousands of years, and has enjoyed a large uptick in progress the last two hundred or so. This has given ample time for the most important ideas to rise to the top. Among these important concepts there is one which is the focus of chapter: \textbf{composition}.
+Among all mathematical concepts, one of the most fundamental is \textbf{composition}. In this chapter we introduce categories, the mathematical abstractions for studying composition.
 
-Let $A,B,C$ be sets. Let $f:A\to B$ and $g:B\to C$ be functions. The {\em composition} of $f$ and $g$ is the function $g\circ f: A\to C$ defined by the formula $(g\circ f)(x)=g(f(x))$ for all $x\in A$. More generally, composition is the act of performing one process followed by performing a second process. Composition is distinguished in its importance for two reasons:
+Let $A,B,C$ be sets. Let $f:A\to B$ and $g:B\to C$ be functions. The composition of $f$ and $g$ is the function $g\circ f: A\to C$ defined by the formula $(g\circ f)(x)=g(f(x))$ for all $x\in A$. More generally, composition is the act of performing one process followed by performing a second process. Composition is distinguished in its importance for two reasons:
 
 \begin{enumerate}
 \item Composition is ubiquitous;
@@ -1128,7 +1128,7 @@ We implement right-rigid monoidal categories in string diagrams as follows. We d
 The compatibility conditions are stated graphically as follows:
 
 \begin{equation*}
-\tikzfig{eval-coeval-coherence}
+\tikzfig{snake-left} = \id_A,\,\,\,\,\,\,\, \tikzfig{snake-right} = \id_{A^*}
 \end{equation*}
 
 \begin{defn}[Left-rigid monoidal category] A left-rigid monoidal category is the following data:
@@ -1330,4 +1330,5 @@ $\newline\newline$
 
 \Note{I'm not consistent about up/down orientation for my string diagrams. I need to go through and fix this.}
 
+\item \Note{There's a nice fact to know about 2-vector spaces. I think that every functor between 2-vector spaces is representable, and has an ajoint. This should come from combining various results from EGNO (such as Corollary 1.8.11), but there should also be self contained easier proofs for this special case.}
 \end{enumerate}

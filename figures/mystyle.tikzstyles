@@ -1,9 +1,0 @@
-\tikzstyle{white node}=[outline=black, fill=white, tikzit category=nodes, shape=circle]
-
-\tikzstyle{default}=[-,tikzit category=edges]
-
-\tikzstyle{overlap}=[-, tikzit category=edges, commutative diagrams/crossing over]
-
-\tikzstyle{arrow}=[->,tikzit category=edges]
-
-\tikzstyle{dashed edge}=[-, tikzit category=edges, dashed]

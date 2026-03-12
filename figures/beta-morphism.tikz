@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (0.5, 0.5) {};
+		\node [style=none] (1) at (1, 0) {};
+		\node [style=none] (2) at (1.5, 0.5) {};
+		\node [style=none] (3) at (1, -0.5) {};
+		\node [style=none] (4) at (0.525, -0.1) {$\beta$};
+		\node [style=none] (5) at (1, -0.85) {$C$};
+		\node [style=none] (6) at (0.5, 0.8) {$A$};
+		\node [style=none] (7) at (1.5, 0.8) {$B$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3.center) to (1.center);
+		\draw (1.center) to (0.center);
+		\draw (1.center) to (2.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

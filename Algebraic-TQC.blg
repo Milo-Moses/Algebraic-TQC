@@ -12,6 +12,7 @@ A level-1 auxiliary file: ./chapters/7-TQC/ch7.aux
 A level-1 auxiliary file: ./chapters/A-anyon-data/appA.aux
 The style file: alpha.bst
 Database file #1: ref.bib
+Warning--I didn't find a database entry for "gainutdinov2023davydov"
 Warning--to sort, need author or key in google2023suppressing
 Warning--empty journal in copeland1997church
 Warning--can't use both volume and number fields in de2022non
@@ -20,45 +21,45 @@ Warning--empty author in google2023suppressing
 Warning--can't use both volume and number fields in jaeger1990computational
 Warning--there's a number but no series in wang2010topological
 Warning--empty year in wang2307intrinsic
-You've used 211 entries,
+You've used 213 entries,
             2543 wiz_defined-function locations,
-            1681 strings with 35701 characters,
-and the built_in function-call counts, 83872 in all, are:
-= -- 8402
-> -- 4129
-< -- 96
-+ -- 1427
-- -- 1401
-* -- 6433
-:= -- 14068
-add.period$ -- 642
-call.type$ -- 211
-change.case$ -- 1333
-chr.to.int$ -- 209
-cite$ -- 220
-duplicate$ -- 3142
-empty$ -- 5893
-format.name$ -- 1658
-if$ -- 16724
+            1689 strings with 36071 characters,
+and the built_in function-call counts, 84792 in all, are:
+= -- 8485
+> -- 4205
+< -- 95
++ -- 1455
+- -- 1429
+* -- 6512
+:= -- 14237
+add.period$ -- 648
+call.type$ -- 213
+change.case$ -- 1351
+chr.to.int$ -- 211
+cite$ -- 222
+duplicate$ -- 3168
+empty$ -- 5941
+format.name$ -- 1686
+if$ -- 16899
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 225
-newline$ -- 1058
-num.names$ -- 630
-pop$ -- 988
+missing$ -- 227
+newline$ -- 1068
+num.names$ -- 636
+pop$ -- 1001
 preamble$ -- 1
-purify$ -- 1562
+purify$ -- 1582
 quote$ -- 0
-skip$ -- 2632
+skip$ -- 2657
 stack$ -- 0
-substring$ -- 4893
-swap$ -- 336
-text.length$ -- 96
-text.prefix$ -- 64
+substring$ -- 4918
+swap$ -- 338
+text.length$ -- 95
+text.prefix$ -- 63
 top$ -- 0
-type$ -- 1620
+type$ -- 1636
 warning$ -- 8
-while$ -- 833
-width$ -- 214
-write$ -- 2721
-(There were 8 warnings)
+while$ -- 840
+width$ -- 216
+write$ -- 2746
+(There were 9 warnings)
